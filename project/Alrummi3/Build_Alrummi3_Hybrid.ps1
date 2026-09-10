@@ -11,7 +11,7 @@ if ($LASTEXITCODE -ne 0) { throw "Python syntax check failed." }
 python -c "import mttex_codec as m; x=m.MtTexInfo(0x97,0,0,1,512,256,1,0x2A,'DXT5',0,(20,)); d=x.as_dict(); assert d['version']=='0x97'; assert d['format_code']=='0x2A'; assert d['display_shader']=='MT YCbCr'; print('codec metadata regression: PASS')"
 if ($LASTEXITCODE -ne 0) { throw "Codec metadata regression failed." }
 
-# Import the full hybrid application.  This catches missing modules and import
+# Import the full hybrid application. This catches missing modules and import
 # cycles without starting Tk's main window.
 python -c "import alrummi3_hybrid; print('hybrid import regression: PASS')"
 if ($LASTEXITCODE -ne 0) { throw "Hybrid application import failed." }
@@ -45,14 +45,24 @@ if (!(Test-Path -LiteralPath $tclDll) -or !(Test-Path -LiteralPath $tkDll)) {
     Write-Error "The Python Tcl/Tk DLLs could not be found under $pythonRoot\DLLs."
 }
 
-# Do not collide with the existing Alrummi3.exe while the hybrid is being
-# evaluated.
-taskkill /F /IM Alrummi3_Hybrid.exe 2>$null | Out-Null
-Start-Sleep -Milliseconds 500
+# Do not collide with an already-running Hybrid build. An absent process is
+# normal on first build and must never abort the script.
+Get-Process -Name "Alrummi3_Hybrid" -ErrorAction SilentlyContinue |
+    Stop-Process -Force -ErrorAction SilentlyContinue
+Start-Sleep -Milliseconds 700
+
+# If an old unlocked output exists, remove it explicitly so PyInstaller cannot
+# trip over a stale file. If Windows still has it locked this produces a clear
+# error here rather than deep inside PyInstaller.
+$dist = Join-Path $appRoot "dist-hybrid"
+$oldExe = Join-Path $dist "Alrummi3_Hybrid.exe"
+if (Test-Path -LiteralPath $oldExe) {
+    Remove-Item -LiteralPath $oldExe -Force
+}
 
 python -m PyInstaller --noconfirm --clean --windowed --onefile `
     --name Alrummi3_Hybrid `
-    --distpath "$appRoot\dist-hybrid" `
+    --distpath "$dist" `
     --workpath "$appRoot\.build-hybrid" `
     --specpath "$appRoot" `
     --runtime-tmpdir ".\Alrummi3_runtime" `
@@ -72,7 +82,6 @@ if ($LASTEXITCODE -ne 0) {
     throw "PyInstaller failed with exit code $LASTEXITCODE."
 }
 
-$dist = Join-Path $appRoot "dist-hybrid"
 New-Item -ItemType Directory -Force -Path "$dist\ai_extensions", "$dist\updates", "$dist\chatgpt_jobs" | Out-Null
 if (Test-Path -LiteralPath "$appRoot\ai_extensions") {
     Get-ChildItem -LiteralPath "$appRoot\ai_extensions" -Force | Where-Object { $_.Name -ne "__pycache__" } | ForEach-Object {
