@@ -377,6 +377,102 @@ def measure_style(crop: Image.Image, mask: np.ndarray) -> InkStyle:
     return style
 
 
+def _stack(text: str) -> list[str]:
+    """How a short label should break across lines.
+
+    A kanji that filled a card becomes two or three English words, and running
+    them together at whatever size happens to fit leaves a small timid block
+    in a large space. One word per line uses the height the original used, so
+    GREAT / LUCK reads like the artwork it replaces rather than a caption.
+    """
+
+    words = text.split()
+    if len(words) <= 1:
+        return words or [""]
+    if len(words) <= 3 and max(len(w) for w in words) <= 9:
+        return words
+    # Longer phrases: balance the lines rather than stacking every word.
+    lines, current = [], ""
+    target = max(len(w) for w in words)
+    target = max(target, (len(text) + 1) // 2)
+    for word in words:
+        if current and len(current) + 1 + len(word) > target:
+            lines.append(current)
+            current = word
+        else:
+            current = f"{current} {word}".strip()
+    if current:
+        lines.append(current)
+    return lines
+
+
+def draw_filled(base: Image.Image, text: str, box: Region, style: InkStyle,
+                *, font_path: str | None = None,
+                stretch: float = 1.45) -> Image.Image:
+    """Draw English that occupies the box the original lettering occupied.
+
+    Choosing a point size that fits inside the box leaves it underfilled: the
+    binding constraint is the width of the longest word, so a tall card ends
+    up with a small line of text floating in it. Instead the lettering is
+    drawn large on its own layer, measured, and scaled to the box — which is
+    how the original artwork fills its card. The vertical stretch is capped so
+    letterforms stay believable rather than smeared.
+    """
+
+    out = base.convert("RGBA")
+    words = " ".join(text.split())
+    if not words:
+        return out
+
+    lines = _stack(words)
+    banner = box.width >= box.height * 1.9
+    font_file = choose_font(font_path, "serif_italic" if banner else "sans")
+    size = 96
+    font = (ImageFont.truetype(str(font_file), size) if font_file
+            else ImageFont.load_default())
+
+    # Lay the text out big, then measure what was actually drawn.
+    pad = size
+    scratch = Image.new("RGBA", (pad * 12, pad * (len(lines) + 2)), (0, 0, 0, 0))
+    pen = ImageDraw.Draw(scratch)
+    stroke = max(1, min(6, int(round(style.stroke * 1.4))))
+    y = pad // 2
+    widest = 0
+    for line in lines:
+        bbox = pen.textbbox((0, 0), line, font=font, stroke_width=stroke)
+        pen.text((pad // 2 - bbox[0], y - bbox[1]), line, font=font,
+                 fill=style.fill, stroke_width=stroke, stroke_fill=style.outline)
+        widest = max(widest, bbox[2] - bbox[0])
+        y += int((bbox[3] - bbox[1]) * 1.12)
+    drawn = scratch.getbbox()
+    if not drawn:
+        return out
+    block = scratch.crop(drawn)
+
+    # Scale it onto the box, allowing a little vertical stretch so a wide
+    # phrase in a tall card still uses the height. The box is the extent of the
+    # glyph that was removed, and a glyph often runs right up to the card's
+    # border, so leave a margin — lettering that touches the frame reads as
+    # overflow even when it is technically inside.
+    limit_w = max(8, int(box.width * 0.88))
+    limit_h = max(8, int(box.height * 0.90))
+    scale = min(limit_w / block.width, limit_h / block.height)
+    width = max(1, min(limit_w, int(round(block.width * scale))))
+    height = max(1, min(limit_h, int(round(block.height * scale * stretch))))
+    block = block.resize((width, height), Image.LANCZOS)
+
+    layer = Image.new("RGBA", out.size, (0, 0, 0, 0))
+    layer.paste(block, (box.left + (box.width - width) // 2,
+                        box.top + (box.height - height) // 2), block)
+
+    if style.glow:
+        halo = layer.getchannel("A").filter(ImageFilter.GaussianBlur(3))
+        glow_layer = Image.new("RGBA", out.size, style.glow)
+        glow_layer.putalpha(halo.point(lambda v: int(v * 0.55)))
+        out = Image.alpha_composite(out, glow_layer)
+    return Image.alpha_composite(out, layer)
+
+
 def draw_lettering(base: Image.Image, text: str, box: Region, style: InkStyle,
                    *, font_path: str | None = None) -> Image.Image:
     """Draw English in the original's colour, outline and weight."""

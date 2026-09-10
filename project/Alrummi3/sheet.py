@@ -52,9 +52,12 @@ class Asset:
     role: str = ""
     mask: np.ndarray | None = field(default=None, repr=False)
     note: str = ""
+    done: bool = False           # already English; needs nothing
 
     @property
     def ready(self) -> bool:
+        if self.done:
+            return False
         return bool(self.english) and self.mask is not None and self.mask.any()
 
     def describe(self) -> str:
@@ -469,14 +472,39 @@ def find_assets(image: Image.Image, engine, *, layout=None,
     return assets
 
 
-def translate_assets(assets: list[Asset], dictionary: dict) -> list[Asset]:
-    """Fill in the English for each asset from the project dictionary."""
+def translate_assets(assets: list[Asset], dictionary: dict, *,
+                     reletter: bool = False) -> list[Asset]:
+    """Fill in the English for each asset from the project dictionary.
+
+    `reletter` is for a sheet that is already English but badly done — an
+    early machine-translated patch with the wording pasted over the artwork.
+    There is nothing to translate there, so the default reports it as
+    finished; with this set, each asset is rebuilt from the wording already on
+    it, which erases the old lettering properly and redraws it in the artwork's
+    own colour and weight.
+    """
 
     from ocr import resolve_text
+    from project_dict import has_japanese
 
     for asset in assets:
         if not asset.japanese:
             asset.note = asset.note or "no text read"
+            continue
+        # A sheet that has already been done reads back as English. Looking
+        # that up in a Japanese-to-English dictionary can only miss, and
+        # reporting the miss as "no dictionary entry" makes finished work look
+        # like outstanding work.
+        if not has_japanese(asset.japanese):
+            if reletter:
+                # Nothing to translate — redraw the wording that is already
+                # there, which is the point when the existing lettering was
+                # pasted on rather than built into the artwork.
+                asset.english = asset.japanese
+                asset.note = "re-lettered from the wording already on the sheet"
+                continue
+            asset.done = True
+            asset.note = "already English — nothing to do"
             continue
         hit = resolve_text(dictionary, asset.japanese)
         if not hit:
@@ -494,7 +522,7 @@ def rebuild_sheet(image: Image.Image, assets: list[Asset], *,
                   font_path: str | None = None) -> tuple[Image.Image, list[str]]:
     """Regenerate every ready asset in place, leaving the artwork alone."""
 
-    from asset_gen import inpaint, measure_style, draw_lettering
+    from asset_gen import inpaint, measure_style, draw_filled
 
     out = image.convert("RGBA")
     report: list[str] = []
@@ -514,6 +542,6 @@ def rebuild_sheet(image: Image.Image, assets: list[Asset], *,
         inner = style.box or Region(0, 0, box.width, box.height)
         target = Region(box.left + inner.left, box.top + inner.top,
                         box.left + inner.right, box.top + inner.bottom)
-        out = draw_lettering(out, asset.english, target, style, font_path=font_path)
+        out = draw_filled(out, asset.english, target, style, font_path=font_path)
         report.append(f"rebuilt  {asset.describe()}")
     return out, report

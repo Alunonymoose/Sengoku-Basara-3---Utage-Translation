@@ -58,6 +58,7 @@ import layout as layout_mod
 import ocr
 import sheet
 import texture_fx
+import medallion_fx
 from batch import apply_batch, plan_batch
 from project_dict import load_dictionary, load_roster, lookup as dict_lookup, search as dict_search
 from character_map import (
@@ -116,14 +117,22 @@ from ollama_client import LocalAIError, OllamaClient  # noqa: E402
 from ai_extensions import discover_extensions  # noqa: E402
 
 
-def _sheet_audit(name, assets, notes, layout, inventory) -> list[str]:
+def _sheet_audit(name, assets, notes, layout, inventory,
+                 *, relettered: bool = False) -> list[str]:
     """What was found on this sheet, what was rebuilt, and what still needs a
     decision — written so it can be acted on rather than just read."""
 
     ready = [a for a in assets if a.ready]
-    stuck = [a for a in assets if not a.ready]
-    lines = [f"SUGGESTED FIX — {name}", "",
-             "Route: rebuild the sheet asset by asset.", ""]
+    finished = [a for a in assets if a.done]
+    stuck = [a for a in assets if not a.ready and not a.done]
+    route = ("Route: re-letter — this sheet is already English, so its own "
+             "wording was redrawn." if relettered
+             else "Route: rebuild the sheet asset by asset.")
+    lines = [f"SUGGESTED FIX — {name}", "", route, ""]
+    if relettered:
+        lines.append("Use this when an earlier patch pasted its text over the "
+                     "artwork. If the sheet is already good, do not confirm.")
+        lines.append("")
 
     if inventory:
         lines.extend(inventory)
@@ -133,11 +142,23 @@ def _sheet_audit(name, assets, notes, layout, inventory) -> list[str]:
                      "sprites below were found by reading the sheet itself.")
         lines.append("")
 
-    lines.append(f"{len(assets)} asset(s) recognised, {len(ready)} rebuilt in "
-                 f"English.")
+    if finished and not stuck and not ready:
+        lines.append(f"This sheet is already in English — all {len(finished)} "
+                     "asset(s) read back as English text. Nothing to do.")
+        lines.append("")
+        lines.append("If you meant to work on the Japanese original, open the "
+                     "same archive under the jpn tree.")
+        for asset in finished:
+            lines.append(f"  done    {asset.describe()}")
+        return lines
+
+    summary = f"{len(assets)} asset(s) recognised, {len(ready)} rebuilt in English"
+    if finished:
+        summary += f", {len(finished)} already English"
+    lines.append(summary + ".")
     lines.append("")
     for asset in assets:
-        mark = "rebuilt " if asset.ready else "left    "
+        mark = "rebuilt " if asset.ready else ("done    " if asset.done else "left    ")
         lines.append(f"  {mark}{asset.describe()}")
 
     if stuck:
@@ -957,6 +978,9 @@ class Alrummi3App(tk.Tk):
                    command=self.apply_style_all).grid(row=0, column=0, sticky="ew", padx=(0, 3))
         ttk.Button(style_buttons, text="Style selected box",
                    command=self.apply_style_box).grid(row=0, column=1, sticky="ew", padx=(3, 0))
+        ttk.Button(style_buttons, text="Rebuild fortune medallions", style="Accent.TButton",
+                   command=self.rebuild_fortune_medallions).grid(
+                       row=1, column=0, columnspan=2, sticky="ew", pady=(4, 0))
         self.style_status = ttk.Label(create_tab, text="", style="Muted.TLabel", wraplength=330)
         self.style_status.grid(row=23, column=0, sticky="w", pady=(4, 0))
         self.clear_var = tk.BooleanVar(value=False)
@@ -2448,6 +2472,14 @@ class Alrummi3App(tk.Tk):
             assets = sheet.find_assets(source, self._ocr_engine(),
                                        layout=layout, texture_name=name)
             sheet.translate_assets(assets, dictionary)
+            # Re-lettering an already-English sheet is deliberately *not* done
+            # here. Measured on the roulette sheet: the English on a patched
+            # sheet was pasted on rather than drawn into the artwork's opacity
+            # layers, so the mask comes out poor and the rebuild leaves boxy
+            # patches and ghosting — it makes finished work worse. The
+            # `reletter` route exists for a sheet that is genuinely botched;
+            # it has to be asked for, not guessed at.
+            relettered = False
             rebuilt, notes = sheet.rebuild_sheet(source, assets)
             applied = sum(1 for a in assets if a.ready)
             meta = {
@@ -2459,7 +2491,8 @@ class Alrummi3App(tk.Tk):
                 "route": "sheet",
                 "image": rebuilt if applied else None,
                 "meta": meta,
-                "lines": _sheet_audit(name, assets, notes, layout, inventory),
+                "lines": _sheet_audit(name, assets, notes, layout, inventory,
+                                      relettered=relettered),
             })
             return report
 
@@ -2503,6 +2536,45 @@ class Alrummi3App(tk.Tk):
         if self.source_image is not None:
             return self.source_image.copy()
         return None
+
+    def rebuild_fortune_medallions(self) -> None:
+        """Build the three main roulette fortune medallions as one candidate."""
+        base = self._style_base()
+        if base is None:
+            messagebox.showinfo("Alrummi 3", "Select a decodable texture first.")
+            return
+
+        raw = self.translation.get("1.0", "end-1c").strip()
+        labels = ["GREAT LUCK", "GOOD LUCK", "BAD LUCK"]
+        if raw and raw != "English translation / replacement text":
+            if "|" in raw:
+                supplied = [p.strip() for p in raw.split("|") if p.strip()]
+            else:
+                supplied = [p.strip() for p in raw.splitlines() if p.strip()]
+            for index, value in enumerate(supplied[:3]):
+                labels[index] = value.upper()
+
+        try:
+            candidate, meta = medallion_fx.rebuild_fortune_sheet(base, labels)
+        except Exception as exc:
+            messagebox.showerror("Alrummi 3", str(exc))
+            self._set_status(f"Fortune medallion rebuild failed: {exc}")
+            return
+
+        self.donor_replacement = None
+        self.candidate_image = candidate
+        self.candidate_meta = meta
+        self.confirm_var.set(False)
+        self.save_candidate_button.configure(state="normal")
+        self._update_confirm_state()
+        self._draw_preview("candidate")
+        try:
+            self.preview_notebook.select(self.review_tab)
+        except Exception:
+            pass
+        self.style_status.configure(text="Rebuilt GREAT / GOOD / BAD LUCK medallions. Review the candidate.")
+        self.output_label.configure(text="Medallions rebuilt. Review, tick confirmation, then write the new ARC.")
+        self._set_status("Fortune medallion candidate generated. Source ARC remains untouched.")
 
     def apply_style_all(self) -> None:
         base = self._style_base()
