@@ -1,0 +1,12 @@
+﻿Sengoku BASARA 3 Utage Translation Project
+
+Last automated GitHub backup:
+2026-09-10 11:36:36
+
+Source:
+E:\Utage Patching New
+
+Machine:
+LAPTOP
+
+Retail game binaries and asset formats are intentionally excluded.

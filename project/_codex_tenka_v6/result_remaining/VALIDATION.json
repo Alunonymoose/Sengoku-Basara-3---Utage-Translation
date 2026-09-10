@@ -1,0 +1,375 @@
+{
+  "status": "pass",
+  "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc",
+  "archives": [
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl004.arc",
+      "name": "Toshiie Maeda",
+      "changed_entries": [
+        2,
+        4
+      ],
+      "dimensions": [
+        [
+          256,
+          128
+        ],
+        [
+          1024,
+          128
+        ]
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl006.arc",
+      "name": "Kenshin Uesugi",
+      "changed_entries": [
+        2,
+        4
+      ],
+      "dimensions": [
+        [
+          256,
+          128
+        ],
+        [
+          1024,
+          128
+        ]
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl007.arc",
+      "name": "Naotora Ii",
+      "changed_entries": [
+        2,
+        4
+      ],
+      "dimensions": [
+        [
+          256,
+          128
+        ],
+        [
+          1024,
+          128
+        ]
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl016.arc",
+      "name": "Muneshige Tachibana",
+      "changed_entries": [
+        2,
+        4
+      ],
+      "dimensions": [
+        [
+          256,
+          128
+        ],
+        [
+          1024,
+          128
+        ]
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl017.arc",
+      "name": "Hideaki Kobayakawa",
+      "changed_entries": [
+        2,
+        4
+      ],
+      "dimensions": [
+        [
+          256,
+          128
+        ],
+        [
+          1024,
+          128
+        ]
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl018.arc",
+      "name": "Yoshiaki Mogami",
+      "changed_entries": [
+        2,
+        4
+      ],
+      "dimensions": [
+        [
+          256,
+          128
+        ],
+        [
+          1024,
+          128
+        ]
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl019.arc",
+      "name": "Tenkai",
+      "changed_entries": [
+        2,
+        4
+      ],
+      "dimensions": [
+        [
+          256,
+          128
+        ],
+        [
+          1024,
+          128
+        ]
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl020.arc",
+      "name": "Kenshin Uesugi",
+      "changed_entries": [
+        2,
+        4
+      ],
+      "dimensions": [
+        [
+          256,
+          128
+        ],
+        [
+          1024,
+          128
+        ]
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl021.arc",
+      "name": "Kasuga",
+      "changed_entries": [
+        2,
+        4
+      ],
+      "dimensions": [
+        [
+          256,
+          128
+        ],
+        [
+          1024,
+          128
+        ]
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl022.arc",
+      "name": "Sasuke Sarutobi",
+      "changed_entries": [
+        2,
+        4
+      ],
+      "dimensions": [
+        [
+          256,
+          128
+        ],
+        [
+          1024,
+          128
+        ]
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl023.arc",
+      "name": "Kojiro Katakura",
+      "changed_entries": [
+        2,
+        4
+      ],
+      "dimensions": [
+        [
+          256,
+          128
+        ],
+        [
+          1024,
+          128
+        ]
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl024.arc",
+      "name": "Matsu",
+      "changed_entries": [
+        2,
+        4
+      ],
+      "dimensions": [
+        [
+          256,
+          128
+        ],
+        [
+          1024,
+          128
+        ]
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl025.arc",
+      "name": "Toshiie Maeda",
+      "changed_entries": [
+        2,
+        4
+      ],
+      "dimensions": [
+        [
+          256,
+          128
+        ],
+        [
+          1024,
+          128
+        ]
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl026.arc",
+      "name": "Ujiyasu Hojo",
+      "changed_entries": [
+        2,
+        4
+      ],
+      "dimensions": [
+        [
+          256,
+          128
+        ],
+        [
+          1024,
+          128
+        ]
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl027.arc",
+      "name": "Shingen Takeda",
+      "changed_entries": [
+        2,
+        4
+      ],
+      "dimensions": [
+        [
+          256,
+          128
+        ],
+        [
+          1024,
+          128
+        ]
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl028.arc",
+      "name": "Hisahide Matsunaga",
+      "changed_entries": [
+        2,
+        4
+      ],
+      "dimensions": [
+        [
+          256,
+          128
+        ],
+        [
+          1024,
+          128
+        ]
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl029.arc",
+      "name": "Sorin Otomo",
+      "changed_entries": [
+        2,
+        4
+      ],
+      "dimensions": [
+        [
+          256,
+          128
+        ],
+        [
+          1024,
+          128
+        ]
+      ]
+    }
+  ],
+  "generated_resources": [
+    "pl004_entry_2.png",
+    "pl004_entry_4.png",
+    "pl006_entry_2.png",
+    "pl006_entry_4.png",
+    "pl007_entry_2.png",
+    "pl007_entry_4.png",
+    "pl016_entry_2.png",
+    "pl016_entry_4.png",
+    "pl017_entry_2.png",
+    "pl017_entry_4.png",
+    "pl018_entry_2.png",
+    "pl018_entry_4.png",
+    "pl019_entry_2.png",
+    "pl019_entry_4.png",
+    "pl020_entry_2.png",
+    "pl020_entry_4.png",
+    "pl021_entry_2.png",
+    "pl021_entry_4.png",
+    "pl022_entry_2.png",
+    "pl022_entry_4.png",
+    "pl023_entry_2.png",
+    "pl023_entry_4.png",
+    "pl024_entry_2.png",
+    "pl024_entry_4.png",
+    "pl025_entry_2.png",
+    "pl025_entry_4.png",
+    "pl026_entry_2.png",
+    "pl026_entry_4.png",
+    "pl027_entry_2.png",
+    "pl027_entry_4.png",
+    "pl028_entry_2.png",
+    "pl028_entry_4.png",
+    "pl029_entry_2.png",
+    "pl029_entry_4.png",
+    "remaining_result_contact_sheet.png"
+  ],
+  "scope": {
+    "modified_game_files": [
+      "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl004.arc",
+      "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl006.arc",
+      "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl007.arc",
+      "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl016.arc",
+      "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl017.arc",
+      "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl018.arc",
+      "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl019.arc",
+      "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl020.arc",
+      "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl021.arc",
+      "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl022.arc",
+      "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl023.arc",
+      "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl024.arc",
+      "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl025.arc",
+      "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl026.arc",
+      "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl027.arc",
+      "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl028.arc",
+      "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl029.arc"
+    ],
+    "modified_entries": "entry 2 (256x128 name) and entry 4 (1024x128 result title)",
+    "excluded": [
+      "pause archives",
+      "non-result archives"
+    ]
+  }
+}

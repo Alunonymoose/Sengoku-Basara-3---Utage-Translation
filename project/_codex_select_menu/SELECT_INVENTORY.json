@@ -1,0 +1,4041 @@
+[
+  {
+    "archive": "c_common.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\waza2\\waza2_000_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "a1e313e14bacb24860d98a056d8859fa950519136fb137f4eff0945ebebd55be",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__000__waza2_000_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 1,
+    "name": "id\\texture\\jpn\\waza2\\waza2_001_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "11fcf00832a551330ab349fc18a67d5d2d455c6b07988b600de6cd60a786f011",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__001__waza2_001_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\waza2\\waza2_002_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "e45f647fa44a0134f2d06a7bd9c5020a6d5b9c207f47ebb7528f40abe9d3a799",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__002__waza2_002_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 3,
+    "name": "id\\texture\\jpn\\waza2\\waza2_003_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "e46b17c15419df257c80df5b843c021ef689303dfda2093984d53b4d5ac4062f",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__003__waza2_003_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 4,
+    "name": "id\\texture\\jpn\\waza2\\waza2_004_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "a87947037287cf151938de6b4035d7869b624da3e2f2b8d3f5262307e2ce3fe7",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__004__waza2_004_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 5,
+    "name": "id\\texture\\jpn\\waza2\\waza2_005_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "28fa98b326c4835aa885865b8eb143f6b45d2294a9881b3495de69110588ca96",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__005__waza2_005_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 6,
+    "name": "id\\texture\\jpn\\waza2\\waza2_006_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "a6133d93fcc83e53085f932b97cf770a63548cb36ebbaf3b573003277940e963",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__006__waza2_006_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 7,
+    "name": "id\\texture\\jpn\\waza2\\waza2_007_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "cff1e1fc96be19ed29391b5be00c0debe1dcc3783d5b392d10e41da3b4bcd6b2",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__007__waza2_007_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 8,
+    "name": "id\\texture\\jpn\\waza2\\waza2_008_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "7efc2e21171ba69cab7da5ddf81339eb56fefae91d65a1336d1f5822e28d90dc",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__008__waza2_008_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 9,
+    "name": "id\\texture\\jpn\\waza2\\waza2_009_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "a7f1361504e7a36d7b464cb278e31fd671d867e7faac5fcefa902fa9f03f07fd",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__009__waza2_009_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 10,
+    "name": "id\\texture\\jpn\\waza2\\waza2_010_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "be25364095563a6a39d4e552799878c410daa112c6a9b4d78c2aee43c1712167",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__010__waza2_010_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 11,
+    "name": "id\\texture\\jpn\\waza2\\waza2_011_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "61069a2e1a58b98c4b1c703e2bcb43010c057ee3a76a17eddbfaa6355ba52066",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__011__waza2_011_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 12,
+    "name": "id\\texture\\jpn\\waza2\\waza2_012_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "728a98573c242b5d721ed9c61d301d854a8534001b1fc5a389292aaaed52b176",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__012__waza2_012_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 13,
+    "name": "id\\texture\\jpn\\waza2\\waza2_013_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "3467610de19a01ca8a86a1c15d22cc307b9cf07733a2cc3fae5ebd7912dc97c3",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__013__waza2_013_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 14,
+    "name": "id\\texture\\jpn\\waza2\\waza2_014_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "175606a542a832d6cc88fd9d5b26baba75bb87e097ffc9bc2e593ec923445b24",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__014__waza2_014_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 15,
+    "name": "id\\texture\\jpn\\waza2\\waza2_015_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "45be675e2190f5d4b9deb25557306532112913eba169f481e0a6fac3a160c9ac",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__015__waza2_015_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 16,
+    "name": "id\\texture\\jpn\\waza2\\waza2_016_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "3e8a85772b5696a58ca3e32c79a23aa0393c497a9cd6674f91925462a1c63e35",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__016__waza2_016_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 17,
+    "name": "id\\texture\\jpn\\waza2\\waza2_017_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "a817ac0b8b152b0492601bca7d54fb3f0cd79c345b81ac2b96f309f1003249a7",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__017__waza2_017_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 18,
+    "name": "id\\texture\\jpn\\waza2\\waza2_018_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "f1b70c0862a49c349a122cb9fc426acf10322de47ffca24ce076c04b62e7a390",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__018__waza2_018_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 19,
+    "name": "id\\texture\\jpn\\waza2\\waza2_019_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "6ca6abf5cc37b770698e7361f8d98aff8f83bb586bf4d874e9dfd937df2689f5",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__019__waza2_019_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 20,
+    "name": "id\\texture\\jpn\\waza2\\waza2_020_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "132c27fc1dac961156015388ca7866412904aaf5ec3e086f99563d4b10622cc7",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__020__waza2_020_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 21,
+    "name": "id\\texture\\jpn\\waza2\\waza2_021_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "de971e23d066d348827aeda1525b651ca0d73018c8031e4b8822366faec22a26",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__021__waza2_021_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 22,
+    "name": "id\\texture\\jpn\\waza2\\waza2_022_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "e94cd31a2dea31613a8bb65cb5860441394685a1eee483b6eb6afc105616d3d9",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__022__waza2_022_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 23,
+    "name": "id\\texture\\jpn\\waza2\\waza2_023_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "fd82f1a0fcd208ec1efa7107816e00b59ab50353e26a4f81f926bf5789794226",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__023__waza2_023_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 24,
+    "name": "id\\texture\\jpn\\waza2\\waza2_024_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "5a291398818e97881271f924a224be102b7554c45aee39a0c267378c8c133198",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__024__waza2_024_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 25,
+    "name": "id\\texture\\jpn\\waza2\\waza2_025_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "96e0d8580e41eca007eb86486fe10ad1c5ab2fceda037f548a956d7f3cf6104e",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__025__waza2_025_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 26,
+    "name": "id\\texture\\jpn\\waza2\\waza2_026_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "9d8675c696570e201353618e2b62eefd864770bbb1883a8ba2e03e0cf8e25439",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__026__waza2_026_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 27,
+    "name": "id\\texture\\jpn\\waza2\\waza2_027_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "453f42426c325aa3ab2c4c2906881af4a4c381340fc924999e266ea42831e1a6",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__027__waza2_027_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 28,
+    "name": "id\\texture\\jpn\\waza2\\waza2_028_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "7a4c5652fee9812959dcdfa4fdc4239b81bb30e802f89dfcf6a189dbfe87a9e8",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__028__waza2_028_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 29,
+    "name": "id\\texture\\jpn\\waza2\\waza2_029_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "4a5fe33bdaa90488ed9db392bccf372b1bb7e9a57bda376218e38f7c317fd7c5",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__029__waza2_029_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 30,
+    "name": "id\\texture\\jpn\\waza2\\waza2_que_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "914c3e6ecd5654f67de1cc185dfc48bfef95f32af1934dba68ba7f311c40168c",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__030__waza2_que_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 31,
+    "name": "id\\texture\\jpn\\quest\\quest_000_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "abd2afb82d1026a270302b336fdf5a0be8adae60c83e795e486be8729bd0e49d",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__031__quest_000_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 32,
+    "name": "id\\texture\\jpn\\quest\\quest_001_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "ab782c43b36167c2e043448083f101797dbd17650c810098904d150c6f626059",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__032__quest_001_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 33,
+    "name": "id\\texture\\jpn\\quest\\quest_002_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "075b260e7be5f858356b79761435bfc020322209458885364a4518213ee710b7",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__033__quest_002_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 34,
+    "name": "id\\texture\\jpn\\quest\\quest_003_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "9599c640399db76855cc30b4dacc93c969f25d5b4ef14c7e96d5e77763d00c6b",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__034__quest_003_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 35,
+    "name": "id\\texture\\jpn\\quest\\quest_004_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "eb28f80838d85e80a4c011af05d6328f818e3a78f1f41eab5023366ef1e5dde7",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__035__quest_004_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 36,
+    "name": "id\\texture\\jpn\\quest\\quest_005_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "d68747307af8c267e31d199898bcd6b49f638874fd49fcb97eb54357658a099a",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__036__quest_005_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 37,
+    "name": "id\\texture\\jpn\\quest\\quest_006_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "b161db1133698ca69c92b0cb20e7dfe9683f12d6cad92cda802a2302c5dd64d7",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__037__quest_006_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 38,
+    "name": "id\\texture\\jpn\\quest\\quest_007_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "bb837c9b8b364875babdc4aa1f7b85eeead9e1024b8765d124b7b832722ed809",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__038__quest_007_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 39,
+    "name": "id\\texture\\jpn\\quest\\quest_008_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "1db3a9b2f34dda0c1f60a48d58ee90b9e68f327d9157da5f9fa303ff41cef376",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__039__quest_008_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 40,
+    "name": "id\\texture\\jpn\\quest\\quest_009_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "22c0ac2b36585b0641680dc6b51939f64d0512856cf0dfc076d3d4f5cd68bfc0",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__040__quest_009_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 41,
+    "name": "id\\texture\\jpn\\quest\\quest_010_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "9ac9246ccb3eac4d1b3c64dda5cd8f1ab91f3ddb5e5e2d7d3c844f994ddd3bc6",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__041__quest_010_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 42,
+    "name": "id\\texture\\jpn\\quest\\quest_011_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "6624733b73145c4d44913c8b8c480efc713afa5e75e15a7213f00241d9e32d0e",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__042__quest_011_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 43,
+    "name": "id\\texture\\jpn\\quest\\quest_012_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "57b04bd82f60fc58ee54929b04b64d56cd9c191166714c7683b9713f4d366beb",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__043__quest_012_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 44,
+    "name": "id\\texture\\jpn\\quest\\quest_013_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "371810119075f7037970c66a7a01d1ed6112025967c0579060be7d236953645a",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__044__quest_013_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 45,
+    "name": "id\\texture\\jpn\\quest\\quest_014_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "be9619c9b3ba0efcc009888b33911ffbddff29324537687a542c4e8b2db3d7ff",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__045__quest_014_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 46,
+    "name": "id\\texture\\jpn\\quest\\quest_015_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "010df0ee8c72d734882fec344f92692067f6d3926581a6998924667e772d10cd",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__046__quest_015_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 47,
+    "name": "id\\texture\\jpn\\quest\\quest_016_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "bed6a7613b1bab07efddfee5b7e9eb7750f30f5014dbb2732c5f1c367a53c3b1",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__047__quest_016_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 48,
+    "name": "id\\texture\\jpn\\quest\\quest_017_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "da46bbb6fd50f1d219756717d9445581faf22f66206f768f7fe7dc0a7fc07450",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__048__quest_017_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 49,
+    "name": "id\\texture\\jpn\\quest\\quest_018_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "28f31ec3a545e8db5bad712a3b2dfa09ddc2f3cf7624ac2ef87802a17087d97b",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__049__quest_018_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 50,
+    "name": "id\\texture\\jpn\\quest\\quest_019_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "586c55f56605a664b70ed018c39462a77a1189806b6cf18b19997a63c54a12fe",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__050__quest_019_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 51,
+    "name": "id\\texture\\jpn\\quest\\quest_020_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "05aae270de9e32bf050be843bd518903455b39b48fa567c97e6e15f3718224e6",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__051__quest_020_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 52,
+    "name": "id\\texture\\jpn\\quest\\quest_021_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "a3eb87758a7eaf80c7e6bdc71765b6930b046f426a9dd542ac6cccf851d812f6",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__052__quest_021_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 53,
+    "name": "id\\texture\\jpn\\quest\\quest_022_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "98b74ceb4473be60b848d191ab2b2ccfac276e6561360dd8e70f787e7c1830d5",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__053__quest_022_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 54,
+    "name": "id\\texture\\jpn\\quest\\quest_023_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "c9e7f01f89d9ed9da36e831b75ac9c339937d55600e6bab9175f64fd8ab55741",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__054__quest_023_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 55,
+    "name": "id\\texture\\jpn\\quest\\quest_024_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "560d6d8de8913b11c72ebb62bdcea9ea3e615114c28e96bba76cddc296033378",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__055__quest_024_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 56,
+    "name": "id\\texture\\jpn\\quest\\quest_025_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "71c212434fb757b5d5923f3c6f826cc74470cfe34f977886e154d1284f69fe23",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__056__quest_025_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 57,
+    "name": "id\\texture\\jpn\\quest\\quest_026_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "ffabd1c39ee530ff626a1cb0f1239c3174846fb89629ed1d71fe906b1980a73a",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__057__quest_026_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 58,
+    "name": "id\\texture\\jpn\\quest\\quest_027_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "e547b5be6d7feaef78936ca413bdacb0874b89d85b5f23e6968e4ba775bdd87d",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__058__quest_027_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 59,
+    "name": "id\\texture\\jpn\\quest\\quest_028_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "1260279aca7b04150e60d2e307b6884fb89f59ab01055862c10d464ef58163e9",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__059__quest_028_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 60,
+    "name": "id\\texture\\jpn\\quest\\quest_029_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "8c35f9d9892adf02d4136cfe4b1fc23166cb2a0d59410b5bd92e3351fb0e3d0a",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__060__quest_029_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 61,
+    "name": "id\\texture\\jpn\\quest\\quest_030_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "842055a548430261064d67c936fd552e08c6da82021146d95b8ded956b0a0149",
+    "info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__061__quest_030_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 62,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_001_ID_HQ",
+    "type": "241F5DEB",
+    "size": 1048596,
+    "sha256": "d6c255d8fc76183f155b4cc750d049da2a49df00183d74d22aec35baaa22bd25",
+    "info": {
+      "width": 1024,
+      "height": 1024,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 1048576
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__062__charasele_00_001_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 63,
+    "name": "id\\dummy_BM",
+    "type": "241F5DEB",
+    "size": 1044,
+    "sha256": "9d7cb667dd3388c63626dd8ff8049d76af00e423f462e787a3bf1f69585cb91d",
+    "info": {
+      "width": 32,
+      "height": 32,
+      "texture_offset": 20,
+      "format_code": 23,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 1024
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__063__dummy_BM.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 64,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_002_ID_HQ",
+    "type": "241F5DEB",
+    "size": 1048596,
+    "sha256": "9c782a760549418ebc99880c225773266d040b73e627241660844363da7b2f11",
+    "info": {
+      "width": 1024,
+      "height": 1024,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 1048576
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__064__charasele_00_002_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 65,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": "241F5DEB",
+    "size": 1048596,
+    "sha256": "46814d482874156c5d65a0f4f1f477e6e9a14d3b1dec71c593f7b86e2cc55bd1",
+    "info": {
+      "width": 1024,
+      "height": 1024,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 1048576
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__065__charasele_00_000_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 66,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_003_ID_HQ",
+    "type": "241F5DEB",
+    "size": 1048596,
+    "sha256": "b63500b748444f74a65ed86174c18b615f7f4673e0a608dcbf7129f5673c3420",
+    "info": {
+      "width": 1024,
+      "height": 1024,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 1048576
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__066__charasele_00_003_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 67,
+    "name": "id\\texture\\jpn\\common\\common_008_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "04395dc7f87be25bb0d3400c71879805ee2bad49abf0e65212dd269c3f6faf01",
+    "info": {
+      "width": 256,
+      "height": 256,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__067__common_008_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 68,
+    "name": "id\\texture\\jpn\\common\\common_014_ID_HQ",
+    "type": "241F5DEB",
+    "size": 131092,
+    "sha256": "0d70edcb1314c08e398bcf2ab6d072ea26d837cb4b5a071883e7b9a6f5738cfe",
+    "info": {
+      "width": 512,
+      "height": 256,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 131072
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__068__common_014_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 69,
+    "name": "id\\texture\\jpn\\common\\common_015_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "52867e62127602bd2bcc601988b01a5f00397b33c1a8cee32b8beaf3ab03e570",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__069__common_015_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 70,
+    "name": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "bbf1b3c2d3c3f125caecd601666c671bcba6a01fbf319a8adb49985424223602",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__070__common_010_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 71,
+    "name": "id\\texture\\jpn\\common\\common_016_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "f55b2d995db3d4827b565406c5de3ae60264d8e203ad1babe4232b82dd6c055f",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__071__common_016_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 72,
+    "name": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "d4e81595cc300bbf36325b3996d921a779b31efac10442521a1a27ea7e4fd83c",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__072__common_009_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 73,
+    "name": "id\\texture\\jpn\\charasele_02\\charasele_02_qqq_ID_HQ",
+    "type": "241F5DEB",
+    "size": 131092,
+    "sha256": "14bf5c7aaea3ccae559adfe06f14c72c77989d251ab49b025a6b3c157836f1f6",
+    "info": {
+      "width": 1024,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 131072
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__073__charasele_02_qqq_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 74,
+    "name": "id\\texture\\jpn\\common\\common_025_ID_HQ",
+    "type": "241F5DEB",
+    "size": 8212,
+    "sha256": "5674b195cab5d13c73aa75473556489a2c36f214de7c07a7568deeef8d3be8ef",
+    "info": {
+      "width": 64,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 8192
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__074__common_025_ID_HQ.png"
+  },
+  {
+    "archive": "c_common.arc",
+    "index": 75,
+    "name": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "type": "60DD1B16",
+    "size": 249828,
+    "sha256": "a2a41762307698c9a2fe323feff49b331c429fd01e51941e08b7a6be251b8fec",
+    "lsp": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_common__075__charasele_hanyo.lsp"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_000_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "ef9137e90f3421c278b71c8ad1f5730b960639dd30a481311232ea2347e26484",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__000__cp_name_pl_000_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 1,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_001_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "064201e2ff99240a65c7e83dc37ecdb885eb257c781148c866482da62c190243",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__001__cp_name_pl_001_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_002_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "b8914d875b890593e89c6bcb083842d8de38932c8455a187731b85d65f97cf9d",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__002__cp_name_pl_002_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 3,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_003_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "744cd48171adf48b8f4dcb83c249144b9a7b52a1f5929d8c43104ed7c097c2a2",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__003__cp_name_pl_003_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 4,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_004_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "51a7c11e5e548ddcd0e1eeb3f57c3298b909048b00e710dbc1cd85309308a6c3",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__004__cp_name_pl_004_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 5,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_005_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "a6a68b28c29afb6b1c6c2e326080a22b746711f58d30e1b4bedd7b0104616778",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__005__cp_name_pl_005_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 6,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_006_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "25d4f40c6681fb4b8a41d3b189f09162252ea3526800b70ba35376a9716946b3",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__006__cp_name_pl_006_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 7,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_007_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "be099658a1de359921cfe151807c7c1603bc390a21da6a26a72d38559620212f",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__007__cp_name_pl_007_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 8,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_008_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "1bd62f468082bcb95db93e9ea3cc49e00d1b05395d8abfc5d0e4b448c8c50fdb",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__008__cp_name_pl_008_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 9,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_009_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "6c8e5277b729619d8b264afafa52d4996cc0cdbb6ac6764bfe5847b660c242fd",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__009__cp_name_pl_009_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 10,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_010_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "03d98657c1b47081f88c25e76dc493d2e1af3e418dc30b7510bf245bdc634a39",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__010__cp_name_pl_010_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 11,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_011_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "ffd53329be2f0be12b33ecd56e690e027a52de238056d63637591243de093837",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__011__cp_name_pl_011_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 12,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_012_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "931d6d91523854ddf52593e1bd38ff3ea0b2d301dd670e0b032c1f5009e4dfdf",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__012__cp_name_pl_012_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 13,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_013_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "e7e160d12a1beaf0bf80890491f73ad98954b7b9d953d4d6020bc6fdf999a59b",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__013__cp_name_pl_013_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 14,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_014_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "f8532864d34ecf1b59bd685aa0d0642bd3f7024dacab7fef6b125b744423cc85",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__014__cp_name_pl_014_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 15,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_015_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "755c951596065f751e73ef49a237b0c76024e0b10ab49b59702ebe3f95a041fc",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__015__cp_name_pl_015_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 16,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_016_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "774ff17eba4a34406de12e7024e178f099c87dc651ce213b2a5609c0cf6662ca",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__016__cp_name_pl_016_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 17,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_017_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "ce837071c333ee87fd9f9bf7e37ee933d2dcce21fad809e84883068a3e99c092",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__017__cp_name_pl_017_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 18,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_018_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "ce414a585a0e9e39edecab1b5c00c629b7ab7b23339c4ae6f5c65ed3f1781919",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__018__cp_name_pl_018_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 19,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_019_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "9bb4fe8503d4e5415725650f0d1f22244a23ee7b9d6d87b6ce026910aed8def5",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__019__cp_name_pl_019_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 20,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_020_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "7441e6dc8fdb72998adb5037907088b0440f0f1c8d5de757ff2626ebd701e6e0",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__020__cp_name_pl_020_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 21,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_021_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "e4d4f6e70039f1800f97bdb56f748b65f427c33f314e9f0e7513d1a5d4731c75",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__021__cp_name_pl_021_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 22,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_022_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "3159f292135a75b761b954e59edb1ac86f94195523649a42f092539b18a0b853",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__022__cp_name_pl_022_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 23,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_023_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "9a097ab012fab2135403a9fb0889ce63442fb81f1315ba0a9d1c166941679ae3",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__023__cp_name_pl_023_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 24,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_024_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "851fba3433174d2e25e2c106b632bee9eac038243e90360ca3d01d37ff212cc5",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__024__cp_name_pl_024_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 25,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_025_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "1c1d38d25bac44370a9c32e9ac50065d9fbbe45ceefbcbf73b1fd9dc6da60af5",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__025__cp_name_pl_025_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 26,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_026_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "3d027e1c3e68c6660b6bdf363408d30b04a7a3d7b25e0c1b578ba1a0e3be0fed",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__026__cp_name_pl_026_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 27,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_027_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "65180d9d4d6b2a6b6a26b71740a1760c2b0ffa5d1843446bff6cd5004f70e44a",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__027__cp_name_pl_027_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 28,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_028_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "5105c64060687428efa7dee6fed73f64b1c59d13b732d339f844d306762c8403",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__028__cp_name_pl_028_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 29,
+    "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_029_ID_HQ",
+    "type": "241F5DEB",
+    "size": 16404,
+    "sha256": "689e4dff066f29cda9865ca8f0419198ca587fc027e72ff66d50b35080b72acd",
+    "info": {
+      "width": 256,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 16384
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__029__cp_name_pl_029_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 30,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": "241F5DEB",
+    "size": 1048596,
+    "sha256": "12d16714826f5bc4b6bc749d368e95271e234a1660f735baf7d626107fe701a3",
+    "info": {
+      "width": 1024,
+      "height": 1024,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 1048576
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__030__charasele_00_000_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 31,
+    "name": "id\\texture\\jpn\\charasele_05\\charasele_05_003_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "84393dd5a6fe470ac0bdcd972f4442fc7526b22f24cd48cb9104bd0128614b75",
+    "info": {
+      "width": 256,
+      "height": 256,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__031__charasele_05_003_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 32,
+    "name": "id\\dummy_BM",
+    "type": "241F5DEB",
+    "size": 1044,
+    "sha256": "9d7cb667dd3388c63626dd8ff8049d76af00e423f462e787a3bf1f69585cb91d",
+    "info": {
+      "width": 32,
+      "height": 32,
+      "texture_offset": 20,
+      "format_code": 23,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 1024
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__032__dummy_BM.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 33,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_002_ID_HQ",
+    "type": "241F5DEB",
+    "size": 1048596,
+    "sha256": "dc9f8bca7dd99f8d429ae62a1fbe69d10d6cad4bff7d7fbc9c163d11c5a691c2",
+    "info": {
+      "width": 1024,
+      "height": 1024,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 1048576
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__033__charasele_00_002_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 34,
+    "name": "id\\texture\\jpn\\charasele_05\\charasele_05_000_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "1dd1e184c540d5c8f88a934edb8b0d541401e0c5e807d4ab0d2c612569805c59",
+    "info": {
+      "width": 256,
+      "height": 256,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__034__charasele_05_000_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 35,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_003_ID_HQ",
+    "type": "241F5DEB",
+    "size": 1048596,
+    "sha256": "b63500b748444f74a65ed86174c18b615f7f4673e0a608dcbf7129f5673c3420",
+    "info": {
+      "width": 1024,
+      "height": 1024,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 1048576
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__035__charasele_00_003_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 36,
+    "name": "id\\texture\\jpn\\charasele_05\\charasele_05_001_ID_HQ",
+    "type": "241F5DEB",
+    "size": 524308,
+    "sha256": "776768e9f49a46016b62559ec28cc6d4e1f8ef5bd7216743b93f1e6cc3dbc0ca",
+    "info": {
+      "width": 1024,
+      "height": 512,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 524288
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__036__charasele_05_001_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 37,
+    "name": "id\\texture\\jpn\\charasele_05\\charasele_05_002_ID_HQ",
+    "type": "241F5DEB",
+    "size": 1048596,
+    "sha256": "1ba1d231d8006d786ee97748122f8ea9b339e2c65e7f2fc41cb55000fd7fa7cc",
+    "info": {
+      "width": 1024,
+      "height": 1024,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 1048576
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__037__charasele_05_002_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 38,
+    "name": "id\\texture\\jpn\\charasele_05\\charasele_05_004_ID_HQ",
+    "type": "241F5DEB",
+    "size": 524308,
+    "sha256": "ff9f3f765e93ebee85b6dad59f89ff17cf05ebf2b8eb915ff6ac2719b9d69a2f",
+    "info": {
+      "width": 1024,
+      "height": 512,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 524288
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__038__charasele_05_004_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 39,
+    "name": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "d5ad173b329e42eb0ad235e349f04fa7e25cea7747c26aa94f948d5c96ca5cb7",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__039__common_009_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 40,
+    "name": "id\\texture\\jpn\\common\\common_016_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "3b181582b2d2e9c04db283766b7f2913c0332b513e2f917dd3b5e7e126af7c53",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__040__common_016_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 41,
+    "name": "id\\texture\\jpn\\common\\common_014_ID_HQ",
+    "type": "241F5DEB",
+    "size": 131092,
+    "sha256": "0fec820c4c4b9bd88b517d93bc62c38b930f23838bc92882fc815667ad517b14",
+    "info": {
+      "width": 512,
+      "height": 256,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 131072
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__041__common_014_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 42,
+    "name": "id\\texture\\jpn\\common\\common_008_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "04395dc7f87be25bb0d3400c71879805ee2bad49abf0e65212dd269c3f6faf01",
+    "info": {
+      "width": 256,
+      "height": 256,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__042__common_008_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 43,
+    "name": "id\\texture\\jpn\\common\\common_015_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "52867e62127602bd2bcc601988b01a5f00397b33c1a8cee32b8beaf3ab03e570",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__043__common_015_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 44,
+    "name": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "bbf1b3c2d3c3f125caecd601666c671bcba6a01fbf319a8adb49985424223602",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__044__common_010_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 45,
+    "name": "id\\texture\\jpn\\charasele_05\\charasele_05_005_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "dc65190c976c9d470de351a896c31dc6d7b80337bf506e79e21564a19656f191",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__045__charasele_05_005_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 46,
+    "name": "id\\texture\\jpn\\common\\common_025_ID_HQ",
+    "type": "241F5DEB",
+    "size": 8212,
+    "sha256": "5674b195cab5d13c73aa75473556489a2c36f214de7c07a7568deeef8d3be8ef",
+    "info": {
+      "width": 64,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 8192
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__046__common_025_ID_HQ.png"
+  },
+  {
+    "archive": "c_story.arc",
+    "index": 47,
+    "name": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "type": "60DD1B16",
+    "size": 212648,
+    "sha256": "82cbb1bb9f5eef45cfc3dd48b018b1de5d57f9724b4fb4a2d6616931bb8ee28b",
+    "lsp": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_story__047__charasele_story.lsp"
+  },
+  {
+    "archive": "c_versus.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_004_ID_HQ",
+    "type": "241F5DEB",
+    "size": 1048596,
+    "sha256": "9afcaac2ce0871db7a5c70f2b378e331fe37f3d12d2af61b999b44d3d8ba0cff",
+    "info": {
+      "width": 1024,
+      "height": 1024,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 1048576
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_versus__000__charasele_00_004_ID_HQ.png"
+  },
+  {
+    "archive": "c_versus.arc",
+    "index": 1,
+    "name": "id\\dummy_BM",
+    "type": "241F5DEB",
+    "size": 1044,
+    "sha256": "9d7cb667dd3388c63626dd8ff8049d76af00e423f462e787a3bf1f69585cb91d",
+    "info": {
+      "width": 32,
+      "height": 32,
+      "texture_offset": 20,
+      "format_code": 23,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 1024
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_versus__001__dummy_BM.png"
+  },
+  {
+    "archive": "c_versus.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_001_ID_HQ",
+    "type": "241F5DEB",
+    "size": 1048596,
+    "sha256": "108b26687c787d00a6e89c353fa5bdd6c54a56d4e68d6bb8d8b013e320e04d85",
+    "info": {
+      "width": 1024,
+      "height": 1024,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 1048576
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_versus__002__charasele_00_001_ID_HQ.png"
+  },
+  {
+    "archive": "c_versus.arc",
+    "index": 3,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_002_ID_HQ",
+    "type": "241F5DEB",
+    "size": 1048596,
+    "sha256": "dc9f8bca7dd99f8d429ae62a1fbe69d10d6cad4bff7d7fbc9c163d11c5a691c2",
+    "info": {
+      "width": 1024,
+      "height": 1024,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 1048576
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_versus__003__charasele_00_002_ID_HQ.png"
+  },
+  {
+    "archive": "c_versus.arc",
+    "index": 4,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_qqq_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "643ec70c92628a488e38af5b11dbc7a9a063cb57a14fcf49fb918569acbc94d7",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_versus__004__charasele_04_qqq_ID_HQ.png"
+  },
+  {
+    "archive": "c_versus.arc",
+    "index": 5,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_006_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "e06581ab2e7d2ace7b7884294ff1d8328b6bd684b265a39a5daf1c0f46445bf6",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_versus__005__charasele_03_006_ID_HQ.png"
+  },
+  {
+    "archive": "c_versus.arc",
+    "index": 6,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_015_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "e0cd8d2e5f4848fc452e260b85515100560e42d8f073e173960d7d1134c15d74",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_versus__006__charasele_03_015_ID_HQ.png"
+  },
+  {
+    "archive": "c_versus.arc",
+    "index": 7,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": "241F5DEB",
+    "size": 1048596,
+    "sha256": "12d16714826f5bc4b6bc749d368e95271e234a1660f735baf7d626107fe701a3",
+    "info": {
+      "width": 1024,
+      "height": 1024,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 1048576
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_versus__007__charasele_00_000_ID_HQ.png"
+  },
+  {
+    "archive": "c_versus.arc",
+    "index": 8,
+    "name": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "bbf1b3c2d3c3f125caecd601666c671bcba6a01fbf319a8adb49985424223602",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_versus__008__common_010_ID_HQ.png"
+  },
+  {
+    "archive": "c_versus.arc",
+    "index": 9,
+    "name": "id\\texture\\jpn\\common\\common_001_ID_HQ",
+    "type": "241F5DEB",
+    "size": 131092,
+    "sha256": "077448c8e6f76a98b08109d0faa51e335f020e059b9155269eee7350f1a87fd8",
+    "info": {
+      "width": 512,
+      "height": 256,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 131072
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_versus__009__common_001_ID_HQ.png"
+  },
+  {
+    "archive": "c_versus.arc",
+    "index": 10,
+    "name": "id\\texture\\jpn\\common\\common_008_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "04395dc7f87be25bb0d3400c71879805ee2bad49abf0e65212dd269c3f6faf01",
+    "info": {
+      "width": 256,
+      "height": 256,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_versus__010__common_008_ID_HQ.png"
+  },
+  {
+    "archive": "c_versus.arc",
+    "index": 11,
+    "name": "id\\texture\\jpn\\waza2\\waza2_029_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "4a5fe33bdaa90488ed9db392bccf372b1bb7e9a57bda376218e38f7c317fd7c5",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_versus__011__waza2_029_ID_HQ.png"
+  },
+  {
+    "archive": "c_versus.arc",
+    "index": 12,
+    "name": "id\\texture\\jpn\\waza2\\waza2_001_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "11fcf00832a551330ab349fc18a67d5d2d455c6b07988b600de6cd60a786f011",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_versus__012__waza2_001_ID_HQ.png"
+  },
+  {
+    "archive": "c_versus.arc",
+    "index": 13,
+    "name": "id\\lsp\\jpn\\charasele\\charasele_kessen",
+    "type": "60DD1B16",
+    "size": 130300,
+    "sha256": "340ec16b5bdb9a5b2280ef73a06222816b1ac3f09c4d5d9876937d7ad7b88474",
+    "lsp": "E:\\Utage Patching New\\_codex_select_menu\\source\\c_versus__013__charasele_kessen.lsp"
+  },
+  {
+    "archive": "c_versus.arc",
+    "index": 14,
+    "name": "misc\\versus\\plinfo",
+    "type": "4CD902BC",
+    "size": 1062,
+    "sha256": "ed6c12ec29d8350a7675d76b0d4a9593f093754af601043a9d2bb0edb56b6526"
+  },
+  {
+    "archive": "c_versus.arc",
+    "index": 15,
+    "name": "misc\\versus\\plinfo",
+    "type": "314ACB2A",
+    "size": 522,
+    "sha256": "c49da938f6a390cac7c285a5743471532e2d9b25e5e1a8879bae1c98031792cc"
+  },
+  {
+    "archive": "story_00.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\story\\story_00_00_ID_HQ",
+    "type": "241F5DEB",
+    "size": 262164,
+    "sha256": "c2cbb4b5a3efbde0563ebfe96d0d583c213a28803e2afcc783f2dc734c1dce9c",
+    "info": {
+      "width": 512,
+      "height": 512,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 262144
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_00__000__story_00_00_ID_HQ.png"
+  },
+  {
+    "archive": "story_00.arc",
+    "index": 1,
+    "name": "id\\texture\\jpn\\story\\story_01_00_ID_HQ",
+    "type": "241F5DEB",
+    "size": 262164,
+    "sha256": "956e78bee0ccd958844369513b59937c6587ccea1dcab5226e2322ae9fce1191",
+    "info": {
+      "width": 512,
+      "height": 512,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 262144
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_00__001__story_01_00_ID_HQ.png"
+  },
+  {
+    "archive": "story_00.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\story\\story_02_00_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "38bb014a09734fad694da34dc1338e50584a0f912a90a913ed1e977d27ad60ec",
+    "info": {
+      "width": 256,
+      "height": 256,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_00__002__story_02_00_ID_HQ.png"
+  },
+  {
+    "archive": "story_01.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\story\\story_00_01_ID_HQ",
+    "type": "241F5DEB",
+    "size": 262164,
+    "sha256": "ceef89bbd97aaca34d573da8f0e2fa965d7f83322171ef820acf6e2c9b962bcf",
+    "info": {
+      "width": 512,
+      "height": 512,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 262144
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_01__000__story_00_01_ID_HQ.png"
+  },
+  {
+    "archive": "story_01.arc",
+    "index": 1,
+    "name": "id\\texture\\jpn\\story\\story_01_01_ID_HQ",
+    "type": "241F5DEB",
+    "size": 262164,
+    "sha256": "fb5166143a9a96339f1d79b88967cade19484481418d66d23f501519c6fade01",
+    "info": {
+      "width": 512,
+      "height": 512,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 262144
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_01__001__story_01_01_ID_HQ.png"
+  },
+  {
+    "archive": "story_01.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\story\\story_02_01_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "e3116e67ce2cd0a2dda77873f09cd883b0e93eed8263de2d0d5ccd2cfde88198",
+    "info": {
+      "width": 256,
+      "height": 256,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_01__002__story_02_01_ID_HQ.png"
+  },
+  {
+    "archive": "story_02.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\story\\story_00_02_ID_HQ",
+    "type": "241F5DEB",
+    "size": 262164,
+    "sha256": "2c2b2a2f272114cf4967dac76293be3be78376509af64d62cf0750a41bb673da",
+    "info": {
+      "width": 512,
+      "height": 512,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 262144
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_02__000__story_00_02_ID_HQ.png"
+  },
+  {
+    "archive": "story_02.arc",
+    "index": 1,
+    "name": "id\\texture\\jpn\\story\\story_01_02_ID_HQ",
+    "type": "241F5DEB",
+    "size": 262164,
+    "sha256": "36dd44c5eee23d53433ed432adb51b5ac39304c2f7c82cdae313b52ae295dd6b",
+    "info": {
+      "width": 512,
+      "height": 512,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 262144
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_02__001__story_01_02_ID_HQ.png"
+  },
+  {
+    "archive": "story_02.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\story\\story_02_02_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "c404c8b80bab5bf1f455dcc77ca8bbdfbb17cd50e12d1f3bef8ae8cca7928db4",
+    "info": {
+      "width": 256,
+      "height": 256,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_02__002__story_02_02_ID_HQ.png"
+  },
+  {
+    "archive": "story_03.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\story\\story_00_03_ID_HQ",
+    "type": "241F5DEB",
+    "size": 262164,
+    "sha256": "9bd5d99259d46dc595dd77cf978dfc498fcde953e0f654070843837cfc86cced",
+    "info": {
+      "width": 512,
+      "height": 512,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 262144
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_03__000__story_00_03_ID_HQ.png"
+  },
+  {
+    "archive": "story_03.arc",
+    "index": 1,
+    "name": "id\\texture\\jpn\\story\\story_01_03_ID_HQ",
+    "type": "241F5DEB",
+    "size": 262164,
+    "sha256": "7b479963c22e616b9594b85108db245d2dcef89fae87c1e838b71afbeca9529b",
+    "info": {
+      "width": 512,
+      "height": 512,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 262144
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_03__001__story_01_03_ID_HQ.png"
+  },
+  {
+    "archive": "story_03.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\story\\story_02_03_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "b908d0c460849afc33697e3453ab7ac71a35191a928c98dd05ab40e9d82f038b",
+    "info": {
+      "width": 256,
+      "height": 256,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_03__002__story_02_03_ID_HQ.png"
+  },
+  {
+    "archive": "story_04.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\story\\story_00_04_ID_HQ",
+    "type": "241F5DEB",
+    "size": 262164,
+    "sha256": "5c1c421b30b90c71cfbc6962625cabac6cb11d141e4d35ab7f1a0dbdaff08355",
+    "info": {
+      "width": 512,
+      "height": 512,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 262144
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_04__000__story_00_04_ID_HQ.png"
+  },
+  {
+    "archive": "story_04.arc",
+    "index": 1,
+    "name": "id\\texture\\jpn\\story\\story_01_04_ID_HQ",
+    "type": "241F5DEB",
+    "size": 262164,
+    "sha256": "8dad63975afc7c1757cf34eea3678a1f09775799cd3e4b2be80d32bb089648f9",
+    "info": {
+      "width": 512,
+      "height": 512,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 262144
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_04__001__story_01_04_ID_HQ.png"
+  },
+  {
+    "archive": "story_04.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\story\\story_02_04_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "c52be7d6c2b8ec9c8688285665c9a4854798d7259f1e16a1c8fa58e7eb3af1ae",
+    "info": {
+      "width": 256,
+      "height": 256,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_04__002__story_02_04_ID_HQ.png"
+  },
+  {
+    "archive": "story_05.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\story\\story_00_05_ID_HQ",
+    "type": "241F5DEB",
+    "size": 262164,
+    "sha256": "5a34904ae342b456e2255ed66c21d929b611d2ffde149cbee03b4290d55f488a",
+    "info": {
+      "width": 512,
+      "height": 512,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 262144
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_05__000__story_00_05_ID_HQ.png"
+  },
+  {
+    "archive": "story_05.arc",
+    "index": 1,
+    "name": "id\\texture\\jpn\\story\\story_01_05_ID_HQ",
+    "type": "241F5DEB",
+    "size": 262164,
+    "sha256": "2d8d74bc450af971aa1824d9464b2a978b8583292c39304ea1dfe84fa1386450",
+    "info": {
+      "width": 512,
+      "height": 512,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 262144
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_05__001__story_01_05_ID_HQ.png"
+  },
+  {
+    "archive": "story_05.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\story\\story_02_05_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "8e4f016a8cf2cb37513fd65fd47c00f78b809c62e5a0d0988bd91aacd2902fb7",
+    "info": {
+      "width": 256,
+      "height": 256,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_05__002__story_02_05_ID_HQ.png"
+  },
+  {
+    "archive": "story_06.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\story\\story_00_06_ID_HQ",
+    "type": "241F5DEB",
+    "size": 262164,
+    "sha256": "138cc309a89f543c90efecbc19f036d08d8f0d266f3c461fb6519d6ba5aabbec",
+    "info": {
+      "width": 512,
+      "height": 512,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 262144
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_06__000__story_00_06_ID_HQ.png"
+  },
+  {
+    "archive": "story_06.arc",
+    "index": 1,
+    "name": "id\\texture\\jpn\\story\\story_01_06_ID_HQ",
+    "type": "241F5DEB",
+    "size": 262164,
+    "sha256": "54716f0b392a437052978789cd702b9e00fcc9dbe26d77a5a49ae76ac56f2fb0",
+    "info": {
+      "width": 512,
+      "height": 512,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 262144
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_06__001__story_01_06_ID_HQ.png"
+  },
+  {
+    "archive": "story_06.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\story\\story_02_06_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "51f5d0d403f1712d201fae852e3200587cd190c44c792d65763acc966a458858",
+    "info": {
+      "width": 256,
+      "height": 256,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_06__002__story_02_06_ID_HQ.png"
+  },
+  {
+    "archive": "story_07.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\story\\story_00_07_ID_HQ",
+    "type": "241F5DEB",
+    "size": 262164,
+    "sha256": "78740c5ebb275af91a9d14d16c9d81ec49f9507f61a7680f02d426369e8da032",
+    "info": {
+      "width": 512,
+      "height": 512,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 262144
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_07__000__story_00_07_ID_HQ.png"
+  },
+  {
+    "archive": "story_07.arc",
+    "index": 1,
+    "name": "id\\texture\\jpn\\story\\story_01_07_ID_HQ",
+    "type": "241F5DEB",
+    "size": 262164,
+    "sha256": "a6e56294e4953eda045658075f153765b75f33d516bb04cb5bebd2b1c42b10eb",
+    "info": {
+      "width": 512,
+      "height": 512,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 262144
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_07__001__story_01_07_ID_HQ.png"
+  },
+  {
+    "archive": "story_07.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\story\\story_02_07_ID_HQ",
+    "type": "241F5DEB",
+    "size": 65556,
+    "sha256": "1e6bb48f826c630914033a34cebce0c87dc510bb06f0f9d6e1035fdb657d3d2b",
+    "info": {
+      "width": 256,
+      "height": 256,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\story_07__002__story_02_07_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_000_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "f39fb66471b20059c680615eab22d34440a54427342d1b14920f99375e75bea0",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__000__charasele_03_000_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 1,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_000_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "5270677d413ae9d7bd78681f716f0de7bf82dac2f05dc7bb8a035fe4e00f642a",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__001__charasele_04_000_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_001_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "caec6671628415fad548d40c1e4e0197e7a70033425f1f30aac4b6ee5315bff8",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__002__charasele_03_001_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 3,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_001_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "72ec85d32f96948c906fcaf42b8384869dfb14a120091e73ce330ec2fac4ded1",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__003__charasele_04_001_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 4,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_002_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "a67b11402785d2fef09d533e97bffe0ef6d1b4b60789ada4b44af81f86f9426a",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__004__charasele_03_002_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 5,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_002_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "ffa4a53f0559c543768c5f656d3f4cdd43493e980728a2fc9d03f803b23a27ff",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__005__charasele_04_002_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 6,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_003_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "a9d6b0b16e0a58d194ee2e29c234ccae8cbfe8a974fa2d4e12e3a2e182d413ac",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__006__charasele_03_003_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 7,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_003_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "6eebbcb78bb0881968b4cba61425538396f5672cc3dfd4013a08110d0e726ae3",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__007__charasele_04_003_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 8,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_004_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "4bce0ee49dfc397ff74acb947946bd23f288830cfc8d4f233e28f58bed9a286f",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__008__charasele_03_004_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 9,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_004_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "b587b327b64f5758b9204bba9b1ed131a1f3b2ea2a181c207eccbfc0b803929b",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__009__charasele_04_004_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 10,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_005_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "98d43e2bd2e01af6e6c151f79b333a0d7d3c13723456cb1d4a549bd16de29f7e",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__010__charasele_03_005_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 11,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_005_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "f30b0b96ae16fa4c61b4321ad53f0c6528989c3df9fff65fb214d7798546ee04",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__011__charasele_04_005_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 12,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_006_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "e06581ab2e7d2ace7b7884294ff1d8328b6bd684b265a39a5daf1c0f46445bf6",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__012__charasele_03_006_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 13,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_006_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "5251e3c12d2b21837be076ff130f61fcc6041a368de83e9a115ddfa50a474f8d",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__013__charasele_04_006_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 14,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_007_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "ca67731a9d516a4ab1fb9a5fdd3da0602f14f23c63806abc90104183e81049c6",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__014__charasele_03_007_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 15,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_007_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "fe2f659d0f07b774d3ab0aeafcb68465b114fe68b801efeb80bc385dfcebf4be",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__015__charasele_04_007_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 16,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_008_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "b501bc99acaaabb220c88cd479393333d1000931413504b9c5bbd5c9d3685eb7",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__016__charasele_03_008_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 17,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_008_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "a99f1af5fd8f7f1b89f47a5dcfe5a3045e023877255001ef84776b37ae09dcaf",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__017__charasele_04_008_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 18,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_009_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "ef597c97426fbb35cf6ed9c0bafaadf9eb3e70ac5b16b07ee782a50484a126c2",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__018__charasele_03_009_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 19,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_009_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "0833023eb35163e1640d6fc089073972dde819c4d832870fdf4212ae430ffb1e",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__019__charasele_04_009_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 20,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_010_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "8734ce0a40813a763ff019fbdc55062e0b3277cfb416cdc4d58deb1adc6f88d2",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__020__charasele_03_010_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 21,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_010_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "f840d1fd51532aa55f4a57a679bf08050889be9f6e6eb9fee05e1cccadae455d",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__021__charasele_04_010_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 22,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_011_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "044205dca730c3f145b45a540f60cf66cbbb5d110445c4e734598820a18996fe",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__022__charasele_03_011_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 23,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_011_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "ba8769afc64495f4ec6d90e6b4314c84d5e9280fe736b112388b521d233cd0ed",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__023__charasele_04_011_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 24,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_012_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "63b214baf34c006637cdf5c52ae21bc894b70970e5348d9a2b700180d256b010",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__024__charasele_03_012_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 25,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_012_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "d0bc79d4f5b683027c14e013cb2a77e08f9745a1ff3d06e1195beb1e7e7ed7bc",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__025__charasele_04_012_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 26,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_013_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "a2c491c160b61a0662221fe3ee4317160d1b153bea344c08ff1b02381c2bfa12",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__026__charasele_03_013_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 27,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_013_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "0e7d3f497180e4653f9b5f0eead036ab63affe0ec706a75d97af2c4eaa5bedf0",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__027__charasele_04_013_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 28,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_014_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "2829f919c531634f6c06b682edc9333c72a1a9d70173e385c5bd3569ee078199",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__028__charasele_03_014_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 29,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_014_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "e02c1fb5f66e6c67e9d890407ddfae0b9ffd68867a130e9c9cdfe08608cd0e18",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__029__charasele_04_014_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 30,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_015_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "e0cd8d2e5f4848fc452e260b85515100560e42d8f073e173960d7d1134c15d74",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__030__charasele_03_015_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 31,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_015_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "42dd3d9cae8c3ce74e199f4bb91bbdce81b6328f6b6058c11cc64ce367a21293",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__031__charasele_04_015_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 32,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_016_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "249ae654a0528144981480377c7e9c65ff9399da073544b500eff9e91467a1f3",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__032__charasele_03_016_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 33,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_016_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "93512c9bad8e768e176bbb059365b80805850e6a9f0cbf271832ffdd5cc28a45",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__033__charasele_04_016_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 34,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_017_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "b1aa264f7b5917a64702849b13befed830666a5015d71b788bba41da3c2ef938",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__034__charasele_03_017_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 35,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_017_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "7390e9bdb3064ccf155042173fc5462919c61b35bcfbafdb4ff5394ccbb7ee3b",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__035__charasele_04_017_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 36,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_018_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "3d6affd4f06c2785ceab14e32330bab3c1d26c5922b74a0f532837e0e04dee13",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__036__charasele_03_018_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 37,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_018_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "15253e5fb5faebdfea6f0c15921850d2cf5403e042da2c12057aa551abeb90c3",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__037__charasele_04_018_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 38,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_019_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "27f5b5d838c318825ceab14c2ad42a53233be7007033645b40a47a1df8d59121",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__038__charasele_03_019_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 39,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_019_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "b5eb655d3d18408ff13bee635331e8c4a01672e8d5809b209fa9653e60d4cc1b",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__039__charasele_04_019_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 40,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_020_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "16c2faa47b3b786f1bc1afece7fc5b8aa03324f451915f2b597ed0066f0e5f70",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__040__charasele_03_020_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 41,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_020_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "d23e78cf4a6649a789f1b5ec62d5a1e711666fe486d3d3fe2d34e4606cbdf4c4",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__041__charasele_04_020_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 42,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_021_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "ce2d92a1b85bb380dcbfe59e446dd99a95ac44198d57ba464493be2fc202f99d",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__042__charasele_03_021_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 43,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_021_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "3aaa82bf2cbf6adfbc62a9c59e7e06bfbb27922975294cdf761e5047a3a2279b",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__043__charasele_04_021_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 44,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_022_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "9b7aed04c0d2e2a68ba3740c3122c116ac06a3835ac3e777641304630e46912a",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__044__charasele_03_022_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 45,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_022_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "b66f6c0fc2e4679ad25abf208e71684d9aeac61bb4d7eacedd29a247af169d1d",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__045__charasele_04_022_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 46,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_023_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "c888de5f41ef6b77d784f2342346d747d3fece2b4595ed2fee70d9f68112734c",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__046__charasele_03_023_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 47,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_023_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "4ad382ed4b091590727eb7ac828c12b6fbb613106bdc2cb427c30b275f352ecb",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__047__charasele_04_023_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 48,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_024_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "0170da1afd5915260c20ea757f4dfce43002ed54c03ebe6751cea3484a4de68c",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__048__charasele_03_024_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 49,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_024_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "729e071d088e31d7db65a3e488eb13490d978f488588045b119282ee2cb0369b",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__049__charasele_04_024_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 50,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_025_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "4b58994632d190c21b1bb66ec45e016b38d969a8c32299ebb8d08b8347d21cdc",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__050__charasele_03_025_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 51,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_025_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "5dbdf330767075a37638edc09314d9e40a551ef44f14e916d21e777e88122e44",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__051__charasele_04_025_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 52,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_026_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "1302caf98d99017a05d240b7dc4d358b14831d54fee0f269a9a36c433e5742bc",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__052__charasele_03_026_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 53,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_026_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "66884e3692f00fabf4e05bb82a9f80e73171e8a07c1261bb3ae9e879f3d86cf4",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__053__charasele_04_026_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 54,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_027_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "e5ca9b20f8001746673d64b9b11979d9727ad9787f657d04bd37c283340b6714",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__054__charasele_03_027_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 55,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_027_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "8d381f492599ed734f57d61bebc5c949326f619718c865cec2bd6452d33bc312",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__055__charasele_04_027_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 56,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_028_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "a0862390407d487be998c66bf9c5d28d2ddd7449cb49e8b7e26264f160213034",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__056__charasele_03_028_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 57,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_028_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "54cecfe3ce35f23da0c2dbe9b51039187cc10359bbe8c45e26d64edb26cb5c87",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__057__charasele_04_028_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 58,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_029_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "bd2b3275ec5ab75d89197b035deb0ab5bfd86ef6c9d196ec4865ac663747fa56",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__058__charasele_03_029_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 59,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_029_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "6ca2d4220f6baa2ec192c5ba8f86817346c51f202a0256ef95fe720312639844",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__059__charasele_04_029_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 60,
+    "name": "id\\texture\\jpn\\charasele_03\\charasele_03_qqq_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "e0271d48f046009289a03540e96c62ed6b0bc23ccc59a72cf569feb9cc151efc",
+    "info": {
+      "width": 256,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__060__charasele_03_qqq_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 61,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_qqq_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "643ec70c92628a488e38af5b11dbc7a9a063cb57a14fcf49fb918569acbc94d7",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__061__charasele_04_qqq_ID_HQ.png"
+  },
+  {
+    "archive": "vs_face.arc",
+    "index": 62,
+    "name": "id\\texture\\jpn\\charasele_04\\charasele_04_lock_ID_HQ",
+    "type": "241F5DEB",
+    "size": 32788,
+    "sha256": "14778ad7fde0da8af4ca8aeab76345ccb3e39900745573514314485c936259c3",
+    "info": {
+      "width": 512,
+      "height": 64,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 32768
+    },
+    "png": "E:\\Utage Patching New\\_codex_select_menu\\source\\vs_face__062__charasele_04_lock_ID_HQ.png"
+  }
+]

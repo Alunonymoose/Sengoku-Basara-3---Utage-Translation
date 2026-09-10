@@ -1,0 +1,67 @@
+[
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result_id.arc",
+    "index": 34,
+    "name": "id\\lsp\\jpn\\common\\common_00"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\retry.arc",
+    "index": 27,
+    "name": "id\\lsp\\jpn\\common\\common_00"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\save.arc",
+    "index": 26,
+    "name": "id\\lsp\\jpn\\common\\common_00"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc",
+    "index": 286,
+    "name": "id\\texture\\jpn\\charasele_02\\charasele_02_lock_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc",
+    "index": 320,
+    "name": "id\\lsp\\jpn\\mode_select\\mode_select"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc",
+    "index": 341,
+    "name": "id\\lsp\\jpn\\common\\common_00"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title_id.arc",
+    "index": 141,
+    "name": "id\\texture\\jpn\\charasele_02\\charasele_02_lock_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title_id.arc",
+    "index": 145,
+    "name": "id\\lsp\\jpn\\mode_select\\mode_select"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\common\\pl_face\\pl_all.arc",
+    "index": 111,
+    "name": "id\\texture\\jpn\\charasele_02\\charasele_02_lock_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\common\\pl_face\\pl_random.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\charasele_02\\charasele_02_lock_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\gallery\\gallery.arc",
+    "index": 20,
+    "name": "id\\lsp\\jpn\\common\\common_00"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_id.arc",
+    "index": 43,
+    "name": "id\\lsp\\jpn\\common\\common_00"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\battleQuest.arc",
+    "index": 30,
+    "name": "id\\lsp\\jpn\\common\\common_00"
+  }
+]

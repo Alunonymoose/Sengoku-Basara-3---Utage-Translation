@@ -1,0 +1,2658 @@
+{
+  "status": "offline_validation_pass_runtime_required",
+  "created_utc": "2026-09-08T09:32:10.797674+00:00",
+  "name": "Utage_Quest_Menu_V2_FIT_AND_REWARDS_ROOT_READY",
+  "counts": {
+    "titles": 93,
+    "reward_names": 161,
+    "menu_atlases": 5
+  },
+  "archives_changed": 34,
+  "resource_changes": 259,
+  "all_lsp_and_other_untouched_compressed_resources_preserved": true,
+  "xet_headers_and_dimensions_preserved": true,
+  "internal_namespace_preserved": true,
+  "excluded_dialogue_and_conquest_messages_modified": false,
+  "runtime": "Not performed. Cold-boot check of quest list, difficulty, rewards, count and cleared list required.",
+  "archives": [
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/menu.arc",
+      "source_sha256": "e4eaf22d23ea2e1d579b8101280f16700bb2c37c070ef258a5a8483f60487c7f",
+      "output_sha256": "281cf7530a8d32129552ba7209d1a51a3842cae42a85ed0f90e4a1dd7fa4c920",
+      "entries": 45,
+      "changed_entries": [
+        30,
+        35,
+        36,
+        38,
+        40
+      ],
+      "preserved_compressed_resources": 40
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q000_id.arc",
+      "source_sha256": "d1d225ae887b481fc27dc9cc5275ee3631082aa2af80659ee32c724cddb9f30f",
+      "output_sha256": "fa40760b2847dd85473b34e02f4edadba784a1e1b8633c444f29c5643e98eaf1",
+      "entries": 8,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7
+      ],
+      "preserved_compressed_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q001_id.arc",
+      "source_sha256": "ee0902eeab9a827d2a30074afb762a0f61828f4a4eda004b8b4259886799f32a",
+      "output_sha256": "3d32a0d5192aedc0c4bad511a814deb73edc2a86693a5dd028165f96cb74c004",
+      "entries": 6,
+      "changed_entries": [
+        0,
+        3,
+        5
+      ],
+      "preserved_compressed_resources": 3
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q002_id.arc",
+      "source_sha256": "97ad77686a130483cca6436856853a4048d66d89ef957f2b90f38fee65c938e0",
+      "output_sha256": "34d38234a24badf7d30a7e1a0bb08a9589bde5a20c6affba7d8de623df413bb9",
+      "entries": 10,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7,
+        9
+      ],
+      "preserved_compressed_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q003_id.arc",
+      "source_sha256": "37258ac87e2a6bab39c5270e644a69afcdd9608e1fd557bd84c50832824b9113",
+      "output_sha256": "f42766f6b1ab4adbe00dd22469434bdeb6b954da76f0c74433f762d03662533f",
+      "entries": 8,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7
+      ],
+      "preserved_compressed_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q004_id.arc",
+      "source_sha256": "a736b17f53cc2b84415586d71e6e3d0028b9a500b91ec3cd32666dee35a20823",
+      "output_sha256": "1a821dded609d2f5aabf87fc6abbf070085ce06b9dd88d6fa729e363b498f752",
+      "entries": 8,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7
+      ],
+      "preserved_compressed_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q005_id.arc",
+      "source_sha256": "ff9781967dbd53f0633d9af1dea05b1d460fa085bb7eeb7ae5faa462d8bebab6",
+      "output_sha256": "fe7b633d4689385faeab1e10a99e71c60f56a3ee90bbfedac99fc12d0bbef3ad",
+      "entries": 8,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7
+      ],
+      "preserved_compressed_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q006_id.arc",
+      "source_sha256": "68bc850c3da79f7920233578f89ca446d99b7e1260bb6d194d03a285c20b14f0",
+      "output_sha256": "c1e571eee63c2218f23a885a2088eef6725d781e41ce04f7c2717b4ddc5124a3",
+      "entries": 8,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7
+      ],
+      "preserved_compressed_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q007_id.arc",
+      "source_sha256": "81b68bff18848bf5f432b5831930a9e68941ed5ed8d8e5c0e768245d849abc41",
+      "output_sha256": "0910c88ddc5c8ba0a34484828373197b4fbef3a9c6d6b5f4c84821f1776d41ee",
+      "entries": 10,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7,
+        9
+      ],
+      "preserved_compressed_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q008_id.arc",
+      "source_sha256": "87730bf0b21bf7106c35e24aaec585f4e8e72129b7ce7398dddee2bcdd529685",
+      "output_sha256": "f8bcabdc0d1a2b41a82fdeb1cd3302ed2d20345d27b5a8cc8ecda66bfd560ae4",
+      "entries": 10,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7,
+        9
+      ],
+      "preserved_compressed_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q009_id.arc",
+      "source_sha256": "3ecc5c8d327a219e72afd5c23732b304611e0abd81881ac09132179c50e16f05",
+      "output_sha256": "10c559b55bc6c3e997074945ccb557550194f2d0581e4ce0eeb0ed5d4809f154",
+      "entries": 10,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7,
+        9
+      ],
+      "preserved_compressed_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q010_id.arc",
+      "source_sha256": "258254e233f73ac78f4f762abd8c3faf03112f6092a87a67f08828cba5043a6e",
+      "output_sha256": "30a63c46b2418eef2749cfe62e4eef61a9f7b48f19ed2c7b3e7402b3f5a4ce39",
+      "entries": 10,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7,
+        9
+      ],
+      "preserved_compressed_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q011_id.arc",
+      "source_sha256": "5ae84c9833c6cff76d848fdc6bc44977bf5e71f9f2093f800fef986d9c753526",
+      "output_sha256": "39b1ca0de29c583dff45022a504a4a39dfca8ed4e2555afb10281b91a63ce813",
+      "entries": 8,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7
+      ],
+      "preserved_compressed_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q012_id.arc",
+      "source_sha256": "33c1b558c619a84f15877ff0d20aa72feed270598fdf576628507d800af22b4d",
+      "output_sha256": "b7ad1772dd5106a6a297cda2adafffa6a16f77eddb8a30c8f1ce0aa93d853e1c",
+      "entries": 10,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7,
+        9
+      ],
+      "preserved_compressed_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q013_id.arc",
+      "source_sha256": "70d2f58079d00db0de1d5a40d629f99a67887c7b25ff10917b0e9004cfe0b463",
+      "output_sha256": "8e5c58ece4cb12b55e270ab1eff608d98c0aab4e9ba80b8341197fa9ff5cd1f3",
+      "entries": 8,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7
+      ],
+      "preserved_compressed_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q014_id.arc",
+      "source_sha256": "4257ff9d22af524d6ffb14ac5f51374164a39edcaae152fcc7aaee5de56eb366",
+      "output_sha256": "729fe9d1b987419a52f608a7055ebb258833aec562bda4c4a38ca8687630fe34",
+      "entries": 10,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7,
+        9
+      ],
+      "preserved_compressed_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q015_id.arc",
+      "source_sha256": "1796e3a20e306781e61439b49e7123dda7fb80fd585212ebf48dd069ece25fbf",
+      "output_sha256": "76cca305c1687a41e8d393734b29589268a6f5bb023cca9f9f157e570585fd01",
+      "entries": 10,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7,
+        9
+      ],
+      "preserved_compressed_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q016_id.arc",
+      "source_sha256": "93a4ec90fbf6ab3695f8857dce92c8e17bb8cfb2cec80b94dc3dd2c5da4fea0d",
+      "output_sha256": "00cadef6e3a575a318495ca993568cf86fd47fe23c48319c33a416d0038d28c4",
+      "entries": 10,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7,
+        9
+      ],
+      "preserved_compressed_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q017_id.arc",
+      "source_sha256": "0109ac12b9851d08ccbe082c032dbf13d73936268a5783293ed791d22319ed62",
+      "output_sha256": "6f6a3a77afc5c9b2d1808398131b527c7216ab08ec7c3fa46f482478942b6f92",
+      "entries": 8,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7
+      ],
+      "preserved_compressed_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q018_id.arc",
+      "source_sha256": "86fb089035b55608ba319157f4357b0f0b85e93d663fa008b29cee4f494a0b57",
+      "output_sha256": "914532020b68bcb1d786208df38231e7989c3ebf23ccb4b4d7e9bd655c3a8c3b",
+      "entries": 10,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7,
+        9
+      ],
+      "preserved_compressed_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q019_id.arc",
+      "source_sha256": "0c007336b11f76e320a565ae80a1152b48748c3ce91210f4faa06f93978dfc76",
+      "output_sha256": "551c8a60a2635d0e5c42c345e07c386af0a4615258316f13fb6c7abb9a3aeeb0",
+      "entries": 10,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7,
+        9
+      ],
+      "preserved_compressed_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q020_id.arc",
+      "source_sha256": "57acab7509ba78985bb351f0dfac11f8d1091add0fcf55b228c04613c7c4c676",
+      "output_sha256": "f873c0161668a66d4f3b7b15627964ec221635d84b1ad28a2fc206ed34df44a4",
+      "entries": 10,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7,
+        9
+      ],
+      "preserved_compressed_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q021_id.arc",
+      "source_sha256": "3e3a39293b2f75b838dc6da1562a0108d4ee1f50fd8458fae6b8fcbc4081dce8",
+      "output_sha256": "acf8400289e42eb7e586ece90d9e3b28c12e3034f985eccb490654df0ec00f2e",
+      "entries": 10,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7,
+        9
+      ],
+      "preserved_compressed_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q022_id.arc",
+      "source_sha256": "718df4e0da165cc2d59cc581bfa61e69cb68bd087f6dd75cd045161047c41532",
+      "output_sha256": "0cacc4c9a29fb80e8130a19daaee86849ebb0f08a57730da290efaf25523016b",
+      "entries": 8,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7
+      ],
+      "preserved_compressed_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q023_id.arc",
+      "source_sha256": "064d4411adc8b448780adb091f54da31868ae028705f1559ab8c8623ce86bf62",
+      "output_sha256": "b025ad6557928f2cf315eacc2e85d1b0067712461bcf5081dd91cdbd76842a0f",
+      "entries": 10,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7,
+        9
+      ],
+      "preserved_compressed_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q024_id.arc",
+      "source_sha256": "40afe37b1d9946c4e5fc8bf564a4b0805ccc7790aafb61a09994baf07fb2e6ab",
+      "output_sha256": "b557408a5343ea759b1db43ef80983f1843ec8ca6e2d96a43c7b633957166a32",
+      "entries": 10,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7,
+        9
+      ],
+      "preserved_compressed_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q025_id.arc",
+      "source_sha256": "b54a602a36e63bdbdc45934887e4565376e65b832c50ed50f10a291667bac3ff",
+      "output_sha256": "d8b3deac05edbf8416391cfb6ea75179f8d418b5673c9ff51fe52258c0f33418",
+      "entries": 10,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7,
+        9
+      ],
+      "preserved_compressed_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q026_id.arc",
+      "source_sha256": "12ccd5b965a7cca4c911154c259f73f8c92b9d323ff0a8fbdcd2703671568c6d",
+      "output_sha256": "4026b1361dea774f44a689a4c026b394950a73dd1368efef9e2621ca488b067e",
+      "entries": 8,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7
+      ],
+      "preserved_compressed_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q027_id.arc",
+      "source_sha256": "03e59d59077d3a06f05c723e9e1496fcba32d1d1e44debcaed5756d37fe05fc7",
+      "output_sha256": "04db2f0f20bbd9e1f67110a640914e78dc99954d8f1ea7c879612b740b28bba0",
+      "entries": 8,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7
+      ],
+      "preserved_compressed_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q028_id.arc",
+      "source_sha256": "7d620741d3e53f8e6f4c49ab0a5bf64f65cfc2dbe1dff5177f081a852e77360f",
+      "output_sha256": "cdb85b6028b0de1beeff834ef3cea9a0ea19257d3e245f13e141abba12db8648",
+      "entries": 8,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7
+      ],
+      "preserved_compressed_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q029_id.arc",
+      "source_sha256": "0ed357f6c1552bd06dfb8d3e2ff4756ab34d9e196413b3fa05cee962cddb8cb9",
+      "output_sha256": "3e4dd20ef438042943e7216fbfd02b7b6604311f8924626676da7b08c5d6dc84",
+      "entries": 8,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7
+      ],
+      "preserved_compressed_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q030_id.arc",
+      "source_sha256": "faebeb31f3f0a2404d72b1b201b53dcd775e628d64e3fa4df832a6766d3d0792",
+      "output_sha256": "d4019236801dd9ded8807eda94ecf39d0a5490cdeccf391d14fb6a6596b60400",
+      "entries": 4,
+      "changed_entries": [
+        0,
+        3
+      ],
+      "preserved_compressed_resources": 2
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "source_sha256": "8e94752a45e1c284be9e49f976f01a376ee90ff2b7a910708a3b59d405584014",
+      "output_sha256": "74fc35b643f3d52c74a2d9087f0f7a7a99800a5522826c43fdb9e0a06532d9d1",
+      "entries": 205,
+      "changed_entries": [
+        0,
+        3,
+        5,
+        7,
+        9,
+        12,
+        14,
+        16,
+        19,
+        21,
+        23,
+        25,
+        27,
+        30,
+        32,
+        34,
+        37,
+        39,
+        41,
+        43,
+        46,
+        48,
+        50,
+        53,
+        55,
+        57,
+        59,
+        62,
+        64,
+        66,
+        68,
+        70,
+        73,
+        75,
+        77,
+        80,
+        82,
+        84,
+        87,
+        89,
+        91,
+        94,
+        96,
+        98,
+        101,
+        103,
+        105,
+        107,
+        110,
+        112,
+        114,
+        117,
+        119,
+        122,
+        124,
+        126,
+        128,
+        131,
+        133,
+        135,
+        138,
+        140,
+        142,
+        145,
+        147,
+        150,
+        152,
+        155,
+        157,
+        160,
+        162,
+        165,
+        168,
+        170,
+        172,
+        175,
+        177,
+        180,
+        182,
+        185,
+        187,
+        190,
+        192,
+        195,
+        198,
+        201
+      ],
+      "preserved_compressed_resources": 119
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "source_sha256": "3bf1fc66083333f1cf0948a7005070fd8ba2ae26888c325a30ae7c6c98de7817",
+      "output_sha256": "7b2b3cb01c60f9bf81b5ea11ae265ca35063dce706952fd5943517138d0d5c49",
+      "entries": 76,
+      "changed_entries": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61
+      ],
+      "preserved_compressed_resources": 45
+    }
+  ],
+  "changes": [
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/menu.arc",
+      "entry": 30,
+      "name": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+      "category": "menu_atlases",
+      "before_sha256": "b801c8e59c0d6f20eb2cdce70a8d2dd7dfc73bf1c2660057604f87cc3e05b0ef",
+      "after_sha256": "a5e4445700819384e7de655cf7fa6f57e01ac06c02420290a4a1ac77f1bf0a86"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/menu.arc",
+      "entry": 35,
+      "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+      "category": "menu_atlases",
+      "before_sha256": "12d16714826f5bc4b6bc749d368e95271e234a1660f735baf7d626107fe701a3",
+      "after_sha256": "f28b325a19b24eddba5f928505e0e51374b084969d5dd72de803b0c15c3a4304"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/menu.arc",
+      "entry": 36,
+      "name": "id\\texture\\jpn\\tenka\\tenka_007_ID_HQ",
+      "category": "menu_atlases",
+      "before_sha256": "f4eb2c31969da06dbe9905a129c895f1f6cf1fcd0977376f9b80c9d6cbbfbb79",
+      "after_sha256": "7ac79a43a5484514053c4ba054fc6ce966f87e94c0d6a4039018714188cd81d3"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/menu.arc",
+      "entry": 38,
+      "name": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_001_ID_HQ",
+      "category": "menu_atlases",
+      "before_sha256": "6802802cec26474203b922034644f7ea1133774319f27c6c11bdc53ed9722a73",
+      "after_sha256": "a0861e53b8e2805630222b969e5a9023446a16c83f8748ab773d3643d00c5af1"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/menu.arc",
+      "entry": 40,
+      "name": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+      "category": "menu_atlases",
+      "before_sha256": "d5ad173b329e42eb0ad235e349f04fa7e25cea7747c26aa94f948d5c96ca5cb7",
+      "after_sha256": "f65ba39a3150f9f9827215c36658d7963052e8826d67cf1749989bca569a33d2"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q000_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_000_ID_HQ",
+      "category": "titles",
+      "before_sha256": "98ebef69612d1f78b076e991db755bddb2ec8ec2dd54591ebf7439f4e9ec42dd",
+      "after_sha256": "792f0c6335618799ae9c530761366b0112d5af23eda511fa0ecec726ca9ce706"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q000_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_022_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "9775a5368c782f185738aa174256018b423a32e616bbb7f8f1ba8106452f297f",
+      "after_sha256": "5c90700aacfb31818c7a48c7277a515582c312e6f7687bd8e6388f1e4ebf7a03"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q000_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_102_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "e32f94f0d051f8beb614e4a3228d1baa10c7172a2f5b6c4189522797be88f098",
+      "after_sha256": "204a79dec22bc0a36d48d61641e06a363ad04086e0b320845a29912dd0dc6b39"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q000_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_010_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "41f94a1deb6db37c7a0e6eba0503132a48cb5059129e6a1b5e89e5f5097e7327",
+      "after_sha256": "7c52757ef8b7b0983a102e535362829d0c7c0b13116b58e12bb597f16c9b2bcc"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q001_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_001_ID_HQ",
+      "category": "titles",
+      "before_sha256": "1748b8313cd7c958ee4ad089f91dcbe5d8efd0d49cb8c947fd0b6680727c5660",
+      "after_sha256": "b56963fb835763f835090a61023de12d4adf65c8417814ad4fec75a72a8f791b"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q001_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_023_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "e09e3ef9352b11500b6252b795501a8eac19e61e5618f44b67caff518fdda590",
+      "after_sha256": "38e8704266fa9889fc032f0eb94a0c9b8bdfadc3d0e433862535b9aa74f6e09c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q001_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_017_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "9eb0f6667dd9000a16438c4ddf91c15915c3a6f7de613e3c1e8e13f6bd68b70b",
+      "after_sha256": "8f1fa20725d6038c24a3a524b4cb690de42699704fb7dab3c4c26579125e7d1b"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q002_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_002_ID_HQ",
+      "category": "titles",
+      "before_sha256": "781cb146520ddd9e1982f6dbc1afb823be73568688af8eda3dbe6eca0d29a786",
+      "after_sha256": "2044f4e570465bdbd7e977c497ab7a2ff26ea5831ff59258991334ef2febe35b"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q002_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_028_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "ef7d7761142a9080eded971bee74852ce33e3f13f7a54883abca801b5fb4a8c8",
+      "after_sha256": "f16ed18f9e043a9ef6845f3ae55f9984db2ce24bbff76ba43cd0af04809733e5"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q002_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_009_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "5c10f4b8f51977d702fb2195ed7058c1dd832dd62087645bd91793142dd21c6d",
+      "after_sha256": "6dc1e77aaa7bd348f3f4c7ec0f63f9baea2c3c7308b2c71785027c016a560d20"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q002_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_023_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "db249336ee76ce8607c46abe4cc98a8b9916585bd03b8b870d35068ef007ebcd",
+      "after_sha256": "5a42b3ec2d5580354bac0d917c03ccc156198045c725deb0d16ceb6698ff37e1"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q002_id.arc",
+      "entry": 9,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_026_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "bd6c5613fcfb4f206ec2d3aa8c200bc4315d1a97762f0d462f4ef8372d29e630",
+      "after_sha256": "0c9e330088cf03e16bc807070e9dcf75e0ca6adde2a0d0574fbe3e3093724b29"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q003_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_003_ID_HQ",
+      "category": "titles",
+      "before_sha256": "dbdea23393ada40c155cc825a92c4a5de4699ae86e8825f4a27db0d14722c1db",
+      "after_sha256": "bb0d6a1599c22f70487411fc05b3c72f2026aa2dda2c54670c103a2e03503d8c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q003_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_017_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "ff629163dc9c332ed7040554d4b55cca89817268b6778e4f5c18d2daceab6e35",
+      "after_sha256": "74939384cf147c128ec79f73e502bc87f565ebb16c49028e83f5a47b6a19757c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q003_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_010_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "41f94a1deb6db37c7a0e6eba0503132a48cb5059129e6a1b5e89e5f5097e7327",
+      "after_sha256": "7c52757ef8b7b0983a102e535362829d0c7c0b13116b58e12bb597f16c9b2bcc"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q003_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_025_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "893d40be5a048bec2420d5b2544b91fded3739802b73777521ecd49a8d3bd6b5",
+      "after_sha256": "c8318eec2bd92273f7c5536c4e717b4bd9b8f615b12a6cd7ccbfe8949a10f821"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q004_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_004_ID_HQ",
+      "category": "titles",
+      "before_sha256": "65602713e2b797172f95bfb264f657c222988588b4d740363be2081faeadeb3d",
+      "after_sha256": "d0dee73a816362329d98f34a0bf6710cbea43f9051169a28c48f0bb22862d672"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q004_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_019_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "24ac1fbd8303860c6b4f46fab4352eae75395cf151c8ae5bfb64b03e698e104a",
+      "after_sha256": "da743bad2767a9c79b0ba01e16e06b0eabee9e7f63b23f0965c145e2fd0e934e"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q004_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_100_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "ede2a3c62e0d8f1b8fdd7605567bd910739187a9a3f0ad60fcf87aafd13abab8",
+      "after_sha256": "95b3b69b1d6a9683cd7a697274eb259e83fea83378e2d3665d96ef16648db608"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q004_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_013_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "bdfc56be18c6d721230588da9b03c20a699d933ef6819f8bfda4bf227b6c178c",
+      "after_sha256": "937ed5a22a3dc42ae5eb89caec3690927a180d89a0a08cb35abc8d0ca2f385cf"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q005_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_005_ID_HQ",
+      "category": "titles",
+      "before_sha256": "842fac8b3ea2877519b3ec964a063e3fd912267d0184bbce8d47534d84a46822",
+      "after_sha256": "e4ef98ce8f5ac3975be788db7628614d338a0cb57d44b1faee4fc3c27ca14d8e"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q005_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_016_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "fd3e605df0c4f11b5c5c742329db40b758bb4ab2cb715c385cb528d228882de7",
+      "after_sha256": "0fc58182f490fd836352886e084113c145e101581fb55067e151643415e41034"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q005_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_105_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "b7ca48f0e2cb8a887ce16ae233bd960e117bcc852d9515f8d34e3d1b6518772c",
+      "after_sha256": "4ed2c28b65234489bc9605f0328c7d551cdbf2c1104456c8dff6d86cf57cdecb"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q005_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_026_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "bd6c5613fcfb4f206ec2d3aa8c200bc4315d1a97762f0d462f4ef8372d29e630",
+      "after_sha256": "0c9e330088cf03e16bc807070e9dcf75e0ca6adde2a0d0574fbe3e3093724b29"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q006_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_006_ID_HQ",
+      "category": "titles",
+      "before_sha256": "a36189756ec7f8fd5bf1065fb46305f7171d8ebef0bf2e282f97ea187c17de97",
+      "after_sha256": "83b55155e2abb2fe3ab93961b07cb3375fc2e0b74164c9698b04f1c4536fbc19"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q006_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_029_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "4efbb6f93dcf9d9a2b77cb4e949b1787f1f98b5c0b7039c365a4cf13b37baa43",
+      "after_sha256": "57d6c429e64de5c2abcd11e41afd327ee55467447c695593cf63df46d792e7be"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q006_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_022_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "72055518a4ee703b9f2179e6921cd1165692133a7f1e990955bac9bdeec6e344",
+      "after_sha256": "48081215c1dc5bd8ae4b3e79e2e3a7a06caf584b1a0f785709d1cb5186ea83c5"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q006_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_024_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "4a8658c1880e230b089eb728fbee63f91dd983b71867a5cdfb90194ee40a0037",
+      "after_sha256": "29fda42d0dac078864782d28da2c78c973ee16fafcdff1d4cbe0fe2f199d1bd5"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q007_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_007_ID_HQ",
+      "category": "titles",
+      "before_sha256": "b3270442dea364de2d7fe9c39f4500b50d9a289e25861a126c4f1de5b78a7c3f",
+      "after_sha256": "b3b413c1b5f03065e3ef45aa7ebe0076fbf37b402acd8ed2d0e958fa8f0041e6"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q007_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_018_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "53e50a510c4c167f0f72378ea736f0dc83a69ba50f01aaa24cd77d3a3b427b95",
+      "after_sha256": "0d5085a2d10808f0a6b676d45dd0a808b35919114b7a8ebeccb7719eaf8d684f"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q007_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_011_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "1d756b1849f87f2c5ced12a66300262212ebf982b9adf98ba0503718c4ce7564",
+      "after_sha256": "9a778f8b5cb36886d73e648095fd9c3e0a2e91e35bacf121a547290826ac0cac"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q007_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_018_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "1b2322aa8e11bcd58fc02b49e92cbca26eaf03a2d1575001e687b54aac7e56c2",
+      "after_sha256": "e86f64262162962eb2e1b4fa9a9726fd3f80cdb336c6ed79278fbb4480a1ba19"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q007_id.arc",
+      "entry": 9,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_019_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "cec67e654015bcfe432865aa0817746fcaf1917c0c67633d644ad602adb2fd4a",
+      "after_sha256": "172fe8951b9bad3116932f8391dc0d4a465b04015b190becb8a0ef10e1fc5c13"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q008_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_008_ID_HQ",
+      "category": "titles",
+      "before_sha256": "98210d97e42554a8e952310f29253bc0d4a37f09c2a2b1307c2a47cbc8e35098",
+      "after_sha256": "dc007d16b526616c2d3ca58f37cb09bf13c21d6566af123872d4445fe34cde1c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q008_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_003_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "d272cd2e72692eafc353e6d55edda57fcdc6a690c80e513b340e91b66783c322",
+      "after_sha256": "3f33edec3aa248c5f52aa2baec73f451324d785000f291b8860eca990673cbd4"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q008_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_000_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "5515dcfb72e1ee5b462240ef4a84a2ddb1a0918a6f414f424e10409ed477326a",
+      "after_sha256": "72ea01434d206fdb3f701105fb5879a75eab16062959d16e6c193733bdf102d7"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q008_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_018_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "1b2322aa8e11bcd58fc02b49e92cbca26eaf03a2d1575001e687b54aac7e56c2",
+      "after_sha256": "e86f64262162962eb2e1b4fa9a9726fd3f80cdb336c6ed79278fbb4480a1ba19"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q008_id.arc",
+      "entry": 9,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_026_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "bd6c5613fcfb4f206ec2d3aa8c200bc4315d1a97762f0d462f4ef8372d29e630",
+      "after_sha256": "0c9e330088cf03e16bc807070e9dcf75e0ca6adde2a0d0574fbe3e3093724b29"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q009_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_009_ID_HQ",
+      "category": "titles",
+      "before_sha256": "8e2b9428659a65d8432614b2a158615e01cf310f9516e68b8d59a53458947cdb",
+      "after_sha256": "cc843a3ab18dbc570412033016eaeb223f2486dbb151e7a5b89fae599be69c39"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q009_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_002_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "e7cac5d1ac5765cbe67f6654bbba70a1d13da024c87961292ce28999d73b4349",
+      "after_sha256": "d8dc0855c7c0a89a187c09773dcd3a66311b220d7b8fafab0cdf1bd2e46c5210"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q009_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_001_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "b9a97954f493d9fb76a5a747cde0841f92a5525d1b44e60691ac4947c128a9aa",
+      "after_sha256": "2dce0d4819d1089b81fc64485f813caf2b166cfed75a3b7788e923b1b7b0a94e"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q009_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_010_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "41f94a1deb6db37c7a0e6eba0503132a48cb5059129e6a1b5e89e5f5097e7327",
+      "after_sha256": "7c52757ef8b7b0983a102e535362829d0c7c0b13116b58e12bb597f16c9b2bcc"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q009_id.arc",
+      "entry": 9,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_019_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "cec67e654015bcfe432865aa0817746fcaf1917c0c67633d644ad602adb2fd4a",
+      "after_sha256": "172fe8951b9bad3116932f8391dc0d4a465b04015b190becb8a0ef10e1fc5c13"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q010_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_010_ID_HQ",
+      "category": "titles",
+      "before_sha256": "58f05d3bebecd37f1bf06d2a1da7c714242ab6ba00c75429877bcaf71bb3efac",
+      "after_sha256": "496c796fb60c38b9c4c3216a459f2f8bf2429a0faa2e471c58c882a8ee58d7f9"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q010_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_010_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "9ca3773b50946a3d9147fd55ca24a5d305a5ba0e9d2f1dec85fdd528e470734b",
+      "after_sha256": "6decadba6b306d899654fedff5e1885d3e096a2a39048562c15a6a7e3c41b256"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q010_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_016_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "5108c0b5991b699a865a670a3c032a3ee8bae7094ba8542719a9d7a8cbdc9942",
+      "after_sha256": "f1520d14c84c75c3debb5081f7caf24f3b19feb6cf8e883b4aa1334bfc174861"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q010_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_019_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "cec67e654015bcfe432865aa0817746fcaf1917c0c67633d644ad602adb2fd4a",
+      "after_sha256": "172fe8951b9bad3116932f8391dc0d4a465b04015b190becb8a0ef10e1fc5c13"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q010_id.arc",
+      "entry": 9,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_024_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "4a8658c1880e230b089eb728fbee63f91dd983b71867a5cdfb90194ee40a0037",
+      "after_sha256": "29fda42d0dac078864782d28da2c78c973ee16fafcdff1d4cbe0fe2f199d1bd5"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q011_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_011_ID_HQ",
+      "category": "titles",
+      "before_sha256": "23ebfc2d1b93f1b48112e845e12d19109519c82d9428097bf3051ac5d8b427e6",
+      "after_sha256": "8b745493f5a002403ff933b0d3e109cc633083bc1c9a266a90421805b128eec4"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q011_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_005_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "d7fd8ebcd6d9bb6152a9dac3b70d2a4015cae5822cad3a056d97864131e8890e",
+      "after_sha256": "2ebeb84418478d239d203000e54ceee7f35d36e53475bf66ad36d967f7330573"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q011_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_012_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "a1ec46b4506d4ae35e23a6f956428b5847bc21f7ca6505936173ec0b548bcb27",
+      "after_sha256": "359c6f0ac88f6b00dfbdf03c1862c6b5875f3a91e443a609738e7abdf4a71660"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q011_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_025_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "893d40be5a048bec2420d5b2544b91fded3739802b73777521ecd49a8d3bd6b5",
+      "after_sha256": "c8318eec2bd92273f7c5536c4e717b4bd9b8f615b12a6cd7ccbfe8949a10f821"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q012_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_012_ID_HQ",
+      "category": "titles",
+      "before_sha256": "0fbecaeb0c815653b994e535f572d6916111f41110fd1c2630c9f501747c46b8",
+      "after_sha256": "d20a8b6388fc615482d80077754e515023568a3995d04e30537b2aa83bc18768"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q012_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_004_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "bf1611f907a3d1c9a21c82115ede64d8616ff2aa238bc54c4dd6b5a316e9608f",
+      "after_sha256": "7ba422a637dbb4d033543bd760d6435d2579c81663223ae34a1b0502677b41a2"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q012_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_006_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "5e842e385829d5cce5a99f013f9c3c5ee97806d6ab0e07deeb5d4fb8deb0fc46",
+      "after_sha256": "d1008a9e796bba6d9dc3e7bd1f7e734fd2ab21bef9fa0ad52f2f492c9a8361c7"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q012_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_014_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "e2c270018f7e7871ef167135cde25dcca59c3357f7ae1f13d7a1b7510243c98c",
+      "after_sha256": "d878d0f49571529400773cd3c08c8b7ab2bbefb81cf1d9ad96ac603e661dd60c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q012_id.arc",
+      "entry": 9,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_024_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "4a8658c1880e230b089eb728fbee63f91dd983b71867a5cdfb90194ee40a0037",
+      "after_sha256": "29fda42d0dac078864782d28da2c78c973ee16fafcdff1d4cbe0fe2f199d1bd5"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q013_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_013_ID_HQ",
+      "category": "titles",
+      "before_sha256": "4cafea1121dcf4487c5aea58153cfda08a0172c45d2d1d64df72fa2a6a2a2c30",
+      "after_sha256": "1ad2ed13163387c7858ed7baed459d707a84e5b24d7b6ff6df1b6921327dcd9f"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q013_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_007_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "f7364498727476b70ae539c72d774b94314ec939b5d73b9247e60fcf00ed5cfd",
+      "after_sha256": "a619112673dbbb345d9c2879f7d1561c018d92c6c44118011f8579f0c340e29c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q013_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_021_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "15e5bd3ce126c604b49e35260a55be47a207fffbcddabf34fb9d7585bc9901b8",
+      "after_sha256": "f86e2210d0f94af1d4f9d572e9a17bc098b5c394fbf46461fcb807d0cc24bce9"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q013_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_009_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "5c10f4b8f51977d702fb2195ed7058c1dd832dd62087645bd91793142dd21c6d",
+      "after_sha256": "6dc1e77aaa7bd348f3f4c7ec0f63f9baea2c3c7308b2c71785027c016a560d20"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q014_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_014_ID_HQ",
+      "category": "titles",
+      "before_sha256": "14d85e0833e5748d42ff340c3ded23500ee6043b5f1787f66fcc1a11f782fdc0",
+      "after_sha256": "441fb987f55681afdab84fd10c49a9e41bfeaa7132c5c84a88ef7e09d5fac2b2"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q014_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_009_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "5ccaaa68b765fb507cdae6e0c5b005fd4daf974d89a8052ffa3060f216d64105",
+      "after_sha256": "92dd18b42a26acef972e55e749b38564069dd9a0ef46c05597876f52a6abf956"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q014_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_012_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "a1ec46b4506d4ae35e23a6f956428b5847bc21f7ca6505936173ec0b548bcb27",
+      "after_sha256": "359c6f0ac88f6b00dfbdf03c1862c6b5875f3a91e443a609738e7abdf4a71660"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q014_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_017_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "9eb0f6667dd9000a16438c4ddf91c15915c3a6f7de613e3c1e8e13f6bd68b70b",
+      "after_sha256": "8f1fa20725d6038c24a3a524b4cb690de42699704fb7dab3c4c26579125e7d1b"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q014_id.arc",
+      "entry": 9,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_022_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "72055518a4ee703b9f2179e6921cd1165692133a7f1e990955bac9bdeec6e344",
+      "after_sha256": "48081215c1dc5bd8ae4b3e79e2e3a7a06caf584b1a0f785709d1cb5186ea83c5"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q015_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_015_ID_HQ",
+      "category": "titles",
+      "before_sha256": "ae51554278ed72a22fc615ad11e5303794f082755566705c197c9f0e4a830895",
+      "after_sha256": "97efca312731335ac9e5379d18c8da0f602059de5bef163bca351d771bf0f057"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q015_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_025_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "247a826a3150317655e1431a971850e2851f0e425041364b200150b20e16acc7",
+      "after_sha256": "0fa8ad58e9e9b9fec9847eaa53b0a07dc699d6592f9bf514f3c4f3cc251cde9b"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q015_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_024_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "2cbbf3c7141a2a86c1e32b5827360a88e6e7f8fe065096a7430937dcc1a65d8d",
+      "after_sha256": "069f37df976e97a00e0f16774b2b0841cfe8c1530c8e8ae4cd7314ad9320516d"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q015_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_101_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "60e611c920560dbea97dcc11285e6965b40b20d4b3fc58e9639706921dadde1d",
+      "after_sha256": "eac8a18d493b68e787c1e8c617bcc58fb370ae8181059346c7c48a2b8f58b839"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q015_id.arc",
+      "entry": 9,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_021_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "15e5bd3ce126c604b49e35260a55be47a207fffbcddabf34fb9d7585bc9901b8",
+      "after_sha256": "f86e2210d0f94af1d4f9d572e9a17bc098b5c394fbf46461fcb807d0cc24bce9"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q016_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_016_ID_HQ",
+      "category": "titles",
+      "before_sha256": "d464e6da7a05b30ce7e5979140515a01fdeb030a658406fe3353e90b34370b5d",
+      "after_sha256": "5ce188786e92e0934ede319dda95e986a70c55fd7ffb42f71bb054a417bbb07a"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q016_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_011_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "1d756b1849f87f2c5ced12a66300262212ebf982b9adf98ba0503718c4ce7564",
+      "after_sha256": "9a778f8b5cb36886d73e648095fd9c3e0a2e91e35bacf121a547290826ac0cac"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q016_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_014_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "e2c270018f7e7871ef167135cde25dcca59c3357f7ae1f13d7a1b7510243c98c",
+      "after_sha256": "d878d0f49571529400773cd3c08c8b7ab2bbefb81cf1d9ad96ac603e661dd60c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q016_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_015_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "7dc207c79fd9d2492887b2879bae55d108a512108084be56c23195664f0804b5",
+      "after_sha256": "17617588e101f5c286075ea5ddb69b3bb77cfd08f36d03f407031df5c6028075"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q016_id.arc",
+      "entry": 9,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_027_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "7652b6a72ff36f08c2ee2104d8e2b6246a1201b99da6ad3ae085de5c2f4cb54f",
+      "after_sha256": "669987b307e9205833d3fcde46fad41c966d5ae3d899bee9e2e1b9fa7eaaf57b"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q017_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_017_ID_HQ",
+      "category": "titles",
+      "before_sha256": "c2a039c0cb075843d9588ef6fe9e053c963eccb6de8f951461460241846dc79e",
+      "after_sha256": "6fd58d7ef6460347a2888b2a3fd1b82912e6b4ee616922e7af3252d619a5e58f"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q017_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_008_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "c98022718c544025d9574ff83893a1558b62ea8b620f545c9ae318f6d7ff3251",
+      "after_sha256": "fd1acd7e3384d1273f7e0887a91be52cb5c8f919efcd9dfd800935f1b24f446d"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q017_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_020_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "10111e78e5dd21a7b7753f40d120ec4485ebb4463f49d87ae39339068fd3d18c",
+      "after_sha256": "457ae9f876aba53dce62749e550f6cb4fb982eb4793ed8208975e6b644dbf735"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q017_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_021_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "15e5bd3ce126c604b49e35260a55be47a207fffbcddabf34fb9d7585bc9901b8",
+      "after_sha256": "f86e2210d0f94af1d4f9d572e9a17bc098b5c394fbf46461fcb807d0cc24bce9"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q018_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_018_ID_HQ",
+      "category": "titles",
+      "before_sha256": "76a21b9a5dd7e1830e2f4fe0e66786a793dfd9e532ccfb2e1a871a8d90bb167f",
+      "after_sha256": "cb6d49180bd7d44ccae25e542af8fa2cba841487209ad91b6db6b7af3bcb6f8b"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q018_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_013_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "c8a3d8f585c5908fc9f5b8f84a0d39bf436f03db252d0274a51a91fe6d2d7a8a",
+      "after_sha256": "51d845463e6adbbc4a4e0c1450e094c0f8251dff8942f43867f40981b91c2374"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q018_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_017_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "9eb0f6667dd9000a16438c4ddf91c15915c3a6f7de613e3c1e8e13f6bd68b70b",
+      "after_sha256": "8f1fa20725d6038c24a3a524b4cb690de42699704fb7dab3c4c26579125e7d1b"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q018_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_021_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "15e5bd3ce126c604b49e35260a55be47a207fffbcddabf34fb9d7585bc9901b8",
+      "after_sha256": "f86e2210d0f94af1d4f9d572e9a17bc098b5c394fbf46461fcb807d0cc24bce9"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q018_id.arc",
+      "entry": 9,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_022_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "72055518a4ee703b9f2179e6921cd1165692133a7f1e990955bac9bdeec6e344",
+      "after_sha256": "48081215c1dc5bd8ae4b3e79e2e3a7a06caf584b1a0f785709d1cb5186ea83c5"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q019_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_019_ID_HQ",
+      "category": "titles",
+      "before_sha256": "badfcd09c437889ff1164528377ccc84d6e135685fa9c18168086c5af5d96093",
+      "after_sha256": "86362596b68691b411d9593da523178b01dce5dc59e00113dd41890ddfaf41d5"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q019_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_011_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "e4c346a847bf26d1a52030ae4de2df3d1bcf2c68c33be651b8d6fea41294c7f3",
+      "after_sha256": "9f6d407d9c2026567bb47e40fcee41f1f18723ea35593b76cb9b897755904da1"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q019_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_009_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "5c10f4b8f51977d702fb2195ed7058c1dd832dd62087645bd91793142dd21c6d",
+      "after_sha256": "6dc1e77aaa7bd348f3f4c7ec0f63f9baea2c3c7308b2c71785027c016a560d20"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q019_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_020_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "10111e78e5dd21a7b7753f40d120ec4485ebb4463f49d87ae39339068fd3d18c",
+      "after_sha256": "457ae9f876aba53dce62749e550f6cb4fb982eb4793ed8208975e6b644dbf735"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q019_id.arc",
+      "entry": 9,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_025_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "893d40be5a048bec2420d5b2544b91fded3739802b73777521ecd49a8d3bd6b5",
+      "after_sha256": "c8318eec2bd92273f7c5536c4e717b4bd9b8f615b12a6cd7ccbfe8949a10f821"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q020_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_020_ID_HQ",
+      "category": "titles",
+      "before_sha256": "d8b799e6795e35309281743c48c9f1dd6539587ebac4b596d834a7ded0ff5a54",
+      "after_sha256": "5f6c273af2e953e8c98447f6a6cac315b79a7769e63700e395066fca64a9212c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q020_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_021_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "c09a284781aab1922211bd4a239df553007354e0a695f12320db17b98cdde5a3",
+      "after_sha256": "1a4a24032753072cc4a6f73ba31fac3f7e0a95e196761eb43069e70fbfc39101"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q020_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_014_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "e2c270018f7e7871ef167135cde25dcca59c3357f7ae1f13d7a1b7510243c98c",
+      "after_sha256": "d878d0f49571529400773cd3c08c8b7ab2bbefb81cf1d9ad96ac603e661dd60c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q020_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_015_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "7dc207c79fd9d2492887b2879bae55d108a512108084be56c23195664f0804b5",
+      "after_sha256": "17617588e101f5c286075ea5ddb69b3bb77cfd08f36d03f407031df5c6028075"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q020_id.arc",
+      "entry": 9,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_016_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "5108c0b5991b699a865a670a3c032a3ee8bae7094ba8542719a9d7a8cbdc9942",
+      "after_sha256": "f1520d14c84c75c3debb5081f7caf24f3b19feb6cf8e883b4aa1334bfc174861"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q021_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_021_ID_HQ",
+      "category": "titles",
+      "before_sha256": "398d2e661ae976d03cbc198c91c90bc609b1f9d1cb663aa0cc538e80720aefa4",
+      "after_sha256": "0066de757c408e0b13048f5f6fc9e132f8adda7e1266ae4e2d2382a22e5ceaf4"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q021_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_014_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "bd14d9e280c84ce3e3881657136d2d9ebbbebdc831e02b3017f4490e45a2d14c",
+      "after_sha256": "b8204d9a9a2211007b5c263a030c4b6d491f244e39a3408ace896cf81d11b788"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q021_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_013_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "bdfc56be18c6d721230588da9b03c20a699d933ef6819f8bfda4bf227b6c178c",
+      "after_sha256": "937ed5a22a3dc42ae5eb89caec3690927a180d89a0a08cb35abc8d0ca2f385cf"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q021_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_015_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "7dc207c79fd9d2492887b2879bae55d108a512108084be56c23195664f0804b5",
+      "after_sha256": "17617588e101f5c286075ea5ddb69b3bb77cfd08f36d03f407031df5c6028075"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q021_id.arc",
+      "entry": 9,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_018_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "1b2322aa8e11bcd58fc02b49e92cbca26eaf03a2d1575001e687b54aac7e56c2",
+      "after_sha256": "e86f64262162962eb2e1b4fa9a9726fd3f80cdb336c6ed79278fbb4480a1ba19"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q022_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_022_ID_HQ",
+      "category": "titles",
+      "before_sha256": "de268fe468f503ea67fa0c8d8523f0b342d6835178f40dba3af2f563141dd489",
+      "after_sha256": "d06ea4ae6557de430d8435cbc5019df279330f651131be67b36d72f4b97fb02b"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q022_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_012_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "a1ec46b4506d4ae35e23a6f956428b5847bc21f7ca6505936173ec0b548bcb27",
+      "after_sha256": "359c6f0ac88f6b00dfbdf03c1862c6b5875f3a91e443a609738e7abdf4a71660"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q022_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_018_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "1b2322aa8e11bcd58fc02b49e92cbca26eaf03a2d1575001e687b54aac7e56c2",
+      "after_sha256": "e86f64262162962eb2e1b4fa9a9726fd3f80cdb336c6ed79278fbb4480a1ba19"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q022_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_023_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "db249336ee76ce8607c46abe4cc98a8b9916585bd03b8b870d35068ef007ebcd",
+      "after_sha256": "5a42b3ec2d5580354bac0d917c03ccc156198045c725deb0d16ceb6698ff37e1"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q023_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_023_ID_HQ",
+      "category": "titles",
+      "before_sha256": "37935d4edf3b753bfcc51dd8382b5fab73f2ee665e5654a0e8ee1f001687b38f",
+      "after_sha256": "742f8b7c7899b76385a8e0755daf9d9bedd41b2e6b52f0b8807d4ea090de93a4"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q023_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_020_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "cf9ce9bc21a16dcfd8f4ce1957f642097c5c16d2ea7659c27b0654692b6ac171",
+      "after_sha256": "35572d4d8ef4d8dcef667cd774e01395480b84565318780c67848dd478736fcd"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q023_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_106_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "2bc7039e4c92e66f132c0c83aae37ec8415d942700f2a2fe60cda6e0d96fab86",
+      "after_sha256": "185fe10af1779be45de8474fe372e1c1d0b52be9a199ab140ba3285b869cbe38"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q023_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_011_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "1d756b1849f87f2c5ced12a66300262212ebf982b9adf98ba0503718c4ce7564",
+      "after_sha256": "9a778f8b5cb36886d73e648095fd9c3e0a2e91e35bacf121a547290826ac0cac"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q023_id.arc",
+      "entry": 9,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_023_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "db249336ee76ce8607c46abe4cc98a8b9916585bd03b8b870d35068ef007ebcd",
+      "after_sha256": "5a42b3ec2d5580354bac0d917c03ccc156198045c725deb0d16ceb6698ff37e1"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q024_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_024_ID_HQ",
+      "category": "titles",
+      "before_sha256": "3f86ab785ce9f701724dd552f07cbe945d60ca2e195e4a8792efa9af8f0aebc2",
+      "after_sha256": "336138cf29393c42314d996c25a9d1de938028e90031704590cc8ae5ff9be454"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q024_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_012_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "2691a0ecdbdbf2ab9c9e8700d786c15e3c3c708d5de3dc86476fb7bad5acb7f3",
+      "after_sha256": "94a8db1ff4c9c48e86313ff1b87534f89751c6d6216036a7b2d857342daec123"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q024_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_012_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "a1ec46b4506d4ae35e23a6f956428b5847bc21f7ca6505936173ec0b548bcb27",
+      "after_sha256": "359c6f0ac88f6b00dfbdf03c1862c6b5875f3a91e443a609738e7abdf4a71660"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q024_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_013_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "bdfc56be18c6d721230588da9b03c20a699d933ef6819f8bfda4bf227b6c178c",
+      "after_sha256": "937ed5a22a3dc42ae5eb89caec3690927a180d89a0a08cb35abc8d0ca2f385cf"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q024_id.arc",
+      "entry": 9,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_019_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "cec67e654015bcfe432865aa0817746fcaf1917c0c67633d644ad602adb2fd4a",
+      "after_sha256": "172fe8951b9bad3116932f8391dc0d4a465b04015b190becb8a0ef10e1fc5c13"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q025_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_025_ID_HQ",
+      "category": "titles",
+      "before_sha256": "7ff5cc60d3e45cc9500c8e014ac869738b76f0a68d48a660a2bcc9efbe106980",
+      "after_sha256": "2340120af8b983de18c7669fa587a95395ae107e910597789b2a7ef3a6304033"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q025_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_026_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "d91b9eb904405f18f19ae2ab42583a86dab817becca256544e2f35d0d25b9b08",
+      "after_sha256": "79f8a2ceae038eae07d94af732384ba5b4d2fd0d3089d7625732b4b7bf6ed629"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q025_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_009_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "5c10f4b8f51977d702fb2195ed7058c1dd832dd62087645bd91793142dd21c6d",
+      "after_sha256": "6dc1e77aaa7bd348f3f4c7ec0f63f9baea2c3c7308b2c71785027c016a560d20"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q025_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_025_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "893d40be5a048bec2420d5b2544b91fded3739802b73777521ecd49a8d3bd6b5",
+      "after_sha256": "c8318eec2bd92273f7c5536c4e717b4bd9b8f615b12a6cd7ccbfe8949a10f821"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q025_id.arc",
+      "entry": 9,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_026_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "bd6c5613fcfb4f206ec2d3aa8c200bc4315d1a97762f0d462f4ef8372d29e630",
+      "after_sha256": "0c9e330088cf03e16bc807070e9dcf75e0ca6adde2a0d0574fbe3e3093724b29"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q026_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_026_ID_HQ",
+      "category": "titles",
+      "before_sha256": "61948dbfd527f4020ab9b10e25b88ca7912457339bdb5726170044d0d13b7a4e",
+      "after_sha256": "686d2fe3149d258db18e33891b4d7aef2078ebc47ad4012a2531128409c0cd5e"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q026_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_027_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "ef745d2ad33d877681d8c351c9391040067b1e5866e06aff08d6eddd438b189d",
+      "after_sha256": "33d0507e9c020803ad8d4d807ca170b56bb22d9b6563563ae5fff40233550904"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q026_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_010_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "41f94a1deb6db37c7a0e6eba0503132a48cb5059129e6a1b5e89e5f5097e7327",
+      "after_sha256": "7c52757ef8b7b0983a102e535362829d0c7c0b13116b58e12bb597f16c9b2bcc"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q026_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_014_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "e2c270018f7e7871ef167135cde25dcca59c3357f7ae1f13d7a1b7510243c98c",
+      "after_sha256": "d878d0f49571529400773cd3c08c8b7ab2bbefb81cf1d9ad96ac603e661dd60c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q027_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_027_ID_HQ",
+      "category": "titles",
+      "before_sha256": "8d0eed1410fc7b6955444bc71cd37e50525f7a7b5d0f06f20671080f3faae267",
+      "after_sha256": "846630a252de1c03cd0d78e905f6c414054b3e66adba01cc7b01bfb6ffc543e1"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q027_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_104_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "636320576c9361a74f8045b7c9b3a0e17c9165aad512de855e5339935d74bd39",
+      "after_sha256": "c23438bd6be0222f0f423523a987173a4d485fd5696dc2eb9b8a7ecab3dfa08c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q027_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_013_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "bdfc56be18c6d721230588da9b03c20a699d933ef6819f8bfda4bf227b6c178c",
+      "after_sha256": "937ed5a22a3dc42ae5eb89caec3690927a180d89a0a08cb35abc8d0ca2f385cf"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q027_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_022_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "72055518a4ee703b9f2179e6921cd1165692133a7f1e990955bac9bdeec6e344",
+      "after_sha256": "48081215c1dc5bd8ae4b3e79e2e3a7a06caf584b1a0f785709d1cb5186ea83c5"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q028_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_028_ID_HQ",
+      "category": "titles",
+      "before_sha256": "fc0f47e3c6d42c5e08af79cb842020eda0bd6f538a4b880f8b551b9859ab9135",
+      "after_sha256": "1191673faf8681d45232ad161f53ecdf4b3496f9b6d15314f38897493ca1e285"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q028_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_015_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "7dc207c79fd9d2492887b2879bae55d108a512108084be56c23195664f0804b5",
+      "after_sha256": "17617588e101f5c286075ea5ddb69b3bb77cfd08f36d03f407031df5c6028075"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q028_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_016_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "5108c0b5991b699a865a670a3c032a3ee8bae7094ba8542719a9d7a8cbdc9942",
+      "after_sha256": "f1520d14c84c75c3debb5081f7caf24f3b19feb6cf8e883b4aa1334bfc174861"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q028_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_020_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "10111e78e5dd21a7b7753f40d120ec4485ebb4463f49d87ae39339068fd3d18c",
+      "after_sha256": "457ae9f876aba53dce62749e550f6cb4fb982eb4793ed8208975e6b644dbf735"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q029_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_029_ID_HQ",
+      "category": "titles",
+      "before_sha256": "e7775d99c75ff56554a9a2d4cafb846fc01826d5a322252ada88ef1026562316",
+      "after_sha256": "b018faa2b05a63b2c6421dab0985ee82f8365dbdc8a5d1e39308f0af4e6c1d53"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q029_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_011_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "1d756b1849f87f2c5ced12a66300262212ebf982b9adf98ba0503718c4ce7564",
+      "after_sha256": "9a778f8b5cb36886d73e648095fd9c3e0a2e91e35bacf121a547290826ac0cac"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q029_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_023_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "db249336ee76ce8607c46abe4cc98a8b9916585bd03b8b870d35068ef007ebcd",
+      "after_sha256": "5a42b3ec2d5580354bac0d917c03ccc156198045c725deb0d16ceb6698ff37e1"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q029_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_024_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "4a8658c1880e230b089eb728fbee63f91dd983b71867a5cdfb90194ee40a0037",
+      "after_sha256": "29fda42d0dac078864782d28da2c78c973ee16fafcdff1d4cbe0fe2f199d1bd5"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q030_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_030_ID_HQ",
+      "category": "titles",
+      "before_sha256": "efe399aea5e24b2242782e2f30fb906436f26cb091ab4fbcf3d7cc900ee55d9c",
+      "after_sha256": "2658fac0d577e018d2e9cabaeff76914e714e4ccfacf0abea544ba0532c2f57a"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q030_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_015_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "2a13be6e7cf34be2c8e2115200b2c29215d1bb13569ce703b63bb33e8ebae24c",
+      "after_sha256": "1a2191c35f71b63006eb1013a54610293a325fc264061578f904fa35babb8160"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_000_ID_HQ",
+      "category": "titles",
+      "before_sha256": "98ebef69612d1f78b076e991db755bddb2ec8ec2dd54591ebf7439f4e9ec42dd",
+      "after_sha256": "792f0c6335618799ae9c530761366b0112d5af23eda511fa0ecec726ca9ce706"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 3,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_022_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "9775a5368c782f185738aa174256018b423a32e616bbb7f8f1ba8106452f297f",
+      "after_sha256": "5c90700aacfb31818c7a48c7277a515582c312e6f7687bd8e6388f1e4ebf7a03"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 5,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_102_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "e32f94f0d051f8beb614e4a3228d1baa10c7172a2f5b6c4189522797be88f098",
+      "after_sha256": "204a79dec22bc0a36d48d61641e06a363ad04086e0b320845a29912dd0dc6b39"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 7,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_010_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "41f94a1deb6db37c7a0e6eba0503132a48cb5059129e6a1b5e89e5f5097e7327",
+      "after_sha256": "7c52757ef8b7b0983a102e535362829d0c7c0b13116b58e12bb597f16c9b2bcc"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 9,
+      "name": "id\\texture\\jpn\\quest\\quest_001_ID_HQ",
+      "category": "titles",
+      "before_sha256": "1748b8313cd7c958ee4ad089f91dcbe5d8efd0d49cb8c947fd0b6680727c5660",
+      "after_sha256": "b56963fb835763f835090a61023de12d4adf65c8417814ad4fec75a72a8f791b"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 12,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_023_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "e09e3ef9352b11500b6252b795501a8eac19e61e5618f44b67caff518fdda590",
+      "after_sha256": "38e8704266fa9889fc032f0eb94a0c9b8bdfadc3d0e433862535b9aa74f6e09c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 14,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_017_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "9eb0f6667dd9000a16438c4ddf91c15915c3a6f7de613e3c1e8e13f6bd68b70b",
+      "after_sha256": "8f1fa20725d6038c24a3a524b4cb690de42699704fb7dab3c4c26579125e7d1b"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 16,
+      "name": "id\\texture\\jpn\\quest\\quest_002_ID_HQ",
+      "category": "titles",
+      "before_sha256": "781cb146520ddd9e1982f6dbc1afb823be73568688af8eda3dbe6eca0d29a786",
+      "after_sha256": "2044f4e570465bdbd7e977c497ab7a2ff26ea5831ff59258991334ef2febe35b"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 19,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_028_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "ef7d7761142a9080eded971bee74852ce33e3f13f7a54883abca801b5fb4a8c8",
+      "after_sha256": "f16ed18f9e043a9ef6845f3ae55f9984db2ce24bbff76ba43cd0af04809733e5"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 21,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_009_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "5c10f4b8f51977d702fb2195ed7058c1dd832dd62087645bd91793142dd21c6d",
+      "after_sha256": "6dc1e77aaa7bd348f3f4c7ec0f63f9baea2c3c7308b2c71785027c016a560d20"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 23,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_023_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "db249336ee76ce8607c46abe4cc98a8b9916585bd03b8b870d35068ef007ebcd",
+      "after_sha256": "5a42b3ec2d5580354bac0d917c03ccc156198045c725deb0d16ceb6698ff37e1"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 25,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_026_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "bd6c5613fcfb4f206ec2d3aa8c200bc4315d1a97762f0d462f4ef8372d29e630",
+      "after_sha256": "0c9e330088cf03e16bc807070e9dcf75e0ca6adde2a0d0574fbe3e3093724b29"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 27,
+      "name": "id\\texture\\jpn\\quest\\quest_003_ID_HQ",
+      "category": "titles",
+      "before_sha256": "dbdea23393ada40c155cc825a92c4a5de4699ae86e8825f4a27db0d14722c1db",
+      "after_sha256": "bb0d6a1599c22f70487411fc05b3c72f2026aa2dda2c54670c103a2e03503d8c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 30,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_017_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "ff629163dc9c332ed7040554d4b55cca89817268b6778e4f5c18d2daceab6e35",
+      "after_sha256": "74939384cf147c128ec79f73e502bc87f565ebb16c49028e83f5a47b6a19757c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 32,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_025_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "893d40be5a048bec2420d5b2544b91fded3739802b73777521ecd49a8d3bd6b5",
+      "after_sha256": "c8318eec2bd92273f7c5536c4e717b4bd9b8f615b12a6cd7ccbfe8949a10f821"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 34,
+      "name": "id\\texture\\jpn\\quest\\quest_004_ID_HQ",
+      "category": "titles",
+      "before_sha256": "65602713e2b797172f95bfb264f657c222988588b4d740363be2081faeadeb3d",
+      "after_sha256": "d0dee73a816362329d98f34a0bf6710cbea43f9051169a28c48f0bb22862d672"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 37,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_019_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "24ac1fbd8303860c6b4f46fab4352eae75395cf151c8ae5bfb64b03e698e104a",
+      "after_sha256": "da743bad2767a9c79b0ba01e16e06b0eabee9e7f63b23f0965c145e2fd0e934e"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 39,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_100_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "ede2a3c62e0d8f1b8fdd7605567bd910739187a9a3f0ad60fcf87aafd13abab8",
+      "after_sha256": "95b3b69b1d6a9683cd7a697274eb259e83fea83378e2d3665d96ef16648db608"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 41,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_013_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "bdfc56be18c6d721230588da9b03c20a699d933ef6819f8bfda4bf227b6c178c",
+      "after_sha256": "937ed5a22a3dc42ae5eb89caec3690927a180d89a0a08cb35abc8d0ca2f385cf"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 43,
+      "name": "id\\texture\\jpn\\quest\\quest_005_ID_HQ",
+      "category": "titles",
+      "before_sha256": "842fac8b3ea2877519b3ec964a063e3fd912267d0184bbce8d47534d84a46822",
+      "after_sha256": "e4ef98ce8f5ac3975be788db7628614d338a0cb57d44b1faee4fc3c27ca14d8e"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 46,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_016_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "fd3e605df0c4f11b5c5c742329db40b758bb4ab2cb715c385cb528d228882de7",
+      "after_sha256": "0fc58182f490fd836352886e084113c145e101581fb55067e151643415e41034"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 48,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_105_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "b7ca48f0e2cb8a887ce16ae233bd960e117bcc852d9515f8d34e3d1b6518772c",
+      "after_sha256": "4ed2c28b65234489bc9605f0328c7d551cdbf2c1104456c8dff6d86cf57cdecb"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 50,
+      "name": "id\\texture\\jpn\\quest\\quest_006_ID_HQ",
+      "category": "titles",
+      "before_sha256": "a36189756ec7f8fd5bf1065fb46305f7171d8ebef0bf2e282f97ea187c17de97",
+      "after_sha256": "83b55155e2abb2fe3ab93961b07cb3375fc2e0b74164c9698b04f1c4536fbc19"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 53,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_029_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "4efbb6f93dcf9d9a2b77cb4e949b1787f1f98b5c0b7039c365a4cf13b37baa43",
+      "after_sha256": "57d6c429e64de5c2abcd11e41afd327ee55467447c695593cf63df46d792e7be"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 55,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_022_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "72055518a4ee703b9f2179e6921cd1165692133a7f1e990955bac9bdeec6e344",
+      "after_sha256": "48081215c1dc5bd8ae4b3e79e2e3a7a06caf584b1a0f785709d1cb5186ea83c5"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 57,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_024_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "4a8658c1880e230b089eb728fbee63f91dd983b71867a5cdfb90194ee40a0037",
+      "after_sha256": "29fda42d0dac078864782d28da2c78c973ee16fafcdff1d4cbe0fe2f199d1bd5"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 59,
+      "name": "id\\texture\\jpn\\quest\\quest_007_ID_HQ",
+      "category": "titles",
+      "before_sha256": "b3270442dea364de2d7fe9c39f4500b50d9a289e25861a126c4f1de5b78a7c3f",
+      "after_sha256": "b3b413c1b5f03065e3ef45aa7ebe0076fbf37b402acd8ed2d0e958fa8f0041e6"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 62,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_018_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "53e50a510c4c167f0f72378ea736f0dc83a69ba50f01aaa24cd77d3a3b427b95",
+      "after_sha256": "0d5085a2d10808f0a6b676d45dd0a808b35919114b7a8ebeccb7719eaf8d684f"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 64,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_011_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "1d756b1849f87f2c5ced12a66300262212ebf982b9adf98ba0503718c4ce7564",
+      "after_sha256": "9a778f8b5cb36886d73e648095fd9c3e0a2e91e35bacf121a547290826ac0cac"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 66,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_018_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "1b2322aa8e11bcd58fc02b49e92cbca26eaf03a2d1575001e687b54aac7e56c2",
+      "after_sha256": "e86f64262162962eb2e1b4fa9a9726fd3f80cdb336c6ed79278fbb4480a1ba19"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 68,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_019_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "cec67e654015bcfe432865aa0817746fcaf1917c0c67633d644ad602adb2fd4a",
+      "after_sha256": "172fe8951b9bad3116932f8391dc0d4a465b04015b190becb8a0ef10e1fc5c13"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 70,
+      "name": "id\\texture\\jpn\\quest\\quest_008_ID_HQ",
+      "category": "titles",
+      "before_sha256": "98210d97e42554a8e952310f29253bc0d4a37f09c2a2b1307c2a47cbc8e35098",
+      "after_sha256": "dc007d16b526616c2d3ca58f37cb09bf13c21d6566af123872d4445fe34cde1c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 73,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_003_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "d272cd2e72692eafc353e6d55edda57fcdc6a690c80e513b340e91b66783c322",
+      "after_sha256": "3f33edec3aa248c5f52aa2baec73f451324d785000f291b8860eca990673cbd4"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 75,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_000_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "5515dcfb72e1ee5b462240ef4a84a2ddb1a0918a6f414f424e10409ed477326a",
+      "after_sha256": "72ea01434d206fdb3f701105fb5879a75eab16062959d16e6c193733bdf102d7"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 77,
+      "name": "id\\texture\\jpn\\quest\\quest_009_ID_HQ",
+      "category": "titles",
+      "before_sha256": "8e2b9428659a65d8432614b2a158615e01cf310f9516e68b8d59a53458947cdb",
+      "after_sha256": "cc843a3ab18dbc570412033016eaeb223f2486dbb151e7a5b89fae599be69c39"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 80,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_002_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "e7cac5d1ac5765cbe67f6654bbba70a1d13da024c87961292ce28999d73b4349",
+      "after_sha256": "d8dc0855c7c0a89a187c09773dcd3a66311b220d7b8fafab0cdf1bd2e46c5210"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 82,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_001_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "b9a97954f493d9fb76a5a747cde0841f92a5525d1b44e60691ac4947c128a9aa",
+      "after_sha256": "2dce0d4819d1089b81fc64485f813caf2b166cfed75a3b7788e923b1b7b0a94e"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 84,
+      "name": "id\\texture\\jpn\\quest\\quest_010_ID_HQ",
+      "category": "titles",
+      "before_sha256": "58f05d3bebecd37f1bf06d2a1da7c714242ab6ba00c75429877bcaf71bb3efac",
+      "after_sha256": "496c796fb60c38b9c4c3216a459f2f8bf2429a0faa2e471c58c882a8ee58d7f9"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 87,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_010_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "9ca3773b50946a3d9147fd55ca24a5d305a5ba0e9d2f1dec85fdd528e470734b",
+      "after_sha256": "6decadba6b306d899654fedff5e1885d3e096a2a39048562c15a6a7e3c41b256"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 89,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_016_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "5108c0b5991b699a865a670a3c032a3ee8bae7094ba8542719a9d7a8cbdc9942",
+      "after_sha256": "f1520d14c84c75c3debb5081f7caf24f3b19feb6cf8e883b4aa1334bfc174861"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 91,
+      "name": "id\\texture\\jpn\\quest\\quest_011_ID_HQ",
+      "category": "titles",
+      "before_sha256": "23ebfc2d1b93f1b48112e845e12d19109519c82d9428097bf3051ac5d8b427e6",
+      "after_sha256": "8b745493f5a002403ff933b0d3e109cc633083bc1c9a266a90421805b128eec4"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 94,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_005_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "d7fd8ebcd6d9bb6152a9dac3b70d2a4015cae5822cad3a056d97864131e8890e",
+      "after_sha256": "2ebeb84418478d239d203000e54ceee7f35d36e53475bf66ad36d967f7330573"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 96,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_012_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "a1ec46b4506d4ae35e23a6f956428b5847bc21f7ca6505936173ec0b548bcb27",
+      "after_sha256": "359c6f0ac88f6b00dfbdf03c1862c6b5875f3a91e443a609738e7abdf4a71660"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 98,
+      "name": "id\\texture\\jpn\\quest\\quest_012_ID_HQ",
+      "category": "titles",
+      "before_sha256": "0fbecaeb0c815653b994e535f572d6916111f41110fd1c2630c9f501747c46b8",
+      "after_sha256": "d20a8b6388fc615482d80077754e515023568a3995d04e30537b2aa83bc18768"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 101,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_004_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "bf1611f907a3d1c9a21c82115ede64d8616ff2aa238bc54c4dd6b5a316e9608f",
+      "after_sha256": "7ba422a637dbb4d033543bd760d6435d2579c81663223ae34a1b0502677b41a2"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 103,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_006_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "5e842e385829d5cce5a99f013f9c3c5ee97806d6ab0e07deeb5d4fb8deb0fc46",
+      "after_sha256": "d1008a9e796bba6d9dc3e7bd1f7e734fd2ab21bef9fa0ad52f2f492c9a8361c7"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 105,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_014_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "e2c270018f7e7871ef167135cde25dcca59c3357f7ae1f13d7a1b7510243c98c",
+      "after_sha256": "d878d0f49571529400773cd3c08c8b7ab2bbefb81cf1d9ad96ac603e661dd60c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 107,
+      "name": "id\\texture\\jpn\\quest\\quest_013_ID_HQ",
+      "category": "titles",
+      "before_sha256": "4cafea1121dcf4487c5aea58153cfda08a0172c45d2d1d64df72fa2a6a2a2c30",
+      "after_sha256": "1ad2ed13163387c7858ed7baed459d707a84e5b24d7b6ff6df1b6921327dcd9f"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 110,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_007_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "f7364498727476b70ae539c72d774b94314ec939b5d73b9247e60fcf00ed5cfd",
+      "after_sha256": "a619112673dbbb345d9c2879f7d1561c018d92c6c44118011f8579f0c340e29c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 112,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_021_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "15e5bd3ce126c604b49e35260a55be47a207fffbcddabf34fb9d7585bc9901b8",
+      "after_sha256": "f86e2210d0f94af1d4f9d572e9a17bc098b5c394fbf46461fcb807d0cc24bce9"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 114,
+      "name": "id\\texture\\jpn\\quest\\quest_014_ID_HQ",
+      "category": "titles",
+      "before_sha256": "14d85e0833e5748d42ff340c3ded23500ee6043b5f1787f66fcc1a11f782fdc0",
+      "after_sha256": "441fb987f55681afdab84fd10c49a9e41bfeaa7132c5c84a88ef7e09d5fac2b2"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 117,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_009_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "5ccaaa68b765fb507cdae6e0c5b005fd4daf974d89a8052ffa3060f216d64105",
+      "after_sha256": "92dd18b42a26acef972e55e749b38564069dd9a0ef46c05597876f52a6abf956"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 119,
+      "name": "id\\texture\\jpn\\quest\\quest_015_ID_HQ",
+      "category": "titles",
+      "before_sha256": "ae51554278ed72a22fc615ad11e5303794f082755566705c197c9f0e4a830895",
+      "after_sha256": "97efca312731335ac9e5379d18c8da0f602059de5bef163bca351d771bf0f057"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 122,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_025_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "247a826a3150317655e1431a971850e2851f0e425041364b200150b20e16acc7",
+      "after_sha256": "0fa8ad58e9e9b9fec9847eaa53b0a07dc699d6592f9bf514f3c4f3cc251cde9b"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 124,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_024_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "2cbbf3c7141a2a86c1e32b5827360a88e6e7f8fe065096a7430937dcc1a65d8d",
+      "after_sha256": "069f37df976e97a00e0f16774b2b0841cfe8c1530c8e8ae4cd7314ad9320516d"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 126,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_101_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "60e611c920560dbea97dcc11285e6965b40b20d4b3fc58e9639706921dadde1d",
+      "after_sha256": "eac8a18d493b68e787c1e8c617bcc58fb370ae8181059346c7c48a2b8f58b839"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 128,
+      "name": "id\\texture\\jpn\\quest\\quest_016_ID_HQ",
+      "category": "titles",
+      "before_sha256": "d464e6da7a05b30ce7e5979140515a01fdeb030a658406fe3353e90b34370b5d",
+      "after_sha256": "5ce188786e92e0934ede319dda95e986a70c55fd7ffb42f71bb054a417bbb07a"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 131,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_015_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "7dc207c79fd9d2492887b2879bae55d108a512108084be56c23195664f0804b5",
+      "after_sha256": "17617588e101f5c286075ea5ddb69b3bb77cfd08f36d03f407031df5c6028075"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 133,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_027_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "7652b6a72ff36f08c2ee2104d8e2b6246a1201b99da6ad3ae085de5c2f4cb54f",
+      "after_sha256": "669987b307e9205833d3fcde46fad41c966d5ae3d899bee9e2e1b9fa7eaaf57b"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 135,
+      "name": "id\\texture\\jpn\\quest\\quest_017_ID_HQ",
+      "category": "titles",
+      "before_sha256": "c2a039c0cb075843d9588ef6fe9e053c963eccb6de8f951461460241846dc79e",
+      "after_sha256": "6fd58d7ef6460347a2888b2a3fd1b82912e6b4ee616922e7af3252d619a5e58f"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 138,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_008_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "c98022718c544025d9574ff83893a1558b62ea8b620f545c9ae318f6d7ff3251",
+      "after_sha256": "fd1acd7e3384d1273f7e0887a91be52cb5c8f919efcd9dfd800935f1b24f446d"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 140,
+      "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_020_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "10111e78e5dd21a7b7753f40d120ec4485ebb4463f49d87ae39339068fd3d18c",
+      "after_sha256": "457ae9f876aba53dce62749e550f6cb4fb982eb4793ed8208975e6b644dbf735"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 142,
+      "name": "id\\texture\\jpn\\quest\\quest_018_ID_HQ",
+      "category": "titles",
+      "before_sha256": "76a21b9a5dd7e1830e2f4fe0e66786a793dfd9e532ccfb2e1a871a8d90bb167f",
+      "after_sha256": "cb6d49180bd7d44ccae25e542af8fa2cba841487209ad91b6db6b7af3bcb6f8b"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 145,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_013_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "c8a3d8f585c5908fc9f5b8f84a0d39bf436f03db252d0274a51a91fe6d2d7a8a",
+      "after_sha256": "51d845463e6adbbc4a4e0c1450e094c0f8251dff8942f43867f40981b91c2374"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 147,
+      "name": "id\\texture\\jpn\\quest\\quest_019_ID_HQ",
+      "category": "titles",
+      "before_sha256": "badfcd09c437889ff1164528377ccc84d6e135685fa9c18168086c5af5d96093",
+      "after_sha256": "86362596b68691b411d9593da523178b01dce5dc59e00113dd41890ddfaf41d5"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 150,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_011_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "e4c346a847bf26d1a52030ae4de2df3d1bcf2c68c33be651b8d6fea41294c7f3",
+      "after_sha256": "9f6d407d9c2026567bb47e40fcee41f1f18723ea35593b76cb9b897755904da1"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 152,
+      "name": "id\\texture\\jpn\\quest\\quest_020_ID_HQ",
+      "category": "titles",
+      "before_sha256": "d8b799e6795e35309281743c48c9f1dd6539587ebac4b596d834a7ded0ff5a54",
+      "after_sha256": "5f6c273af2e953e8c98447f6a6cac315b79a7769e63700e395066fca64a9212c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 155,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_021_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "c09a284781aab1922211bd4a239df553007354e0a695f12320db17b98cdde5a3",
+      "after_sha256": "1a4a24032753072cc4a6f73ba31fac3f7e0a95e196761eb43069e70fbfc39101"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 157,
+      "name": "id\\texture\\jpn\\quest\\quest_021_ID_HQ",
+      "category": "titles",
+      "before_sha256": "398d2e661ae976d03cbc198c91c90bc609b1f9d1cb663aa0cc538e80720aefa4",
+      "after_sha256": "0066de757c408e0b13048f5f6fc9e132f8adda7e1266ae4e2d2382a22e5ceaf4"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 160,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_014_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "bd14d9e280c84ce3e3881657136d2d9ebbbebdc831e02b3017f4490e45a2d14c",
+      "after_sha256": "b8204d9a9a2211007b5c263a030c4b6d491f244e39a3408ace896cf81d11b788"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 162,
+      "name": "id\\texture\\jpn\\quest\\quest_022_ID_HQ",
+      "category": "titles",
+      "before_sha256": "de268fe468f503ea67fa0c8d8523f0b342d6835178f40dba3af2f563141dd489",
+      "after_sha256": "d06ea4ae6557de430d8435cbc5019df279330f651131be67b36d72f4b97fb02b"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 165,
+      "name": "id\\texture\\jpn\\quest\\quest_023_ID_HQ",
+      "category": "titles",
+      "before_sha256": "37935d4edf3b753bfcc51dd8382b5fab73f2ee665e5654a0e8ee1f001687b38f",
+      "after_sha256": "742f8b7c7899b76385a8e0755daf9d9bedd41b2e6b52f0b8807d4ea090de93a4"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 168,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_020_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "cf9ce9bc21a16dcfd8f4ce1957f642097c5c16d2ea7659c27b0654692b6ac171",
+      "after_sha256": "35572d4d8ef4d8dcef667cd774e01395480b84565318780c67848dd478736fcd"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 170,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_106_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "2bc7039e4c92e66f132c0c83aae37ec8415d942700f2a2fe60cda6e0d96fab86",
+      "after_sha256": "185fe10af1779be45de8474fe372e1c1d0b52be9a199ab140ba3285b869cbe38"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 172,
+      "name": "id\\texture\\jpn\\quest\\quest_024_ID_HQ",
+      "category": "titles",
+      "before_sha256": "3f86ab785ce9f701724dd552f07cbe945d60ca2e195e4a8792efa9af8f0aebc2",
+      "after_sha256": "336138cf29393c42314d996c25a9d1de938028e90031704590cc8ae5ff9be454"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 175,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_012_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "2691a0ecdbdbf2ab9c9e8700d786c15e3c3c708d5de3dc86476fb7bad5acb7f3",
+      "after_sha256": "94a8db1ff4c9c48e86313ff1b87534f89751c6d6216036a7b2d857342daec123"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 177,
+      "name": "id\\texture\\jpn\\quest\\quest_025_ID_HQ",
+      "category": "titles",
+      "before_sha256": "7ff5cc60d3e45cc9500c8e014ac869738b76f0a68d48a660a2bcc9efbe106980",
+      "after_sha256": "2340120af8b983de18c7669fa587a95395ae107e910597789b2a7ef3a6304033"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 180,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_026_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "d91b9eb904405f18f19ae2ab42583a86dab817becca256544e2f35d0d25b9b08",
+      "after_sha256": "79f8a2ceae038eae07d94af732384ba5b4d2fd0d3089d7625732b4b7bf6ed629"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 182,
+      "name": "id\\texture\\jpn\\quest\\quest_026_ID_HQ",
+      "category": "titles",
+      "before_sha256": "61948dbfd527f4020ab9b10e25b88ca7912457339bdb5726170044d0d13b7a4e",
+      "after_sha256": "686d2fe3149d258db18e33891b4d7aef2078ebc47ad4012a2531128409c0cd5e"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 185,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_027_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "ef745d2ad33d877681d8c351c9391040067b1e5866e06aff08d6eddd438b189d",
+      "after_sha256": "33d0507e9c020803ad8d4d807ca170b56bb22d9b6563563ae5fff40233550904"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 187,
+      "name": "id\\texture\\jpn\\quest\\quest_027_ID_HQ",
+      "category": "titles",
+      "before_sha256": "8d0eed1410fc7b6955444bc71cd37e50525f7a7b5d0f06f20671080f3faae267",
+      "after_sha256": "846630a252de1c03cd0d78e905f6c414054b3e66adba01cc7b01bfb6ffc543e1"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 190,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_104_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "636320576c9361a74f8045b7c9b3a0e17c9165aad512de855e5339935d74bd39",
+      "after_sha256": "c23438bd6be0222f0f423523a987173a4d485fd5696dc2eb9b8a7ecab3dfa08c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 192,
+      "name": "id\\texture\\jpn\\quest\\quest_028_ID_HQ",
+      "category": "titles",
+      "before_sha256": "fc0f47e3c6d42c5e08af79cb842020eda0bd6f538a4b880f8b551b9859ab9135",
+      "after_sha256": "1191673faf8681d45232ad161f53ecdf4b3496f9b6d15314f38897493ca1e285"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 195,
+      "name": "id\\texture\\jpn\\quest\\quest_029_ID_HQ",
+      "category": "titles",
+      "before_sha256": "e7775d99c75ff56554a9a2d4cafb846fc01826d5a322252ada88ef1026562316",
+      "after_sha256": "b018faa2b05a63b2c6421dab0985ee82f8365dbdc8a5d1e39308f0af4e6c1d53"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 198,
+      "name": "id\\texture\\jpn\\quest\\quest_030_ID_HQ",
+      "category": "titles",
+      "before_sha256": "efe399aea5e24b2242782e2f30fb906436f26cb091ab4fbcf3d7cc900ee55d9c",
+      "after_sha256": "2658fac0d577e018d2e9cabaeff76914e714e4ccfacf0abea544ba0532c2f57a"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "entry": 201,
+      "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_015_ID_HQ",
+      "category": "reward_names",
+      "before_sha256": "2a13be6e7cf34be2c8e2115200b2c29215d1bb13569ce703b63bb33e8ebae24c",
+      "after_sha256": "1a2191c35f71b63006eb1013a54610293a325fc264061578f904fa35babb8160"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 31,
+      "name": "id\\texture\\jpn\\quest\\quest_000_ID_HQ",
+      "category": "titles",
+      "before_sha256": "98ebef69612d1f78b076e991db755bddb2ec8ec2dd54591ebf7439f4e9ec42dd",
+      "after_sha256": "792f0c6335618799ae9c530761366b0112d5af23eda511fa0ecec726ca9ce706"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 32,
+      "name": "id\\texture\\jpn\\quest\\quest_001_ID_HQ",
+      "category": "titles",
+      "before_sha256": "1748b8313cd7c958ee4ad089f91dcbe5d8efd0d49cb8c947fd0b6680727c5660",
+      "after_sha256": "b56963fb835763f835090a61023de12d4adf65c8417814ad4fec75a72a8f791b"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 33,
+      "name": "id\\texture\\jpn\\quest\\quest_002_ID_HQ",
+      "category": "titles",
+      "before_sha256": "781cb146520ddd9e1982f6dbc1afb823be73568688af8eda3dbe6eca0d29a786",
+      "after_sha256": "2044f4e570465bdbd7e977c497ab7a2ff26ea5831ff59258991334ef2febe35b"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 34,
+      "name": "id\\texture\\jpn\\quest\\quest_003_ID_HQ",
+      "category": "titles",
+      "before_sha256": "dbdea23393ada40c155cc825a92c4a5de4699ae86e8825f4a27db0d14722c1db",
+      "after_sha256": "bb0d6a1599c22f70487411fc05b3c72f2026aa2dda2c54670c103a2e03503d8c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 35,
+      "name": "id\\texture\\jpn\\quest\\quest_004_ID_HQ",
+      "category": "titles",
+      "before_sha256": "65602713e2b797172f95bfb264f657c222988588b4d740363be2081faeadeb3d",
+      "after_sha256": "d0dee73a816362329d98f34a0bf6710cbea43f9051169a28c48f0bb22862d672"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 36,
+      "name": "id\\texture\\jpn\\quest\\quest_005_ID_HQ",
+      "category": "titles",
+      "before_sha256": "842fac8b3ea2877519b3ec964a063e3fd912267d0184bbce8d47534d84a46822",
+      "after_sha256": "e4ef98ce8f5ac3975be788db7628614d338a0cb57d44b1faee4fc3c27ca14d8e"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 37,
+      "name": "id\\texture\\jpn\\quest\\quest_006_ID_HQ",
+      "category": "titles",
+      "before_sha256": "a36189756ec7f8fd5bf1065fb46305f7171d8ebef0bf2e282f97ea187c17de97",
+      "after_sha256": "83b55155e2abb2fe3ab93961b07cb3375fc2e0b74164c9698b04f1c4536fbc19"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 38,
+      "name": "id\\texture\\jpn\\quest\\quest_007_ID_HQ",
+      "category": "titles",
+      "before_sha256": "b3270442dea364de2d7fe9c39f4500b50d9a289e25861a126c4f1de5b78a7c3f",
+      "after_sha256": "b3b413c1b5f03065e3ef45aa7ebe0076fbf37b402acd8ed2d0e958fa8f0041e6"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 39,
+      "name": "id\\texture\\jpn\\quest\\quest_008_ID_HQ",
+      "category": "titles",
+      "before_sha256": "98210d97e42554a8e952310f29253bc0d4a37f09c2a2b1307c2a47cbc8e35098",
+      "after_sha256": "dc007d16b526616c2d3ca58f37cb09bf13c21d6566af123872d4445fe34cde1c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 40,
+      "name": "id\\texture\\jpn\\quest\\quest_009_ID_HQ",
+      "category": "titles",
+      "before_sha256": "8e2b9428659a65d8432614b2a158615e01cf310f9516e68b8d59a53458947cdb",
+      "after_sha256": "cc843a3ab18dbc570412033016eaeb223f2486dbb151e7a5b89fae599be69c39"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 41,
+      "name": "id\\texture\\jpn\\quest\\quest_010_ID_HQ",
+      "category": "titles",
+      "before_sha256": "58f05d3bebecd37f1bf06d2a1da7c714242ab6ba00c75429877bcaf71bb3efac",
+      "after_sha256": "496c796fb60c38b9c4c3216a459f2f8bf2429a0faa2e471c58c882a8ee58d7f9"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 42,
+      "name": "id\\texture\\jpn\\quest\\quest_011_ID_HQ",
+      "category": "titles",
+      "before_sha256": "23ebfc2d1b93f1b48112e845e12d19109519c82d9428097bf3051ac5d8b427e6",
+      "after_sha256": "8b745493f5a002403ff933b0d3e109cc633083bc1c9a266a90421805b128eec4"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 43,
+      "name": "id\\texture\\jpn\\quest\\quest_012_ID_HQ",
+      "category": "titles",
+      "before_sha256": "0fbecaeb0c815653b994e535f572d6916111f41110fd1c2630c9f501747c46b8",
+      "after_sha256": "d20a8b6388fc615482d80077754e515023568a3995d04e30537b2aa83bc18768"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 44,
+      "name": "id\\texture\\jpn\\quest\\quest_013_ID_HQ",
+      "category": "titles",
+      "before_sha256": "4cafea1121dcf4487c5aea58153cfda08a0172c45d2d1d64df72fa2a6a2a2c30",
+      "after_sha256": "1ad2ed13163387c7858ed7baed459d707a84e5b24d7b6ff6df1b6921327dcd9f"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 45,
+      "name": "id\\texture\\jpn\\quest\\quest_014_ID_HQ",
+      "category": "titles",
+      "before_sha256": "14d85e0833e5748d42ff340c3ded23500ee6043b5f1787f66fcc1a11f782fdc0",
+      "after_sha256": "441fb987f55681afdab84fd10c49a9e41bfeaa7132c5c84a88ef7e09d5fac2b2"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 46,
+      "name": "id\\texture\\jpn\\quest\\quest_015_ID_HQ",
+      "category": "titles",
+      "before_sha256": "ae51554278ed72a22fc615ad11e5303794f082755566705c197c9f0e4a830895",
+      "after_sha256": "97efca312731335ac9e5379d18c8da0f602059de5bef163bca351d771bf0f057"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 47,
+      "name": "id\\texture\\jpn\\quest\\quest_016_ID_HQ",
+      "category": "titles",
+      "before_sha256": "d464e6da7a05b30ce7e5979140515a01fdeb030a658406fe3353e90b34370b5d",
+      "after_sha256": "5ce188786e92e0934ede319dda95e986a70c55fd7ffb42f71bb054a417bbb07a"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 48,
+      "name": "id\\texture\\jpn\\quest\\quest_017_ID_HQ",
+      "category": "titles",
+      "before_sha256": "c2a039c0cb075843d9588ef6fe9e053c963eccb6de8f951461460241846dc79e",
+      "after_sha256": "6fd58d7ef6460347a2888b2a3fd1b82912e6b4ee616922e7af3252d619a5e58f"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 49,
+      "name": "id\\texture\\jpn\\quest\\quest_018_ID_HQ",
+      "category": "titles",
+      "before_sha256": "76a21b9a5dd7e1830e2f4fe0e66786a793dfd9e532ccfb2e1a871a8d90bb167f",
+      "after_sha256": "cb6d49180bd7d44ccae25e542af8fa2cba841487209ad91b6db6b7af3bcb6f8b"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 50,
+      "name": "id\\texture\\jpn\\quest\\quest_019_ID_HQ",
+      "category": "titles",
+      "before_sha256": "badfcd09c437889ff1164528377ccc84d6e135685fa9c18168086c5af5d96093",
+      "after_sha256": "86362596b68691b411d9593da523178b01dce5dc59e00113dd41890ddfaf41d5"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 51,
+      "name": "id\\texture\\jpn\\quest\\quest_020_ID_HQ",
+      "category": "titles",
+      "before_sha256": "d8b799e6795e35309281743c48c9f1dd6539587ebac4b596d834a7ded0ff5a54",
+      "after_sha256": "5f6c273af2e953e8c98447f6a6cac315b79a7769e63700e395066fca64a9212c"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 52,
+      "name": "id\\texture\\jpn\\quest\\quest_021_ID_HQ",
+      "category": "titles",
+      "before_sha256": "398d2e661ae976d03cbc198c91c90bc609b1f9d1cb663aa0cc538e80720aefa4",
+      "after_sha256": "0066de757c408e0b13048f5f6fc9e132f8adda7e1266ae4e2d2382a22e5ceaf4"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 53,
+      "name": "id\\texture\\jpn\\quest\\quest_022_ID_HQ",
+      "category": "titles",
+      "before_sha256": "de268fe468f503ea67fa0c8d8523f0b342d6835178f40dba3af2f563141dd489",
+      "after_sha256": "d06ea4ae6557de430d8435cbc5019df279330f651131be67b36d72f4b97fb02b"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 54,
+      "name": "id\\texture\\jpn\\quest\\quest_023_ID_HQ",
+      "category": "titles",
+      "before_sha256": "37935d4edf3b753bfcc51dd8382b5fab73f2ee665e5654a0e8ee1f001687b38f",
+      "after_sha256": "742f8b7c7899b76385a8e0755daf9d9bedd41b2e6b52f0b8807d4ea090de93a4"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 55,
+      "name": "id\\texture\\jpn\\quest\\quest_024_ID_HQ",
+      "category": "titles",
+      "before_sha256": "3f86ab785ce9f701724dd552f07cbe945d60ca2e195e4a8792efa9af8f0aebc2",
+      "after_sha256": "336138cf29393c42314d996c25a9d1de938028e90031704590cc8ae5ff9be454"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 56,
+      "name": "id\\texture\\jpn\\quest\\quest_025_ID_HQ",
+      "category": "titles",
+      "before_sha256": "7ff5cc60d3e45cc9500c8e014ac869738b76f0a68d48a660a2bcc9efbe106980",
+      "after_sha256": "2340120af8b983de18c7669fa587a95395ae107e910597789b2a7ef3a6304033"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 57,
+      "name": "id\\texture\\jpn\\quest\\quest_026_ID_HQ",
+      "category": "titles",
+      "before_sha256": "61948dbfd527f4020ab9b10e25b88ca7912457339bdb5726170044d0d13b7a4e",
+      "after_sha256": "686d2fe3149d258db18e33891b4d7aef2078ebc47ad4012a2531128409c0cd5e"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 58,
+      "name": "id\\texture\\jpn\\quest\\quest_027_ID_HQ",
+      "category": "titles",
+      "before_sha256": "8d0eed1410fc7b6955444bc71cd37e50525f7a7b5d0f06f20671080f3faae267",
+      "after_sha256": "846630a252de1c03cd0d78e905f6c414054b3e66adba01cc7b01bfb6ffc543e1"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 59,
+      "name": "id\\texture\\jpn\\quest\\quest_028_ID_HQ",
+      "category": "titles",
+      "before_sha256": "fc0f47e3c6d42c5e08af79cb842020eda0bd6f538a4b880f8b551b9859ab9135",
+      "after_sha256": "1191673faf8681d45232ad161f53ecdf4b3496f9b6d15314f38897493ca1e285"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 60,
+      "name": "id\\texture\\jpn\\quest\\quest_029_ID_HQ",
+      "category": "titles",
+      "before_sha256": "e7775d99c75ff56554a9a2d4cafb846fc01826d5a322252ada88ef1026562316",
+      "after_sha256": "b018faa2b05a63b2c6421dab0985ee82f8365dbdc8a5d1e39308f0af4e6c1d53"
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "entry": 61,
+      "name": "id\\texture\\jpn\\quest\\quest_030_ID_HQ",
+      "category": "titles",
+      "before_sha256": "efe399aea5e24b2242782e2f30fb906436f26cb091ab4fbcf3d7cc900ee55d9c",
+      "after_sha256": "2658fac0d577e018d2e9cabaeff76914e714e4ccfacf0abea544ba0532c2f57a"
+    }
+  ]
+}

@@ -1,0 +1,998 @@
+{
+  "status": "pass",
+  "source": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result",
+  "archives": [
+    {
+      "archive": "pl000.arc",
+      "archive_sha256": "e15fb3a4cc7a996fc347efa488ec01ab35f48ef59d57ce6cf771952400b44ee6",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_000_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.160156,
+          "edge_density": 0.028015,
+          "phash": "d4322bcdc53e3a83",
+          "preview": "pl000_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_000_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.172119,
+          "edge_density": 0.021706,
+          "phash": "cf3131ce1cce9331",
+          "preview": "pl000_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl001.arc",
+      "archive_sha256": "846a6f08d9c7937172a14b576a40eff63aabc48d6ca630c9c831c985dbde09ca",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_001_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.146088,
+          "edge_density": 0.029663,
+          "phash": "c07b3f84c47b3b84",
+          "preview": "pl001_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_001_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.190285,
+          "edge_density": 0.026764,
+          "phash": "c761399a3cc8cf61",
+          "preview": "pl001_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl002.arc",
+      "archive_sha256": "72962dfc734a14a542513fa745b0fa3d5e767e1a28ead43b1667fce019727049",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_002_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.141968,
+          "edge_density": 0.02713,
+          "phash": "d4392bc6c4393bc6",
+          "preview": "pl002_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_002_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.199265,
+          "edge_density": 0.028458,
+          "phash": "c23939c66ccfc331",
+          "preview": "pl002_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl003.arc",
+      "archive_sha256": "0661e485470ad9fe01ce1c14e3d88687198b68b0a58e5f8fdd47780f7dbc6c5c",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_003_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.146881,
+          "edge_density": 0.028107,
+          "phash": "d1cd2e32814d7af1",
+          "preview": "pl003_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_003_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.144104,
+          "edge_density": 0.022598,
+          "phash": "9bcc64939632ce6c",
+          "preview": "pl003_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl004.arc",
+      "archive_sha256": "b569d444d1d837a1cee1780103d3587da25c132a5440b7e93aacd87ea472ad34",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_004_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.156494,
+          "edge_density": 0.029846,
+          "phash": "c49c3b63c49c5b9c",
+          "preview": "pl004_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_004_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.13475,
+          "edge_density": 0.023514,
+          "phash": "ce99318696669bc9",
+          "preview": "pl004_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl005.arc",
+      "archive_sha256": "1af46daa0554499f7780bbae62b65f02cffb7aa268bbecb3e9782849bb84787f",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_005_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.182678,
+          "edge_density": 0.033875,
+          "phash": "d17a2e84d17a6d85",
+          "preview": "pl005_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_005_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.159714,
+          "edge_density": 0.022293,
+          "phash": "cb61349e30dbc965",
+          "preview": "pl005_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl006.arc",
+      "archive_sha256": "92f340458ef1bf8330de07bb7fa98fe832dc14f4a0edf427cae8a0b85f0cb79b",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_006_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.190338,
+          "edge_density": 0.041016,
+          "phash": "d16c2e93916ecdb0",
+          "preview": "pl006_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_006_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.119873,
+          "edge_density": 0.02018,
+          "phash": "cf66649b3364cc64",
+          "preview": "pl006_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl007.arc",
+      "archive_sha256": "518c0b3102ba81e21b34744f45779b321d4025f20288b503362c0c34252856f1",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_007_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.222656,
+          "edge_density": 0.03894,
+          "phash": "d17a2e85857ad03b",
+          "preview": "pl007_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_007_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.121582,
+          "edge_density": 0.017296,
+          "phash": "c967669830ccce73",
+          "preview": "pl007_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl008.arc",
+      "archive_sha256": "b784af1f03e168f4c35345c73fe5eed268f4203b1e0a448c3b73f5490fb64daa",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_008_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.189301,
+          "edge_density": 0.033997,
+          "phash": "d47a2b85c47a7ab0",
+          "preview": "pl008_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_008_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.138336,
+          "edge_density": 0.019226,
+          "phash": "cf61319a98ccce65",
+          "preview": "pl008_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl009.arc",
+      "archive_sha256": "b01ca591f5187ddbeda91ae514de150b6b8b812b57318df0badbab67a77aa538",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_009_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.141296,
+          "edge_density": 0.024048,
+          "phash": "d54e2aa0d55f2fa0",
+          "preview": "pl009_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_009_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.233177,
+          "edge_density": 0.031166,
+          "phash": "c2693c9637c3c36c",
+          "preview": "pl009_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl010.arc",
+      "archive_sha256": "6b51069b5855bb514e888e13c9199c4e8eed8f7a41ec199e41ef1c8e411d0d3b",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_010_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.145538,
+          "edge_density": 0.027954,
+          "phash": "c4e63b19c5e67a11",
+          "preview": "pl010_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_010_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.153618,
+          "edge_density": 0.023972,
+          "phash": "cec731389a38ce96",
+          "preview": "pl010_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl011.arc",
+      "archive_sha256": "c1df38279cd01f0072ebc9359fbf46bce58a9c22edd1b04ca4ebc56dde8c0b39",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_011_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.14978,
+          "edge_density": 0.02475,
+          "phash": "c07a3f84c47b7b84",
+          "preview": "pl011_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_011_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.21637,
+          "edge_density": 0.030807,
+          "phash": "c36969963492ce6d",
+          "preview": "pl011_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl012.arc",
+      "archive_sha256": "af9fba1a5512638854219ed50bdb82e80a3b6d344256acd5988846deede665cc",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_012_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.269287,
+          "edge_density": 0.051544,
+          "phash": "d22769d83cc9c726",
+          "preview": "pl012_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_012_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.067322,
+          "edge_density": 0.012886,
+          "phash": "cc3266d933cccc33",
+          "preview": "pl012_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl013.arc",
+      "archive_sha256": "af68924f66adc53afdee2c0e8ddbdbdcbea89c31e80f1e5f59fa298b9b38e0a9",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_013_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.152588,
+          "edge_density": 0.031555,
+          "phash": "c43b3bc4c43b3ac6",
+          "preview": "pl013_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_013_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.172546,
+          "edge_density": 0.027405,
+          "phash": "ce3131ce2ccec731",
+          "preview": "pl013_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl014.arc",
+      "archive_sha256": "131315f4faaf3c7a75bd224bbab004fee4fbe3990773c255678557c3a96c17b0",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_014_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.148102,
+          "edge_density": 0.029053,
+          "phash": "c47b3b84c47f6a81",
+          "preview": "pl014_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_014_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.193436,
+          "edge_density": 0.027824,
+          "phash": "c661719e38c9cb71",
+          "preview": "pl014_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl015.arc",
+      "archive_sha256": "e8967b3c24e40a58c4819274d3db24a2b2a3918da4273d67862cc25407888b19",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_015_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.16626,
+          "edge_density": 0.028412,
+          "phash": "c5e43a1bc5e034f5",
+          "preview": "pl015_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_015_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.122375,
+          "edge_density": 0.020538,
+          "phash": "cec631998c6cce66",
+          "preview": "pl015_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl016.arc",
+      "archive_sha256": "8b33b69d9e8953355be9da9a255c76b851aad711285b78bd93d2d50ba4a392c3",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_016_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.062103,
+          "edge_density": 0.017151,
+          "phash": "81d97e2681d97e26",
+          "preview": "pl016_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_016_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.037598,
+          "edge_density": 0.012772,
+          "phash": "9acf65309acf6530",
+          "preview": "pl016_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl017.arc",
+      "archive_sha256": "d0f2cf3d69b89cfb00b0f8d099be4fbb3183f1a69f05eb15f62bf29b8939ff2b",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_017_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.065796,
+          "edge_density": 0.017578,
+          "phash": "c4be3b41c4be3b41",
+          "preview": "pl017_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_017_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.03965,
+          "edge_density": 0.013306,
+          "phash": "ce9b3164ce9b3164",
+          "preview": "pl017_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl018.arc",
+      "archive_sha256": "612a61e324288de5932dc2694d7732f7fe3c5f0eb5e2e402a587c09d73d299c8",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_018_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.077087,
+          "edge_density": 0.018311,
+          "phash": "80bc7f4380bc7e63",
+          "preview": "pl018_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_018_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.047363,
+          "edge_density": 0.013908,
+          "phash": "cf9b3024cedb3134",
+          "preview": "pl018_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl019.arc",
+      "archive_sha256": "ef2c55338fe54ff7353a85fe6e5f4d935247dfa8b121d116827565daee44cd4d",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_019_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.174957,
+          "edge_density": 0.034729,
+          "phash": "817a7e858578f869",
+          "preview": "pl019_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_019_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.079491,
+          "edge_density": 0.012413,
+          "phash": "cc666399986ccb66",
+          "preview": "pl019_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl020.arc",
+      "archive_sha256": "3aa12784e5ae79737fab4c547b567f60ee74389a1a389ee1a03606fac4fe1e27",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_020_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.080872,
+          "edge_density": 0.020233,
+          "phash": "d5fc2a02d5fd2e02",
+          "preview": "pl020_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_020_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.050148,
+          "edge_density": 0.014076,
+          "phash": "cf9b30649b9b6464",
+          "preview": "pl020_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl021.arc",
+      "archive_sha256": "5cae0bd23ad1b3822f5b28328cf440a8d21676d64fecbf6c31f8cb1c6377a20d",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_021_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.165771,
+          "edge_density": 0.032288,
+          "phash": "94e96a1681ef74e1",
+          "preview": "pl021_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_021_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.093155,
+          "edge_density": 0.014389,
+          "phash": "cbc664399c3998ce",
+          "preview": "pl021_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl022.arc",
+      "archive_sha256": "89b9f16fa96cf8b5226231eb3b64852d013829f4236367d46f155022f28e1a5c",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_022_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.075378,
+          "edge_density": 0.020142,
+          "phash": "d45b2ba4d45b2ba4",
+          "preview": "pl022_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_022_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.046745,
+          "edge_density": 0.013489,
+          "phash": "db65249a9a65619b",
+          "preview": "pl022_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl023.arc",
+      "archive_sha256": "8916a94cd6227f88c70116a62d269d03184e5e014ac439480f7c115b9d79442d",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_023_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.075256,
+          "edge_density": 0.019958,
+          "phash": "d4d32b0cd4f33b0c",
+          "preview": "pl023_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_023_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.046288,
+          "edge_density": 0.013557,
+          "phash": "cfcf3030cecf3121",
+          "preview": "pl023_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl024.arc",
+      "archive_sha256": "628b2b2e94fff24845df40e95dbf682b14ff85f66d873e82b27df7871e5e1a8b",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_024_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.194611,
+          "edge_density": 0.034485,
+          "phash": "d0783b87c458fb64",
+          "preview": "pl024_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_024_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.076828,
+          "edge_density": 0.01123,
+          "phash": "cc6633998ccdcc66",
+          "preview": "pl024_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl025.arc",
+      "archive_sha256": "08c7a60e51d9dd48401a5b5a838c52bf913b9548db49bab752e10e3865b77cef",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_025_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.087952,
+          "edge_density": 0.01886,
+          "phash": "951d6ac2d53d2ec2",
+          "preview": "pl025_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_025_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.055244,
+          "edge_density": 0.013916,
+          "phash": "cf61308ecf61319e",
+          "preview": "pl025_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl026.arc",
+      "archive_sha256": "35b9df237c7d892dff05573572ec9b5754aec0074834e21bd8eb8e43f0055e76",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_026_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.094238,
+          "edge_density": 0.023956,
+          "phash": "91d96e2691d94b27",
+          "preview": "pl026_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_026_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.059517,
+          "edge_density": 0.014023,
+          "phash": "cbcb64309bcb643c",
+          "preview": "pl026_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl027.arc",
+      "archive_sha256": "915c698481a578f2d7b1096e98ee7e9f8d7c1cf3d9caa79b2f95e0e27d6d2bbf",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_027_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.08136,
+          "edge_density": 0.019531,
+          "phash": "91db6e2481db7e24",
+          "preview": "pl027_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_027_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.051193,
+          "edge_density": 0.01403,
+          "phash": "9bcd64309acf6165",
+          "preview": "pl027_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl028.arc",
+      "archive_sha256": "1a28f81b45df26c9ba075575c39bf6453d6539aa3b040dccd94fac41402cb0f8",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_028_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.065277,
+          "edge_density": 0.017456,
+          "phash": "d4f12b0cd4f33b0c",
+          "preview": "pl028_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_028_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.039902,
+          "edge_density": 0.013046,
+          "phash": "9b93642c9ad3713c",
+          "preview": "pl028_entry_4.png"
+        }
+      ]
+    },
+    {
+      "archive": "pl029.arc",
+      "archive_sha256": "0a4da58531a0b15b992849c1c395d154cc4729875d94fe8fb5f5a68ba130ef69",
+      "entry_count": 7,
+      "textures": [
+        {
+          "entry": 2,
+          "name": "id\\texture\\jpn\\name\\name_029_ID_HQ",
+          "dimensions": [
+            256,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.090942,
+          "edge_density": 0.02655,
+          "phash": "d0792f86d0793b86",
+          "preview": "pl029_entry_2.png"
+        },
+        {
+          "entry": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_029_ID_HQ",
+          "dimensions": [
+            1024,
+            128
+          ],
+          "format": "DXT5",
+          "alpha_coverage": 0.059906,
+          "edge_density": 0.012886,
+          "phash": "cf63309cce636199",
+          "preview": "pl029_entry_4.png"
+        }
+      ]
+    }
+  ],
+  "archive_count": 30,
+  "texture_count": 60
+}

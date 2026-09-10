@@ -1,0 +1,335 @@
+{
+  "status": "pass",
+  "replacements": [
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl000.arc",
+      "resource": "id\\texture\\jpn\\army\\army_000_ID_HQ",
+      "label": "Date Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl001.arc",
+      "resource": "id\\texture\\jpn\\army\\army_001_ID_HQ",
+      "label": "Takeda Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl002.arc",
+      "resource": "id\\texture\\jpn\\army\\army_002_ID_HQ",
+      "label": "Ishida Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl003.arc",
+      "resource": "id\\texture\\jpn\\army\\army_003_ID_HQ",
+      "label": "Tokugawa Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl004.arc",
+      "resource": "id\\texture\\jpn\\army\\army_004_ID_HQ",
+      "label": "Saika Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl005.arc",
+      "resource": "id\\texture\\jpn\\army\\army_005_ID_HQ",
+      "label": "Kuroda Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl006.arc",
+      "resource": "id\\texture\\jpn\\army\\army_006_ID_HQ",
+      "label": "Uesugi Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl007.arc",
+      "resource": "id\\texture\\jpn\\army\\army_007_ID_HQ",
+      "label": "Iyo Kono Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl008.arc",
+      "resource": "id\\texture\\jpn\\army\\army_008_ID_HQ",
+      "label": "Hojo Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl009.arc",
+      "resource": "id\\texture\\jpn\\army\\army_009_ID_HQ",
+      "label": "Chosokabe Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl010.arc",
+      "resource": "id\\texture\\jpn\\army\\army_002_ID_HQ",
+      "label": "Ishida Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl011.arc",
+      "resource": "id\\texture\\jpn\\army\\army_010_ID_HQ",
+      "label": "Shimazu Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl012.arc",
+      "resource": "id\\texture\\jpn\\army\\army_011_ID_HQ",
+      "label": "Oda Remnants",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl013.arc",
+      "resource": "id\\texture\\jpn\\army\\army_012_ID_HQ",
+      "label": "Mori Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl014.arc",
+      "resource": "id\\texture\\jpn\\army\\army_003_ID_HQ",
+      "label": "Tokugawa Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl015.arc",
+      "resource": "id\\texture\\jpn\\army\\army_022_ID_HQ",
+      "label": "Oda Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl016.arc",
+      "resource": "id\\texture\\jpn\\army\\army_015_ID_HQ",
+      "label": "Otomo Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl017.arc",
+      "resource": "id\\texture\\jpn\\army\\army_016_ID_HQ",
+      "label": "Kobayakawa Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl018.arc",
+      "resource": "id\\texture\\jpn\\army\\army_014_ID_HQ",
+      "label": "Mogami Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl019.arc",
+      "resource": "id\\texture\\jpn\\army\\army_016_ID_HQ",
+      "label": "Kobayakawa Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl020.arc",
+      "resource": "id\\texture\\jpn\\army\\army_006_ID_HQ",
+      "label": "Uesugi Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl021.arc",
+      "resource": "id\\texture\\jpn\\army\\army_006_ID_HQ",
+      "label": "Uesugi Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl022.arc",
+      "resource": "id\\texture\\jpn\\army\\army_001_ID_HQ",
+      "label": "Takeda Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl023.arc",
+      "resource": "id\\texture\\jpn\\army\\army_000_ID_HQ",
+      "label": "Date Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl024.arc",
+      "resource": "id\\texture\\jpn\\army\\army_013_ID_HQ",
+      "label": "Maeda Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl025.arc",
+      "resource": "id\\texture\\jpn\\army\\army_013_ID_HQ",
+      "label": "Maeda Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl026.arc",
+      "resource": "id\\texture\\jpn\\army\\army_008_ID_HQ",
+      "label": "Hojo Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl027.arc",
+      "resource": "id\\texture\\jpn\\army\\army_001_ID_HQ",
+      "label": "Takeda Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl028.arc",
+      "resource": "id\\texture\\jpn\\army\\army_026_ID_HQ",
+      "label": "Matsunaga Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl029.arc",
+      "resource": "id\\texture\\jpn\\army\\army_015_ID_HQ",
+      "label": "Otomo Army",
+      "dimensions": [
+        256,
+        64
+      ],
+      "format": "BC3/DXT5",
+      "changed_entry": 6
+    }
+  ]
+}

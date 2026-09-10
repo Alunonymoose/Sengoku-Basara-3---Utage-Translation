@@ -1,0 +1,445 @@
+{
+  "status": "offline_pass_runtime_required",
+  "release": {
+    "directory": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_MSG_M034_PL015_V12_LOCAL_ASCII_HOTFIX_ROOT_READY",
+    "files": 3,
+    "target": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_MSG_M034_PL015_V12_LOCAL_ASCII_HOTFIX_ROOT_READY\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\msg_m034_pl015.arc",
+    "readme": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_MSG_M034_PL015_V12_LOCAL_ASCII_HOTFIX_ROOT_READY\\README_M034_PL015_V12.txt",
+    "release_validation": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_MSG_M034_PL015_V12_LOCAL_ASCII_HOTFIX_ROOT_READY\\VALIDATION_M034_PL015_V12.json",
+    "zip": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_MSG_M034_PL015_V12_LOCAL_ASCII_HOTFIX_ROOT_READY.zip",
+    "zip_bytes": 490946,
+    "zip_sha256": "c770baf6acbc236c56e969da31605837ac99283f173488f9a9a5ce11ec05f55b",
+    "zip_crc": "pass",
+    "sha_file": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_MSG_M034_PL015_V12_LOCAL_ASCII_HOTFIX_ROOT_READY.zip.sha256"
+  },
+  "method": "preserve complete Utage topology; restore JP TNF/page14; append exact SH proportional ASCII pages; reroute only GSM records 500/501",
+  "source_preconditions": {
+    "sh_msg": "e6bbb3f0c4f0e70784c7938770d382e8b0ffd14f0b1d5e8c975a07e3efc5dc4a",
+    "sh_basara": "4cdf0717862ddd690321455630c29a1a6180e31268ebf16217a5d71ab42d7d95",
+    "utage_jpn": "a8d2b9ef326fce7caf6efd45379ce3a49e4175c82bf758bcda448e75b0664413",
+    "working_patched": "a61b30de7f47e823f868e1a8d3aa2c8441b5dcf519704823cf871635250c200a"
+  },
+  "target_archive": {
+    "path": "E:\\Utage Patching New\\_codex_tenka_v6\\msg_m034_pl015_v12_local_ascii.arc",
+    "bytes": 509679,
+    "sha256": "698bf5392ace001899627aed975f9f0c6607968d010cf84d0c8526d09847b30a",
+    "entry_count_before": 24,
+    "entry_count_after": 26,
+    "alignment": 128,
+    "changed_existing_resource_indices": [
+      0,
+      1,
+      17
+    ],
+    "appended_resource_indices": [
+      24,
+      25
+    ],
+    "tnf": {
+      "original_utage_records": 1140,
+      "appended_sh_ascii_records": 184,
+      "output_records": 1324,
+      "appended_pages": [
+        15,
+        16
+      ],
+      "space_record_output_index": 1140,
+      "space_record": [
+        3840,
+        0,
+        0,
+        8
+      ],
+      "raw_sha256": "6a92a25565d8266e267b09ace5bee87417e03c669751d6b35c823eb64617d842"
+    },
+    "gsm": {
+      "working_record_count_preserved": 1965,
+      "changed_records": [
+        500,
+        501
+      ],
+      "changed_bytes": 245,
+      "records": [
+        {
+          "record": 500,
+          "length": 98,
+          "redirected_glyph_positions": [
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95
+          ],
+          "redirected_glyph_count": 85,
+          "preserved_control_or_equal_count": 13,
+          "sh_codes_sha256": "6aac0544153fe667a4e8aa0320928eebc069c7766ec819e56f23b7d9e4452786",
+          "output_codes_sha256": "51d5754a10764ef7389e31105ed117766723fd2c30c2c1bad10c2a8332f6e1be"
+        },
+        {
+          "record": 501,
+          "length": 62,
+          "redirected_glyph_positions": [
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59
+          ],
+          "redirected_glyph_count": 50,
+          "preserved_control_or_equal_count": 12,
+          "sh_codes_sha256": "a8692361f7c4bce5216d989f1907146d8e786fef2e2099e01f1805c0b23a1939",
+          "output_codes_sha256": "f630cc79dbc23f29644454869b66689059fad4cd628891efe853ca60e49d6b43"
+        }
+      ],
+      "raw_sha256": "7ce94a1f3720ac7a232518b3b36859b53b58a8b939100471ab6c5b148e5986c9"
+    },
+    "restored_utage_page14_sha256": "07e5234031c4d17dd3edbf8a74767eb56276ad19b83fa27a778251104f9db273",
+    "appended_sh_atlas_sha256": [
+      "bd9325a975d6b963c7b8a21151c5fbe4866ae36a89d8f632cc58cb3c868b244f",
+      "2563fb5f4c3d54bcdaacecdad231bf8e1709877f878b00caf3bfc9cffc34f783"
+    ],
+    "entries": [
+      {
+        "index": 0,
+        "name": "msg\\m034_15\\jpn\\m034_15",
+        "type_hash": "0x1D609FFB",
+        "raw_size": 10624,
+        "raw_sha256": "6a92a25565d8266e267b09ace5bee87417e03c669751d6b35c823eb64617d842",
+        "provenance": "Utage JP TNF + shifted SH ASCII TNF"
+      },
+      {
+        "index": 1,
+        "name": "msg\\m034_15\\jpn\\m034_15",
+        "type_hash": "0x10C460E6",
+        "raw_size": 52484,
+        "raw_sha256": "7ce94a1f3720ac7a232518b3b36859b53b58a8b939100471ab6c5b148e5986c9",
+        "provenance": "working GSM with records 500/501 rerouted"
+      },
+      {
+        "index": 2,
+        "name": "msg\\m034_15\\jpn\\m034_15",
+        "type_hash": "0x2EA515BF",
+        "raw_size": 77568,
+        "raw_sha256": "4e4e3301e6ca09dfb589be9ef614767003dc432b1e15c8debf89b7e250a2e89d",
+        "provenance": "working patched entry 2 unchanged"
+      },
+      {
+        "index": 3,
+        "name": "msg\\m034_15\\jpn\\m034_15_00_ID_HQ",
+        "type_hash": "0x241F5DEB",
+        "raw_size": 262164,
+        "raw_sha256": "a2e65d24da414713b59d4bc108e1d7d26732e9e4cb800fbf59f4289a19b3257e",
+        "provenance": "working patched entry 3 unchanged"
+      },
+      {
+        "index": 4,
+        "name": "msg\\m034_15\\jpn\\m034_15_01_ID_HQ",
+        "type_hash": "0x241F5DEB",
+        "raw_size": 262164,
+        "raw_sha256": "5b8779c0015ed87a6517d5e8e8f01afc8e827cd0540134975bd117df315ddc7e",
+        "provenance": "working patched entry 4 unchanged"
+      },
+      {
+        "index": 5,
+        "name": "msg\\m034_15\\jpn\\m034_15_02_ID_HQ",
+        "type_hash": "0x241F5DEB",
+        "raw_size": 262164,
+        "raw_sha256": "dc4cd0e8687731fa25b1ed2569a421e2ba879d2659905fd2f6f1c402506a16be",
+        "provenance": "working patched entry 5 unchanged"
+      },
+      {
+        "index": 6,
+        "name": "msg\\m034_15\\jpn\\m034_15_03_ID_HQ",
+        "type_hash": "0x241F5DEB",
+        "raw_size": 262164,
+        "raw_sha256": "50a816660d1368a91f5a065d06e4a4f7a581192d5f3fd82878d10de9b8ee7631",
+        "provenance": "working patched entry 6 unchanged"
+      },
+      {
+        "index": 7,
+        "name": "msg\\m034_15\\jpn\\m034_15_04_ID_HQ",
+        "type_hash": "0x241F5DEB",
+        "raw_size": 262164,
+        "raw_sha256": "51e27523a4f23b332255c908ee9b499d35e5cd1be8ff7a376f25b0aa8a17709c",
+        "provenance": "working patched entry 7 unchanged"
+      },
+      {
+        "index": 8,
+        "name": "msg\\m034_15\\jpn\\m034_15_05_ID_HQ",
+        "type_hash": "0x241F5DEB",
+        "raw_size": 262164,
+        "raw_sha256": "7e3f892efc01ca58d96615788749c3d5802282ec621bc2afd878c37fb740568f",
+        "provenance": "working patched entry 8 unchanged"
+      },
+      {
+        "index": 9,
+        "name": "msg\\m034_15\\jpn\\m034_15_06_ID_HQ",
+        "type_hash": "0x241F5DEB",
+        "raw_size": 262164,
+        "raw_sha256": "3ec06f7ac244f1ac11ded804d687ee85c96359c2bccc132d4b4dffda9c1c42e2",
+        "provenance": "working patched entry 9 unchanged"
+      },
+      {
+        "index": 10,
+        "name": "msg\\m034_15\\jpn\\m034_15_07_ID_HQ",
+        "type_hash": "0x241F5DEB",
+        "raw_size": 262164,
+        "raw_sha256": "b76b621d336ff702a0cc3ad36700e47837b6a8f138f17295f5d9b35c8f0c5635",
+        "provenance": "working patched entry 10 unchanged"
+      },
+      {
+        "index": 11,
+        "name": "msg\\m034_15\\jpn\\m034_15_08_ID_HQ",
+        "type_hash": "0x241F5DEB",
+        "raw_size": 262164,
+        "raw_sha256": "9c923874b4606de36dcacce7bc362c828673b396ae3240d5960386b2cf8278ed",
+        "provenance": "working patched entry 11 unchanged"
+      },
+      {
+        "index": 12,
+        "name": "msg\\m034_15\\jpn\\m034_15_09_ID_HQ",
+        "type_hash": "0x241F5DEB",
+        "raw_size": 262164,
+        "raw_sha256": "8a22ee18e62eb7780e1d36a3e61a0902ffb0ee32db546c50f9ac0b2047e6d0de",
+        "provenance": "working patched entry 12 unchanged"
+      },
+      {
+        "index": 13,
+        "name": "msg\\m034_15\\jpn\\m034_15_10_ID_HQ",
+        "type_hash": "0x241F5DEB",
+        "raw_size": 262164,
+        "raw_sha256": "fce535d53ece3f84cac1b859740620c7d9fab326e6b6b0fa00ea8209108eef58",
+        "provenance": "working patched entry 13 unchanged"
+      },
+      {
+        "index": 14,
+        "name": "msg\\m034_15\\jpn\\m034_15_11_ID_HQ",
+        "type_hash": "0x241F5DEB",
+        "raw_size": 262164,
+        "raw_sha256": "98ae08cae2f2adc5a3bc4882fc7bde134de7e90bf3f4f6bd23518371731002e6",
+        "provenance": "working patched entry 14 unchanged"
+      },
+      {
+        "index": 15,
+        "name": "msg\\m034_15\\jpn\\m034_15_12_ID_HQ",
+        "type_hash": "0x241F5DEB",
+        "raw_size": 262164,
+        "raw_sha256": "b4755ed370eab38bea069bc9b1043e274b7a0321b8429971d4a32541467bf95a",
+        "provenance": "working patched entry 15 unchanged"
+      },
+      {
+        "index": 16,
+        "name": "msg\\m034_15\\jpn\\m034_15_13_ID_HQ",
+        "type_hash": "0x241F5DEB",
+        "raw_size": 262164,
+        "raw_sha256": "4c9856b5329001e45c3cd58af8bf37b3af3ceb2ed10cd999ce4e878551c3e80d",
+        "provenance": "working patched entry 16 unchanged"
+      },
+      {
+        "index": 17,
+        "name": "msg\\m034_15\\jpn\\m034_15_14_ID_HQ",
+        "type_hash": "0x241F5DEB",
+        "raw_size": 262164,
+        "raw_sha256": "07e5234031c4d17dd3edbf8a74767eb56276ad19b83fa27a778251104f9db273",
+        "provenance": "restored exact Utage JP page 14"
+      },
+      {
+        "index": 18,
+        "name": "msg\\m034_15\\jpn\\m034_15",
+        "type_hash": "0x5E0EF076",
+        "raw_size": 264,
+        "raw_sha256": "b5373d3f171094ee144da9e1863e539297b774628b70bc4f42c383b3653c4cb4",
+        "provenance": "working patched entry 18 unchanged"
+      },
+      {
+        "index": 19,
+        "name": "msg\\m034_15\\jpn\\m034_15_r",
+        "type_hash": "0x10C460E6",
+        "raw_size": 4734,
+        "raw_sha256": "8314be6f8122ac9f3c33a10ec9b5e7389c15d330d2dbeb733efb6e352947de96",
+        "provenance": "working patched entry 19 unchanged"
+      },
+      {
+        "index": 20,
+        "name": "msg\\m034_15\\jpn\\m034_15_r",
+        "type_hash": "0x2EA515BF",
+        "raw_size": 8992,
+        "raw_sha256": "2d42e1030a0b2fe2b546e23f0e192174794c625b33f025192d6fb1873f31503a",
+        "provenance": "working patched entry 20 unchanged"
+      },
+      {
+        "index": 21,
+        "name": "stage\\st004\\m034\\st004_034",
+        "type_hash": "0x19DB4587",
+        "raw_size": 2295,
+        "raw_sha256": "aa82ac627c07af1579da57a65d4205d1d8a27a246649ddf3e54595a7e0177eaa",
+        "provenance": "working patched entry 21 unchanged"
+      },
+      {
+        "index": 22,
+        "name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_000_a_ID_HQ",
+        "type_hash": "0x241F5DEB",
+        "raw_size": 131092,
+        "raw_sha256": "da1faea21cd6effc76f7486bb3d4f30061dbf458a31eb1ecc5908ea9e2ff17c4",
+        "provenance": "working patched entry 22 unchanged"
+      },
+      {
+        "index": 23,
+        "name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_022_a_ID_HQ",
+        "type_hash": "0x241F5DEB",
+        "raw_size": 131092,
+        "raw_sha256": "752c4e9184966d27f4fbcb4667141827545802a8e855b30761700f2c0439cd46",
+        "provenance": "working patched entry 23 unchanged"
+      },
+      {
+        "index": 24,
+        "name": "msg\\m034_15\\jpn\\m034_15_15_ID_HQ",
+        "type_hash": "0x241F5DEB",
+        "raw_size": 262164,
+        "raw_sha256": "bd9325a975d6b963c7b8a21151c5fbe4866ae36a89d8f632cc58cb3c868b244f",
+        "provenance": "official SH ASCII atlas 5"
+      },
+      {
+        "index": 25,
+        "name": "msg\\m034_15\\jpn\\m034_15_16_ID_HQ",
+        "type_hash": "0x241F5DEB",
+        "raw_size": 262164,
+        "raw_sha256": "2563fb5f4c3d54bcdaacecdad231bf8e1709877f878b00caf3bfc9cffc34f783",
+        "provenance": "official SH ASCII atlas 7"
+      }
+    ]
+  },
+  "live_install": {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\msg_m034_pl015.arc",
+    "sha256": "698bf5392ace001899627aed975f9f0c6607968d010cf84d0c8526d09847b30a",
+    "matches_built_target": true,
+    "rollback_source": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\msg_m034_pl015_PRE_SHSHAPE_backup.arc",
+    "rollback_sha256": "a61b30de7f47e823f868e1a8d3aa2c8441b5dcf519704823cf871635250c200a"
+  },
+  "runtime_test": "required: cold boot m034/pl015 in RPCS3"
+}

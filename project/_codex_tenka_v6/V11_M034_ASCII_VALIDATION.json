@@ -1,0 +1,99 @@
+{
+  "status": "pass",
+  "release": "Utage_Retry_English_V11_M034_ASCII_CUMULATIVE_ROOT_READY",
+  "method": "sole active SH GSM/FIM route under Utage JPN keys; preserve Utage stage/name assets; remove local TNF/CSA/mission atlas; install synchronized global ASCII font archives",
+  "source_preconditions": {
+    "sh_arc": "e6bbb3f0c4f0e70784c7938770d382e8b0ffd14f0b1d5e8c975a07e3efc5dc4a",
+    "utage_patched_backup": "a61b30de7f47e823f868e1a8d3aa2c8441b5dcf519704823cf871635250c200a",
+    "eng_basara": "be767ef04734dee42047ca3f7f4eafaabb38436b29ea737eb95a9445ec5981f4",
+    "jpn_basara": "23fe39d4028ac3d6be9490ac024b0aa697ba2935035942ee8bf1023795fdee29"
+  },
+  "target_archive": {
+    "output": "E:\\Utage Patching New\\_codex_tenka_v6\\msg_m034_pl015_v11_ascii.arc",
+    "bytes": 74513,
+    "sha256": "ab9ec8afdfb103a9ea4a1f5a2604ecb8a6e74cf1bd01b28036849c23a013de2b",
+    "entry_count": 7,
+    "alignment": 128,
+    "entries": [
+      {
+        "output_index": 0,
+        "name": "msg\\m034_15\\jpn\\m034_15",
+        "type_hash": "0x10C460E6",
+        "source": "official SH entry 0",
+        "raw_size": 60882,
+        "raw_sha256": "30fe0de2e6a02a7c461c6f59d99f98c77a624e736fa75cfe4b8e0cbccbe9aaf2"
+      },
+      {
+        "output_index": 1,
+        "name": "msg\\m034_15\\jpn\\m034_15",
+        "type_hash": "0x2EA515BF",
+        "source": "official SH entry 1",
+        "raw_size": 59000,
+        "raw_sha256": "7a71563cd087c59f19bf0135d58236990de0f8434f52d2f6d0e939a345158eb6"
+      },
+      {
+        "output_index": 2,
+        "name": "msg\\m034_15\\jpn\\m034_15_r",
+        "type_hash": "0x10C460E6",
+        "source": "official SH entry 2",
+        "raw_size": 9780,
+        "raw_sha256": "abf9572b4470c81d0c7aa452727e681982ae25a9be2480ceb0297e0e1b5d754d"
+      },
+      {
+        "output_index": 3,
+        "name": "msg\\m034_15\\jpn\\m034_15_r",
+        "type_hash": "0x2EA515BF",
+        "source": "official SH entry 3",
+        "raw_size": 8352,
+        "raw_sha256": "7ba5c4ec7ecbdf8a2b26340615bce3b32db658efc3c389c3414eed176b71cc50"
+      },
+      {
+        "output_index": 4,
+        "name": "stage\\st004\\m034\\st004_034",
+        "type_hash": "0x19DB4587",
+        "source": "Utage patched-base entry 21",
+        "raw_size": 2295,
+        "raw_sha256": "aa82ac627c07af1579da57a65d4205d1d8a27a246649ddf3e54595a7e0177eaa"
+      },
+      {
+        "output_index": 5,
+        "name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_000_a_ID_HQ",
+        "type_hash": "0x241F5DEB",
+        "source": "Utage patched-base entry 22",
+        "raw_size": 131092,
+        "raw_sha256": "da1faea21cd6effc76f7486bb3d4f30061dbf458a31eb1ecc5908ea9e2ff17c4"
+      },
+      {
+        "output_index": 6,
+        "name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_022_a_ID_HQ",
+        "type_hash": "0x241F5DEB",
+        "source": "Utage patched-base entry 23",
+        "raw_size": 131092,
+        "raw_sha256": "752c4e9184966d27f4fbcb4667141827545802a8e855b30761700f2c0439cd46"
+      }
+    ],
+    "local_tnf_count": 0,
+    "local_csa_count": 0,
+    "mission_atlas_count": 0,
+    "internal_eng_text_count": 0,
+    "internal_jpn_text_count": 4
+  },
+  "release_tree": {
+    "files": 666,
+    "arc_files": 649,
+    "target": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_Retry_English_V11_M034_ASCII_CUMULATIVE_ROOT_READY\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\msg_m034_pl015.arc",
+    "target_sha256": "ab9ec8afdfb103a9ea4a1f5a2604ecb8a6e74cf1bd01b28036849c23a013de2b",
+    "eng_basara_sha256": "be767ef04734dee42047ca3f7f4eafaabb38436b29ea737eb95a9445ec5981f4",
+    "jpn_basara_sha256": "23fe39d4028ac3d6be9490ac024b0aa697ba2935035942ee8bf1023795fdee29",
+    "readme": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_Retry_English_V11_M034_ASCII_CUMULATIVE_ROOT_READY\\README_MSG_M034_ASCII_V11.txt"
+  },
+  "zip": {
+    "path": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_Retry_English_V11_M034_ASCII_CUMULATIVE_ROOT_READY.zip",
+    "bytes": 86338975,
+    "sha256": "3b6588dea3c84f5b46d6006775b5ef9872de837838fe98c9b3503ead711d7db3",
+    "files": 666,
+    "crc_test": "pass",
+    "sha_file": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_Retry_English_V11_M034_ASCII_CUMULATIVE_ROOT_READY.zip.sha256"
+  },
+  "runtime_test": "required: cold boot m034/pl015 in engine"
+}

@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "translated_items": 40,
+  "translated_records": 80,
+  "archives": 3,
+  "changed_resources": 4,
+  "untouched_resources": 351,
+  "checks": [
+    "Backup CRC and hashes",
+    "All 80 English records decoded and compared",
+    "Untouched compressed entries identical",
+    "Record count and controls preserved",
+    "Glyph coverage and width limits",
+    "Native font proof inspected"
+  ],
+  "runtime_verified": false
+}

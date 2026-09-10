@@ -1,0 +1,41 @@
+{
+  "status": "offline_pass_runtime_required",
+  "release": "Utage_MSG_M034_PL015_V13_SH_GLOBAL_MSG_ROUTE_ROOT_READY",
+  "target_sha256": "c008d735ceffe14f88e50ba283bf2c2ebb6cd540454d76e8204ea730da643b64",
+  "title_id_sha256": "eed141c2c1e45a6c70fb5325a2557af96d5ca1b435734ff4c1d414a2698c4e36",
+  "basara_sha256": "be767ef04734dee42047ca3f7f4eafaabb38436b29ea737eb95a9445ec5981f4",
+  "companion_sha256": "1fcf5475cfaf75fefd34f852a98b556a18ad127018ef0f344de34fe0928ad828",
+  "candidate_entries": 12,
+  "candidate_sha256": "c008d735ceffe14f88e50ba283bf2c2ebb6cd540454d76e8204ea730da643b64",
+  "jpn_text_route_indices": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "eng_text_route_indices": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "mission_local_font_resources": 0,
+  "global_basara_routes": {
+    "jpn": {
+      "tnf": "df843e0b42390e89adcbf16ef02ce8d4d91cb984790b9f3211ac1ec0b7c5efbe",
+      "csa": "9d5b493204cae29be28a24bf28ec1b46ba00d9a8c35d2a48618900a6108e988b",
+      "page00": "bd9325a975d6b963c7b8a21151c5fbe4866ae36a89d8f632cc58cb3c868b244f",
+      "page01": "2563fb5f4c3d54bcdaacecdad231bf8e1709877f878b00caf3bfc9cffc34f783"
+    },
+    "eng": {
+      "tnf": "df843e0b42390e89adcbf16ef02ce8d4d91cb984790b9f3211ac1ec0b7c5efbe",
+      "csa": "9d5b493204cae29be28a24bf28ec1b46ba00d9a8c35d2a48618900a6108e988b",
+      "page00": "bd9325a975d6b963c7b8a21151c5fbe4866ae36a89d8f632cc58cb3c868b244f",
+      "page01": "2563fb5f4c3d54bcdaacecdad231bf8e1709877f878b00caf3bfc9cffc34f783"
+    }
+  },
+  "title_id_entries": 169,
+  "companion_entries": 12,
+  "companion_text_table_count": 0,
+  "runtime_test": "required: cold boot m034/pl015"
+}

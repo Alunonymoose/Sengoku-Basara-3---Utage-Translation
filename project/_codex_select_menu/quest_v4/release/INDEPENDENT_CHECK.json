@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "archives": 22,
+  "changed_resources": 27,
+  "untouched_compressed_resources": 1643,
+  "untouched_lsp_resources": 51,
+  "copies": {
+    "currency": 4,
+    "mode": 14,
+    "charasele": 9
+  },
+  "startup_atlas_included": true,
+  "all_changes_within_declared_texture_cells": true,
+  "all_old_text_slots_fully_replaced": true,
+  "visible_and_faint_stray_opacity_pixels": 0,
+  "runtime_verified": false
+}

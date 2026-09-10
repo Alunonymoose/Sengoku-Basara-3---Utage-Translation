@@ -1,0 +1,2172 @@
+{
+  "root": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result",
+  "archive_count": 30,
+  "resource_count": 210,
+  "format_counts": {
+    "XET": 180,
+    "unknown": 30
+  },
+  "errors": [],
+  "archives": [
+    {
+      "path": "pl000.arc",
+      "size": 325839,
+      "sha256": "e15fb3a4cc7a996fc347efa488ec01ab35f48ef59d57ce6cf771952400b44ee6",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl000\\pl000",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "020bfde8a7695d8a61139a04f1ad951ad2de713f922a5a36be13e3b998dadd07"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_000_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "93c5eb85ec508ab4f93a2be070eb27e809122fb6629075fbefa7282c71ee49d8"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_000_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "40c4f5ab22b39805e16fb385d2c6470543fe983734bed928fb0dfe7623362f8f"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_000_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "f353c573c74b2ecd3504a6a041c03c20952c59ac6074b3b0624fb8f0895d1f47"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_000_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "e42cddc60e5c829a8590c4989af06ccb12feb44eeabd0035058156a21c7982b0"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_000_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "4490f559a0260ffd50f4e24288fe4744ec9178b4a0664175886888967a64e35c"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_000_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "86dbf0f40a2c9b2f72753c332641c459acfab70a7cea4555730223d89290c8b1"
+        }
+      ]
+    },
+    {
+      "path": "pl001.arc",
+      "size": 336315,
+      "sha256": "846a6f08d9c7937172a14b576a40eff63aabc48d6ca630c9c831c985dbde09ca",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl001\\pl001",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "0b1b5733084c69d06312eda5af5c0df17d4b399c8a804ef4ed29cc47d57d2049"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_001_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "0467411ee527d7d2553f5b6c63dd97224c2402be1c5472ff851f1176e2afb2a8"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_001_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "de64289d598b1f8643c0f4076de8a3a1e25964f0d3eb7bfa7bc690d14df2e5c6"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_001_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "43a5f6fb8bfd252c22de64810438c5eeb372ef7888671915fd263e350b3ad7eb"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_001_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "410085b40894361d112acf1665adb100544aedbdf90424c22510a931cf87c353"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_001_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "6c5ab7dba170316bd9b17a33b6ec601c4a0a352e6f05780453ea60b66a0e6fea"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_001_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "e261dc280e4da6f41486ad90d1415fa0bf97a6ac739f7f4d6ef0be222ba4dabd"
+        }
+      ]
+    },
+    {
+      "path": "pl002.arc",
+      "size": 259486,
+      "sha256": "72962dfc734a14a542513fa745b0fa3d5e767e1a28ead43b1667fce019727049",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl002\\pl002",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "dad7991b05bd86d5d6f65dd0071338bb1a82baa0836be48573440303c9f78bb7"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_002_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "d29eb3243b70056784c73c1eedc21d7427a006642a41ffbf42a664bde8340ffc"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_002_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "cfbf7c9b2ca1a08004cf9adedd713b380aecb9c5f6bb79a457226a705ab0113c"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_002_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "2496bc3e3a6c9f6caad0101a78d2dcb7a8973b433faae37bc869c17ac8d39752"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_002_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "6e2da03c5df0ff2f40f7535d2534c46cc8f58c175182e6bb561cf90a87243b1b"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_002_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "4ab0c892f7ed32008b677b47311ed95903726974d8f9fc7698f6625a07624d3d"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_002_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "db4d7ea00965eb5bc11d4243a1458daad8f70359b0942a90ab5d67f8f3d7c234"
+        }
+      ]
+    },
+    {
+      "path": "pl003.arc",
+      "size": 338224,
+      "sha256": "0661e485470ad9fe01ce1c14e3d88687198b68b0a58e5f8fdd47780f7dbc6c5c",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl003\\pl003",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "08a4274e3d0af153ff1db79ebfc6a7c649814439bac04ef3c162b77fbc2b4aad"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_003_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "a797a492f21da1e219ef13429b0eb1275ce34d2f995827682d51b1e35fcffd70"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_003_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "c5b0f3376d438c6c16b2c54decb65ec387d957e8d0f3da0d3e1419db2bf801f6"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_003_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "3e799c5c4d03d6b330493c41dbd107352219d93f52593a064b96e2ce158844db"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_003_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "47232a6f08eba6e5242507168f4b40f2128a3734475e700355eca808fbc8469e"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_003_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "58b144255254586bef0024898a60039c2c0fc97c1f319cb006f4512eab04be8c"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_003_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "57c7c5df784e92627411b38111e70ea5d173b1b5b19a93cc679cc065a1d9d1b5"
+        }
+      ]
+    },
+    {
+      "path": "pl004.arc",
+      "size": 296004,
+      "sha256": "b569d444d1d837a1cee1780103d3587da25c132a5440b7e93aacd87ea472ad34",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl004\\pl004",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "8e517c8d994c601667b4ba8b92769b90f29ffe19b17f834ce48de599a56b548e"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_004_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "68a6c91b9cb9bd2ecdcbe571ef799c8d8790ef4e00c755bcadf57b5ffb8915e5"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_004_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "e2cf9f5ebee021a544542d7c538046cd58db569cb748ccf11bce7cdf938e0c3a"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_004_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "09f9d6dd0ca5460762825b40ccd989f8fcacfa82f17a2d98a25b16992d11c7c3"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_004_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "18e884b066156d31c6e04455cce1c9869dcf4fac5ff3f650e7a08075a3315857"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_004_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "e8c59ded4fd9c0524867886fabadab43af8fbe3e64522a32bbee1b18abd5f8e9"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_004_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "9d039036fee1bc810df2ab107a89902700950946c20a4ffd266506ed216653d4"
+        }
+      ]
+    },
+    {
+      "path": "pl005.arc",
+      "size": 374672,
+      "sha256": "1af46daa0554499f7780bbae62b65f02cffb7aa268bbecb3e9782849bb84787f",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl005\\pl005",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "ba2c436e1aefaa50953fbd59c4bc70dd012a9d7581cc83afb9bb09fcbf7b608f"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_005_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "37fff42f26bcd0e9eb60e3ab0787f54bd49c2ec538bacd43590fccd5fd02803c"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_005_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "29012335795006066da91c01a325b44f0653199a49a0ed0c91d5d44767610925"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_005_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "44a1721c64146a75e6a38546dba90d3641b0147823e841703e38b91942003097"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_005_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "d534c03fa1b9d5766f966d319415af67bcbd404cc9d093b915301494ea68af61"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_005_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "8c895030c5b160ed0848c1a699d528c5a430db88dd67c142d5a9a547ec2a58f4"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_005_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "94df9e8e7da7b05e8184afe1f82b39aa6bc92e07a27502794518d3237be268e4"
+        }
+      ]
+    },
+    {
+      "path": "pl006.arc",
+      "size": 487030,
+      "sha256": "92f340458ef1bf8330de07bb7fa98fe832dc14f4a0edf427cae8a0b85f0cb79b",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl006\\pl006",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "7a0c884045c3725089f1b23d011d768a257ec1eeea78f59bf0b61754ecefeb9c"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_006_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "9ffed161d3d79d23c895ceeaac00cfd8ba2af75960e278423939ccaeca55cc5e"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_006_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "6500fab1bc5e74fd728bc858e85db86aacbc5a9560c9ba277baa4f0dca711e24"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_006_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "3033097c929052c3dc92b8f242f6b6d2e6c16835149a61387ef983c8497a3a66"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_006_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "811ef868f52364d33b56c78ec2ef163789ef88ac4fc673bca39aad380ac445a7"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_006_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "e7efe5b94afc46f100512d8376682201ed21cb056af2b001a1e6546b4bcbe9dd"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_006_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "f397142bf800677fcb6cc584a6bef04adb86a9cb0ed7f56a3ded8c9e8ba02fa9"
+        }
+      ]
+    },
+    {
+      "path": "pl007.arc",
+      "size": 249148,
+      "sha256": "518c0b3102ba81e21b34744f45779b321d4025f20288b503362c0c34252856f1",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl007\\pl007",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "dccbf761d60d377d622e25d26fc6bbbac0a18ad7716ae7ab1c57c79c4d7b1b4e"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_007_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "2fd051206adf63d70ba6cb189305e18cf3836c1230242e2ade1aa96e1627d94f"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_007_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "77397fcab67834728d47206074e22562c7612524779885da78dac3f7d68264c4"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_007_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "751059df0ae6044efa1aef933ac1c8a615dba56707a368e4e668b584a80cd7c5"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_007_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "d56b507e1305a6d53c91ea12739358defb831b2d89b08993dab1f81c7b08c11b"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_007_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "10dc59e93d8187fcf33c3c1db2fa3a94e01aabe2992b69c915b44c1ade61d42e"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_007_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "bc8801ad560638f6ccc090c30a4707b925adbd63e29c1e5ddb267f352caddb27"
+        }
+      ]
+    },
+    {
+      "path": "pl008.arc",
+      "size": 293060,
+      "sha256": "b784af1f03e168f4c35345c73fe5eed268f4203b1e0a448c3b73f5490fb64daa",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl008\\pl008",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "c9510d9db8ec2d1c15a15f586585bdac610190a5996020f3a68985c70af133c4"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_008_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "2ec6f7ece5ad52f571f0d92ea9a2bfc35c21e9c1d1a5b84b103d8aed0246fcc2"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_008_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "678978697850ef4a50194c1a050caceb731c59d6c004d6c275dd935d183f42ea"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_008_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "1d1886fd570c41122e229e41e665dac27108eeb0bca3b8c4cbeaf9cc0dfe0e01"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_008_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "77449e1cdc71d69f96417ea7d1ae66fc6e849d6329e167ac7f5577b6b49c8a16"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_008_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "c99278565583df9351a4698dac62f451f641fede638744eba96fd35a2ac131b0"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_008_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "a059f600411734f2202d799cc3efb512a45cde728edf355d03e20e5666e91e09"
+        }
+      ]
+    },
+    {
+      "path": "pl009.arc",
+      "size": 482447,
+      "sha256": "b01ca591f5187ddbeda91ae514de150b6b8b812b57318df0badbab67a77aa538",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl009\\pl009",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "57a51b09f206be50237061a6d49245c84ee8f59a29039fdb657bd85f9d63f4f6"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_009_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "a4ca3d7334ee1386087b364b79e5443c9b429542cd61f2c220a415d068b5925f"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_009_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "e7b4244130d453a1cfb9a2073fe9ff13b9231d7cd83a4218361c4d557fc6ea55"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_009_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "1b4f792f3c2b9789c67e9c075bf397f1abdf1da1b889e6874587fd1fd7790e6d"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_009_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "a5780ba55b51d86da6b38bea6fd5461b832afb5c33334b81c39201e92c09be32"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_009_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "18ab694aa0a242ca790bf9ad6562d266a34a5c720815550482f83870903895a2"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_009_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "0dabd4e80c159256c8f6ca29d9e531dfb55a087301367d76ae5b53bc2b4f9f50"
+        }
+      ]
+    },
+    {
+      "path": "pl010.arc",
+      "size": 445925,
+      "sha256": "6b51069b5855bb514e888e13c9199c4e8eed8f7a41ec199e41ef1c8e411d0d3b",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl010\\pl010",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "9c4fcdbd769c5fda8f25b4d4d0729a36b0ddaf09fb3eb88a9f0308f5d4cdd07e"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_010_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "42208aab19bc418678139e1d68e6bae1ab03235a1959d22038ceab61b97fefe5"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_010_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "c3001ceec2c712e5d448e710408d57751617f94d6431bad154512787be25b5c6"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_010_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "a61d29230e3f98536bf6cd0df1d5cc30e210e5fd679e6b8f4b2ec78474080450"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_010_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "b0e9fa120fb71250fc625e20013df8687badc27b4413b5e0d84b08748d18bf3e"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_010_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "49c1e1f42011382b71a5a8e371768950bf3532a952fd0c95754da9ffb8fae930"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_002_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "db4d7ea00965eb5bc11d4243a1458daad8f70359b0942a90ab5d67f8f3d7c234"
+        }
+      ]
+    },
+    {
+      "path": "pl011.arc",
+      "size": 417744,
+      "sha256": "c1df38279cd01f0072ebc9359fbf46bce58a9c22edd1b04ca4ebc56dde8c0b39",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl011\\pl011",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "0d8b3d2f13cccc1fc5db7f3fd5b477dae06c945ccc11609ead1a5fc96ee5f707"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_011_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "bf0d6e66b451bd983d14f282aec6d6a5ff7dccbfa52503dfb98bc1b08a649a04"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_011_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "deb8cddf78b965dab4b632cce7764f0867c6610465799848d9c4b4d42967118b"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_011_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "8f29fb3724baf7fe925e7c4d78a2148db5a54c6c1bf143bf4c79c30847412827"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_011_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "f5e34c03be686b7e590e5ab3dace35b890583a9076f119c0cff8deb96bcce6c8"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_011_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "48f58d8268b5b0851e4f962544d3312e5016d8443cc921fd85a810c469a8f0fa"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_010_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "2647fed022b86d05f1ec3b73920eecd52b03e4781202548942b7f8bd18755c91"
+        }
+      ]
+    },
+    {
+      "path": "pl012.arc",
+      "size": 598270,
+      "sha256": "af9fba1a5512638854219ed50bdb82e80a3b6d344256acd5988846deede665cc",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl012\\pl012",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "8319babecbc4c0347761d9b32279d24c533862f102fdbba3af356b6f1e4aae22"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_012_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "d0bf6415415cf88a0d0dae41835b40f4d6cf4aa47ef123d06f1810cd0acd83d6"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_012_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "8de10d5bf0bf973901979e4313a0bf9cd05c7e7929abb5ae024aaca26d31f6b4"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_012_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "894c11af1ec84d31428cb24cb8048db8b4b609ef55609d886e2927e8cbf32b9c"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_012_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "b319f51ee13de720160477e2d770529b083766d1e0335fd18331465a8a196b5a"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_012_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "e282bee50e39eacf58dd590a76ea476fed6daf30589c8d08b931891a5f078c8c"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_011_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "dedcdd5298a166b53c89169f13350366b08b1f9ad0a6f12fc2deae3ace5ee8cf"
+        }
+      ]
+    },
+    {
+      "path": "pl013.arc",
+      "size": 360963,
+      "sha256": "af68924f66adc53afdee2c0e8ddbdbdcbea89c31e80f1e5f59fa298b9b38e0a9",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl013\\pl013",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "43bbfdf79ca5809d359f8a051859d6fa4d2fab84f78733cb6eae2450834aaed1"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_013_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "6d87236c7bae21af213a4ccaa45e6588747e43d5c4f3540973e4e0034123a5aa"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_013_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "24167e699e1ab2c19e8091c5aad449289c0beb49291db87a3d4cb6d72e3d51b7"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_013_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "013a5b6b1c2b53a81fe374dc827f67d373614514946f8d92a094d01da12af698"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_013_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "1b46e77b8ed8f70a8e0f6386e90f7e0bd184529b93d7b196bb7dbccffda6c290"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_013_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "9f2acea1898be3db27f8df8b5bffb3967500579837af22e06f540cb73c297ab4"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_012_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "746b08855d19fabc4802bfc7b9aebb46bcfa4207a49425abefc98c1bc9abdb1f"
+        }
+      ]
+    },
+    {
+      "path": "pl014.arc",
+      "size": 530680,
+      "sha256": "131315f4faaf3c7a75bd224bbab004fee4fbe3990773c255678557c3a96c17b0",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl014\\pl014",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "46ea19285ef87bf06ff3f02b9c21fb1e9e3c7aad5b0a97cc1fc8ee98d887c2ba"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_014_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "85e6c9ec36151398202d6f2bb362726249f4681e24c1203f0a8ad15217f9b3e1"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_014_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "9bd0ce7b92ebeed636951cef53e6573b52286deac8f96c331f9ffb9c7099e976"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_014_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "26b41848c90717467aaa01fd823904306a8944f30f6e71949edf6f136454e6c3"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_014_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "3bcb197eec6b4c9d8254589cfa9d47121bde2b5eef71791146ffa5985e1a694a"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_014_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "5502ac3a06b43cdfa21b627de32a34a35ed1916c3d5371983c3d2452569a106b"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_003_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "57c7c5df784e92627411b38111e70ea5d173b1b5b19a93cc679cc065a1d9d1b5"
+        }
+      ]
+    },
+    {
+      "path": "pl015.arc",
+      "size": 633109,
+      "sha256": "e8967b3c24e40a58c4819274d3db24a2b2a3918da4273d67862cc25407888b19",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl015\\pl015",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "6d621529d4a760735273de7fd808d5058abf394ab2721353aa5444802da1682a"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_015_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "73d6e087b16686eb0d8f8013cbb7f96a2ff45ea27388d86e65bd15c8dc99267d"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_015_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "bcd1b2a302c4bbaa39713c8baf6cb65e0311cf3a551804abd436b2f644c168f8"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_015_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "487432d62cfde22bcee476060158668081689f267afcc39cee44092580e8fa2d"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_015_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "676705b722c0f301de5d427f4283ba260dbe8a63b7ac9ca183fdd24a9848e8c7"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_015_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "33a2529f7caae601fbd70de04128a23ede53a90bd24379cc84bf93341dd45008"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_022_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "f26c49663e67c7adeccf07ff038cbccb04793464793ae3eadc49f94aa30d88c7"
+        }
+      ]
+    },
+    {
+      "path": "pl016.arc",
+      "size": 518990,
+      "sha256": "22ac37184d1c0de078985646ad1741e3fd3dcb4d3b674247d5741c3ddc822969",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl016\\pl016",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "98582547b82cd24c239b97a46ebb7671601a77e7502de1841b07b21c354a68bd"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_016_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "67a52b232e9ebd7910d9c06c587ea40a5bc9116ba1735b4b1adb07759a06d765"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_016_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "5c54582b90b33bf9cb38014289e466054e790f688ee69f003895c825a75625fe"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_016_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "0ce669e5e77ecdb3e17a5bd4bee1067cf556159c005c27950bd3909dc4532253"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_016_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "1faaf1415bc5357acae8a8b3bb1755faf7d13f43e8506247396cdc5325391095"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_016_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "24c911435fd435b4a861eeac9d770d25a8fcb05d6e90e3220279216604518afa"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_015_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "79f787bb85efea9dd041a59ecdc3d1e8f93711d32d6c67866e4a3cedc09877df"
+        }
+      ]
+    },
+    {
+      "path": "pl017.arc",
+      "size": 322508,
+      "sha256": "6d1c887b354e0b51e99aa936cfec647e6f87b2829ee974d7228db64b90e9c52f",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl017\\pl017",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "d3409a70fcc4f2e330350f867853a3e943ff692ad38dbab3e3eb702dc335af16"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_017_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "9119080bb1f7d1b5a9ba5fe9ce3314b0eed6614024e1193c4b1ec13226606c7d"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_017_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "3e56369e73e2bdf8641b64672b0329d5a0af8fd720fbb44ab3c83dbf5f22b7b0"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_017_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "fc3fbcc59d1968de5da45d190c7e94086854dd1687ed9273b6c0a77e656859c7"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_017_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "b7e53edf1bd6fab38968426e6bf2c45657d94f2ed4a1295b52ea815670864eb6"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_017_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "aed4a2d904b8d0b8844454c7299ff2357b1308874e22c765a661bc8697347e96"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_016_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "9cc9864ed6550749e8bbac010b56104c85637400a11065c517b6c2cb5c7d4abe"
+        }
+      ]
+    },
+    {
+      "path": "pl018.arc",
+      "size": 352718,
+      "sha256": "b436f9fd931e43a5342532b57771f9ed0b31c2693e25617fac32d3c52ef764d3",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl018\\pl018",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "f3f7bba4aba97dd3a2d0bd3cebf1cdfb292c2c0dba8e682d2992f53f0fee4d5e"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_018_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "627f2bffe203e24d09f6a8129935283517a3cd897690f10eab24224d2e062cc0"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_018_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "b73a8fbaa0a685ffa4338d025da3cf5e2ddb937e4df446c0cfd9437266f3ae21"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_018_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "a1c95260af2daaf6b04530edd1f256cfe612214509b49c6a4761e7414e4d1e36"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_018_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "04fb75b99f3612da7e00b44c717496b5757a918d67f94c326dcd78d33750d946"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_018_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "8788a7698ffbd79dd5160c8b9451753e96f716edc6d52d67f11d211a3fb3d260"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_014_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "122bd8c5cbabb810296343667156ffc3e41be24871f07e2925b975630f4f256f"
+        }
+      ]
+    },
+    {
+      "path": "pl019.arc",
+      "size": 270062,
+      "sha256": "791c0f2cf3ec9bee10ef58ddf7d0462553dc7fa97d63827f22fe22523233fb81",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl019\\pl019",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "fecb306a9462564b35055381b4ea6aec26211d80d3496a623790dcdf58e6878a"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_019_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "ca407917febf917f852d130b455d720577a05a7c3d9ccb8c808b08fc0abad76b"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_019_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "f074138205435e51008fea715499958d777884ef506444965ef43ea8e35cde82"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_019_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "159a7bd9053ab6e4c6dc16ae1a03d356bdcc694e363fcba33e3293e23515ddd0"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_019_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "79b8eef84997e0be246547cd9daf7cb474977d0daa279625bd8c3521d4d0f83c"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_019_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "4eb366fbeca7856478cc314206f60fd3e313b94226f95caec221e223180318d5"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_016_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "9cc9864ed6550749e8bbac010b56104c85637400a11065c517b6c2cb5c7d4abe"
+        }
+      ]
+    },
+    {
+      "path": "pl020.arc",
+      "size": 329739,
+      "sha256": "f67efb9a581f8a7b711d922313c37ba5ab1d2c45803b8bbe080c38b0dcc2588e",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl020\\pl020",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "947e235944fa5bfed70f793c43d0e802eca3e839b59b263fc92dffdf43343361"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_020_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "0be93c7ade2142a2ece95493123611694d6f6de49df11d703033496a99eb17e2"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_020_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "67dcdf372ce322bc7616ad2ffd8c21b55b0ec365f53347c6dd5f3a72eafe020e"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_020_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "82b65dc2c6f13f19113c2cfa8d202264de63b28701647f794c984c4a2ad768ff"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_020_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "bd852a0456691f028f9adf1af57e6492bac6da99991c9acb094f1ac9da43ae6a"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_020_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "3a661d205ac70d90cd509237a929b2101ebac6289daf37ae7556c8536ca51d4c"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_006_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "f397142bf800677fcb6cc584a6bef04adb86a9cb0ed7f56a3ded8c9e8ba02fa9"
+        }
+      ]
+    },
+    {
+      "path": "pl021.arc",
+      "size": 233371,
+      "sha256": "97ea994a0608d33b7066346f8fab2f69aee62a3439629fc58b90b65ed86c38c3",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl021\\pl021",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "a1662cbf44f732462071cfccb653f95372156fd34464bf79a034f4b4a72d7790"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_021_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "2149dca8b6be22cf5be5b2c15992120d2f4afc64e967e2218a34e0cdb1932c1a"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_021_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "76e2221a496139aa4af0ccfb43fa1c4ebecd6fc4a55b5e5b6470ddb8d84f8ab3"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_021_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "858a7f6f67e45569dea852dfbc7bd8643d48461eb7c20d628b8872c5bbb38ab0"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_021_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "ceebead8f2a847250975de935d788d49351d703f9ca25cc35b2a24d95b662731"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_021_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "acaf55fba4bf42d71cb83becaf17b2424a5c08b8ff81eae1cb3ff8aa4dc739db"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_006_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "f397142bf800677fcb6cc584a6bef04adb86a9cb0ed7f56a3ded8c9e8ba02fa9"
+        }
+      ]
+    },
+    {
+      "path": "pl022.arc",
+      "size": 330222,
+      "sha256": "c982b360c9772d856c2ef8587725c535999ec1f4e084cc8bd0b59e09a4d88d9e",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl022\\pl022",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "51159080ca613c88ab232c32ac1ed94f23f0017b8815edf19454421884ba304b"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_022_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "482ed84a9c719c4de5f57d72195c37d8ef2dad385dd1fce82c142bdc1c387f0d"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_022_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "3b1839b64056dd080b676962ee60b36c8fd71bef7831ab0d5143bafdc6a9e394"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_022_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "a6ec818557aa933651fd7eca85be2a23f6092e6f9bf673e850c2a2a2f84a1449"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_022_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "f35928c1f9742037ec17dafc5d9e4db156efaad62c72b8719e1ecd54dc094ec7"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_022_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "8397ce9f1a3027c7e311839491cb644aa53b7c69297ffd30c6783f6b09eec5ee"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_001_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "e261dc280e4da6f41486ad90d1415fa0bf97a6ac739f7f4d6ef0be222ba4dabd"
+        }
+      ]
+    },
+    {
+      "path": "pl023.arc",
+      "size": 331371,
+      "sha256": "2994e59174feb59e9586c3a0aa879d1b7f293ad09608c505f15c336d5cfe0fc2",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl023\\pl023",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "92155aab834f93cee3fe645967b7057df8e3cd83b22632f106424f9906e462c2"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_023_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "f7c1ba2c3239d6bd5d0661dc6c40c731d19b1320712bba44cba619287a778311"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_023_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "1ed9c6b31e853d5322fb1ad6ece39867dcdf8dbef9f5834c9baf3a5138f105df"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_023_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "7510100fee839cbb32871c33082da1ea0a639f4ea37192a6621306149d809934"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_023_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "32d672b7637b553d17860ed2fa41eb11047e633af44a6d421ecc5e06f29b2228"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_023_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "e9344afc70b8861a85c019c83920f9145fb3e95b3eb5ad5f7e258a8fc83c92fd"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_000_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "86dbf0f40a2c9b2f72753c332641c459acfab70a7cea4555730223d89290c8b1"
+        }
+      ]
+    },
+    {
+      "path": "pl024.arc",
+      "size": 220340,
+      "sha256": "07a98d677871296609c511e591caf91a3b55a4b2bbcf2967575bca07427374a1",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl024\\pl024",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "9501a22f8e4693d039a86d3ede6ce48c5bd10c3b1a3c55d7d15819b2a6797dab"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_024_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "594aed8a770e1558f506a5fea6a0c99dda10d209a3428f7aeabf444796b6a6db"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_024_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "42a7e65c642e1749b08eb8dc2c99f717e73d485a7a4851cab956077919b98179"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_024_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "2e8f51a49f10932daf0aecc1e5f96c100fef3bb20c85f5927052918608231bb5"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_024_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "1b95e132dbf728a83fd235cce2e9d5c92824e3488226e5efdeb86b8c6a6bbae2"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_024_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "80e15b9fd3ed94a03bcd5b14f851141c9bbf431345b48a3877566cdabbc57774"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_013_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "3a79da03c0ba322a4be6375ccc92d669142e8e614261462c5b41509c4dda52c2"
+        }
+      ]
+    },
+    {
+      "path": "pl025.arc",
+      "size": 312001,
+      "sha256": "3ebd01ef4fb7479ffe02cf7113356db89b8465087824b7b0767448df42ac0f84",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl025\\pl025",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "6dcbb66eadcfcccc201d3242dcdeab2dd3f5703bc4e7deb1a9b22ee6ec58506a"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_025_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "0d0f7177e36f752a6c109ea03267b233a9ea66ff4bb08388ee75aefd10eaca9a"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_025_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "2d056f7443ed727309a2e943678db29a820bffaf9831b7ed51777e4e82cf684b"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_025_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "282ca61e2d1607830112ac243dff28a22ceb80ef7ca19fc043010ad1b66bc910"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_025_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "a03af882295e1440f5205579bd611f3f12e9fc7a59d61848268b4a5f2c1dcac1"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_025_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "0c976c3fcf9a04faefb8b06abd091ef605d5d1fa654289226c1877848c6da0e2"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_013_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "3a79da03c0ba322a4be6375ccc92d669142e8e614261462c5b41509c4dda52c2"
+        }
+      ]
+    },
+    {
+      "path": "pl026.arc",
+      "size": 412113,
+      "sha256": "4cd439e91f57bc209294ebf48b6598edc1fdf90d2fd87367a0c4725079c9eeb3",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl026\\pl026",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "e5cad5cbc10aa79831fd2d4098d6dff2fd39b75ddbb886137485ec48e9f7cb4f"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_026_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "ee9578786764b14d3fa3beb2daa08c80d05ec5d7435c234d622c2c4ba92ae2e9"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_026_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "92800240268cf1aa442758c65a255c71b87c4e0639704a1d8c1b62cbac996a5d"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_026_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "7b671c3edcbd3db7caf0518487da3f6d31b1af75a78c4421f5b67c3919cbf3fb"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_026_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "556646fbc5e8cdb56e116dc95211b488205b6b3f7e7e73e5a10269fdb2e093b1"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_026_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "d7eca7e2b258f79d1a2569d3931ef7f2f3ceb98c7e140f39cc6c97a4ce82a0d9"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_008_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "a059f600411734f2202d799cc3efb512a45cde728edf355d03e20e5666e91e09"
+        }
+      ]
+    },
+    {
+      "path": "pl027.arc",
+      "size": 376674,
+      "sha256": "aab9ab046d2712fe77a85fbd1bd1e604bda82509368ed8f2d674fd35ede7da42",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl027\\pl027",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "07518aa600f06b7786246711b743a6491dea9377cedd918d848d1df4ccc1ab45"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_027_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "32531109511fc4d21298c78a93dc3bb40f615ce448c4211c2144caa6fa99106d"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_027_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "d3ca52854619572af7fb5af901238a40aac541d3c258ab87202be2444528ef0e"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_027_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "b052788152f7295df806f0db5afd151195048a01a3ed74a921b2fdd3ecb77354"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_027_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "f66b447a97b3bb1ae3f02afa9ada71db5901d1f14a82b7de6cc2369de541ea51"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_027_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "3ebab42d3fa2ab8d11e11c63445f6b8b4fc8b915d0a91c9bc8ee05566572d43f"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_001_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "e261dc280e4da6f41486ad90d1415fa0bf97a6ac739f7f4d6ef0be222ba4dabd"
+        }
+      ]
+    },
+    {
+      "path": "pl028.arc",
+      "size": 302161,
+      "sha256": "0fe1dc03692bb4cd33a482517966e03f2ebddf56bf29385f4102d8cbd42c5194",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl028\\pl028",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "0265ab8fa003e87194dc0fea251a015a69487c60122e25c59f9a2fb887e6e51b"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_028_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "4965b1c30c218cc1f9484199dd5f800057bda2de762810d1165c0a0e3fcda74b"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_028_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "d1b79fee7d4a75dc5d047bc62429d72fa9536bc69b6137f52466da08e8a06fb1"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_028_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "12dfa93bf830f27de8ccd2edd7fe2b4adb8e24cf964501f2d08b96fde57e76c4"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_028_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "336ca16c28069a2e78a6a60dcb3e490bb832defb93fac1c5f7accdb57676f4ac"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_028_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "7f742abdbf8e7d57f55fb99311a1e468325f712f2337aa103612d819e6921057"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_026_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "22ccc2ee70015038b5441b76c74f2f2e7911e5fadc51cc4692c78215873a03a3"
+        }
+      ]
+    },
+    {
+      "path": "pl029.arc",
+      "size": 295599,
+      "sha256": "2858c638f231c1f50563a23a29a39a0bbce57f016172866e007ad75c00d391f5",
+      "version": 8,
+      "entry_count": 7,
+      "entries": [
+        {
+          "index": 0,
+          "name": "actorParam\\pl029\\pl029",
+          "type_hash": "0x0B52347D",
+          "raw_size": 1924,
+          "declared_raw_size": 1924,
+          "format": "unknown",
+          "raw_sha256": "3b5a97ab07c9c02215301531dc2d39293e02852541ebc5dcdcde87509d7d2b2c"
+        },
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_029_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "7ba63f4e3e57c679049208835bdb2d8ceda8a92a1328ec6ea15c03cecafd756a"
+        },
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_029_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 32788,
+          "declared_raw_size": 32788,
+          "format": "XET",
+          "raw_sha256": "b4a03ac6e39099327a700b4a0af4c77e275f4dc362ae49fb493825b8394c15d8"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\charasele_01\\charasele_01_029_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 1048596,
+          "declared_raw_size": 1048596,
+          "format": "XET",
+          "raw_sha256": "27139c6cf48209b02108579b049e3a96d407d90eed9a864dd835a049ec3427d2"
+        },
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_029_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 131092,
+          "declared_raw_size": 131092,
+          "format": "XET",
+          "raw_sha256": "fb05a924927bb4f8dd9bbaf29bd7ea70dab0bdbaf2f786d40e6a7f05b742092d"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\wep\\wep_029_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 262164,
+          "declared_raw_size": 262164,
+          "format": "XET",
+          "raw_sha256": "83ee9b05e419e335a3724842618dda8dcd27b548fd7657b10a214ec5ec5034d1"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_015_ID_HQ",
+          "type_hash": "0x241F5DEB",
+          "raw_size": 16404,
+          "declared_raw_size": 16404,
+          "format": "XET",
+          "raw_sha256": "79f787bb85efea9dd041a59ecdc3d1e8f93711d32d6c67866e4a3cedc09877df"
+        }
+      ]
+    }
+  ]
+}

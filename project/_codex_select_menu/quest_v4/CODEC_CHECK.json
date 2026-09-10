@@ -1,0 +1,17 @@
+[
+  {
+    "label": "Before",
+    "alpha_rmse": 21.63975425277215,
+    "stray_pixels": 78
+  },
+  {
+    "label": "Corrected encoding",
+    "alpha_rmse": 5.928926558736319,
+    "stray_pixels": 0
+  },
+  {
+    "label": "Uncompressed source",
+    "alpha_rmse": 0.0,
+    "stray_pixels": 0
+  }
+]

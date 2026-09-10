@@ -1,0 +1,47 @@
+{
+  "created": "2026-08-30",
+  "patch_name": "Utage Army Father Route V3 Cumulative",
+  "purpose": "Correct the father/controller routing mistake that made V1/V2 English common/pl_face child edits invisible at runtime.",
+  "proven_root_cause": [
+    "The previous patches changed rom/eng/common/pl_face child ARCs, but both current title_id.arc and common/pl_face/pl_all.arc still contain 31 external child-owner entries named rom\\jpn\\common\\pl_face\\pl000..pl029/pl_random.",
+    "For Nobunaga, the actual faction texture is army_022_ID_HQ (not army_026). The V3 English pl015 child contains the English payload SHA-256 6ff7a4cb..., while the untouched JPN pl015 child contains the Japanese payload SHA-256 e39f99e2....",
+    "Therefore a father that requests rom\\jpn\\common\\pl_face\\pl015 can reintroduce the Japanese army_022 even when rom/eng/pl015 is fully translated.",
+    "army_026 was separately decoded and corresponds to Matsunaga\u2019s Forces / \u677e\u6c38\u8ecd; the prior Nobunaga=army_026 identity assumption was wrong."
+  ],
+  "route_fix": {
+    "old_prefix": "rom\\jpn\\common\\pl_face\\pl",
+    "new_prefix": "rom\\eng\\common\\pl_face\\pl",
+    "owners_changed": [
+      "rom/eng/title_id.arc",
+      "rom/eng/common/pl_face/pl_all.arc"
+    ],
+    "references_changed_per_owner": 31,
+    "byte_differences_per_owner": 93,
+    "method": "Fixed-size ARC table name edit only; jpn and eng are same length. No payload blobs, offsets, sizes, flags, entry ordering, or SCRA bodies changed."
+  },
+  "files": [
+    {
+      "file": "rom/eng/title_id.arc",
+      "before_sha256": "88e7cd623bc7f678618a36a53181a1f117cd927d1282d13ace0310506a7e1366",
+      "after_sha256": "eed141c2c1e45a6c70fb5325a2557af96d5ca1b435734ff4c1d414a2698c4e36",
+      "route_entries_changed": 31,
+      "bytes_changed": 93
+    },
+    {
+      "file": "rom/eng/common/pl_face/pl_all.arc",
+      "before_sha256": "4b7b9732f27b67f2a56b968c21d8e6fa4cae238e9d347f6891654a007ce0d663",
+      "after_sha256": "a4dae11b1fc84e11dda26594bc5173dc65139fb57de3070d31f47179135b6a80",
+      "route_entries_changed": 31,
+      "bytes_changed": 93
+    }
+  ],
+  "nobunaga_proof": {
+    "resource": "id\\texture\\jpn\\army\\army_022_ID_HQ",
+    "english_child": "rom/eng/common/pl_face/pl015.arc",
+    "english_sha256": "6ff7a4cb8ad8d9a27afb1a81332f35a47122b78fc42a33dac255f8c14fb2b567",
+    "japanese_child": "rom/jpn/common/pl_face/pl015.arc",
+    "japanese_sha256": "e39f99e2eec7a307fc2c9e549906a9598d7bf0287c0f7f151d3ba7ec231b5b6f"
+  },
+  "cumulative_content": "Includes the V2 common/pl_face synchronization set, but fixes the father route so those English child packages can actually be requested. Adds current live title_id.arc with only its 31 pl_face route names changed.",
+  "test": "Fully exit RPCS3, clear relevant cache if used, merge PS3_GAME, cold boot, then check Nobunaga in Unification character select and Gallery. If the father-route hypothesis is correct, \u7e54\u7530\u8ecd should be replaced by the English army_022 presentation. Stage-select \u81ea\u7531\u5408\u6226 / \u5408\u6226 are a separate owner family and are not claimed fixed by this patch."
+}

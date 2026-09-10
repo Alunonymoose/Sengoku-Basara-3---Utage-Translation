@@ -1,0 +1,72 @@
+[
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\brief\\mode_quest.arc",
+    "index": 1,
+    "name": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\brief\\mode_quest.arc",
+    "index": 6,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\brief\\og\\mode_quest.arc",
+    "index": 1,
+    "name": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\brief\\og\\mode_quest.arc",
+    "index": 6,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\menu.arc",
+    "index": 30,
+    "name": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\menu.arc",
+    "index": 35,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "index": 65,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "index": 30,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_versus.arc",
+    "index": 7,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\dream.arc",
+    "index": 19,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_finish_id.arc",
+    "index": 19,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_id.arc",
+    "index": 73,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_id_PRE_FONTFIT_backup.arc",
+    "index": 73,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\versus\\menu.arc",
+    "index": 57,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ"
+  }
+]

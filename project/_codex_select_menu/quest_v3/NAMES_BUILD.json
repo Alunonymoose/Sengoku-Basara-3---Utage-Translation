@@ -1,0 +1,2082 @@
+[
+  {
+    "key": "cp_name_nak_009_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_nak_009_id_hq.tex",
+    "sha256": "c172bc839961539b4d90746e94719aff04dec7d3bdfd6b86427a38b70d406dc6",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Miyoshi (Eldest)",
+        "ink_size": [
+          236,
+          32
+        ],
+        "coverage_bbox": [
+          8,
+          6,
+          248,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Miyoshi (Middle)",
+        "ink_size": [
+          240,
+          32
+        ],
+        "coverage_bbox": [
+          6,
+          6,
+          250,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 2,
+        "text": "Miyoshi (Youngest)",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 3,
+        "text": "Tsunamoto Moniwa",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_nak_010_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_nak_010_id_hq.tex",
+    "sha256": "932e8fb00b989ad637e93e0ef9e7a61cbc44017db0f70c87c4734922327cb001",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Shigezane Date",
+        "ink_size": [
+          171,
+          32
+        ],
+        "coverage_bbox": [
+          40,
+          6,
+          215,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Masakage Yamagata",
+        "ink_size": [
+          210,
+          32
+        ],
+        "coverage_bbox": [
+          21,
+          6,
+          235,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 2,
+        "text": "Kansuke Yamamoto",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 3,
+        "text": "Yataro Onikojima",
+        "ink_size": [
+          190,
+          32
+        ],
+        "coverage_bbox": [
+          31,
+          6,
+          225,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_nak_011_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_nak_011_id_hq.tex",
+    "sha256": "5bde63c8817cd64847ef0099489b733eff9ea1038973d10eb6eba3a5e39c75b9",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Ujinao Hojo",
+        "ink_size": [
+          142,
+          32
+        ],
+        "coverage_bbox": [
+          55,
+          6,
+          201,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Tsunashige Hojo",
+        "ink_size": [
+          182,
+          32
+        ],
+        "coverage_bbox": [
+          35,
+          6,
+          221,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 2,
+        "text": "Tadatsugu Sakai",
+        "ink_size": [
+          183,
+          32
+        ],
+        "coverage_bbox": [
+          34,
+          6,
+          221,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 3,
+        "text": "Naomasa Ii",
+        "ink_size": [
+          159,
+          32
+        ],
+        "coverage_bbox": [
+          46,
+          6,
+          209,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_nak_012_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_nak_012_id_hq.tex",
+    "sha256": "4b316283453fc77a7da152dc60f7d3a393b914074830e4f824ab27b82991fc4a",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Takakage Kobayakawa",
+        "ink_size": [
+          200,
+          32
+        ],
+        "coverage_bbox": [
+          26,
+          6,
+          230,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Motoharu Kikkawa",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 2,
+        "text": "Chikasada Kira",
+        "ink_size": [
+          206,
+          32
+        ],
+        "coverage_bbox": [
+          23,
+          6,
+          233,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 3,
+        "text": "Nobuchika Chosokabe",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_nak_013_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_nak_013_id_hq.tex",
+    "sha256": "c54c3b9e70d8166e1e90a8d66e20b36eb8ec596d3cf9e3c05f3062de84a312dc",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Toshihisa Shimazu",
+        "ink_size": [
+          238,
+          32
+        ],
+        "coverage_bbox": [
+          7,
+          6,
+          249,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Iehisa Shimazu",
+        "ink_size": [
+          204,
+          32
+        ],
+        "coverage_bbox": [
+          24,
+          6,
+          232,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 2,
+        "text": "Yoshikage Asakura",
+        "ink_size": [
+          202,
+          32
+        ],
+        "coverage_bbox": [
+          25,
+          6,
+          231,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 3,
+        "text": "Kazumasa Isono",
+        "ink_size": [
+          235,
+          32
+        ],
+        "coverage_bbox": [
+          8,
+          6,
+          247,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_nak_014_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_nak_014_id_hq.tex",
+    "sha256": "512bcd6389778c8c0b8d8c142e129cf2569d2ff0a1bcf8af24d80357903b2e14",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Sakon Shima",
+        "ink_size": [
+          177,
+          32
+        ],
+        "coverage_bbox": [
+          37,
+          6,
+          218,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Hideie Ukita",
+        "ink_size": [
+          173,
+          32
+        ],
+        "coverage_bbox": [
+          39,
+          6,
+          216,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 2,
+        "text": "Shigekane Suzuki",
+        "ink_size": [
+          198,
+          32
+        ],
+        "coverage_bbox": [
+          27,
+          6,
+          229,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 3,
+        "text": "Shigetomo Suzuki",
+        "ink_size": [
+          197,
+          32
+        ],
+        "coverage_bbox": [
+          27,
+          6,
+          228,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_nak_015_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_nak_015_id_hq.tex",
+    "sha256": "77cec10915f64158c014b09fb07efceece96286e51069123600673943e3a65ba",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Nagamasa Kuroda",
+        "ink_size": [
+          197,
+          32
+        ],
+        "coverage_bbox": [
+          27,
+          6,
+          228,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Matabe Goto",
+        "ink_size": [
+          181,
+          32
+        ],
+        "coverage_bbox": [
+          35,
+          6,
+          220,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 2,
+        "text": "Michinao Kono",
+        "ink_size": [
+          214,
+          32
+        ],
+        "coverage_bbox": [
+          19,
+          6,
+          237,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 3,
+        "text": "Michiyasu Kurushima",
+        "ink_size": [
+          206,
+          32
+        ],
+        "coverage_bbox": [
+          23,
+          6,
+          233,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_nak_016_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_nak_016_id_hq.tex",
+    "sha256": "8baab1717610bc18936904b98ca49f8d24dd2ac991b3e910ff59509ddb89e688",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Nagayori Murai",
+        "ink_size": [
+          175,
+          32
+        ],
+        "coverage_bbox": [
+          38,
+          6,
+          217,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Nagatomi Okumura",
+        "ink_size": [
+          210,
+          32
+        ],
+        "coverage_bbox": [
+          21,
+          6,
+          235,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 2,
+        "text": "Yorikatsu Hiraoka",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 3,
+        "text": "Masanari Inaba",
+        "ink_size": [
+          209,
+          32
+        ],
+        "coverage_bbox": [
+          21,
+          6,
+          234,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_nak_017_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_nak_017_id_hq.tex",
+    "sha256": "8c4e4cbb4863cb33accfb1d080b9c7189b0a437e23392128f11f4337dca405a1",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Pitcher Hirano",
+        "ink_size": [
+          200,
+          32
+        ],
+        "coverage_bbox": [
+          26,
+          6,
+          230,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Catcher Moriguchi",
+        "ink_size": [
+          197,
+          32
+        ],
+        "coverage_bbox": [
+          27,
+          6,
+          228,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 2,
+        "text": "Hidetsuna Sakenobe",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 3,
+        "text": "Akiyasu Shimura",
+        "ink_size": [
+          185,
+          32
+        ],
+        "coverage_bbox": [
+          33,
+          6,
+          222,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_nak_018_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_nak_018_id_hq.tex",
+    "sha256": "2d6eb9a99d8c3312a7cbe2bec6ac391c571f914b341528eb0667c30190091e24",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Nobuchika Kita",
+        "ink_size": [
+          217,
+          32
+        ],
+        "coverage_bbox": [
+          17,
+          6,
+          238,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Masazane Kunohe",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 2,
+        "text": "Sukemasa Ota",
+        "ink_size": [
+          194,
+          32
+        ],
+        "coverage_bbox": [
+          29,
+          6,
+          227,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 3,
+        "text": "Ujimoto Makabe",
+        "ink_size": [
+          186,
+          32
+        ],
+        "coverage_bbox": [
+          33,
+          6,
+          223,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_nak_019_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_nak_019_id_hq.tex",
+    "sha256": "1e5e0846d9da818ab6bb65227cd1134c7777416523542284be6dcf6093fb543d",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Takasada Haga",
+        "ink_size": [
+          166,
+          32
+        ],
+        "coverage_bbox": [
+          43,
+          6,
+          213,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Takatsugu Haga",
+        "ink_size": [
+          179,
+          32
+        ],
+        "coverage_bbox": [
+          36,
+          6,
+          219,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 2,
+        "text": "Akisada Shioya",
+        "ink_size": [
+          164,
+          32
+        ],
+        "coverage_bbox": [
+          44,
+          6,
+          212,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 3,
+        "text": "Ujimasa Uchigashima",
+        "ink_size": [
+          213,
+          32
+        ],
+        "coverage_bbox": [
+          19,
+          6,
+          236,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_nak_020_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_nak_020_id_hq.tex",
+    "sha256": "d38e94bf18699caf04339bd29bd10b49b7f1761db82fe1f9bb0db2b07f6efdb4",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Hyogonosuke Yokomichi",
+        "ink_size": [
+          202,
+          32
+        ],
+        "coverage_bbox": [
+          25,
+          6,
+          231,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Shikanosuke Yamanaka",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 2,
+        "text": "Danzo Kato",
+        "ink_size": [
+          174,
+          32
+        ],
+        "coverage_bbox": [
+          39,
+          6,
+          217,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 3,
+        "text": "Saizo Kirigakure",
+        "ink_size": [
+          180,
+          32
+        ],
+        "coverage_bbox": [
+          36,
+          6,
+          220,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_nak_021_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_nak_021_id_hq.tex",
+    "sha256": "6188476abaa86dcb2f0a5dcd4dc2501ecb9a313c1a6d8a854e0fe65cdc77cffc",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Tiger",
+        "ink_size": [
+          62,
+          32
+        ],
+        "coverage_bbox": [
+          95,
+          6,
+          161,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Takatora Todo",
+        "ink_size": [
+          195,
+          32
+        ],
+        "coverage_bbox": [
+          28,
+          6,
+          227,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 2,
+        "text": "Hanzo Hattori",
+        "ink_size": [
+          202,
+          32
+        ],
+        "coverage_bbox": [
+          25,
+          6,
+          231,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 3,
+        "text": "Fairlie Muto",
+        "ink_size": [
+          172,
+          32
+        ],
+        "coverage_bbox": [
+          40,
+          6,
+          216,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_nak_022_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_nak_022_id_hq.tex",
+    "sha256": "ce71bbed2b85851a8f5847e1e28ecf4649f984c3502ad7d5b0a93e1c7aaf5456",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Feather Nakatake",
+        "ink_size": [
+          237,
+          32
+        ],
+        "coverage_bbox": [
+          7,
+          6,
+          248,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Yasukatsu Owafuri",
+        "ink_size": [
+          238,
+          32
+        ],
+        "coverage_bbox": [
+          7,
+          6,
+          249,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 2,
+        "text": "Naoshige Ono",
+        "ink_size": [
+          166,
+          32
+        ],
+        "coverage_bbox": [
+          43,
+          6,
+          213,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 3,
+        "text": "Muneharu Shimizu",
+        "ink_size": [
+          241,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          250,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_nak_023_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_nak_023_id_hq.tex",
+    "sha256": "e64772eea3077cfe18efe55c7548282ff2b5bce0ea8b90d7ec289e39055ddced",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Sadatoshi Fukuhara",
+        "ink_size": [
+          240,
+          32
+        ],
+        "coverage_bbox": [
+          6,
+          6,
+          250,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Ujisato Gamo",
+        "ink_size": [
+          159,
+          32
+        ],
+        "coverage_bbox": [
+          46,
+          6,
+          209,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 2,
+        "text": "Katsuie Shibata",
+        "ink_size": [
+          209,
+          32
+        ],
+        "coverage_bbox": [
+          21,
+          6,
+          234,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 3,
+        "text": "Yorisato Gamo",
+        "ink_size": [
+          203,
+          32
+        ],
+        "coverage_bbox": [
+          24,
+          6,
+          231,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_nak_024_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_nak_024_id_hq.tex",
+    "sha256": "3fd92d1be8072202040729126b807d3acd654ac2931939be6ac6c9a1768452a7",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Hyogo Mai",
+        "ink_size": [
+          129,
+          32
+        ],
+        "coverage_bbox": [
+          61,
+          6,
+          194,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Yoshimasa Satake",
+        "ink_size": [
+          230,
+          32
+        ],
+        "coverage_bbox": [
+          11,
+          6,
+          245,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 2,
+        "text": "Magoroku Saica",
+        "ink_size": [
+          187,
+          32
+        ],
+        "coverage_bbox": [
+          32,
+          6,
+          223,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 3,
+        "text": "Tadasumi Tani",
+        "ink_size": [
+          209,
+          32
+        ],
+        "coverage_bbox": [
+          21,
+          6,
+          234,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_nak_025_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_nak_025_id_hq.tex",
+    "sha256": "10895bafd15a969ac0ccf01347e25c53cc20944019d03ca2f16a67573fa64486",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Chikamasa Fukudome",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Ekei Ankokuji",
+        "ink_size": [
+          153,
+          32
+        ],
+        "coverage_bbox": [
+          49,
+          6,
+          206,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 2,
+        "text": "Yoshinao Oniniwa",
+        "ink_size": [
+          237,
+          32
+        ],
+        "coverage_bbox": [
+          7,
+          6,
+          248,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 3,
+        "text": "Genan Hojo",
+        "ink_size": [
+          137,
+          32
+        ],
+        "coverage_bbox": [
+          57,
+          6,
+          198,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_nak_026_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_nak_026_id_hq.tex",
+    "sha256": "6e2e92d6742ef45ecadbacd4d0beb250e21ac082acc874cb0dd033426e121f28",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Tadamoto Niiro",
+        "ink_size": [
+          214,
+          32
+        ],
+        "coverage_bbox": [
+          19,
+          6,
+          237,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Kazumasa Sogo",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": true
+      },
+      {
+        "row": 2,
+        "text": "Kanenaka Shichijo",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": true
+      },
+      {
+        "row": 3,
+        "text": "Buddha-Faced Kumahachi",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": true
+      }
+    ]
+  },
+  {
+    "key": "cp_name_nak_027_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_nak_027_id_hq.tex",
+    "sha256": "84cd43bb5d859abebe538a5312048d64595bde6c5de50c7d9faa69c1d1b9cbb0",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Motosuke Kunishi",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": true
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_000_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_000_id_hq.tex",
+    "sha256": "03376afe6184a8666d7f61ef31bfd470176d2bd371bd0124ef16d4bd916f36d6",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Masamune Date",
+        "ink_size": [
+          235,
+          32
+        ],
+        "coverage_bbox": [
+          8,
+          6,
+          247,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_001_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_001_id_hq.tex",
+    "sha256": "511d34b799f4c562080b0eaae3d4c1dcf3398933cf6994660593faa74cb6e799",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Yukimura Sanada",
+        "ink_size": [
+          219,
+          32
+        ],
+        "coverage_bbox": [
+          16,
+          6,
+          239,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_002_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_002_id_hq.tex",
+    "sha256": "bf55b9363cf21e8ab7f174293749ce684fd67f49cb2d42a934f47a76f626624f",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Mitsunari Ishida",
+        "ink_size": [
+          219,
+          32
+        ],
+        "coverage_bbox": [
+          16,
+          6,
+          239,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_003_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_003_id_hq.tex",
+    "sha256": "62f34c59dcccb13d43029dd7d6bd3d4fc2280c9a196cf1c58dcfc6077ed0d734",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Ieyasu Tokugawa",
+        "ink_size": [
+          185,
+          32
+        ],
+        "coverage_bbox": [
+          33,
+          6,
+          222,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_004_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_004_id_hq.tex",
+    "sha256": "ccb15da27c2bfdef8da1db8c080fefabf1d17c3b4f45f40310ccff1766046cb4",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Magoichi Saica",
+        "ink_size": [
+          167,
+          32
+        ],
+        "coverage_bbox": [
+          42,
+          6,
+          213,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_005_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_005_id_hq.tex",
+    "sha256": "a503ee44a28d23d2e1ae16453b982d6b36e062f4d1e255e93701d0369863ea51",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Kanbe Kuroda",
+        "ink_size": [
+          187,
+          32
+        ],
+        "coverage_bbox": [
+          32,
+          6,
+          223,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Joe C. Kuroda",
+        "ink_size": [
+          155,
+          32
+        ],
+        "coverage_bbox": [
+          48,
+          6,
+          207,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_006_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_006_id_hq.tex",
+    "sha256": "790df9f5622967c9d74494c95ebef437895c270de71c02205c8e8ebcf894e103",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Keiji Maeda",
+        "ink_size": [
+          135,
+          32
+        ],
+        "coverage_bbox": [
+          58,
+          6,
+          197,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_007_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_007_id_hq.tex",
+    "sha256": "7e93644ead45df6a549d79ea93c6d35661aa09b15a36881fa2286be1aa75f4c1",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Tsuruhime",
+        "ink_size": [
+          153,
+          32
+        ],
+        "coverage_bbox": [
+          49,
+          6,
+          206,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_008_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_008_id_hq.tex",
+    "sha256": "d487f319f8d6087d08b07515656f40b9dd55d9ac4b727b38ba5fe85d50f11fad",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Kotaro Fuma",
+        "ink_size": [
+          191,
+          32
+        ],
+        "coverage_bbox": [
+          30,
+          6,
+          225,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_009_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_009_id_hq.tex",
+    "sha256": "494442c28f61c034557fccda6e94392a0c39ccd4cfaac51322dc477a37423ad4",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Motochika Chosokabe",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_010_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_010_id_hq.tex",
+    "sha256": "b6504a811b1dd6cd5ab9fc25dce9612afead580698418ef67d4f975e6708e3d9",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Yoshitsugu Otani",
+        "ink_size": [
+          190,
+          32
+        ],
+        "coverage_bbox": [
+          31,
+          6,
+          225,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_011_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_011_id_hq.tex",
+    "sha256": "7ca78ec426151557f05f5761b798ddfc6c3c90a24469b8dff5fab79f7ff5fd25",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Yoshihiro Shimazu",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Chester Shimazu",
+        "ink_size": [
+          226,
+          32
+        ],
+        "coverage_bbox": [
+          13,
+          6,
+          243,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_012_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_012_id_hq.tex",
+    "sha256": "219d1bad0d9a8762a79e1f06cb7940200d02db8ec4b9cff5832d9957ed9f1884",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Oichi",
+        "ink_size": [
+          79,
+          32
+        ],
+        "coverage_bbox": [
+          86,
+          6,
+          169,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_013_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_013_id_hq.tex",
+    "sha256": "60899268489c54c2635b598b936cde5a3c0ccdba78f849b2294e5861840204d6",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Motonari Mori",
+        "ink_size": [
+          214,
+          32
+        ],
+        "coverage_bbox": [
+          19,
+          6,
+          237,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Sunday Mori",
+        "ink_size": [
+          189,
+          32
+        ],
+        "coverage_bbox": [
+          31,
+          6,
+          224,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_014_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_014_id_hq.tex",
+    "sha256": "dd47c54173f62a309d0df8acb8a779d309d59d4f913388f81de5380044425c85",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Tadakatsu Honda",
+        "ink_size": [
+          229,
+          32
+        ],
+        "coverage_bbox": [
+          11,
+          6,
+          244,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_015_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_015_id_hq.tex",
+    "sha256": "813d76380029cd5f171edf6d93be251b6865c093ca2c91b6d0a5c978fb56c2ee",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Nobunaga Oda",
+        "ink_size": [
+          167,
+          32
+        ],
+        "coverage_bbox": [
+          42,
+          6,
+          213,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_016_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_016_id_hq.tex",
+    "sha256": "8d80c486b37792e33784931865391a1ee03e326d73ad01d11a257ac37003b169",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Muneshige Tachibana",
+        "ink_size": [
+          210,
+          32
+        ],
+        "coverage_bbox": [
+          21,
+          6,
+          235,
+          42
+        ],
+        "new_master": false
+      },
+      {
+        "row": 1,
+        "text": "Gallop Tachibana",
+        "ink_size": [
+          193,
+          32
+        ],
+        "coverage_bbox": [
+          29,
+          6,
+          226,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_017_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_017_id_hq.tex",
+    "sha256": "9fa09b693560a61f30f3b9dc37926d8b339c8ac4c79a818fc9478e14b35b8280",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Hideaki Kobayakawa",
+        "ink_size": [
+          203,
+          32
+        ],
+        "coverage_bbox": [
+          24,
+          6,
+          231,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_018_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_018_id_hq.tex",
+    "sha256": "f59a6e46d6a1a0c1f4fd7d34a9ac31d59e41070cbfd9de189bc418860743422c",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Yoshiaki Mogami",
+        "ink_size": [
+          191,
+          32
+        ],
+        "coverage_bbox": [
+          30,
+          6,
+          225,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_019_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_019_id_hq.tex",
+    "sha256": "a980a6dffff9cdb2d1fd899fc8a19839b5938321fbb9b07299e7bf4bb580f13c",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Tenkai",
+        "ink_size": [
+          97,
+          32
+        ],
+        "coverage_bbox": [
+          77,
+          6,
+          178,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_020_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_020_id_hq.tex",
+    "sha256": "c962367496960d586987fe416b1e27dafd825b991abd6bec8da46541697e10d7",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Kenshin Uesugi",
+        "ink_size": [
+          175,
+          32
+        ],
+        "coverage_bbox": [
+          38,
+          6,
+          217,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_021_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_021_id_hq.tex",
+    "sha256": "c9f710e1b6f9f96bfebcc31a265cc811b9c7a0233bb200cbbd1738d17865b442",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Kasuga",
+        "ink_size": [
+          87,
+          32
+        ],
+        "coverage_bbox": [
+          82,
+          6,
+          173,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_022_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_022_id_hq.tex",
+    "sha256": "cfcdde00220bf17a38378b89e10ced123d72573e2044531d02b23db5b543867b",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Sasuke Sarutobi",
+        "ink_size": [
+          205,
+          32
+        ],
+        "coverage_bbox": [
+          23,
+          6,
+          232,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_023_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_023_id_hq.tex",
+    "sha256": "1e1e9082575f675846bd77d10a01c0150c69ed6f84de815a0f9ce2f4a563de58",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Kojuro Katakura",
+        "ink_size": [
+          180,
+          32
+        ],
+        "coverage_bbox": [
+          36,
+          6,
+          220,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_024_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_024_id_hq.tex",
+    "sha256": "d0c4dc3e990cefba791f71f8fef0c41cedac9c9ba61b9d9ffcf106fd7a9deace",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Matsu",
+        "ink_size": [
+          97,
+          32
+        ],
+        "coverage_bbox": [
+          77,
+          6,
+          178,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_025_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_025_id_hq.tex",
+    "sha256": "a88417d1710b75a72ccadd26b8d7ca7b2efe13a72b9b9ec29fbc58fa01a7df47",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Toshiie Maeda",
+        "ink_size": [
+          194,
+          32
+        ],
+        "coverage_bbox": [
+          29,
+          6,
+          227,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_026_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_026_id_hq.tex",
+    "sha256": "c805ed1a6fc2ecb2c0a133531a85249efb4d37ea57f973e2b1f4c1a2a16f4c74",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Ujimasa Hojo",
+        "ink_size": [
+          158,
+          32
+        ],
+        "coverage_bbox": [
+          47,
+          6,
+          209,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_027_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_027_id_hq.tex",
+    "sha256": "ceae8772a6ddacce54499332852cfd08b0e99969df03267cea0f5f7161d1a607",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Shingen Takeda",
+        "ink_size": [
+          239,
+          32
+        ],
+        "coverage_bbox": [
+          6,
+          6,
+          249,
+          42
+        ],
+        "new_master": true
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_028_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_028_id_hq.tex",
+    "sha256": "d9ac0938394573e05226462083b6f2f277de9e7e9008bd8a6412e91052484004",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Hisahide Matsunaga",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": true
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_029_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_029_id_hq.tex",
+    "sha256": "7dc2a2989b34f9f859cb904f7e1fdac1008115f4818036202cae99b54e045eeb",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Sorin Otomo",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": true
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_100_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_100_id_hq.tex",
+    "sha256": "edcd92db6cac8d5f5dab9c698a57925a5db22c0f55206e82e672c3efea34ea67",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Harumasa Nanbu",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_101_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_101_id_hq.tex",
+    "sha256": "8e6f56d7740ffdc6fc79696994a2317e4e464a3e42a1f0d71945a0d3505fd310",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Hirotsuna Utsunomiya",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_102_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_102_id_hq.tex",
+    "sha256": "383e674b22657ffe70a4ab4ff09345222d77c072033b046f7c2db66480377158",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Haruhisa Amago",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_104_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_104_id_hq.tex",
+    "sha256": "55771f38e559028bfa880d4456da9c52cc210946178e6e8ed89a980cb2a740df",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Yoritsuna Anegakoji",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_105_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_105_id_hq.tex",
+    "sha256": "46e39149f038c42410971df2687cc3465402dd190b2da4e718d8914690a39aa5",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Yoshishige Satake",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  },
+  {
+    "key": "cp_name_pl_106_id_hq",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\names\\cp_name_pl_106_id_hq.tex",
+    "sha256": "58856dba2b0da3e32c093bfa65188fe774429b417ef96ce53c1684866fd6f441",
+    "labels": [
+      {
+        "row": 0,
+        "text": "Kanetsugu Naoe",
+        "ink_size": [
+          242,
+          32
+        ],
+        "coverage_bbox": [
+          5,
+          6,
+          251,
+          42
+        ],
+        "new_master": false
+      }
+    ]
+  }
+]

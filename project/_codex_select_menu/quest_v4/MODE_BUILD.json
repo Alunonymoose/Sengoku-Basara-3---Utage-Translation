@@ -1,0 +1,182 @@
+[
+  {
+    "row": 0,
+    "state": "selected",
+    "rect": [
+      0,
+      0,
+      512,
+      112
+    ],
+    "ink_box": [
+      80,
+      16,
+      328,
+      96
+    ],
+    "old_slot_fully_cleared": true,
+    "stray_pixels": 0
+  },
+  {
+    "row": 0,
+    "state": "normal",
+    "rect": [
+      512,
+      0,
+      1024,
+      112
+    ],
+    "ink_box": [
+      128,
+      26,
+      384,
+      86
+    ],
+    "old_slot_fully_cleared": true,
+    "stray_pixels": 0
+  },
+  {
+    "row": 1,
+    "state": "selected",
+    "rect": [
+      0,
+      112,
+      512,
+      224
+    ],
+    "ink_box": [
+      80,
+      16,
+      368,
+      96
+    ],
+    "old_slot_fully_cleared": true,
+    "stray_pixels": 0
+  },
+  {
+    "row": 1,
+    "state": "normal",
+    "rect": [
+      512,
+      112,
+      1024,
+      224
+    ],
+    "ink_box": [
+      128,
+      26,
+      384,
+      86
+    ],
+    "old_slot_fully_cleared": true,
+    "stray_pixels": 0
+  },
+  {
+    "row": 2,
+    "state": "selected",
+    "rect": [
+      0,
+      224,
+      512,
+      336
+    ],
+    "ink_box": [
+      80,
+      16,
+      368,
+      96
+    ],
+    "old_slot_fully_cleared": true,
+    "stray_pixels": 0
+  },
+  {
+    "row": 2,
+    "state": "normal",
+    "rect": [
+      512,
+      224,
+      1024,
+      336
+    ],
+    "ink_box": [
+      128,
+      26,
+      384,
+      86
+    ],
+    "old_slot_fully_cleared": true,
+    "stray_pixels": 0
+  },
+  {
+    "row": 3,
+    "state": "selected",
+    "rect": [
+      0,
+      336,
+      512,
+      448
+    ],
+    "ink_box": [
+      80,
+      16,
+      268,
+      96
+    ],
+    "old_slot_fully_cleared": true,
+    "stray_pixels": 0
+  },
+  {
+    "row": 3,
+    "state": "normal",
+    "rect": [
+      512,
+      336,
+      1024,
+      448
+    ],
+    "ink_box": [
+      128,
+      26,
+      384,
+      86
+    ],
+    "old_slot_fully_cleared": true,
+    "stray_pixels": 0
+  },
+  {
+    "row": 4,
+    "state": "selected",
+    "rect": [
+      0,
+      448,
+      512,
+      560
+    ],
+    "ink_box": [
+      80,
+      16,
+      348,
+      96
+    ],
+    "old_slot_fully_cleared": true,
+    "stray_pixels": 0
+  },
+  {
+    "row": 4,
+    "state": "normal",
+    "rect": [
+      512,
+      448,
+      1024,
+      560
+    ],
+    "ink_box": [
+      128,
+      26,
+      384,
+      86
+    ],
+    "old_slot_fully_cleared": true,
+    "stray_pixels": 0
+  }
+]

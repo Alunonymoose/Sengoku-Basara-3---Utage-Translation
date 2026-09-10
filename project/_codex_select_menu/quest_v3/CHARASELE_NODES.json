@@ -1,0 +1,3599 @@
+[
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\brief\\mode_quest.arc",
+    "lsp": "id\\lsp\\jpn\\yuugi_quest\\yuugi_quest",
+    "index": 70,
+    "name": "Nihonyuugi",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.9200000166893005,
+      0.9200000166893005
+    ],
+    "parent": 69,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      144,
+      60
+    ],
+    "uv": [
+      0,
+      120,
+      144,
+      180
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\brief\\mode_quest.arc",
+    "lsp": "id\\lsp\\jpn\\yuugi_quest\\yuugi_quest",
+    "index": 70,
+    "name": "Nihonyuugi",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.9200000166893005,
+      0.9200000166893005
+    ],
+    "parent": 69,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      144,
+      60
+    ],
+    "uv": [
+      0,
+      120,
+      144,
+      180
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\menu.arc",
+    "lsp": "id\\lsp\\jpn\\yuugi_quest\\yuugi_quest",
+    "index": 70,
+    "name": "Nihonyuugi",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.9200000166893005,
+      0.9200000166893005
+    ],
+    "parent": 69,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      144,
+      60
+    ],
+    "uv": [
+      0,
+      120,
+      144,
+      180
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\menu.arc",
+    "lsp": "id\\lsp\\jpn\\yuugi_quest\\yuugi_quest",
+    "index": 70,
+    "name": "Nihonyuugi",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.9200000166893005,
+      0.9200000166893005
+    ],
+    "parent": 69,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      144,
+      60
+    ],
+    "uv": [
+      0,
+      120,
+      144,
+      180
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 196,
+    "name": "Face_b_a",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 195,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -96,
+      -190,
+      0,
+      0
+    ],
+    "uv": [
+      352,
+      2,
+      448,
+      192
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 197,
+    "name": "Face_b_b",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 195,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      96,
+      -190,
+      0,
+      0
+    ],
+    "uv": [
+      352,
+      2,
+      448,
+      192
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 198,
+    "name": "Face_b_c",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      -1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 195,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -96,
+      190,
+      0,
+      0
+    ],
+    "uv": [
+      352,
+      2,
+      448,
+      192
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 199,
+    "name": "Face_b_d",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      -1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 195,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      96,
+      190,
+      0,
+      0
+    ],
+    "uv": [
+      352,
+      2,
+      448,
+      192
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 200,
+    "name": "Face_b_00",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 195,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -96,
+      -190,
+      0,
+      0
+    ],
+    "uv": [
+      352,
+      2,
+      448,
+      192
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 201,
+    "name": "Face_b_01",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 195,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      96,
+      -190,
+      0,
+      0
+    ],
+    "uv": [
+      352,
+      2,
+      448,
+      192
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 202,
+    "name": "Face_b_02",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      5.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 195,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -96,
+      190,
+      0,
+      0
+    ],
+    "uv": [
+      352,
+      2,
+      448,
+      192
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 203,
+    "name": "Face_b_03",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      5.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 195,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      96,
+      190,
+      0,
+      0
+    ],
+    "uv": [
+      352,
+      2,
+      448,
+      192
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 207,
+    "name": "Select01",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      -55.0
+    ],
+    "scale": [
+      0.6666659712791443,
+      0.6666659712791443
+    ],
+    "parent": 206,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      0,
+      248,
+      96
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 208,
+    "name": "Select02_1P",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      -55.0
+    ],
+    "scale": [
+      0.6666659712791443,
+      0.6666659712791443
+    ],
+    "parent": 206,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -56,
+      52,
+      56
+    ],
+    "uv": [
+      248,
+      0,
+      352,
+      112
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 209,
+    "name": "Select03_2P",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      30.0,
+      -28.0
+    ],
+    "scale": [
+      0.6666659712791443,
+      0.6666659712791443
+    ],
+    "parent": 206,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -56,
+      52,
+      56
+    ],
+    "uv": [
+      0,
+      304,
+      104,
+      416
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 210,
+    "name": "Select03_2P_h",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 209,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -56,
+      52,
+      56
+    ],
+    "uv": [
+      104,
+      304,
+      208,
+      416
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 211,
+    "name": "Select04_1P2P",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      -55.0
+    ],
+    "scale": [
+      0.6666659712791443,
+      0.6666659712791443
+    ],
+    "parent": 206,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -56,
+      52,
+      56
+    ],
+    "uv": [
+      144,
+      96,
+      248,
+      208
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 244,
+    "name": "Title00",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -2.0,
+      34.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 243,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      144,
+      60
+    ],
+    "uv": [
+      0,
+      60,
+      144,
+      120
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 245,
+    "name": "Title01",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -8.0,
+      34.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 243,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      144,
+      60
+    ],
+    "uv": [
+      0,
+      120,
+      144,
+      180
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 246,
+    "name": "Title02",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      12.0,
+      34.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 243,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      144,
+      60
+    ],
+    "uv": [
+      0,
+      180,
+      144,
+      240
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 247,
+    "name": "Title03",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -8.0,
+      34.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 243,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      144,
+      60
+    ],
+    "uv": [
+      0,
+      240,
+      144,
+      300
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 302,
+    "name": "P1_b",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 301,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -55,
+      -19,
+      55,
+      19
+    ],
+    "uv": [
+      352,
+      200,
+      462,
+      238
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 304,
+    "name": "P1_s",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 303,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -23,
+      -18,
+      23,
+      18
+    ],
+    "uv": [
+      464,
+      0,
+      510,
+      36
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 342,
+    "name": "P2_b",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 341,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -55,
+      -19,
+      55,
+      19
+    ],
+    "uv": [
+      352,
+      240,
+      462,
+      278
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 344,
+    "name": "P2_s",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 343,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -23,
+      -18,
+      23,
+      18
+    ],
+    "uv": [
+      464,
+      40,
+      510,
+      76
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 377,
+    "name": "Lock_1p",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -100.0,
+      15.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -30,
+      -22,
+      30,
+      22
+    ],
+    "uv": [
+      256,
+      232,
+      316,
+      276
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 378,
+    "name": "Lock_2p",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      100.0,
+      15.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 174,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -30,
+      -22,
+      30,
+      22
+    ],
+    "uv": [
+      256,
+      232,
+      316,
+      276
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 394,
+    "name": "Syutujin_1p",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -100.0,
+      -1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -65,
+      -68,
+      65,
+      0
+    ],
+    "uv": [
+      312,
+      320,
+      442,
+      388
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 395,
+    "name": "Syutujin_2p",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      100.0,
+      -1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 174,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -65,
+      -68,
+      65,
+      0
+    ],
+    "uv": [
+      312,
+      320,
+      442,
+      388
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 396,
+    "name": "Syutujin_1p",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -100.0,
+      -35.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -65,
+      -34,
+      65,
+      34
+    ],
+    "uv": [
+      312,
+      320,
+      442,
+      388
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 397,
+    "name": "Syutujin_2p",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      100.0,
+      -35.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 174,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -65,
+      -34,
+      65,
+      34
+    ],
+    "uv": [
+      312,
+      320,
+      442,
+      388
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 399,
+    "name": "Senme",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      42.0,
+      87.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 398,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      60,
+      32
+    ],
+    "uv": [
+      0,
+      416,
+      60,
+      448
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+    "index": 400,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      22.0,
+      87.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 398,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      32,
+      32
+    ],
+    "uv": [
+      60,
+      416,
+      92,
+      448
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 3,
+    "name": "Kabe_00",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      214,
+      240
+    ],
+    "uv": [
+      8,
+      8,
+      222,
+      248
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 4,
+    "name": "Kabe_01",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 4,
+    "position": [
+      214.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      214,
+      240
+    ],
+    "uv": [
+      8,
+      8,
+      222,
+      248
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 5,
+    "name": "Kabe_02",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -240,
+      214,
+      0
+    ],
+    "uv": [
+      8,
+      8,
+      222,
+      248
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 6,
+    "name": "Kabe_03",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 4,
+    "position": [
+      214.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -240,
+      214,
+      0
+    ],
+    "uv": [
+      8,
+      8,
+      222,
+      248
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 7,
+    "name": "Kabe_04",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -214,
+      0,
+      0,
+      240
+    ],
+    "uv": [
+      8,
+      8,
+      222,
+      248
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 8,
+    "name": "Kabe_05",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 4,
+    "position": [
+      -214.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -214,
+      0,
+      0,
+      240
+    ],
+    "uv": [
+      8,
+      8,
+      222,
+      248
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 9,
+    "name": "Kabe_06",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -214,
+      -240,
+      0,
+      0
+    ],
+    "uv": [
+      8,
+      8,
+      222,
+      248
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 10,
+    "name": "Kabe_07",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 4,
+    "position": [
+      -214.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -214,
+      -240,
+      0,
+      0
+    ],
+    "uv": [
+      8,
+      8,
+      222,
+      248
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 34,
+    "name": "Arrow_L_off",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -59.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 33,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -20,
+      -16,
+      20,
+      16
+    ],
+    "uv": [
+      464,
+      128,
+      504,
+      160
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 35,
+    "name": "Arrow_L_on",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 34,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -20,
+      -16,
+      20,
+      16
+    ],
+    "uv": [
+      464,
+      88,
+      504,
+      120
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 36,
+    "name": "Arrow_R_off",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      59.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 33,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      20,
+      -16,
+      -20,
+      16
+    ],
+    "uv": [
+      464,
+      128,
+      504,
+      160
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 37,
+    "name": "Arrow_R_on",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 36,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      20,
+      -16,
+      -20,
+      16
+    ],
+    "uv": [
+      464,
+      88,
+      504,
+      120
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 39,
+    "name": "Icon_Ofrm",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 32,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      0,
+      248,
+      96
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 40,
+    "name": "Ofrm_sdw",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 39,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      0,
+      248,
+      96
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 41,
+    "name": "Icon_Rfrm",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 32,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -56,
+      52,
+      56
+    ],
+    "uv": [
+      248,
+      112,
+      352,
+      224
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 42,
+    "name": "Rfrm_sdw",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 41,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -56,
+      52,
+      56
+    ],
+    "uv": [
+      248,
+      112,
+      352,
+      224
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 43,
+    "name": "Icon_Bfrm",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 32,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -56,
+      52,
+      56
+    ],
+    "uv": [
+      248,
+      0,
+      352,
+      112
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 44,
+    "name": "Bfrm_sdw",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 43,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -56,
+      52,
+      56
+    ],
+    "uv": [
+      248,
+      0,
+      352,
+      112
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 50,
+    "name": "Mfrm_00",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.7799999713897705,
+      0.7799999713897705
+    ],
+    "parent": 49,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 51,
+    "name": "Mfrm_sdw_00",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 50,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 55,
+    "name": "Rfrm_01",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      76.0,
+      0.0
+    ],
+    "scale": [
+      0.7799999713897705,
+      0.7799999713897705
+    ],
+    "parent": 54,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 56,
+    "name": "Rfrm_sdw_01",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 55,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 60,
+    "name": "Rfrm_02",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      50.0,
+      0.0
+    ],
+    "scale": [
+      0.7799999713897705,
+      0.7799999713897705
+    ],
+    "parent": 59,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 61,
+    "name": "Rfrm_sdw_02",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 60,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 65,
+    "name": "Rfrm_03",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      50.0,
+      0.0
+    ],
+    "scale": [
+      0.7799999713897705,
+      0.7799999713897705
+    ],
+    "parent": 64,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 66,
+    "name": "Rfrm_sdw_03",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 65,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 70,
+    "name": "Rfrm_04",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      50.0,
+      0.0
+    ],
+    "scale": [
+      0.7799999713897705,
+      0.7799999713897705
+    ],
+    "parent": 69,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 71,
+    "name": "Rfrm_sdw_04",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 70,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 75,
+    "name": "Rfrm_05",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      50.0,
+      0.0
+    ],
+    "scale": [
+      0.7799999713897705,
+      0.7799999713897705
+    ],
+    "parent": 74,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 76,
+    "name": "Rfrm_sdw_05",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 75,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 80,
+    "name": "Rfrm_06",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      50.0,
+      0.0
+    ],
+    "scale": [
+      0.7799999713897705,
+      0.7799999713897705
+    ],
+    "parent": 79,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 81,
+    "name": "Rfrm_sdw_06",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 85,
+    "name": "Rfrm_07",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      50.0,
+      0.0
+    ],
+    "scale": [
+      0.7799999713897705,
+      0.7799999713897705
+    ],
+    "parent": 84,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 86,
+    "name": "Rfrm_sdw_07",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 85,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 90,
+    "name": "Lfrm_01",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -76.0,
+      0.0
+    ],
+    "scale": [
+      0.7799999713897705,
+      0.7799999713897705
+    ],
+    "parent": 89,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 91,
+    "name": "Lfrm_sdw_01",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 90,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 95,
+    "name": "Lfrm_02",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -50.0,
+      0.0
+    ],
+    "scale": [
+      0.7799999713897705,
+      0.7799999713897705
+    ],
+    "parent": 94,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 96,
+    "name": "Lfrm_sdw_02",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 95,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 100,
+    "name": "Lfrm_03",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -50.0,
+      0.0
+    ],
+    "scale": [
+      0.7799999713897705,
+      0.7799999713897705
+    ],
+    "parent": 99,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 101,
+    "name": "Lfrm_sdw_03",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 100,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 105,
+    "name": "Lfrm_04",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -50.0,
+      0.0
+    ],
+    "scale": [
+      0.7799999713897705,
+      0.7799999713897705
+    ],
+    "parent": 104,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 106,
+    "name": "Lfrm_sdw_04",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 105,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 110,
+    "name": "Lfrm_05",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -50.0,
+      0.0
+    ],
+    "scale": [
+      0.7799999713897705,
+      0.7799999713897705
+    ],
+    "parent": 109,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 111,
+    "name": "Lfrm_sdw_05",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 110,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 115,
+    "name": "Lfrm_06",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -50.0,
+      0.0
+    ],
+    "scale": [
+      0.7799999713897705,
+      0.7799999713897705
+    ],
+    "parent": 114,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 116,
+    "name": "Lfrm_sdw_06",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 115,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 120,
+    "name": "Lfrm_07",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -50.0,
+      0.0
+    ],
+    "scale": [
+      0.7799999713897705,
+      0.7799999713897705
+    ],
+    "parent": 119,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 121,
+    "name": "Lfrm_sdw_07",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 120,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 125,
+    "name": "Lfrm_08",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -50.0,
+      0.0
+    ],
+    "scale": [
+      0.7799999713897705,
+      0.7799999713897705
+    ],
+    "parent": 124,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 126,
+    "name": "Lfrm_sdw_08",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 125,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 130,
+    "name": "Lfrm_09",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -50.0,
+      0.0
+    ],
+    "scale": [
+      0.7799999713897705,
+      0.7799999713897705
+    ],
+    "parent": 129,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 131,
+    "name": "Lfrm_sdw_09",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 130,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 135,
+    "name": "Lfrm_10",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -50.0,
+      0.0
+    ],
+    "scale": [
+      0.7799999713897705,
+      0.7799999713897705
+    ],
+    "parent": 134,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 136,
+    "name": "Lfrm_sdw_10",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 135,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 140,
+    "name": "Lfrm_11",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -50.0,
+      0.0
+    ],
+    "scale": [
+      0.7799999713897705,
+      0.7799999713897705
+    ],
+    "parent": 139,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 141,
+    "name": "Lfrm_sdw_11",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 140,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 145,
+    "name": "Lfrm_12",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -50.0,
+      0.0
+    ],
+    "scale": [
+      0.7799999713897705,
+      0.7799999713897705
+    ],
+    "parent": 144,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 146,
+    "name": "Lfrm_sdw_12",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 145,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 150,
+    "name": "Lfrm_13",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -50.0,
+      0.0
+    ],
+    "scale": [
+      0.7799999713897705,
+      0.7799999713897705
+    ],
+    "parent": 149,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 151,
+    "name": "Lfrm_sdw_13",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      6.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 150,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -52,
+      -48,
+      52,
+      48
+    ],
+    "uv": [
+      144,
+      208,
+      248,
+      304
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 253,
+    "name": "Mode_Story",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -40.0,
+      -54.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 252,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -72,
+      -28,
+      72,
+      28
+    ],
+    "uv": [
+      0,
+      0,
+      144,
+      56
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 274,
+    "name": "Player1",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -27.0,
+      -48.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 273,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -56,
+      -20,
+      56,
+      20
+    ],
+    "uv": [
+      352,
+      200,
+      464,
+      240
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_story.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_story",
+    "index": 313,
+    "name": "Player2",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -27.0,
+      -48.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 312,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -56,
+      -20,
+      56,
+      20
+    ],
+    "uv": [
+      352,
+      240,
+      464,
+      280
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_versus.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_kessen",
+    "index": 105,
+    "name": "P1_s",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -54.0,
+      0.0
+    ],
+    "scale": [
+      0.8500000238418579,
+      0.800000011920929
+    ],
+    "parent": 101,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -23,
+      -18,
+      23,
+      18
+    ],
+    "uv": [
+      464,
+      0,
+      510,
+      36
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_versus.arc",
+    "lsp": "id\\lsp\\jpn\\charasele\\charasele_kessen",
+    "index": 227,
+    "name": "P2_s",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      54.0,
+      0.0
+    ],
+    "scale": [
+      0.8500000238418579,
+      0.800000011920929
+    ],
+    "parent": 223,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -23,
+      -18,
+      23,
+      18
+    ],
+    "uv": [
+      464,
+      40,
+      510,
+      76
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\dream.arc",
+    "lsp": "id\\lsp\\jpn\\tenka_tassei\\tenka_tassei00",
+    "index": 221,
+    "name": "tenka",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.949999988079071,
+      0.949999988079071
+    ],
+    "parent": 220,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      144,
+      60
+    ],
+    "uv": [
+      0,
+      60,
+      144,
+      120
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\dream.arc",
+    "lsp": "id\\lsp\\jpn\\tenka_tassei\\tenka_tassei00",
+    "index": 222,
+    "name": "yuugi",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -4.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 220,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      144,
+      60
+    ],
+    "uv": [
+      0,
+      120,
+      144,
+      180
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_finish_id.arc",
+    "lsp": "id\\lsp\\jpn\\tenka_tassei\\tenka_tassei00",
+    "index": 221,
+    "name": "tenka",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.949999988079071,
+      0.949999988079071
+    ],
+    "parent": 220,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      144,
+      60
+    ],
+    "uv": [
+      0,
+      60,
+      144,
+      120
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_finish_id.arc",
+    "lsp": "id\\lsp\\jpn\\tenka_tassei\\tenka_tassei00",
+    "index": 222,
+    "name": "yuugi",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -4.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 220,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      144,
+      60
+    ],
+    "uv": [
+      0,
+      120,
+      144,
+      180
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_id.arc",
+    "lsp": "id\\lsp\\jpn\\tenka_rule\\tenka_rule",
+    "index": 4,
+    "name": "Tenka",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 3,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      144,
+      60
+    ],
+    "uv": [
+      0,
+      60,
+      144,
+      120
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\versus\\menu.arc",
+    "lsp": "id\\lsp\\jpn\\kessen\\kessen_rule",
+    "index": 4,
+    "name": "Kessen",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 3,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      144,
+      60
+    ],
+    "uv": [
+      0,
+      180,
+      144,
+      240
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\versus\\menu.arc",
+    "lsp": "id\\lsp\\jpn\\kessen\\kessen_sele",
+    "index": 55,
+    "name": "Kessen",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      34.0,
+      34.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 54,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      144,
+      60
+    ],
+    "uv": [
+      0,
+      180,
+      144,
+      240
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\versus\\menu.arc",
+    "lsp": "id\\lsp\\jpn\\kessen\\kessen_sele",
+    "index": 81,
+    "name": "1p",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -49.0,
+      1.5
+    ],
+    "scale": [
+      0.8500000238418579,
+      0.8500000238418579
+    ],
+    "parent": 80,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -24,
+      -20,
+      24,
+      20
+    ],
+    "uv": [
+      464,
+      0,
+      512,
+      40
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\versus\\menu.arc",
+    "lsp": "id\\lsp\\jpn\\kessen\\kessen_sele",
+    "index": 102,
+    "name": "2p",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -49.0,
+      2.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 101,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -24,
+      -20,
+      24,
+      20
+    ],
+    "uv": [
+      464,
+      40,
+      512,
+      80
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\versus\\menu.arc",
+    "lsp": "id\\lsp\\jpn\\kessen\\kessen_sele",
+    "index": 167,
+    "name": "1p",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -143.0,
+      63.0
+    ],
+    "scale": [
+      0.75,
+      0.75
+    ],
+    "parent": 159,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -24,
+      -20,
+      24,
+      20
+    ],
+    "uv": [
+      464,
+      0,
+      512,
+      40
+    ]
+  },
+  {
+    "arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\versus\\menu.arc",
+    "lsp": "id\\lsp\\jpn\\kessen\\kessen_sele",
+    "index": 168,
+    "name": "2p",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      22.0,
+      63.0
+    ],
+    "scale": [
+      0.75,
+      0.75
+    ],
+    "parent": 159,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -24,
+      -20,
+      24,
+      20
+    ],
+    "uv": [
+      464,
+      40,
+      512,
+      80
+    ]
+  }
+]

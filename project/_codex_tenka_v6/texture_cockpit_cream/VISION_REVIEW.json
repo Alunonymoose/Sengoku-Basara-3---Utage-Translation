@@ -1,0 +1,27 @@
+{
+  "model": "qwen2.5vl:7b",
+  "sheets": [
+    {
+      "sheet": "contact_entry_2.png",
+      "assessment": {
+        "overall_score": 8,
+        "japanese_visible": false,
+        "style_consistency": 9,
+        "clipping_or_layout_issues": false,
+        "suspicious_tiles": [],
+        "concise_notes": "The English lettering appears to be high-quality, hand-painted console game artwork. The style is consistent and the layout is clean with no visible clipping or layout issues. The Japanese text at the top of each tile is not relevant to the artwork itself."
+      }
+    },
+    {
+      "sheet": "contact_entry_4.png",
+      "assessment": {
+        "overall_score": 7,
+        "japanese_visible": false,
+        "style_consistency": 8,
+        "clipping_or_layout_issues": false,
+        "suspicious_tiles": [],
+        "concise_notes": "The English lettering appears to be of a high-quality, hand-painted style, likely from a console game. The font and style are consistent across all tiles, and there are no visible clipping or layout issues. The Japanese text at the top of each column is not relevant to the artwork itself."
+      }
+    }
+  ]
+}

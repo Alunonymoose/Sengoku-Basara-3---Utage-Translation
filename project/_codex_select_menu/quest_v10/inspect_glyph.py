@@ -1,0 +1,3 @@
+import sys;sys.path.insert(0,r'E:\Utage Patching New\_codex_select_menu\quest_v5');from build_v5 import *
+a=arc.parse_arc(ROM/'eng/tenka/tenka_id.arc');t=arc.unpack(a.entries[0]);g,u,v,w=struct.unpack_from('>4H',t,32+42*8);im=unpack_color(decode(arc.unpack(a.entries[3]))).crop((u*2,v*2,(u+w)*2,v*2+52));im.resize((180,520)).save(W.parent/'quest_v10/K_SOURCE.png');print(im.getextrema(),im.getbbox())
+a=arc.parse_arc(ROM/'eng/tenka/smith.arc');t=arc.unpack(a.entries[0]);c=arc.unpack(a.entries[24]);idx=struct.unpack_from('>H',c,8+65*2)[0];g,u,v,w=struct.unpack_from('>4H',t,32+idx*8);im=unpack_color(decode(arc.unpack(a.entries[3+(g>>8)]))).crop((u*2,v*2,(u+w)*2,v*2+52));im.resize((280,520)).save(W.parent/'quest_v10/A_SOURCE.png');print(im.getextrema(),im.getbbox())

@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "archives": 3,
+  "changed_resources": 16,
+  "translated_records": 198,
+  "untouched_resources": 339,
+  "checks": [
+    "Archive hashes and CRC",
+    "Unchanged compressed entries identical",
+    "Resource metadata preserved",
+    "198 records and width limits"
+  ],
+  "runtime_verified": false
+}

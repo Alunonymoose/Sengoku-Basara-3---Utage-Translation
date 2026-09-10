@@ -1,0 +1,24 @@
+{
+  "donor": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_stage_m000.arc",
+  "donor_raw_sha256": "4cb121aadeb0e381b78fe0ed0bcfa07b5c38a04eb200ae2b868f5b0fac508795",
+  "updated": [
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\common\\mission\\m000.arc",
+      "entry": 1,
+      "old_raw_sha256": "f6fd72e96b763589204b8b97cf68421c4ab0259f8822f137d9c7e6e0ea3eb926",
+      "new_raw_sha256": "4cb121aadeb0e381b78fe0ed0bcfa07b5c38a04eb200ae2b868f5b0fac508795"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result_id.arc",
+      "entry": 87,
+      "old_raw_sha256": "f6fd72e96b763589204b8b97cf68421c4ab0259f8822f137d9c7e6e0ea3eb926",
+      "new_raw_sha256": "4cb121aadeb0e381b78fe0ed0bcfa07b5c38a04eb200ae2b868f5b0fac508795"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_finish_id.arc",
+      "entry": 78,
+      "old_raw_sha256": "f6fd72e96b763589204b8b97cf68421c4ab0259f8822f137d9c7e6e0ea3eb926",
+      "new_raw_sha256": "4cb121aadeb0e381b78fe0ed0bcfa07b5c38a04eb200ae2b868f5b0fac508795"
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "status": "pass",
+  "patch": "Utage Battle Dialogue V20 Text Baseline Compensation",
+  "diagnosis": "V19's special-root flag port had no visible baseline effect. Pixel analysis shows V19's glyph rows are unchanged from V18 and sit 12 pixels below official SH at 1920x1080. This equals 8 units in the 1280x720 cockpit coordinate space. V20 moves parent node 3 up 8 units, then applies equal opposite compensation to both visual child roots and all active 3_0 Y keys. The generated-text anchor moves up while the panel, portrait, name plate, and auxiliary visuals retain their world Y positions.",
+  "base": "installed V19",
+  "expected_v19_arc_sha256": "6e02355a956d5a645edc908fbc2d5c0c461dd65caed8e9ab05b9e6d996c262c9",
+  "expected_v19_lsp_sha256": "aadd36fbf00348b372538b86bf649ccf2e0cca85dffd583e97ecb69e87d6c097",
+  "pre_v20_runtime_backup": "E:\\Utage Patching New\\_codex_tenka_v6\\V20_BACKUP_cockpit1P_pre_v20.zip",
+  "pre_v20_runtime_backup_sha256": "31cdcdd2f37a3325d2b994f03403e846705d06bdba3f521e1d569d0869d11b04",
+  "live_hashes_before": {
+    "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit1P.arc": "6e02355a956d5a645edc908fbc2d5c0c461dd65caed8e9ab05b9e6d996c262c9",
+    "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\jpn\\id\\cockpit1P.arc": "6e02355a956d5a645edc908fbc2d5c0c461dd65caed8e9ab05b9e6d996c262c9"
+  },
+  "jobs": [
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/id/cockpit1P.arc",
+      "base_arc_sha256": "6e02355a956d5a645edc908fbc2d5c0c461dd65caed8e9ab05b9e6d996c262c9",
+      "base_lsp_sha256": "aadd36fbf00348b372538b86bf649ccf2e0cca85dffd583e97ecb69e87d6c097",
+      "output_arc_sha256": "d57c2929b52e574dc8bda16f168e4b28ea2edcd2965fbd45569d2dde856fbd98",
+      "output_lsp_sha256": "9365baae640a090dc53c0242d60eccb4ad6b114b469eac3ca220e5813b90834f",
+      "entry_count": 39,
+      "changed_arc_entries": [
+        18
+      ],
+      "untouched_compressed_resources_preserved": true,
+      "special_root_preserved": {
+        "offset": 42432,
+        "length": 208,
+        "enable_values": [
+          1,
+          1
+        ]
+      },
+      "baseline_compensation": {
+        "lsp_shift_units": 8.0,
+        "expected_output_pixels_at_1080p": 12.0,
+        "measured_v19_to_sh_output_pixels": 12,
+        "nodes_before": [
+          {
+            "name": "3",
+            "stable_id": 71,
+            "index": 116,
+            "record_offset": 20432,
+            "x": 320.0,
+            "y": 330.0,
+            "parent_index": 0
+          },
+          {
+            "name": "3_0",
+            "stable_id": 72,
+            "index": 117,
+            "record_offset": 20608,
+            "x": 0.0,
+            "y": 8.0,
+            "parent_index": 116
+          },
+          {
+            "name": "3_1",
+            "stable_id": 76,
+            "index": 129,
+            "record_offset": 22720,
+            "x": 0.0,
+            "y": 0.0,
+            "parent_index": 116
+          }
+        ],
+        "nodes_after": [
+          {
+            "name": "3",
+            "stable_id": 71,
+            "index": 116,
+            "record_offset": 20432,
+            "x": 320.0,
+            "y": 322.0,
+            "parent_index": 0
+          },
+          {
+            "name": "3_0",
+            "stable_id": 72,
+            "index": 117,
+            "record_offset": 20608,
+            "x": 0.0,
+            "y": 16.0,
+            "parent_index": 116
+          },
+          {
+            "name": "3_1",
+            "stable_id": 76,
+            "index": 129,
+            "record_offset": 22720,
+            "x": 0.0,
+            "y": 8.0,
+            "parent_index": 116
+          }
+        ],
+        "world_y_before": {
+          "text_anchor": 330.0,
+          "panel_static": 338.0,
+          "panel_animated": 333.0,
+          "auxiliary_static": 330.0
+        },
+        "world_y_after": {
+          "text_anchor": 322.0,
+          "panel_static": 338.0,
+          "panel_animated": 333.0,
+          "auxiliary_static": 330.0
+        },
+        "edits": [
+          {
+            "label": "node 3 static Y",
+            "lsp_offset": 20436,
+            "before_f32": 330.0,
+            "after_f32": 322.0
+          },
+          {
+            "label": "node 3_0 static Y compensation",
+            "lsp_offset": 20612,
+            "before_f32": 8.0,
+            "after_f32": 16.0
+          },
+          {
+            "label": "node 3_1 static Y compensation",
+            "lsp_offset": 22724,
+            "before_f32": 0.0,
+            "after_f32": 8.0
+          },
+          {
+            "label": "3_0 animation block 0 Y compensation +0x88",
+            "lsp_offset": 45188,
+            "before_f32": 3.0,
+            "after_f32": 11.0
+          },
+          {
+            "label": "3_0 animation block 0 Y compensation +0xA0",
+            "lsp_offset": 45212,
+            "before_f32": 3.0,
+            "after_f32": 11.0
+          },
+          {
+            "label": "3_0 animation block 1 Y compensation +0x88",
+            "lsp_offset": 45468,
+            "before_f32": 3.0,
+            "after_f32": 11.0
+          },
+          {
+            "label": "3_0 animation block 1 Y compensation +0xA0",
+            "lsp_offset": 45492,
+            "before_f32": 3.0,
+            "after_f32": 11.0
+          }
+        ],
+        "raw_bytes_changed": 11,
+        "changed_raw_byte_offsets": [
+          20437,
+          20613,
+          22724,
+          45188,
+          45189,
+          45212,
+          45213,
+          45468,
+          45469,
+          45492,
+          45493
+        ]
+      }
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/jpn/id/cockpit1P.arc",
+      "base_arc_sha256": "6e02355a956d5a645edc908fbc2d5c0c461dd65caed8e9ab05b9e6d996c262c9",
+      "base_lsp_sha256": "aadd36fbf00348b372538b86bf649ccf2e0cca85dffd583e97ecb69e87d6c097",
+      "output_arc_sha256": "d57c2929b52e574dc8bda16f168e4b28ea2edcd2965fbd45569d2dde856fbd98",
+      "output_lsp_sha256": "9365baae640a090dc53c0242d60eccb4ad6b114b469eac3ca220e5813b90834f",
+      "entry_count": 39,
+      "changed_arc_entries": [
+        18
+      ],
+      "untouched_compressed_resources_preserved": true,
+      "special_root_preserved": {
+        "offset": 42432,
+        "length": 208,
+        "enable_values": [
+          1,
+          1
+        ]
+      },
+      "baseline_compensation": {
+        "lsp_shift_units": 8.0,
+        "expected_output_pixels_at_1080p": 12.0,
+        "measured_v19_to_sh_output_pixels": 12,
+        "nodes_before": [
+          {
+            "name": "3",
+            "stable_id": 71,
+            "index": 116,
+            "record_offset": 20432,
+            "x": 320.0,
+            "y": 330.0,
+            "parent_index": 0
+          },
+          {
+            "name": "3_0",
+            "stable_id": 72,
+            "index": 117,
+            "record_offset": 20608,
+            "x": 0.0,
+            "y": 8.0,
+            "parent_index": 116
+          },
+          {
+            "name": "3_1",
+            "stable_id": 76,
+            "index": 129,
+            "record_offset": 22720,
+            "x": 0.0,
+            "y": 0.0,
+            "parent_index": 116
+          }
+        ],
+        "nodes_after": [
+          {
+            "name": "3",
+            "stable_id": 71,
+            "index": 116,
+            "record_offset": 20432,
+            "x": 320.0,
+            "y": 322.0,
+            "parent_index": 0
+          },
+          {
+            "name": "3_0",
+            "stable_id": 72,
+            "index": 117,
+            "record_offset": 20608,
+            "x": 0.0,
+            "y": 16.0,
+            "parent_index": 116
+          },
+          {
+            "name": "3_1",
+            "stable_id": 76,
+            "index": 129,
+            "record_offset": 22720,
+            "x": 0.0,
+            "y": 8.0,
+            "parent_index": 116
+          }
+        ],
+        "world_y_before": {
+          "text_anchor": 330.0,
+          "panel_static": 338.0,
+          "panel_animated": 333.0,
+          "auxiliary_static": 330.0
+        },
+        "world_y_after": {
+          "text_anchor": 322.0,
+          "panel_static": 338.0,
+          "panel_animated": 333.0,
+          "auxiliary_static": 330.0
+        },
+        "edits": [
+          {
+            "label": "node 3 static Y",
+            "lsp_offset": 20436,
+            "before_f32": 330.0,
+            "after_f32": 322.0
+          },
+          {
+            "label": "node 3_0 static Y compensation",
+            "lsp_offset": 20612,
+            "before_f32": 8.0,
+            "after_f32": 16.0
+          },
+          {
+            "label": "node 3_1 static Y compensation",
+            "lsp_offset": 22724,
+            "before_f32": 0.0,
+            "after_f32": 8.0
+          },
+          {
+            "label": "3_0 animation block 0 Y compensation +0x88",
+            "lsp_offset": 45188,
+            "before_f32": 3.0,
+            "after_f32": 11.0
+          },
+          {
+            "label": "3_0 animation block 0 Y compensation +0xA0",
+            "lsp_offset": 45212,
+            "before_f32": 3.0,
+            "after_f32": 11.0
+          },
+          {
+            "label": "3_0 animation block 1 Y compensation +0x88",
+            "lsp_offset": 45468,
+            "before_f32": 3.0,
+            "after_f32": 11.0
+          },
+          {
+            "label": "3_0 animation block 1 Y compensation +0xA0",
+            "lsp_offset": 45492,
+            "before_f32": 3.0,
+            "after_f32": 11.0
+          }
+        ],
+        "raw_bytes_changed": 11,
+        "changed_raw_byte_offsets": [
+          20437,
+          20613,
+          22724,
+          45188,
+          45189,
+          45212,
+          45213,
+          45468,
+          45469,
+          45492,
+          45493
+        ]
+      }
+    }
+  ],
+  "mirrored_output_sha256": "d57c2929b52e574dc8bda16f168e4b28ea2edcd2965fbd45569d2dde856fbd98",
+  "cockpit2p_modified": false,
+  "offline_validation": "pass",
+  "runtime_test": "required"
+}

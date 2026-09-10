@@ -1,0 +1,1429 @@
+{
+  "status": "offline_validated",
+  "files": [
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/battleQuest.arc",
+      "source_sha256": "99c53379f14d5fad10f7df7cadf25169ed12e8ac0d91e1a0f30e2220b8cd1f8d",
+      "sha256": "a3ad2a3492de20e0aaf7ac75a3b162c30a787d33c2e35ac723985974a185153d",
+      "changes": [
+        {
+          "index": 13,
+          "name": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+          "kind": "join",
+          "rects": [
+            [
+              0,
+              384,
+              512,
+              448
+            ]
+          ],
+          "edits": [],
+          "before": "64131c5673b9454b4f25e00ee9a15f1b14fc0af81266f9139eb41f6ee5aee118",
+          "after": "b526917ee065bc454f0b43b23e4cf4118293ae04b5ab9f1e73d5b880248a3db8"
+        },
+        {
+          "index": 30,
+          "name": "id\\lsp\\jpn\\common\\common_00",
+          "kind": "join_layout",
+          "rects": [],
+          "edits": [
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27296,
+              "before": "41b00000",
+              "after": "41400000"
+            },
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27420,
+              "before": "00000046",
+              "after": "00000080"
+            },
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27428,
+              "before": "0000003c",
+              "after": "00000000"
+            },
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27436,
+              "before": "00000082",
+              "after": "00000080"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27472,
+              "before": "41b00000",
+              "after": "41400000"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27596,
+              "before": "00000046",
+              "after": "00000080"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27604,
+              "before": "0000003c",
+              "after": "00000000"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27612,
+              "before": "00000082",
+              "after": "00000080"
+            }
+          ],
+          "before": "07c18212eb48a3a7842379fd6a7791dba45283231853132655cdfa99f9dd5c68",
+          "after": "eec86faf1d5a9d732ac108a4d88ea21e6e7d74b00d80933bd758feb0b5657312"
+        }
+      ],
+      "unchanged_resources": 44
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/brief/mode_quest.arc",
+      "source_sha256": "17838e60133187bd7931e2c413ec09acab6ad7915aad4f2793c8f40e3e65c92c",
+      "sha256": "cb9b6610610bac2214adca0942b5ae94a7d8a85880b6bad290125bf11ae2103f",
+      "changes": [
+        {
+          "index": 18,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              448,
+              1024,
+              560
+            ],
+            [
+              0,
+              784,
+              1024,
+              896
+            ]
+          ],
+          "edits": [],
+          "before": "923cf92e4c193f11e439e9a5342a9c9b806519e6912a6046a237d9937fbad075",
+          "after": "36e88f2ee2ed56896dc7b2e45c6fc934ace76726f623996dd14f56b2053ea080"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "kind": "char",
+          "rects": [
+            [
+              0,
+              480,
+              288,
+              600
+            ]
+          ],
+          "edits": [],
+          "before": "4015be726d3da316b64e56e83cba199366668b689898f9748cf2675301e3e493",
+          "after": "bd914891efccfe31123aad7656166d7af7620e9cf0aae5f187446b685d22e5cf"
+        }
+      ],
+      "unchanged_resources": 86
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/gallery/chara.arc",
+      "source_sha256": "04b20ca9ed66bd9e30744769430211241a60ae005097b1eae528b9e2cc592bfc",
+      "sha256": "662304fe1ddfae220873caf686bdd9a7e34f84bbc996d5a0724ca95570e8703c",
+      "changes": [
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              448,
+              1024,
+              560
+            ],
+            [
+              0,
+              784,
+              1024,
+              896
+            ]
+          ],
+          "edits": [],
+          "before": "1132b92b1f0abe07cb1c7557797b352bb4c594429a3e07c154ceda8dfbe31cca",
+          "after": "7dcf5941f70195fb449f46fd7dda6a8e97a24bbca772d6d1ca5332a85921f238"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/gallery/gallery.arc",
+      "source_sha256": "0517e940d043b4c882b942874769380281b9d2200322405f4c26074d3a7b70fb",
+      "sha256": "828a6ee669a35e5c07da7aaebf1a940f4c32eeeed5facb2442e56b8b90903fd6",
+      "changes": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+          "kind": "join",
+          "rects": [
+            [
+              0,
+              384,
+              512,
+              448
+            ]
+          ],
+          "edits": [],
+          "before": "c6609ad03fc379593a274ed9b5d93e1e4b06b4599accc4d3bed6cb63be4f58b3",
+          "after": "765487e36cc43528f993d9dd57c22e9b9de133cd9a3d315ae119d27279779414"
+        },
+        {
+          "index": 20,
+          "name": "id\\lsp\\jpn\\common\\common_00",
+          "kind": "join_layout",
+          "rects": [],
+          "edits": [
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27296,
+              "before": "41b00000",
+              "after": "41400000"
+            },
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27420,
+              "before": "00000046",
+              "after": "00000080"
+            },
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27428,
+              "before": "0000003c",
+              "after": "00000000"
+            },
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27436,
+              "before": "00000082",
+              "after": "00000080"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27472,
+              "before": "41b00000",
+              "after": "41400000"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27596,
+              "before": "00000046",
+              "after": "00000080"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27604,
+              "before": "0000003c",
+              "after": "00000000"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27612,
+              "before": "00000082",
+              "after": "00000080"
+            }
+          ],
+          "before": "07c18212eb48a3a7842379fd6a7791dba45283231853132655cdfa99f9dd5c68",
+          "after": "eec86faf1d5a9d732ac108a4d88ea21e6e7d74b00d80933bd758feb0b5657312"
+        }
+      ],
+      "unchanged_resources": 43
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/gallery/movie.arc",
+      "source_sha256": "a710d7a484e183c44ec185f9f4d432b97876050d056c6003c6eab17200adfd3f",
+      "sha256": "e501a19db8e13e4a96c0be489bfcf814b15e01cb407d19b803e7a10ff41e7be1",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              448,
+              1024,
+              560
+            ],
+            [
+              0,
+              784,
+              1024,
+              896
+            ]
+          ],
+          "edits": [],
+          "before": "1132b92b1f0abe07cb1c7557797b352bb4c594429a3e07c154ceda8dfbe31cca",
+          "after": "7dcf5941f70195fb449f46fd7dda6a8e97a24bbca772d6d1ca5332a85921f238"
+        }
+      ],
+      "unchanged_resources": 2
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/gallery/music.arc",
+      "source_sha256": "f062d0d081a99a24b5b9519e2b553f9cefc5286b4364a17bd6d8d134aa8a1329",
+      "sha256": "dc869d08e8153cf7ac3b8267a0ecbb8b75de179038d5060477c3655af9455932",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              448,
+              1024,
+              560
+            ],
+            [
+              0,
+              784,
+              1024,
+              896
+            ]
+          ],
+          "edits": [],
+          "before": "1132b92b1f0abe07cb1c7557797b352bb4c594429a3e07c154ceda8dfbe31cca",
+          "after": "7dcf5941f70195fb449f46fd7dda6a8e97a24bbca772d6d1ca5332a85921f238"
+        }
+      ],
+      "unchanged_resources": 3
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/gallery/ranking.arc",
+      "source_sha256": "ef2e34aaa34fb56a4f568d007028c0e3040887db3a816d4f524394ea90fa9d2a",
+      "sha256": "7bea1736a30e1df6860eaadb431690cf48e1cfb4596e5ff1e37661537f1d4f4b",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              448,
+              1024,
+              560
+            ],
+            [
+              0,
+              784,
+              1024,
+              896
+            ]
+          ],
+          "edits": [],
+          "before": "5a9eb477e6ed657ebee7a7594ec7ee06f5730be0df00f44fa20065602088b11a",
+          "after": "e7c2153551985e570b70c20d740b7b26c378e40c3271060f9a4132586170f28e"
+        }
+      ],
+      "unchanged_resources": 56
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/gallery/trophy.arc",
+      "source_sha256": "a8766202023c2340ab62d48bf14216f9d9f5df4f95a52f4429470307a5d99688",
+      "sha256": "ceec1fda163f852676d65cfcd743fcacd36a8c31afc27fd17b3d9a5045c0038b",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              448,
+              1024,
+              560
+            ],
+            [
+              0,
+              784,
+              1024,
+              896
+            ]
+          ],
+          "edits": [],
+          "before": "1132b92b1f0abe07cb1c7557797b352bb4c594429a3e07c154ceda8dfbe31cca",
+          "after": "7dcf5941f70195fb449f46fd7dda6a8e97a24bbca772d6d1ca5332a85921f238"
+        }
+      ],
+      "unchanged_resources": 8
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/init_ps3.arc",
+      "source_sha256": "dbe5ba81b034151bd1be6ebee7512737f45d22fefd0cc935b32873c3ef3b86b3",
+      "sha256": "98060b8e06fa3742abd148a14032bf3240494965922b6b783606affadd61f12f",
+      "changes": [
+        {
+          "index": 9,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              448,
+              1024,
+              560
+            ],
+            [
+              0,
+              784,
+              1024,
+              896
+            ]
+          ],
+          "edits": [],
+          "before": "5a9eb477e6ed657ebee7a7594ec7ee06f5730be0df00f44fa20065602088b11a",
+          "after": "e7c2153551985e570b70c20d740b7b26c378e40c3271060f9a4132586170f28e"
+        }
+      ],
+      "unchanged_resources": 13
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/pause/option.arc",
+      "source_sha256": "c783b11844c8f2f41877d736d40f26a972d9d3c2c0d2459174a189657c18cc7d",
+      "sha256": "12e7399a322b2e6115d4229ab9067908e7a4a925dd45543b87af4aa78de3ef20",
+      "changes": [
+        {
+          "index": 12,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              448,
+              1024,
+              560
+            ],
+            [
+              0,
+              784,
+              1024,
+              896
+            ]
+          ],
+          "edits": [],
+          "before": "730b7c33aa88b6174bfe34eba479c9593b2ba55274ba7224db803c080b82a146",
+          "after": "fedd7148a2284982b81eaf4749913717ea9a2fad7b9355cf80b7f59f1181ed40"
+        }
+      ],
+      "unchanged_resources": 30
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/menu.arc",
+      "source_sha256": "1eb7dae15215f8f5917bc9c06572e7a8f3461703be38c877e1108af85db0ffc2",
+      "sha256": "681b1cac0401354a2e107678502762ce898947aab02b05c091fb229bc9ccceb0",
+      "changes": [
+        {
+          "index": 35,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "kind": "char",
+          "rects": [
+            [
+              0,
+              480,
+              288,
+              600
+            ]
+          ],
+          "edits": [],
+          "before": "4015be726d3da316b64e56e83cba199366668b689898f9748cf2675301e3e493",
+          "after": "bd914891efccfe31123aad7656166d7af7620e9cf0aae5f187446b685d22e5cf"
+        }
+      ],
+      "unchanged_resources": 44
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/result_id.arc",
+      "source_sha256": "d2351c0f798ce5dd86f38e04d68313ea0f39af92808fc28ca178dc443b46ae81",
+      "sha256": "af93102040f6bd3929fb271a558d1fc87b8ba7528e2afabf5fe1c619ee453589",
+      "changes": [
+        {
+          "index": 11,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              448,
+              1024,
+              560
+            ],
+            [
+              0,
+              784,
+              1024,
+              896
+            ]
+          ],
+          "edits": [],
+          "before": "5a9eb477e6ed657ebee7a7594ec7ee06f5730be0df00f44fa20065602088b11a",
+          "after": "e7c2153551985e570b70c20d740b7b26c378e40c3271060f9a4132586170f28e"
+        },
+        {
+          "index": 16,
+          "name": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+          "kind": "join",
+          "rects": [
+            [
+              0,
+              384,
+              512,
+              448
+            ]
+          ],
+          "edits": [],
+          "before": "b0c65264dbc7fadfb46373c5f809f0a413da6a6902ae69dd99998514edfe33dd",
+          "after": "51e41efa8c4ba8c74a1bcf40ee6d6b39633abef8c425e0fae30883d53155340a"
+        },
+        {
+          "index": 34,
+          "name": "id\\lsp\\jpn\\common\\common_00",
+          "kind": "join_layout",
+          "rects": [],
+          "edits": [
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27296,
+              "before": "41b00000",
+              "after": "41400000"
+            },
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27420,
+              "before": "00000046",
+              "after": "00000080"
+            },
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27428,
+              "before": "0000003c",
+              "after": "00000000"
+            },
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27436,
+              "before": "00000082",
+              "after": "00000080"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27472,
+              "before": "41b00000",
+              "after": "41400000"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27596,
+              "before": "00000046",
+              "after": "00000080"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27604,
+              "before": "0000003c",
+              "after": "00000000"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27612,
+              "before": "00000082",
+              "after": "00000080"
+            }
+          ],
+          "before": "07c18212eb48a3a7842379fd6a7791dba45283231853132655cdfa99f9dd5c68",
+          "after": "eec86faf1d5a9d732ac108a4d88ea21e6e7d74b00d80933bd758feb0b5657312"
+        }
+      ],
+      "unchanged_resources": 242
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/retry.arc",
+      "source_sha256": "815d817e664ab8a56bd158b3594284ba574da00a390dc15078744eeb0a95f241",
+      "sha256": "0234284ec11f9ed2739436b63ca0cc9a29c656569e9bb3d8dc733f510730e6c5",
+      "changes": [
+        {
+          "index": 30,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              448,
+              1024,
+              560
+            ],
+            [
+              0,
+              784,
+              1024,
+              896
+            ]
+          ],
+          "edits": [],
+          "before": "5a9eb477e6ed657ebee7a7594ec7ee06f5730be0df00f44fa20065602088b11a",
+          "after": "e7c2153551985e570b70c20d740b7b26c378e40c3271060f9a4132586170f28e"
+        },
+        {
+          "index": 9,
+          "name": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+          "kind": "join",
+          "rects": [
+            [
+              0,
+              384,
+              512,
+              448
+            ]
+          ],
+          "edits": [],
+          "before": "b0c65264dbc7fadfb46373c5f809f0a413da6a6902ae69dd99998514edfe33dd",
+          "after": "51e41efa8c4ba8c74a1bcf40ee6d6b39633abef8c425e0fae30883d53155340a"
+        },
+        {
+          "index": 27,
+          "name": "id\\lsp\\jpn\\common\\common_00",
+          "kind": "join_layout",
+          "rects": [],
+          "edits": [
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27296,
+              "before": "41b00000",
+              "after": "41400000"
+            },
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27420,
+              "before": "00000046",
+              "after": "00000080"
+            },
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27428,
+              "before": "0000003c",
+              "after": "00000000"
+            },
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27436,
+              "before": "00000082",
+              "after": "00000080"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27472,
+              "before": "41b00000",
+              "after": "41400000"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27596,
+              "before": "00000046",
+              "after": "00000080"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27604,
+              "before": "0000003c",
+              "after": "00000000"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27612,
+              "before": "00000082",
+              "after": "00000080"
+            }
+          ],
+          "before": "07c18212eb48a3a7842379fd6a7791dba45283231853132655cdfa99f9dd5c68",
+          "after": "eec86faf1d5a9d732ac108a4d88ea21e6e7d74b00d80933bd758feb0b5657312"
+        }
+      ],
+      "unchanged_resources": 31
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/save.arc",
+      "source_sha256": "5882cd5a87774051de588b383b317c0388fb54908bcd73079989a5df6c176c7a",
+      "sha256": "d25bb0934049058365888cb4c324eb4eb0fb7af7104c2890f6edaa3518505e25",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              448,
+              1024,
+              560
+            ],
+            [
+              0,
+              784,
+              1024,
+              896
+            ]
+          ],
+          "edits": [],
+          "before": "5a9eb477e6ed657ebee7a7594ec7ee06f5730be0df00f44fa20065602088b11a",
+          "after": "e7c2153551985e570b70c20d740b7b26c378e40c3271060f9a4132586170f28e"
+        },
+        {
+          "index": 8,
+          "name": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+          "kind": "join",
+          "rects": [
+            [
+              0,
+              384,
+              512,
+              448
+            ]
+          ],
+          "edits": [],
+          "before": "b0c65264dbc7fadfb46373c5f809f0a413da6a6902ae69dd99998514edfe33dd",
+          "after": "51e41efa8c4ba8c74a1bcf40ee6d6b39633abef8c425e0fae30883d53155340a"
+        },
+        {
+          "index": 26,
+          "name": "id\\lsp\\jpn\\common\\common_00",
+          "kind": "join_layout",
+          "rects": [],
+          "edits": [
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27296,
+              "before": "41b00000",
+              "after": "41400000"
+            },
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27420,
+              "before": "00000046",
+              "after": "00000080"
+            },
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27428,
+              "before": "0000003c",
+              "after": "00000000"
+            },
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27436,
+              "before": "00000082",
+              "after": "00000080"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27472,
+              "before": "41b00000",
+              "after": "41400000"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27596,
+              "before": "00000046",
+              "after": "00000080"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27604,
+              "before": "0000003c",
+              "after": "00000000"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27612,
+              "before": "00000082",
+              "after": "00000080"
+            }
+          ],
+          "before": "07c18212eb48a3a7842379fd6a7791dba45283231853132655cdfa99f9dd5c68",
+          "after": "eec86faf1d5a9d732ac108a4d88ea21e6e7d74b00d80933bd758feb0b5657312"
+        }
+      ],
+      "unchanged_resources": 42
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "source_sha256": "7abe9810dabb220cc64710e44b54b2e2e84de936c5199cc9b720af8bb336b892",
+      "sha256": "43f47a6934482a0cd7e1653fc5493ab6fc3fe49348a377ba04a79b9514480294",
+      "changes": [
+        {
+          "index": 65,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "kind": "char",
+          "rects": [
+            [
+              0,
+              480,
+              288,
+              600
+            ]
+          ],
+          "edits": [],
+          "before": "4015be726d3da316b64e56e83cba199366668b689898f9748cf2675301e3e493",
+          "after": "bd914891efccfe31123aad7656166d7af7620e9cf0aae5f187446b685d22e5cf"
+        }
+      ],
+      "unchanged_resources": 75
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_story.arc",
+      "source_sha256": "30fd643303b1c5c9fcd5560614c79eb983f22d9294c72a039a3d9d47e5ca47ab",
+      "sha256": "f6dac383f3ebf25fbdf3954fc3b9071e736ff8f07d039893327f85d2a42931b4",
+      "changes": [
+        {
+          "index": 30,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "kind": "char",
+          "rects": [
+            [
+              0,
+              480,
+              288,
+              600
+            ]
+          ],
+          "edits": [],
+          "before": "4015be726d3da316b64e56e83cba199366668b689898f9748cf2675301e3e493",
+          "after": "bd914891efccfe31123aad7656166d7af7620e9cf0aae5f187446b685d22e5cf"
+        }
+      ],
+      "unchanged_resources": 47
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_versus.arc",
+      "source_sha256": "601465761e071fd5d7b5cdbcc5574268d98bd78af3f1768c22da84e13527bfe6",
+      "sha256": "419bc4d20eb5e2f5c11f1c0f3e800b9caf6aaa6d9e16fc0d74addf1fc0ccb512",
+      "changes": [
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "kind": "char",
+          "rects": [
+            [
+              0,
+              480,
+              288,
+              600
+            ]
+          ],
+          "edits": [],
+          "before": "4015be726d3da316b64e56e83cba199366668b689898f9748cf2675301e3e493",
+          "after": "bd914891efccfe31123aad7656166d7af7620e9cf0aae5f187446b685d22e5cf"
+        }
+      ],
+      "unchanged_resources": 15
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/dream.arc",
+      "source_sha256": "3af53eec5d419f6755e997d10e0d93b9ef3875a6e6d5a67803ff06111c577cd3",
+      "sha256": "640f85727e98b9f72b2f32ced220bf01c736f44eff272b24809d56e2378ffdcc",
+      "changes": [
+        {
+          "index": 19,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "kind": "char",
+          "rects": [
+            [
+              0,
+              480,
+              288,
+              600
+            ]
+          ],
+          "edits": [],
+          "before": "4015be726d3da316b64e56e83cba199366668b689898f9748cf2675301e3e493",
+          "after": "bd914891efccfe31123aad7656166d7af7620e9cf0aae5f187446b685d22e5cf"
+        }
+      ],
+      "unchanged_resources": 88
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_finish_id.arc",
+      "source_sha256": "c5ae78cfa2f9f7fe187715d931c44ce622c30b0f0d8ecc73839e826d37f553f8",
+      "sha256": "589acc2fd8bb6d4b6e7bca4cc22e60edb6ffb3594e425bdc1082bbea6d82b235",
+      "changes": [
+        {
+          "index": 45,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              448,
+              1024,
+              560
+            ],
+            [
+              0,
+              784,
+              1024,
+              896
+            ]
+          ],
+          "edits": [],
+          "before": "5a9eb477e6ed657ebee7a7594ec7ee06f5730be0df00f44fa20065602088b11a",
+          "after": "e7c2153551985e570b70c20d740b7b26c378e40c3271060f9a4132586170f28e"
+        },
+        {
+          "index": 19,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "kind": "char",
+          "rects": [
+            [
+              0,
+              480,
+              288,
+              600
+            ]
+          ],
+          "edits": [],
+          "before": "4015be726d3da316b64e56e83cba199366668b689898f9748cf2675301e3e493",
+          "after": "bd914891efccfe31123aad7656166d7af7620e9cf0aae5f187446b685d22e5cf"
+        }
+      ],
+      "unchanged_resources": 107
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_id.arc",
+      "source_sha256": "002898dd9e99b822c1ed6bc70eed1cb09c6af558665245e893cadf54577427de",
+      "sha256": "8b9968b91a512c07fbc959a6abf78375e391d5d8031ab08799d566520851e9e0",
+      "changes": [
+        {
+          "index": 73,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "kind": "char",
+          "rects": [
+            [
+              0,
+              480,
+              288,
+              600
+            ]
+          ],
+          "edits": [],
+          "before": "4015be726d3da316b64e56e83cba199366668b689898f9748cf2675301e3e493",
+          "after": "bd914891efccfe31123aad7656166d7af7620e9cf0aae5f187446b685d22e5cf"
+        },
+        {
+          "index": 25,
+          "name": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+          "kind": "join",
+          "rects": [
+            [
+              0,
+              384,
+              512,
+              448
+            ]
+          ],
+          "edits": [],
+          "before": "b0c65264dbc7fadfb46373c5f809f0a413da6a6902ae69dd99998514edfe33dd",
+          "after": "51e41efa8c4ba8c74a1bcf40ee6d6b39633abef8c425e0fae30883d53155340a"
+        },
+        {
+          "index": 43,
+          "name": "id\\lsp\\jpn\\common\\common_00",
+          "kind": "join_layout",
+          "rects": [],
+          "edits": [
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27296,
+              "before": "41b00000",
+              "after": "41400000"
+            },
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27420,
+              "before": "00000046",
+              "after": "00000080"
+            },
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27428,
+              "before": "0000003c",
+              "after": "00000000"
+            },
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27436,
+              "before": "00000082",
+              "after": "00000080"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27472,
+              "before": "41b00000",
+              "after": "41400000"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27596,
+              "before": "00000046",
+              "after": "00000080"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27604,
+              "before": "0000003c",
+              "after": "00000000"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27612,
+              "before": "00000082",
+              "after": "00000080"
+            }
+          ],
+          "before": "07c18212eb48a3a7842379fd6a7791dba45283231853132655cdfa99f9dd5c68",
+          "after": "eec86faf1d5a9d732ac108a4d88ea21e6e7d74b00d80933bd758feb0b5657312"
+        }
+      ],
+      "unchanged_resources": 79
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/title.arc",
+      "source_sha256": "96fa1414b94491e09a173db0e1787d418fd66924a06b57dc28ee1b0fc6144778",
+      "sha256": "50c8f7a5670e18aa36148a981c7d063aad142e3af5db2280d055294c642f99f8",
+      "changes": [
+        {
+          "index": 318,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              448,
+              1024,
+              560
+            ],
+            [
+              0,
+              784,
+              1024,
+              896
+            ]
+          ],
+          "edits": [],
+          "before": "d392ee029af76eeda52a9ec50fc25871b9df5f6384ffb8481031329e829d6f67",
+          "after": "c53d5ab211a621dcfae927b5d5e932bf25b7a83a39d1699c253c7a0e6469ceda"
+        },
+        {
+          "index": 319,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_003_ID_HQ",
+          "kind": "options",
+          "rects": [
+            [
+              0,
+              560,
+              1024,
+              1008
+            ]
+          ],
+          "edits": [],
+          "before": "bc9dfe966813bea601446fd13c1f8452db1baafa42793fc088406881dcdd0e1b",
+          "after": "00d8aab66a53555b54f65e6121c9128645408a0ddea346822d0e7e609dba3b1f"
+        },
+        {
+          "index": 324,
+          "name": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+          "kind": "join",
+          "rects": [
+            [
+              0,
+              384,
+              512,
+              448
+            ]
+          ],
+          "edits": [],
+          "before": "8697872db91c29f4e7ba046aea71963f03221060579e10c657d6cb36c67cbefa",
+          "after": "865fb9633cdcf3670cc3638d131fa7ee82db89b049ae15aa6c018c9bf3432c54"
+        },
+        {
+          "index": 320,
+          "name": "id\\lsp\\jpn\\mode_select\\mode_select",
+          "kind": "mode_layout",
+          "rects": [],
+          "edits": [
+            {
+              "node": 76,
+              "name": "KANKYO_shadow",
+              "offset": 13392,
+              "before": "40000000",
+              "after": "3f800000"
+            },
+            {
+              "node": 76,
+              "name": "KANKYO_shadow",
+              "offset": 13396,
+              "before": "40000000",
+              "after": "3fc00000"
+            },
+            {
+              "node": 78,
+              "name": "CONTROLLER_shadow",
+              "offset": 13744,
+              "before": "40000000",
+              "after": "3f800000"
+            },
+            {
+              "node": 78,
+              "name": "CONTROLLER_shadow",
+              "offset": 13748,
+              "before": "40000000",
+              "after": "3fc00000"
+            },
+            {
+              "node": 80,
+              "name": "SAVE_shadow",
+              "offset": 14096,
+              "before": "40000000",
+              "after": "3f800000"
+            },
+            {
+              "node": 80,
+              "name": "SAVE_shadow",
+              "offset": 14100,
+              "before": "40000000",
+              "after": "3fc00000"
+            },
+            {
+              "node": 82,
+              "name": "LOAD_shadow",
+              "offset": 14448,
+              "before": "40000000",
+              "after": "3f800000"
+            },
+            {
+              "node": 82,
+              "name": "LOAD_shadow",
+              "offset": 14452,
+              "before": "40000000",
+              "after": "3fc00000"
+            },
+            {
+              "node": 84,
+              "name": "DOUKI_shadow",
+              "offset": 14800,
+              "before": "40800000",
+              "after": "3f800000"
+            },
+            {
+              "node": 84,
+              "name": "DOUKI_shadow",
+              "offset": 14804,
+              "before": "40a00000",
+              "after": "3fc00000"
+            }
+          ],
+          "before": "c897200134eb6617d2fac06e49323e9af11db6fd9cdc3276d1601fff1f548210",
+          "after": "b54ae5ad1e1731e25a0a18c314dec36446843b6312e5a24e0f14c533d6693104"
+        },
+        {
+          "index": 341,
+          "name": "id\\lsp\\jpn\\common\\common_00",
+          "kind": "join_layout",
+          "rects": [],
+          "edits": [
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27296,
+              "before": "41b00000",
+              "after": "41400000"
+            },
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27420,
+              "before": "00000046",
+              "after": "00000080"
+            },
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27428,
+              "before": "0000003c",
+              "after": "00000000"
+            },
+            {
+              "node": 155,
+              "name": "2P_IN",
+              "offset": 27436,
+              "before": "00000082",
+              "after": "00000080"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27472,
+              "before": "41b00000",
+              "after": "41400000"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27596,
+              "before": "00000046",
+              "after": "00000080"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27604,
+              "before": "0000003c",
+              "after": "00000000"
+            },
+            {
+              "node": 156,
+              "name": "2P_IN2",
+              "offset": 27612,
+              "before": "00000082",
+              "after": "00000080"
+            }
+          ],
+          "before": "07c18212eb48a3a7842379fd6a7791dba45283231853132655cdfa99f9dd5c68",
+          "after": "eec86faf1d5a9d732ac108a4d88ea21e6e7d74b00d80933bd758feb0b5657312"
+        }
+      ],
+      "unchanged_resources": 352
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/title_id.arc",
+      "source_sha256": "6f2c52152290afd5e9c473d1e5f36409cde99228c9fdf5f99d9c1d500b8baf30",
+      "sha256": "6d807f885ad1b57ca69c00020f3d1d08c852811a9b3acd596ff9ef9ccc78d355",
+      "changes": [
+        {
+          "index": 143,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              448,
+              1024,
+              560
+            ],
+            [
+              0,
+              784,
+              1024,
+              896
+            ]
+          ],
+          "edits": [],
+          "before": "923cf92e4c193f11e439e9a5342a9c9b806519e6912a6046a237d9937fbad075",
+          "after": "36e88f2ee2ed56896dc7b2e45c6fc934ace76726f623996dd14f56b2053ea080"
+        },
+        {
+          "index": 144,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_003_ID_HQ",
+          "kind": "options",
+          "rects": [
+            [
+              0,
+              560,
+              1024,
+              1008
+            ]
+          ],
+          "edits": [],
+          "before": "325e1a9152cd31c691fcd58ff3b1a64d7cdd7eb568326dca30cf91140a358bb3",
+          "after": "2fa354e8660ee9adf2777dde5d5ea2b3e453c49d9f3177acd6b87164cc4139b7"
+        },
+        {
+          "index": 146,
+          "name": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+          "kind": "join",
+          "rects": [
+            [
+              0,
+              384,
+              512,
+              448
+            ]
+          ],
+          "edits": [],
+          "before": "b2323dbdf7288a8a32f83b9c643fca97661b2d171a6495985e5f4414af143cf2",
+          "after": "f87dfd97dd675a40f22c7b398ea7ac6c91804ef83171cabac7ee27691797411c"
+        },
+        {
+          "index": 145,
+          "name": "id\\lsp\\jpn\\mode_select\\mode_select",
+          "kind": "mode_layout",
+          "rects": [],
+          "edits": [
+            {
+              "node": 76,
+              "name": "KANKYO_shadow",
+              "offset": 13392,
+              "before": "40000000",
+              "after": "3f800000"
+            },
+            {
+              "node": 76,
+              "name": "KANKYO_shadow",
+              "offset": 13396,
+              "before": "40000000",
+              "after": "3fc00000"
+            },
+            {
+              "node": 78,
+              "name": "CONTROLLER_shadow",
+              "offset": 13744,
+              "before": "40000000",
+              "after": "3f800000"
+            },
+            {
+              "node": 78,
+              "name": "CONTROLLER_shadow",
+              "offset": 13748,
+              "before": "40000000",
+              "after": "3fc00000"
+            },
+            {
+              "node": 80,
+              "name": "SAVE_shadow",
+              "offset": 14096,
+              "before": "40000000",
+              "after": "3f800000"
+            },
+            {
+              "node": 80,
+              "name": "SAVE_shadow",
+              "offset": 14100,
+              "before": "40000000",
+              "after": "3fc00000"
+            },
+            {
+              "node": 82,
+              "name": "LOAD_shadow",
+              "offset": 14448,
+              "before": "40000000",
+              "after": "3f800000"
+            },
+            {
+              "node": 82,
+              "name": "LOAD_shadow",
+              "offset": 14452,
+              "before": "40000000",
+              "after": "3fc00000"
+            },
+            {
+              "node": 84,
+              "name": "DOUKI_shadow",
+              "offset": 14800,
+              "before": "40800000",
+              "after": "3f800000"
+            },
+            {
+              "node": 84,
+              "name": "DOUKI_shadow",
+              "offset": 14804,
+              "before": "40a00000",
+              "after": "3fc00000"
+            }
+          ],
+          "before": "c897200134eb6617d2fac06e49323e9af11db6fd9cdc3276d1601fff1f548210",
+          "after": "b54ae5ad1e1731e25a0a18c314dec36446843b6312e5a24e0f14c533d6693104"
+        }
+      ],
+      "unchanged_resources": 165
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/versus/menu.arc",
+      "source_sha256": "f2f5f5b32fcb5e863e6440a1607c2cea71d0dd1325604708e12f08f6d15a3066",
+      "sha256": "39d05a15b244c9ab0693d67339e8347cb240b342248dda2102b844238be11d26",
+      "changes": [
+        {
+          "index": 57,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "kind": "char",
+          "rects": [
+            [
+              0,
+              480,
+              288,
+              600
+            ]
+          ],
+          "edits": [],
+          "before": "4015be726d3da316b64e56e83cba199366668b689898f9748cf2675301e3e493",
+          "after": "bd914891efccfe31123aad7656166d7af7620e9cf0aae5f187446b685d22e5cf"
+        }
+      ],
+      "unchanged_resources": 95
+    }
+  ],
+  "archives": 23,
+  "changed_resources": 42,
+  "untouched_resources": 1673,
+  "backup": "E:\\Utage Patching New\\_codex_select_menu\\quest_v6\\release\\BACKUP_PRE_V6.zip",
+  "backup_sha256": "c3acda98a7aafc33d5600bc54e6a371e223a8d3d9c29125653c8e5fcac251691",
+  "runtime_verified": false
+}

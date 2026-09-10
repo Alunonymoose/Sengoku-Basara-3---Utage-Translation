@@ -1,0 +1,103 @@
+{
+  "status": "installed_and_readback_verified",
+  "archives": 23,
+  "package": "E:\\Utage Patching New\\_codex_select_menu\\quest_v6\\release\\Utage_Menu_V6_OPTIONS_QUICK_BATTLES_AND_P2_ROOT_READY.zip",
+  "package_sha256": "1adff576c03b6b20a1329d73af8ef937c528914f9e20f0c5af180726ba8db0f6",
+  "backup": "E:\\Utage Patching New\\_codex_select_menu\\quest_v6\\release\\BACKUP_PRE_V6.zip",
+  "backup_sha256": "c3acda98a7aafc33d5600bc54e6a371e223a8d3d9c29125653c8e5fcac251691",
+  "runtime_verified": false,
+  "files": [
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/battleQuest.arc",
+      "sha256": "a3ad2a3492de20e0aaf7ac75a3b162c30a787d33c2e35ac723985974a185153d"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/brief/mode_quest.arc",
+      "sha256": "cb9b6610610bac2214adca0942b5ae94a7d8a85880b6bad290125bf11ae2103f"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/gallery/chara.arc",
+      "sha256": "662304fe1ddfae220873caf686bdd9a7e34f84bbc996d5a0724ca95570e8703c"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/gallery/gallery.arc",
+      "sha256": "828a6ee669a35e5c07da7aaebf1a940f4c32eeeed5facb2442e56b8b90903fd6"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/gallery/movie.arc",
+      "sha256": "e501a19db8e13e4a96c0be489bfcf814b15e01cb407d19b803e7a10ff41e7be1"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/gallery/music.arc",
+      "sha256": "dc869d08e8153cf7ac3b8267a0ecbb8b75de179038d5060477c3655af9455932"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/gallery/ranking.arc",
+      "sha256": "7bea1736a30e1df6860eaadb431690cf48e1cfb4596e5ff1e37661537f1d4f4b"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/gallery/trophy.arc",
+      "sha256": "ceec1fda163f852676d65cfcd743fcacd36a8c31afc27fd17b3d9a5045c0038b"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/init_ps3.arc",
+      "sha256": "98060b8e06fa3742abd148a14032bf3240494965922b6b783606affadd61f12f"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/pause/option.arc",
+      "sha256": "12e7399a322b2e6115d4229ab9067908e7a4a925dd45543b87af4aa78de3ef20"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/menu.arc",
+      "sha256": "681b1cac0401354a2e107678502762ce898947aab02b05c091fb229bc9ccceb0"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/result_id.arc",
+      "sha256": "af93102040f6bd3929fb271a558d1fc87b8ba7528e2afabf5fe1c619ee453589"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/retry.arc",
+      "sha256": "0234284ec11f9ed2739436b63ca0cc9a29c656569e9bb3d8dc733f510730e6c5"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/save.arc",
+      "sha256": "d25bb0934049058365888cb4c324eb4eb0fb7af7104c2890f6edaa3518505e25"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "sha256": "43f47a6934482a0cd7e1653fc5493ab6fc3fe49348a377ba04a79b9514480294"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_story.arc",
+      "sha256": "f6dac383f3ebf25fbdf3954fc3b9071e736ff8f07d039893327f85d2a42931b4"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_versus.arc",
+      "sha256": "419bc4d20eb5e2f5c11f1c0f3e800b9caf6aaa6d9e16fc0d74addf1fc0ccb512"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/dream.arc",
+      "sha256": "640f85727e98b9f72b2f32ced220bf01c736f44eff272b24809d56e2378ffdcc"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_finish_id.arc",
+      "sha256": "589acc2fd8bb6d4b6e7bca4cc22e60edb6ffb3594e425bdc1082bbea6d82b235"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_id.arc",
+      "sha256": "8b9968b91a512c07fbc959a6abf78375e391d5d8031ab08799d566520851e9e0"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/title.arc",
+      "sha256": "50c8f7a5670e18aa36148a981c7d063aad142e3af5db2280d055294c642f99f8"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/title_id.arc",
+      "sha256": "6d807f885ad1b57ca69c00020f3d1d08c852811a9b3acd596ff9ef9ccc78d355"
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/versus/menu.arc",
+      "sha256": "39d05a15b244c9ab0693d67339e8347cb240b342248dda2102b844238be11d26"
+    }
+  ]
+}

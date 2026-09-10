@@ -1,0 +1,218 @@
+{
+  "status": "pass",
+  "patch": "Utage Battle Dialogue V21 One Pixel Tune",
+  "diagnosis": "Runtime confirmed V20 is approximately one output pixel high. V21 moves parent text anchor node 3 down exactly 2/3 LSP unit, which scales to one pixel at 1080p, and applies the inverse delta to both visual roots and all active 3_0 Y keys so the panel, portrait, name plate, and auxiliary visual world positions do not move.",
+  "base": "installed V20",
+  "live_hashes_before": {
+    "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit1P.arc": "d57c2929b52e574dc8bda16f168e4b28ea2edcd2965fbd45569d2dde856fbd98",
+    "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\jpn\\id\\cockpit1P.arc": "d57c2929b52e574dc8bda16f168e4b28ea2edcd2965fbd45569d2dde856fbd98"
+  },
+  "pre_v21_backup": "E:\\Utage Patching New\\_codex_tenka_v6\\V21_BACKUP_cockpit1P_pre_v21.zip",
+  "pre_v21_backup_sha256": "dcd74016304c8e3a01cf1acf356a19cfcbfce15636775e495d3aa48c0705c92e",
+  "jobs": [
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/id/cockpit1P.arc",
+      "base_arc_sha256": "d57c2929b52e574dc8bda16f168e4b28ea2edcd2965fbd45569d2dde856fbd98",
+      "base_lsp_sha256": "9365baae640a090dc53c0242d60eccb4ad6b114b469eac3ca220e5813b90834f",
+      "output_arc_sha256": "d63fef7b21995039d639a1269b3df56c6289f0cb469ecabf2aa871ca064bb5fa",
+      "output_lsp_sha256": "c2d7fbd5e012d247a72b5c2d3fe20471932e402f0118b3bf04a418538d44324b",
+      "changed_arc_entries": [
+        18
+      ],
+      "untouched_compressed_resources_preserved": true,
+      "one_pixel_tune": {
+        "direction": "down",
+        "lsp_units": 0.6666666666666666,
+        "expected_output_pixels_at_1080p": 1.0,
+        "text_anchor_before": 322.0,
+        "text_anchor_after": 322.6666564941406,
+        "visual_world_y_before": [
+          338.0,
+          333.0,
+          330.0
+        ],
+        "visual_world_y_after": [
+          337.9999895095825,
+          332.9999895095825,
+          329.9999899864197
+        ],
+        "edits": [
+          {
+            "label": "node 3 text anchor",
+            "lsp_offset": 20436,
+            "before_f32": 322.0,
+            "after_f32": 322.6666564941406
+          },
+          {
+            "label": "node 3_0 visual compensation",
+            "lsp_offset": 20612,
+            "before_f32": 16.0,
+            "after_f32": 15.333333015441895
+          },
+          {
+            "label": "node 3_1 visual compensation",
+            "lsp_offset": 22724,
+            "before_f32": 8.0,
+            "after_f32": 7.333333492279053
+          },
+          {
+            "label": "3_0 block 0 +0x88",
+            "lsp_offset": 45188,
+            "before_f32": 11.0,
+            "after_f32": 10.333333015441895
+          },
+          {
+            "label": "3_0 block 0 +0xA0",
+            "lsp_offset": 45212,
+            "before_f32": 11.0,
+            "after_f32": 10.333333015441895
+          },
+          {
+            "label": "3_0 block 1 +0x88",
+            "lsp_offset": 45468,
+            "before_f32": 11.0,
+            "after_f32": 10.333333015441895
+          },
+          {
+            "label": "3_0 block 1 +0xA0",
+            "lsp_offset": 45492,
+            "before_f32": 11.0,
+            "after_f32": 10.333333015441895
+          }
+        ],
+        "changed_raw_byte_offsets": [
+          20438,
+          20439,
+          20613,
+          20614,
+          20615,
+          22724,
+          22725,
+          22726,
+          22727,
+          45189,
+          45190,
+          45191,
+          45213,
+          45214,
+          45215,
+          45469,
+          45470,
+          45471,
+          45493,
+          45494,
+          45495
+        ],
+        "raw_bytes_changed": 21,
+        "v19_special_root_preserved": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/jpn/id/cockpit1P.arc",
+      "base_arc_sha256": "d57c2929b52e574dc8bda16f168e4b28ea2edcd2965fbd45569d2dde856fbd98",
+      "base_lsp_sha256": "9365baae640a090dc53c0242d60eccb4ad6b114b469eac3ca220e5813b90834f",
+      "output_arc_sha256": "d63fef7b21995039d639a1269b3df56c6289f0cb469ecabf2aa871ca064bb5fa",
+      "output_lsp_sha256": "c2d7fbd5e012d247a72b5c2d3fe20471932e402f0118b3bf04a418538d44324b",
+      "changed_arc_entries": [
+        18
+      ],
+      "untouched_compressed_resources_preserved": true,
+      "one_pixel_tune": {
+        "direction": "down",
+        "lsp_units": 0.6666666666666666,
+        "expected_output_pixels_at_1080p": 1.0,
+        "text_anchor_before": 322.0,
+        "text_anchor_after": 322.6666564941406,
+        "visual_world_y_before": [
+          338.0,
+          333.0,
+          330.0
+        ],
+        "visual_world_y_after": [
+          337.9999895095825,
+          332.9999895095825,
+          329.9999899864197
+        ],
+        "edits": [
+          {
+            "label": "node 3 text anchor",
+            "lsp_offset": 20436,
+            "before_f32": 322.0,
+            "after_f32": 322.6666564941406
+          },
+          {
+            "label": "node 3_0 visual compensation",
+            "lsp_offset": 20612,
+            "before_f32": 16.0,
+            "after_f32": 15.333333015441895
+          },
+          {
+            "label": "node 3_1 visual compensation",
+            "lsp_offset": 22724,
+            "before_f32": 8.0,
+            "after_f32": 7.333333492279053
+          },
+          {
+            "label": "3_0 block 0 +0x88",
+            "lsp_offset": 45188,
+            "before_f32": 11.0,
+            "after_f32": 10.333333015441895
+          },
+          {
+            "label": "3_0 block 0 +0xA0",
+            "lsp_offset": 45212,
+            "before_f32": 11.0,
+            "after_f32": 10.333333015441895
+          },
+          {
+            "label": "3_0 block 1 +0x88",
+            "lsp_offset": 45468,
+            "before_f32": 11.0,
+            "after_f32": 10.333333015441895
+          },
+          {
+            "label": "3_0 block 1 +0xA0",
+            "lsp_offset": 45492,
+            "before_f32": 11.0,
+            "after_f32": 10.333333015441895
+          }
+        ],
+        "changed_raw_byte_offsets": [
+          20438,
+          20439,
+          20613,
+          20614,
+          20615,
+          22724,
+          22725,
+          22726,
+          22727,
+          45189,
+          45190,
+          45191,
+          45213,
+          45214,
+          45215,
+          45469,
+          45470,
+          45471,
+          45493,
+          45494,
+          45495
+        ],
+        "raw_bytes_changed": 21,
+        "v19_special_root_preserved": [
+          1,
+          1
+        ]
+      }
+    }
+  ],
+  "mirrored_output_sha256": "d63fef7b21995039d639a1269b3df56c6289f0cb469ecabf2aa871ca064bb5fa",
+  "cockpit2p_modified": false,
+  "offline_validation": "pass",
+  "runtime_test": "required"
+}

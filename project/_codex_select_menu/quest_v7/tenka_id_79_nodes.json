@@ -1,0 +1,1056 @@
+[
+  {
+    "index": 0,
+    "name": "SysRoot",
+    "texture": "",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": -1,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      32,
+      32
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 1,
+    "name": "null_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      320.0,
+      240.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 0,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 2,
+    "name": "null_0_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 3,
+    "name": "null_0_0_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      -281.0,
+      -214.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      32,
+      32
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 4,
+    "name": "Tenka",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 3,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      144,
+      60
+    ],
+    "uv": [
+      0,
+      60,
+      144,
+      120
+    ]
+  },
+  {
+    "index": 5,
+    "name": "null_0_0_0_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      20.0,
+      56.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 3,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      180,
+      24
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 6,
+    "name": "Exptxt_0",
+    "texture": "id\\texture\\jpn\\tenka_rule\\tenka_rule_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 5,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      0,
+      256,
+      32
+    ],
+    "uv": [
+      0,
+      212,
+      256,
+      244
+    ]
+  },
+  {
+    "index": 7,
+    "name": "null_0_1",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 8,
+    "name": "null_0_1_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 7,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 9,
+    "name": "null_0_1_0_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      -113.0,
+      -16.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 8,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 10,
+    "name": "Waku_0_0",
+    "texture": "id\\texture\\jpn\\tenka_rule\\tenka_rule_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 9,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -90,
+      -106,
+      90,
+      106
+    ],
+    "uv": [
+      0,
+      0,
+      180,
+      212
+    ]
+  },
+  {
+    "index": 11,
+    "name": "Waku_sdw",
+    "texture": "id\\texture\\jpn\\tenka_rule\\tenka_rule_000_ID_HQ",
+    "type": 2,
+    "position": [
+      3.0,
+      4.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 10,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -90,
+      -106,
+      90,
+      106
+    ],
+    "uv": [
+      0,
+      0,
+      180,
+      212
+    ]
+  },
+  {
+    "index": 12,
+    "name": "Image_0_0",
+    "texture": "id\\texture\\jpn\\tenka_rule\\tenka_rule_003_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 10,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -84,
+      -101,
+      84,
+      101
+    ],
+    "uv": [
+      44,
+      26,
+      212,
+      229
+    ]
+  },
+  {
+    "index": 13,
+    "name": "Pbg_black",
+    "texture": "id\\texture\\jpn\\tenka_rule\\tenka_rule_001_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 10,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -90,
+      -106,
+      90,
+      106
+    ],
+    "uv": [
+      0,
+      0,
+      180,
+      212
+    ]
+  },
+  {
+    "index": 14,
+    "name": "Pbg_0",
+    "texture": "id\\texture\\jpn\\tenka_rule\\tenka_rule_001_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      103.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 10,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -90,
+      -210,
+      90,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      180,
+      210
+    ]
+  },
+  {
+    "index": 15,
+    "name": "Pbg_1",
+    "texture": "id\\texture\\jpn\\tenka_rule\\tenka_rule_001_ID_HQ",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 14,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -90,
+      0,
+      90,
+      72
+    ],
+    "uv": [
+      0,
+      84,
+      180,
+      156
+    ]
+  },
+  {
+    "index": 16,
+    "name": "Pbg_2",
+    "texture": "id\\texture\\jpn\\tenka_rule\\tenka_rule_001_ID_HQ",
+    "type": 4,
+    "position": [
+      0.0,
+      72.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 14,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -90,
+      0,
+      90,
+      56
+    ],
+    "uv": [
+      0,
+      156,
+      180,
+      212
+    ]
+  },
+  {
+    "index": 17,
+    "name": "Tx_tsujo_0",
+    "texture": "id\\texture\\jpn\\tenka_rule\\tenka_rule_002_ID_HQ",
+    "type": 2,
+    "position": [
+      -2.0,
+      59.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 10,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -106,
+      -60,
+      106,
+      60
+    ],
+    "uv": [
+      0,
+      0,
+      212,
+      120
+    ]
+  },
+  {
+    "index": 18,
+    "name": "Tx_tsujo_1",
+    "texture": "id\\texture\\jpn\\tenka_rule\\tenka_rule_002_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      61.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 10,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -92,
+      -56,
+      92,
+      56
+    ],
+    "uv": [
+      0,
+      240,
+      184,
+      352
+    ]
+  },
+  {
+    "index": 19,
+    "name": "null_0_1_1",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 7,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 20,
+    "name": "null_0_1_1_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      113.0,
+      -16.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 19,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 21,
+    "name": "Waku_0_1",
+    "texture": "id\\texture\\jpn\\tenka_rule\\tenka_rule_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 20,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -90,
+      -106,
+      90,
+      106
+    ],
+    "uv": [
+      0,
+      0,
+      180,
+      212
+    ]
+  },
+  {
+    "index": 22,
+    "name": "Waku_sdw",
+    "texture": "id\\texture\\jpn\\tenka_rule\\tenka_rule_000_ID_HQ",
+    "type": 2,
+    "position": [
+      3.0,
+      4.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 21,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -90,
+      -106,
+      90,
+      106
+    ],
+    "uv": [
+      0,
+      0,
+      180,
+      212
+    ]
+  },
+  {
+    "index": 23,
+    "name": "Image_0_1",
+    "texture": "id\\texture\\jpn\\tenka_rule\\tenka_rule_004_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 21,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -84,
+      -101,
+      84,
+      101
+    ],
+    "uv": [
+      44,
+      26,
+      212,
+      229
+    ]
+  },
+  {
+    "index": 24,
+    "name": "Pbg_black",
+    "texture": "id\\texture\\jpn\\tenka_rule\\tenka_rule_001_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 21,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -90,
+      -106,
+      90,
+      106
+    ],
+    "uv": [
+      0,
+      0,
+      180,
+      212
+    ]
+  },
+  {
+    "index": 25,
+    "name": "Pbg_0",
+    "texture": "id\\texture\\jpn\\tenka_rule\\tenka_rule_001_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      103.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 21,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -90,
+      -210,
+      90,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      180,
+      210
+    ]
+  },
+  {
+    "index": 26,
+    "name": "Pbg_1",
+    "texture": "id\\texture\\jpn\\tenka_rule\\tenka_rule_001_ID_HQ",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 25,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -90,
+      0,
+      90,
+      72
+    ],
+    "uv": [
+      0,
+      84,
+      180,
+      156
+    ]
+  },
+  {
+    "index": 27,
+    "name": "Pbg_2",
+    "texture": "id\\texture\\jpn\\tenka_rule\\tenka_rule_001_ID_HQ",
+    "type": 4,
+    "position": [
+      0.0,
+      72.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 25,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -90,
+      0,
+      90,
+      56
+    ],
+    "uv": [
+      0,
+      156,
+      180,
+      212
+    ]
+  },
+  {
+    "index": 28,
+    "name": "Tx_dream_0",
+    "texture": "id\\texture\\jpn\\tenka_rule\\tenka_rule_002_ID_HQ",
+    "type": 2,
+    "position": [
+      -1.0,
+      59.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 21,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -106,
+      -60,
+      106,
+      60
+    ],
+    "uv": [
+      0,
+      120,
+      212,
+      240
+    ]
+  },
+  {
+    "index": 29,
+    "name": "Tx_dream_1",
+    "texture": "id\\texture\\jpn\\tenka_rule\\tenka_rule_002_ID_HQ",
+    "type": 2,
+    "position": [
+      -4.0,
+      60.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 21,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -92,
+      -56,
+      92,
+      56
+    ],
+    "uv": [
+      0,
+      352,
+      184,
+      464
+    ]
+  },
+  {
+    "index": 30,
+    "name": "null_0_2",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 31,
+    "name": "Cursor",
+    "texture": "id\\texture\\jpn\\tenka_rule\\tenka_rule_001_ID_HQ",
+    "type": 2,
+    "position": [
+      -113.0,
+      -16.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 30,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -90,
+      -106,
+      90,
+      106
+    ],
+    "uv": [
+      180,
+      0,
+      360,
+      212
+    ]
+  },
+  {
+    "index": 32,
+    "name": "null_0_3",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 33,
+    "name": "Black",
+    "texture": "",
+    "type": 0,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 32,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -430,
+      -240,
+      430,
+      240
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  }
+]

@@ -1,0 +1,229 @@
+{
+ "version": 1,
+ "built": "2026-09-09 19:19:38",
+ "matched": 37,
+ "map": {
+  "000": {
+   "donor_character": "000",
+   "distance": 0.0,
+   "margin": 70.021,
+   "matched_on": "cp_face_msg"
+  },
+  "001": {
+   "donor_character": "001",
+   "distance": 0.0,
+   "margin": 56.117,
+   "matched_on": "cp_face_msg"
+  },
+  "002": {
+   "donor_character": "002",
+   "distance": 0.0,
+   "margin": 48.002,
+   "matched_on": "cp_face_msg"
+  },
+  "003": {
+   "donor_character": "003",
+   "distance": 0.0,
+   "margin": 40.14,
+   "matched_on": "cp_face_msg"
+  },
+  "004": {
+   "donor_character": "004",
+   "distance": 0.0,
+   "margin": 44.764,
+   "matched_on": "cp_face_msg"
+  },
+  "005": {
+   "donor_character": "005",
+   "distance": 0.0,
+   "margin": 52.693,
+   "matched_on": "cp_face_msg"
+  },
+  "006": {
+   "donor_character": "006",
+   "distance": 0.0,
+   "margin": 73.075,
+   "matched_on": "cp_face_msg"
+  },
+  "007": {
+   "donor_character": "007",
+   "distance": 0.0,
+   "margin": 53.97,
+   "matched_on": "cp_face_msg"
+  },
+  "008": {
+   "donor_character": "008",
+   "distance": 0.0,
+   "margin": 68.396,
+   "matched_on": "cp_face_msg"
+  },
+  "009": {
+   "donor_character": "009",
+   "distance": 0.0,
+   "margin": 95.407,
+   "matched_on": "cp_face_msg"
+  },
+  "010": {
+   "donor_character": "010",
+   "distance": 0.0,
+   "margin": 72.089,
+   "matched_on": "cp_face_msg"
+  },
+  "011": {
+   "donor_character": "011",
+   "distance": 0.0,
+   "margin": 71.211,
+   "matched_on": "cp_face_msg"
+  },
+  "012": {
+   "donor_character": "012",
+   "distance": 0.0,
+   "margin": 71.306,
+   "matched_on": "cp_face_msg"
+  },
+  "013": {
+   "donor_character": "013",
+   "distance": 0.0,
+   "margin": 68.055,
+   "matched_on": "cp_face_msg"
+  },
+  "014": {
+   "donor_character": "014",
+   "distance": 0.0,
+   "margin": 75.212,
+   "matched_on": "cp_face_msg"
+  },
+  "015": {
+   "donor_character": "015",
+   "distance": 0.0,
+   "margin": 71.946,
+   "matched_on": "cp_face_msg"
+  },
+  "016": {
+   "donor_character": "016",
+   "distance": 0.0,
+   "margin": 57.845,
+   "matched_on": "cp_face_msg"
+  },
+  "017": {
+   "donor_character": "017",
+   "distance": 0.0,
+   "margin": 66.168,
+   "matched_on": "cp_face_msg"
+  },
+  "018": {
+   "donor_character": "018",
+   "distance": 0.0,
+   "margin": 50.166,
+   "matched_on": "cp_face_msg"
+  },
+  "019": {
+   "donor_character": "019",
+   "distance": 0.0,
+   "margin": 65.45,
+   "matched_on": "cp_face_msg"
+  },
+  "020": {
+   "donor_character": "020",
+   "distance": 0.0,
+   "margin": 88.971,
+   "matched_on": "cp_face_msg"
+  },
+  "021": {
+   "donor_character": "021",
+   "distance": 0.0,
+   "margin": 60.115,
+   "matched_on": "cp_face_msg"
+  },
+  "022": {
+   "donor_character": "022",
+   "distance": 0.0,
+   "margin": 62.703,
+   "matched_on": "cp_face_msg"
+  },
+  "023": {
+   "donor_character": "023",
+   "distance": 0.0,
+   "margin": 40.14,
+   "matched_on": "cp_face_msg"
+  },
+  "024": {
+   "donor_character": "024",
+   "distance": 0.0,
+   "margin": 58.675,
+   "matched_on": "cp_face_msg"
+  },
+  "025": {
+   "donor_character": "025",
+   "distance": 0.0,
+   "margin": 57.845,
+   "matched_on": "cp_face_msg"
+  },
+  "026": {
+   "donor_character": "026",
+   "distance": 0.0,
+   "margin": 98.879,
+   "matched_on": "cp_face_msg"
+  },
+  "029": {
+   "donor_character": "031",
+   "distance": 4.175,
+   "margin": 70.256,
+   "matched_on": "cp_face_msg"
+  },
+  "101": {
+   "donor_character": "029",
+   "distance": 0.0,
+   "margin": 57.469,
+   "matched_on": "cp_face_msg"
+  },
+  "102": {
+   "donor_character": "032",
+   "distance": 6.887,
+   "margin": 37.824,
+   "matched_on": "cp_face_msg"
+  },
+  "103": {
+   "donor_character": "031",
+   "distance": 4.175,
+   "margin": 70.256,
+   "matched_on": "cp_face_msg"
+  },
+  "104": {
+   "donor_character": "030",
+   "distance": 0.0,
+   "margin": 75.142,
+   "matched_on": "cp_face_msg"
+  },
+  "105": {
+   "donor_character": "028",
+   "distance": 0.0,
+   "margin": 68.396,
+   "matched_on": "cp_face_msg"
+  },
+  "106": {
+   "donor_character": "033",
+   "distance": 0.0,
+   "margin": 80.21,
+   "matched_on": "cp_face_msg"
+  },
+  "027": {
+   "donor_character": "034",
+   "distance": 0.0,
+   "margin": 95.067,
+   "matched_on": "kamon"
+  },
+  "099": {
+   "donor_character": "019",
+   "distance": 0.0,
+   "margin": 61.548,
+   "matched_on": "kamon"
+  },
+  "100": {
+   "donor_character": "027",
+   "distance": 0.0,
+   "margin": 61.415,
+   "matched_on": "kamon"
+  }
+ }
+}

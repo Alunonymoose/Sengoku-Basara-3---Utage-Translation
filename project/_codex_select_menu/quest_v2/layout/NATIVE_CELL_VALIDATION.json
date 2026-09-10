@@ -1,0 +1,233 @@
+{
+  "status": "offline_resource_validation_pass",
+  "source_eng_arc_sha256": "e4eaf22d23ea2e1d579b8101280f16700bb2c37c070ef258a5a8483f60487c7f",
+  "source_jpn_arc_sha256": "aa2dc3a3496376ab7b9afa1ce8fe825c9d177c46f49b3e34a7c5b2d3e4932927",
+  "lsp_byte_preserved": true,
+  "lsp_sha256": "91516511cb56f80b0914f456c616286ee333588b6b959ba336d0b2f0d7d1d6fe",
+  "physical_coordinates_are_native_uv_times_two": true,
+  "entries": [
+    {
+      "entry": 30,
+      "resource": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+      "source_sha256": "b801c8e59c0d6f20eb2cdce70a8d2dd7dfc73bf1c2660057604f87cc3e05b0ef",
+      "output_sha256": "a5e4445700819384e7de655cf7fa6f57e01ac06c02420290a4a1ac77f1bf0a86",
+      "labels": [
+        {
+          "label": "clear_time",
+          "source_crop": [
+            4,
+            258,
+            210,
+            298
+          ],
+          "source_ink_bbox": [
+            4,
+            5,
+            202,
+            37
+          ],
+          "target_cell": [
+            0,
+            256,
+            216,
+            304
+          ],
+          "target_ink_box": [
+            21,
+            266,
+            194,
+            294
+          ],
+          "scale": 0.875
+        },
+        {
+          "label": "fastest_clear_time",
+          "source_crop": [
+            0,
+            310,
+            264,
+            348
+          ],
+          "source_ink_bbox": [
+            4,
+            8,
+            258,
+            33
+          ],
+          "target_cell": [
+            0,
+            304,
+            216,
+            352
+          ],
+          "target_ink_box": [
+            6,
+            318,
+            210,
+            338
+          ],
+          "scale": 0.8031496062992126
+        },
+        {
+          "label": "difficulty",
+          "source_crop": [
+            278,
+            466,
+            386,
+            500
+          ],
+          "source_ink_bbox": [
+            3,
+            5,
+            107,
+            23
+          ],
+          "target_cell": [
+            216,
+            456,
+            384,
+            504
+          ],
+          "target_ink_box": [
+            225,
+            467,
+            375,
+            493
+          ],
+          "scale": 1.4423076923076923
+        },
+        {
+          "label": "reward",
+          "source_crop": [
+            392,
+            464,
+            510,
+            502
+          ],
+          "source_ink_bbox": [
+            3,
+            3,
+            115,
+            28
+          ],
+          "target_cell": [
+            384,
+            440,
+            512,
+            504
+          ],
+          "target_ink_box": [
+            390,
+            459,
+            506,
+            485
+          ],
+          "scale": 1.0357142857142858
+        },
+        {
+          "label": "cleared_warriors",
+          "source_crop": [
+            0,
+            404,
+            308,
+            442
+          ],
+          "source_ink_bbox": [
+            8,
+            6,
+            302,
+            33
+          ],
+          "target_cell": [
+            0,
+            400,
+            328,
+            456
+          ],
+          "target_ink_box": [
+            12,
+            414,
+            316,
+            442
+          ],
+          "scale": 1.034013605442177
+        },
+        {
+          "label": "challenges_cleared",
+          "source_crop": [
+            0,
+            466,
+            274,
+            500
+          ],
+          "source_ink_bbox": [
+            4,
+            2,
+            270,
+            26
+          ],
+          "target_cell": [
+            0,
+            456,
+            216,
+            504
+          ],
+          "target_ink_box": [
+            4,
+            470,
+            212,
+            489
+          ],
+          "scale": 0.7819548872180451
+        }
+      ],
+      "restored": [
+        {
+          "symbol": "filled_star",
+          "physical_cell": [
+            216,
+            256,
+            264,
+            304
+          ],
+          "exact_original_bc3_blocks": 144
+        },
+        {
+          "symbol": "reward_row_point",
+          "physical_cell": [
+            264,
+            256,
+            296,
+            304
+          ],
+          "exact_original_bc3_blocks": 96
+        },
+        {
+          "symbol": "five_star_underlay",
+          "physical_cell": [
+            0,
+            352,
+            216,
+            400
+          ],
+          "exact_original_bc3_blocks": 648
+        }
+      ],
+      "changed_blocks": 4389,
+      "unchanged_blocks": 11995,
+      "non_target_blocks_byte_preserved": true
+    },
+    {
+      "entry": 38,
+      "resource": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_001_ID_HQ",
+      "source_sha256": "6802802cec26474203b922034644f7ea1133774319f27c6c11bdc53ed9722a73",
+      "output_sha256": "a0861e53b8e2805630222b969e5a9023446a16c83f8748ab773d3643d00c5af1",
+      "counter_unit": "blank; count remains selected/total without redundant noun",
+      "slash_original_bc3_blocks": 192,
+      "changed_blocks": 528,
+      "unchanged_blocks": 15856,
+      "non_target_blocks_byte_preserved": true
+    }
+  ],
+  "runtime": "requires cold boot; no game files installed"
+}

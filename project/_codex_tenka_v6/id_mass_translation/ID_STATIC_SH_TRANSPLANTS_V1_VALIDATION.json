@@ -1,0 +1,2366 @@
+{
+  "status": "pass",
+  "patch": "Utage ID Static Textures V1 - geometry-compatible official SH donors",
+  "created_utc": "2026-08-31T23:56:30.375064+00:00",
+  "package": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_ID_Static_Textures_V1_SH_DONORS_ROOT_READY.zip",
+  "package_sha256": "a2da637cf3e591a222a9c8f02a2ecb559bf0a855f9d46a67444715fa9392990c",
+  "package_size": 6399952,
+  "package_archive_count": 140,
+  "official_sh_resources_transplanted": 248,
+  "affected_archive_count": 140,
+  "geometry_mismatches_skipped": [
+    {
+      "archive": "cockpit1P.arc",
+      "texture_key": "cockpit_005_id_hq",
+      "utage_width": 128,
+      "utage_height": 128,
+      "sh_width": 128,
+      "sh_height": 64
+    },
+    {
+      "archive": "cockpit2P.arc",
+      "texture_key": "cockpit_005_id_hq",
+      "utage_width": 128,
+      "utage_height": 128,
+      "sh_width": 128,
+      "sh_height": 64
+    },
+    {
+      "archive": "friend_013.arc",
+      "texture_key": "cp_name_pl_013_id_hq",
+      "utage_width": 256,
+      "utage_height": 128,
+      "sh_width": 256,
+      "sh_height": 64
+    }
+  ],
+  "custom_or_previously_patched_preserved": 1,
+  "utage_only_resources_preserved": 185,
+  "backup": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\ID_STATIC_V1_BACKUP_PRE_SH_TRANSPLANTS.zip",
+  "backup_created_this_run": true,
+  "backup_sha256": "4b860142f5e5428361f2ee4fef8503c9e80bb602d1e263e8054610a13aac1531",
+  "zip_crc_pass": true,
+  "zip_payload_hashes_match": true,
+  "immutable_jpn_xets_verified": 503,
+  "live_archives_installed_this_run": [
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/cockpit1P.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/cockpit2P.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_000.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_001.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_002.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_003.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_004.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_005.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_006.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_007.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_008.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_009.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_010.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_011.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_012.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_014.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_015.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_016.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_017.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_018.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_019.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_020.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_021.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_022.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_023.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_024.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_025.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_026.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_027.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_028.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_029.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_030.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_031.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_032.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_033.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_034.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_035.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_036.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_037.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_038.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_039.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_040.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_041.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_042.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_043.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_044.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_045.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_046.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_047.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_048.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_049.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_050.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_051.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_052.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_053.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_054.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_055.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_056.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_057.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_058.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_059.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_060.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_061.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_062.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_063.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_064.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_065.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_066.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_067.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_068.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_069.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_070.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_071.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_072.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_073.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_074.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_075.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_076.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_077.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_078.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_079.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_080.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_081.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_082.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_083.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_084.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_085.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_086.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_087.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_088.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_089.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_090.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_091.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_092.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_093.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_094.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_095.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_096.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_097.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_098.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/friend_099.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m000_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m001_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m002_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m003_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m004_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m005_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m006_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m007_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m008_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m009_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m010_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m011_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m012_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m013_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m014_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m015_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m016_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m017_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m018_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m019_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m020_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m021_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m022_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m023_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m024_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m025_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m026_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m027_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m028_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m029_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m030_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m031_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m032_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m033_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m034_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m036_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m037_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m038_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/name_com.arc"
+  ],
+  "runtime_test": "required",
+  "archives": [
+    {
+      "archive": "cockpit1P.arc",
+      "live_source_sha256": "d63fef7b21995039d639a1269b3df56c6289f0cb469ecabf2aa871ca064bb5fa",
+      "output_sha256": "8bb7ec5d8050c3801aab5ff2a10eb444f6f0227111fe4f0380586019b4226b2f",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        0
+      ],
+      "changed_entry_indices_this_run": [
+        0
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "cockpit2P.arc",
+      "live_source_sha256": "9ab7fe47ff26eb9960695190838c0edd4e9bf670590adcbbee6e3596cbadd10c",
+      "output_sha256": "c6b2749d4dfa839d05eacac2ddefac6486c29b49d47eb2ffbfeb411fc3ed8c7e",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        0
+      ],
+      "changed_entry_indices_this_run": [
+        0
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_000.arc",
+      "live_source_sha256": "3404061bbcf192d0ea10daa95be9970c6ff6b9b90ba981c3fc4898ae1f5c28f5",
+      "output_sha256": "5f4a7567d41352776d617ded2646b8f95b6e40509e63bc1e1c1d48e1d8b246f0",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_001.arc",
+      "live_source_sha256": "70a5d1a1175b38c367f9928e768b5cc5644b20e187664cb9a81c36172cac00e0",
+      "output_sha256": "a40e753ea31d635331bdf12e2a78167524c8f3c364cc90796731e41625f94dfd",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_002.arc",
+      "live_source_sha256": "9524bb99629ef4d2c81db7b643bfc8a91c80dcf9f2ce0c55e18913c7ae7aa3aa",
+      "output_sha256": "add96e98923288528b4011110eb88d85da3943619363a88edc1fa3c5e67f32c5",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_003.arc",
+      "live_source_sha256": "a7a6ef79f12e3b30d78aad8e177e52fe03f381438ec90062c785a7b50871b428",
+      "output_sha256": "a71dc0c0b33e9ab39537269693f7e89f65eb72231ea69734f5b90c1beafd8813",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_004.arc",
+      "live_source_sha256": "ed46656cfea351dba481da595ef20d8cde3ce17e638bd1696cffa2a56074c1a3",
+      "output_sha256": "34d74031e9770c4cb5e04dd1d901bc122568d84e2a4897488abd9f28b6dc21e7",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_005.arc",
+      "live_source_sha256": "22fe6c54fb916399159d1ecc9077c933e9d8e76af4913d39811cb3085733b0aa",
+      "output_sha256": "cef9206fb60a831278610555a48cc54568fb5eef685dadade2fc1b983da4ae90",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_006.arc",
+      "live_source_sha256": "d4c6e615804be06009c15550a8b0d5f80bf3ce4cc6f67b7fe4afd654ab5211a7",
+      "output_sha256": "7303dbd92afd2c58af944d07512f9f212e4b988732261284375ed5063d3b3582",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_007.arc",
+      "live_source_sha256": "afaea940babbceae32cec8d84479d5bfdf148b3d263a8cd18036a60a651b4d68",
+      "output_sha256": "85bc713e6b3311b8e2cfa99390d3138a74339ae53e4831c861952616a6c36d90",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_008.arc",
+      "live_source_sha256": "67b03746128673b8155319c11b33f495975125358d0639c73b2c2231e7918012",
+      "output_sha256": "4018871b4334e7a693c462067099d2912dcbca83ebc681e05e0b9cb701be7c96",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_009.arc",
+      "live_source_sha256": "197a31b8192eee498eae6a83a4713e64fb5e7e5832ab7d92f4675ca9671a5c3e",
+      "output_sha256": "c03098a3022906a2d25cb7801e7c256e9f19be28cf785ee5bcb4cfaeb63b5120",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_010.arc",
+      "live_source_sha256": "2cdba40358ded300b82eec8ba1d696d9d3c50bcd5d34795eac0419b6a421f07d",
+      "output_sha256": "49bff8b72f9bfa870df18572ef38209978848bf10ca158d6d090d4acb038f92b",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_011.arc",
+      "live_source_sha256": "f783b74658beffb06d860a45ce5335bc5e7af38d3ae9b374eda55179433c1db5",
+      "output_sha256": "d6c573edc5300a5574dd097dc9deaed6e6ca56db5c7c46fa9ef76e584c5d5978",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_012.arc",
+      "live_source_sha256": "e406d50ee5fb477bbbc6cc4f1ecfe0b4a8c7ff9cb2c173b3e04a6e409ba530fc",
+      "output_sha256": "b2210ab48c3adf917d8167e74bcc382fa4e2f9a65b9c9912bff52a772637b4f0",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_014.arc",
+      "live_source_sha256": "7e38f4f573337043debd08694fa22fb04011bc58698348e7b18e4c54cf52d4b2",
+      "output_sha256": "c9bae46533d2061ceb598095752933734828cabdcf35a86d7756fcf8070b3df8",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_015.arc",
+      "live_source_sha256": "5c1f00db9c2f4a5c4703e24282625afa2aa28ffbcd562066cf7c9d1f60da0de9",
+      "output_sha256": "d871eec95fe3edd2e6a7a80f7c5bd8c1dc77a41b9bc3ba87301afa2d8ffd900a",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_016.arc",
+      "live_source_sha256": "4fc32ea59969927ce5a0cab610d5261884044733793772b9eafd906c2c813558",
+      "output_sha256": "cd0157034ffaeebfe247c0fe7449ee009892a3b75f05d0f8438626f4bd321403",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_017.arc",
+      "live_source_sha256": "3c76c55db524826aec80788dd0761bac28cd627743d6977fb1d053505ca56d97",
+      "output_sha256": "7339582f68ac83a1d0bed89d6f18925a803facd0b7db3c490f1ff49c57276aeb",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_018.arc",
+      "live_source_sha256": "479c0a8843a78df004235515b6724377f47a483402b0393f37c94e87d8236acd",
+      "output_sha256": "bb0467c035979576a8eee80cae93e0bf1c873153def9dfb53806241caa88a324",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_019.arc",
+      "live_source_sha256": "de232dcfdbef0e4a22484296987c07c038c8e9d8504cd2fe8664aea36a55dfda",
+      "output_sha256": "6d926cf8a00b48880afb9068dd7b4996933a5962ef09c41922dd4318b7a5b12f",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_020.arc",
+      "live_source_sha256": "bf6ee2659d275424d5e4c99a40b2e78820dfd13aa65016640311f448cf6e0446",
+      "output_sha256": "eedce93b8606c390a7bcb4b36a35a80b641f483e36d3ac5e91a0269305bb4b04",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_021.arc",
+      "live_source_sha256": "49e61108e6ea3fb3169bf61c6f2ee2222bf73df52fd23cdfffa9fb0dc2b5c191",
+      "output_sha256": "23f91cbb8fd057e293d9b34470cb82bbe2b55e1c5ec679704d0ae28be4eb567c",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_022.arc",
+      "live_source_sha256": "610c4dd8d7382c39364f8230d273c390f0299cd7fe0ff3ff06a07e75833f87c4",
+      "output_sha256": "f794c276f7b03f75dde9b02e399923e0610830ee79faaab8f0b4a2f51281c8db",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_023.arc",
+      "live_source_sha256": "dbb0fb1c5c53f23889c477eaf06b1128922d8a1fec340a7695dcce38bbe75b45",
+      "output_sha256": "0b430c7795394dddece355ed6afab4e93b92937effae7d883efabbb1778ba370",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_024.arc",
+      "live_source_sha256": "fe89fc5ab0c229dac3bc936f6b97fbaf704be8be383ba61be007320b648238ed",
+      "output_sha256": "8e413ec4de99de3a272a8b1cbf52086342fd2da78fbf8c55adca0c9d4fc5852a",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_025.arc",
+      "live_source_sha256": "77add8166e761f0e724238a648c239f042b1ba9ad49c2fb7ca57bf684f77ba2b",
+      "output_sha256": "68987b819aabd1efdb122628fc580746930e20659056985406dc4ddedd17558b",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_026.arc",
+      "live_source_sha256": "47d54b1c61aed67c14224f572cb5a68b68350f5fbf3aff6711cd783ea411e530",
+      "output_sha256": "a4287bcc50beff92d3376b6a28668de927c3c6a88b31e01e8a6497281c8508fc",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_027.arc",
+      "live_source_sha256": "1f29ae9f06653ae4da2e08d14d426dcc85290e28225f93fac4c416ed451a32d3",
+      "output_sha256": "90a656ddd056903f76f4cfd6f17ab25ab06202e72da3b6f637446a68d4966f0e",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_028.arc",
+      "live_source_sha256": "bae2c39b8932037051c2f54208c6ad99d6cdd703d448efd59bc00dd9a0a1cdc7",
+      "output_sha256": "28de8411ed28994d3fef60a0b01cfb5040adf8966f8820b8c0dbffd67cd4f9da",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_029.arc",
+      "live_source_sha256": "c9781e3ac51dac4132548deb8dec4e2707409db189efbff354986bfea7e1fcc3",
+      "output_sha256": "43636427a182f748a057af9e12c7c398716c0f7eaa0f0345de985bd5f490990b",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_030.arc",
+      "live_source_sha256": "7aa9eb96d3ad876f0df9629a31f5272ec4ab7c2523c3c1a867ebb4bdd30f7f64",
+      "output_sha256": "4a9b8cae87f2588e3f3aec56bfc334403397ba21733a0ef217a63b206a88a9ad",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        0
+      ],
+      "changed_entry_indices_this_run": [
+        0
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_031.arc",
+      "live_source_sha256": "8a08627dfa0341a9934438acd8627d91b5334523fdeaa73b1d4e870b8322984f",
+      "output_sha256": "cb4e19c23712cc1fa74d86a842a0e92ae414b69947df3d0f832904923e9eb311",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        0
+      ],
+      "changed_entry_indices_this_run": [
+        0
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_032.arc",
+      "live_source_sha256": "6e768a027cd1057de6a780250c81eb0bf56931379bfed1c2a0239d63f9d7967d",
+      "output_sha256": "d398ee398da4582431cef93ae29a9c97e0770682fe753c7b034126743268b5f3",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        0
+      ],
+      "changed_entry_indices_this_run": [
+        0
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_033.arc",
+      "live_source_sha256": "70260759b94a2ff701bdabe287868a9b9e865d35f6aa8e46f096e566588c9124",
+      "output_sha256": "8fdfd0a4f3c9c54a2a46cfea5460383e891070cd86656e2e141192ed5baff8a5",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        0
+      ],
+      "changed_entry_indices_this_run": [
+        0
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_034.arc",
+      "live_source_sha256": "f4e254c56caeb900eaff9b87fc62acbdc114cb2c77f761e67f4789f9c8a0310e",
+      "output_sha256": "e3b398f582a8708b4e1c25e001df938897a7b420bbe73511aec5c736f57765af",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        0
+      ],
+      "changed_entry_indices_this_run": [
+        0
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_035.arc",
+      "live_source_sha256": "7d393037c8dd520863080e2989d1d5971334c05bda9753d36c2d09206b9c8c82",
+      "output_sha256": "b9b41aa12700b4c167e924da713123ff7ac584fac0e7d777f567808f03f29f8d",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        0
+      ],
+      "changed_entry_indices_this_run": [
+        0
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_036.arc",
+      "live_source_sha256": "56c192f2f7046b9725baacfa55ab9c79b2507ca3a19a041f949ccee838348e0b",
+      "output_sha256": "fd4933f18607fc8fd92ca42badbac413b9f7d14e38f463ddb4f5df175432ceef",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        0
+      ],
+      "changed_entry_indices_this_run": [
+        0
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_037.arc",
+      "live_source_sha256": "56c192f2f7046b9725baacfa55ab9c79b2507ca3a19a041f949ccee838348e0b",
+      "output_sha256": "fd4933f18607fc8fd92ca42badbac413b9f7d14e38f463ddb4f5df175432ceef",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        0
+      ],
+      "changed_entry_indices_this_run": [
+        0
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_038.arc",
+      "live_source_sha256": "56c192f2f7046b9725baacfa55ab9c79b2507ca3a19a041f949ccee838348e0b",
+      "output_sha256": "fd4933f18607fc8fd92ca42badbac413b9f7d14e38f463ddb4f5df175432ceef",
+      "target_resource_count": 1,
+      "target_entry_indices": [
+        0
+      ],
+      "changed_entry_indices_this_run": [
+        0
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_039.arc",
+      "live_source_sha256": "e19d0371035d25cc24570df085f0fd3f3335d7ae14692989dd15cdbd1a21b308",
+      "output_sha256": "44957e56dfe55c0d2263ad26c7592388dfcb8993025f5f4e68a4aa371df96837",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_040.arc",
+      "live_source_sha256": "daa36b154f42597029c8430e5e95e1ff63c18ef7b320842a98ea7aad03efbaab",
+      "output_sha256": "d62f23585c9a461bf47d15d60f08dc4e2590bb43e761969afbc3927c02fc2417",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_041.arc",
+      "live_source_sha256": "a65a9e4960be56841c092cee93c4633f01480987ab0f6fa5882647b79ee50741",
+      "output_sha256": "fd77cc1bc37e2d695e839bf2d6ac8577846e925b3c3a5ab2dff0bbb719b4bc27",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_042.arc",
+      "live_source_sha256": "a65a9e4960be56841c092cee93c4633f01480987ab0f6fa5882647b79ee50741",
+      "output_sha256": "fd77cc1bc37e2d695e839bf2d6ac8577846e925b3c3a5ab2dff0bbb719b4bc27",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_043.arc",
+      "live_source_sha256": "a65a9e4960be56841c092cee93c4633f01480987ab0f6fa5882647b79ee50741",
+      "output_sha256": "fd77cc1bc37e2d695e839bf2d6ac8577846e925b3c3a5ab2dff0bbb719b4bc27",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_044.arc",
+      "live_source_sha256": "7114ebaff0f260cf43de362df46f5cd9f5d9c030cfb537be2b50edf199e12816",
+      "output_sha256": "54594edeaf01db3191395a13a28730a6a2dfcf6423b0e352a9ee8c465392a699",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_045.arc",
+      "live_source_sha256": "d0b95cefca7e016c6c58549c865bba71148b0203dc09a5013a781db0df968298",
+      "output_sha256": "233a9ec67f8db110c157dc899a1c99b5a7733fe6f21dcaa0defd5b2ba3fbcb48",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_046.arc",
+      "live_source_sha256": "7114ebaff0f260cf43de362df46f5cd9f5d9c030cfb537be2b50edf199e12816",
+      "output_sha256": "54594edeaf01db3191395a13a28730a6a2dfcf6423b0e352a9ee8c465392a699",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_047.arc",
+      "live_source_sha256": "7114ebaff0f260cf43de362df46f5cd9f5d9c030cfb537be2b50edf199e12816",
+      "output_sha256": "54594edeaf01db3191395a13a28730a6a2dfcf6423b0e352a9ee8c465392a699",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_048.arc",
+      "live_source_sha256": "3acff03cf48c8942df2058c8425487aa2e2466b11ae1691f5a559cdecb32be68",
+      "output_sha256": "653e99b33dd6b9435615669916902c02749574cfaeb591696ab14042da36c4e4",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_049.arc",
+      "live_source_sha256": "c2cd5b04b63e00c3764c18d3685346ce0027416caadeea3ae79f0f2426bded97",
+      "output_sha256": "4bc8e40e70ff7821e6c47330d458fb0b4d80954a4118b3f4f07dfba437206596",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_050.arc",
+      "live_source_sha256": "1ab915f8bbb50450df743878e35354b2943baf44f7e8b70d5ff49bd943bd71a0",
+      "output_sha256": "82d1188f87d0f0c61c1d5532643bf210be0e8bbcc332139dc17e6aa52bbef609",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_051.arc",
+      "live_source_sha256": "ace5becdb8200358ea6da7cc48f28d21c1fcb4c041015d15dcce310b4e260886",
+      "output_sha256": "80172bc61f28e8d8051dfc6d7069110b95ac8055e6221ea4c12f3700b10c540e",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_052.arc",
+      "live_source_sha256": "9def9cef2c2c6dbf13114faee1da81a62c94283e1bd478ccf7ac0bea6fcb42d3",
+      "output_sha256": "59427807061f1a3ad4135851daf3931839be70a8e781f2ae70fe35ca0993066c",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_053.arc",
+      "live_source_sha256": "9def9cef2c2c6dbf13114faee1da81a62c94283e1bd478ccf7ac0bea6fcb42d3",
+      "output_sha256": "59427807061f1a3ad4135851daf3931839be70a8e781f2ae70fe35ca0993066c",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_054.arc",
+      "live_source_sha256": "9def9cef2c2c6dbf13114faee1da81a62c94283e1bd478ccf7ac0bea6fcb42d3",
+      "output_sha256": "59427807061f1a3ad4135851daf3931839be70a8e781f2ae70fe35ca0993066c",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_055.arc",
+      "live_source_sha256": "b3b9870b515779ca88a00cb59c114747938ff32add9bb19b176de68b5bc052f8",
+      "output_sha256": "f02970b245fe8323efb9186e65fb4cebdd37e21e8243276b3053c7d5c8e97d61",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_056.arc",
+      "live_source_sha256": "71e9219a0fb7e7b89acdfdf66483fcaba3aa925d754901789db82a4b1162e274",
+      "output_sha256": "b3e56b5987fa2b27cded777d6e4349e28e1ace8b80acf60cb9f2d2078c6c9371",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_057.arc",
+      "live_source_sha256": "cc0e07480a762306ba1e509d6a6d57bf514458e3c00ab8f90a063f578e849823",
+      "output_sha256": "0f5a121969df733823f45d9fce04c46c635cf840f1ce05607c1bb41224257061",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_058.arc",
+      "live_source_sha256": "71e9219a0fb7e7b89acdfdf66483fcaba3aa925d754901789db82a4b1162e274",
+      "output_sha256": "b3e56b5987fa2b27cded777d6e4349e28e1ace8b80acf60cb9f2d2078c6c9371",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_059.arc",
+      "live_source_sha256": "e68a1de3a6c19f7a2cc97bc902d65a0d3f8931fe363690b225f1beb446a85165",
+      "output_sha256": "ccdceb38efa59cfc5ff686baa781759347c3a78a55731ffb06a34fc3d0af6009",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_060.arc",
+      "live_source_sha256": "b8ae31142849d5a44f4ef4bf231981e71d6d31c2af5bfcaee8f96df162136366",
+      "output_sha256": "a0cd829e80687a1caa63f58f43b2963705d4137c119257b9d78d688841d2270b",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_061.arc",
+      "live_source_sha256": "b8ae31142849d5a44f4ef4bf231981e71d6d31c2af5bfcaee8f96df162136366",
+      "output_sha256": "a0cd829e80687a1caa63f58f43b2963705d4137c119257b9d78d688841d2270b",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_062.arc",
+      "live_source_sha256": "df8b62ebb5ec438227982c061413dabbc70d9662a91592dd8503bd0efe8bf995",
+      "output_sha256": "0bdc5132cf30922dfbb0ab9aa8777569263c333cca4e2fa896d12e0669d91afa",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_063.arc",
+      "live_source_sha256": "b8ae31142849d5a44f4ef4bf231981e71d6d31c2af5bfcaee8f96df162136366",
+      "output_sha256": "a0cd829e80687a1caa63f58f43b2963705d4137c119257b9d78d688841d2270b",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_064.arc",
+      "live_source_sha256": "a03a07d75fb9236f4f2fc483b8dabbc3d912376858e4b0e08c832405e05c9203",
+      "output_sha256": "9847931fba60c029647b1778b47446946cd09f6e6bf46b95ddd9fc0ce3ddd0ec",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_065.arc",
+      "live_source_sha256": "d5b5d7875564cc0080c08074b46ddb97c65c7bbb910e3858f89e3c7b394f5e58",
+      "output_sha256": "c6af6740eeadff911275e368c3fffe1443561ecb850186ce2a97050b6d0a0406",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_066.arc",
+      "live_source_sha256": "d5b5d7875564cc0080c08074b46ddb97c65c7bbb910e3858f89e3c7b394f5e58",
+      "output_sha256": "c6af6740eeadff911275e368c3fffe1443561ecb850186ce2a97050b6d0a0406",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_067.arc",
+      "live_source_sha256": "d5b5d7875564cc0080c08074b46ddb97c65c7bbb910e3858f89e3c7b394f5e58",
+      "output_sha256": "c6af6740eeadff911275e368c3fffe1443561ecb850186ce2a97050b6d0a0406",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_068.arc",
+      "live_source_sha256": "f9727797e4f7c146dd7cd33c10265a6e4bb6feab70521a11c353540ebbc3c4de",
+      "output_sha256": "16c88c38795b825424de9dc87235f5809648ee3868ce9447be55d5dc43936ff4",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_069.arc",
+      "live_source_sha256": "f9727797e4f7c146dd7cd33c10265a6e4bb6feab70521a11c353540ebbc3c4de",
+      "output_sha256": "16c88c38795b825424de9dc87235f5809648ee3868ce9447be55d5dc43936ff4",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_070.arc",
+      "live_source_sha256": "f9727797e4f7c146dd7cd33c10265a6e4bb6feab70521a11c353540ebbc3c4de",
+      "output_sha256": "16c88c38795b825424de9dc87235f5809648ee3868ce9447be55d5dc43936ff4",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_071.arc",
+      "live_source_sha256": "098dc37ab94a17e7f277c86cb3eecb71d9c26543244e9b943f9483abb095a219",
+      "output_sha256": "e7bd1cc7232119f699952fe4944359bb2a332755cea430df2ed7c41ee1e9e0c0",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_072.arc",
+      "live_source_sha256": "e5230d01bb79b084497018fd0d36f2495a8fe8cf1df0927b312593674e3528b2",
+      "output_sha256": "79058d47f25856f6fede1456bbac992b3caed53a7548c63d1e3fe4c54b20bcaa",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_073.arc",
+      "live_source_sha256": "e5230d01bb79b084497018fd0d36f2495a8fe8cf1df0927b312593674e3528b2",
+      "output_sha256": "79058d47f25856f6fede1456bbac992b3caed53a7548c63d1e3fe4c54b20bcaa",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_074.arc",
+      "live_source_sha256": "e5230d01bb79b084497018fd0d36f2495a8fe8cf1df0927b312593674e3528b2",
+      "output_sha256": "79058d47f25856f6fede1456bbac992b3caed53a7548c63d1e3fe4c54b20bcaa",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_075.arc",
+      "live_source_sha256": "86950154e5d48a8bca940e53e1f902ca68df7945d0837a50343b38f49e4c46da",
+      "output_sha256": "27b563482e7faa0ea80ba6e6246b6fd605f6eb887c64c30e940bbfb74573b09a",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_076.arc",
+      "live_source_sha256": "4161577351f5f829695e9313599130d5be32f3fe4ef3a5b6a7eb9ca55deb4aab",
+      "output_sha256": "9298f4d0dfbe51597aa0fe2cf709300ba41e3c157a738fce78520b71fa8fda1d",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_077.arc",
+      "live_source_sha256": "565f77a1853cd62364f5f62351b7fe03c5c6d9264ac9191a30253f11125d06af",
+      "output_sha256": "e05f8fbc008a6f465fc8486afdf977df3b2ab9c8b058214606b028cb694bf06d",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_078.arc",
+      "live_source_sha256": "4161577351f5f829695e9313599130d5be32f3fe4ef3a5b6a7eb9ca55deb4aab",
+      "output_sha256": "9298f4d0dfbe51597aa0fe2cf709300ba41e3c157a738fce78520b71fa8fda1d",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_079.arc",
+      "live_source_sha256": "6b966edc92e1f479eaae689c66dcbf8c57833cef9c631ee35ad009ec3d323ce9",
+      "output_sha256": "286201cbf98f285e2dde18bf77fd88d166fc0661f4272709325ae51ece7146c7",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_080.arc",
+      "live_source_sha256": "ae9e1fb09204b7d6403b1a68ec5b40afc7a4f424aa054dd002910e44faa593c2",
+      "output_sha256": "9dfa841b5185ef5cf7b2e6295157aa569fb611b32801386deee1170acf152dab",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_081.arc",
+      "live_source_sha256": "42a720d39f394038ea07d3e9df2b46c0c6e42ed4828cf05edd34c8ce536ec9f0",
+      "output_sha256": "97a20440b3bec5d3a39c2a274deb35f9fdb90031d10aaffc39f83917e14b5180",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_082.arc",
+      "live_source_sha256": "ae9e1fb09204b7d6403b1a68ec5b40afc7a4f424aa054dd002910e44faa593c2",
+      "output_sha256": "9dfa841b5185ef5cf7b2e6295157aa569fb611b32801386deee1170acf152dab",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_083.arc",
+      "live_source_sha256": "ae9e1fb09204b7d6403b1a68ec5b40afc7a4f424aa054dd002910e44faa593c2",
+      "output_sha256": "9dfa841b5185ef5cf7b2e6295157aa569fb611b32801386deee1170acf152dab",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_084.arc",
+      "live_source_sha256": "b98ba6cb04a6c67601c7ddf3284b624dac3c13016bc2e73c60fb1deec158ba75",
+      "output_sha256": "2af13d073d3f838d3608119d7809f1ac05a743f62897c290d39aa1090d6f780d",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_085.arc",
+      "live_source_sha256": "a7af24354a238b6911f58ec86025dd0e9acdcbd7ba014e6c4deaf5dad90fd4a3",
+      "output_sha256": "7da59c9f131f1a769d2a4de1239453abf9dfc903e7141396dfe4217c8b339682",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_086.arc",
+      "live_source_sha256": "b98ba6cb04a6c67601c7ddf3284b624dac3c13016bc2e73c60fb1deec158ba75",
+      "output_sha256": "2af13d073d3f838d3608119d7809f1ac05a743f62897c290d39aa1090d6f780d",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_087.arc",
+      "live_source_sha256": "b98ba6cb04a6c67601c7ddf3284b624dac3c13016bc2e73c60fb1deec158ba75",
+      "output_sha256": "2af13d073d3f838d3608119d7809f1ac05a743f62897c290d39aa1090d6f780d",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_088.arc",
+      "live_source_sha256": "33d54abd67093981bca2d8889d3abe0d437412773fd00c067a5863c74660a6cf",
+      "output_sha256": "f1eec527c789aab18a1bf14b008710e9b2ff05ea1eb311b9f87c0d02bf603fad",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_089.arc",
+      "live_source_sha256": "33d54abd67093981bca2d8889d3abe0d437412773fd00c067a5863c74660a6cf",
+      "output_sha256": "f1eec527c789aab18a1bf14b008710e9b2ff05ea1eb311b9f87c0d02bf603fad",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_090.arc",
+      "live_source_sha256": "f5dc1b33557214963f7681035097a4b561837f0a4ce7bcd53b69915911a59f0d",
+      "output_sha256": "060bd1195139aa80768f074e1cd6a4f7a7a88c9e7e30913e9a755b479db5c537",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_091.arc",
+      "live_source_sha256": "33d54abd67093981bca2d8889d3abe0d437412773fd00c067a5863c74660a6cf",
+      "output_sha256": "f1eec527c789aab18a1bf14b008710e9b2ff05ea1eb311b9f87c0d02bf603fad",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_092.arc",
+      "live_source_sha256": "686f374c517f6334c11d4844bd2f6844156aa2bbcd8a94b56ef44c2e5bace12a",
+      "output_sha256": "aba7d0ccf794ef848a99aa094f5133d4bdbe2be889e9db59c99af95697c2a86d",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_093.arc",
+      "live_source_sha256": "686f374c517f6334c11d4844bd2f6844156aa2bbcd8a94b56ef44c2e5bace12a",
+      "output_sha256": "aba7d0ccf794ef848a99aa094f5133d4bdbe2be889e9db59c99af95697c2a86d",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_094.arc",
+      "live_source_sha256": "686f374c517f6334c11d4844bd2f6844156aa2bbcd8a94b56ef44c2e5bace12a",
+      "output_sha256": "aba7d0ccf794ef848a99aa094f5133d4bdbe2be889e9db59c99af95697c2a86d",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_095.arc",
+      "live_source_sha256": "686f374c517f6334c11d4844bd2f6844156aa2bbcd8a94b56ef44c2e5bace12a",
+      "output_sha256": "aba7d0ccf794ef848a99aa094f5133d4bdbe2be889e9db59c99af95697c2a86d",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_096.arc",
+      "live_source_sha256": "75a1cec1e39bbd4a4da6f51a2b92529fdb1aad04bf21eef121f4ce18581c64ea",
+      "output_sha256": "6894b40ffb0128da95a7df09ae6a865191df252f2cc1691672f7aa469d9d4954",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_097.arc",
+      "live_source_sha256": "9a34bd75412faabeb1a7c7c1353dea0bd3b3fd0a8f720ea2438af70645b5400c",
+      "output_sha256": "77393c55551050d644585b309dfad48a5f59a9750946b78ba133855a87b8ac2e",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_098.arc",
+      "live_source_sha256": "769f65815a589e3d1ebfe4238a685ea29e00f884d7ec3dce301c940ccc5b560c",
+      "output_sha256": "0b52ce8602f2723be903a21634293d9920218719aafe6b09cb400ef6dff709a8",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "friend_099.arc",
+      "live_source_sha256": "05487f15f71373c8e28e9232934a8ea80c0b506a0fb66f7c925bd95ea876e311",
+      "output_sha256": "f7a4340bfb61d10c2bbdebaaf4180af7021ca2c9a84c0eb0d276f4f646b7b4be",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m000_enemy.arc",
+      "live_source_sha256": "31fd4e18b3930172fbd5f3558791b4d9e98f0821702791bd1cc3fc6a2fb64c1c",
+      "output_sha256": "7c14274b2d222d9ed0ce84ab1cbf99513a87cba80f1747e2b2e2169a5e1c003c",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m001_enemy.arc",
+      "live_source_sha256": "d31f60713f6f4020818ee5b5d10c043a1be80cebed480b1d248e2f50f497f3e0",
+      "output_sha256": "6948f4df2c257f3c65c96bdc0460910b02f04a272fd6a1968cd299a858811a00",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m002_enemy.arc",
+      "live_source_sha256": "e7438dd111b3daf9cd2f84be5a89139acddcd8b46c608d0c486dfa923cad43c8",
+      "output_sha256": "98bdb5ca2893b3fef8e3d6066710e8eaab13e0b32aac080d70a77e279c84daa5",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m003_enemy.arc",
+      "live_source_sha256": "401b3491d6fa1bcec8be7a24879f1c800ac9598dadaa160914851c22dc4e0e1e",
+      "output_sha256": "2781959e8c40ea672f748989c92b5b29a715d068ca5f115305eee6af0c75c2cd",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m004_enemy.arc",
+      "live_source_sha256": "0b3e144ef4c72c33eda8ae35d513314ca52602efdf15663b016b439747c120b6",
+      "output_sha256": "a2468f9d32b154dc51af69b1615769ac498392103ab50b968e6e1822e0c1e665",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m005_enemy.arc",
+      "live_source_sha256": "2d8c94a3260e81847cbdfc142ada254c4161fe5c46c08a4d1499c4c3eb17c6a6",
+      "output_sha256": "2fc4a9645fe53e37cbfe688194865e479c797de665a7a52885514eadec579d3f",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m006_enemy.arc",
+      "live_source_sha256": "f27878188d3ceef12dadae5e9e670eb045df2decdbce145fcfc614fc618d648e",
+      "output_sha256": "4b3254d07d93b623fd60e5f06b183559c6d6d66860159b9cc9c6950bdcc6cbae",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m007_enemy.arc",
+      "live_source_sha256": "c2ad133d689fda5eb9aff4247501458d0ce0980ad1f18e24ca36282dbe3dc39f",
+      "output_sha256": "f1a1b312150e4243bfd89413d201d187fc3a48436e8c5d2130ac344066a192a3",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m008_enemy.arc",
+      "live_source_sha256": "1af835012b4ad3764d15580d241a0fbeb65b640c176dc2d641055a61e84e5899",
+      "output_sha256": "8a1b39aa2e66641ff0667b9cb9a17db80f5ed587cb34dee922ea390fa270aced",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m009_enemy.arc",
+      "live_source_sha256": "106163f9c80291a33afde5845182143f0918126ca1aacf690c13c067103cd344",
+      "output_sha256": "7bd7b03d5ab9ee0f0db3d4231942825c6fdfa653197d53fcd39bce833add6be2",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m010_enemy.arc",
+      "live_source_sha256": "b9ce3813034fab7b4fb29c0a8ada476d3c4ea75b76fa5cbcee54ed7a76042ec6",
+      "output_sha256": "8ebb36ce03f41d76efea4dec16d11a08bd4c4f5236c568a2c330db532bb2f619",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m011_enemy.arc",
+      "live_source_sha256": "7532df1b2861621edd2a882ed03e34668c163709fc5c3469f12445187b8e2908",
+      "output_sha256": "9f45b69473a993ab33d4da45d45d07559b00ced51270a3714c7bbdbc8af2a998",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m012_enemy.arc",
+      "live_source_sha256": "434ca619cbc943e20746e22d4627bf0e75cd56d21e086f467c6a63fbb046ce22",
+      "output_sha256": "3f1d2c5923c1c7a06ef9a91fd6443662c46a823a0866244f07b708dd4634f208",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m013_enemy.arc",
+      "live_source_sha256": "56bed7c9c1c7cb5af5aa5171091a043dd9dd9ef8e652ab69e576f83a076d4f1b",
+      "output_sha256": "261fcc8c895781376517423aa14c1c800ce5194a255f61cdced82fd57099fee2",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m014_enemy.arc",
+      "live_source_sha256": "08bdb5228663aaa3f0894e715f8c7940728f43a68b630347393cc31aa77d48f3",
+      "output_sha256": "4c9b8404df2c23810c743cc2e9ce88da326103a73d5b5e1f254656da2a600a2e",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m015_enemy.arc",
+      "live_source_sha256": "dcbec356f034045dabdecdf78b0e74a821227907c1a1797fd399f53a39857d9a",
+      "output_sha256": "53457dc04e5ad2930d11f835ef6bdfb9a9fcf583591aa18b1aa9d50250a5bd3e",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m016_enemy.arc",
+      "live_source_sha256": "2b3fe28a08c8e3270327e0764dc67738fafa8b4ffb6559d8f198acf0bca558b1",
+      "output_sha256": "164f4252d59d8b5f6b4f3f90d0ccb52ae6ab4a97e88e45db39f308118f27d5df",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m017_enemy.arc",
+      "live_source_sha256": "6dd3b223a3d2dc91d469ce92a3da15ed11da169fd4c4966e786df1930a40d826",
+      "output_sha256": "182572486bc4568d73e46b4b87a2e82d1e6edb2caa57fdae36add5b305dd8e77",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m018_enemy.arc",
+      "live_source_sha256": "1821426085eb820274b939bb684845a55bd3fe585c37bd7b3b8a5a30a26d1e5a",
+      "output_sha256": "71c172e31c5f34044c7b8cedd47489957bdf07db8d75000091f6aae655119a34",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m019_enemy.arc",
+      "live_source_sha256": "742b9761e07ba0532e28e7957dd904c399549b0b909036d0ee8efe75164e7c1c",
+      "output_sha256": "a8a9a8d96a2741ce99d61cae4a78e01050c8e335dcdc34b78883abd474a2d5f3",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m020_enemy.arc",
+      "live_source_sha256": "a3935d8c63321d9319af2722945771aa8996b35ec77eaab44e987c155e8d347f",
+      "output_sha256": "2fbab5e73e4e510ce6bdf990bff7a00da10ffe0fbf891ec692f03635e1e09a4a",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m021_enemy.arc",
+      "live_source_sha256": "bf3351bb65beda0731f06c98fb5760a7e56f97b549f94b3882a309985ec980cc",
+      "output_sha256": "e3df46b841780bf22dc4fb22bc1bbe45f3742a4808e6bd7e1244370f281b9aaf",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m022_enemy.arc",
+      "live_source_sha256": "28150b99e017e6cb9febb179466795b4137c7f0719c81b4bf11a8f4dbea909c8",
+      "output_sha256": "b1ec9904a8809160cf1bdd0929541ea522fb306808b1b204020cab63fe9828b3",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m023_enemy.arc",
+      "live_source_sha256": "3cf81e6c3a186f5f19b7ae1aeebc5b5ba2b0194b239250e8da61d40c2a6c1ef8",
+      "output_sha256": "d4ca3ba6c0aa7c4fd3bbe6848cd9819b564e1d9d1483f305cdde66d269573427",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m024_enemy.arc",
+      "live_source_sha256": "f27878188d3ceef12dadae5e9e670eb045df2decdbce145fcfc614fc618d648e",
+      "output_sha256": "4b3254d07d93b623fd60e5f06b183559c6d6d66860159b9cc9c6950bdcc6cbae",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m025_enemy.arc",
+      "live_source_sha256": "f27878188d3ceef12dadae5e9e670eb045df2decdbce145fcfc614fc618d648e",
+      "output_sha256": "4b3254d07d93b623fd60e5f06b183559c6d6d66860159b9cc9c6950bdcc6cbae",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m026_enemy.arc",
+      "live_source_sha256": "f27878188d3ceef12dadae5e9e670eb045df2decdbce145fcfc614fc618d648e",
+      "output_sha256": "4b3254d07d93b623fd60e5f06b183559c6d6d66860159b9cc9c6950bdcc6cbae",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m027_enemy.arc",
+      "live_source_sha256": "2d8c94a3260e81847cbdfc142ada254c4161fe5c46c08a4d1499c4c3eb17c6a6",
+      "output_sha256": "2fc4a9645fe53e37cbfe688194865e479c797de665a7a52885514eadec579d3f",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m028_enemy.arc",
+      "live_source_sha256": "2d8c94a3260e81847cbdfc142ada254c4161fe5c46c08a4d1499c4c3eb17c6a6",
+      "output_sha256": "2fc4a9645fe53e37cbfe688194865e479c797de665a7a52885514eadec579d3f",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m029_enemy.arc",
+      "live_source_sha256": "2d8c94a3260e81847cbdfc142ada254c4161fe5c46c08a4d1499c4c3eb17c6a6",
+      "output_sha256": "2fc4a9645fe53e37cbfe688194865e479c797de665a7a52885514eadec579d3f",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m030_enemy.arc",
+      "live_source_sha256": "15383565f41cfc30d3ef91fe6daf7a2e6c5520d631fe66046635a56f4b48b20e",
+      "output_sha256": "24421468568d01b2accea85bc59b126e78f8154b87795310f1b0c401bc2a99e2",
+      "target_resource_count": 4,
+      "target_entry_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m031_enemy.arc",
+      "live_source_sha256": "0b3e144ef4c72c33eda8ae35d513314ca52602efdf15663b016b439747c120b6",
+      "output_sha256": "a2468f9d32b154dc51af69b1615769ac498392103ab50b968e6e1822e0c1e665",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m032_enemy.arc",
+      "live_source_sha256": "2d8c94a3260e81847cbdfc142ada254c4161fe5c46c08a4d1499c4c3eb17c6a6",
+      "output_sha256": "2fc4a9645fe53e37cbfe688194865e479c797de665a7a52885514eadec579d3f",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m033_enemy.arc",
+      "live_source_sha256": "b9ce3813034fab7b4fb29c0a8ada476d3c4ea75b76fa5cbcee54ed7a76042ec6",
+      "output_sha256": "8ebb36ce03f41d76efea4dec16d11a08bd4c4f5236c568a2c330db532bb2f619",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m034_enemy.arc",
+      "live_source_sha256": "d31f60713f6f4020818ee5b5d10c043a1be80cebed480b1d248e2f50f497f3e0",
+      "output_sha256": "6948f4df2c257f3c65c96bdc0460910b02f04a272fd6a1968cd299a858811a00",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m036_enemy.arc",
+      "live_source_sha256": "106163f9c80291a33afde5845182143f0918126ca1aacf690c13c067103cd344",
+      "output_sha256": "7bd7b03d5ab9ee0f0db3d4231942825c6fdfa653197d53fcd39bce833add6be2",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m037_enemy.arc",
+      "live_source_sha256": "56bed7c9c1c7cb5af5aa5171091a043dd9dd9ef8e652ab69e576f83a076d4f1b",
+      "output_sha256": "261fcc8c895781376517423aa14c1c800ce5194a255f61cdced82fd57099fee2",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "m038_enemy.arc",
+      "live_source_sha256": "6dd3b223a3d2dc91d469ce92a3da15ed11da169fd4c4966e786df1930a40d826",
+      "output_sha256": "182572486bc4568d73e46b4b87a2e82d1e6edb2caa57fdae36add5b305dd8e77",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        1
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        1
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    },
+    {
+      "archive": "name_com.arc",
+      "live_source_sha256": "99b6f95a0fda454e89ee22ee4d83738f848482bdcfdecf382eb82111f4d03925",
+      "output_sha256": "9cd75923740d4b77727e72f2d8c02dfcbca59647f24b566b651496d015123616",
+      "target_resource_count": 2,
+      "target_entry_indices": [
+        0,
+        2
+      ],
+      "changed_entry_indices_this_run": [
+        0,
+        2
+      ],
+      "metadata_preserved": true,
+      "untouched_compressed_resources_preserved": true
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "entry": 35,
+    "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "source_sha256": "12d16714826f5bc4b6bc749d368e95271e234a1660f735baf7d626107fe701a3",
+    "sha256": "f28b325a19b24eddba5f928505e0e51374b084969d5dd72de803b0c15c3a4304",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\main_assets\\entry_35.xet",
+    "rect": [
+      0,
+      240,
+      288,
+      360
+    ],
+    "reason": "English QUESTS heading from generated lettering mask",
+    "changed_blocks": 2160,
+    "non_target_blocks_preserved": true,
+    "extra": {
+      "master_bbox": [
+        217,
+        184,
+        1853,
+        576
+      ],
+      "fitted_size": [
+        280,
+        67
+      ]
+    }
+  },
+  {
+    "entry": 36,
+    "name": "id\\texture\\jpn\\tenka\\tenka_007_ID_HQ",
+    "source_sha256": "f4eb2c31969da06dbe9905a129c895f1f6cf1fcd0977376f9b80c9d6cbbfbb79",
+    "sha256": "7ac79a43a5484514053c4ba054fc6ce966f87e94c0d6a4039018714188cd81d3",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\main_assets\\entry_36.xet",
+    "rect": [
+      0,
+      452,
+      512,
+      512
+    ],
+    "reason": "Select a battle location. from existing English Tenka asset",
+    "changed_blocks": 1035,
+    "non_target_blocks_preserved": true,
+    "extra": {
+      "donor_sha256": "7ac79a43a5484514053c4ba054fc6ce966f87e94c0d6a4039018714188cd81d3"
+    }
+  },
+  {
+    "entry": 40,
+    "name": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "source_sha256": "d5ad173b329e42eb0ad235e349f04fa7e25cea7747c26aa94f948d5c96ca5cb7",
+    "sha256": "f65ba39a3150f9f9827215c36658d7963052e8826d67cf1749989bca569a33d2",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\main_assets\\entry_40.xet",
+    "rect": [
+      200,
+      0,
+      256,
+      64
+    ],
+    "reason": "English currency marker from current select common_009",
+    "changed_blocks": 111,
+    "non_target_blocks_preserved": true,
+    "extra": {
+      "donor_sha256": "d4e81595cc300bbf36325b3996d921a779b31efac10442521a1a27ea7e4fd83c"
+    }
+  }
+]

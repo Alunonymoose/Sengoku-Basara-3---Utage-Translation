@@ -1,0 +1,9 @@
+{
+  "status": "installed_and_readback_verified",
+  "archives": 3,
+  "package": "E:\\Utage Patching New\\_codex_select_menu\\quest_v10\\release\\Utage_Menu_V10_MASS_SHOP_TRANSLATIONS_ROOT_READY.zip",
+  "package_sha256": "9539ccccac79b8a232e06d370a26b10160210ed012a98921b1280756a0351ef3",
+  "backup": "E:\\Utage Patching New\\_codex_select_menu\\quest_v10\\release\\BACKUP_PRE_V10.zip",
+  "backup_sha256": "336baf2cbb180db2279efac87c1d04be220fdfa559f71261431578ebae434f22",
+  "runtime_verified": false
+}

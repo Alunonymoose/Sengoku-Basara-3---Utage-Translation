@@ -1,0 +1,1291 @@
+{
+  "status": "pass",
+  "archives": [
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\common\\pl_face\\pl016.arc",
+      "resources": [
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_016_ID_HQ",
+          "character": 16,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\common\\pl_face\\pl017.arc",
+      "resources": [
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_017_ID_HQ",
+          "character": 17,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\common\\pl_face\\pl018.arc",
+      "resources": [
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_018_ID_HQ",
+          "character": 18,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\common\\pl_face\\pl019.arc",
+      "resources": [
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_019_ID_HQ",
+          "character": 19,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\common\\pl_face\\pl020.arc",
+      "resources": [
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_020_ID_HQ",
+          "character": 20,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\common\\pl_face\\pl021.arc",
+      "resources": [
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_021_ID_HQ",
+          "character": 21,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\common\\pl_face\\pl022.arc",
+      "resources": [
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_022_ID_HQ",
+          "character": 22,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\common\\pl_face\\pl023.arc",
+      "resources": [
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_023_ID_HQ",
+          "character": 23,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\common\\pl_face\\pl024.arc",
+      "resources": [
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_024_ID_HQ",
+          "character": 24,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\common\\pl_face\\pl025.arc",
+      "resources": [
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_025_ID_HQ",
+          "character": 25,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\common\\pl_face\\pl026.arc",
+      "resources": [
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_026_ID_HQ",
+          "character": 26,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\common\\pl_face\\pl027.arc",
+      "resources": [
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_027_ID_HQ",
+          "character": 27,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\common\\pl_face\\pl028.arc",
+      "resources": [
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_028_ID_HQ",
+          "character": 28,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\common\\pl_face\\pl029.arc",
+      "resources": [
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_029_ID_HQ",
+          "character": 29,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\common\\pl_face\\pl_all.arc",
+      "resources": [
+        {
+          "index": 63,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_016_ID_HQ",
+          "character": 16,
+          "kind": "wide"
+        },
+        {
+          "index": 67,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_017_ID_HQ",
+          "character": 17,
+          "kind": "wide"
+        },
+        {
+          "index": 71,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_018_ID_HQ",
+          "character": 18,
+          "kind": "wide"
+        },
+        {
+          "index": 75,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_019_ID_HQ",
+          "character": 19,
+          "kind": "wide"
+        },
+        {
+          "index": 78,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_020_ID_HQ",
+          "character": 20,
+          "kind": "wide"
+        },
+        {
+          "index": 81,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_021_ID_HQ",
+          "character": 21,
+          "kind": "wide"
+        },
+        {
+          "index": 84,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_022_ID_HQ",
+          "character": 22,
+          "kind": "wide"
+        },
+        {
+          "index": 87,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_023_ID_HQ",
+          "character": 23,
+          "kind": "wide"
+        },
+        {
+          "index": 90,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_024_ID_HQ",
+          "character": 24,
+          "kind": "wide"
+        },
+        {
+          "index": 94,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_025_ID_HQ",
+          "character": 25,
+          "kind": "wide"
+        },
+        {
+          "index": 97,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_026_ID_HQ",
+          "character": 26,
+          "kind": "wide"
+        },
+        {
+          "index": 100,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_027_ID_HQ",
+          "character": 27,
+          "kind": "wide"
+        },
+        {
+          "index": 103,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_028_ID_HQ",
+          "character": 28,
+          "kind": "wide"
+        },
+        {
+          "index": 107,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_029_ID_HQ",
+          "character": 29,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\gallery\\chara_000.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_028_ID_HQ",
+          "character": 28,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\gallery\\chara_001.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_023_ID_HQ",
+          "character": 23,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\gallery\\chara_002.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_022_ID_HQ",
+          "character": 22,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\gallery\\chara_003.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_017_ID_HQ",
+          "character": 17,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\gallery\\chara_004.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_019_ID_HQ",
+          "character": 19,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\gallery\\chara_005.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_018_ID_HQ",
+          "character": 18,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\gallery\\chara_006.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_016_ID_HQ",
+          "character": 16,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\gallery\\chara_007.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_029_ID_HQ",
+          "character": 29,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\gallery\\chara_024.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_020_ID_HQ",
+          "character": 20,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\gallery\\chara_025.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_021_ID_HQ",
+          "character": 21,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\gallery\\chara_026.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_025_ID_HQ",
+          "character": 25,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\gallery\\chara_027.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_024_ID_HQ",
+          "character": 24,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\gallery\\chara_028.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_026_ID_HQ",
+          "character": 26,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\gallery\\chara_029.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_027_ID_HQ",
+          "character": 27,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\get_pl016.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_016_ID_HQ",
+          "character": 16,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\get_pl017.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_017_ID_HQ",
+          "character": 17,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\get_pl018.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_018_ID_HQ",
+          "character": 18,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\get_pl019.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_019_ID_HQ",
+          "character": 19,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\get_pl020.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_020_ID_HQ",
+          "character": 20,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\get_pl021.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_021_ID_HQ",
+          "character": 21,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\get_pl022.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_022_ID_HQ",
+          "character": 22,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\get_pl023.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_023_ID_HQ",
+          "character": 23,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\get_pl024.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_024_ID_HQ",
+          "character": 24,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\get_pl025.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_025_ID_HQ",
+          "character": 25,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\get_pl026.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_026_ID_HQ",
+          "character": 26,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\get_pl027.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_027_ID_HQ",
+          "character": 27,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\get_pl028.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_028_ID_HQ",
+          "character": 28,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\get_pl029.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_029_ID_HQ",
+          "character": 29,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q000.arc",
+      "resources": [
+        {
+          "index": 12,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_027_ID_HQ",
+          "character": 27,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q001.arc",
+      "resources": [
+        {
+          "index": 12,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_018_ID_HQ",
+          "character": 18,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q002.arc",
+      "resources": [
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_023_ID_HQ",
+          "character": 23,
+          "kind": "small"
+        },
+        {
+          "index": 8,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_022_ID_HQ",
+          "character": 22,
+          "kind": "small"
+        },
+        {
+          "index": 12,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_028_ID_HQ",
+          "character": 28,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q004.arc",
+      "resources": [
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_028_ID_HQ",
+          "character": 28,
+          "kind": "small"
+        },
+        {
+          "index": 8,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_019_ID_HQ",
+          "character": 19,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q005.arc",
+      "resources": [
+        {
+          "index": 12,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_020_ID_HQ",
+          "character": 20,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q006.arc",
+      "resources": [
+        {
+          "index": 8,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_017_ID_HQ",
+          "character": 17,
+          "kind": "small"
+        },
+        {
+          "index": 12,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_019_ID_HQ",
+          "character": 19,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q007.arc",
+      "resources": [
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_018_ID_HQ",
+          "character": 18,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q010.arc",
+      "resources": [
+        {
+          "index": 12,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_017_ID_HQ",
+          "character": 17,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q011.arc",
+      "resources": [
+        {
+          "index": 12,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_029_ID_HQ",
+          "character": 29,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q015.arc",
+      "resources": [
+        {
+          "index": 10,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_024_ID_HQ",
+          "character": 24,
+          "kind": "small"
+        },
+        {
+          "index": 12,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_025_ID_HQ",
+          "character": 25,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q017.arc",
+      "resources": [
+        {
+          "index": 8,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_022_ID_HQ",
+          "character": 22,
+          "kind": "small"
+        },
+        {
+          "index": 12,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_021_ID_HQ",
+          "character": 21,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q018.arc",
+      "resources": [
+        {
+          "index": 18,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_029_ID_HQ",
+          "character": 29,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q019.arc",
+      "resources": [
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_027_ID_HQ",
+          "character": 27,
+          "kind": "small"
+        },
+        {
+          "index": 8,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_016_ID_HQ",
+          "character": 16,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q020.arc",
+      "resources": [
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_021_ID_HQ",
+          "character": 21,
+          "kind": "small"
+        },
+        {
+          "index": 8,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_024_ID_HQ",
+          "character": 24,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q023.arc",
+      "resources": [
+        {
+          "index": 8,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_016_ID_HQ",
+          "character": 16,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q024.arc",
+      "resources": [
+        {
+          "index": 8,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_019_ID_HQ",
+          "character": 19,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q025.arc",
+      "resources": [
+        {
+          "index": 14,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_028_ID_HQ",
+          "character": 28,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q026.arc",
+      "resources": [
+        {
+          "index": 12,
+          "name": "id\\texture\\jpn\\teki2_name\\teki2_name_027_ID_HQ",
+          "character": 27,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_m016.arc",
+      "resources": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\teki_name\\teki_name_016_ID_HQ",
+          "character": 16,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_m017.arc",
+      "resources": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\teki_name\\teki_name_017_ID_HQ",
+          "character": 17,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_m018.arc",
+      "resources": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\teki_name\\teki_name_018_ID_HQ",
+          "character": 18,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_m019.arc",
+      "resources": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\teki_name\\teki_name_019_ID_HQ",
+          "character": 19,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_m020.arc",
+      "resources": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\teki_name\\teki_name_020_ID_HQ",
+          "character": 20,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_m021.arc",
+      "resources": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\teki_name\\teki_name_021_ID_HQ",
+          "character": 21,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_m022.arc",
+      "resources": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\teki_name\\teki_name_022_ID_HQ",
+          "character": 22,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_m023.arc",
+      "resources": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\teki_name\\teki_name_023_ID_HQ",
+          "character": 23,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_m024.arc",
+      "resources": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\teki_name\\teki_name_024_ID_HQ",
+          "character": 24,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_m025.arc",
+      "resources": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\teki_name\\teki_name_025_ID_HQ",
+          "character": 25,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_m026.arc",
+      "resources": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\teki_name\\teki_name_026_ID_HQ",
+          "character": 26,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_m027.arc",
+      "resources": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\teki_name\\teki_name_027_ID_HQ",
+          "character": 27,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_m028.arc",
+      "resources": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\teki_name\\teki_name_028_ID_HQ",
+          "character": 28,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_m029.arc",
+      "resources": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\teki_name\\teki_name_029_ID_HQ",
+          "character": 29,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl016.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_016_ID_HQ",
+          "character": 16,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl017.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_017_ID_HQ",
+          "character": 17,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl018.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_018_ID_HQ",
+          "character": 18,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl019.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_019_ID_HQ",
+          "character": 19,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl020.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_020_ID_HQ",
+          "character": 20,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl021.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_021_ID_HQ",
+          "character": 21,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl022.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_022_ID_HQ",
+          "character": 22,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl023.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_023_ID_HQ",
+          "character": 23,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl024.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_024_ID_HQ",
+          "character": 24,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl025.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_025_ID_HQ",
+          "character": 25,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl026.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_026_ID_HQ",
+          "character": 26,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl027.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_027_ID_HQ",
+          "character": 27,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl028.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_028_ID_HQ",
+          "character": 28,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl029.arc",
+      "resources": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_029_ID_HQ",
+          "character": 29,
+          "kind": "small"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc",
+      "resources": [
+        {
+          "index": 271,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_016_ID_HQ",
+          "character": 16,
+          "kind": "wide"
+        },
+        {
+          "index": 272,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_017_ID_HQ",
+          "character": 17,
+          "kind": "wide"
+        },
+        {
+          "index": 273,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_018_ID_HQ",
+          "character": 18,
+          "kind": "wide"
+        },
+        {
+          "index": 274,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_019_ID_HQ",
+          "character": 19,
+          "kind": "wide"
+        },
+        {
+          "index": 275,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_020_ID_HQ",
+          "character": 20,
+          "kind": "wide"
+        },
+        {
+          "index": 276,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_021_ID_HQ",
+          "character": 21,
+          "kind": "wide"
+        },
+        {
+          "index": 277,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_022_ID_HQ",
+          "character": 22,
+          "kind": "wide"
+        },
+        {
+          "index": 278,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_023_ID_HQ",
+          "character": 23,
+          "kind": "wide"
+        },
+        {
+          "index": 279,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_024_ID_HQ",
+          "character": 24,
+          "kind": "wide"
+        },
+        {
+          "index": 280,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_025_ID_HQ",
+          "character": 25,
+          "kind": "wide"
+        },
+        {
+          "index": 281,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_026_ID_HQ",
+          "character": 26,
+          "kind": "wide"
+        },
+        {
+          "index": 282,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_027_ID_HQ",
+          "character": 27,
+          "kind": "wide"
+        },
+        {
+          "index": 283,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_028_ID_HQ",
+          "character": 28,
+          "kind": "wide"
+        },
+        {
+          "index": 284,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_029_ID_HQ",
+          "character": 29,
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title_id.arc",
+      "resources": [
+        {
+          "index": 79,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_016_ID_HQ",
+          "character": 16,
+          "kind": "wide"
+        },
+        {
+          "index": 84,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_017_ID_HQ",
+          "character": 17,
+          "kind": "wide"
+        },
+        {
+          "index": 89,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_018_ID_HQ",
+          "character": 18,
+          "kind": "wide"
+        },
+        {
+          "index": 94,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_019_ID_HQ",
+          "character": 19,
+          "kind": "wide"
+        },
+        {
+          "index": 98,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_020_ID_HQ",
+          "character": 20,
+          "kind": "wide"
+        },
+        {
+          "index": 102,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_021_ID_HQ",
+          "character": 21,
+          "kind": "wide"
+        },
+        {
+          "index": 106,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_022_ID_HQ",
+          "character": 22,
+          "kind": "wide"
+        },
+        {
+          "index": 110,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_023_ID_HQ",
+          "character": 23,
+          "kind": "wide"
+        },
+        {
+          "index": 114,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_024_ID_HQ",
+          "character": 24,
+          "kind": "wide"
+        },
+        {
+          "index": 119,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_025_ID_HQ",
+          "character": 25,
+          "kind": "wide"
+        },
+        {
+          "index": 123,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_026_ID_HQ",
+          "character": 26,
+          "kind": "wide"
+        },
+        {
+          "index": 127,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_027_ID_HQ",
+          "character": 27,
+          "kind": "wide"
+        },
+        {
+          "index": 131,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_028_ID_HQ",
+          "character": 28,
+          "kind": "wide"
+        },
+        {
+          "index": 136,
+          "name": "id\\texture\\jpn\\charasele_02\\charasele_02_029_ID_HQ",
+          "character": 29,
+          "kind": "wide"
+        }
+      ]
+    }
+  ],
+  "changed_resources": 138,
+  "archive_count": 91,
+  "source_result_archives": 14
+}

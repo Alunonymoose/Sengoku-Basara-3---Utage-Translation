@@ -1,0 +1,116 @@
+{
+  "status": "offline_validated",
+  "files": [
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/smith.arc",
+      "source_sha256": "3dd59af84031e3c83703681247b09b6c8596bf687b7f74b687eaac1eacb3a0fb",
+      "sha256": "8ae5fa00aef5fbc93eb3dc27159464a71ddca61f05f2f922c6b7b2c249d81487",
+      "changes": [
+        {
+          "index": 0,
+          "name": "msg\\id_brief\\jpn\\id_brief",
+          "kind": "font"
+        },
+        {
+          "index": 23,
+          "name": "msg\\id_brief\\jpn\\id_brief_20_ID_HQ",
+          "kind": "font"
+        },
+        {
+          "index": 24,
+          "name": "msg\\id_brief\\jpn\\id_brief",
+          "kind": "font"
+        },
+        {
+          "index": 25,
+          "name": "msg\\id_brief\\jpn\\id_brief_r",
+          "kind": "text"
+        }
+      ],
+      "unchanged_resources": 52
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/equip.arc",
+      "source_sha256": "f7ac9e244ef74e44005d4a33d5f1bad4f3d4ef92ab327c44a1e9c62b19cd25a4",
+      "sha256": "a5b3d634e431efd58c0de855268dca98cfc2d4e7ba51dff91e3b7998a30b602c",
+      "changes": [
+        {
+          "index": 0,
+          "name": "msg\\id_brief\\jpn\\id_brief",
+          "kind": "font"
+        },
+        {
+          "index": 23,
+          "name": "msg\\id_brief\\jpn\\id_brief_20_ID_HQ",
+          "kind": "font"
+        },
+        {
+          "index": 24,
+          "name": "msg\\id_brief\\jpn\\id_brief",
+          "kind": "font"
+        },
+        {
+          "index": 25,
+          "name": "msg\\id_brief\\jpn\\id_brief_r",
+          "kind": "text"
+        }
+      ],
+      "unchanged_resources": 50
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/result_id.arc",
+      "source_sha256": "8c359b7867669ad1e7ba822e2d36143de705b486c6b573b2d69c167eea4783f8",
+      "sha256": "6bd65ba51fb4593697afab9b684d9443584d47a8a2d99b647b9f65fab7a7522e",
+      "changes": [
+        {
+          "index": 114,
+          "name": "msg\\id_brief\\jpn\\id_brief",
+          "kind": "font"
+        },
+        {
+          "index": 137,
+          "name": "msg\\id_brief\\jpn\\id_brief_20_ID_HQ",
+          "kind": "font"
+        },
+        {
+          "index": 138,
+          "name": "msg\\id_brief\\jpn\\id_brief",
+          "kind": "font"
+        },
+        {
+          "index": 139,
+          "name": "msg\\id_brief\\jpn\\id_brief_r",
+          "kind": "text"
+        },
+        {
+          "index": 197,
+          "name": "msg\\id_brief\\eng\\id_brief",
+          "kind": "font"
+        },
+        {
+          "index": 220,
+          "name": "msg\\id_brief\\eng\\id_brief_20_ID_HQ",
+          "kind": "font"
+        },
+        {
+          "index": 221,
+          "name": "msg\\id_brief\\eng\\id_brief",
+          "kind": "font"
+        },
+        {
+          "index": 222,
+          "name": "msg\\id_brief\\eng\\id_brief_r",
+          "kind": "text"
+        }
+      ],
+      "unchanged_resources": 237
+    }
+  ],
+  "archives": 3,
+  "changed_resources": 16,
+  "untouched_resources": 339,
+  "translated_records": 198,
+  "runtime_verified": false,
+  "backup": "E:\\Utage Patching New\\_codex_select_menu\\quest_v10\\release\\BACKUP_PRE_V10.zip",
+  "backup_sha256": "336baf2cbb180db2279efac87c1d04be220fdfa559f71261431578ebae434f22"
+}

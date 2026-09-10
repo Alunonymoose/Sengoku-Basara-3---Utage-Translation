@@ -1,0 +1,55 @@
+{
+  "status": "offline_pass_runtime_required",
+  "release_name": "Utage_MSG_M034_PL015_V13_SH_GLOBAL_MSG_ROUTE_ROOT_READY",
+  "method": "install exact V10 12-entry dual JPN/ENG SH message route; preserve and package active title_id, basara, and companion msg archive",
+  "sources": {
+    "candidate_entries": 12,
+    "candidate_sha256": "c008d735ceffe14f88e50ba283bf2c2ebb6cd540454d76e8204ea730da643b64",
+    "jpn_text_route_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "eng_text_route_indices": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "mission_local_font_resources": 0,
+    "global_basara_routes": {
+      "jpn": {
+        "tnf": "df843e0b42390e89adcbf16ef02ce8d4d91cb984790b9f3211ac1ec0b7c5efbe",
+        "csa": "9d5b493204cae29be28a24bf28ec1b46ba00d9a8c35d2a48618900a6108e988b",
+        "page00": "bd9325a975d6b963c7b8a21151c5fbe4866ae36a89d8f632cc58cb3c868b244f",
+        "page01": "2563fb5f4c3d54bcdaacecdad231bf8e1709877f878b00caf3bfc9cffc34f783"
+      },
+      "eng": {
+        "tnf": "df843e0b42390e89adcbf16ef02ce8d4d91cb984790b9f3211ac1ec0b7c5efbe",
+        "csa": "9d5b493204cae29be28a24bf28ec1b46ba00d9a8c35d2a48618900a6108e988b",
+        "page00": "bd9325a975d6b963c7b8a21151c5fbe4866ae36a89d8f632cc58cb3c868b244f",
+        "page01": "2563fb5f4c3d54bcdaacecdad231bf8e1709877f878b00caf3bfc9cffc34f783"
+      }
+    },
+    "title_id_entries": 169,
+    "companion_entries": 12,
+    "companion_text_table_count": 0
+  },
+  "release": {
+    "directory": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_MSG_M034_PL015_V13_SH_GLOBAL_MSG_ROUTE_ROOT_READY",
+    "file_count": 6,
+    "zip": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_MSG_M034_PL015_V13_SH_GLOBAL_MSG_ROUTE_ROOT_READY.zip",
+    "zip_bytes": 10790757,
+    "zip_sha256": "228fb4eb2991c9d5bd48d754470414d66efb84c1ba44a292a52c2b478a0799b5",
+    "zip_crc": "pass",
+    "sha_file": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_MSG_M034_PL015_V13_SH_GLOBAL_MSG_ROUTE_ROOT_READY.zip.sha256"
+  },
+  "live_install": {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\msg_m034_pl015.arc",
+    "sha256": "c008d735ceffe14f88e50ba283bf2c2ebb6cd540454d76e8204ea730da643b64",
+    "rollback": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\msg_m034_pl015_PRE_SHSHAPE_backup.arc",
+    "rollback_sha256": "a61b30de7f47e823f868e1a8d3aa2c8441b5dcf519704823cf871635250c200a"
+  },
+  "runtime_test": "required: cold boot m034/pl015"
+}

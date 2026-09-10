@@ -1,0 +1,1024 @@
+{
+  "status": "offline_validated",
+  "files": [
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/battleQuest.arc",
+      "source_sha256": "6f6be38eba79061956ca0c6f93732d112e3ca8a2e4827f4ef12f9c37b94800ae",
+      "sha256": "fde97382d6274d9af54f7592c92401fb5c8f2be9cd4654d870d3d84d81db9bdb",
+      "changes": [
+        {
+          "index": 27,
+          "name": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+          "kind": "currency",
+          "rects": [
+            [
+              200,
+              0,
+              256,
+              64
+            ]
+          ],
+          "before": "d5ad173b329e42eb0ad235e349f04fa7e25cea7747c26aa94f948d5c96ca5cb7",
+          "after": "f65ba39a3150f9f9827215c36658d7963052e8826d67cf1749989bca569a33d2"
+        }
+      ],
+      "unchanged_resources": 45
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/brief/mode_quest.arc",
+      "source_sha256": "0d36b239c18f95223955b79340ab569976af2743fd35fda97575e5238c36908c",
+      "sha256": "e1cc273e56a190747f26dc0380d27f704cc2155b505252aa0dae26fbb0ed601a",
+      "changes": [
+        {
+          "index": 18,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              0,
+              1024,
+              560
+            ]
+          ],
+          "before": "e1be0b25814645ce9672cdd5eb91a8947bb3e80e90385ec39620bd0579195f9e",
+          "after": "732947bdb9ed859727c691b14c299050a1e2f05742b16587c927ec78a9346780"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "kind": "charasele",
+          "rects": [
+            [
+              0,
+              0,
+              288,
+              112
+            ],
+            [
+              0,
+              120,
+              288,
+              240
+            ],
+            [
+              0,
+              240,
+              288,
+              360
+            ],
+            [
+              0,
+              360,
+              288,
+              480
+            ],
+            [
+              0,
+              480,
+              288,
+              600
+            ],
+            [
+              704,
+              400,
+              924,
+              476
+            ],
+            [
+              704,
+              480,
+              924,
+              556
+            ],
+            [
+              624,
+              640,
+              884,
+              776
+            ],
+            [
+              0,
+              832,
+              120,
+              896
+            ]
+          ],
+          "before": "0331f83ffc194f6322e1229fc97c523df892a6d0c5704e166e2b98738130d167",
+          "after": "f395616b546a859696e6777781d723d9a647c621c820c863ab9f8df29ea7f75f"
+        }
+      ],
+      "unchanged_resources": 86
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/gallery/chara.arc",
+      "source_sha256": "723a5a8e55ff24a82552bc97784751f874761fb291a04252040480603812ffa1",
+      "sha256": "79dbe38b972ce0fa8017b66aca4c2065ebd8abd4fcd2589b3f76c30250ae4608",
+      "changes": [
+        {
+          "index": 4,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              0,
+              1024,
+              560
+            ]
+          ],
+          "before": "53d78e8212a185724625ea51017764f20ca80e6aef121b533e1dae8266aad275",
+          "after": "46556c1fba761d1e33514ac92a1bf97950d9e4e06b8417688e7df90aa344e7bd"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/gallery/movie.arc",
+      "source_sha256": "c142da4954efc72cdab3938ac82673e31396e913b454e14bce5d675b44ef6ed1",
+      "sha256": "259f99b409696b281007aef2db5f2923bd7f74454e04655d20c2088539f7ce72",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              0,
+              1024,
+              560
+            ]
+          ],
+          "before": "53d78e8212a185724625ea51017764f20ca80e6aef121b533e1dae8266aad275",
+          "after": "46556c1fba761d1e33514ac92a1bf97950d9e4e06b8417688e7df90aa344e7bd"
+        }
+      ],
+      "unchanged_resources": 2
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/gallery/music.arc",
+      "source_sha256": "55c05a6c5ba3680b159a309f2c748a3561f86d2d4c13ff7d204c7e1e245e615a",
+      "sha256": "8e4850f749f50bed45346f2f20f3511270e9d628b77b84e09a9b02d581851e7c",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              0,
+              1024,
+              560
+            ]
+          ],
+          "before": "53d78e8212a185724625ea51017764f20ca80e6aef121b533e1dae8266aad275",
+          "after": "46556c1fba761d1e33514ac92a1bf97950d9e4e06b8417688e7df90aa344e7bd"
+        }
+      ],
+      "unchanged_resources": 3
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/gallery/ranking.arc",
+      "source_sha256": "5a9451a99019a4bb9de44a7ea2aae3e49dad4fef96e6927489a3a94e2be0acfb",
+      "sha256": "4d2c46a5a3c2554930b47dbec9f6b8ccbe8f2c8f3fb7232fb16fa2e05af087d2",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              0,
+              1024,
+              560
+            ]
+          ],
+          "before": "b0a087aa83def1e3f0cd923dce0d2682c53657164a746efd0a06d898da6bdcfb",
+          "after": "afd2efc9019d04f3cd6ea258cb8c1223c0480fc1d6a3a75a8aa9d1e3a5951357"
+        }
+      ],
+      "unchanged_resources": 56
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/gallery/trophy.arc",
+      "source_sha256": "55fd0f8d00c299038b6e46411800e677d86d5fa5298097f18d58c8e853e521aa",
+      "sha256": "ea8959a6c1de538df6ca0887128a0f0618c99dd9efa7bf339c86dad74a8421af",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              0,
+              1024,
+              560
+            ]
+          ],
+          "before": "53d78e8212a185724625ea51017764f20ca80e6aef121b533e1dae8266aad275",
+          "after": "46556c1fba761d1e33514ac92a1bf97950d9e4e06b8417688e7df90aa344e7bd"
+        }
+      ],
+      "unchanged_resources": 8
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/init_ps3.arc",
+      "source_sha256": "f47eea13a0a18f02e76bfad5ef7dc5207400cce904d524267139754760afe429",
+      "sha256": "90f7d15cdda4343a5aa1020ced0cdae4f89db9920c0de3bb96ac07e05c1019e1",
+      "changes": [
+        {
+          "index": 9,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              0,
+              1024,
+              560
+            ]
+          ],
+          "before": "b0a087aa83def1e3f0cd923dce0d2682c53657164a746efd0a06d898da6bdcfb",
+          "after": "afd2efc9019d04f3cd6ea258cb8c1223c0480fc1d6a3a75a8aa9d1e3a5951357"
+        }
+      ],
+      "unchanged_resources": 13
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/pause/option.arc",
+      "source_sha256": "58cb96bf3f767ea531f3549b3a65bda46d6fcf82e8ba0ec38b36409fa535f85d",
+      "sha256": "16df14f7e490cfc1afce84b860b1bfbf50dc327fad9753850d59e565f33ced35",
+      "changes": [
+        {
+          "index": 12,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              0,
+              1024,
+              560
+            ]
+          ],
+          "before": "26bce0fef101375b6b7d968f52fdb1e5ca7acda24d2812014485027ca7fc9076",
+          "after": "548791f91ba7acef986767498186e603896cde874787f45af680157d561fdd46"
+        }
+      ],
+      "unchanged_resources": 30
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/menu.arc",
+      "source_sha256": "6bf5d07f5b810e2c211b448b7ff9c5d1f74301de26b5f0e1bf293037c429122f",
+      "sha256": "dd781ce21db0ddb4d427367e775e45b9d828e89f0b066c20e23691a1b3c65fbf",
+      "changes": [
+        {
+          "index": 35,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "kind": "charasele",
+          "rects": [
+            [
+              0,
+              0,
+              288,
+              112
+            ],
+            [
+              0,
+              120,
+              288,
+              240
+            ],
+            [
+              0,
+              240,
+              288,
+              360
+            ],
+            [
+              0,
+              360,
+              288,
+              480
+            ],
+            [
+              0,
+              480,
+              288,
+              600
+            ],
+            [
+              704,
+              400,
+              924,
+              476
+            ],
+            [
+              704,
+              480,
+              924,
+              556
+            ],
+            [
+              624,
+              640,
+              884,
+              776
+            ],
+            [
+              0,
+              832,
+              120,
+              896
+            ]
+          ],
+          "before": "0331f83ffc194f6322e1229fc97c523df892a6d0c5704e166e2b98738130d167",
+          "after": "f395616b546a859696e6777781d723d9a647c621c820c863ab9f8df29ea7f75f"
+        }
+      ],
+      "unchanged_resources": 44
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/result_id.arc",
+      "source_sha256": "bf2777416d1cfad341500ef94982c989a5a674659dcc4daf6aec856412f292bc",
+      "sha256": "4e4ca0089a15976b24a27e8d2c133e786bd2cf6e8d3280c55460a8e281f0c81e",
+      "changes": [
+        {
+          "index": 11,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              0,
+              1024,
+              560
+            ]
+          ],
+          "before": "b0a087aa83def1e3f0cd923dce0d2682c53657164a746efd0a06d898da6bdcfb",
+          "after": "afd2efc9019d04f3cd6ea258cb8c1223c0480fc1d6a3a75a8aa9d1e3a5951357"
+        }
+      ],
+      "unchanged_resources": 244
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/retry.arc",
+      "source_sha256": "a4a0e4d94515434e09597fc13251785a19e0fcd44bf1b8109854cb0acd4c3029",
+      "sha256": "efe96c88563f5414d6db5b07180d9b90fa694f5204f43a165755b033caa92482",
+      "changes": [
+        {
+          "index": 30,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              0,
+              1024,
+              560
+            ]
+          ],
+          "before": "b0a087aa83def1e3f0cd923dce0d2682c53657164a746efd0a06d898da6bdcfb",
+          "after": "afd2efc9019d04f3cd6ea258cb8c1223c0480fc1d6a3a75a8aa9d1e3a5951357"
+        },
+        {
+          "index": 24,
+          "name": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+          "kind": "currency",
+          "rects": [
+            [
+              200,
+              0,
+              256,
+              64
+            ]
+          ],
+          "before": "d5ad173b329e42eb0ad235e349f04fa7e25cea7747c26aa94f948d5c96ca5cb7",
+          "after": "f65ba39a3150f9f9827215c36658d7963052e8826d67cf1749989bca569a33d2"
+        }
+      ],
+      "unchanged_resources": 32
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/save.arc",
+      "source_sha256": "2b3125a8e509a377b2c04adcfb99500cec0d0e4c7c218b4b208df83121224b02",
+      "sha256": "38446da76755c931d7d5b53fffe19600c4014b0c260bd632e1a5de7786490df1",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              0,
+              1024,
+              560
+            ]
+          ],
+          "before": "b0a087aa83def1e3f0cd923dce0d2682c53657164a746efd0a06d898da6bdcfb",
+          "after": "afd2efc9019d04f3cd6ea258cb8c1223c0480fc1d6a3a75a8aa9d1e3a5951357"
+        },
+        {
+          "index": 23,
+          "name": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+          "kind": "currency",
+          "rects": [
+            [
+              200,
+              0,
+              256,
+              64
+            ]
+          ],
+          "before": "d5ad173b329e42eb0ad235e349f04fa7e25cea7747c26aa94f948d5c96ca5cb7",
+          "after": "f65ba39a3150f9f9827215c36658d7963052e8826d67cf1749989bca569a33d2"
+        }
+      ],
+      "unchanged_resources": 43
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "source_sha256": "bea23a51920cf9427dfd5b55ab4926a34ca0df20900829d6ebf7fd809573862a",
+      "sha256": "4d676d379dc7650483d6068c82c27ed582f7371d1d3a5fc804de836ee151c033",
+      "changes": [
+        {
+          "index": 65,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "kind": "charasele",
+          "rects": [
+            [
+              0,
+              0,
+              288,
+              112
+            ],
+            [
+              0,
+              120,
+              288,
+              240
+            ],
+            [
+              0,
+              240,
+              288,
+              360
+            ],
+            [
+              0,
+              360,
+              288,
+              480
+            ],
+            [
+              0,
+              480,
+              288,
+              600
+            ],
+            [
+              704,
+              400,
+              924,
+              476
+            ],
+            [
+              704,
+              480,
+              924,
+              556
+            ],
+            [
+              624,
+              640,
+              884,
+              776
+            ],
+            [
+              0,
+              832,
+              120,
+              896
+            ]
+          ],
+          "before": "0331f83ffc194f6322e1229fc97c523df892a6d0c5704e166e2b98738130d167",
+          "after": "f395616b546a859696e6777781d723d9a647c621c820c863ab9f8df29ea7f75f"
+        }
+      ],
+      "unchanged_resources": 75
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_story.arc",
+      "source_sha256": "17d399e87765cf3de2879549495f61885a4b122a5e971372c298cfdbc1ddd004",
+      "sha256": "0da1473e3faa54a885c1211999d98e7e7a62c2c4e259d82a50efa22d84bf1f67",
+      "changes": [
+        {
+          "index": 30,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "kind": "charasele",
+          "rects": [
+            [
+              0,
+              0,
+              288,
+              112
+            ],
+            [
+              0,
+              120,
+              288,
+              240
+            ],
+            [
+              0,
+              240,
+              288,
+              360
+            ],
+            [
+              0,
+              360,
+              288,
+              480
+            ],
+            [
+              0,
+              480,
+              288,
+              600
+            ],
+            [
+              704,
+              400,
+              924,
+              476
+            ],
+            [
+              704,
+              480,
+              924,
+              556
+            ],
+            [
+              624,
+              640,
+              884,
+              776
+            ],
+            [
+              0,
+              832,
+              120,
+              896
+            ]
+          ],
+          "before": "0331f83ffc194f6322e1229fc97c523df892a6d0c5704e166e2b98738130d167",
+          "after": "f395616b546a859696e6777781d723d9a647c621c820c863ab9f8df29ea7f75f"
+        }
+      ],
+      "unchanged_resources": 47
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_versus.arc",
+      "source_sha256": "b61f2c6b0cd509fe1466055886bb138e4a802d769eee6ffadd0d75e36fb02cd4",
+      "sha256": "0e99800e1fb4a03276ebf72e33776ddd6f2ba0020ff1e291664c281e74ccab77",
+      "changes": [
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "kind": "charasele",
+          "rects": [
+            [
+              0,
+              0,
+              288,
+              112
+            ],
+            [
+              0,
+              120,
+              288,
+              240
+            ],
+            [
+              0,
+              240,
+              288,
+              360
+            ],
+            [
+              0,
+              360,
+              288,
+              480
+            ],
+            [
+              0,
+              480,
+              288,
+              600
+            ],
+            [
+              704,
+              400,
+              924,
+              476
+            ],
+            [
+              704,
+              480,
+              924,
+              556
+            ],
+            [
+              624,
+              640,
+              884,
+              776
+            ],
+            [
+              0,
+              832,
+              120,
+              896
+            ]
+          ],
+          "before": "0331f83ffc194f6322e1229fc97c523df892a6d0c5704e166e2b98738130d167",
+          "after": "f395616b546a859696e6777781d723d9a647c621c820c863ab9f8df29ea7f75f"
+        }
+      ],
+      "unchanged_resources": 15
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/dream.arc",
+      "source_sha256": "8e9321754a29b51ebc0f750c6ef585603c96713bd08208b064b52b4e37053f91",
+      "sha256": "4e2a514ef78ef48380da89b769635336fe2663215e77df49fad7572db7c697de",
+      "changes": [
+        {
+          "index": 19,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "kind": "charasele",
+          "rects": [
+            [
+              0,
+              0,
+              288,
+              112
+            ],
+            [
+              0,
+              120,
+              288,
+              240
+            ],
+            [
+              0,
+              240,
+              288,
+              360
+            ],
+            [
+              0,
+              360,
+              288,
+              480
+            ],
+            [
+              0,
+              480,
+              288,
+              600
+            ],
+            [
+              704,
+              400,
+              924,
+              476
+            ],
+            [
+              704,
+              480,
+              924,
+              556
+            ],
+            [
+              624,
+              640,
+              884,
+              776
+            ],
+            [
+              0,
+              832,
+              120,
+              896
+            ]
+          ],
+          "before": "0331f83ffc194f6322e1229fc97c523df892a6d0c5704e166e2b98738130d167",
+          "after": "f395616b546a859696e6777781d723d9a647c621c820c863ab9f8df29ea7f75f"
+        }
+      ],
+      "unchanged_resources": 88
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_finish_id.arc",
+      "source_sha256": "e355bbc2b1819ec1ed357be46c1724064ddb3fc06f74bf3948951e835b9be8cb",
+      "sha256": "27e0c861b181d8dc87ae8523ee6aa054491f402e122335553824bf874e7cb81d",
+      "changes": [
+        {
+          "index": 45,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              0,
+              1024,
+              560
+            ]
+          ],
+          "before": "b0a087aa83def1e3f0cd923dce0d2682c53657164a746efd0a06d898da6bdcfb",
+          "after": "afd2efc9019d04f3cd6ea258cb8c1223c0480fc1d6a3a75a8aa9d1e3a5951357"
+        },
+        {
+          "index": 19,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "kind": "charasele",
+          "rects": [
+            [
+              0,
+              0,
+              288,
+              112
+            ],
+            [
+              0,
+              120,
+              288,
+              240
+            ],
+            [
+              0,
+              240,
+              288,
+              360
+            ],
+            [
+              0,
+              360,
+              288,
+              480
+            ],
+            [
+              0,
+              480,
+              288,
+              600
+            ],
+            [
+              704,
+              400,
+              924,
+              476
+            ],
+            [
+              704,
+              480,
+              924,
+              556
+            ],
+            [
+              624,
+              640,
+              884,
+              776
+            ],
+            [
+              0,
+              832,
+              120,
+              896
+            ]
+          ],
+          "before": "0331f83ffc194f6322e1229fc97c523df892a6d0c5704e166e2b98738130d167",
+          "after": "f395616b546a859696e6777781d723d9a647c621c820c863ab9f8df29ea7f75f"
+        }
+      ],
+      "unchanged_resources": 107
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_id.arc",
+      "source_sha256": "86167a5817c96d0cfb8a947af48dc0fa5bfaed3fb7dd764365c7ddcab9c5b16a",
+      "sha256": "ad5ecffcf2ab19031f4a57ca48dbb720072f28aa7078f2611222c2f3c4ef405e",
+      "changes": [
+        {
+          "index": 73,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "kind": "charasele",
+          "rects": [
+            [
+              0,
+              0,
+              288,
+              112
+            ],
+            [
+              0,
+              120,
+              288,
+              240
+            ],
+            [
+              0,
+              240,
+              288,
+              360
+            ],
+            [
+              0,
+              360,
+              288,
+              480
+            ],
+            [
+              0,
+              480,
+              288,
+              600
+            ],
+            [
+              704,
+              400,
+              924,
+              476
+            ],
+            [
+              704,
+              480,
+              924,
+              556
+            ],
+            [
+              624,
+              640,
+              884,
+              776
+            ],
+            [
+              0,
+              832,
+              120,
+              896
+            ]
+          ],
+          "before": "0331f83ffc194f6322e1229fc97c523df892a6d0c5704e166e2b98738130d167",
+          "after": "f395616b546a859696e6777781d723d9a647c621c820c863ab9f8df29ea7f75f"
+        }
+      ],
+      "unchanged_resources": 81
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/title.arc",
+      "source_sha256": "324d188be2dd3aff031093174b427ee44e51b22aa09cbbdde314017e6b2de229",
+      "sha256": "7be0ad61cee048af62c3626c1106dca1274af8babc1f0d878c3ad5eafbde3197",
+      "changes": [
+        {
+          "index": 318,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              0,
+              1024,
+              560
+            ]
+          ],
+          "before": "b87764083027365c0f2d039cf15b557e8eba9d68c728b15445fb9f4556cf6807",
+          "after": "ab51f4f05f8b0a14d519b62bd9520e1e3237106b51a722b31c182c397dac22f0"
+        },
+        {
+          "index": 338,
+          "name": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+          "kind": "currency",
+          "rects": [
+            [
+              200,
+              0,
+              256,
+              64
+            ]
+          ],
+          "before": "d5ad173b329e42eb0ad235e349f04fa7e25cea7747c26aa94f948d5c96ca5cb7",
+          "after": "f65ba39a3150f9f9827215c36658d7963052e8826d67cf1749989bca569a33d2"
+        }
+      ],
+      "unchanged_resources": 355
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/title_id.arc",
+      "source_sha256": "eed141c2c1e45a6c70fb5325a2557af96d5ca1b435734ff4c1d414a2698c4e36",
+      "sha256": "529d9bf5c3006e7675653e4f2c88e48a2b2a34f68dfd7d66579e55ef95975063",
+      "changes": [
+        {
+          "index": 143,
+          "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ",
+          "kind": "mode",
+          "rects": [
+            [
+              0,
+              0,
+              1024,
+              560
+            ]
+          ],
+          "before": "e1be0b25814645ce9672cdd5eb91a8947bb3e80e90385ec39620bd0579195f9e",
+          "after": "732947bdb9ed859727c691b14c299050a1e2f05742b16587c927ec78a9346780"
+        }
+      ],
+      "unchanged_resources": 168
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/versus/menu.arc",
+      "source_sha256": "1915aaae69e3077c2575f7b12549ca04ccc66c7c531d58ff1d9e1f3bb9d2f613",
+      "sha256": "59ff665f21a4fb753007213f76e02ff7c3abb7299856171c7409ef13b5b57270",
+      "changes": [
+        {
+          "index": 57,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "kind": "charasele",
+          "rects": [
+            [
+              0,
+              0,
+              288,
+              112
+            ],
+            [
+              0,
+              120,
+              288,
+              240
+            ],
+            [
+              0,
+              240,
+              288,
+              360
+            ],
+            [
+              0,
+              360,
+              288,
+              480
+            ],
+            [
+              0,
+              480,
+              288,
+              600
+            ],
+            [
+              704,
+              400,
+              924,
+              476
+            ],
+            [
+              704,
+              480,
+              924,
+              556
+            ],
+            [
+              624,
+              640,
+              884,
+              776
+            ],
+            [
+              0,
+              832,
+              120,
+              896
+            ]
+          ],
+          "before": "0331f83ffc194f6322e1229fc97c523df892a6d0c5704e166e2b98738130d167",
+          "after": "f395616b546a859696e6777781d723d9a647c621c820c863ab9f8df29ea7f75f"
+        }
+      ],
+      "unchanged_resources": 95
+    }
+  ],
+  "archives": 22,
+  "changed_resources": 27,
+  "untouched_resources": 1643,
+  "backup": "E:\\Utage Patching New\\_codex_select_menu\\quest_v4\\release\\BACKUP_PRE_V4.zip",
+  "backup_sha256": "c1dda4b182d34763be8e1ab956f9e9937bfa07852555e103194184dcde0ee95d",
+  "runtime_verified": false
+}

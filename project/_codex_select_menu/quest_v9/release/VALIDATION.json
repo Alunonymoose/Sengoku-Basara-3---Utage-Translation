@@ -1,0 +1,51 @@
+{
+  "status": "offline_validated",
+  "files": [
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/smith.arc",
+      "source_sha256": "4a51dad2839d59ebd4058e1e6a22da4cfde965c093de8957f89e0b704a55cf74",
+      "sha256": "3dd59af84031e3c83703681247b09b6c8596bf687b7f74b687eaac1eacb3a0fb",
+      "changes": [
+        {
+          "index": 25,
+          "name": "msg\\id_brief\\jpn\\id_brief_r"
+        }
+      ],
+      "unchanged_resources": 55
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/equip.arc",
+      "source_sha256": "75cc0a4e626b74843662e5a28e87fc8687ac94daa96d01bfbefb00bcb57f47e4",
+      "sha256": "f7ac9e244ef74e44005d4a33d5f1bad4f3d4ef92ab327c44a1e9c62b19cd25a4",
+      "changes": [
+        {
+          "index": 25,
+          "name": "msg\\id_brief\\jpn\\id_brief_r"
+        }
+      ],
+      "unchanged_resources": 53
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/result_id.arc",
+      "source_sha256": "7b92ea56450767b3924ba6f4e64d4123e3792055dae1e4c2fd79be2f63a4b61d",
+      "sha256": "8c359b7867669ad1e7ba822e2d36143de705b486c6b573b2d69c167eea4783f8",
+      "changes": [
+        {
+          "index": 139,
+          "name": "msg\\id_brief\\jpn\\id_brief_r"
+        },
+        {
+          "index": 222,
+          "name": "msg\\id_brief\\eng\\id_brief_r"
+        }
+      ],
+      "unchanged_resources": 243
+    }
+  ],
+  "archives": 3,
+  "changed_resources": 4,
+  "untouched_resources": 351,
+  "runtime_verified": false,
+  "backup": "E:\\Utage Patching New\\_codex_select_menu\\quest_v9\\release\\BACKUP_PRE_V9.zip",
+  "backup_sha256": "d6276f49f17a5b40e4221bc9639888d8910e067a9f70301f46caf51a8b95bebb"
+}

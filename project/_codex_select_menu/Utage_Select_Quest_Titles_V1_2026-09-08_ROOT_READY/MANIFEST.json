@@ -1,0 +1,1019 @@
+{
+  "patch": "Utage_Select_Quest_Titles_V1_2026-09-08_ROOT_READY",
+  "created_utc": "2026-09-08T09:10:28.462933+00:00",
+  "status": "offline_validation_pass_runtime_required",
+  "scope": "one archive: eng/select/c_common.arc",
+  "source_sha256": "fc0a08a9b50b07662774616f457795670ecd9b7ba11e54bfcddd4082a5e71f2f",
+  "output_sha256": "3bf1fc66083333f1cf0948a7005070fd8ba2ae26888c325a30ae7c6c98de7817",
+  "archive_entries": 76,
+  "changed_texture_count": 31,
+  "untouched_compressed_entries": 45,
+  "entry_names_types_flags_order_preserved": true,
+  "all_xet_headers_and_dimensions_preserved": true,
+  "lsp_compressed_bytes_preserved": true,
+  "internal_jpn_resource_names_preserved": true,
+  "runtime_test": "required",
+  "preserved_original_size_conventions": [
+    {
+      "index": 63,
+      "name": "id\\dummy_BM",
+      "declared": 1432,
+      "actual": 1044
+    }
+  ],
+  "wording_policy": "Exact existing English quest-menu wording, including SWORDSMANS DUEL; no new translation or font rendering.",
+  "changes": [
+    {
+      "entry_index": 31,
+      "resource": "id\\texture\\jpn\\quest\\quest_000_ID_HQ",
+      "source_sha256": "abd2afb82d1026a270302b336fdf5a0be8adae60c83e795e486be8729bd0e49d",
+      "output_sha256": "98ebef69612d1f78b076e991db755bddb2ec8ec2dd54591ebf7439f4e9ec42dd",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q000_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          19,
+          496,
+          45
+        ],
+        [
+          8,
+          19,
+          496,
+          45
+        ]
+      ]
+    },
+    {
+      "entry_index": 32,
+      "resource": "id\\texture\\jpn\\quest\\quest_001_ID_HQ",
+      "source_sha256": "ab782c43b36167c2e043448083f101797dbd17650c810098904d150c6f626059",
+      "output_sha256": "1748b8313cd7c958ee4ad089f91dcbe5d8efd0d49cb8c947fd0b6680727c5660",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q001_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          13,
+          468,
+          50
+        ],
+        [
+          8,
+          13,
+          468,
+          50
+        ]
+      ]
+    },
+    {
+      "entry_index": 33,
+      "resource": "id\\texture\\jpn\\quest\\quest_002_ID_HQ",
+      "source_sha256": "075b260e7be5f858356b79761435bfc020322209458885364a4518213ee710b7",
+      "output_sha256": "781cb146520ddd9e1982f6dbc1afb823be73568688af8eda3dbe6eca0d29a786",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q002_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          18,
+          491,
+          45
+        ],
+        [
+          8,
+          18,
+          491,
+          45
+        ]
+      ]
+    },
+    {
+      "entry_index": 34,
+      "resource": "id\\texture\\jpn\\quest\\quest_003_ID_HQ",
+      "source_sha256": "9599c640399db76855cc30b4dacc93c969f25d5b4ef14c7e96d5e77763d00c6b",
+      "output_sha256": "dbdea23393ada40c155cc825a92c4a5de4699ae86e8825f4a27db0d14722c1db",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q003_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          17,
+          498,
+          46
+        ],
+        [
+          8,
+          17,
+          498,
+          46
+        ]
+      ]
+    },
+    {
+      "entry_index": 35,
+      "resource": "id\\texture\\jpn\\quest\\quest_004_ID_HQ",
+      "source_sha256": "eb28f80838d85e80a4c011af05d6328f818e3a78f1f41eab5023366ef1e5dde7",
+      "output_sha256": "65602713e2b797172f95bfb264f657c222988588b4d740363be2081faeadeb3d",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q004_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          13,
+          406,
+          50
+        ],
+        [
+          8,
+          13,
+          406,
+          50
+        ]
+      ]
+    },
+    {
+      "entry_index": 36,
+      "resource": "id\\texture\\jpn\\quest\\quest_005_ID_HQ",
+      "source_sha256": "d68747307af8c267e31d199898bcd6b49f638874fd49fcb97eb54357658a099a",
+      "output_sha256": "842fac8b3ea2877519b3ec964a063e3fd912267d0184bbce8d47534d84a46822",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q005_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          13,
+          469,
+          50
+        ],
+        [
+          8,
+          13,
+          469,
+          50
+        ]
+      ]
+    },
+    {
+      "entry_index": 37,
+      "resource": "id\\texture\\jpn\\quest\\quest_006_ID_HQ",
+      "source_sha256": "b161db1133698ca69c92b0cb20e7dfe9683f12d6cad92cda802a2302c5dd64d7",
+      "output_sha256": "a36189756ec7f8fd5bf1065fb46305f7171d8ebef0bf2e282f97ea187c17de97",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q006_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          20,
+          493,
+          44
+        ],
+        [
+          8,
+          20,
+          493,
+          44
+        ]
+      ]
+    },
+    {
+      "entry_index": 38,
+      "resource": "id\\texture\\jpn\\quest\\quest_007_ID_HQ",
+      "source_sha256": "bb837c9b8b364875babdc4aa1f7b85eeead9e1024b8765d124b7b832722ed809",
+      "output_sha256": "b3270442dea364de2d7fe9c39f4500b50d9a289e25861a126c4f1de5b78a7c3f",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q007_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          13,
+          490,
+          50
+        ],
+        [
+          8,
+          13,
+          490,
+          50
+        ]
+      ]
+    },
+    {
+      "entry_index": 39,
+      "resource": "id\\texture\\jpn\\quest\\quest_008_ID_HQ",
+      "source_sha256": "1db3a9b2f34dda0c1f60a48d58ee90b9e68f327d9157da5f9fa303ff41cef376",
+      "output_sha256": "98210d97e42554a8e952310f29253bc0d4a37f09c2a2b1307c2a47cbc8e35098",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q008_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          13,
+          402,
+          50
+        ],
+        [
+          8,
+          13,
+          402,
+          50
+        ]
+      ]
+    },
+    {
+      "entry_index": 40,
+      "resource": "id\\texture\\jpn\\quest\\quest_009_ID_HQ",
+      "source_sha256": "22c0ac2b36585b0641680dc6b51939f64d0512856cf0dfc076d3d4f5cd68bfc0",
+      "output_sha256": "8e2b9428659a65d8432614b2a158615e01cf310f9516e68b8d59a53458947cdb",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q009_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          17,
+          502,
+          46
+        ],
+        [
+          8,
+          17,
+          502,
+          46
+        ]
+      ]
+    },
+    {
+      "entry_index": 41,
+      "resource": "id\\texture\\jpn\\quest\\quest_010_ID_HQ",
+      "source_sha256": "9ac9246ccb3eac4d1b3c64dda5cd8f1ab91f3ddb5e5e2d7d3c844f994ddd3bc6",
+      "output_sha256": "58f05d3bebecd37f1bf06d2a1da7c714242ab6ba00c75429877bcaf71bb3efac",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q010_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          16,
+          497,
+          47
+        ],
+        [
+          8,
+          16,
+          497,
+          47
+        ]
+      ]
+    },
+    {
+      "entry_index": 42,
+      "resource": "id\\texture\\jpn\\quest\\quest_011_ID_HQ",
+      "source_sha256": "6624733b73145c4d44913c8b8c480efc713afa5e75e15a7213f00241d9e32d0e",
+      "output_sha256": "23ebfc2d1b93f1b48112e845e12d19109519c82d9428097bf3051ac5d8b427e6",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q011_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          9,
+          14,
+          503,
+          50
+        ],
+        [
+          9,
+          14,
+          503,
+          50
+        ]
+      ]
+    },
+    {
+      "entry_index": 43,
+      "resource": "id\\texture\\jpn\\quest\\quest_012_ID_HQ",
+      "source_sha256": "57b04bd82f60fc58ee54929b04b64d56cd9c191166714c7683b9713f4d366beb",
+      "output_sha256": "0fbecaeb0c815653b994e535f572d6916111f41110fd1c2630c9f501747c46b8",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q012_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          19,
+          503,
+          45
+        ],
+        [
+          8,
+          19,
+          503,
+          45
+        ]
+      ]
+    },
+    {
+      "entry_index": 44,
+      "resource": "id\\texture\\jpn\\quest\\quest_013_ID_HQ",
+      "source_sha256": "371810119075f7037970c66a7a01d1ed6112025967c0579060be7d236953645a",
+      "output_sha256": "4cafea1121dcf4487c5aea58153cfda08a0172c45d2d1d64df72fa2a6a2a2c30",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q013_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          9,
+          13,
+          464,
+          50
+        ],
+        [
+          9,
+          13,
+          464,
+          50
+        ]
+      ]
+    },
+    {
+      "entry_index": 45,
+      "resource": "id\\texture\\jpn\\quest\\quest_014_ID_HQ",
+      "source_sha256": "be9619c9b3ba0efcc009888b33911ffbddff29324537687a542c4e8b2db3d7ff",
+      "output_sha256": "14d85e0833e5748d42ff340c3ded23500ee6043b5f1787f66fcc1a11f782fdc0",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q014_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          9,
+          14,
+          419,
+          50
+        ],
+        [
+          9,
+          14,
+          419,
+          50
+        ]
+      ]
+    },
+    {
+      "entry_index": 46,
+      "resource": "id\\texture\\jpn\\quest\\quest_015_ID_HQ",
+      "source_sha256": "010df0ee8c72d734882fec344f92692067f6d3926581a6998924667e772d10cd",
+      "output_sha256": "ae51554278ed72a22fc615ad11e5303794f082755566705c197c9f0e4a830895",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q015_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          9,
+          9,
+          405,
+          54
+        ],
+        [
+          9,
+          9,
+          405,
+          54
+        ]
+      ]
+    },
+    {
+      "entry_index": 47,
+      "resource": "id\\texture\\jpn\\quest\\quest_016_ID_HQ",
+      "source_sha256": "bed6a7613b1bab07efddfee5b7e9eb7750f30f5014dbb2732c5f1c367a53c3b1",
+      "output_sha256": "d464e6da7a05b30ce7e5979140515a01fdeb030a658406fe3353e90b34370b5d",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q016_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          16,
+          494,
+          47
+        ],
+        [
+          8,
+          16,
+          494,
+          47
+        ]
+      ]
+    },
+    {
+      "entry_index": 48,
+      "resource": "id\\texture\\jpn\\quest\\quest_017_ID_HQ",
+      "source_sha256": "da46bbb6fd50f1d219756717d9445581faf22f66206f768f7fe7dc0a7fc07450",
+      "output_sha256": "c2a039c0cb075843d9588ef6fe9e053c963eccb6de8f951461460241846dc79e",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q017_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          9,
+          13,
+          457,
+          50
+        ],
+        [
+          9,
+          13,
+          457,
+          50
+        ]
+      ]
+    },
+    {
+      "entry_index": 49,
+      "resource": "id\\texture\\jpn\\quest\\quest_018_ID_HQ",
+      "source_sha256": "28f31ec3a545e8db5bad712a3b2dfa09ddc2f3cf7624ac2ef87802a17087d97b",
+      "output_sha256": "76a21b9a5dd7e1830e2f4fe0e66786a793dfd9e532ccfb2e1a871a8d90bb167f",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q018_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          9,
+          9,
+          455,
+          54
+        ],
+        [
+          9,
+          9,
+          455,
+          54
+        ]
+      ]
+    },
+    {
+      "entry_index": 50,
+      "resource": "id\\texture\\jpn\\quest\\quest_019_ID_HQ",
+      "source_sha256": "586c55f56605a664b70ed018c39462a77a1189806b6cf18b19997a63c54a12fe",
+      "output_sha256": "badfcd09c437889ff1164528377ccc84d6e135685fa9c18168086c5af5d96093",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q019_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          13,
+          434,
+          50
+        ],
+        [
+          8,
+          13,
+          434,
+          50
+        ]
+      ]
+    },
+    {
+      "entry_index": 51,
+      "resource": "id\\texture\\jpn\\quest\\quest_020_ID_HQ",
+      "source_sha256": "05aae270de9e32bf050be843bd518903455b39b48fa567c97e6e15f3718224e6",
+      "output_sha256": "d8b799e6795e35309281743c48c9f1dd6539587ebac4b596d834a7ded0ff5a54",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q020_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          15,
+          499,
+          49
+        ],
+        [
+          8,
+          15,
+          499,
+          49
+        ]
+      ]
+    },
+    {
+      "entry_index": 52,
+      "resource": "id\\texture\\jpn\\quest\\quest_021_ID_HQ",
+      "source_sha256": "a3eb87758a7eaf80c7e6bdc71765b6930b046f426a9dd542ac6cccf851d812f6",
+      "output_sha256": "398d2e661ae976d03cbc198c91c90bc609b1f9d1cb663aa0cc538e80720aefa4",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q021_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          7,
+          16,
+          501,
+          47
+        ],
+        [
+          7,
+          16,
+          501,
+          47
+        ]
+      ]
+    },
+    {
+      "entry_index": 53,
+      "resource": "id\\texture\\jpn\\quest\\quest_022_ID_HQ",
+      "source_sha256": "98b74ceb4473be60b848d191ab2b2ccfac276e6561360dd8e70f787e7c1830d5",
+      "output_sha256": "de268fe468f503ea67fa0c8d8523f0b342d6835178f40dba3af2f563141dd489",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q022_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          16,
+          503,
+          48
+        ],
+        [
+          8,
+          16,
+          503,
+          48
+        ]
+      ]
+    },
+    {
+      "entry_index": 54,
+      "resource": "id\\texture\\jpn\\quest\\quest_023_ID_HQ",
+      "source_sha256": "c9e7f01f89d9ed9da36e831b75ac9c339937d55600e6bab9175f64fd8ab55741",
+      "output_sha256": "37935d4edf3b753bfcc51dd8382b5fab73f2ee665e5654a0e8ee1f001687b38f",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q023_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          7,
+          19,
+          501,
+          44
+        ],
+        [
+          7,
+          19,
+          501,
+          44
+        ]
+      ]
+    },
+    {
+      "entry_index": 55,
+      "resource": "id\\texture\\jpn\\quest\\quest_024_ID_HQ",
+      "source_sha256": "560d6d8de8913b11c72ebb62bdcea9ea3e615114c28e96bba76cddc296033378",
+      "output_sha256": "3f86ab785ce9f701724dd552f07cbe945d60ca2e195e4a8792efa9af8f0aebc2",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q024_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          13,
+          493,
+          50
+        ],
+        [
+          8,
+          13,
+          493,
+          50
+        ]
+      ]
+    },
+    {
+      "entry_index": 56,
+      "resource": "id\\texture\\jpn\\quest\\quest_025_ID_HQ",
+      "source_sha256": "71c212434fb757b5d5923f3c6f826cc74470cfe34f977886e154d1284f69fe23",
+      "output_sha256": "7ff5cc60d3e45cc9500c8e014ac869738b76f0a68d48a660a2bcc9efbe106980",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q025_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          13,
+          469,
+          50
+        ],
+        [
+          8,
+          13,
+          469,
+          50
+        ]
+      ]
+    },
+    {
+      "entry_index": 57,
+      "resource": "id\\texture\\jpn\\quest\\quest_026_ID_HQ",
+      "source_sha256": "ffabd1c39ee530ff626a1cb0f1239c3174846fb89629ed1d71fe906b1980a73a",
+      "output_sha256": "61948dbfd527f4020ab9b10e25b88ca7912457339bdb5726170044d0d13b7a4e",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q026_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          8,
+          501,
+          56
+        ],
+        [
+          8,
+          8,
+          501,
+          56
+        ]
+      ]
+    },
+    {
+      "entry_index": 58,
+      "resource": "id\\texture\\jpn\\quest\\quest_027_ID_HQ",
+      "source_sha256": "e547b5be6d7feaef78936ca413bdacb0874b89d85b5f23e6968e4ba775bdd87d",
+      "output_sha256": "8d0eed1410fc7b6955444bc71cd37e50525f7a7b5d0f06f20671080f3faae267",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q027_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          13,
+          427,
+          50
+        ],
+        [
+          8,
+          13,
+          427,
+          50
+        ]
+      ]
+    },
+    {
+      "entry_index": 59,
+      "resource": "id\\texture\\jpn\\quest\\quest_028_ID_HQ",
+      "source_sha256": "1260279aca7b04150e60d2e307b6884fb89f59ab01055862c10d464ef58163e9",
+      "output_sha256": "fc0f47e3c6d42c5e08af79cb842020eda0bd6f538a4b880f8b551b9859ab9135",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q028_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          16,
+          494,
+          47
+        ],
+        [
+          8,
+          16,
+          494,
+          47
+        ]
+      ]
+    },
+    {
+      "entry_index": 60,
+      "resource": "id\\texture\\jpn\\quest\\quest_029_ID_HQ",
+      "source_sha256": "8c35f9d9892adf02d4136cfe4b1fc23166cb2a0d59410b5bd92e3351fb0e3d0a",
+      "output_sha256": "e7775d99c75ff56554a9a2d4cafb846fc01826d5a322252ada88ef1026562316",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q029_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          13,
+          496,
+          50
+        ],
+        [
+          8,
+          13,
+          496,
+          50
+        ]
+      ]
+    },
+    {
+      "entry_index": 61,
+      "resource": "id\\texture\\jpn\\quest\\quest_030_ID_HQ",
+      "source_sha256": "842055a548430261064d67c936fd552e08c6da82021146d95b8ded956b0a0149",
+      "output_sha256": "efe399aea5e24b2242782e2f30fb906436f26cb091ab4fbcf3d7cc900ee55d9c",
+      "donor": "PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q030_id.arc",
+      "donor_entry": 0,
+      "matching_quest_id_copy": true,
+      "texture": {
+        "width": 512,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "green_mask_row_bounds": [
+        [
+          8,
+          13,
+          495,
+          50
+        ],
+        [
+          8,
+          13,
+          495,
+          50
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1184 @@
+{
+  "status": "pass",
+  "asset_count": 22,
+  "official_texture_color_rgba": [
+    123,
+    255,
+    123,
+    255
+  ],
+  "fonts": [
+    "C:\\Windows\\Fonts\\timesbi.ttf",
+    "C:\\Windows\\Fonts\\timesi.ttf"
+  ],
+  "name_order": "official SH given-name first",
+  "contact_sheet": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\GENERATED_ID_ENGLISH_CONTACT_SHEET.jpg",
+  "assets": [
+    {
+      "asset_id": "cockpit_002",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\cockpit_002.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "English level-glyph atlas",
+      "labels": [
+        {
+          "text": "1",
+          "box": [
+            8,
+            7,
+            56,
+            57
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 47,
+          "align": "center"
+        },
+        {
+          "text": "2",
+          "box": [
+            68,
+            7,
+            124,
+            57
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 47,
+          "align": "center"
+        },
+        {
+          "text": "3",
+          "box": [
+            8,
+            70,
+            56,
+            121
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 47,
+          "align": "center"
+        },
+        {
+          "text": "UP",
+          "box": [
+            67,
+            70,
+            125,
+            121
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 38,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "asset_id": "common_010",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\common_010.png",
+      "size": [
+        256,
+        128
+      ],
+      "mode": "English koku-unit glyph; digits and multiplier preserved",
+      "labels": [
+        {
+          "text": "K",
+          "box": [
+            207,
+            67,
+            255,
+            125
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 47,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "asset_id": "cockpit_021",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\cockpit_021.png",
+      "size": [
+        512,
+        256
+      ],
+      "mode": "English reward-voucher banner; lower artwork preserved",
+      "labels": [
+        {
+          "text": "Reward Voucher Acquired!!",
+          "box": [
+            8,
+            5,
+            504,
+            78
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 41,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "asset_id": "roulette_000",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\roulette_000.png",
+      "size": [
+        512,
+        256
+      ],
+      "mode": "English fortune roulette; frames and ornamental artwork preserved",
+      "labels": [
+        {
+          "text": "GREAT",
+          "box": [
+            13,
+            43,
+            99,
+            91
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 24,
+          "align": "center"
+        },
+        {
+          "text": "LUCK",
+          "box": [
+            13,
+            91,
+            99,
+            139
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 29,
+          "align": "center"
+        },
+        {
+          "text": "GOOD",
+          "box": [
+            125,
+            43,
+            210,
+            91
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 27,
+          "align": "center"
+        },
+        {
+          "text": "LUCK",
+          "box": [
+            125,
+            91,
+            210,
+            139
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 29,
+          "align": "center"
+        },
+        {
+          "text": "BAD",
+          "box": [
+            235,
+            43,
+            325,
+            91
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 30,
+          "align": "center"
+        },
+        {
+          "text": "LUCK",
+          "box": [
+            235,
+            91,
+            325,
+            139
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 29,
+          "align": "center"
+        },
+        {
+          "text": "GREAT",
+          "box": [
+            425,
+            28,
+            501,
+            63
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 20,
+          "align": "center"
+        },
+        {
+          "text": "GOOD",
+          "box": [
+            429,
+            116,
+            485,
+            150
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 17,
+          "align": "center"
+        },
+        {
+          "text": "BAD",
+          "box": [
+            361,
+            190,
+            421,
+            224
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 19,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "asset_id": "cp_kessen_001",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\cp_kessen_001.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "English team-position labels; panels and arrow art preserved",
+      "labels": [
+        {
+          "text": "Vanguard",
+          "box": [
+            153,
+            91,
+            254,
+            137
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 24,
+          "align": "center"
+        },
+        {
+          "text": "Second",
+          "box": [
+            2,
+            176,
+            74,
+            211
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 21,
+          "align": "center"
+        },
+        {
+          "text": "Vice",
+          "box": [
+            78,
+            176,
+            148,
+            211
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 21,
+          "align": "center"
+        },
+        {
+          "text": "Center",
+          "box": [
+            2,
+            216,
+            74,
+            252
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 21,
+          "align": "center"
+        },
+        {
+          "text": "General",
+          "box": [
+            78,
+            216,
+            148,
+            252
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 20,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "asset_id": "cp_kessen_000",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\cp_kessen_000.png",
+      "size": [
+        512,
+        256
+      ],
+      "mode": "English versus-rule modifier atlas",
+      "labels": [
+        {
+          "text": "Gimmick",
+          "box": [
+            6,
+            5,
+            119,
+            54
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 30,
+          "align": "left"
+        },
+        {
+          "text": "Activate",
+          "box": [
+            126,
+            5,
+            237,
+            54
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 32,
+          "align": "left"
+        },
+        {
+          "text": "Swap",
+          "box": [
+            247,
+            5,
+            358,
+            54
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 39,
+          "align": "left"
+        },
+        {
+          "text": "Guard",
+          "box": [
+            376,
+            5,
+            507,
+            54
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 39,
+          "align": "left"
+        },
+        {
+          "text": "Attack UP",
+          "box": [
+            6,
+            61,
+            150,
+            111
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 32,
+          "align": "left"
+        },
+        {
+          "text": "Max HP",
+          "box": [
+            161,
+            61,
+            337,
+            111
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 39,
+          "align": "left"
+        },
+        {
+          "text": "Disabled",
+          "box": [
+            367,
+            61,
+            507,
+            111
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 37,
+          "align": "left"
+        },
+        {
+          "text": "Defense DOWN",
+          "box": [
+            6,
+            119,
+            238,
+            169
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 34,
+          "align": "left"
+        },
+        {
+          "text": "Speed DOWN",
+          "box": [
+            6,
+            188,
+            238,
+            238
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 39,
+          "align": "left"
+        }
+      ]
+    },
+    {
+      "asset_id": "cp_kessen_005",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\cp_kessen_005.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "English versus-stat label atlas",
+      "labels": [
+        {
+          "text": "Wins",
+          "box": [
+            5,
+            4,
+            126,
+            47
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 38,
+          "align": "left"
+        },
+        {
+          "text": "W/L",
+          "box": [
+            139,
+            4,
+            251,
+            47
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 38,
+          "align": "left"
+        },
+        {
+          "text": "Max Combo",
+          "box": [
+            5,
+            52,
+            251,
+            95
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 38,
+          "align": "left"
+        },
+        {
+          "text": "Warrior",
+          "box": [
+            5,
+            100,
+            251,
+            143
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 38,
+          "align": "left"
+        },
+        {
+          "text": "KOs",
+          "box": [
+            5,
+            149,
+            251,
+            192
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 38,
+          "align": "left"
+        },
+        {
+          "text": "Clear Rate",
+          "box": [
+            5,
+            199,
+            251,
+            243
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 38,
+          "align": "left"
+        }
+      ]
+    },
+    {
+      "asset_id": "cp_name_pl_013",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\cp_name_pl_013.png",
+      "size": [
+        256,
+        128
+      ],
+      "mode": "new English player nameplate",
+      "labels": [
+        {
+          "text": "Motonari Mori",
+          "box": [
+            4,
+            3,
+            252,
+            45
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 39,
+          "align": "center"
+        },
+        {
+          "text": "Sunday Mori",
+          "box": [
+            4,
+            49,
+            252,
+            96
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 40,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "asset_id": "cp_name_pl_100",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\cp_name_pl_100.png",
+      "size": [
+        256,
+        64
+      ],
+      "mode": "new English player nameplate",
+      "labels": [
+        {
+          "text": "Harumasa Nanbu",
+          "box": [
+            4,
+            3,
+            252,
+            55
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 32,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "asset_id": "cp_name_pl_101",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\cp_name_pl_101.png",
+      "size": [
+        256,
+        64
+      ],
+      "mode": "new English player nameplate",
+      "labels": [
+        {
+          "text": "Hirotsuna Utsunomiya",
+          "box": [
+            4,
+            3,
+            252,
+            55
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 26,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "asset_id": "cp_name_pl_102",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\cp_name_pl_102.png",
+      "size": [
+        256,
+        64
+      ],
+      "mode": "new English player nameplate",
+      "labels": [
+        {
+          "text": "Haruhisa Amago",
+          "box": [
+            4,
+            3,
+            252,
+            55
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 34,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "asset_id": "cp_name_pl_104",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\cp_name_pl_104.png",
+      "size": [
+        256,
+        64
+      ],
+      "mode": "new English player nameplate",
+      "labels": [
+        {
+          "text": "Yoritsuna Anegakoji",
+          "box": [
+            4,
+            3,
+            252,
+            55
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 28,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "asset_id": "cp_name_pl_105",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\cp_name_pl_105.png",
+      "size": [
+        256,
+        64
+      ],
+      "mode": "new English player nameplate",
+      "labels": [
+        {
+          "text": "Yoshishige Satake",
+          "box": [
+            4,
+            3,
+            252,
+            55
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 32,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "asset_id": "cp_name_pl_106",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\cp_name_pl_106.png",
+      "size": [
+        256,
+        64
+      ],
+      "mode": "new English player nameplate",
+      "labels": [
+        {
+          "text": "Kanetsugu Naoe",
+          "box": [
+            4,
+            3,
+            252,
+            55
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 35,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "asset_id": "cp_name_pl_107",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\cp_name_pl_107.png",
+      "size": [
+        256,
+        64
+      ],
+      "mode": "new English player nameplate",
+      "labels": [
+        {
+          "text": "Miyoshi Triumvirs",
+          "box": [
+            4,
+            3,
+            252,
+            55
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 32,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "asset_id": "cp_name_nak_025",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\cp_name_nak_025.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "new English ally-name atlas",
+      "labels": [
+        {
+          "text": "Chikamasa Fukudome",
+          "box": [
+            4,
+            98,
+            252,
+            121
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 26,
+          "align": "center"
+        },
+        {
+          "text": "Ekei Ankokuji",
+          "box": [
+            4,
+            121,
+            252,
+            144
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 26,
+          "align": "center"
+        },
+        {
+          "text": "Yoshinao Oniniwa",
+          "box": [
+            4,
+            144,
+            252,
+            167
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 27,
+          "align": "center"
+        },
+        {
+          "text": "Genan Hojo",
+          "box": [
+            4,
+            167,
+            252,
+            190
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 26,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "asset_id": "cp_name_nak_026",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\cp_name_nak_026.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "new English ally-name atlas",
+      "labels": [
+        {
+          "text": "Tadamoto Niiro",
+          "box": [
+            4,
+            98,
+            252,
+            121
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 27,
+          "align": "center"
+        },
+        {
+          "text": "Kazumasa Sogo",
+          "box": [
+            4,
+            121,
+            252,
+            144
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 26,
+          "align": "center"
+        },
+        {
+          "text": "Kanenaka Shichijo",
+          "box": [
+            4,
+            144,
+            252,
+            167
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 26,
+          "align": "center"
+        },
+        {
+          "text": "Buddha-Faced Kumahachi",
+          "box": [
+            4,
+            167,
+            252,
+            190
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 21,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "asset_id": "cp_name_nak_027",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\cp_name_nak_027.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "new English ally-name atlas",
+      "labels": [
+        {
+          "text": "Motosuke Kunishi",
+          "box": [
+            4,
+            86,
+            252,
+            171
+          ],
+          "font": "timesbi.ttf",
+          "font_size": 32,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "asset_id": "cp_name_army_026_a",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\cp_name_army_026_a.png",
+      "size": [
+        512,
+        256
+      ],
+      "mode": "new English two-column army-name atlas",
+      "labels": [
+        {
+          "text": "General (Hisahide)",
+          "box": [
+            8,
+            4,
+            250,
+            47
+          ],
+          "font": "timesi.ttf",
+          "font_size": 30,
+          "align": "left"
+        },
+        {
+          "text": "Soldier (Hisahide)",
+          "box": [
+            8,
+            47,
+            250,
+            90
+          ],
+          "font": "timesi.ttf",
+          "font_size": 32,
+          "align": "left"
+        },
+        {
+          "text": "Miyoshi Triumvir",
+          "box": [
+            8,
+            90,
+            250,
+            133
+          ],
+          "font": "timesi.ttf",
+          "font_size": 33,
+          "align": "left"
+        },
+        {
+          "text": "Miyoshi Triumvir",
+          "box": [
+            8,
+            133,
+            250,
+            176
+          ],
+          "font": "timesi.ttf",
+          "font_size": 33,
+          "align": "left"
+        },
+        {
+          "text": "Kanenaka Shichijo",
+          "box": [
+            263,
+            4,
+            508,
+            47
+          ],
+          "font": "timesi.ttf",
+          "font_size": 32,
+          "align": "left"
+        },
+        {
+          "text": "Nagafusa Shinohara",
+          "box": [
+            263,
+            47,
+            508,
+            90
+          ],
+          "font": "timesi.ttf",
+          "font_size": 29,
+          "align": "left"
+        },
+        {
+          "text": "Kazumasa Sogo",
+          "box": [
+            263,
+            90,
+            508,
+            133
+          ],
+          "font": "timesi.ttf",
+          "font_size": 33,
+          "align": "left"
+        },
+        {
+          "text": "Soden Akazawa",
+          "box": [
+            263,
+            133,
+            508,
+            176
+          ],
+          "font": "timesi.ttf",
+          "font_size": 33,
+          "align": "left"
+        },
+        {
+          "text": "Nagamasa Ikeda",
+          "box": [
+            263,
+            176,
+            508,
+            219
+          ],
+          "font": "timesi.ttf",
+          "font_size": 33,
+          "align": "left"
+        }
+      ]
+    },
+    {
+      "asset_id": "cp_name_army_026_b",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\cp_name_army_026_b.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "new English single-column army-name atlas",
+      "labels": [
+        {
+          "text": "Tomomitsu Kai",
+          "box": [
+            5,
+            4,
+            252,
+            47
+          ],
+          "font": "timesi.ttf",
+          "font_size": 34,
+          "align": "center"
+        },
+        {
+          "text": "Kakuyo Onishi",
+          "box": [
+            5,
+            47,
+            252,
+            90
+          ],
+          "font": "timesi.ttf",
+          "font_size": 34,
+          "align": "center"
+        },
+        {
+          "text": "Harumasa Tada",
+          "box": [
+            5,
+            90,
+            252,
+            133
+          ],
+          "font": "timesi.ttf",
+          "font_size": 34,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "asset_id": "cp_name_army_027_a",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\cp_name_army_027_a.png",
+      "size": [
+        512,
+        256
+      ],
+      "mode": "new English two-column army-name atlas",
+      "labels": [
+        {
+          "text": "General (Hideyoshi)",
+          "box": [
+            8,
+            4,
+            250,
+            47
+          ],
+          "font": "timesi.ttf",
+          "font_size": 29,
+          "align": "left"
+        },
+        {
+          "text": "Soldier (Hideyoshi)",
+          "box": [
+            8,
+            47,
+            250,
+            90
+          ],
+          "font": "timesi.ttf",
+          "font_size": 30,
+          "align": "left"
+        },
+        {
+          "text": "Mototada Torii",
+          "box": [
+            263,
+            4,
+            508,
+            47
+          ],
+          "font": "timesi.ttf",
+          "font_size": 33,
+          "align": "left"
+        },
+        {
+          "text": "Masanari Hattori",
+          "box": [
+            263,
+            47,
+            508,
+            90
+          ],
+          "font": "timesi.ttf",
+          "font_size": 33,
+          "align": "left"
+        },
+        {
+          "text": "Hideyasu Yuki",
+          "box": [
+            263,
+            90,
+            508,
+            133
+          ],
+          "font": "timesi.ttf",
+          "font_size": 33,
+          "align": "left"
+        },
+        {
+          "text": "Yasumasa Sakakibara",
+          "box": [
+            263,
+            133,
+            508,
+            176
+          ],
+          "font": "timesi.ttf",
+          "font_size": 26,
+          "align": "left"
+        },
+        {
+          "text": "Yorisato Gamo",
+          "box": [
+            263,
+            176,
+            508,
+            219
+          ],
+          "font": "timesi.ttf",
+          "font_size": 33,
+          "align": "left"
+        }
+      ]
+    },
+    {
+      "asset_id": "cp_name_army_027_b",
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\generated_english_png\\cp_name_army_027_b.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "new English single-column army-name atlas",
+      "labels": [
+        {
+          "text": "Kanbei Watanabe",
+          "box": [
+            5,
+            4,
+            252,
+            47
+          ],
+          "font": "timesi.ttf",
+          "font_size": 34,
+          "align": "center"
+        },
+        {
+          "text": "Masazumi Ishida",
+          "box": [
+            5,
+            47,
+            252,
+            90
+          ],
+          "font": "timesi.ttf",
+          "font_size": 34,
+          "align": "center"
+        },
+        {
+          "text": "Hyogo Mai",
+          "box": [
+            5,
+            90,
+            252,
+            133
+          ],
+          "font": "timesi.ttf",
+          "font_size": 34,
+          "align": "center"
+        },
+        {
+          "text": "Naomasa Ii",
+          "box": [
+            5,
+            133,
+            252,
+            176
+          ],
+          "font": "timesi.ttf",
+          "font_size": 34,
+          "align": "center"
+        },
+        {
+          "text": "Sakon Shima",
+          "box": [
+            5,
+            176,
+            252,
+            219
+          ],
+          "font": "timesi.ttf",
+          "font_size": 34,
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

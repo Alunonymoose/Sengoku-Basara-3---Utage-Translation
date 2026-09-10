@@ -1,0 +1,187 @@
+{
+  "status": "pass",
+  "texture_count": 12,
+  "textures": [
+    {
+      "source_arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\demo\\cd\\cd035_000.arc",
+      "resource_name": "id\\texture\\jpn\\cd\\cd035_000_ID_HQ",
+      "source_xet_sha256": "2598a758d99069741ee8cb39e77f25269f812905460a9842067a8497fa4fd877",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\exclusive_source_png\\cd035_000.png"
+    },
+    {
+      "source_arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\demo\\cd\\cd040_000.arc",
+      "resource_name": "id\\texture\\jpn\\cd\\cd040_000_ID_HQ",
+      "source_xet_sha256": "c08015f84532212e2130c6b38a37de54bcb97ae7e7892926e9abe46261f0be77",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\exclusive_source_png\\cd040_000.png"
+    },
+    {
+      "source_arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\demo\\cd\\cd040_001.arc",
+      "resource_name": "id\\texture\\jpn\\cd\\cd040_001_ID_HQ",
+      "source_xet_sha256": "892b6e04617599584436b615a3c05ca5da1ce9c3bfce2feceaec71d3b2ff1193",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\exclusive_source_png\\cd040_001.png"
+    },
+    {
+      "source_arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\demo\\cd\\cd040_002.arc",
+      "resource_name": "id\\texture\\jpn\\cd\\cd040_002_ID_HQ",
+      "source_xet_sha256": "025a94a872b50c757ad012dd7b1b19b27fd2fed89fc010cc1c34718702f1c333",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\exclusive_source_png\\cd040_002.png"
+    },
+    {
+      "source_arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\demo\\cd\\cd040_003.arc",
+      "resource_name": "id\\texture\\jpn\\cd\\cd040_003_ID_HQ",
+      "source_xet_sha256": "0e665dd9f8ea3542ef98b90235a4a7fd395a9d331d075a300039e53bf4433b19",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\exclusive_source_png\\cd040_003.png"
+    },
+    {
+      "source_arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\demo\\cd\\cd041_000.arc",
+      "resource_name": "id\\texture\\jpn\\cd\\cd041_000_ID_HQ",
+      "source_xet_sha256": "3064989570e21f87cddcd2d3a7acce9df30942a34416acc4993a91deb1a1ee43",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\exclusive_source_png\\cd041_000.png"
+    },
+    {
+      "source_arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\demo\\cd\\cd041_001.arc",
+      "resource_name": "id\\texture\\jpn\\cd\\cd041_001_ID_HQ",
+      "source_xet_sha256": "6baf35195de1419322d4f203e1ea6bd8c8a5bc92b379ca623d96a6494559f8ad",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\exclusive_source_png\\cd041_001.png"
+    },
+    {
+      "source_arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\demo\\cd\\cd041_002.arc",
+      "resource_name": "id\\texture\\jpn\\cd\\cd041_002_ID_HQ",
+      "source_xet_sha256": "36796de9f1426a849dcd22b4346540eb613504f4167de37d7d0b83641ef2c785",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\exclusive_source_png\\cd041_002.png"
+    },
+    {
+      "source_arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\demo\\cd\\cd042_000.arc",
+      "resource_name": "id\\texture\\jpn\\cd\\cd042_000_ID_HQ",
+      "source_xet_sha256": "c0139aa634f4b9a3fc15993caa78b8f685b7485ea989621d16ddc56393cb4ff9",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\exclusive_source_png\\cd042_000.png"
+    },
+    {
+      "source_arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\demo\\cd\\cd044_000.arc",
+      "resource_name": "id\\texture\\jpn\\cd\\cd044_000_ID_HQ",
+      "source_xet_sha256": "388ba8e5c3e7f9a46d2ef175ed2eba8558351a04e4f3a20e1483606d8b2a2b38",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\exclusive_source_png\\cd044_000.png"
+    },
+    {
+      "source_arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\demo\\cd\\cd044_001.arc",
+      "resource_name": "id\\texture\\jpn\\cd\\cd044_001_ID_HQ",
+      "source_xet_sha256": "2e85df35a2c5f3cd402a1271e3c078a1e31e44f89dc2de120f7651365d1abe5a",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\exclusive_source_png\\cd044_001.png"
+    },
+    {
+      "source_arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\demo\\cd\\cd044_002.arc",
+      "resource_name": "id\\texture\\jpn\\cd\\cd044_002_ID_HQ",
+      "source_xet_sha256": "c4b84f642df13a0a5f994f90c0b407528a4c86572ab61f5ad647352906db5cab",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\exclusive_source_png\\cd044_002.png"
+    }
+  ],
+  "contact_sheet": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\exclusive_source_png\\UTAGE_EXCLUSIVE_CONTACT_SHEET.png"
+}

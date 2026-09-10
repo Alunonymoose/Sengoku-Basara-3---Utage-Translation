@@ -1,0 +1,1087 @@
+[
+  {
+    "quest": 0,
+    "name": "id\\texture\\jpn\\quest\\quest_000_ID_HQ",
+    "source_sha256": "98ebef69612d1f78b076e991db755bddb2ec8ec2dd54591ebf7439f4e9ec42dd",
+    "sha256": "792f0c6335618799ae9c530761366b0112d5af23eda511fa0ecec726ca9ce706",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_000.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          19,
+          496,
+          45
+        ],
+        "output_size": [
+          350,
+          18
+        ],
+        "scale": 0.7172131147540983
+      },
+      {
+        "source_bbox": [
+          8,
+          19,
+          496,
+          45
+        ],
+        "output_size": [
+          350,
+          18
+        ],
+        "scale": 0.7172131147540983
+      }
+    ]
+  },
+  {
+    "quest": 1,
+    "name": "id\\texture\\jpn\\quest\\quest_001_ID_HQ",
+    "source_sha256": "1748b8313cd7c958ee4ad089f91dcbe5d8efd0d49cb8c947fd0b6680727c5660",
+    "sha256": "b56963fb835763f835090a61023de12d4adf65c8417814ad4fec75a72a8f791b",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_001.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          13,
+          468,
+          50
+        ],
+        "output_size": [
+          348,
+          28
+        ],
+        "scale": 0.7567567567567568
+      },
+      {
+        "source_bbox": [
+          8,
+          13,
+          468,
+          50
+        ],
+        "output_size": [
+          348,
+          28
+        ],
+        "scale": 0.7567567567567568
+      }
+    ]
+  },
+  {
+    "quest": 2,
+    "name": "id\\texture\\jpn\\quest\\quest_002_ID_HQ",
+    "source_sha256": "781cb146520ddd9e1982f6dbc1afb823be73568688af8eda3dbe6eca0d29a786",
+    "sha256": "2044f4e570465bdbd7e977c497ab7a2ff26ea5831ff59258991334ef2febe35b",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_002.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          18,
+          491,
+          45
+        ],
+        "output_size": [
+          350,
+          19
+        ],
+        "scale": 0.7246376811594203
+      },
+      {
+        "source_bbox": [
+          8,
+          18,
+          491,
+          45
+        ],
+        "output_size": [
+          350,
+          19
+        ],
+        "scale": 0.7246376811594203
+      }
+    ]
+  },
+  {
+    "quest": 3,
+    "name": "id\\texture\\jpn\\quest\\quest_003_ID_HQ",
+    "source_sha256": "dbdea23393ada40c155cc825a92c4a5de4699ae86e8825f4a27db0d14722c1db",
+    "sha256": "bb0d6a1599c22f70487411fc05b3c72f2026aa2dda2c54670c103a2e03503d8c",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_003.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          17,
+          498,
+          46
+        ],
+        "output_size": [
+          350,
+          20
+        ],
+        "scale": 0.7142857142857143
+      },
+      {
+        "source_bbox": [
+          8,
+          17,
+          498,
+          46
+        ],
+        "output_size": [
+          350,
+          20
+        ],
+        "scale": 0.7142857142857143
+      }
+    ]
+  },
+  {
+    "quest": 4,
+    "name": "id\\texture\\jpn\\quest\\quest_004_ID_HQ",
+    "source_sha256": "65602713e2b797172f95bfb264f657c222988588b4d740363be2081faeadeb3d",
+    "sha256": "d0dee73a816362329d98f34a0bf6710cbea43f9051169a28c48f0bb22862d672",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_004.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          13,
+          406,
+          50
+        ],
+        "output_size": [
+          301,
+          28
+        ],
+        "scale": 0.7567567567567568
+      },
+      {
+        "source_bbox": [
+          8,
+          13,
+          406,
+          50
+        ],
+        "output_size": [
+          301,
+          28
+        ],
+        "scale": 0.7567567567567568
+      }
+    ]
+  },
+  {
+    "quest": 5,
+    "name": "id\\texture\\jpn\\quest\\quest_005_ID_HQ",
+    "source_sha256": "842fac8b3ea2877519b3ec964a063e3fd912267d0184bbce8d47534d84a46822",
+    "sha256": "e4ef98ce8f5ac3975be788db7628614d338a0cb57d44b1faee4fc3c27ca14d8e",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_005.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          13,
+          469,
+          50
+        ],
+        "output_size": [
+          348,
+          28
+        ],
+        "scale": 0.7567567567567568
+      },
+      {
+        "source_bbox": [
+          8,
+          13,
+          469,
+          50
+        ],
+        "output_size": [
+          348,
+          28
+        ],
+        "scale": 0.7567567567567568
+      }
+    ]
+  },
+  {
+    "quest": 6,
+    "name": "id\\texture\\jpn\\quest\\quest_006_ID_HQ",
+    "source_sha256": "a36189756ec7f8fd5bf1065fb46305f7171d8ebef0bf2e282f97ea187c17de97",
+    "sha256": "83b55155e2abb2fe3ab93961b07cb3375fc2e0b74164c9698b04f1c4536fbc19",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_006.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          20,
+          494,
+          44
+        ],
+        "output_size": [
+          350,
+          17
+        ],
+        "scale": 0.720164609053498
+      },
+      {
+        "source_bbox": [
+          8,
+          20,
+          494,
+          44
+        ],
+        "output_size": [
+          350,
+          17
+        ],
+        "scale": 0.720164609053498
+      }
+    ]
+  },
+  {
+    "quest": 7,
+    "name": "id\\texture\\jpn\\quest\\quest_007_ID_HQ",
+    "source_sha256": "b3270442dea364de2d7fe9c39f4500b50d9a289e25861a126c4f1de5b78a7c3f",
+    "sha256": "b3b413c1b5f03065e3ef45aa7ebe0076fbf37b402acd8ed2d0e958fa8f0041e6",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_007.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          13,
+          490,
+          50
+        ],
+        "output_size": [
+          350,
+          26
+        ],
+        "scale": 0.7261410788381742
+      },
+      {
+        "source_bbox": [
+          8,
+          13,
+          490,
+          50
+        ],
+        "output_size": [
+          350,
+          26
+        ],
+        "scale": 0.7261410788381742
+      }
+    ]
+  },
+  {
+    "quest": 8,
+    "name": "id\\texture\\jpn\\quest\\quest_008_ID_HQ",
+    "source_sha256": "98210d97e42554a8e952310f29253bc0d4a37f09c2a2b1307c2a47cbc8e35098",
+    "sha256": "dc007d16b526616c2d3ca58f37cb09bf13c21d6566af123872d4445fe34cde1c",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_008.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          13,
+          402,
+          50
+        ],
+        "output_size": [
+          298,
+          28
+        ],
+        "scale": 0.7567567567567568
+      },
+      {
+        "source_bbox": [
+          8,
+          13,
+          402,
+          50
+        ],
+        "output_size": [
+          298,
+          28
+        ],
+        "scale": 0.7567567567567568
+      }
+    ]
+  },
+  {
+    "quest": 9,
+    "name": "id\\texture\\jpn\\quest\\quest_009_ID_HQ",
+    "source_sha256": "8e2b9428659a65d8432614b2a158615e01cf310f9516e68b8d59a53458947cdb",
+    "sha256": "cc843a3ab18dbc570412033016eaeb223f2486dbb151e7a5b89fae599be69c39",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_009.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          17,
+          502,
+          46
+        ],
+        "output_size": [
+          350,
+          20
+        ],
+        "scale": 0.708502024291498
+      },
+      {
+        "source_bbox": [
+          8,
+          17,
+          502,
+          46
+        ],
+        "output_size": [
+          350,
+          20
+        ],
+        "scale": 0.708502024291498
+      }
+    ]
+  },
+  {
+    "quest": 10,
+    "name": "id\\texture\\jpn\\quest\\quest_010_ID_HQ",
+    "source_sha256": "58f05d3bebecd37f1bf06d2a1da7c714242ab6ba00c75429877bcaf71bb3efac",
+    "sha256": "496c796fb60c38b9c4c3216a459f2f8bf2429a0faa2e471c58c882a8ee58d7f9",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_010.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          16,
+          497,
+          47
+        ],
+        "output_size": [
+          350,
+          22
+        ],
+        "scale": 0.7157464212678937
+      },
+      {
+        "source_bbox": [
+          8,
+          16,
+          497,
+          47
+        ],
+        "output_size": [
+          350,
+          22
+        ],
+        "scale": 0.7157464212678937
+      }
+    ]
+  },
+  {
+    "quest": 11,
+    "name": "id\\texture\\jpn\\quest\\quest_011_ID_HQ",
+    "source_sha256": "23ebfc2d1b93f1b48112e845e12d19109519c82d9428097bf3051ac5d8b427e6",
+    "sha256": "8b745493f5a002403ff933b0d3e109cc633083bc1c9a266a90421805b128eec4",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_011.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          14,
+          503,
+          50
+        ],
+        "output_size": [
+          350,
+          25
+        ],
+        "scale": 0.7070707070707071
+      },
+      {
+        "source_bbox": [
+          8,
+          14,
+          503,
+          50
+        ],
+        "output_size": [
+          350,
+          25
+        ],
+        "scale": 0.7070707070707071
+      }
+    ]
+  },
+  {
+    "quest": 12,
+    "name": "id\\texture\\jpn\\quest\\quest_012_ID_HQ",
+    "source_sha256": "0fbecaeb0c815653b994e535f572d6916111f41110fd1c2630c9f501747c46b8",
+    "sha256": "d20a8b6388fc615482d80077754e515023568a3995d04e30537b2aa83bc18768",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_012.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          19,
+          503,
+          45
+        ],
+        "output_size": [
+          350,
+          18
+        ],
+        "scale": 0.7070707070707071
+      },
+      {
+        "source_bbox": [
+          8,
+          19,
+          503,
+          45
+        ],
+        "output_size": [
+          350,
+          18
+        ],
+        "scale": 0.7070707070707071
+      }
+    ]
+  },
+  {
+    "quest": 13,
+    "name": "id\\texture\\jpn\\quest\\quest_013_ID_HQ",
+    "source_sha256": "4cafea1121dcf4487c5aea58153cfda08a0172c45d2d1d64df72fa2a6a2a2c30",
+    "sha256": "1ad2ed13163387c7858ed7baed459d707a84e5b24d7b6ff6df1b6921327dcd9f",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_013.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          9,
+          13,
+          464,
+          50
+        ],
+        "output_size": [
+          344,
+          28
+        ],
+        "scale": 0.7567567567567568
+      },
+      {
+        "source_bbox": [
+          9,
+          13,
+          464,
+          50
+        ],
+        "output_size": [
+          344,
+          28
+        ],
+        "scale": 0.7567567567567568
+      }
+    ]
+  },
+  {
+    "quest": 14,
+    "name": "id\\texture\\jpn\\quest\\quest_014_ID_HQ",
+    "source_sha256": "14d85e0833e5748d42ff340c3ded23500ee6043b5f1787f66fcc1a11f782fdc0",
+    "sha256": "441fb987f55681afdab84fd10c49a9e41bfeaa7132c5c84a88ef7e09d5fac2b2",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_014.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          9,
+          14,
+          419,
+          50
+        ],
+        "output_size": [
+          318,
+          28
+        ],
+        "scale": 0.7777777777777778
+      },
+      {
+        "source_bbox": [
+          9,
+          14,
+          419,
+          50
+        ],
+        "output_size": [
+          318,
+          28
+        ],
+        "scale": 0.7777777777777778
+      }
+    ]
+  },
+  {
+    "quest": 15,
+    "name": "id\\texture\\jpn\\quest\\quest_015_ID_HQ",
+    "source_sha256": "ae51554278ed72a22fc615ad11e5303794f082755566705c197c9f0e4a830895",
+    "sha256": "97efca312731335ac9e5379d18c8da0f602059de5bef163bca351d771bf0f057",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_015.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          9,
+          9,
+          406,
+          54
+        ],
+        "output_size": [
+          247,
+          28
+        ],
+        "scale": 0.6222222222222222
+      },
+      {
+        "source_bbox": [
+          9,
+          9,
+          406,
+          54
+        ],
+        "output_size": [
+          247,
+          28
+        ],
+        "scale": 0.6222222222222222
+      }
+    ]
+  },
+  {
+    "quest": 16,
+    "name": "id\\texture\\jpn\\quest\\quest_016_ID_HQ",
+    "source_sha256": "d464e6da7a05b30ce7e5979140515a01fdeb030a658406fe3353e90b34370b5d",
+    "sha256": "5ce188786e92e0934ede319dda95e986a70c55fd7ffb42f71bb054a417bbb07a",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_016.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          16,
+          494,
+          47
+        ],
+        "output_size": [
+          350,
+          22
+        ],
+        "scale": 0.720164609053498
+      },
+      {
+        "source_bbox": [
+          8,
+          16,
+          494,
+          47
+        ],
+        "output_size": [
+          350,
+          22
+        ],
+        "scale": 0.720164609053498
+      }
+    ]
+  },
+  {
+    "quest": 17,
+    "name": "id\\texture\\jpn\\quest\\quest_017_ID_HQ",
+    "source_sha256": "c2a039c0cb075843d9588ef6fe9e053c963eccb6de8f951461460241846dc79e",
+    "sha256": "6fd58d7ef6460347a2888b2a3fd1b82912e6b4ee616922e7af3252d619a5e58f",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_017.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          9,
+          13,
+          457,
+          50
+        ],
+        "output_size": [
+          339,
+          28
+        ],
+        "scale": 0.7567567567567568
+      },
+      {
+        "source_bbox": [
+          9,
+          13,
+          457,
+          50
+        ],
+        "output_size": [
+          339,
+          28
+        ],
+        "scale": 0.7567567567567568
+      }
+    ]
+  },
+  {
+    "quest": 18,
+    "name": "id\\texture\\jpn\\quest\\quest_018_ID_HQ",
+    "source_sha256": "76a21b9a5dd7e1830e2f4fe0e66786a793dfd9e532ccfb2e1a871a8d90bb167f",
+    "sha256": "cb6d49180bd7d44ccae25e542af8fa2cba841487209ad91b6db6b7af3bcb6f8b",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_018.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          9,
+          9,
+          455,
+          54
+        ],
+        "output_size": [
+          277,
+          28
+        ],
+        "scale": 0.6222222222222222
+      },
+      {
+        "source_bbox": [
+          9,
+          9,
+          455,
+          54
+        ],
+        "output_size": [
+          277,
+          28
+        ],
+        "scale": 0.6222222222222222
+      }
+    ]
+  },
+  {
+    "quest": 19,
+    "name": "id\\texture\\jpn\\quest\\quest_019_ID_HQ",
+    "source_sha256": "badfcd09c437889ff1164528377ccc84d6e135685fa9c18168086c5af5d96093",
+    "sha256": "86362596b68691b411d9593da523178b01dce5dc59e00113dd41890ddfaf41d5",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_019.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          13,
+          434,
+          50
+        ],
+        "output_size": [
+          322,
+          28
+        ],
+        "scale": 0.7567567567567568
+      },
+      {
+        "source_bbox": [
+          8,
+          13,
+          434,
+          50
+        ],
+        "output_size": [
+          322,
+          28
+        ],
+        "scale": 0.7567567567567568
+      }
+    ]
+  },
+  {
+    "quest": 20,
+    "name": "id\\texture\\jpn\\quest\\quest_020_ID_HQ",
+    "source_sha256": "d8b799e6795e35309281743c48c9f1dd6539587ebac4b596d834a7ded0ff5a54",
+    "sha256": "5f6c273af2e953e8c98447f6a6cac315b79a7769e63700e395066fca64a9212c",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_020.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          15,
+          499,
+          49
+        ],
+        "output_size": [
+          350,
+          24
+        ],
+        "scale": 0.7128309572301426
+      },
+      {
+        "source_bbox": [
+          8,
+          15,
+          499,
+          49
+        ],
+        "output_size": [
+          350,
+          24
+        ],
+        "scale": 0.7128309572301426
+      }
+    ]
+  },
+  {
+    "quest": 21,
+    "name": "id\\texture\\jpn\\quest\\quest_021_ID_HQ",
+    "source_sha256": "398d2e661ae976d03cbc198c91c90bc609b1f9d1cb663aa0cc538e80720aefa4",
+    "sha256": "0066de757c408e0b13048f5f6fc9e132f8adda7e1266ae4e2d2382a22e5ceaf4",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_021.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          7,
+          16,
+          501,
+          47
+        ],
+        "output_size": [
+          350,
+          21
+        ],
+        "scale": 0.708502024291498
+      },
+      {
+        "source_bbox": [
+          7,
+          16,
+          501,
+          47
+        ],
+        "output_size": [
+          350,
+          21
+        ],
+        "scale": 0.708502024291498
+      }
+    ]
+  },
+  {
+    "quest": 22,
+    "name": "id\\texture\\jpn\\quest\\quest_022_ID_HQ",
+    "source_sha256": "de268fe468f503ea67fa0c8d8523f0b342d6835178f40dba3af2f563141dd489",
+    "sha256": "d06ea4ae6557de430d8435cbc5019df279330f651131be67b36d72f4b97fb02b",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_022.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          16,
+          503,
+          48
+        ],
+        "output_size": [
+          350,
+          22
+        ],
+        "scale": 0.7070707070707071
+      },
+      {
+        "source_bbox": [
+          8,
+          16,
+          503,
+          48
+        ],
+        "output_size": [
+          350,
+          22
+        ],
+        "scale": 0.7070707070707071
+      }
+    ]
+  },
+  {
+    "quest": 23,
+    "name": "id\\texture\\jpn\\quest\\quest_023_ID_HQ",
+    "source_sha256": "37935d4edf3b753bfcc51dd8382b5fab73f2ee665e5654a0e8ee1f001687b38f",
+    "sha256": "742f8b7c7899b76385a8e0755daf9d9bedd41b2e6b52f0b8807d4ea090de93a4",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_023.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          7,
+          19,
+          502,
+          44
+        ],
+        "output_size": [
+          350,
+          17
+        ],
+        "scale": 0.7070707070707071
+      },
+      {
+        "source_bbox": [
+          7,
+          19,
+          502,
+          44
+        ],
+        "output_size": [
+          350,
+          17
+        ],
+        "scale": 0.7070707070707071
+      }
+    ]
+  },
+  {
+    "quest": 24,
+    "name": "id\\texture\\jpn\\quest\\quest_024_ID_HQ",
+    "source_sha256": "3f86ab785ce9f701724dd552f07cbe945d60ca2e195e4a8792efa9af8f0aebc2",
+    "sha256": "336138cf29393c42314d996c25a9d1de938028e90031704590cc8ae5ff9be454",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_024.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          7,
+          13,
+          494,
+          50
+        ],
+        "output_size": [
+          350,
+          26
+        ],
+        "scale": 0.7186858316221766
+      },
+      {
+        "source_bbox": [
+          7,
+          13,
+          494,
+          50
+        ],
+        "output_size": [
+          350,
+          26
+        ],
+        "scale": 0.7186858316221766
+      }
+    ]
+  },
+  {
+    "quest": 25,
+    "name": "id\\texture\\jpn\\quest\\quest_025_ID_HQ",
+    "source_sha256": "7ff5cc60d3e45cc9500c8e014ac869738b76f0a68d48a660a2bcc9efbe106980",
+    "sha256": "2340120af8b983de18c7669fa587a95395ae107e910597789b2a7ef3a6304033",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_025.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          13,
+          469,
+          50
+        ],
+        "output_size": [
+          348,
+          28
+        ],
+        "scale": 0.7567567567567568
+      },
+      {
+        "source_bbox": [
+          8,
+          13,
+          469,
+          50
+        ],
+        "output_size": [
+          348,
+          28
+        ],
+        "scale": 0.7567567567567568
+      }
+    ]
+  },
+  {
+    "quest": 26,
+    "name": "id\\texture\\jpn\\quest\\quest_026_ID_HQ",
+    "source_sha256": "61948dbfd527f4020ab9b10e25b88ca7912457339bdb5726170044d0d13b7a4e",
+    "sha256": "686d2fe3149d258db18e33891b4d7aef2078ebc47ad4012a2531128409c0cd5e",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_026.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          8,
+          501,
+          56
+        ],
+        "output_size": [
+          287,
+          28
+        ],
+        "scale": 0.5833333333333334
+      },
+      {
+        "source_bbox": [
+          8,
+          8,
+          501,
+          56
+        ],
+        "output_size": [
+          287,
+          28
+        ],
+        "scale": 0.5833333333333334
+      }
+    ]
+  },
+  {
+    "quest": 27,
+    "name": "id\\texture\\jpn\\quest\\quest_027_ID_HQ",
+    "source_sha256": "8d0eed1410fc7b6955444bc71cd37e50525f7a7b5d0f06f20671080f3faae267",
+    "sha256": "846630a252de1c03cd0d78e905f6c414054b3e66adba01cc7b01bfb6ffc543e1",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_027.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          13,
+          427,
+          50
+        ],
+        "output_size": [
+          317,
+          28
+        ],
+        "scale": 0.7567567567567568
+      },
+      {
+        "source_bbox": [
+          8,
+          13,
+          427,
+          50
+        ],
+        "output_size": [
+          317,
+          28
+        ],
+        "scale": 0.7567567567567568
+      }
+    ]
+  },
+  {
+    "quest": 28,
+    "name": "id\\texture\\jpn\\quest\\quest_028_ID_HQ",
+    "source_sha256": "fc0f47e3c6d42c5e08af79cb842020eda0bd6f538a4b880f8b551b9859ab9135",
+    "sha256": "1191673faf8681d45232ad161f53ecdf4b3496f9b6d15314f38897493ca1e285",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_028.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          7,
+          16,
+          494,
+          47
+        ],
+        "output_size": [
+          350,
+          22
+        ],
+        "scale": 0.7186858316221766
+      },
+      {
+        "source_bbox": [
+          7,
+          16,
+          494,
+          47
+        ],
+        "output_size": [
+          350,
+          22
+        ],
+        "scale": 0.7186858316221766
+      }
+    ]
+  },
+  {
+    "quest": 29,
+    "name": "id\\texture\\jpn\\quest\\quest_029_ID_HQ",
+    "source_sha256": "e7775d99c75ff56554a9a2d4cafb846fc01826d5a322252ada88ef1026562316",
+    "sha256": "b018faa2b05a63b2c6421dab0985ee82f8365dbdc8a5d1e39308f0af4e6c1d53",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_029.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          13,
+          496,
+          50
+        ],
+        "output_size": [
+          350,
+          26
+        ],
+        "scale": 0.7172131147540983
+      },
+      {
+        "source_bbox": [
+          8,
+          13,
+          496,
+          50
+        ],
+        "output_size": [
+          350,
+          26
+        ],
+        "scale": 0.7172131147540983
+      }
+    ]
+  },
+  {
+    "quest": 30,
+    "name": "id\\texture\\jpn\\quest\\quest_030_ID_HQ",
+    "source_sha256": "efe399aea5e24b2242782e2f30fb906436f26cb091ab4fbcf3d7cc900ee55d9c",
+    "sha256": "2658fac0d577e018d2e9cabaeff76914e714e4ccfacf0abea544ba0532c2f57a",
+    "path": "E:\\Utage Patching New\\_codex_select_menu\\quest_v2\\titles\\quest_030.xet",
+    "fits": [
+      {
+        "source_bbox": [
+          8,
+          13,
+          495,
+          50
+        ],
+        "output_size": [
+          350,
+          26
+        ],
+        "scale": 0.7186858316221766
+      },
+      {
+        "source_bbox": [
+          8,
+          13,
+          495,
+          50
+        ],
+        "output_size": [
+          350,
+          26
+        ],
+        "scale": 0.7186858316221766
+      }
+    ]
+  }
+]

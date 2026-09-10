@@ -1,0 +1,277 @@
+{
+  "status": "pass",
+  "asset_count": 12,
+  "imagegen_assets": 11,
+  "preserved_already_english_assets": [
+    "cd040_000"
+  ],
+  "style_reference": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\sh_english_reference_png\\cd000_000.png",
+  "output_dir": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\final_english_png",
+  "contact_sheet": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\final_english_png\\FINAL_ENGLISH_CONTACT_SHEET.jpg",
+  "assets": [
+    {
+      "asset_id": "cd035_000",
+      "english": "From the depths... / Kojuro strikes!",
+      "method": "green-chroma-mask",
+      "output": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\final_english_png\\cd035_000.png",
+      "sha256": "810bbed4a1c100c48dc656df75cfaf13267af1a45d9e97915a427ec1191063eb",
+      "size": [
+        512,
+        512
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "nonzero_alpha_bbox": [
+        0,
+        0,
+        508,
+        508
+      ],
+      "coverage": 0.2867279052734375
+    },
+    {
+      "asset_id": "cd040_000",
+      "english": "Dragon Road Open! (already English in Utage source)",
+      "method": "preserved-source-already-english",
+      "output": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\final_english_png\\cd040_000.png",
+      "sha256": "82d7159f6e6e2a541903dbddf06e7a8e843eac064cbce9367013bf7d386476f8",
+      "size": [
+        512,
+        512
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "nonzero_alpha_bbox": [
+        0,
+        3,
+        512,
+        502
+      ],
+      "coverage": 0.4709320068359375
+    },
+    {
+      "asset_id": "cd040_001",
+      "english": "Takeda HQ Opened!",
+      "method": "green-chroma-mask",
+      "output": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\final_english_png\\cd040_001.png",
+      "sha256": "95d667ddf5bc741d4c33723c2d21f438cebf8b154fce2ea749c11ab6ec3bc534",
+      "size": [
+        512,
+        512
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "nonzero_alpha_bbox": [
+        0,
+        0,
+        512,
+        510
+      ],
+      "coverage": 0.3257598876953125
+    },
+    {
+      "asset_id": "cd040_002",
+      "english": "Sorry, General...",
+      "method": "green-chroma-mask",
+      "output": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\final_english_png\\cd040_002.png",
+      "sha256": "a9f38c4f891be1d5b3c09bcb44a7f627f7c62aad830dec972f7620195106912a",
+      "size": [
+        512,
+        512
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "nonzero_alpha_bbox": [
+        2,
+        0,
+        502,
+        510
+      ],
+      "coverage": 0.18993759155273438
+    },
+    {
+      "asset_id": "cd040_003",
+      "english": "Now! To the Azure-Crimson Clash!",
+      "method": "green-chroma-mask",
+      "output": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\final_english_png\\cd040_003.png",
+      "sha256": "6a61e8b0166f3cdf8f43172b301f70661439e101f6873835d9d47832800307f6",
+      "size": [
+        512,
+        512
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "nonzero_alpha_bbox": [
+        0,
+        0,
+        507,
+        509
+      ],
+      "coverage": 0.2752113342285156
+    },
+    {
+      "asset_id": "cd041_000",
+      "english": "Lord Hideyoshi's Orders Have Arrived!",
+      "method": "green-chroma-mask",
+      "output": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\final_english_png\\cd041_000.png",
+      "sha256": "8725786884edf73d271fa9a5a8881340978ea939b78d5ee9e53b808e5ae8e8d5",
+      "size": [
+        512,
+        512
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "nonzero_alpha_bbox": [
+        23,
+        0,
+        497,
+        498
+      ],
+      "coverage": 0.2978935241699219
+    },
+    {
+      "asset_id": "cd041_001",
+      "english": "I shall witness everything you are!",
+      "method": "green-chroma-mask",
+      "output": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\final_english_png\\cd041_001.png",
+      "sha256": "3da8834cd3bccc407bf159bd9a2192520bdf4456cf4c9caca19337d757c3868c",
+      "size": [
+        512,
+        512
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "nonzero_alpha_bbox": [
+        0,
+        0,
+        512,
+        479
+      ],
+      "coverage": 0.3638763427734375
+    },
+    {
+      "asset_id": "cd041_002",
+      "english": "Ishida-Tokugawa Alliance Defeated!",
+      "method": "green-chroma-mask",
+      "output": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\final_english_png\\cd041_002.png",
+      "sha256": "6cf99fa15ec6c251d4d1e7eb822453859ff4994df2e22f1d3cdccdd414eb7894",
+      "size": [
+        512,
+        512
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "nonzero_alpha_bbox": [
+        11,
+        10,
+        506,
+        489
+      ],
+      "coverage": 0.3498649597167969
+    },
+    {
+      "asset_id": "cd042_000",
+      "english": "Love and fireworks bloom wild!",
+      "method": "green-chroma-mask",
+      "output": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\final_english_png\\cd042_000.png",
+      "sha256": "63eceea48120163dd4a86c75a4450cc372b37d496ace352c627a42e61a69d2b8",
+      "size": [
+        512,
+        512
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "nonzero_alpha_bbox": [
+        4,
+        0,
+        509,
+        511
+      ],
+      "coverage": 0.30033111572265625
+    },
+    {
+      "asset_id": "cd044_000",
+      "english": "Osaka Castle Moonlight / Moon Shadow Route Open!",
+      "method": "green-chroma-mask",
+      "output": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\final_english_png\\cd044_000.png",
+      "sha256": "2d83d559d59e6b53042712e8ef77d39aa7a3334116d2b6ff5d1b252b1f31983d",
+      "size": [
+        512,
+        512
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "nonzero_alpha_bbox": [
+        0,
+        13,
+        512,
+        512
+      ],
+      "coverage": 0.3904914855957031
+    },
+    {
+      "asset_id": "cd044_001",
+      "english": "Osaka Castle Moonlight / Drillatron Route Open!",
+      "method": "green-chroma-mask",
+      "output": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\final_english_png\\cd044_001.png",
+      "sha256": "864c5f65398a992d84fd84638e458d1ad25e8c5381645021fe5f043ead611195",
+      "size": [
+        512,
+        512
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "nonzero_alpha_bbox": [
+        0,
+        0,
+        512,
+        503
+      ],
+      "coverage": 0.3638801574707031
+    },
+    {
+      "asset_id": "cd044_002",
+      "english": "Osaka Castle Moonlight / Butterfly Route Open!",
+      "method": "green-chroma-mask",
+      "output": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\final_english_png\\cd044_002.png",
+      "sha256": "19d5ccf4f2abbce16f2817ed1ddcc2975b9868342a8339462cd0fa604e70e8e3",
+      "size": [
+        512,
+        512
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "nonzero_alpha_bbox": [
+        2,
+        0,
+        512,
+        509
+      ],
+      "coverage": 0.25235748291015625
+    }
+  ]
+}

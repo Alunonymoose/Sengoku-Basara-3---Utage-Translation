@@ -1,0 +1,53 @@
+{
+  "patch": "Utage V17 - SH three-line message window animation",
+  "jobs": [
+    {
+      "clip": "Ani 0_0_2",
+      "utage_range": [
+        7004,
+        9740
+      ],
+      "utage_bytes": 2736,
+      "sh_range": [
+        7004,
+        9788
+      ],
+      "sh_bytes": 2784,
+      "delta": 48,
+      "preceding_bytes_compared": 7004,
+      "preceding_bytes_differing": 10,
+      "followed_by": "Ani 0_1_0",
+      "source": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit1P.arc",
+      "lsp": "id\\lsp\\jpn\\cockpit\\cockpit",
+      "output": "C:\\Users\\aluna\\AppData\\Local\\Temp\\claude\\G--PS3-GAME\\3d6192a2-43ec-4117-82a4-b9d0c9c93d18\\scratchpad\\V17_STAGING\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit1P.arc",
+      "lsp_before_sha256": "cc476792c7e798d53ec7880541a0ea8076bfdafc3e64b97c8bea5b6146844d39",
+      "lsp_after_sha256": "835c45667057d16f846dcab3d832ce8a2426f9629ac48fc16f2e66b34276c6ca",
+      "lsp_before_bytes": 91480,
+      "lsp_after_bytes": 91528
+    },
+    {
+      "clip": "Ani 0_0_2",
+      "utage_range": [
+        7004,
+        9740
+      ],
+      "utage_bytes": 2736,
+      "sh_range": [
+        7004,
+        9788
+      ],
+      "sh_bytes": 2784,
+      "delta": 48,
+      "preceding_bytes_compared": 7004,
+      "preceding_bytes_differing": 10,
+      "followed_by": "Ani 0_1_0",
+      "source": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\jpn\\id\\cockpit1P.arc",
+      "lsp": "id\\lsp\\jpn\\cockpit\\cockpit",
+      "output": "C:\\Users\\aluna\\AppData\\Local\\Temp\\claude\\G--PS3-GAME\\3d6192a2-43ec-4117-82a4-b9d0c9c93d18\\scratchpad\\V17_STAGING\\PS3_GAME\\USRDIR\\nativePS3\\rom\\jpn\\id\\cockpit1P.arc",
+      "lsp_before_sha256": "cc476792c7e798d53ec7880541a0ea8076bfdafc3e64b97c8bea5b6146844d39",
+      "lsp_after_sha256": "835c45667057d16f846dcab3d832ce8a2426f9629ac48fc16f2e66b34276c6ca",
+      "lsp_before_bytes": 91480,
+      "lsp_after_bytes": 91528
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\battleQuest.arc",
+    "index": 27,
+    "name": "id\\texture\\jpn\\common\\common_009_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\init_ps3.arc",
+    "index": 9,
+    "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result_id.arc",
+    "index": 11,
+    "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result_id.arc",
+    "index": 31,
+    "name": "id\\texture\\jpn\\common\\common_009_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\retry.arc",
+    "index": 24,
+    "name": "id\\texture\\jpn\\common\\common_009_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\retry.arc",
+    "index": 30,
+    "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\save.arc",
+    "index": 3,
+    "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\save.arc",
+    "index": 23,
+    "name": "id\\texture\\jpn\\common\\common_009_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc",
+    "index": 318,
+    "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc",
+    "index": 338,
+    "name": "id\\texture\\jpn\\common\\common_009_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title_id.arc",
+    "index": 143,
+    "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ"
+  }
+]

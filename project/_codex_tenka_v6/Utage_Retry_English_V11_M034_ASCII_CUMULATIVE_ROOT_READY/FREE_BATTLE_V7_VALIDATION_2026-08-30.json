@@ -1,0 +1,288 @@
+{
+  "status": "pass",
+  "patch": "Utage Free Battle Dynamic Stage Bounds V7",
+  "created": "2026-08-30",
+  "source_tenka_id_sha256": "eb2c1b46ff41fda29584ce070ce0cf78154d83e41f06c5583537a7dabe83c3de",
+  "output_tenka_id_sha256": "a0caaa15c26d7302dc71fe87202621edd1986250400b6e489c1cbbfbdbe9ee2a",
+  "entry_count": 82,
+  "changed_resource_count": 1,
+  "changed_resources": [
+    {
+      "index": 59,
+      "resource": "id\\lsp\\jpn\\tenka\\tenka_00",
+      "type_hash": "0x60DD1B16",
+      "before_sha256": "13d02b0a9b7888f6c770e27400c14afa4fe0c551689a7bec140c8b2c5b82292b",
+      "after_sha256": "d2ac693fc6f72c4fd8d24fc4d3d62723ec0d6ed79fc95dfab5da01ea6f874e4c",
+      "raw_size": 66296
+    }
+  ],
+  "layout_resource": "id\\lsp\\jpn\\tenka\\tenka_00",
+  "layout_resource_index": 59,
+  "stage_slots": [
+    {
+      "node": 108,
+      "parent_row": "7_0_0",
+      "scale_x": {
+        "before": 0.5400000214576721,
+        "after": 0.52
+      },
+      "scale_y": {
+        "before": 0.8799999952316284,
+        "after": 0.52
+      },
+      "effective_uniform_ratio_from_retail_0_88": 0.5909090909090909,
+      "geometry": {
+        "before": [
+          -32,
+          -16,
+          32,
+          16
+        ],
+        "after": [
+          -32,
+          -16,
+          32,
+          16
+        ],
+        "unchanged": true
+      }
+    },
+    {
+      "node": 113,
+      "parent_row": "7_0_1",
+      "scale_x": {
+        "before": 0.5400000214576721,
+        "after": 0.52
+      },
+      "scale_y": {
+        "before": 0.8799999952316284,
+        "after": 0.52
+      },
+      "effective_uniform_ratio_from_retail_0_88": 0.5909090909090909,
+      "geometry": {
+        "before": [
+          -32,
+          -16,
+          32,
+          16
+        ],
+        "after": [
+          -32,
+          -16,
+          32,
+          16
+        ],
+        "unchanged": true
+      }
+    },
+    {
+      "node": 118,
+      "parent_row": "7_0_2",
+      "scale_x": {
+        "before": 0.5400000214576721,
+        "after": 0.52
+      },
+      "scale_y": {
+        "before": 0.8799999952316284,
+        "after": 0.52
+      },
+      "effective_uniform_ratio_from_retail_0_88": 0.5909090909090909,
+      "geometry": {
+        "before": [
+          -32,
+          -16,
+          32,
+          16
+        ],
+        "after": [
+          -32,
+          -16,
+          32,
+          16
+        ],
+        "unchanged": true
+      }
+    },
+    {
+      "node": 123,
+      "parent_row": "7_0_3",
+      "scale_x": {
+        "before": 0.5400000214576721,
+        "after": 0.52
+      },
+      "scale_y": {
+        "before": 0.8799999952316284,
+        "after": 0.52
+      },
+      "effective_uniform_ratio_from_retail_0_88": 0.5909090909090909,
+      "geometry": {
+        "before": [
+          -32,
+          -16,
+          32,
+          16
+        ],
+        "after": [
+          -32,
+          -16,
+          32,
+          16
+        ],
+        "unchanged": true
+      }
+    },
+    {
+      "node": 128,
+      "parent_row": "7_0_4",
+      "scale_x": {
+        "before": 0.5400000214576721,
+        "after": 0.52
+      },
+      "scale_y": {
+        "before": 0.8799999952316284,
+        "after": 0.52
+      },
+      "effective_uniform_ratio_from_retail_0_88": 0.5909090909090909,
+      "geometry": {
+        "before": [
+          -32,
+          -16,
+          32,
+          16
+        ],
+        "after": [
+          -32,
+          -16,
+          32,
+          16
+        ],
+        "unchanged": true
+      }
+    },
+    {
+      "node": 133,
+      "parent_row": "7_0_5",
+      "scale_x": {
+        "before": 0.5400000214576721,
+        "after": 0.52
+      },
+      "scale_y": {
+        "before": 0.8799999952316284,
+        "after": 0.52
+      },
+      "effective_uniform_ratio_from_retail_0_88": 0.5909090909090909,
+      "geometry": {
+        "before": [
+          -32,
+          -16,
+          32,
+          16
+        ],
+        "after": [
+          -32,
+          -16,
+          32,
+          16
+        ],
+        "unchanged": true
+      }
+    },
+    {
+      "node": 137,
+      "parent_row": "7_0_6",
+      "scale_x": {
+        "before": 0.5400000214576721,
+        "after": 0.52
+      },
+      "scale_y": {
+        "before": 0.8799999952316284,
+        "after": 0.52
+      },
+      "effective_uniform_ratio_from_retail_0_88": 0.5909090909090909,
+      "geometry": {
+        "before": [
+          -32,
+          -16,
+          32,
+          16
+        ],
+        "after": [
+          -32,
+          -16,
+          32,
+          16
+        ],
+        "unchanged": true
+      }
+    }
+  ],
+  "changed_lsp_raw_byte_offsets": [
+    19057,
+    19058,
+    19059,
+    19061,
+    19062,
+    19063,
+    19937,
+    19938,
+    19939,
+    19941,
+    19942,
+    19943,
+    20817,
+    20818,
+    20819,
+    20821,
+    20822,
+    20823,
+    21697,
+    21698,
+    21699,
+    21701,
+    21702,
+    21703,
+    22577,
+    22578,
+    22579,
+    22581,
+    22582,
+    22583,
+    23457,
+    23458,
+    23459,
+    23461,
+    23462,
+    23463,
+    24161,
+    24162,
+    24163,
+    24165,
+    24166,
+    24167
+  ],
+  "universal_scope": "seven reusable St_s viewport slots covering all 38 Quick Battles stages",
+  "preserved": [
+    "V6 Quick Battles texture entry 67 byte-identical",
+    "V6 Battles counter texture entry 56 byte-identical",
+    "id_tenka GSM/FIM/TNF/CSA and every font atlas byte-identical",
+    "right-side selected-stage title resources untouched",
+    "all non-layout ARC compressed blobs byte-identical"
+  ],
+  "evidence": {
+    "v6_runtime": "Quick Battles and Battles textures prove exact archive installed; shared names remained pixel-identical after scaleX 0.70 to 0.54.",
+    "message_font": "id_tenka_r slots 104-141, FIM records, TNF, CSA, and active Latin pages are already correct and match official SH where counterparts exist.",
+    "animation": "No animation records reference the seven St_s child IDs; no keyframe overwrites the attempted scale field.",
+    "dynamic_scale": "All untouched dummy_BM text nodes use equal X/Y values. V6 changed X only and runtime pixels remained identical, so V7 supplies the list renderer a uniform 0.52 text scale."
+  },
+  "offline_validation": "pass",
+  "engine_smoke_test": "required",
+  "method": "uniform dynamic-text scale: X/Y 0.52 on seven reusable St_s list slots",
+  "predicted_runtime": {
+    "retail_scale": 0.88,
+    "v7_scale": 0.52,
+    "ratio": 0.5909090909090909,
+    "longest_observed_width_px": 738,
+    "predicted_longest_width_px": 436.1,
+    "measured_row_interior_px": 438
+  }
+}

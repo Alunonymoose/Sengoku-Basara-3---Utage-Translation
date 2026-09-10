@@ -1,0 +1,85 @@
+{
+  "status": "pass",
+  "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result_id.arc",
+  "archives": [
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\brief\\mode_quest.arc",
+      "entries": [
+        2
+      ],
+      "donor_sha256": "e2eae48c0360cd8db88996082c801f2b75dde1fa18a9a1c979344ebe7f2c3760"
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\brief\\og\\mode_quest.arc",
+      "entries": [
+        2
+      ],
+      "donor_sha256": "e2eae48c0360cd8db88996082c801f2b75dde1fa18a9a1c979344ebe7f2c3760"
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\gallery\\gallery.arc",
+      "entries": [
+        22
+      ],
+      "donor_sha256": "e2eae48c0360cd8db88996082c801f2b75dde1fa18a9a1c979344ebe7f2c3760"
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\menu.arc",
+      "entries": [
+        31
+      ],
+      "donor_sha256": "e2eae48c0360cd8db88996082c801f2b75dde1fa18a9a1c979344ebe7f2c3760"
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result_id.arc",
+      "entries": [
+        45
+      ],
+      "donor_sha256": "e2eae48c0360cd8db88996082c801f2b75dde1fa18a9a1c979344ebe7f2c3760"
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\equip.arc",
+      "entries": [
+        34
+      ],
+      "donor_sha256": "e2eae48c0360cd8db88996082c801f2b75dde1fa18a9a1c979344ebe7f2c3760"
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\smith.arc",
+      "entries": [
+        38
+      ],
+      "donor_sha256": "e2eae48c0360cd8db88996082c801f2b75dde1fa18a9a1c979344ebe7f2c3760"
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_finish_id.arc",
+      "entries": [
+        41
+      ],
+      "donor_sha256": "e2eae48c0360cd8db88996082c801f2b75dde1fa18a9a1c979344ebe7f2c3760"
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_id.arc",
+      "entries": [
+        54
+      ],
+      "donor_sha256": "e2eae48c0360cd8db88996082c801f2b75dde1fa18a9a1c979344ebe7f2c3760"
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_id_PRE_FONTFIT_backup.arc",
+      "entries": [
+        54
+      ],
+      "donor_sha256": "e2eae48c0360cd8db88996082c801f2b75dde1fa18a9a1c979344ebe7f2c3760"
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\versus\\menu.arc",
+      "entries": [
+        66
+      ],
+      "donor_sha256": "e2eae48c0360cd8db88996082c801f2b75dde1fa18a9a1c979344ebe7f2c3760"
+    }
+  ],
+  "resources": 11,
+  "archive_count": 11
+}

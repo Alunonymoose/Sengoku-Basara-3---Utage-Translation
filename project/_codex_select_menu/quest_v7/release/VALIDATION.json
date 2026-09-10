@@ -1,0 +1,558 @@
+{
+  "status": "offline_validated",
+  "files": [
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/common/pl_face/pl028.arc",
+      "source_sha256": "175f3119127b8e7b59081c9fef8f4924a56fe8baade14394e9c3da90fdfb5e2e",
+      "sha256": "43e693b06299b37a4231e481ded106c8ab75a06bd03b0414c1fa29cef0531cf3",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\army\\army_026_ID_HQ",
+          "kind": "faction name"
+        }
+      ],
+      "unchanged_resources": 3
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/common/pl_face/pl_all.arc",
+      "source_sha256": "92e40ea46f8f24825ef41a61cf5a0070ca8d1c0669747a446296eca796bc15fd",
+      "sha256": "e59f55ffff741b69982dd0685b18b886ecc3f42ec5b60fe57c19ea8c9b2c63ab",
+      "changes": [
+        {
+          "index": 105,
+          "name": "id\\texture\\jpn\\army\\army_026_ID_HQ",
+          "kind": "faction name"
+        }
+      ],
+      "unchanged_resources": 111
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/gallery/chara_000.arc",
+      "source_sha256": "edd9acb86b16ebbb12217dc039a5f5c7c988d8fa4f9de429a447a2ead489a8cc",
+      "sha256": "bbaeabca218acb2d89564628b5c5e1a32412c5b4fa19027ac085d051c56f4fcd",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\army\\army_026_ID_HQ",
+          "kind": "faction name"
+        }
+      ],
+      "unchanged_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/result/pl016.arc",
+      "source_sha256": "f0d8d0cd5b8b5f272189473220a9af3b968db1fc107e06d3a19010ec83cf41a1",
+      "sha256": "a634d566c5de9c4ebad6c290a4d99fd13e07c4eb6dbedb41058094c52a31dd8f",
+      "changes": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_016_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/result/pl017.arc",
+      "source_sha256": "6ffd4aa0f85267dcafcf01238aeda0663f1a4148bbfac03d958f01fac8e09cde",
+      "sha256": "43ceaee057972fb8e362e7f1ac669fd064b8318ba6bd6e01970a200ae691db37",
+      "changes": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_017_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/result/pl018.arc",
+      "source_sha256": "208a1a7472225bf884a0dec044f73abf987493aee78e0d63905b260e91c1e634",
+      "sha256": "dc5115ccb2474743ef9d109966e250aa2e76bae39056a8e6b369ccb02ff9e3c8",
+      "changes": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_018_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/result/pl019.arc",
+      "source_sha256": "97153ba277cd8b3af2ed03a093d7b78434b976508d667cf0e881170a13b41b41",
+      "sha256": "b3167466279668cc054345029fc12393943e939a52d0fc22ef13b23d582543f0",
+      "changes": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_019_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/result/pl020.arc",
+      "source_sha256": "ed1ba4f345c993e2fc230be7760c9edda0e6f23c04f2ad9777511532838df92c",
+      "sha256": "fa09723ecf5229968711581814b39784d9153c6a4d91599fc2a5acf9bb3e7560",
+      "changes": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_020_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/result/pl021.arc",
+      "source_sha256": "40cf2a3417e99d6418a0a562ceb8d94b32f85bcd20ac2cb68cb38cba6d79f4bc",
+      "sha256": "50ecfd6a43be988028c16bdffd2fb5e3f2260a9eef52bf072775f86bd0fc394e",
+      "changes": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_021_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/result/pl022.arc",
+      "source_sha256": "8018c64871e46f9b9cc8e130a696ca6e668dcddc3b8aa5979c1e9f8aea626c12",
+      "sha256": "863a7a1cf47071f985ba432fce7869f6235bbc0e3cb584929e14986699630f37",
+      "changes": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_022_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/result/pl023.arc",
+      "source_sha256": "988144b006108f52afb54fb42ea91b5d2048fa41944a34937a1742d414be7cac",
+      "sha256": "a3ac728b1147f105402eb21d897cf954a7c1295028433a64945767562a140242",
+      "changes": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_023_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/result/pl024.arc",
+      "source_sha256": "7f9611825976cd14c3675f715e8ea79901e8f7fafcf64681233c0ab6b2089185",
+      "sha256": "6dbada5d842b54fbec00097d4fe85e0557ceef17b0d2dbcc7310dbb37590a4d6",
+      "changes": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_024_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/result/pl025.arc",
+      "source_sha256": "499cc4a32dee9b3a3d7d4259c6afc935bec98d4d0a11db6ca53de97adfe4c769",
+      "sha256": "41e22a4d37af576954be36191921edffdd6e23ce9aa84c4261f3a7e6c9177876",
+      "changes": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_025_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/result/pl026.arc",
+      "source_sha256": "96b5007d454efd1eb81f6099127407f1a50645cd7b2c0c7932e575d161849fde",
+      "sha256": "36ad807933cfa8cdfa70f72c25f7291b2bf19ca4ed875dba98ed50a9372f435e",
+      "changes": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_026_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/result/pl027.arc",
+      "source_sha256": "94299e33f84e066aacbb83570f5f1fd15f64470bbb6ad7bf95729116f3061e91",
+      "sha256": "d6d68e9e3a61a06113087cf82fb178e9cf61757069bc8fdbc9c47c4de2c27153",
+      "changes": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_027_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/result/pl028.arc",
+      "source_sha256": "adc9eb6443c39e4e982ac2e020b390199aa06f43f30738781e1b587fdb8d9d0b",
+      "sha256": "3f4dd3fa8aae73df633fca40eae968fe69ced07bdf80f90cf1817e11a580efde",
+      "changes": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_028_ID_HQ",
+          "kind": "character name"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\army\\army_026_ID_HQ",
+          "kind": "faction name"
+        }
+      ],
+      "unchanged_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/result/pl029.arc",
+      "source_sha256": "1561a10cf19bfb82d57bf1a42cf22ffa9606b185fca06cd46690c30d89b7a7fd",
+      "sha256": "4dabf8b4b098e778664002dc97e69f3f9156128eae7ef77929866ab26b822e3d",
+      "changes": [
+        {
+          "index": 2,
+          "name": "id\\texture\\jpn\\name\\name_029_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/result_id.arc",
+      "source_sha256": "af93102040f6bd3929fb271a558d1fc87b8ba7528e2afabf5fe1c619ee453589",
+      "sha256": "ab3a848b0bf9e2ffe4287b35d741dfe6783a0a2ac4757aab2463f7761b837184",
+      "changes": [
+        {
+          "index": 41,
+          "name": "id\\texture\\jpn\\common\\common_013_ID_HQ",
+          "kind": "map header"
+        },
+        {
+          "index": 42,
+          "name": "id\\texture\\jpn\\tenka\\tenka_005_ID_HQ",
+          "kind": "map header"
+        },
+        {
+          "index": 46,
+          "name": "id\\lsp\\jpn\\tenka\\top_00",
+          "kind": "map header"
+        },
+        {
+          "index": 139,
+          "name": "msg\\id_brief\\jpn\\id_brief_r",
+          "kind": "shop text"
+        },
+        {
+          "index": 222,
+          "name": "msg\\id_brief\\eng\\id_brief_r",
+          "kind": "shop text"
+        }
+      ],
+      "unchanged_resources": 240
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/equip.arc",
+      "source_sha256": "162f72445d0c798137321868f0b6cc6644cef1961308d8c04a20eb39dc78f80c",
+      "sha256": "266fe122ae923a16dfaa94f5abe3a7e6fd32ad477c803b63b711592041080f49",
+      "changes": [
+        {
+          "index": 25,
+          "name": "msg\\id_brief\\jpn\\id_brief_r",
+          "kind": "shop text"
+        }
+      ],
+      "unchanged_resources": 53
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/smith.arc",
+      "source_sha256": "4fe67cefc44b21be889016305433c0026e051992883d56a508a0263875656ecd",
+      "sha256": "c3234cd1691c0651a88182ab09d4665531ff2f1eda26d55e142fa6b68388f354",
+      "changes": [
+        {
+          "index": 25,
+          "name": "msg\\id_brief\\jpn\\id_brief_r",
+          "kind": "shop text"
+        }
+      ],
+      "unchanged_resources": 55
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_attack_pl028.arc",
+      "source_sha256": "fd6c7b01c7610e091e323066f3d9e66f641a1ef00c5f09236137a70972acf1ef",
+      "sha256": "147bb0a573c22989ae1778b5e11d665a7e541c15af6e6dd0ef09898789119b65",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\army\\army_026_ID_HQ",
+          "kind": "faction name"
+        }
+      ],
+      "unchanged_resources": 2
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_attack_pl037.arc",
+      "source_sha256": "2e651f65baeb8d41161645042ac91d05ddce0cbcb8eba42affc250a68e76d727",
+      "sha256": "9661946b30117ee543f13c0f6189a18ed974b947b2ed6ab2bcd405ed5b240251",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\army\\army_026_ID_HQ",
+          "kind": "faction name"
+        }
+      ],
+      "unchanged_resources": 2
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_finish_id.arc",
+      "source_sha256": "589acc2fd8bb6d4b6e7bca4cc22e60edb6ffb3594e425bdc1082bbea6d82b235",
+      "sha256": "285d9a33effa45de0b09386fac65d4a69e63cb0368c39fd502d7d5d674b04f64",
+      "changes": [
+        {
+          "index": 74,
+          "name": "id\\texture\\jpn\\common\\common_013_ID_HQ",
+          "kind": "map header"
+        }
+      ],
+      "unchanged_resources": 108
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_id.arc",
+      "source_sha256": "8b9968b91a512c07fbc959a6abf78375e391d5d8031ab08799d566520851e9e0",
+      "sha256": "fcb583164344b190874e7c700eaf7683fb7ee066cb1f7b8f16ecb7f9870c3ace",
+      "changes": [
+        {
+          "index": 66,
+          "name": "id\\texture\\jpn\\common\\common_013_ID_HQ",
+          "kind": "map header"
+        },
+        {
+          "index": 67,
+          "name": "id\\texture\\jpn\\tenka\\tenka_005_ID_HQ",
+          "kind": "map header"
+        },
+        {
+          "index": 70,
+          "name": "id\\lsp\\jpn\\tenka\\top_00",
+          "kind": "map header"
+        }
+      ],
+      "unchanged_resources": 79
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_pl016.arc",
+      "source_sha256": "7bdfbf4c8d2d479b70e19cd0ff329d972381abf956460fa770ec95a9f381275f",
+      "sha256": "8d452c8d865b64b795c04b92a81b6288e4a26b1a824e3230b9e4420c1344eb53",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_016_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_pl017.arc",
+      "source_sha256": "587afdb7ab506b014693d220066f9e06290f673b4af23b4f98f9e2107af84e1d",
+      "sha256": "5e95b37db35d976eef64b910d345f98196324674ab1e573ee7bf9b39c037a728",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_017_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_pl018.arc",
+      "source_sha256": "94acf4f1f68024b1b81a237b5000cd6bb44cec298633f1ea60647026da9ca0b0",
+      "sha256": "e98bb1399b88097e5931708caaa74f8b0e7b8d4b51d3050441207c895ef6686e",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_018_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_pl019.arc",
+      "source_sha256": "11623c9a5d2e2d98cdcfcb5441c38fe79070ebf507e9785a49db182de1ee9125",
+      "sha256": "7a89aaf2d41bce327612c99745dfa92b2b8d63cd0cb94dab59fd3de150623335",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_019_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_pl020.arc",
+      "source_sha256": "f3952722879c809b27bd77b0c488bcc1a50a34dddf89baf05f16e15a2d899fca",
+      "sha256": "84e9745e3290e049eb00bb12b9411d4a4464a25eee8d8752b315fedc05d07a4b",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_020_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_pl021.arc",
+      "source_sha256": "8a38de74f6e079e8bfb3af5d018f856378c87cbe24ac35fbaace8f860d43dd59",
+      "sha256": "f4f4247609f9aa71ace3aa43573d3f00d8bd72f46d84f8c8ab4054c461fe008e",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_021_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_pl022.arc",
+      "source_sha256": "aa2599c4bd2cd5a30e21d1aea70094070786e621b95999478bf942a7d5b29d66",
+      "sha256": "1a0f307df358c576426c80d1d70b9037b79dc814462339f2ec91774aa1cab7aa",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_022_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_pl023.arc",
+      "source_sha256": "da3c504f511b4928338aebe9ce380bc5423f56003bd4b3d3cb2083e434b5fe3b",
+      "sha256": "91f4eae2230c2e63df53acfd3ef63d36f2130972817a8a8d50d2c2b22e9e85b3",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_023_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_pl024.arc",
+      "source_sha256": "d9d2502e1654644954e8c935e5720a0f8d05e2a1300b55d70fb7e7dd431f59dc",
+      "sha256": "a2c68db24de0a172007f0c23691ddf2a36d22d2c938f7dfc6fb70ed4c7dd9b60",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_024_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_pl025.arc",
+      "source_sha256": "7a0b610171c156e14399e6bbf8aaa07b84ecdbd247cd10fcb3877f15be4e919b",
+      "sha256": "02546597cfde40840ed54a5d21b12405d3d2c12c02be0a89cb0150b1520efe34",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_025_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_pl026.arc",
+      "source_sha256": "4e2b646d7014536e372218e811dca5b377959960d0568f1aaaf78ae8e8fe3157",
+      "sha256": "20033da778ed4b5c8d6a2d46e7d05eff7a78b363d58f1b0016f2752d56bf94f9",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_026_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_pl027.arc",
+      "source_sha256": "99437399beb2ee0b01a8ce42ba7cc2ee49a00f04242436479d8e016f8dd9155a",
+      "sha256": "a128558a96b6be86fcff9add2f8f4749b2802b68afa3af8a09eb22ea24f59e12",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_027_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_pl028.arc",
+      "source_sha256": "8b4d1efc3fbeaf98b598ed974283790b0a820a06f6c09ca3fdd07c383c679d41",
+      "sha256": "9fbad93080c86e02535f0fc877e2fd023cc6be9bbe9fb8e5c32b02d07bc94f66",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_028_ID_HQ",
+          "kind": "character name"
+        },
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\army\\army_026_ID_HQ",
+          "kind": "faction name"
+        }
+      ],
+      "unchanged_resources": 3
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_pl029.arc",
+      "source_sha256": "4eeeafd8e77244d27b043b658e459e055c9904bf62139ee18d4fb47d6e583437",
+      "sha256": "8fae250647987dfd9ef2d94498afe76ec45066bc7fed3f04ac6c90822a400207",
+      "changes": [
+        {
+          "index": 0,
+          "name": "id\\texture\\jpn\\name\\name_029_ID_HQ",
+          "kind": "character name"
+        }
+      ],
+      "unchanged_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/title_id.arc",
+      "source_sha256": "6d807f885ad1b57ca69c00020f3d1d08c852811a9b3acd596ff9ef9ccc78d355",
+      "sha256": "0f91f4c095368c5a2d2189149c58aabd3dabe87d8bdefface3b961ad46ae4d28",
+      "changes": [
+        {
+          "index": 133,
+          "name": "id\\texture\\jpn\\army\\army_026_ID_HQ",
+          "kind": "faction name"
+        }
+      ],
+      "unchanged_resources": 168
+    }
+  ],
+  "archives": 39,
+  "changed_resources": 47,
+  "untouched_resources": 963,
+  "runtime_verified": false,
+  "backup": "E:\\Utage Patching New\\_codex_select_menu\\quest_v7\\release\\BACKUP_PRE_V7.zip",
+  "backup_sha256": "77581bd581a0313c1db66a6a880c8c4e29e471a213571a2791e69a3c85987f6b"
+}

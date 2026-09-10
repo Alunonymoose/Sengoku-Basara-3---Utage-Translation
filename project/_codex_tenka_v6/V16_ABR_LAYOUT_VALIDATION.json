@@ -1,0 +1,643 @@
+{
+  "patch": "Utage V16 - SH abr in-battle message layout",
+  "jobs": [
+    {
+      "utage_nodes": 241,
+      "sh_nodes": 172,
+      "utage_group_at": 117,
+      "sh_group_at": 83,
+      "fields_changed": 20,
+      "changes": [
+        {
+          "node": 117,
+          "name": "3_0",
+          "field": "0x00",
+          "before": "00000000c0000000",
+          "after": "0000000041000000"
+        },
+        {
+          "node": 118,
+          "name": "3_0_0",
+          "field": "0x00",
+          "before": "c3440000c0800000",
+          "after": "c344000000000000"
+        },
+        {
+          "node": 122,
+          "name": "Kamon",
+          "field": "0x74",
+          "before": "ffffffc0ffffffc80000004000000038",
+          "after": "ffffffc0ffffffc00000004000000040"
+        },
+        {
+          "node": 122,
+          "name": "Kamon",
+          "field": "0x84",
+          "before": "000000000000000800000100000000f8",
+          "after": "00000000000000000000010000000100"
+        },
+        {
+          "node": 124,
+          "name": "Mess1",
+          "field": "0x00",
+          "before": "c3440000c1000000",
+          "after": "c3340000c1000000"
+        },
+        {
+          "node": 125,
+          "name": "Mess2",
+          "field": "0x00",
+          "before": "c2c00000c1000000",
+          "after": "c2a00000c1000000"
+        },
+        {
+          "node": 125,
+          "name": "Mess2",
+          "field": "0x74",
+          "before": "00000000ffffffc00000016400000040",
+          "after": "00000000ffffffc00000015400000040"
+        },
+        {
+          "node": 126,
+          "name": "Mess3",
+          "field": "0x00",
+          "before": "c3940000c1000000",
+          "after": "c38c0000c1000000"
+        },
+        {
+          "node": 126,
+          "name": "Mess3",
+          "field": "0x74",
+          "before": "ffffff98ffffffc00000000000000040",
+          "after": "ffffff88ffffffc00000000000000040"
+        },
+        {
+          "node": 128,
+          "name": "Mask",
+          "field": "0x00",
+          "before": "c3440000c1000000",
+          "after": "c3340000c1000000"
+        },
+        {
+          "node": 130,
+          "name": "Line_U",
+          "field": "0x00",
+          "before": "00000000c1700000",
+          "after": "00000000c1b00000"
+        },
+        {
+          "node": 131,
+          "name": "Line_U",
+          "field": "0x00",
+          "before": "00000000c1700000",
+          "after": "00000000c1b00000"
+        },
+        {
+          "node": 132,
+          "name": "Line_D",
+          "field": "0x00",
+          "before": "0000000041600000",
+          "after": "0000000041b00000"
+        },
+        {
+          "node": 133,
+          "name": "Line_D",
+          "field": "0x00",
+          "before": "0000000041600000",
+          "after": "0000000041b00000"
+        },
+        {
+          "node": 134,
+          "name": "MesJ_M",
+          "field": "0x74",
+          "before": "ffffff10ffffffef000000f000000011",
+          "after": "ffffff10ffffffea000000f000000016"
+        },
+        {
+          "node": 134,
+          "name": "MesJ_M",
+          "field": "0x84",
+          "before": "000000fa00000039000000fe0000005b",
+          "after": "000000fa00000021000000fe0000005f"
+        },
+        {
+          "node": 135,
+          "name": "MesJ_L",
+          "field": "0x74",
+          "before": "ffffff9cffffffef0000000000000011",
+          "after": "ffffff9cffffffea0000000000000016"
+        },
+        {
+          "node": 135,
+          "name": "MesJ_L",
+          "field": "0x84",
+          "before": "000000fa00000039000000fe0000005b",
+          "after": "000000fa00000021000000fe0000005f"
+        },
+        {
+          "node": 136,
+          "name": "MesJ_R",
+          "field": "0x74",
+          "before": "00000000ffffffef0000006400000011",
+          "after": "00000000ffffffea0000006400000016"
+        },
+        {
+          "node": 136,
+          "name": "MesJ_R",
+          "field": "0x84",
+          "before": "000000fa00000039000000fe0000005b",
+          "after": "000000fa00000021000000fe0000005f"
+        }
+      ],
+      "source": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit1P.arc",
+      "lsp": "id\\lsp\\jpn\\cockpit\\cockpit",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit1P.arc",
+      "donor_lsp": "id\\lsp\\abr\\cockpit\\cockpit",
+      "output": "C:\\Users\\aluna\\AppData\\Local\\Temp\\claude\\G--PS3-GAME\\3d6192a2-43ec-4117-82a4-b9d0c9c93d18\\scratchpad\\V16_STAGING\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit1P.arc",
+      "lsp_before_sha256": "b0a390b7747a47759ddfb9b4b344b4ffc38d15a25de3c97a2a7bf59ab718aa94",
+      "lsp_after_sha256": "cc476792c7e798d53ec7880541a0ea8076bfdafc3e64b97c8bea5b6146844d39"
+    },
+    {
+      "utage_nodes": 241,
+      "sh_nodes": 172,
+      "utage_group_at": 117,
+      "sh_group_at": 83,
+      "fields_changed": 20,
+      "changes": [
+        {
+          "node": 117,
+          "name": "3_0",
+          "field": "0x00",
+          "before": "00000000c0000000",
+          "after": "0000000041000000"
+        },
+        {
+          "node": 118,
+          "name": "3_0_0",
+          "field": "0x00",
+          "before": "c3440000c0800000",
+          "after": "c344000000000000"
+        },
+        {
+          "node": 122,
+          "name": "Kamon",
+          "field": "0x74",
+          "before": "ffffffc0ffffffc80000004000000038",
+          "after": "ffffffc0ffffffc00000004000000040"
+        },
+        {
+          "node": 122,
+          "name": "Kamon",
+          "field": "0x84",
+          "before": "000000000000000800000100000000f8",
+          "after": "00000000000000000000010000000100"
+        },
+        {
+          "node": 124,
+          "name": "Mess1",
+          "field": "0x00",
+          "before": "c3440000c1000000",
+          "after": "c3340000c1000000"
+        },
+        {
+          "node": 125,
+          "name": "Mess2",
+          "field": "0x00",
+          "before": "c2c00000c1000000",
+          "after": "c2a00000c1000000"
+        },
+        {
+          "node": 125,
+          "name": "Mess2",
+          "field": "0x74",
+          "before": "00000000ffffffc00000016400000040",
+          "after": "00000000ffffffc00000015400000040"
+        },
+        {
+          "node": 126,
+          "name": "Mess3",
+          "field": "0x00",
+          "before": "c3940000c1000000",
+          "after": "c38c0000c1000000"
+        },
+        {
+          "node": 126,
+          "name": "Mess3",
+          "field": "0x74",
+          "before": "ffffff98ffffffc00000000000000040",
+          "after": "ffffff88ffffffc00000000000000040"
+        },
+        {
+          "node": 128,
+          "name": "Mask",
+          "field": "0x00",
+          "before": "c3440000c1000000",
+          "after": "c3340000c1000000"
+        },
+        {
+          "node": 130,
+          "name": "Line_U",
+          "field": "0x00",
+          "before": "00000000c1700000",
+          "after": "00000000c1b00000"
+        },
+        {
+          "node": 131,
+          "name": "Line_U",
+          "field": "0x00",
+          "before": "00000000c1700000",
+          "after": "00000000c1b00000"
+        },
+        {
+          "node": 132,
+          "name": "Line_D",
+          "field": "0x00",
+          "before": "0000000041600000",
+          "after": "0000000041b00000"
+        },
+        {
+          "node": 133,
+          "name": "Line_D",
+          "field": "0x00",
+          "before": "0000000041600000",
+          "after": "0000000041b00000"
+        },
+        {
+          "node": 134,
+          "name": "MesJ_M",
+          "field": "0x74",
+          "before": "ffffff10ffffffef000000f000000011",
+          "after": "ffffff10ffffffea000000f000000016"
+        },
+        {
+          "node": 134,
+          "name": "MesJ_M",
+          "field": "0x84",
+          "before": "000000fa00000039000000fe0000005b",
+          "after": "000000fa00000021000000fe0000005f"
+        },
+        {
+          "node": 135,
+          "name": "MesJ_L",
+          "field": "0x74",
+          "before": "ffffff9cffffffef0000000000000011",
+          "after": "ffffff9cffffffea0000000000000016"
+        },
+        {
+          "node": 135,
+          "name": "MesJ_L",
+          "field": "0x84",
+          "before": "000000fa00000039000000fe0000005b",
+          "after": "000000fa00000021000000fe0000005f"
+        },
+        {
+          "node": 136,
+          "name": "MesJ_R",
+          "field": "0x74",
+          "before": "00000000ffffffef0000006400000011",
+          "after": "00000000ffffffea0000006400000016"
+        },
+        {
+          "node": 136,
+          "name": "MesJ_R",
+          "field": "0x84",
+          "before": "000000fa00000039000000fe0000005b",
+          "after": "000000fa00000021000000fe0000005f"
+        }
+      ],
+      "source": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\jpn\\id\\cockpit1P.arc",
+      "lsp": "id\\lsp\\jpn\\cockpit\\cockpit",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit1P.arc",
+      "donor_lsp": "id\\lsp\\abr\\cockpit\\cockpit",
+      "output": "C:\\Users\\aluna\\AppData\\Local\\Temp\\claude\\G--PS3-GAME\\3d6192a2-43ec-4117-82a4-b9d0c9c93d18\\scratchpad\\V16_STAGING\\PS3_GAME\\USRDIR\\nativePS3\\rom\\jpn\\id\\cockpit1P.arc",
+      "lsp_before_sha256": "b0a390b7747a47759ddfb9b4b344b4ffc38d15a25de3c97a2a7bf59ab718aa94",
+      "lsp_after_sha256": "cc476792c7e798d53ec7880541a0ea8076bfdafc3e64b97c8bea5b6146844d39"
+    },
+    {
+      "utage_nodes": 260,
+      "sh_nodes": 207,
+      "utage_group_at": 119,
+      "sh_group_at": 101,
+      "fields_changed": 21,
+      "changes": [
+        {
+          "node": 119,
+          "name": "3_0",
+          "field": "0x00",
+          "before": "00000000c0000000",
+          "after": "0000000041000000"
+        },
+        {
+          "node": 120,
+          "name": "3_0_0",
+          "field": "0x00",
+          "before": "c3440000c0800000",
+          "after": "c344000000000000"
+        },
+        {
+          "node": 123,
+          "name": "Name",
+          "field": "0x00",
+          "before": "c2a00000c2180000",
+          "after": "c2a00000c2300000"
+        },
+        {
+          "node": 124,
+          "name": "Kamon",
+          "field": "0x74",
+          "before": "ffffffc0ffffffc80000004000000038",
+          "after": "ffffffc0ffffffc00000004000000040"
+        },
+        {
+          "node": 124,
+          "name": "Kamon",
+          "field": "0x84",
+          "before": "000000000000000800000100000000f8",
+          "after": "00000000000000000000010000000100"
+        },
+        {
+          "node": 126,
+          "name": "Mess1",
+          "field": "0x00",
+          "before": "c3440000c1000000",
+          "after": "c3340000c1000000"
+        },
+        {
+          "node": 127,
+          "name": "Mess2",
+          "field": "0x00",
+          "before": "c2c00000c1000000",
+          "after": "c2a00000c1000000"
+        },
+        {
+          "node": 127,
+          "name": "Mess2",
+          "field": "0x74",
+          "before": "00000000ffffffc00000016400000040",
+          "after": "00000000ffffffc00000015400000040"
+        },
+        {
+          "node": 128,
+          "name": "Mess3",
+          "field": "0x00",
+          "before": "c3940000c1000000",
+          "after": "c38c0000c1000000"
+        },
+        {
+          "node": 128,
+          "name": "Mess3",
+          "field": "0x74",
+          "before": "ffffff98ffffffc00000000000000040",
+          "after": "ffffff88ffffffc00000000000000040"
+        },
+        {
+          "node": 130,
+          "name": "Mask",
+          "field": "0x00",
+          "before": "c3440000c1000000",
+          "after": "c3340000c1000000"
+        },
+        {
+          "node": 132,
+          "name": "Line_U",
+          "field": "0x00",
+          "before": "00000000c1700000",
+          "after": "00000000c1b00000"
+        },
+        {
+          "node": 133,
+          "name": "Line_U",
+          "field": "0x00",
+          "before": "00000000c1700000",
+          "after": "00000000c1b00000"
+        },
+        {
+          "node": 134,
+          "name": "Line_D",
+          "field": "0x00",
+          "before": "0000000041600000",
+          "after": "0000000041b00000"
+        },
+        {
+          "node": 135,
+          "name": "Line_D",
+          "field": "0x00",
+          "before": "0000000041600000",
+          "after": "0000000041b00000"
+        },
+        {
+          "node": 136,
+          "name": "MesJ_M",
+          "field": "0x74",
+          "before": "ffffff10ffffffef000000f000000011",
+          "after": "ffffff10ffffffea000000f000000016"
+        },
+        {
+          "node": 136,
+          "name": "MesJ_M",
+          "field": "0x84",
+          "before": "000000fa00000039000000fe0000005b",
+          "after": "000000fa00000021000000fe0000005f"
+        },
+        {
+          "node": 137,
+          "name": "MesJ_L",
+          "field": "0x74",
+          "before": "ffffff9cffffffef0000000000000011",
+          "after": "ffffff9cffffffea0000000000000016"
+        },
+        {
+          "node": 137,
+          "name": "MesJ_L",
+          "field": "0x84",
+          "before": "000000fa00000039000000fe0000005b",
+          "after": "000000fa00000021000000fe0000005f"
+        },
+        {
+          "node": 138,
+          "name": "MesJ_R",
+          "field": "0x74",
+          "before": "00000000ffffffef0000006400000011",
+          "after": "00000000ffffffea0000006400000016"
+        },
+        {
+          "node": 138,
+          "name": "MesJ_R",
+          "field": "0x84",
+          "before": "000000fa00000039000000fe0000005b",
+          "after": "000000fa00000021000000fe0000005f"
+        }
+      ],
+      "source": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit2P.arc",
+      "lsp": "id\\lsp\\jpn\\cockpit\\2p",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit2P.arc",
+      "donor_lsp": "id\\lsp\\abr\\cockpit\\2p",
+      "output": "C:\\Users\\aluna\\AppData\\Local\\Temp\\claude\\G--PS3-GAME\\3d6192a2-43ec-4117-82a4-b9d0c9c93d18\\scratchpad\\V16_STAGING\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit2P.arc",
+      "lsp_before_sha256": "258737ecd359979072cefb7d62afcdfec1d49c318ea6755f35137a466219d93e",
+      "lsp_after_sha256": "a0f883a2e5292ba0f6578928d4440e940af314157001e3499323b052a7ec603c"
+    },
+    {
+      "utage_nodes": 260,
+      "sh_nodes": 207,
+      "utage_group_at": 119,
+      "sh_group_at": 101,
+      "fields_changed": 21,
+      "changes": [
+        {
+          "node": 119,
+          "name": "3_0",
+          "field": "0x00",
+          "before": "00000000c0000000",
+          "after": "0000000041000000"
+        },
+        {
+          "node": 120,
+          "name": "3_0_0",
+          "field": "0x00",
+          "before": "c3440000c0800000",
+          "after": "c344000000000000"
+        },
+        {
+          "node": 123,
+          "name": "Name",
+          "field": "0x00",
+          "before": "c2a00000c2180000",
+          "after": "c2a00000c2300000"
+        },
+        {
+          "node": 124,
+          "name": "Kamon",
+          "field": "0x74",
+          "before": "ffffffc0ffffffc80000004000000038",
+          "after": "ffffffc0ffffffc00000004000000040"
+        },
+        {
+          "node": 124,
+          "name": "Kamon",
+          "field": "0x84",
+          "before": "000000000000000800000100000000f8",
+          "after": "00000000000000000000010000000100"
+        },
+        {
+          "node": 126,
+          "name": "Mess1",
+          "field": "0x00",
+          "before": "c3440000c1000000",
+          "after": "c3340000c1000000"
+        },
+        {
+          "node": 127,
+          "name": "Mess2",
+          "field": "0x00",
+          "before": "c2c00000c1000000",
+          "after": "c2a00000c1000000"
+        },
+        {
+          "node": 127,
+          "name": "Mess2",
+          "field": "0x74",
+          "before": "00000000ffffffc00000016400000040",
+          "after": "00000000ffffffc00000015400000040"
+        },
+        {
+          "node": 128,
+          "name": "Mess3",
+          "field": "0x00",
+          "before": "c3940000c1000000",
+          "after": "c38c0000c1000000"
+        },
+        {
+          "node": 128,
+          "name": "Mess3",
+          "field": "0x74",
+          "before": "ffffff98ffffffc00000000000000040",
+          "after": "ffffff88ffffffc00000000000000040"
+        },
+        {
+          "node": 130,
+          "name": "Mask",
+          "field": "0x00",
+          "before": "c3440000c1000000",
+          "after": "c3340000c1000000"
+        },
+        {
+          "node": 132,
+          "name": "Line_U",
+          "field": "0x00",
+          "before": "00000000c1700000",
+          "after": "00000000c1b00000"
+        },
+        {
+          "node": 133,
+          "name": "Line_U",
+          "field": "0x00",
+          "before": "00000000c1700000",
+          "after": "00000000c1b00000"
+        },
+        {
+          "node": 134,
+          "name": "Line_D",
+          "field": "0x00",
+          "before": "0000000041600000",
+          "after": "0000000041b00000"
+        },
+        {
+          "node": 135,
+          "name": "Line_D",
+          "field": "0x00",
+          "before": "0000000041600000",
+          "after": "0000000041b00000"
+        },
+        {
+          "node": 136,
+          "name": "MesJ_M",
+          "field": "0x74",
+          "before": "ffffff10ffffffef000000f000000011",
+          "after": "ffffff10ffffffea000000f000000016"
+        },
+        {
+          "node": 136,
+          "name": "MesJ_M",
+          "field": "0x84",
+          "before": "000000fa00000039000000fe0000005b",
+          "after": "000000fa00000021000000fe0000005f"
+        },
+        {
+          "node": 137,
+          "name": "MesJ_L",
+          "field": "0x74",
+          "before": "ffffff9cffffffef0000000000000011",
+          "after": "ffffff9cffffffea0000000000000016"
+        },
+        {
+          "node": 137,
+          "name": "MesJ_L",
+          "field": "0x84",
+          "before": "000000fa00000039000000fe0000005b",
+          "after": "000000fa00000021000000fe0000005f"
+        },
+        {
+          "node": 138,
+          "name": "MesJ_R",
+          "field": "0x74",
+          "before": "00000000ffffffef0000006400000011",
+          "after": "00000000ffffffea0000006400000016"
+        },
+        {
+          "node": 138,
+          "name": "MesJ_R",
+          "field": "0x84",
+          "before": "000000fa00000039000000fe0000005b",
+          "after": "000000fa00000021000000fe0000005f"
+        }
+      ],
+      "source": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\jpn\\id\\cockpit2P.arc",
+      "lsp": "id\\lsp\\jpn\\cockpit\\2p",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit2P.arc",
+      "donor_lsp": "id\\lsp\\abr\\cockpit\\2p",
+      "output": "C:\\Users\\aluna\\AppData\\Local\\Temp\\claude\\G--PS3-GAME\\3d6192a2-43ec-4117-82a4-b9d0c9c93d18\\scratchpad\\V16_STAGING\\PS3_GAME\\USRDIR\\nativePS3\\rom\\jpn\\id\\cockpit2P.arc",
+      "lsp_before_sha256": "258737ecd359979072cefb7d62afcdfec1d49c318ea6755f35137a466219d93e",
+      "lsp_after_sha256": "a0f883a2e5292ba0f6578928d4440e940af314157001e3499323b052a7ec603c"
+    }
+  ]
+}

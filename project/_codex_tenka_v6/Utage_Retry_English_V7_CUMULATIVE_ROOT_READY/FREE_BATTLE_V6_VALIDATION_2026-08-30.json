@@ -1,0 +1,96 @@
+{
+  "status": "pass",
+  "input_arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_id.arc",
+  "output_arc": "E:\\Utage Patching New\\_codex_tenka_v6\\tenka_id_v6.arc",
+  "input_arc_sha256": "dba81ec463dcf1d823a5c92fa33bab4501e253b9babd0bf41e821bd1c73eea17",
+  "output_arc_sha256": "eb2c1b46ff41fda29584ce070ce0cf78154d83e41f06c5583537a7dabe83c3de",
+  "entry_count": 82,
+  "changed_resource_count": 3,
+  "changed_resources": [
+    {
+      "index": 56,
+      "name": "id\\texture\\jpn\\tenka\\tenka_029_ID_HQ",
+      "type_hash": "0x241F5DEB",
+      "old_raw_sha256": "74347d0bde705a403c06bb23a9008cc3ced0038e98ca3477a82b1340b849750d",
+      "new_raw_sha256": "ea597611227c1d9024fa3112169fdfe3da4e8e320ae14d4011b52dc43fe782b6",
+      "old_raw_size": 16404,
+      "new_raw_size": 16404
+    },
+    {
+      "index": 59,
+      "name": "id\\lsp\\jpn\\tenka\\tenka_00",
+      "type_hash": "0x60DD1B16",
+      "old_raw_sha256": "1bd8eaa1151a38782f5b1e66501f45636516c5f66e0481453ac5870a1de7bde6",
+      "new_raw_sha256": "13d02b0a9b7888f6c770e27400c14afa4fe0c551689a7bec140c8b2c5b82292b",
+      "old_raw_size": 66296,
+      "new_raw_size": 66296
+    },
+    {
+      "index": 67,
+      "name": "id\\texture\\jpn\\tenka\\tenka_005_ID_HQ",
+      "type_hash": "0x241F5DEB",
+      "old_raw_sha256": "21b0fb28d09e8abe7fb1abf4909fab84796c94469b870e5329e0c5ff40726cb7",
+      "new_raw_sha256": "fcd3096efb5566ed2698e5666b9c1534bdc29a4ac1b0369fc6c146c9950eeb82",
+      "old_raw_size": 131092,
+      "new_raw_size": 131092
+    }
+  ],
+  "edits": [
+    {
+      "resource": "id\\lsp\\jpn\\tenka\\tenka_00",
+      "change": "Free Battle stage-name horizontal fit",
+      "nodes": [
+        108,
+        113,
+        118,
+        123,
+        128,
+        133,
+        137
+      ],
+      "scale_x_before": [
+        0.699999988079071,
+        0.699999988079071,
+        0.699999988079071,
+        0.699999988079071,
+        0.699999988079071,
+        0.699999988079071,
+        0.699999988079071
+      ],
+      "scale_x_after": 0.54,
+      "scale_y_unchanged": true
+    },
+    {
+      "resource": "id\\texture\\jpn\\tenka\\tenka_005_ID_HQ",
+      "change": "Free Battle header: Japanese -> Quick Battles",
+      "target_rect_physical": [
+        672,
+        96,
+        824,
+        128
+      ],
+      "rendered_label_size": [
+        148,
+        28
+      ],
+      "source": "official Samurai Heroes terminology; Arial Bold raster for BC3 legibility"
+    },
+    {
+      "resource": "id\\texture\\jpn\\tenka\\tenka_029_ID_HQ",
+      "change": "Battle count suffix: Japanese -> Battles",
+      "target_rect_physical": [
+        96,
+        0,
+        180,
+        64
+      ],
+      "rendered_label_size": [
+        82,
+        40
+      ],
+      "source": "official Samurai Heroes terminology; Arial Bold raster for BC3 legibility"
+    }
+  ],
+  "xet_geometry_rule": "Capcom PS3 packed dimensions: width=low12*4, height=high12*2",
+  "engine_smoke_test": "required"
+}

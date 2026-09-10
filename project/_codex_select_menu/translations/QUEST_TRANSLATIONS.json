@@ -1,0 +1,250 @@
+[
+  {
+    "texture": "quest_000",
+    "number": 1,
+    "japanese": "戦国訓練所 入門編",
+    "existing_english": "SENGOKU TRAINING: BEGINNER",
+    "review": "Accurate concise rendering.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_001",
+    "number": 2,
+    "japanese": "紳士の決闘",
+    "existing_english": "SWORDSMAN'S DUEL",
+    "review": "Inherited semantic mismatch: 紳士 means gentleman, not swordsman. A future synchronized wording fix could use GENTLEMEN'S DUEL. Keep the donor wording for this select consistency repair.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_002",
+    "number": 3,
+    "japanese": "初心者卒業試験",
+    "existing_english": "BEGINNER GRADUATION EXAM",
+    "review": "Accurate.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_003",
+    "number": 4,
+    "japanese": "戦国技能検定 仮免",
+    "existing_english": "SENGOKU SKILL TEST: PERMIT",
+    "review": "Concise adaptation of provisional license. Distinguishes this stage from the full license below.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_004",
+    "number": 5,
+    "japanese": "真夜中の香り",
+    "existing_english": "MIDNIGHT SCENT",
+    "review": "Accurate.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_005",
+    "number": 6,
+    "japanese": "多士済々のすゝめ",
+    "existing_english": "A WEALTH OF TALENT",
+    "review": "Concise adaptation: the original encourages a gathering/abundance of talented people.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_006",
+    "number": 7,
+    "japanese": "戦国訓練所 中級編",
+    "existing_english": "SENGOKU TRAINING: INTERMEDIATE",
+    "review": "Accurate.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_007",
+    "number": 8,
+    "japanese": "名城めぐり",
+    "existing_english": "FAMOUS CASTLE TOUR",
+    "review": "Accurate.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_008",
+    "number": 9,
+    "japanese": "花鳥諷詠",
+    "existing_english": "NATURE IN VERSE",
+    "review": "Appropriate idiomatic translation of poetic celebration of nature.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_009",
+    "number": 10,
+    "japanese": "戦国技能検定 本免",
+    "existing_english": "SENGOKU SKILL TEST: LICENSE",
+    "review": "Concise adaptation of full license.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_010",
+    "number": 11,
+    "japanese": "兵種のるつぼ",
+    "existing_english": "TROOP TYPE MELTING POT",
+    "review": "Accurate, though literal.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_011",
+    "number": 12,
+    "japanese": "戦国未来博",
+    "existing_english": "SENGOKU FUTURE EXPO",
+    "review": "Accurate.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_012",
+    "number": 13,
+    "japanese": "戦国訓練所 上級編",
+    "existing_english": "SENGOKU TRAINING: ADVANCED",
+    "review": "Accurate.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_013",
+    "number": 14,
+    "japanese": "宵闇の羽",
+    "existing_english": "WINGS OF TWILIGHT",
+    "review": "Suitable poetic adaptation; 羽 can mean feathers or wings.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_014",
+    "number": 15,
+    "japanese": "海賊捕物帖",
+    "existing_english": "PIRATE MANHUNT",
+    "review": "Concise adaptation of a pirate capture/arrest chronicle.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_015",
+    "number": 16,
+    "japanese": "百獣の女王",
+    "existing_english": "QUEEN OF BEASTS",
+    "review": "Accurate.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_016",
+    "number": 17,
+    "japanese": "新旧交代の狼煙",
+    "existing_english": "CHANGING OF THE GUARD",
+    "review": "Appropriate idiomatic adaptation. The original adds a signal/beacon for the old-to-new succession.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_017",
+    "number": 18,
+    "japanese": "俺たち乱破衆！",
+    "existing_english": "WE'RE THE SHINOBI!",
+    "review": "Appropriate adaptation of the ninja/raider group title.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_018",
+    "number": 19,
+    "japanese": "愛の方程式",
+    "existing_english": "THE LOVE EQUATION",
+    "review": "Accurate.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_019",
+    "number": 20,
+    "japanese": "円熟のロマン",
+    "existing_english": "MATURE ROMANCE",
+    "review": "Plausible concise adaptation; ロマン has a broader romantic-ideal sense than a love affair alone.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_020",
+    "number": 21,
+    "japanese": "戦国女子会！",
+    "existing_english": "SENGOKU GIRLS' NIGHT!",
+    "review": "Natural adaptation; the Japanese specifies a women's gathering, without explicitly specifying night.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_021",
+    "number": 22,
+    "japanese": "以心伝心闘争心",
+    "existing_english": "HEARTS IN SYNC, READY TO FIGHT",
+    "review": "Good idiomatic treatment of the paired phrases for tacit understanding and fighting spirit.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_022",
+    "number": 23,
+    "japanese": "棚ボタ大作戦",
+    "existing_english": "OPERATION LUCKY BREAK",
+    "review": "Good idiomatic adaptation of an unexpected windfall.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_023",
+    "number": 24,
+    "japanese": "戦国最強決定戦",
+    "existing_english": "SENGOKU STRONGEST SHOWDOWN",
+    "review": "Accurate concise rendering.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_024",
+    "number": 25,
+    "japanese": "降魔地獄変",
+    "existing_english": "DEMON-QUELLING INFERNO",
+    "review": "Suitable compressed, stylized adaptation of the demon-subduing hell title.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_025",
+    "number": 26,
+    "japanese": "梟雄の軌跡",
+    "existing_english": "THE SCHEMER'S PATH",
+    "review": "Plausible adaptation; 梟雄 suggests a ruthless/cunning formidable leader, not merely a schemer.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_026",
+    "number": 27,
+    "japanese": "悶絶！！武田道場",
+    "existing_english": "AGONY!! TAKEDA DOJO",
+    "review": "Accurate stylized rendering.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_027",
+    "number": 28,
+    "japanese": "鋼鉄の戦神",
+    "existing_english": "STEEL GOD OF WAR",
+    "review": "Accurate.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_028",
+    "number": 29,
+    "japanese": "婆娑羅英雄列伝",
+    "existing_english": "BASARA HERO CHRONICLE",
+    "review": "Suitable franchise-term rendering and concise adaptation of collected hero biographies/tales.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_029",
+    "number": 30,
+    "japanese": "煉獄と地獄",
+    "existing_english": "PURGATORY AND HELL",
+    "review": "Accurate.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  },
+  {
+    "texture": "quest_030",
+    "number": 31,
+    "japanese": "戦国大宴会",
+    "existing_english": "SENGOKU GRAND BANQUET",
+    "review": "Accurate.",
+    "recommendation": "reuse_existing_donor_unchanged"
+  }
+]

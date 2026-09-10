@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "archives": 25,
+  "changed_resources": 42,
+  "untouched_compressed_resources": 1788,
+  "copies": {
+    "join_text": 6,
+    "join_layout": 7,
+    "charasele": 9,
+    "mode": 14,
+    "locked": 4,
+    "mode_layout": 2
+  },
+  "changed_lsp_fields": 84,
+  "all_changes_within_declared_texture_cells_or_exact_layout_fields": true,
+  "runtime_verified": false
+}

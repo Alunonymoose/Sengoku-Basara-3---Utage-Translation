@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "release_dir": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_Retry_English_V6_CUMULATIVE_ROOT_READY",
+  "zip": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_Retry_English_V6_CUMULATIVE_ROOT_READY.zip",
+  "zip_sha256": "d7fadffe41d21baa782acdcfe8ece383030771b7abe8f2a75e3f73f91392c266",
+  "zip_file_count": 44,
+  "base_file_count": 41,
+  "new_metadata_files": 3,
+  "target_arc_sha256": "eb2c1b46ff41fda29584ce070ce0cf78154d83e41f06c5583537a7dabe83c3de",
+  "manifest": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_Retry_English_V6_CUMULATIVE_ROOT_READY\\FREE_BATTLE_V6_MANIFEST_2026-08-30.json",
+  "dependency_outer_jpn_hit_count": 0,
+  "runtime_test": "required"
+}

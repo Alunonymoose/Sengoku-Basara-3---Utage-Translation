@@ -1,0 +1,29 @@
+{
+  "status": "pass",
+  "audit": "independent cumulative release audit",
+  "package": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_English_Patch_2026-09-01_CUMULATIVE_ROOT_READY.zip",
+  "package_sha256": "cbb7b4dc3dd944465427a4ed209467224892694977f0f0cbdde964fc186ffd9d",
+  "zip_entry_count": 893,
+  "game_file_count": 891,
+  "battle_message_archives": 608,
+  "static_id_archives": 159,
+  "demo_payload_archives": 85,
+  "tiny_demo_aliases_packaged": 0,
+  "tiny_demo_aliases_verified_untouched": 237,
+  "embedded_manifest_payloads_verified": 891,
+  "all_game_payloads_match_live": true,
+  "standalone_id_v5_matches": true,
+  "standalone_demo_v1_matches": true,
+  "v21_lsp_checks": {
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/cockpit1P.arc": {
+      "entry_index": 18,
+      "lsp_sha256": "c2d7fbd5e012d247a72b5c2d3fe20471932e402f0118b3bf04a418538d44324b"
+    },
+    "PS3_GAME/USRDIR/nativePS3/rom/jpn/id/cockpit1P.arc": {
+      "entry_index": 18,
+      "lsp_sha256": "c2d7fbd5e012d247a72b5c2d3fe20471932e402f0118b3bf04a418538d44324b"
+    }
+  },
+  "zip_crc_pass": true,
+  "runtime_test": "required"
+}

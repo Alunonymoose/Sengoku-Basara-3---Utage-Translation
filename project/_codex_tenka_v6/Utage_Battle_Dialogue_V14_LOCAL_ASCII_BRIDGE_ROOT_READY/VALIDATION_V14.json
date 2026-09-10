@@ -1,0 +1,176 @@
+{
+  "status": "pass",
+  "patch": "Utage Battle Dialogue V14 Local ASCII Bridge",
+  "reason": "V10/V13 stripped mission-local TNF/XET/CSA and produced no dialogue. V14 mirrors Utage's working patched result_id topology: retain the local message set and unused atlas pages, while installing exact SH basara ASCII TNF, pages 0/1, and CSA under the mission-local resource names.",
+  "font_source": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\basara.arc",
+  "font_source_sha256": "4cdf0717862ddd690321455630c29a1a6180e31268ebf16217a5d71ab42d7d95",
+  "font_payload_hashes": {
+    "tnf": "df843e0b42390e89adcbf16ef02ce8d4d91cb984790b9f3211ac1ec0b7c5efbe",
+    "page_00": "bd9325a975d6b963c7b8a21151c5fbe4866ae36a89d8f632cc58cb3c868b244f",
+    "page_01": "2563fb5f4c3d54bcdaacecdad231bf8e1709877f878b00caf3bfc9cffc34f783",
+    "csa": "9d5b493204cae29be28a24bf28ec1b46ba00d9a8c35d2a48618900a6108e988b"
+  },
+  "stages": {
+    "dragon_assault_m000_pl003": {
+      "base": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_Retry_English_V9_CUMULATIVE_ROOT_READY\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\msg_m000_pl003.arc",
+      "base_sha256": "077d2cc906f50547c1a82c9f1967664aaf5921a7e8c136720e50c271c50da479",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\msg_pl003_m000.arc",
+      "donor_sha256": "40cf15cefa40e83acaa7aefa50f0a066dfd53ea43ff16dda64a3e39b58d0325e",
+      "output": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_Battle_Dialogue_V14_LOCAL_ASCII_BRIDGE_ROOT_READY\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\msg_m000_pl003.arc",
+      "output_sha256": "a6aeb569f34ca8c213144a5aca79dff0f7427c7a7b8fad3451e59ca46d956cd3",
+      "entry_count": 23,
+      "changed_indices": [
+        0,
+        3,
+        4,
+        17
+      ],
+      "changed_resources": {
+        "tnf": {
+          "index": 0,
+          "internal_name": "msg\\m000_03\\jpn\\m000_03",
+          "before_sha256": "43e003fdb0794f9237173de99f8d337689651cbeb5dc50f2ec47f5292c3af51c",
+          "after_sha256": "df843e0b42390e89adcbf16ef02ce8d4d91cb984790b9f3211ac1ec0b7c5efbe"
+        },
+        "page_00": {
+          "index": 3,
+          "internal_name": "msg\\m000_03\\jpn\\m000_03_00_ID_HQ",
+          "before_sha256": "5a721f826f58b6d2b899d4008177caabb5dc768d5771b93db9e3889ff3b1790a",
+          "after_sha256": "bd9325a975d6b963c7b8a21151c5fbe4866ae36a89d8f632cc58cb3c868b244f"
+        },
+        "page_01": {
+          "index": 4,
+          "internal_name": "msg\\m000_03\\jpn\\m000_03_01_ID_HQ",
+          "before_sha256": "84b064e874692729dc636794a1fd550a4a65d56e4a08c96588afad03586cca31",
+          "after_sha256": "2563fb5f4c3d54bcdaacecdad231bf8e1709877f878b00caf3bfc9cffc34f783"
+        },
+        "csa": {
+          "index": 17,
+          "internal_name": "msg\\m000_03\\jpn\\m000_03",
+          "before_sha256": "1a5dc18fb2a526dab343b223bc2061f012bb613fcc609af02737273fae20de90",
+          "after_sha256": "9d5b493204cae29be28a24bf28ec1b46ba00d9a8c35d2a48618900a6108e988b"
+        }
+      },
+      "changed_text_resources": {},
+      "exact_sh_text_hashes": {
+        "GSM": {
+          "base_sha256": "20fe91495503eecc513df91073c509616e12b8711642c23f75e3ad33b7c4bf3c",
+          "sh_sha256": "20fe91495503eecc513df91073c509616e12b8711642c23f75e3ad33b7c4bf3c",
+          "already_exact_sh": true
+        },
+        "GSM_r": {
+          "base_sha256": "8df54d6be10a0ab25db78aadcca4354472df7d92a25c060d0c1664c3b29b8799",
+          "sh_sha256": "8df54d6be10a0ab25db78aadcca4354472df7d92a25c060d0c1664c3b29b8799",
+          "already_exact_sh": true
+        },
+        "FIM": {
+          "base_sha256": "187b88804bd359bb25cdb1f71178e52a0e24eefef410349f6f36daab729de4d1",
+          "sh_sha256": "187b88804bd359bb25cdb1f71178e52a0e24eefef410349f6f36daab729de4d1",
+          "already_exact_sh": true
+        },
+        "FIM_r": {
+          "base_sha256": "717cc27212eef53298cfe2b9174436deacdafdb57bca34bae2c2881bccaed93c",
+          "sh_sha256": "717cc27212eef53298cfe2b9174436deacdafdb57bca34bae2c2881bccaed93c",
+          "already_exact_sh": true
+        }
+      },
+      "untouched_compressed_resources_preserved": true
+    },
+    "mount_osore_m034_pl015": {
+      "base": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\msg_m034_pl015_PRE_SHSHAPE_backup.arc",
+      "base_sha256": "a61b30de7f47e823f868e1a8d3aa2c8441b5dcf519704823cf871635250c200a",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\msg_pl015_m034.arc",
+      "donor_sha256": "e6bbb3f0c4f0e70784c7938770d382e8b0ffd14f0b1d5e8c975a07e3efc5dc4a",
+      "output": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_Battle_Dialogue_V14_LOCAL_ASCII_BRIDGE_ROOT_READY\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\msg_m034_pl015.arc",
+      "output_sha256": "d3d79c2b9a9385b13430d749f40785995faa062af66e59216044714fee99efb2",
+      "entry_count": 24,
+      "changed_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        18,
+        19,
+        20
+      ],
+      "changed_resources": {
+        "tnf": {
+          "index": 0,
+          "internal_name": "msg\\m034_15\\jpn\\m034_15",
+          "before_sha256": "5d68f9f4399b93ba528e9dd12fb756c4edf81eea911c00e2989e79fb47b9f980",
+          "after_sha256": "df843e0b42390e89adcbf16ef02ce8d4d91cb984790b9f3211ac1ec0b7c5efbe"
+        },
+        "page_00": {
+          "index": 3,
+          "internal_name": "msg\\m034_15\\jpn\\m034_15_00_ID_HQ",
+          "before_sha256": "a2e65d24da414713b59d4bc108e1d7d26732e9e4cb800fbf59f4289a19b3257e",
+          "after_sha256": "bd9325a975d6b963c7b8a21151c5fbe4866ae36a89d8f632cc58cb3c868b244f"
+        },
+        "page_01": {
+          "index": 4,
+          "internal_name": "msg\\m034_15\\jpn\\m034_15_01_ID_HQ",
+          "before_sha256": "5b8779c0015ed87a6517d5e8e8f01afc8e827cd0540134975bd117df315ddc7e",
+          "after_sha256": "2563fb5f4c3d54bcdaacecdad231bf8e1709877f878b00caf3bfc9cffc34f783"
+        },
+        "csa": {
+          "index": 18,
+          "internal_name": "msg\\m034_15\\jpn\\m034_15",
+          "before_sha256": "b5373d3f171094ee144da9e1863e539297b774628b70bc4f42c383b3653c4cb4",
+          "after_sha256": "9d5b493204cae29be28a24bf28ec1b46ba00d9a8c35d2a48618900a6108e988b"
+        }
+      },
+      "changed_text_resources": {
+        "GSM": {
+          "index": 1,
+          "internal_name": "msg\\m034_15\\jpn\\m034_15",
+          "before_sha256": "3d64192a4f5236bbd261c5e897bb34e7ceb3cbd3c1a1fb19ec1588a7517d841e",
+          "after_sha256": "30fe0de2e6a02a7c461c6f59d99f98c77a624e736fa75cfe4b8e0cbccbe9aaf2"
+        },
+        "GSM_r": {
+          "index": 19,
+          "internal_name": "msg\\m034_15\\jpn\\m034_15_r",
+          "before_sha256": "8314be6f8122ac9f3c33a10ec9b5e7389c15d330d2dbeb733efb6e352947de96",
+          "after_sha256": "abf9572b4470c81d0c7aa452727e681982ae25a9be2480ceb0297e0e1b5d754d"
+        },
+        "FIM": {
+          "index": 2,
+          "internal_name": "msg\\m034_15\\jpn\\m034_15",
+          "before_sha256": "4e4e3301e6ca09dfb589be9ef614767003dc432b1e15c8debf89b7e250a2e89d",
+          "after_sha256": "7a71563cd087c59f19bf0135d58236990de0f8434f52d2f6d0e939a345158eb6"
+        },
+        "FIM_r": {
+          "index": 20,
+          "internal_name": "msg\\m034_15\\jpn\\m034_15_r",
+          "before_sha256": "2d42e1030a0b2fe2b546e23f0e192174794c625b33f025192d6fb1873f31503a",
+          "after_sha256": "7ba5c4ec7ecbdf8a2b26340615bce3b32db658efc3c389c3414eed176b71cc50"
+        }
+      },
+      "exact_sh_text_hashes": {
+        "GSM": {
+          "base_sha256": "3d64192a4f5236bbd261c5e897bb34e7ceb3cbd3c1a1fb19ec1588a7517d841e",
+          "sh_sha256": "30fe0de2e6a02a7c461c6f59d99f98c77a624e736fa75cfe4b8e0cbccbe9aaf2",
+          "already_exact_sh": false
+        },
+        "GSM_r": {
+          "base_sha256": "8314be6f8122ac9f3c33a10ec9b5e7389c15d330d2dbeb733efb6e352947de96",
+          "sh_sha256": "abf9572b4470c81d0c7aa452727e681982ae25a9be2480ceb0297e0e1b5d754d",
+          "already_exact_sh": false
+        },
+        "FIM": {
+          "base_sha256": "4e4e3301e6ca09dfb589be9ef614767003dc432b1e15c8debf89b7e250a2e89d",
+          "sh_sha256": "7a71563cd087c59f19bf0135d58236990de0f8434f52d2f6d0e939a345158eb6",
+          "already_exact_sh": false
+        },
+        "FIM_r": {
+          "base_sha256": "2d42e1030a0b2fe2b546e23f0e192174794c625b33f025192d6fb1873f31503a",
+          "sh_sha256": "7ba5c4ec7ecbdf8a2b26340615bce3b32db658efc3c389c3414eed176b71cc50",
+          "already_exact_sh": false
+        }
+      },
+      "untouched_compressed_resources_preserved": true
+    }
+  },
+  "offline_validation": "pass",
+  "runtime_test": "required"
+}

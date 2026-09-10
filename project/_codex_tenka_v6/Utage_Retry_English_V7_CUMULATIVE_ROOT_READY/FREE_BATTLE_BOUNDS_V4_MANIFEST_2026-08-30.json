@@ -1,0 +1,134 @@
+{
+  "patch": "Utage Free Battle Stage-Name Bounds V4 (cumulative over Father Route V3)",
+  "created": "2026-08-30",
+  "base_patch_sha256": "07e3d5f0fe505920d8fbbe6dbd13b5d012f2ece51cb6233e839570f5b6921501",
+  "source_tenka_id_sha256": "8893f488eec9d1a1c813ce6abbe44272e868f6268ccba733f417371854a7307a",
+  "output_tenka_id_sha256": "dba81ec463dcf1d823a5c92fa33bab4501e253b9babd0bf41e821bd1c73eea17",
+  "target_arc": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_id.arc",
+  "target_resource": "id\\lsp\\jpn\\tenka\\tenka_00",
+  "target_resource_type": "0x60DD1B16",
+  "target_resource_index": 59,
+  "source_lsp_sha256": "c32c1f6e9a0c429dcce8656f71759de759a38fd90509248e712726fbd4e2c34a",
+  "output_lsp_sha256": "1bd8eaa1151a38782f5b1e66501f45636516c5f66e0481453ac5870a1de7bde6",
+  "edit": "Seven Free Battle dynamic stage-name render nodes: horizontal scale only, 0.88 -> 0.70. Vertical scale remains 0.88. No GSM/FIM/font/texture changes.",
+  "records": [
+    {
+      "record_index": 108,
+      "raw_offset_hex": "0x4a70",
+      "field": "scaleX",
+      "old_value": 0.8799999952316284,
+      "new_value": 0.7,
+      "old_bytes": "3f6147ae",
+      "new_bytes": "3f333333"
+    },
+    {
+      "record_index": 113,
+      "raw_offset_hex": "0x4de0",
+      "field": "scaleX",
+      "old_value": 0.8799999952316284,
+      "new_value": 0.7,
+      "old_bytes": "3f6147ae",
+      "new_bytes": "3f333333"
+    },
+    {
+      "record_index": 118,
+      "raw_offset_hex": "0x5150",
+      "field": "scaleX",
+      "old_value": 0.8799999952316284,
+      "new_value": 0.7,
+      "old_bytes": "3f6147ae",
+      "new_bytes": "3f333333"
+    },
+    {
+      "record_index": 123,
+      "raw_offset_hex": "0x54c0",
+      "field": "scaleX",
+      "old_value": 0.8799999952316284,
+      "new_value": 0.7,
+      "old_bytes": "3f6147ae",
+      "new_bytes": "3f333333"
+    },
+    {
+      "record_index": 128,
+      "raw_offset_hex": "0x5830",
+      "field": "scaleX",
+      "old_value": 0.8799999952316284,
+      "new_value": 0.7,
+      "old_bytes": "3f6147ae",
+      "new_bytes": "3f333333"
+    },
+    {
+      "record_index": 133,
+      "raw_offset_hex": "0x5ba0",
+      "field": "scaleX",
+      "old_value": 0.8799999952316284,
+      "new_value": 0.7,
+      "old_bytes": "3f6147ae",
+      "new_bytes": "3f333333"
+    },
+    {
+      "record_index": 137,
+      "raw_offset_hex": "0x5e60",
+      "field": "scaleX",
+      "old_value": 0.8799999952316284,
+      "new_value": 0.7,
+      "old_bytes": "3f6147ae",
+      "new_bytes": "3f333333"
+    }
+  ],
+  "evidence": {
+    "free_stage_arc_role": "rom/tenka/free_stage.arc owns the Free Battle flow, but SH and original-JP copies are byte-identical; therefore it contains no English localization delta to transplant.",
+    "message_format": "Retail SH and current Utage stage-name GSM/FIM records were previously verified equivalent for the seven visible names; bounds problem is not a display-count truncation.",
+    "layout": "Utage tenka_00 retains the seven dynamic St_s nodes at x=36, y=0, scaleX=scaleY=0.88; Utage row art is narrower/different from SH. This edit preserves Utage row topology and changes only horizontal text fit.",
+    "father_route_rule": "Audit outer/father filesystem routes and redirect jpn -> eng where a matching English ARC family exists. Do NOT rename intentional internal id\\...\\jpn resource keys without separate proof."
+  },
+  "father_dependency_audit": {
+    "current_tenka_id.arc": {
+      "sha256": "8893f488eec9d1a1c813ce6abbe44272e868f6268ccba733f417371854a7307a",
+      "explicit_outer_jpn_route_hits": []
+    },
+    "current_tenka.arc": {
+      "sha256": "ccef18426b8a76b7e05528fdc6ceff9a00c981331e97a3cb424668425d958384",
+      "explicit_outer_jpn_route_hits": []
+    },
+    "SH_or_Base_free_stage.arc_A": {
+      "sha256": "288a52c39cbc2f07ca0950081806f43b4447a7472c3330311fc89104f42e2f7b",
+      "explicit_outer_jpn_route_hits": []
+    },
+    "SH_or_Base_free_stage.arc_B": {
+      "sha256": "288a52c39cbc2f07ca0950081806f43b4447a7472c3330311fc89104f42e2f7b",
+      "explicit_outer_jpn_route_hits": []
+    }
+  },
+  "verification": {
+    "arc_entries_preserved": 82,
+    "only_changed_arc_resource_index": 59,
+    "only_changed_raw_byte_offsets": [
+      19057,
+      19058,
+      19059,
+      19937,
+      19938,
+      19939,
+      20817,
+      20818,
+      20819,
+      21697,
+      21698,
+      21699,
+      22577,
+      22578,
+      22579,
+      23457,
+      23458,
+      23459,
+      24161,
+      24162,
+      24163
+    ],
+    "untouched_compressed_blobs_byte_identical": true,
+    "entry_order_types_flags_preserved": true,
+    "free_stage_pair_byte_identical": true,
+    "free_stage_sha256": "288a52c39cbc2f07ca0950081806f43b4447a7472c3330311fc89104f42e2f7b"
+  }
+}

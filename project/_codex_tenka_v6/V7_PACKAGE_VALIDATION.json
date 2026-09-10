@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "release_dir": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_Retry_English_V7_CUMULATIVE_ROOT_READY",
+  "zip": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_Retry_English_V7_CUMULATIVE_ROOT_READY.zip",
+  "download_zip": "C:\\Users\\aluna\\Downloads\\Utage_Retry_English_V7_CUMULATIVE_ROOT_READY.zip",
+  "zip_sha256": "84e4def0da1d452052fc0a9a710eb2bff5718740401df28096ae5dd450dfcdef",
+  "zip_file_count": 47,
+  "base_file_count": 44,
+  "target_arc_sha256": "a0caaa15c26d7302dc71fe87202621edd1986250400b6e489c1cbbfbdbe9ee2a",
+  "runtime_test": "required"
+}

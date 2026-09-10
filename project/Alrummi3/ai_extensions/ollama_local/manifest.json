@@ -1,0 +1,12 @@
+{
+  "id": "alrummi3.ollama.local",
+  "name": "Local Ollama Vision Assistant",
+  "version": "1.0.0",
+  "api_version": "1.0",
+  "capabilities": [
+    "ocr",
+    "translation",
+    "text-region-suggestion"
+  ],
+  "description": "Built-in adapter for Ollama at 127.0.0.1:11434. No cloud calls."
+}

@@ -1,0 +1,22 @@
+{
+  "status": "offline_pass_runtime_required",
+  "release": "Utage_MSG_M034_PL015_V12_LOCAL_ASCII_HOTFIX_ROOT_READY",
+  "target_relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/id/msg_m034_pl015.arc",
+  "target_sha256": "698bf5392ace001899627aed975f9f0c6607968d010cf84d0c8526d09847b30a",
+  "target_entry_count": 26,
+  "changed_existing_resource_indices": [
+    0,
+    1,
+    17
+  ],
+  "appended_resource_indices": [
+    24,
+    25
+  ],
+  "tnf_output_records": 1324,
+  "gsm_changed_records": [
+    500,
+    501
+  ],
+  "runtime_test": "required: cold boot m034/pl015 in RPCS3"
+}

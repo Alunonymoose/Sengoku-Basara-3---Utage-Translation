@@ -1,0 +1,253 @@
+{
+  "status": "pass",
+  "patch": "Utage ID Static Textures V3 - official SH versus nameplates",
+  "created_utc": "2026-09-01T00:04:31.319645+00:00",
+  "package": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_ID_Static_Textures_V3_VS_NAMES_SH_DONORS_ROOT_READY.zip",
+  "package_sha256": "5ef6e0ca17e288ae4904d5ea087ba64c90f2bd520e4371e3a9287af28f14ac0b",
+  "package_size": 1639862,
+  "official_sh_nameplates_transplanted": 29,
+  "generated_nameplates_still_required": [
+    "cp_name_pl_013_id_hq",
+    "cp_name_pl_106_id_hq"
+  ],
+  "backup": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\ID_STATIC_V3_BACKUP_PRE_VS_NAMES_SH.zip",
+  "backup_sha256": "5ebf1f5e0d14dffb256872128fb3f32bf504f8daaac40c0ea9677c9dbbbe6949",
+  "zip_crc_pass": true,
+  "zip_payload_hashes_match": true,
+  "untouched_compressed_resources_preserved": true,
+  "runtime_test": "required",
+  "mapping": [
+    {
+      "target_entry_index": 8,
+      "texture_key": "cp_name_pl_000_id_hq",
+      "source_sha256": "cb41081632e05e1f4146af5a3a9a1c6ff9d1173c5304a15ace8eae638715e381",
+      "donor_archive": "friend_000.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "c753de3a82eeecd22fc25920a82bc2eb0a9826bb757b5039da95230f28061d6f"
+    },
+    {
+      "target_entry_index": 11,
+      "texture_key": "cp_name_pl_001_id_hq",
+      "source_sha256": "f2cc01c278c09c9d181da1525ca487c3c8426c55f0400f91f616abcae926b787",
+      "donor_archive": "friend_001.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "a1222d0a2626da2d85594501f5e52a74532eb7c8737a88c9072d3f0eab38c6c8"
+    },
+    {
+      "target_entry_index": 14,
+      "texture_key": "cp_name_pl_002_id_hq",
+      "source_sha256": "8a1d40b0f0ab0d89be4bb98613a13f778fd171a2dcf6c75b5a40d733097c689a",
+      "donor_archive": "friend_002.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "303422bcd1c619ec05f03f5e00f3b0d43815ac72c44bdcb24263c03d83cdf8ef"
+    },
+    {
+      "target_entry_index": 17,
+      "texture_key": "cp_name_pl_003_id_hq",
+      "source_sha256": "82ca0a017305de3ad0ec99b93203d0f9b7ceb7dbd7c51551b07d5678576340af",
+      "donor_archive": "friend_003.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "93a6d6feebcf94be5a774fa3a7c38769a5077e5c9b8f8b9e230ee2a224be4729"
+    },
+    {
+      "target_entry_index": 20,
+      "texture_key": "cp_name_pl_004_id_hq",
+      "source_sha256": "1c19a0c988f9804cc833ac54a56d882db2fa0007d487ad067b7f2fb0c55e2763",
+      "donor_archive": "friend_004.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "fc3cce2de4733fe93ca9f68beccac559a2b21b51b51c2c64600ec67fa31ad929"
+    },
+    {
+      "target_entry_index": 23,
+      "texture_key": "cp_name_pl_005_id_hq",
+      "source_sha256": "9e9da92eb391b30542df2aeb8936a8fca6a1ad13703955c5cc93861671d7b13b",
+      "donor_archive": "friend_005.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "ffad24f14a8587cef3e1a518d4dbd3b4327f8b37efb91644937bcf0024986a94"
+    },
+    {
+      "target_entry_index": 26,
+      "texture_key": "cp_name_pl_006_id_hq",
+      "source_sha256": "08da2b6f77134f9f439df8fff18aaa55220fb632d885eec051a613d22b9620f5",
+      "donor_archive": "friend_006.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "b77394a8b01362484b686392f59f85e02aa1cb79becb5c550947a74258185a2f"
+    },
+    {
+      "target_entry_index": 29,
+      "texture_key": "cp_name_pl_007_id_hq",
+      "source_sha256": "040cafd40b1af1b6cf4fbc87d4a0e38bdc25cc55555d2d6b28efadc2c2acdec2",
+      "donor_archive": "friend_007.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "aa7fedad750e022426d9c5e0a03cb635fdbf0ba0e19ed65cb57cdc352e0f75e2"
+    },
+    {
+      "target_entry_index": 32,
+      "texture_key": "cp_name_pl_008_id_hq",
+      "source_sha256": "fdc763063dafa5039ca41efd0fd2e7ea87c373810bcf89b6a613756944ecc6a6",
+      "donor_archive": "friend_008.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "53170e651eac3cb1901d4df6504a43c28b0c9e11225b18d633bc79340fd51a28"
+    },
+    {
+      "target_entry_index": 35,
+      "texture_key": "cp_name_pl_009_id_hq",
+      "source_sha256": "5ff40bba3ee3ae8fc7d3db695cf06c0c6bc2b43de8952b40f2f9729180de366d",
+      "donor_archive": "friend_009.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "6fb0a0c8a7377e5ca50b8585d6468edb0a3e02461c06db7ce33231a6df9c3faf"
+    },
+    {
+      "target_entry_index": 38,
+      "texture_key": "cp_name_pl_010_id_hq",
+      "source_sha256": "cdfddea02f9606c14e76d2af7e968cbd57dd84ada27dd22e81eeeaea9df3b920",
+      "donor_archive": "friend_010.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "8a313ff436e1732f61c9993c4122b8d838bfdc83fe406022dfb54a45e1bbb3b2"
+    },
+    {
+      "target_entry_index": 41,
+      "texture_key": "cp_name_pl_011_id_hq",
+      "source_sha256": "dd2afc4c3204974fdb162b55f0b9c7193f54b534d98200ee694557385d8da5c7",
+      "donor_archive": "friend_011.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "11334fd490da500d1d85ef969f2d39a8d589f532608547bdb48d25130356ab73"
+    },
+    {
+      "target_entry_index": 44,
+      "texture_key": "cp_name_pl_012_id_hq",
+      "source_sha256": "d4cf71691afa294c0cda6f27076a60e7e993377bc8d2db00280d9deb2aec585b",
+      "donor_archive": "friend_012.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "d6548ff54e26f5f10e6033392abf3ea4c224ea2e4859539456d6a9d7102aeae0"
+    },
+    {
+      "target_entry_index": 50,
+      "texture_key": "cp_name_pl_014_id_hq",
+      "source_sha256": "c211c03fb1bb5d6b485efbb65c06393b71bdc5792b9aef2e241b7fc2ac1cb417",
+      "donor_archive": "friend_014.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "3d004b32b7f8adc6f67035c46e3a09e9b4abb268d0b8db386ab874374e885bed"
+    },
+    {
+      "target_entry_index": 53,
+      "texture_key": "cp_name_pl_015_id_hq",
+      "source_sha256": "049d6f90ae6b9998585ca76f1a20fe7b7fc1ecc9c0064e52dd81086729f01078",
+      "donor_archive": "friend_015.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "f5332d48d272f87d8adb279aa4fa6548bb78a75cfc14d96720183a9bbb8ee1c3"
+    },
+    {
+      "target_entry_index": 56,
+      "texture_key": "cp_name_pl_016_id_hq",
+      "source_sha256": "c2a1d1bd7c3d547d8b5ca4a4d272cd1e2bef40383e96394efbc3c49b26674a79",
+      "donor_archive": "friend_016.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "78c641b79a0106a21aee3c3dcf7e64570d1c73e9a5094ff51b12f4b1d58ddeaa"
+    },
+    {
+      "target_entry_index": 59,
+      "texture_key": "cp_name_pl_017_id_hq",
+      "source_sha256": "e52cfe776d53b2d28720860223496b202b2f4df84dd9a34ca8d555838651c70c",
+      "donor_archive": "friend_017.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "e92d5da858d4c23d8120aa6c802df630da533c2ddbb248365e01a030ca0bf15d"
+    },
+    {
+      "target_entry_index": 62,
+      "texture_key": "cp_name_pl_018_id_hq",
+      "source_sha256": "6a37c5ffe05aa9713193e2954130b7696e1954215fa5f4f2ba1d5e7761ea4662",
+      "donor_archive": "friend_018.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "6346c1aebdd83359249d8e03d6c14b6c6891a166a464d51e543ca79b5e331945"
+    },
+    {
+      "target_entry_index": 65,
+      "texture_key": "cp_name_pl_019_id_hq",
+      "source_sha256": "eb20919013f5c389f45ecb84ace3fb76c03b243698799a23a23f0d171db84471",
+      "donor_archive": "friend_019.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "420afb2001490852b5ec0d118725a1e3abc6d8bee57c7b58c2220692e0d215b6"
+    },
+    {
+      "target_entry_index": 68,
+      "texture_key": "cp_name_pl_020_id_hq",
+      "source_sha256": "1fc5f594a7d5142f83d34658e0eec46a6a6036121baa94550cb8c4d30930a791",
+      "donor_archive": "friend_020.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "f310790df8202050627930ac42820ec0dd0a2f025f96cb8f6f83a070cf480bde"
+    },
+    {
+      "target_entry_index": 71,
+      "texture_key": "cp_name_pl_021_id_hq",
+      "source_sha256": "3b2b1ed2f08f97d280900c2bcdab11ba7ff573e31cdffe1a781bd64d214324d4",
+      "donor_archive": "friend_021.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "91570d36c16563584d9a9d244cd6501f5645e8996529e81919d226c0890ac131"
+    },
+    {
+      "target_entry_index": 74,
+      "texture_key": "cp_name_pl_022_id_hq",
+      "source_sha256": "a7503ad1129016093d9617995805dc6e65de3d7aa99cdcbdc3c1dd2ebe9c343d",
+      "donor_archive": "friend_022.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "abf45767e99b8780a24beeada4427752c7e4b73a70844a0fa7af96a6de4697c2"
+    },
+    {
+      "target_entry_index": 77,
+      "texture_key": "cp_name_pl_023_id_hq",
+      "source_sha256": "4ec78efd974599d767d8d2c580599f27713d80bbcc432a5908fb3ada59dfa36b",
+      "donor_archive": "friend_023.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "971f05eac2b2a34f699ba22fa44549b551a7ffcb55c3d64f658af676e268f4d9"
+    },
+    {
+      "target_entry_index": 80,
+      "texture_key": "cp_name_pl_024_id_hq",
+      "source_sha256": "63955e87ecaaabb38b5050a7a29168c74211a349369c48eb7c4ce9648efa5526",
+      "donor_archive": "friend_024.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "85124346405552e46d8bf1619f337d8ca9d00f1792e359d4299128ba71a0e076"
+    },
+    {
+      "target_entry_index": 83,
+      "texture_key": "cp_name_pl_025_id_hq",
+      "source_sha256": "1486447bd73ef7858e183f7c9002840a6572abde8d9237840792d82b06a613f3",
+      "donor_archive": "friend_025.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "3d03366e6c1ac4f3c7c0c5b7007f0c021e4b400b744c21da83366f2c6160882a"
+    },
+    {
+      "target_entry_index": 86,
+      "texture_key": "cp_name_pl_026_id_hq",
+      "source_sha256": "9195c0ba3987fce027dcdeb4909de50a8704a594de09a7afbf8636e94b628bbf",
+      "donor_archive": "friend_026.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "adcfe93ce51dae2ee417c38c4ab214eb532b90d1150ebe5e3a03ca2ce2cfad0e"
+    },
+    {
+      "target_entry_index": 89,
+      "texture_key": "cp_name_pl_027_id_hq",
+      "source_sha256": "6a609421ba1e096c2feefcfd8e9e8a651c764c6ba8f82324cf69a54d67e759eb",
+      "donor_archive": "friend_027.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "8b2821a99e73f4286445b0747b0c81170bc1b496cb1de47c14801a3cd94e31ac"
+    },
+    {
+      "target_entry_index": 92,
+      "texture_key": "cp_name_pl_028_id_hq",
+      "source_sha256": "1ed47490eff52831b1d5e292331651376a0fc5d8310349ad0bd2eb1a50a7cf80",
+      "donor_archive": "friend_028.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "b90b4267f975f9d205b586491faac88ab443f191c541ca2678faece180cff86c"
+    },
+    {
+      "target_entry_index": 95,
+      "texture_key": "cp_name_pl_029_id_hq",
+      "source_sha256": "125b3c78e91ea372a2234d1825d8af5b4198a3211664125dfdb71f88bf9489dd",
+      "donor_archive": "friend_029.arc",
+      "donor_entry_index": 1,
+      "donor_sha256": "76cd3f7e83a31c5409f0f6c97193a167f7c32bbcfc9573df7f2622dedd332131"
+    }
+  ]
+}

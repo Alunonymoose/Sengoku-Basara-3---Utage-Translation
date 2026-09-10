@@ -1,0 +1,3443 @@
+[
+  {
+    "index": 0,
+    "name": "SysRoot",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": -1,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      32,
+      32
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 1,
+    "name": "0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      -88.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 0,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      32,
+      32
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 2,
+    "name": "0_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      70.0,
+      240.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 3,
+    "name": "Base",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_006_ID_HQ",
+    "type": 2,
+    "position": [
+      112.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -128,
+      -256,
+      128,
+      256
+    ],
+    "uv": [
+      0,
+      0,
+      256,
+      512
+    ]
+  },
+  {
+    "index": 4,
+    "name": "0_0_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      190.0,
+      -10.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 5,
+    "name": "Shing",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_011_ID_HQ",
+    "type": 2,
+    "position": [
+      -70.0,
+      -96.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -25,
+      128,
+      25
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      50
+    ]
+  },
+  {
+    "index": 6,
+    "name": "Shing_s",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_011_ID_HQ",
+    "type": 2,
+    "position": [
+      4.0,
+      3.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 5,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -25,
+      128,
+      25
+    ],
+    "uv": [
+      128,
+      0,
+      256,
+      50
+    ]
+  },
+  {
+    "index": 7,
+    "name": "Soubi",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_011_ID_HQ",
+    "type": 2,
+    "position": [
+      -63.0,
+      -48.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -26,
+      128,
+      26
+    ],
+    "uv": [
+      0,
+      49,
+      128,
+      101
+    ]
+  },
+  {
+    "index": 8,
+    "name": "Soubi_s",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_011_ID_HQ",
+    "type": 2,
+    "position": [
+      4.0,
+      2.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 7,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -26,
+      128,
+      26
+    ],
+    "uv": [
+      128,
+      49,
+      256,
+      101
+    ]
+  },
+  {
+    "index": 9,
+    "name": "Basara",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_011_ID_HQ",
+    "type": 2,
+    "position": [
+      -63.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -25,
+      128,
+      25
+    ],
+    "uv": [
+      0,
+      101,
+      128,
+      151
+    ]
+  },
+  {
+    "index": 10,
+    "name": "Basara_s",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_011_ID_HQ",
+    "type": 2,
+    "position": [
+      4.0,
+      2.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 9,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -25,
+      128,
+      25
+    ],
+    "uv": [
+      128,
+      101,
+      256,
+      151
+    ]
+  },
+  {
+    "index": 11,
+    "name": "Guide",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_011_ID_HQ",
+    "type": 2,
+    "position": [
+      -73.0,
+      48.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -25,
+      128,
+      25
+    ],
+    "uv": [
+      0,
+      150,
+      128,
+      200
+    ]
+  },
+  {
+    "index": 12,
+    "name": "Guide_s",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_011_ID_HQ",
+    "type": 2,
+    "position": [
+      4.0,
+      2.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 11,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -25,
+      128,
+      25
+    ],
+    "uv": [
+      128,
+      150,
+      256,
+      200
+    ]
+  },
+  {
+    "index": 13,
+    "name": "Settei",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_011_ID_HQ",
+    "type": 2,
+    "position": [
+      -80.0,
+      98.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -28,
+      128,
+      28
+    ],
+    "uv": [
+      0,
+      199,
+      128,
+      255
+    ]
+  },
+  {
+    "index": 14,
+    "name": "Settei_s",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_011_ID_HQ",
+    "type": 2,
+    "position": [
+      4.0,
+      2.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 13,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -28,
+      128,
+      28
+    ],
+    "uv": [
+      128,
+      199,
+      256,
+      255
+    ]
+  },
+  {
+    "index": 15,
+    "name": "Cursor_1p",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_016_ID_HQ",
+    "type": 2,
+    "position": [
+      -19.0,
+      -96.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -110,
+      -25,
+      110,
+      25
+    ],
+    "uv": [
+      0,
+      0,
+      220,
+      50
+    ]
+  },
+  {
+    "index": 16,
+    "name": "Cursor_1p_o",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_016_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 15,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -110,
+      -25,
+      110,
+      25
+    ],
+    "uv": [
+      0,
+      0,
+      220,
+      50
+    ]
+  },
+  {
+    "index": 17,
+    "name": "Cursor_2p1",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_016_ID_HQ",
+    "type": 2,
+    "position": [
+      -19.0,
+      -96.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -110,
+      -25,
+      110,
+      25
+    ],
+    "uv": [
+      0,
+      50,
+      220,
+      100
+    ]
+  },
+  {
+    "index": 18,
+    "name": "Cursor_2p1_o",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_016_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0089800357818604,
+      1.0089800357818604
+    ],
+    "parent": 17,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -110,
+      -25,
+      110,
+      25
+    ],
+    "uv": [
+      0,
+      50,
+      220,
+      100
+    ]
+  },
+  {
+    "index": 19,
+    "name": "Cursor_2p2l",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_016_ID_HQ",
+    "type": 2,
+    "position": [
+      -19.0,
+      -96.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -110,
+      -25,
+      110,
+      25
+    ],
+    "uv": [
+      0,
+      100,
+      220,
+      150
+    ]
+  },
+  {
+    "index": 20,
+    "name": "Cursor_2p2l_o",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_016_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 19,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -110,
+      -25,
+      110,
+      25
+    ],
+    "uv": [
+      0,
+      100,
+      220,
+      150
+    ]
+  },
+  {
+    "index": 21,
+    "name": "Cursor_2p2r",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_016_ID_HQ",
+    "type": 2,
+    "position": [
+      -19.0,
+      -96.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -110,
+      -25,
+      110,
+      25
+    ],
+    "uv": [
+      0,
+      150,
+      220,
+      200
+    ]
+  },
+  {
+    "index": 22,
+    "name": "Cursor_2p2r_o",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_016_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 21,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -110,
+      -25,
+      110,
+      25
+    ],
+    "uv": [
+      0,
+      150,
+      220,
+      200
+    ]
+  },
+  {
+    "index": 23,
+    "name": "1",
+    "texture": "",
+    "type": 4,
+    "position": [
+      -0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 0,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 24,
+    "name": "1_1",
+    "texture": "",
+    "type": 4,
+    "position": [
+      88.0,
+      228.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 23,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 25,
+    "name": "Buki",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_012_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      -104.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 24,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -42,
+      -16,
+      42,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      84,
+      32
+    ]
+  },
+  {
+    "index": 26,
+    "name": "Buki_K",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      50.0,
+      1.0
+    ],
+    "scale": [
+      1.111111044883728,
+      1.111111044883728
+    ],
+    "parent": 25,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -14,
+      0,
+      14
+    ],
+    "uv": [
+      0,
+      0,
+      166,
+      28
+    ]
+  },
+  {
+    "index": 27,
+    "name": "Buki_K_S",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      51.0,
+      4.0
+    ],
+    "scale": [
+      1.111111044883728,
+      1.111111044883728
+    ],
+    "parent": 25,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -14,
+      0,
+      14
+    ],
+    "uv": [
+      167,
+      0,
+      333,
+      28
+    ]
+  },
+  {
+    "index": 28,
+    "name": "Menuki",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_012_ID_HQ",
+    "type": 2,
+    "position": [
+      3.0,
+      -76.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 24,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -42,
+      -16,
+      42,
+      16
+    ],
+    "uv": [
+      84,
+      0,
+      168,
+      32
+    ]
+  },
+  {
+    "index": 29,
+    "name": "Menu_K",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      50.0,
+      1.0
+    ],
+    "scale": [
+      1.111111044883728,
+      1.111111044883728
+    ],
+    "parent": 28,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -14,
+      0,
+      14
+    ],
+    "uv": [
+      0,
+      28,
+      166,
+      56
+    ]
+  },
+  {
+    "index": 30,
+    "name": "Menu_K_S",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      51.0,
+      4.0
+    ],
+    "scale": [
+      1.111111044883728,
+      1.111111044883728
+    ],
+    "parent": 28,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -14,
+      0,
+      14
+    ],
+    "uv": [
+      167,
+      28,
+      333,
+      56
+    ]
+  },
+  {
+    "index": 31,
+    "name": "EXwaza",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_012_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      12.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.8999999761581421
+    ],
+    "parent": 24,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -42,
+      -16,
+      42,
+      16
+    ],
+    "uv": [
+      168,
+      0,
+      252,
+      32
+    ]
+  },
+  {
+    "index": 32,
+    "name": "EXWa_K",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      56.0,
+      1.0
+    ],
+    "scale": [
+      1.25,
+      1.111111044883728
+    ],
+    "parent": 31,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -14,
+      0,
+      14
+    ],
+    "uv": [
+      0,
+      56,
+      166,
+      84
+    ]
+  },
+  {
+    "index": 33,
+    "name": "EXWa_K_S",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      57.0,
+      4.0
+    ],
+    "scale": [
+      1.25,
+      1.111111044883728
+    ],
+    "parent": 31,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -14,
+      0,
+      14
+    ],
+    "uv": [
+      167,
+      56,
+      333,
+      84
+    ]
+  },
+  {
+    "index": 34,
+    "name": "Nakama",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_012_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      58.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 24,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -42,
+      -16,
+      42,
+      16
+    ],
+    "uv": [
+      0,
+      32,
+      84,
+      64
+    ]
+  },
+  {
+    "index": 35,
+    "name": "Naka_K",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      50.0,
+      1.0
+    ],
+    "scale": [
+      1.111111044883728,
+      1.111111044883728
+    ],
+    "parent": 34,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -14,
+      0,
+      14
+    ],
+    "uv": [
+      0,
+      84,
+      166,
+      112
+    ]
+  },
+  {
+    "index": 36,
+    "name": "Naka_K_S",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      51.0,
+      4.0
+    ],
+    "scale": [
+      1.111111044883728,
+      1.111111044883728
+    ],
+    "parent": 34,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -14,
+      0,
+      14
+    ],
+    "uv": [
+      167,
+      84,
+      333,
+      112
+    ]
+  },
+  {
+    "index": 37,
+    "name": "Mode",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_012_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      104.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.8999999761581421
+    ],
+    "parent": 24,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -42,
+      -16,
+      42,
+      16
+    ],
+    "uv": [
+      168,
+      32,
+      252,
+      64
+    ]
+  },
+  {
+    "index": 38,
+    "name": "Mode_K",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      56.0,
+      1.0
+    ],
+    "scale": [
+      1.25,
+      1.111111044883728
+    ],
+    "parent": 37,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -14,
+      0,
+      14
+    ],
+    "uv": [
+      0,
+      112,
+      166,
+      140
+    ]
+  },
+  {
+    "index": 39,
+    "name": "Mode_K_S",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      57.0,
+      4.0
+    ],
+    "scale": [
+      1.25,
+      1.111111044883728
+    ],
+    "parent": 37,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -14,
+      0,
+      14
+    ],
+    "uv": [
+      167,
+      112,
+      333,
+      140
+    ]
+  },
+  {
+    "index": 40,
+    "name": "1_2",
+    "texture": "",
+    "type": 4,
+    "position": [
+      88.0,
+      228.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 23,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 41,
+    "name": "System",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_012_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      -80.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 40,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -42,
+      -32,
+      42,
+      32
+    ],
+    "uv": [
+      0,
+      128,
+      84,
+      192
+    ]
+  },
+  {
+    "index": 42,
+    "name": "Sys_K",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      50.0,
+      1.0
+    ],
+    "scale": [
+      1.111111044883728,
+      1.111111044883728
+    ],
+    "parent": 41,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -27,
+      0,
+      27
+    ],
+    "uv": [
+      0,
+      140,
+      166,
+      194
+    ]
+  },
+  {
+    "index": 43,
+    "name": "Sys_K_S",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      51.0,
+      4.0
+    ],
+    "scale": [
+      1.111111044883728,
+      1.111111044883728
+    ],
+    "parent": 41,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -27,
+      0,
+      27
+    ],
+    "uv": [
+      167,
+      140,
+      333,
+      194
+    ]
+  },
+  {
+    "index": 44,
+    "name": "Sigen",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_012_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 40,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -42,
+      -32,
+      42,
+      32
+    ],
+    "uv": [
+      168,
+      128,
+      252,
+      192
+    ]
+  },
+  {
+    "index": 45,
+    "name": "Sigen_K",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      50.0,
+      1.0
+    ],
+    "scale": [
+      1.111111044883728,
+      1.111111044883728
+    ],
+    "parent": 44,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -27,
+      0,
+      27
+    ],
+    "uv": [
+      0,
+      194,
+      166,
+      248
+    ]
+  },
+  {
+    "index": 46,
+    "name": "Sigen_K_S",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      51.0,
+      4.0
+    ],
+    "scale": [
+      1.111111044883728,
+      1.111111044883728
+    ],
+    "parent": 44,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -27,
+      0,
+      27
+    ],
+    "uv": [
+      167,
+      194,
+      333,
+      248
+    ]
+  },
+  {
+    "index": 47,
+    "name": "Senseki",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_012_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      80.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 40,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -42,
+      -32,
+      42,
+      32
+    ],
+    "uv": [
+      84,
+      128,
+      168,
+      192
+    ]
+  },
+  {
+    "index": 48,
+    "name": "Sen_K",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      50.0,
+      1.0
+    ],
+    "scale": [
+      1.111111044883728,
+      1.111111044883728
+    ],
+    "parent": 47,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -27,
+      0,
+      27
+    ],
+    "uv": [
+      334,
+      0,
+      500,
+      54
+    ]
+  },
+  {
+    "index": 49,
+    "name": "Sen_K_S",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      51.0,
+      4.0
+    ],
+    "scale": [
+      1.111111044883728,
+      1.111111044883728
+    ],
+    "parent": 47,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -27,
+      0,
+      27
+    ],
+    "uv": [
+      167,
+      194,
+      333,
+      248
+    ]
+  },
+  {
+    "index": 50,
+    "name": "1_3",
+    "texture": "",
+    "type": 4,
+    "position": [
+      88.0,
+      228.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 23,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 51,
+    "name": "Kankyo",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_012_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      -80.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 50,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -42,
+      -32,
+      42,
+      32
+    ],
+    "uv": [
+      0,
+      192,
+      84,
+      256
+    ]
+  },
+  {
+    "index": 52,
+    "name": "Kan_K",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      50.0,
+      1.0
+    ],
+    "scale": [
+      1.111111044883728,
+      1.111111044883728
+    ],
+    "parent": 51,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -27,
+      0,
+      27
+    ],
+    "uv": [
+      0,
+      140,
+      166,
+      194
+    ]
+  },
+  {
+    "index": 53,
+    "name": "Kan_K_S",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      51.0,
+      4.0
+    ],
+    "scale": [
+      1.111111044883728,
+      1.111111044883728
+    ],
+    "parent": 51,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -27,
+      0,
+      27
+    ],
+    "uv": [
+      167,
+      140,
+      333,
+      194
+    ]
+  },
+  {
+    "index": 54,
+    "name": "Controller",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_012_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      -10.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 50,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -42,
+      -32,
+      42,
+      32
+    ],
+    "uv": [
+      84,
+      192,
+      168,
+      256
+    ]
+  },
+  {
+    "index": 55,
+    "name": "Con_K",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      50.0,
+      1.0
+    ],
+    "scale": [
+      1.111111044883728,
+      1.111111044883728
+    ],
+    "parent": 54,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -27,
+      0,
+      27
+    ],
+    "uv": [
+      0,
+      194,
+      166,
+      248
+    ]
+  },
+  {
+    "index": 56,
+    "name": "Con_K_S",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      51.0,
+      4.0
+    ],
+    "scale": [
+      1.111111044883728,
+      1.111111044883728
+    ],
+    "parent": 54,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -27,
+      0,
+      27
+    ],
+    "uv": [
+      167,
+      194,
+      333,
+      248
+    ]
+  },
+  {
+    "index": 57,
+    "name": "Save",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_012_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      45.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 50,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -42,
+      -16,
+      42,
+      16
+    ],
+    "uv": [
+      168,
+      192,
+      252,
+      224
+    ]
+  },
+  {
+    "index": 58,
+    "name": "Save_K",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      50.0,
+      1.0
+    ],
+    "scale": [
+      1.111111044883728,
+      1.111111044883728
+    ],
+    "parent": 57,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -14,
+      0,
+      14
+    ],
+    "uv": [
+      0,
+      84,
+      166,
+      112
+    ]
+  },
+  {
+    "index": 59,
+    "name": "Save_K_S",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      51.0,
+      4.0
+    ],
+    "scale": [
+      1.111111044883728,
+      1.111111044883728
+    ],
+    "parent": 57,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -14,
+      0,
+      14
+    ],
+    "uv": [
+      167,
+      84,
+      333,
+      112
+    ]
+  },
+  {
+    "index": 60,
+    "name": "Load",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_012_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      90.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 50,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -42,
+      -16,
+      42,
+      16
+    ],
+    "uv": [
+      168,
+      224,
+      252,
+      256
+    ]
+  },
+  {
+    "index": 61,
+    "name": "Load_K",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      50.0,
+      1.0
+    ],
+    "scale": [
+      1.111111044883728,
+      1.111111044883728
+    ],
+    "parent": 60,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -14,
+      0,
+      14
+    ],
+    "uv": [
+      0,
+      112,
+      166,
+      140
+    ]
+  },
+  {
+    "index": 62,
+    "name": "Load_K_S",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_017_ID_HQ",
+    "type": 2,
+    "position": [
+      51.0,
+      4.0
+    ],
+    "scale": [
+      1.111111044883728,
+      1.111111044883728
+    ],
+    "parent": 60,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -166,
+      -14,
+      0,
+      14
+    ],
+    "uv": [
+      167,
+      112,
+      333,
+      140
+    ]
+  },
+  {
+    "index": 63,
+    "name": "2",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 0,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 64,
+    "name": "2_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      132.0,
+      66.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 63,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 65,
+    "name": "2_0_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 64,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 66,
+    "name": "Base01",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_003_ID_HQ",
+    "type": 3,
+    "position": [
+      -5.0,
+      -40.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 65,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      312,
+      32
+    ],
+    "uv": [
+      135,
+      26,
+      447,
+      58
+    ]
+  },
+  {
+    "index": 67,
+    "name": "Kao",
+    "texture": "id\\dummy_BM",
+    "type": 2,
+    "position": [
+      -7.0,
+      9.0
+    ],
+    "scale": [
+      0.824999988079071,
+      0.824999988079071
+    ],
+    "parent": 65,
+    "size": [
+      32,
+      128
+    ],
+    "geometry": [
+      -64,
+      -32,
+      64,
+      32
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      64
+    ]
+  },
+  {
+    "index": 68,
+    "name": "Player1",
+    "texture": "id\\texture\\jpn\\common\\common_013_ID_HQ",
+    "type": 2,
+    "position": [
+      49.0,
+      -37.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.824999988079071
+    ],
+    "parent": 65,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      0,
+      98,
+      31
+    ],
+    "uv": [
+      0,
+      0,
+      98,
+      31
+    ]
+  },
+  {
+    "index": 69,
+    "name": "Name",
+    "texture": "id\\dummy_BM",
+    "type": 2,
+    "position": [
+      30.0,
+      -18.0
+    ],
+    "scale": [
+      0.9800000190734863,
+      1.0
+    ],
+    "parent": 65,
+    "size": [
+      32,
+      128
+    ],
+    "geometry": [
+      0,
+      0,
+      128,
+      64
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      64
+    ]
+  },
+  {
+    "index": 70,
+    "name": "Army",
+    "texture": "id\\dummy_BM",
+    "type": 2,
+    "position": [
+      93.0,
+      -14.0
+    ],
+    "scale": [
+      0.699999988079071,
+      0.699999988079071
+    ],
+    "parent": 65,
+    "size": [
+      32,
+      128
+    ],
+    "geometry": [
+      -64,
+      -16,
+      64,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      32
+    ]
+  },
+  {
+    "index": 71,
+    "name": "Base03",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_003_ID_HQ",
+    "type": 3,
+    "position": [
+      -5.0,
+      -40.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 65,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -26,
+      71,
+      0
+    ],
+    "uv": [
+      135,
+      0,
+      206,
+      26
+    ]
+  },
+  {
+    "index": 72,
+    "name": "Base02",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_003_ID_HQ",
+    "type": 3,
+    "position": [
+      -5.0,
+      -8.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 65,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      312,
+      45
+    ],
+    "uv": [
+      135,
+      58,
+      447,
+      103
+    ]
+  },
+  {
+    "index": 73,
+    "name": "Moon01",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_003_ID_HQ",
+    "type": 3,
+    "position": [
+      15.0,
+      -11.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 65,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -134,
+      -55,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      134,
+      55
+    ]
+  },
+  {
+    "index": 74,
+    "name": "Moon02",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_003_ID_HQ",
+    "type": 3,
+    "position": [
+      15.0,
+      -11.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 65,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -134,
+      0,
+      0,
+      48
+    ],
+    "uv": [
+      0,
+      55,
+      134,
+      103
+    ]
+  },
+  {
+    "index": 75,
+    "name": "Kumo01",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_005_ID_HQ",
+    "type": 2,
+    "position": [
+      -78.0,
+      -25.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 65,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -97,
+      -32,
+      97,
+      32
+    ],
+    "uv": [
+      0,
+      0,
+      194,
+      64
+    ]
+  },
+  {
+    "index": 76,
+    "name": "Kumo02",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_005_ID_HQ",
+    "type": 2,
+    "position": [
+      178.0,
+      -34.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 65,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -70,
+      -15,
+      70,
+      15
+    ],
+    "uv": [
+      195,
+      0,
+      335,
+      30
+    ]
+  },
+  {
+    "index": 77,
+    "name": "2_0_1",
+    "texture": "",
+    "type": 4,
+    "position": [
+      296.0,
+      -29.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 64,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 78,
+    "name": "Shoji_K",
+    "texture": "id\\texture\\jpn\\common\\common_016_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 77,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      0,
+      0,
+      114,
+      64
+    ],
+    "uv": [
+      0,
+      64,
+      114,
+      128
+    ]
+  },
+  {
+    "index": 79,
+    "name": "Ryo",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "type": 2,
+    "position": [
+      100.0,
+      52.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 77,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -14,
+      -16,
+      14,
+      16
+    ],
+    "uv": [
+      100,
+      0,
+      128,
+      32
+    ]
+  },
+  {
+    "index": 80,
+    "name": "2_0_1_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      102.0,
+      33.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 77,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 81,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 82,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "type": 2,
+    "position": [
+      -16.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 83,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "type": 2,
+    "position": [
+      -32.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 84,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "type": 2,
+    "position": [
+      -48.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 85,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "type": 2,
+    "position": [
+      -64.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 86,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "type": 2,
+    "position": [
+      -80.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 87,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "type": 2,
+    "position": [
+      -96.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 88,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "type": 2,
+    "position": [
+      -112.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 89,
+    "name": "2_0_2",
+    "texture": "",
+    "type": 4,
+    "position": [
+      -84.0,
+      -26.0
+    ],
+    "scale": [
+      0.949999988079071,
+      0.8999999761581421
+    ],
+    "parent": 64,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 90,
+    "name": "Story",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_005_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 89,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -8,
+      74,
+      8
+    ],
+    "uv": [
+      337,
+      0,
+      411,
+      16
+    ]
+  },
+  {
+    "index": 91,
+    "name": "2_0_3",
+    "texture": "",
+    "type": 4,
+    "position": [
+      225.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 64,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 92,
+    "name": "3",
+    "texture": "",
+    "type": 4,
+    "position": [
+      640.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 0,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 93,
+    "name": "3_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      -46.0,
+      74.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 92,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 94,
+    "name": "3_0_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 93,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 95,
+    "name": "Player2",
+    "texture": "id\\texture\\jpn\\common\\common_013_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      -44.0
+    ],
+    "scale": [
+      1.0,
+      0.800000011920929
+    ],
+    "parent": 94,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -41,
+      0,
+      0,
+      31
+    ],
+    "uv": [
+      99,
+      32,
+      140,
+      63
+    ]
+  },
+  {
+    "index": 96,
+    "name": "Kao",
+    "texture": "id\\dummy_BM",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 94,
+    "size": [
+      32,
+      128
+    ],
+    "geometry": [
+      -64,
+      -32,
+      0,
+      32
+    ],
+    "uv": [
+      50,
+      0,
+      114,
+      64
+    ]
+  },
+  {
+    "index": 97,
+    "name": "2_0_4",
+    "texture": "",
+    "type": 4,
+    "position": [
+      296.0,
+      -29.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 64,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 98,
+    "name": "Touchi",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_003_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.8199999928474426,
+      1.0
+    ],
+    "parent": 97,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      140,
+      24
+    ],
+    "uv": [
+      0,
+      104,
+      140,
+      128
+    ]
+  },
+  {
+    "index": 99,
+    "name": "Text",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_003_ID_HQ",
+    "type": 2,
+    "position": [
+      43.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 97,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -70,
+      0,
+      70,
+      24
+    ],
+    "uv": [
+      140,
+      104,
+      280,
+      128
+    ]
+  },
+  {
+    "index": 100,
+    "name": "2_0_4_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      89.0,
+      12.0
+    ],
+    "scale": [
+      0.699999988079071,
+      0.800000011920929
+    ],
+    "parent": 97,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 101,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 100,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 102,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": 2,
+    "position": [
+      -13.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 100,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 103,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": 2,
+    "position": [
+      -37.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 100,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 104,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": 2,
+    "position": [
+      -50.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 100,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 105,
+    "name": "2_0_5",
+    "texture": "",
+    "type": 4,
+    "position": [
+      294.0,
+      -0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 64,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 106,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_025_ID_HQ",
+    "type": 2,
+    "position": [
+      18.0,
+      -1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 105,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      0,
+      0,
+      32,
+      32
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 107,
+    "name": "Senme",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_005_ID_HQ",
+    "type": 2,
+    "position": [
+      39.0,
+      -1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 105,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      60,
+      32
+    ],
+    "uv": [
+      411,
+      0,
+      471,
+      32
+    ]
+  },
+  {
+    "index": 108,
+    "name": "Waku01",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_003_ID_HQ",
+    "type": 2,
+    "position": [
+      2.0,
+      -5.0
+    ],
+    "scale": [
+      0.8199999928474426,
+      1.0
+    ],
+    "parent": 105,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      0,
+      140,
+      20
+    ],
+    "uv": [
+      0,
+      104,
+      140,
+      125
+    ]
+  },
+  {
+    "index": 109,
+    "name": "Waku02",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_003_ID_HQ",
+    "type": 2,
+    "position": [
+      2.0,
+      15.0
+    ],
+    "scale": [
+      0.8199999928474426,
+      1.0
+    ],
+    "parent": 105,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      20,
+      140,
+      0
+    ],
+    "uv": [
+      0,
+      104,
+      140,
+      124
+    ]
+  },
+  {
+    "index": 110,
+    "name": "New  ",
+    "texture": "id\\texture\\jpn\\common\\common_018_ID_HQ",
+    "type": 2,
+    "position": [
+      -28.0,
+      -20.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 9,
+    "size": [
+      128,
+      64
+    ],
+    "geometry": [
+      0,
+      0,
+      52,
+      20
+    ],
+    "uv": [
+      0,
+      0,
+      52,
+      20
+    ]
+  }
+]

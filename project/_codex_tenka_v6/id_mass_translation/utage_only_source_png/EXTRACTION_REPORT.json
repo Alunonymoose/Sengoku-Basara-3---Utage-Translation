@@ -1,0 +1,3161 @@
+{
+  "status": "pass",
+  "texture_count": 185,
+  "textures": [
+    {
+      "archive": "cockpit1P.arc",
+      "entry_index": 9,
+      "resource_name": "id\\texture\\jpn\\cockpit\\cockpit_002_ID_HQ",
+      "texture_key": "cockpit_002_id_hq",
+      "xet_sha256": "6231713eef4657731615ce187696ee71392b9138c5998da31816448739d541fa",
+      "xet_info": {
+        "width": 128,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\cockpit1P__009__cockpit_002_id_hq.png"
+    },
+    {
+      "archive": "cockpit1P.arc",
+      "entry_index": 16,
+      "resource_name": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+      "texture_key": "common_010_id_hq",
+      "xet_sha256": "bbf1b3c2d3c3f125caecd601666c671bcba6a01fbf319a8adb49985424223602",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\cockpit1P__016__common_010_id_hq.png"
+    },
+    {
+      "archive": "cockpit1P.arc",
+      "entry_index": 17,
+      "resource_name": "id\\texture\\jpn\\cockpit\\cockpit_006_ID_HQ",
+      "texture_key": "cockpit_006_id_hq",
+      "xet_sha256": "a338ea06178f304a194f4992411ebfc1bdb5c877f310af292fc246aa66e070b2",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\cockpit1P__017__cockpit_006_id_hq.png"
+    },
+    {
+      "archive": "cockpit1P.arc",
+      "entry_index": 27,
+      "resource_name": "id\\texture\\jpn\\cockpit\\cockpit_021_ID_HQ",
+      "texture_key": "cockpit_021_id_hq",
+      "xet_sha256": "47c48089c00d330958c1ac51f668063c9f08c7b4b02a4c761f258da9ab47958b",
+      "xet_info": {
+        "width": 512,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 131072
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\cockpit1P__027__cockpit_021_id_hq.png"
+    },
+    {
+      "archive": "cockpit1P.arc",
+      "entry_index": 34,
+      "resource_name": "id\\texture\\jpn\\roulette\\roulette_001_ID_HQ",
+      "texture_key": "roulette_001_id_hq",
+      "xet_sha256": "03f5126499f66f290d85520c6d009c6bbc9845f2c9af552195efd4a4f405b3c0",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\cockpit1P__034__roulette_001_id_hq.png"
+    },
+    {
+      "archive": "cockpit1P.arc",
+      "entry_index": 35,
+      "resource_name": "id\\texture\\jpn\\roulette\\roulette_000_ID_HQ",
+      "texture_key": "roulette_000_id_hq",
+      "xet_sha256": "995c22cd90e7ff3c10d02f2e1226a86828bb993609dc4026043d8dd78d0bfa97",
+      "xet_info": {
+        "width": 512,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 131072
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\cockpit1P__035__roulette_000_id_hq.png"
+    },
+    {
+      "archive": "cockpit1P.arc",
+      "entry_index": 38,
+      "resource_name": "id\\texture\\jpn\\cockpit\\cockpit_026_ID_HQ",
+      "texture_key": "cockpit_026_id_hq",
+      "xet_sha256": "b78df3541d43d133e761e218d0057d24782938f2fc0a61c35c7263fa6670a11b",
+      "xet_info": {
+        "width": 128,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 8192
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\cockpit1P__038__cockpit_026_id_hq.png"
+    },
+    {
+      "archive": "cockpit2P.arc",
+      "entry_index": 2,
+      "resource_name": "id\\texture\\jpn\\cp_kessen\\cp_kessen_004_ID_HQ",
+      "texture_key": "cp_kessen_004_id_hq",
+      "xet_sha256": "8b57ee10f330d8ca2c5f1745902a7c1458d8dc131decbd9e86beb2f8568c020b",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\cockpit2P__002__cp_kessen_004_id_hq.png"
+    },
+    {
+      "archive": "cockpit2P.arc",
+      "entry_index": 10,
+      "resource_name": "id\\texture\\jpn\\cockpit\\cockpit_002_ID_HQ",
+      "texture_key": "cockpit_002_id_hq",
+      "xet_sha256": "6231713eef4657731615ce187696ee71392b9138c5998da31816448739d541fa",
+      "xet_info": {
+        "width": 128,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\cockpit2P__010__cockpit_002_id_hq.png"
+    },
+    {
+      "archive": "cockpit2P.arc",
+      "entry_index": 17,
+      "resource_name": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+      "texture_key": "common_010_id_hq",
+      "xet_sha256": "bbf1b3c2d3c3f125caecd601666c671bcba6a01fbf319a8adb49985424223602",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\cockpit2P__017__common_010_id_hq.png"
+    },
+    {
+      "archive": "cockpit2P.arc",
+      "entry_index": 18,
+      "resource_name": "id\\texture\\jpn\\cockpit\\cockpit_006_ID_HQ",
+      "texture_key": "cockpit_006_id_hq",
+      "xet_sha256": "a338ea06178f304a194f4992411ebfc1bdb5c877f310af292fc246aa66e070b2",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\cockpit2P__018__cockpit_006_id_hq.png"
+    },
+    {
+      "archive": "cockpit2P.arc",
+      "entry_index": 28,
+      "resource_name": "id\\texture\\jpn\\cockpit\\cockpit_021_ID_HQ",
+      "texture_key": "cockpit_021_id_hq",
+      "xet_sha256": "47c48089c00d330958c1ac51f668063c9f08c7b4b02a4c761f258da9ab47958b",
+      "xet_info": {
+        "width": 512,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 131072
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\cockpit2P__028__cockpit_021_id_hq.png"
+    },
+    {
+      "archive": "cockpit2P.arc",
+      "entry_index": 35,
+      "resource_name": "id\\texture\\jpn\\roulette\\roulette_001_ID_HQ",
+      "texture_key": "roulette_001_id_hq",
+      "xet_sha256": "03f5126499f66f290d85520c6d009c6bbc9845f2c9af552195efd4a4f405b3c0",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\cockpit2P__035__roulette_001_id_hq.png"
+    },
+    {
+      "archive": "cockpit2P.arc",
+      "entry_index": 36,
+      "resource_name": "id\\texture\\jpn\\roulette\\roulette_000_ID_HQ",
+      "texture_key": "roulette_000_id_hq",
+      "xet_sha256": "995c22cd90e7ff3c10d02f2e1226a86828bb993609dc4026043d8dd78d0bfa97",
+      "xet_info": {
+        "width": 512,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 131072
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\cockpit2P__036__roulette_000_id_hq.png"
+    },
+    {
+      "archive": "cockpit2P.arc",
+      "entry_index": 39,
+      "resource_name": "id\\texture\\jpn\\cockpit\\cockpit_026_ID_HQ",
+      "texture_key": "cockpit_026_id_hq",
+      "xet_sha256": "b78df3541d43d133e761e218d0057d24782938f2fc0a61c35c7263fa6670a11b",
+      "xet_info": {
+        "width": 128,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 8192
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\cockpit2P__039__cockpit_026_id_hq.png"
+    },
+    {
+      "archive": "friend_030.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_100_ID_HQ",
+      "texture_key": "cp_name_pl_100_id_hq",
+      "xet_sha256": "ede2a3c62e0d8f1b8fdd7605567bd910739187a9a3f0ad60fcf87aafd13abab8",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_030__001__cp_name_pl_100_id_hq.png"
+    },
+    {
+      "archive": "friend_031.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_101_ID_HQ",
+      "texture_key": "cp_name_pl_101_id_hq",
+      "xet_sha256": "60e611c920560dbea97dcc11285e6965b40b20d4b3fc58e9639706921dadde1d",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_031__001__cp_name_pl_101_id_hq.png"
+    },
+    {
+      "archive": "friend_032.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_102_ID_HQ",
+      "texture_key": "cp_name_pl_102_id_hq",
+      "xet_sha256": "e32f94f0d051f8beb614e4a3228d1baa10c7172a2f5b6c4189522797be88f098",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_032__001__cp_name_pl_102_id_hq.png"
+    },
+    {
+      "archive": "friend_033.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_104_ID_HQ",
+      "texture_key": "cp_name_pl_104_id_hq",
+      "xet_sha256": "636320576c9361a74f8045b7c9b3a0e17c9165aad512de855e5339935d74bd39",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_033__001__cp_name_pl_104_id_hq.png"
+    },
+    {
+      "archive": "friend_034.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_105_ID_HQ",
+      "texture_key": "cp_name_pl_105_id_hq",
+      "xet_sha256": "b7ca48f0e2cb8a887ce16ae233bd960e117bcc852d9515f8d34e3d1b6518772c",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_034__001__cp_name_pl_105_id_hq.png"
+    },
+    {
+      "archive": "friend_035.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_106_ID_HQ",
+      "texture_key": "cp_name_pl_106_id_hq",
+      "xet_sha256": "2bc7039e4c92e66f132c0c83aae37ec8415d942700f2a2fe60cda6e0d96fab86",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_035__001__cp_name_pl_106_id_hq.png"
+    },
+    {
+      "archive": "friend_036.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_107_ID_HQ",
+      "texture_key": "cp_name_pl_107_id_hq",
+      "xet_sha256": "e4a72235692b1c36b667cea3612e5697c6780db69115631369cb67861a514a3a",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_036__001__cp_name_pl_107_id_hq.png"
+    },
+    {
+      "archive": "friend_037.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_107_ID_HQ",
+      "texture_key": "cp_name_pl_107_id_hq",
+      "xet_sha256": "e4a72235692b1c36b667cea3612e5697c6780db69115631369cb67861a514a3a",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_037__001__cp_name_pl_107_id_hq.png"
+    },
+    {
+      "archive": "friend_038.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_107_ID_HQ",
+      "texture_key": "cp_name_pl_107_id_hq",
+      "xet_sha256": "e4a72235692b1c36b667cea3612e5697c6780db69115631369cb67861a514a3a",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_038__001__cp_name_pl_107_id_hq.png"
+    },
+    {
+      "archive": "friend_040.arc",
+      "entry_index": 2,
+      "resource_name": "model\\game\\wo\\wo040\\wo040_BM",
+      "texture_key": "wo040_bm",
+      "xet_sha256": "257f4ce67a927bc2260b5fced5e8662e8a0a7ab95484f0d275ebf84c349e11b6",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_040__002__wo040_bm.png"
+    },
+    {
+      "archive": "friend_045.arc",
+      "entry_index": 2,
+      "resource_name": "model\\game\\wo\\wo034\\wo034_BM",
+      "texture_key": "wo034_bm",
+      "xet_sha256": "378ae343f62ce4c76a0e990b28730959fce0b32743e35b433a05a1f3dfa6860d",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_045__002__wo034_bm.png"
+    },
+    {
+      "archive": "friend_048.arc",
+      "entry_index": 2,
+      "resource_name": "model\\game\\wo\\wo040\\wo040_BM",
+      "texture_key": "wo040_bm",
+      "xet_sha256": "257f4ce67a927bc2260b5fced5e8662e8a0a7ab95484f0d275ebf84c349e11b6",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_048__002__wo040_bm.png"
+    },
+    {
+      "archive": "friend_049.arc",
+      "entry_index": 2,
+      "resource_name": "model\\game\\wo\\wo056\\wo054_56_BM",
+      "texture_key": "wo054_56_bm",
+      "xet_sha256": "e2c7355e0ec11244f5427b9803346fb6eb985e5d2ffa36e85f54e3f516dae5ce",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_049__002__wo054_56_bm.png"
+    },
+    {
+      "archive": "friend_050.arc",
+      "entry_index": 2,
+      "resource_name": "model\\game\\wo\\wo036\\wo036_BM",
+      "texture_key": "wo036_bm",
+      "xet_sha256": "8865a76aaeb900a3a47b40bb830d2caa99bf252c7e24482381299d06021ac3c1",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_050__002__wo036_bm.png"
+    },
+    {
+      "archive": "friend_051.arc",
+      "entry_index": 2,
+      "resource_name": "model\\game\\wo\\wo048\\wo048_BM",
+      "texture_key": "wo048_bm",
+      "xet_sha256": "9777dcd5f514fef1b5e044a9a48d265aa43ed97579483d7d56282fc469c1d997",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_051__002__wo048_bm.png"
+    },
+    {
+      "archive": "friend_055.arc",
+      "entry_index": 2,
+      "resource_name": "model\\game\\wo\\wo058\\wo058_BM",
+      "texture_key": "wo058_bm",
+      "xet_sha256": "103733c8e50625e35b1bbdc7b4c2875352868032734009f76a91af043a73229f",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_055__002__wo058_bm.png"
+    },
+    {
+      "archive": "friend_057.arc",
+      "entry_index": 2,
+      "resource_name": "model\\game\\wo\\wo054\\wo054_56_BM",
+      "texture_key": "wo054_56_bm",
+      "xet_sha256": "e2c7355e0ec11244f5427b9803346fb6eb985e5d2ffa36e85f54e3f516dae5ce",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_057__002__wo054_56_bm.png"
+    },
+    {
+      "archive": "friend_059.arc",
+      "entry_index": 2,
+      "resource_name": "model\\game\\wo\\wo044\\wo044_BM",
+      "texture_key": "wo044_bm",
+      "xet_sha256": "62c3f900b9fd4d75f2367d6be3a49b2f4d35d0a043f3baf3e4bb267558dbaf50",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_059__002__wo044_bm.png"
+    },
+    {
+      "archive": "friend_062.arc",
+      "entry_index": 2,
+      "resource_name": "model\\game\\wo\\wo038\\wo038_BM",
+      "texture_key": "wo038_bm",
+      "xet_sha256": "539bb2fa955d339fd3a91c2f84fa56a5df5678a3080304f3a07bd404e37c990f",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_062__002__wo038_bm.png"
+    },
+    {
+      "archive": "friend_064.arc",
+      "entry_index": 2,
+      "resource_name": "model\\game\\wo\\wo042\\wo042_BM",
+      "texture_key": "wo042_bm",
+      "xet_sha256": "5a382534addc71e3eec377f66430b7ae8b9ff34542148d0b0b78018f06ab77b5",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_064__002__wo042_bm.png"
+    },
+    {
+      "archive": "friend_071.arc",
+      "entry_index": 2,
+      "resource_name": "model\\game\\wo\\wo056\\wo054_56_BM",
+      "texture_key": "wo054_56_bm",
+      "xet_sha256": "e2c7355e0ec11244f5427b9803346fb6eb985e5d2ffa36e85f54e3f516dae5ce",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_071__002__wo054_56_bm.png"
+    },
+    {
+      "archive": "friend_075.arc",
+      "entry_index": 2,
+      "resource_name": "model\\game\\wo\\wo038\\wo038_BM",
+      "texture_key": "wo038_bm",
+      "xet_sha256": "539bb2fa955d339fd3a91c2f84fa56a5df5678a3080304f3a07bd404e37c990f",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_075__002__wo038_bm.png"
+    },
+    {
+      "archive": "friend_077.arc",
+      "entry_index": 2,
+      "resource_name": "model\\game\\wo\\wo050\\wo050_BM",
+      "texture_key": "wo050_bm",
+      "xet_sha256": "25222ae23e2a33eb54fa1130e7cd33a74aefcdb769253e16df272450dd577518",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_077__002__wo050_bm.png"
+    },
+    {
+      "archive": "friend_079.arc",
+      "entry_index": 2,
+      "resource_name": "model\\game\\wo\\wo042\\wo042_BM",
+      "texture_key": "wo042_bm",
+      "xet_sha256": "5a382534addc71e3eec377f66430b7ae8b9ff34542148d0b0b78018f06ab77b5",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_079__002__wo042_bm.png"
+    },
+    {
+      "archive": "friend_081.arc",
+      "entry_index": 3,
+      "resource_name": "model\\game\\wo\\wo046\\wo046_BM",
+      "texture_key": "wo046_bm",
+      "xet_sha256": "d8440e3424574af3ac026600797e788187d2a03c21bc45bc2c283da9563d5f90",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_081__003__wo046_bm.png"
+    },
+    {
+      "archive": "friend_081.arc",
+      "entry_index": 4,
+      "resource_name": "model\\game\\wo\\wo046\\wo046_tatsumaki_BM",
+      "texture_key": "wo046_tatsumaki_bm",
+      "xet_sha256": "6c5380df6eaad034f47c0b5f624a5cc042013baf81a097f54960b8b370549636",
+      "xet_info": {
+        "width": 128,
+        "height": 128,
+        "texture_offset": 28,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_081__004__wo046_tatsumaki_bm.png"
+    },
+    {
+      "archive": "friend_085.arc",
+      "entry_index": 2,
+      "resource_name": "model\\game\\wo\\wo050\\wo050_BM",
+      "texture_key": "wo050_bm",
+      "xet_sha256": "25222ae23e2a33eb54fa1130e7cd33a74aefcdb769253e16df272450dd577518",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_085__002__wo050_bm.png"
+    },
+    {
+      "archive": "friend_090.arc",
+      "entry_index": 2,
+      "resource_name": "model\\game\\wo\\wo036\\wo036_BM",
+      "texture_key": "wo036_bm",
+      "xet_sha256": "8865a76aaeb900a3a47b40bb830d2caa99bf252c7e24482381299d06021ac3c1",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_090__002__wo036_bm.png"
+    },
+    {
+      "archive": "friend_096.arc",
+      "entry_index": 2,
+      "resource_name": "model\\game\\wo\\wo060\\wo060_BM",
+      "texture_key": "wo060_bm",
+      "xet_sha256": "757fe3bf454c23a15678680c0884847a1de0913c0926e0998133d4c3ecfa7206",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_096__002__wo060_bm.png"
+    },
+    {
+      "archive": "friend_097.arc",
+      "entry_index": 2,
+      "resource_name": "model\\game\\wo\\wo044\\wo044_BM",
+      "texture_key": "wo044_bm",
+      "xet_sha256": "62c3f900b9fd4d75f2367d6be3a49b2f4d35d0a043f3baf3e4bb267558dbaf50",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_097__002__wo044_bm.png"
+    },
+    {
+      "archive": "friend_098.arc",
+      "entry_index": 3,
+      "resource_name": "model\\game\\wo\\wo046\\wo046_BM",
+      "texture_key": "wo046_bm",
+      "xet_sha256": "d8440e3424574af3ac026600797e788187d2a03c21bc45bc2c283da9563d5f90",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_098__003__wo046_bm.png"
+    },
+    {
+      "archive": "friend_098.arc",
+      "entry_index": 4,
+      "resource_name": "model\\game\\wo\\wo046\\wo046_tatsumaki_BM",
+      "texture_key": "wo046_tatsumaki_bm",
+      "xet_sha256": "6c5380df6eaad034f47c0b5f624a5cc042013baf81a097f54960b8b370549636",
+      "xet_info": {
+        "width": 128,
+        "height": 128,
+        "texture_offset": 28,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_098__004__wo046_tatsumaki_bm.png"
+    },
+    {
+      "archive": "friend_100.arc",
+      "entry_index": 0,
+      "resource_name": "id\\texture\\jpn\\cp_nakama\\cp_nakama_025_ID_HQ",
+      "texture_key": "cp_nakama_025_id_hq",
+      "xet_sha256": "ffbb51a2dd553f507c5ef84ad71f19287e6b122fad23804fbdd77da74c273acf",
+      "xet_info": {
+        "width": 128,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_100__000__cp_nakama_025_id_hq.png"
+    },
+    {
+      "archive": "friend_100.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_025_ID_HQ",
+      "texture_key": "cp_name_nak_025_id_hq",
+      "xet_sha256": "893d40be5a048bec2420d5b2544b91fded3739802b73777521ecd49a8d3bd6b5",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_100__001__cp_name_nak_025_id_hq.png"
+    },
+    {
+      "archive": "friend_100.arc",
+      "entry_index": 2,
+      "resource_name": "model\\game\\wo\\wo048\\wo048_BM",
+      "texture_key": "wo048_bm",
+      "xet_sha256": "9777dcd5f514fef1b5e044a9a48d265aa43ed97579483d7d56282fc469c1d997",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 32,
+        "format_code": 23,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_100__002__wo048_bm.png"
+    },
+    {
+      "archive": "friend_101.arc",
+      "entry_index": 0,
+      "resource_name": "id\\texture\\jpn\\cp_nakama\\cp_nakama_025_ID_HQ",
+      "texture_key": "cp_nakama_025_id_hq",
+      "xet_sha256": "ffbb51a2dd553f507c5ef84ad71f19287e6b122fad23804fbdd77da74c273acf",
+      "xet_info": {
+        "width": 128,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_101__000__cp_nakama_025_id_hq.png"
+    },
+    {
+      "archive": "friend_101.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_025_ID_HQ",
+      "texture_key": "cp_name_nak_025_id_hq",
+      "xet_sha256": "893d40be5a048bec2420d5b2544b91fded3739802b73777521ecd49a8d3bd6b5",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_101__001__cp_name_nak_025_id_hq.png"
+    },
+    {
+      "archive": "friend_102.arc",
+      "entry_index": 0,
+      "resource_name": "id\\texture\\jpn\\cp_nakama\\cp_nakama_025_ID_HQ",
+      "texture_key": "cp_nakama_025_id_hq",
+      "xet_sha256": "ffbb51a2dd553f507c5ef84ad71f19287e6b122fad23804fbdd77da74c273acf",
+      "xet_info": {
+        "width": 128,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_102__000__cp_nakama_025_id_hq.png"
+    },
+    {
+      "archive": "friend_102.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_025_ID_HQ",
+      "texture_key": "cp_name_nak_025_id_hq",
+      "xet_sha256": "893d40be5a048bec2420d5b2544b91fded3739802b73777521ecd49a8d3bd6b5",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_102__001__cp_name_nak_025_id_hq.png"
+    },
+    {
+      "archive": "friend_103.arc",
+      "entry_index": 0,
+      "resource_name": "id\\texture\\jpn\\cp_nakama\\cp_nakama_025_ID_HQ",
+      "texture_key": "cp_nakama_025_id_hq",
+      "xet_sha256": "ffbb51a2dd553f507c5ef84ad71f19287e6b122fad23804fbdd77da74c273acf",
+      "xet_info": {
+        "width": 128,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_103__000__cp_nakama_025_id_hq.png"
+    },
+    {
+      "archive": "friend_103.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_025_ID_HQ",
+      "texture_key": "cp_name_nak_025_id_hq",
+      "xet_sha256": "893d40be5a048bec2420d5b2544b91fded3739802b73777521ecd49a8d3bd6b5",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_103__001__cp_name_nak_025_id_hq.png"
+    },
+    {
+      "archive": "friend_104.arc",
+      "entry_index": 0,
+      "resource_name": "id\\texture\\jpn\\cp_nakama\\cp_nakama_026_ID_HQ",
+      "texture_key": "cp_nakama_026_id_hq",
+      "xet_sha256": "001cc0d9920b7d9fe686b9d2be30cb6010d164ce0bd547fb9f75312e66569271",
+      "xet_info": {
+        "width": 128,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_104__000__cp_nakama_026_id_hq.png"
+    },
+    {
+      "archive": "friend_104.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_026_ID_HQ",
+      "texture_key": "cp_name_nak_026_id_hq",
+      "xet_sha256": "bd6c5613fcfb4f206ec2d3aa8c200bc4315d1a97762f0d462f4ef8372d29e630",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_104__001__cp_name_nak_026_id_hq.png"
+    },
+    {
+      "archive": "friend_105.arc",
+      "entry_index": 0,
+      "resource_name": "id\\texture\\jpn\\cp_nakama\\cp_nakama_026_ID_HQ",
+      "texture_key": "cp_nakama_026_id_hq",
+      "xet_sha256": "001cc0d9920b7d9fe686b9d2be30cb6010d164ce0bd547fb9f75312e66569271",
+      "xet_info": {
+        "width": 128,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_105__000__cp_nakama_026_id_hq.png"
+    },
+    {
+      "archive": "friend_105.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_026_ID_HQ",
+      "texture_key": "cp_name_nak_026_id_hq",
+      "xet_sha256": "bd6c5613fcfb4f206ec2d3aa8c200bc4315d1a97762f0d462f4ef8372d29e630",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_105__001__cp_name_nak_026_id_hq.png"
+    },
+    {
+      "archive": "friend_106.arc",
+      "entry_index": 0,
+      "resource_name": "id\\texture\\jpn\\cp_nakama\\cp_nakama_026_ID_HQ",
+      "texture_key": "cp_nakama_026_id_hq",
+      "xet_sha256": "001cc0d9920b7d9fe686b9d2be30cb6010d164ce0bd547fb9f75312e66569271",
+      "xet_info": {
+        "width": 128,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_106__000__cp_nakama_026_id_hq.png"
+    },
+    {
+      "archive": "friend_106.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_026_ID_HQ",
+      "texture_key": "cp_name_nak_026_id_hq",
+      "xet_sha256": "bd6c5613fcfb4f206ec2d3aa8c200bc4315d1a97762f0d462f4ef8372d29e630",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_106__001__cp_name_nak_026_id_hq.png"
+    },
+    {
+      "archive": "friend_107.arc",
+      "entry_index": 0,
+      "resource_name": "id\\texture\\jpn\\cp_nakama\\cp_nakama_026_ID_HQ",
+      "texture_key": "cp_nakama_026_id_hq",
+      "xet_sha256": "001cc0d9920b7d9fe686b9d2be30cb6010d164ce0bd547fb9f75312e66569271",
+      "xet_info": {
+        "width": 128,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_107__000__cp_nakama_026_id_hq.png"
+    },
+    {
+      "archive": "friend_107.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_026_ID_HQ",
+      "texture_key": "cp_name_nak_026_id_hq",
+      "xet_sha256": "bd6c5613fcfb4f206ec2d3aa8c200bc4315d1a97762f0d462f4ef8372d29e630",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_107__001__cp_name_nak_026_id_hq.png"
+    },
+    {
+      "archive": "friend_108.arc",
+      "entry_index": 0,
+      "resource_name": "id\\texture\\jpn\\cp_nakama\\cp_nakama_027_ID_HQ",
+      "texture_key": "cp_nakama_027_id_hq",
+      "xet_sha256": "55851698501e6514ded372f286146d43fb9aa3080dea9ccd5d55a78c6e1afd01",
+      "xet_info": {
+        "width": 128,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_108__000__cp_nakama_027_id_hq.png"
+    },
+    {
+      "archive": "friend_108.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_027_ID_HQ",
+      "texture_key": "cp_name_nak_027_id_hq",
+      "xet_sha256": "7652b6a72ff36f08c2ee2104d8e2b6246a1201b99da6ad3ae085de5c2f4cb54f",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\friend_108__001__cp_name_nak_027_id_hq.png"
+    },
+    {
+      "archive": "m035_enemy.arc",
+      "entry_index": 0,
+      "resource_name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_026_a_ID_HQ",
+      "texture_key": "cp_name_army_026_a_id_hq",
+      "xet_sha256": "e6592f50194f800af3cc19fa5a4ce3e5ba5be16252d1493931f1e2f4535ae55f",
+      "xet_info": {
+        "width": 512,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 131072
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\m035_enemy__000__cp_name_army_026_a_id_hq.png"
+    },
+    {
+      "archive": "m035_enemy.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_026_b_ID_HQ",
+      "texture_key": "cp_name_army_026_b_id_hq",
+      "xet_sha256": "62286ba412eab4029b61a169b8c5c82395ed156c9abb122922a09f988942a0bc",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\m035_enemy__001__cp_name_army_026_b_id_hq.png"
+    },
+    {
+      "archive": "m039_enemy.arc",
+      "entry_index": 0,
+      "resource_name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_012_a_ID_HQ",
+      "texture_key": "cp_name_army_012_a_id_hq",
+      "xet_sha256": "3f951a8ca1a1283356042309cb22299c52dfeac8539682e82ae26c931bb53128",
+      "xet_info": {
+        "width": 512,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 131072
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\m039_enemy__000__cp_name_army_012_a_id_hq.png"
+    },
+    {
+      "archive": "m039_enemy.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_012_b_ID_HQ",
+      "texture_key": "cp_name_army_012_b_id_hq",
+      "xet_sha256": "fdfc40ba127334b040f93f6d9bad2f4c1a8b65e1b0b36b6ef3cdd0327b030df6",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\m039_enemy__001__cp_name_army_012_b_id_hq.png"
+    },
+    {
+      "archive": "m040_enemy.arc",
+      "entry_index": 0,
+      "resource_name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_001_a_ID_HQ",
+      "texture_key": "cp_name_army_001_a_id_hq",
+      "xet_sha256": "1319fb17e47ceaeef22dc423655040201e0fdf0a99e59a7a3b357585cc59fa16",
+      "xet_info": {
+        "width": 512,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 131072
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\m040_enemy__000__cp_name_army_001_a_id_hq.png"
+    },
+    {
+      "archive": "m040_enemy.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_001_b_ID_HQ",
+      "texture_key": "cp_name_army_001_b_id_hq",
+      "xet_sha256": "ec476c1b9d21c7aa4145dd103613a77cf1396e7dc42064bfda1d1ea5801f6ce0",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\m040_enemy__001__cp_name_army_001_b_id_hq.png"
+    },
+    {
+      "archive": "m040_enemy.arc",
+      "entry_index": 2,
+      "resource_name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_000_a_ID_HQ",
+      "texture_key": "cp_name_army_000_a_id_hq",
+      "xet_sha256": "da1faea21cd6effc76f7486bb3d4f30061dbf458a31eb1ecc5908ea9e2ff17c4",
+      "xet_info": {
+        "width": 512,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 131072
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\m040_enemy__002__cp_name_army_000_a_id_hq.png"
+    },
+    {
+      "archive": "m040_enemy.arc",
+      "entry_index": 3,
+      "resource_name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_000_b_ID_HQ",
+      "texture_key": "cp_name_army_000_b_id_hq",
+      "xet_sha256": "17b9d0aebd9e54018e3147b50b16b4d08a1a26de86ac60034554d19769fe058a",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\m040_enemy__003__cp_name_army_000_b_id_hq.png"
+    },
+    {
+      "archive": "m041_enemy.arc",
+      "entry_index": 0,
+      "resource_name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_027_a_ID_HQ",
+      "texture_key": "cp_name_army_027_a_id_hq",
+      "xet_sha256": "81c9ab938cae9095824fe6c386fc7464dd08a4ed78ea0728772c411ea6b49969",
+      "xet_info": {
+        "width": 512,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 131072
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\m041_enemy__000__cp_name_army_027_a_id_hq.png"
+    },
+    {
+      "archive": "m041_enemy.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_027_b_ID_HQ",
+      "texture_key": "cp_name_army_027_b_id_hq",
+      "xet_sha256": "683f12e55f3d929c49f1e35defad2575ae265afc63a98cc04293db91ea1255b7",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\m041_enemy__001__cp_name_army_027_b_id_hq.png"
+    },
+    {
+      "archive": "m042_enemy.arc",
+      "entry_index": 0,
+      "resource_name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_006_a_ID_HQ",
+      "texture_key": "cp_name_army_006_a_id_hq",
+      "xet_sha256": "675e85d765ff982d3173ecc063cc5030c124053a9d5d6196cd256b041b7e14fd",
+      "xet_info": {
+        "width": 512,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 131072
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\m042_enemy__000__cp_name_army_006_a_id_hq.png"
+    },
+    {
+      "archive": "m042_enemy.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_006_b_ID_HQ",
+      "texture_key": "cp_name_army_006_b_id_hq",
+      "xet_sha256": "c7245bbd4bdbc3d54a31815f280b673a9204ff2117ed463b889ce7dc3c4775c2",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\m042_enemy__001__cp_name_army_006_b_id_hq.png"
+    },
+    {
+      "archive": "m043_enemy.arc",
+      "entry_index": 0,
+      "resource_name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_003_a_ID_HQ",
+      "texture_key": "cp_name_army_003_a_id_hq",
+      "xet_sha256": "495b56dafcfb65786b9b2e44d7cdc0a546cef5c390ab09026c8a5b566ce84240",
+      "xet_info": {
+        "width": 512,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 131072
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\m043_enemy__000__cp_name_army_003_a_id_hq.png"
+    },
+    {
+      "archive": "m043_enemy.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_003_b_ID_HQ",
+      "texture_key": "cp_name_army_003_b_id_hq",
+      "xet_sha256": "7f4eab870de14559ebf17b6632dcf2cd7789d170b373c4c47175f55dc6784786",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\m043_enemy__001__cp_name_army_003_b_id_hq.png"
+    },
+    {
+      "archive": "m044_enemy.arc",
+      "entry_index": 0,
+      "resource_name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_002_a_ID_HQ",
+      "texture_key": "cp_name_army_002_a_id_hq",
+      "xet_sha256": "3b23e63460f7c630fea6fbcb72ac8d51673897a4b3df1411f36d567a5a448862",
+      "xet_info": {
+        "width": 512,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 131072
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\m044_enemy__000__cp_name_army_002_a_id_hq.png"
+    },
+    {
+      "archive": "m044_enemy.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_002_b_ID_HQ",
+      "texture_key": "cp_name_army_002_b_id_hq",
+      "xet_sha256": "547c7139f867fe3c35fdaaa0a769c86f029ee828a8c25c62ce195ad25d2c137a",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\m044_enemy__001__cp_name_army_002_b_id_hq.png"
+    },
+    {
+      "archive": "m045_enemy.arc",
+      "entry_index": 0,
+      "resource_name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_001_a_ID_HQ",
+      "texture_key": "cp_name_army_001_a_id_hq",
+      "xet_sha256": "1319fb17e47ceaeef22dc423655040201e0fdf0a99e59a7a3b357585cc59fa16",
+      "xet_info": {
+        "width": 512,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 131072
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\m045_enemy__000__cp_name_army_001_a_id_hq.png"
+    },
+    {
+      "archive": "m045_enemy.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cp_name_army\\cp_name_army_001_b_ID_HQ",
+      "texture_key": "cp_name_army_001_b_id_hq",
+      "xet_sha256": "ec476c1b9d21c7aa4145dd103613a77cf1396e7dc42064bfda1d1ea5801f6ce0",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\m045_enemy__001__cp_name_army_001_b_id_hq.png"
+    },
+    {
+      "archive": "name_com.arc",
+      "entry_index": 3,
+      "resource_name": "id\\texture\\jpn\\cp_face_army\\cp_face_army_099_ID_HQ",
+      "texture_key": "cp_face_army_099_id_hq",
+      "xet_sha256": "d493da6b4b2a243b5d1dc9f20dcbe1954dedd28303e307b77b50f32f762769f1",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\name_com__003__cp_face_army_099_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 0,
+      "resource_name": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+      "texture_key": "cp_kessen_001_id_hq",
+      "xet_sha256": "fe4b324beb043aef885edc93a4f528df0cda79e3c3605e2d269cb1aa3f08af2b",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__000__cp_kessen_001_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 1,
+      "resource_name": "id\\texture\\jpn\\cockpit\\cockpit_020_ID_HQ",
+      "texture_key": "cockpit_020_id_hq",
+      "xet_sha256": "90c56aa013475e52079e77f3d579c60b9090bde10a8c17a8a7f98b49023b38db",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__001__cockpit_020_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 2,
+      "resource_name": "id\\texture\\jpn\\cp_kessen\\cp_kessen_003_ID_HQ",
+      "texture_key": "cp_kessen_003_id_hq",
+      "xet_sha256": "e796b5f764dbc57cb2ab0a559b4f679fc828b448f9abccb584c5616791a230b6",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__002__cp_kessen_003_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 3,
+      "resource_name": "id\\texture\\jpn\\cp_kessen\\cp_kessen_002_ID_HQ",
+      "texture_key": "cp_kessen_002_id_hq",
+      "xet_sha256": "96317d61bf70b97bd4d1c97d639cb7676bd00184b518e699a613953f4996a5c4",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__003__cp_kessen_002_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 5,
+      "resource_name": "id\\texture\\jpn\\cp_kessen\\cp_kessen_000_ID_HQ",
+      "texture_key": "cp_kessen_000_id_hq",
+      "xet_sha256": "557c7395832fd21cce8ab6756dd8c5d212fa13a25a2091019d18899a74ab0b25",
+      "xet_info": {
+        "width": 512,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 131072
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__005__cp_kessen_000_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 6,
+      "resource_name": "id\\texture\\jpn\\cp_kessen\\cp_kessen_004_ID_HQ",
+      "texture_key": "cp_kessen_004_id_hq",
+      "xet_sha256": "8b57ee10f330d8ca2c5f1745902a7c1458d8dc131decbd9e86beb2f8568c020b",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__006__cp_kessen_004_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 7,
+      "resource_name": "id\\texture\\jpn\\cp_kessen\\cp_kessen_005_ID_HQ",
+      "texture_key": "cp_kessen_005_id_hq",
+      "xet_sha256": "111bc15c9cd75b12cb904144331b87ffbe3f02599c20423d63f98c768b30d757",
+      "xet_info": {
+        "width": 256,
+        "height": 256,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 65536
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__007__cp_kessen_005_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 8,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_000_ID_HQ",
+      "texture_key": "cp_name_pl_000_id_hq",
+      "xet_sha256": "cb41081632e05e1f4146af5a3a9a1c6ff9d1173c5304a15ace8eae638715e381",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__008__cp_name_pl_000_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 9,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_000_ID_HQ",
+      "texture_key": "cp_face_msg_000_id_hq",
+      "xet_sha256": "93c5eb85ec508ab4f93a2be070eb27e809122fb6629075fbefa7282c71ee49d8",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__009__cp_face_msg_000_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 10,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_000_ID_HQ",
+      "texture_key": "kamon_000_id_hq",
+      "xet_sha256": "5806b6653addc1dc469afc168c9f545416f364e2e73fed4c30ee027b44a783cc",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__010__kamon_000_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 11,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_001_ID_HQ",
+      "texture_key": "cp_name_pl_001_id_hq",
+      "xet_sha256": "f2cc01c278c09c9d181da1525ca487c3c8426c55f0400f91f616abcae926b787",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__011__cp_name_pl_001_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 12,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_001_ID_HQ",
+      "texture_key": "cp_face_msg_001_id_hq",
+      "xet_sha256": "0467411ee527d7d2553f5b6c63dd97224c2402be1c5472ff851f1176e2afb2a8",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__012__cp_face_msg_001_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 13,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_001_ID_HQ",
+      "texture_key": "kamon_001_id_hq",
+      "xet_sha256": "ee16b1dd221cb5b2e23c33c9171db6545c38231524c515512d2e05b9e266d0fc",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__013__kamon_001_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 14,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_002_ID_HQ",
+      "texture_key": "cp_name_pl_002_id_hq",
+      "xet_sha256": "8a1d40b0f0ab0d89be4bb98613a13f778fd171a2dcf6c75b5a40d733097c689a",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__014__cp_name_pl_002_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 15,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_002_ID_HQ",
+      "texture_key": "cp_face_msg_002_id_hq",
+      "xet_sha256": "d29eb3243b70056784c73c1eedc21d7427a006642a41ffbf42a664bde8340ffc",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__015__cp_face_msg_002_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 16,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_002_ID_HQ",
+      "texture_key": "kamon_002_id_hq",
+      "xet_sha256": "75071a36247eb952cbf673d94b5ba2086fa9777fd270d732ecd1c2df1ce4b5d5",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__016__kamon_002_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 17,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_003_ID_HQ",
+      "texture_key": "cp_name_pl_003_id_hq",
+      "xet_sha256": "82ca0a017305de3ad0ec99b93203d0f9b7ceb7dbd7c51551b07d5678576340af",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__017__cp_name_pl_003_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 18,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_003_ID_HQ",
+      "texture_key": "cp_face_msg_003_id_hq",
+      "xet_sha256": "a797a492f21da1e219ef13429b0eb1275ce34d2f995827682d51b1e35fcffd70",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__018__cp_face_msg_003_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 19,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_003_ID_HQ",
+      "texture_key": "kamon_003_id_hq",
+      "xet_sha256": "12044dc5d8a3aeadf3eaf61c0bddbf9fcfcbc28e91c3c64e8d6357a42bce9f75",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__019__kamon_003_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 20,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_004_ID_HQ",
+      "texture_key": "cp_name_pl_004_id_hq",
+      "xet_sha256": "1c19a0c988f9804cc833ac54a56d882db2fa0007d487ad067b7f2fb0c55e2763",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__020__cp_name_pl_004_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 21,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_004_ID_HQ",
+      "texture_key": "cp_face_msg_004_id_hq",
+      "xet_sha256": "68a6c91b9cb9bd2ecdcbe571ef799c8d8790ef4e00c755bcadf57b5ffb8915e5",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__021__cp_face_msg_004_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 22,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_004_ID_HQ",
+      "texture_key": "kamon_004_id_hq",
+      "xet_sha256": "ddb9aa01f4a13ef6061b52f86c7b82fc0ab8414ae0ab79c18cb3573b1be6a353",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__022__kamon_004_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 23,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_005_ID_HQ",
+      "texture_key": "cp_name_pl_005_id_hq",
+      "xet_sha256": "9e9da92eb391b30542df2aeb8936a8fca6a1ad13703955c5cc93861671d7b13b",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__023__cp_name_pl_005_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 24,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_005_ID_HQ",
+      "texture_key": "cp_face_msg_005_id_hq",
+      "xet_sha256": "37fff42f26bcd0e9eb60e3ab0787f54bd49c2ec538bacd43590fccd5fd02803c",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__024__cp_face_msg_005_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 25,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_005_ID_HQ",
+      "texture_key": "kamon_005_id_hq",
+      "xet_sha256": "eb18027a0ad7b60130233be1d8c80b6f660346bfd7abe98151d447a1aafe4516",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__025__kamon_005_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 26,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_006_ID_HQ",
+      "texture_key": "cp_name_pl_006_id_hq",
+      "xet_sha256": "08da2b6f77134f9f439df8fff18aaa55220fb632d885eec051a613d22b9620f5",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__026__cp_name_pl_006_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 27,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_006_ID_HQ",
+      "texture_key": "cp_face_msg_006_id_hq",
+      "xet_sha256": "9ffed161d3d79d23c895ceeaac00cfd8ba2af75960e278423939ccaeca55cc5e",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__027__cp_face_msg_006_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 28,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_006_ID_HQ",
+      "texture_key": "kamon_006_id_hq",
+      "xet_sha256": "ab792fc5e34b28c0282b661c009812877cdaf2a4daa4046f2047345003292f5a",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__028__kamon_006_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 29,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_007_ID_HQ",
+      "texture_key": "cp_name_pl_007_id_hq",
+      "xet_sha256": "040cafd40b1af1b6cf4fbc87d4a0e38bdc25cc55555d2d6b28efadc2c2acdec2",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__029__cp_name_pl_007_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 30,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_007_ID_HQ",
+      "texture_key": "cp_face_msg_007_id_hq",
+      "xet_sha256": "2fd051206adf63d70ba6cb189305e18cf3836c1230242e2ade1aa96e1627d94f",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__030__cp_face_msg_007_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 31,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_007_ID_HQ",
+      "texture_key": "kamon_007_id_hq",
+      "xet_sha256": "27ea86b4e6ffacafa2900e28a1f74861cfdb1076196ee75fc5a0a33a736174ec",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__031__kamon_007_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 32,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_008_ID_HQ",
+      "texture_key": "cp_name_pl_008_id_hq",
+      "xet_sha256": "fdc763063dafa5039ca41efd0fd2e7ea87c373810bcf89b6a613756944ecc6a6",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__032__cp_name_pl_008_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 33,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_008_ID_HQ",
+      "texture_key": "cp_face_msg_008_id_hq",
+      "xet_sha256": "2ec6f7ece5ad52f571f0d92ea9a2bfc35c21e9c1d1a5b84b103d8aed0246fcc2",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__033__cp_face_msg_008_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 34,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_008_ID_HQ",
+      "texture_key": "kamon_008_id_hq",
+      "xet_sha256": "7fb0bb4a19d22473eb6d31458b8714335baaa6ad8df89dd06324651718e8dfb5",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__034__kamon_008_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 35,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_009_ID_HQ",
+      "texture_key": "cp_name_pl_009_id_hq",
+      "xet_sha256": "5ff40bba3ee3ae8fc7d3db695cf06c0c6bc2b43de8952b40f2f9729180de366d",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__035__cp_name_pl_009_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 36,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_009_ID_HQ",
+      "texture_key": "cp_face_msg_009_id_hq",
+      "xet_sha256": "a4ca3d7334ee1386087b364b79e5443c9b429542cd61f2c220a415d068b5925f",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__036__cp_face_msg_009_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 37,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_009_ID_HQ",
+      "texture_key": "kamon_009_id_hq",
+      "xet_sha256": "657453cdc696e42ab8098a6fcae35e2e7792552fe32cb240630d654623dc8f7b",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__037__kamon_009_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 38,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_010_ID_HQ",
+      "texture_key": "cp_name_pl_010_id_hq",
+      "xet_sha256": "cdfddea02f9606c14e76d2af7e968cbd57dd84ada27dd22e81eeeaea9df3b920",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__038__cp_name_pl_010_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 39,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_010_ID_HQ",
+      "texture_key": "cp_face_msg_010_id_hq",
+      "xet_sha256": "42208aab19bc418678139e1d68e6bae1ab03235a1959d22038ceab61b97fefe5",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__039__cp_face_msg_010_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 40,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_010_ID_HQ",
+      "texture_key": "kamon_010_id_hq",
+      "xet_sha256": "32e67f4593262ebc7f63e3aeece47c1903c90561b36a01bfd8a52f50a6b4ff97",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__040__kamon_010_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 41,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_011_ID_HQ",
+      "texture_key": "cp_name_pl_011_id_hq",
+      "xet_sha256": "dd2afc4c3204974fdb162b55f0b9c7193f54b534d98200ee694557385d8da5c7",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__041__cp_name_pl_011_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 42,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_011_ID_HQ",
+      "texture_key": "cp_face_msg_011_id_hq",
+      "xet_sha256": "bf0d6e66b451bd983d14f282aec6d6a5ff7dccbfa52503dfb98bc1b08a649a04",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__042__cp_face_msg_011_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 43,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_011_ID_HQ",
+      "texture_key": "kamon_011_id_hq",
+      "xet_sha256": "807e5be85d1d944182ff85e723d629d50c1201aade15f94457fe20feaf0b6d14",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__043__kamon_011_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 44,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_012_ID_HQ",
+      "texture_key": "cp_name_pl_012_id_hq",
+      "xet_sha256": "d4cf71691afa294c0cda6f27076a60e7e993377bc8d2db00280d9deb2aec585b",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__044__cp_name_pl_012_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 45,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_012_ID_HQ",
+      "texture_key": "cp_face_msg_012_id_hq",
+      "xet_sha256": "d0bf6415415cf88a0d0dae41835b40f4d6cf4aa47ef123d06f1810cd0acd83d6",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__045__cp_face_msg_012_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 46,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_012_ID_HQ",
+      "texture_key": "kamon_012_id_hq",
+      "xet_sha256": "5dd55ca5ccff30539858c0ec009b697b205dee9ebb9d182da9cdcb6cb96b1ddc",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__046__kamon_012_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 47,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_013_ID_HQ",
+      "texture_key": "cp_name_pl_013_id_hq",
+      "xet_sha256": "f779d38ffbad005504262d624a129def7fff6d784708d83edba165251bcf0c3e",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__047__cp_name_pl_013_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 48,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_013_ID_HQ",
+      "texture_key": "cp_face_msg_013_id_hq",
+      "xet_sha256": "6d87236c7bae21af213a4ccaa45e6588747e43d5c4f3540973e4e0034123a5aa",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__048__cp_face_msg_013_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 49,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_013_ID_HQ",
+      "texture_key": "kamon_013_id_hq",
+      "xet_sha256": "0e09c6827ead9a64058ca43878e575ef2a42156b8982f30140b9d671368c709a",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__049__kamon_013_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 50,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_014_ID_HQ",
+      "texture_key": "cp_name_pl_014_id_hq",
+      "xet_sha256": "c211c03fb1bb5d6b485efbb65c06393b71bdc5792b9aef2e241b7fc2ac1cb417",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__050__cp_name_pl_014_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 51,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_014_ID_HQ",
+      "texture_key": "cp_face_msg_014_id_hq",
+      "xet_sha256": "85e6c9ec36151398202d6f2bb362726249f4681e24c1203f0a8ad15217f9b3e1",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__051__cp_face_msg_014_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 52,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_014_ID_HQ",
+      "texture_key": "kamon_014_id_hq",
+      "xet_sha256": "7fa45bb6bdc24e2d92da3b49dc1932833e1bde72f01ca78969b1d33cbac63047",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__052__kamon_014_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 53,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_015_ID_HQ",
+      "texture_key": "cp_name_pl_015_id_hq",
+      "xet_sha256": "049d6f90ae6b9998585ca76f1a20fe7b7fc1ecc9c0064e52dd81086729f01078",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__053__cp_name_pl_015_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 54,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_015_ID_HQ",
+      "texture_key": "cp_face_msg_015_id_hq",
+      "xet_sha256": "73d6e087b16686eb0d8f8013cbb7f96a2ff45ea27388d86e65bd15c8dc99267d",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__054__cp_face_msg_015_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 55,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_015_ID_HQ",
+      "texture_key": "kamon_015_id_hq",
+      "xet_sha256": "5dd55ca5ccff30539858c0ec009b697b205dee9ebb9d182da9cdcb6cb96b1ddc",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__055__kamon_015_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 56,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_016_ID_HQ",
+      "texture_key": "cp_name_pl_016_id_hq",
+      "xet_sha256": "c2a1d1bd7c3d547d8b5ca4a4d272cd1e2bef40383e96394efbc3c49b26674a79",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__056__cp_name_pl_016_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 57,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_016_ID_HQ",
+      "texture_key": "cp_face_msg_016_id_hq",
+      "xet_sha256": "67a52b232e9ebd7910d9c06c587ea40a5bc9116ba1735b4b1adb07759a06d765",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__057__cp_face_msg_016_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 58,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_016_ID_HQ",
+      "texture_key": "kamon_016_id_hq",
+      "xet_sha256": "13a6c0ec04ee70c001ea2e1d94bfe616b7213ff85d7b07e0cc5644f0e871ae8d",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__058__kamon_016_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 59,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_017_ID_HQ",
+      "texture_key": "cp_name_pl_017_id_hq",
+      "xet_sha256": "e52cfe776d53b2d28720860223496b202b2f4df84dd9a34ca8d555838651c70c",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__059__cp_name_pl_017_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 60,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_017_ID_HQ",
+      "texture_key": "cp_face_msg_017_id_hq",
+      "xet_sha256": "9119080bb1f7d1b5a9ba5fe9ce3314b0eed6614024e1193c4b1ec13226606c7d",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__060__cp_face_msg_017_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 61,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_017_ID_HQ",
+      "texture_key": "kamon_017_id_hq",
+      "xet_sha256": "8c214515d1a4d184a7fb16aff2ce166d02fbf5141f2301caef8abf14c00f48f6",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__061__kamon_017_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 62,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_018_ID_HQ",
+      "texture_key": "cp_name_pl_018_id_hq",
+      "xet_sha256": "6a37c5ffe05aa9713193e2954130b7696e1954215fa5f4f2ba1d5e7761ea4662",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__062__cp_name_pl_018_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 63,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_018_ID_HQ",
+      "texture_key": "cp_face_msg_018_id_hq",
+      "xet_sha256": "627f2bffe203e24d09f6a8129935283517a3cd897690f10eab24224d2e062cc0",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__063__cp_face_msg_018_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 64,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_018_ID_HQ",
+      "texture_key": "kamon_018_id_hq",
+      "xet_sha256": "c2dd55891cf4635884e4d4068d104138750732f0f71539e7498a3027c0d8d651",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__064__kamon_018_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 65,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_019_ID_HQ",
+      "texture_key": "cp_name_pl_019_id_hq",
+      "xet_sha256": "eb20919013f5c389f45ecb84ace3fb76c03b243698799a23a23f0d171db84471",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__065__cp_name_pl_019_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 66,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_019_ID_HQ",
+      "texture_key": "cp_face_msg_019_id_hq",
+      "xet_sha256": "ca407917febf917f852d130b455d720577a05a7c3d9ccb8c808b08fc0abad76b",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__066__cp_face_msg_019_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 67,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_019_ID_HQ",
+      "texture_key": "kamon_019_id_hq",
+      "xet_sha256": "760e39a9b605ad6a0abf50727c48263f2d883bb96694b773f219596c01d52dbe",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__067__kamon_019_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 68,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_020_ID_HQ",
+      "texture_key": "cp_name_pl_020_id_hq",
+      "xet_sha256": "1fc5f594a7d5142f83d34658e0eec46a6a6036121baa94550cb8c4d30930a791",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__068__cp_name_pl_020_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 69,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_020_ID_HQ",
+      "texture_key": "cp_face_msg_020_id_hq",
+      "xet_sha256": "0be93c7ade2142a2ece95493123611694d6f6de49df11d703033496a99eb17e2",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__069__cp_face_msg_020_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 70,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_020_ID_HQ",
+      "texture_key": "kamon_020_id_hq",
+      "xet_sha256": "c8ecdd29756c290aca351fbcb799d9e47aeeae9a6a5eb2dd22d029b4c13de7a9",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__070__kamon_020_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 71,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_021_ID_HQ",
+      "texture_key": "cp_name_pl_021_id_hq",
+      "xet_sha256": "3b2b1ed2f08f97d280900c2bcdab11ba7ff573e31cdffe1a781bd64d214324d4",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__071__cp_name_pl_021_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 72,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_021_ID_HQ",
+      "texture_key": "cp_face_msg_021_id_hq",
+      "xet_sha256": "2149dca8b6be22cf5be5b2c15992120d2f4afc64e967e2218a34e0cdb1932c1a",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__072__cp_face_msg_021_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 73,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_021_ID_HQ",
+      "texture_key": "kamon_021_id_hq",
+      "xet_sha256": "c8ecdd29756c290aca351fbcb799d9e47aeeae9a6a5eb2dd22d029b4c13de7a9",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__073__kamon_021_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 74,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_022_ID_HQ",
+      "texture_key": "cp_name_pl_022_id_hq",
+      "xet_sha256": "a7503ad1129016093d9617995805dc6e65de3d7aa99cdcbdc3c1dd2ebe9c343d",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__074__cp_name_pl_022_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 75,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_022_ID_HQ",
+      "texture_key": "cp_face_msg_022_id_hq",
+      "xet_sha256": "482ed84a9c719c4de5f57d72195c37d8ef2dad385dd1fce82c142bdc1c387f0d",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__075__cp_face_msg_022_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 76,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_022_ID_HQ",
+      "texture_key": "kamon_022_id_hq",
+      "xet_sha256": "ee16b1dd221cb5b2e23c33c9171db6545c38231524c515512d2e05b9e266d0fc",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__076__kamon_022_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 77,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_023_ID_HQ",
+      "texture_key": "cp_name_pl_023_id_hq",
+      "xet_sha256": "4ec78efd974599d767d8d2c580599f27713d80bbcc432a5908fb3ada59dfa36b",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__077__cp_name_pl_023_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 78,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_023_ID_HQ",
+      "texture_key": "cp_face_msg_023_id_hq",
+      "xet_sha256": "f7c1ba2c3239d6bd5d0661dc6c40c731d19b1320712bba44cba619287a778311",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__078__cp_face_msg_023_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 79,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_023_ID_HQ",
+      "texture_key": "kamon_023_id_hq",
+      "xet_sha256": "5806b6653addc1dc469afc168c9f545416f364e2e73fed4c30ee027b44a783cc",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__079__kamon_023_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 80,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_024_ID_HQ",
+      "texture_key": "cp_name_pl_024_id_hq",
+      "xet_sha256": "63955e87ecaaabb38b5050a7a29168c74211a349369c48eb7c4ce9648efa5526",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__080__cp_name_pl_024_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 81,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_024_ID_HQ",
+      "texture_key": "cp_face_msg_024_id_hq",
+      "xet_sha256": "594aed8a770e1558f506a5fea6a0c99dda10d209a3428f7aeabf444796b6a6db",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__081__cp_face_msg_024_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 82,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_024_ID_HQ",
+      "texture_key": "kamon_024_id_hq",
+      "xet_sha256": "65c10b2cf6410d11865187adb50235ccf7103e944a2ac78bbe608183fb3f8c2f",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__082__kamon_024_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 83,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_025_ID_HQ",
+      "texture_key": "cp_name_pl_025_id_hq",
+      "xet_sha256": "1486447bd73ef7858e183f7c9002840a6572abde8d9237840792d82b06a613f3",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__083__cp_name_pl_025_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 84,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_025_ID_HQ",
+      "texture_key": "cp_face_msg_025_id_hq",
+      "xet_sha256": "0d0f7177e36f752a6c109ea03267b233a9ea66ff4bb08388ee75aefd10eaca9a",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__084__cp_face_msg_025_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 85,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_025_ID_HQ",
+      "texture_key": "kamon_025_id_hq",
+      "xet_sha256": "65c10b2cf6410d11865187adb50235ccf7103e944a2ac78bbe608183fb3f8c2f",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__085__kamon_025_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 86,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_026_ID_HQ",
+      "texture_key": "cp_name_pl_026_id_hq",
+      "xet_sha256": "9195c0ba3987fce027dcdeb4909de50a8704a594de09a7afbf8636e94b628bbf",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__086__cp_name_pl_026_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 87,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_026_ID_HQ",
+      "texture_key": "cp_face_msg_026_id_hq",
+      "xet_sha256": "ee9578786764b14d3fa3beb2daa08c80d05ec5d7435c234d622c2c4ba92ae2e9",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__087__cp_face_msg_026_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 88,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_026_ID_HQ",
+      "texture_key": "kamon_026_id_hq",
+      "xet_sha256": "4db09c7f382f5baf02bf088ab9d42b869cc937037c2c204f063bad9e835cdeda",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__088__kamon_026_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 89,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_027_ID_HQ",
+      "texture_key": "cp_name_pl_027_id_hq",
+      "xet_sha256": "6a609421ba1e096c2feefcfd8e9e8a651c764c6ba8f82324cf69a54d67e759eb",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__089__cp_name_pl_027_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 90,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_027_ID_HQ",
+      "texture_key": "cp_face_msg_027_id_hq",
+      "xet_sha256": "32531109511fc4d21298c78a93dc3bb40f615ce448c4211c2144caa6fa99106d",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__090__cp_face_msg_027_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 91,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_027_ID_HQ",
+      "texture_key": "kamon_027_id_hq",
+      "xet_sha256": "4cf8bcdb24decc886cdd463158b7532b2fccffe56e6b401a21a9641b8df07284",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__091__kamon_027_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 92,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_028_ID_HQ",
+      "texture_key": "cp_name_pl_028_id_hq",
+      "xet_sha256": "1ed47490eff52831b1d5e292331651376a0fc5d8310349ad0bd2eb1a50a7cf80",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__092__cp_name_pl_028_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 93,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_028_ID_HQ",
+      "texture_key": "cp_face_msg_028_id_hq",
+      "xet_sha256": "4965b1c30c218cc1f9484199dd5f800057bda2de762810d1165c0a0e3fcda74b",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__093__cp_face_msg_028_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 94,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_028_ID_HQ",
+      "texture_key": "kamon_028_id_hq",
+      "xet_sha256": "18d1436d9c3e631f1f8f3dfa372f033e61a424a0cb4fc89e84988426bfa2fb75",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__094__kamon_028_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 95,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_029_ID_HQ",
+      "texture_key": "cp_name_pl_029_id_hq",
+      "xet_sha256": "125b3c78e91ea372a2234d1825d8af5b4198a3211664125dfdb71f88bf9489dd",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__095__cp_name_pl_029_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 96,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_029_ID_HQ",
+      "texture_key": "cp_face_msg_029_id_hq",
+      "xet_sha256": "7ba63f4e3e57c679049208835bdb2d8ceda8a92a1328ec6ea15c03cecafd756a",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__096__cp_face_msg_029_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 97,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_029_ID_HQ",
+      "texture_key": "kamon_029_id_hq",
+      "xet_sha256": "13a6c0ec04ee70c001ea2e1d94bfe616b7213ff85d7b07e0cc5644f0e871ae8d",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__097__kamon_029_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 98,
+      "resource_name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_106_ID_HQ",
+      "texture_key": "cp_name_pl_106_id_hq",
+      "xet_sha256": "2bc7039e4c92e66f132c0c83aae37ec8415d942700f2a2fe60cda6e0d96fab86",
+      "xet_info": {
+        "width": 256,
+        "height": 64,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 16384
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__098__cp_name_pl_106_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 99,
+      "resource_name": "id\\texture\\jpn\\cp_face_msg\\cp_face_msg_106_ID_HQ",
+      "texture_key": "cp_face_msg_106_id_hq",
+      "xet_sha256": "6488d5070c9132b144d6629209beba55a88574f8c81492500ec7064e62a93142",
+      "xet_info": {
+        "width": 256,
+        "height": 128,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 32768
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__099__cp_face_msg_106_id_hq.png"
+    },
+    {
+      "archive": "vs_cockpit.arc",
+      "entry_index": 100,
+      "resource_name": "id\\texture\\jpn\\kamon\\kamon_106_ID_HQ",
+      "texture_key": "kamon_106_id_hq",
+      "xet_sha256": "c8ecdd29756c290aca351fbcb799d9e47aeeae9a6a5eb2dd22d029b4c13de7a9",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "png": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\vs_cockpit__100__kamon_106_id_hq.png"
+    }
+  ],
+  "contact_sheets": [
+    "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\UTAGE_ONLY_cockpit_01.jpg",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\UTAGE_ONLY_enemy_01.jpg",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\UTAGE_ONLY_friend_01.jpg",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\UTAGE_ONLY_friend_02.jpg",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\UTAGE_ONLY_other_01.jpg",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\UTAGE_ONLY_vs_cockpit_01.jpg",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\UTAGE_ONLY_vs_cockpit_02.jpg",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\utage_only_source_png\\UTAGE_ONLY_vs_cockpit_03.jpg"
+  ]
+}

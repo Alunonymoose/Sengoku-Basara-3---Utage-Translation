@@ -1,0 +1,1414 @@
+{
+  "status": "offline_validated",
+  "files": [
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/brief/mode_quest.arc",
+      "source_sha256": "86ecc96c46a032ed17be325e6d76dec220d7b847f9be85d2657188d70ede7c13",
+      "sha256": "0d36b239c18f95223955b79340ab569976af2743fd35fda97575e5238c36908c",
+      "changes": [
+        {
+          "index": 1,
+          "name": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "before": "d8f23eda236a96e4476840634c49b485ce7c2c23af42628c7c2a2221fb8df329",
+          "after": "7f46facdd4af4e503c6cbdbd395cf6676a3087a7e371197b53f942706a7b1cb6"
+        },
+        {
+          "index": 6,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "before": "1f582f13b77fc213483bbbafda630465522bd36a3cf3966ac287d9de93325ad7",
+          "after": "0331f83ffc194f6322e1229fc97c523df892a6d0c5704e166e2b98738130d167"
+        },
+        {
+          "index": 11,
+          "name": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+          "before": "d4e81595cc300bbf36325b3996d921a779b31efac10442521a1a27ea7e4fd83c",
+          "after": "d4e81595cc300bbf36325b3996d921a779b31efac10442521a1a27ea7e4fd83c"
+        }
+      ],
+      "unchanged_resources": 85
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/menu.arc",
+      "source_sha256": "281cf7530a8d32129552ba7209d1a51a3842cae42a85ed0f90e4a1dd7fa4c920",
+      "sha256": "6bf5d07f5b810e2c211b448b7ff9c5d1f74301de26b5f0e1bf293037c429122f",
+      "changes": [
+        {
+          "index": 30,
+          "name": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "before": "a5e4445700819384e7de655cf7fa6f57e01ac06c02420290a4a1ac77f1bf0a86",
+          "after": "7f46facdd4af4e503c6cbdbd395cf6676a3087a7e371197b53f942706a7b1cb6"
+        },
+        {
+          "index": 35,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "before": "f28b325a19b24eddba5f928505e0e51374b084969d5dd72de803b0c15c3a4304",
+          "after": "0331f83ffc194f6322e1229fc97c523df892a6d0c5704e166e2b98738130d167"
+        },
+        {
+          "index": 40,
+          "name": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+          "before": "f65ba39a3150f9f9827215c36658d7963052e8826d67cf1749989bca569a33d2",
+          "after": "f65ba39a3150f9f9827215c36658d7963052e8826d67cf1749989bca569a33d2"
+        }
+      ],
+      "unchanged_resources": 42
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q000_id.arc",
+      "source_sha256": "fa40760b2847dd85473b34e02f4edadba784a1e1b8633c444f29c5643e98eaf1",
+      "sha256": "4261d0e499182ddef10e756d1261637c61d608a3b0d367a82a390655912381fc",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_022_ID_HQ",
+          "before": "5c90700aacfb31818c7a48c7277a515582c312e6f7687bd8e6388f1e4ebf7a03",
+          "after": "cfcdde00220bf17a38378b89e10ced123d72573e2044531d02b23db5b543867b"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_102_ID_HQ",
+          "before": "204a79dec22bc0a36d48d61641e06a363ad04086e0b320845a29912dd0dc6b39",
+          "after": "383e674b22657ffe70a4ab4ff09345222d77c072033b046f7c2db66480377158"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_010_ID_HQ",
+          "before": "7c52757ef8b7b0983a102e535362829d0c7c0b13116b58e12bb597f16c9b2bcc",
+          "after": "932e8fb00b989ad637e93e0ef9e7a61cbc44017db0f70c87c4734922327cb001"
+        }
+      ],
+      "unchanged_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q001_id.arc",
+      "source_sha256": "3d32a0d5192aedc0c4bad511a814deb73edc2a86693a5dd028165f96cb74c004",
+      "sha256": "ba4b18618911ed5986c129cbd72d40d6c007303c834fe04b83d64883e5bbe300",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_023_ID_HQ",
+          "before": "38e8704266fa9889fc032f0eb94a0c9b8bdfadc3d0e433862535b9aa74f6e09c",
+          "after": "1e1e9082575f675846bd77d10a01c0150c69ed6f84de815a0f9ce2f4a563de58"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_017_ID_HQ",
+          "before": "8f1fa20725d6038c24a3a524b4cb690de42699704fb7dab3c4c26579125e7d1b",
+          "after": "8c4e4cbb4863cb33accfb1d080b9c7189b0a437e23392128f11f4337dca405a1"
+        }
+      ],
+      "unchanged_resources": 4
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q002_id.arc",
+      "source_sha256": "34d38234a24badf7d30a7e1a0bb08a9589bde5a20c6affba7d8de623df413bb9",
+      "sha256": "bfed936374d3912a0b90f4b56823227dd73438af58fc3d59f4903031d031b92d",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_028_ID_HQ",
+          "before": "f16ed18f9e043a9ef6845f3ae55f9984db2ce24bbff76ba43cd0af04809733e5",
+          "after": "d9ac0938394573e05226462083b6f2f277de9e7e9008bd8a6412e91052484004"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_009_ID_HQ",
+          "before": "6dc1e77aaa7bd348f3f4c7ec0f63f9baea2c3c7308b2c71785027c016a560d20",
+          "after": "c172bc839961539b4d90746e94719aff04dec7d3bdfd6b86427a38b70d406dc6"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_023_ID_HQ",
+          "before": "5a42b3ec2d5580354bac0d917c03ccc156198045c725deb0d16ceb6698ff37e1",
+          "after": "e64772eea3077cfe18efe55c7548282ff2b5bce0ea8b90d7ec289e39055ddced"
+        },
+        {
+          "index": 9,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_026_ID_HQ",
+          "before": "0c9e330088cf03e16bc807070e9dcf75e0ca6adde2a0d0574fbe3e3093724b29",
+          "after": "6e2e92d6742ef45ecadbacd4d0beb250e21ac082acc874cb0dd033426e121f28"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q003_id.arc",
+      "source_sha256": "f42766f6b1ab4adbe00dd22469434bdeb6b954da76f0c74433f762d03662533f",
+      "sha256": "4353d70ba4490399437a6156147938e253b77bfa571963806bf8876f3404e815",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_017_ID_HQ",
+          "before": "74939384cf147c128ec79f73e502bc87f565ebb16c49028e83f5a47b6a19757c",
+          "after": "9fa09b693560a61f30f3b9dc37926d8b339c8ac4c79a818fc9478e14b35b8280"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_010_ID_HQ",
+          "before": "7c52757ef8b7b0983a102e535362829d0c7c0b13116b58e12bb597f16c9b2bcc",
+          "after": "932e8fb00b989ad637e93e0ef9e7a61cbc44017db0f70c87c4734922327cb001"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_025_ID_HQ",
+          "before": "c8318eec2bd92273f7c5536c4e717b4bd9b8f615b12a6cd7ccbfe8949a10f821",
+          "after": "10895bafd15a969ac0ccf01347e25c53cc20944019d03ca2f16a67573fa64486"
+        }
+      ],
+      "unchanged_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q004_id.arc",
+      "source_sha256": "1a821dded609d2f5aabf87fc6abbf070085ce06b9dd88d6fa729e363b498f752",
+      "sha256": "f332f7ff4163da68aceb9b6f8e87fe9274b2da19ce1c7986d3c96b4087bc8e08",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_019_ID_HQ",
+          "before": "da743bad2767a9c79b0ba01e16e06b0eabee9e7f63b23f0965c145e2fd0e934e",
+          "after": "a980a6dffff9cdb2d1fd899fc8a19839b5938321fbb9b07299e7bf4bb580f13c"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_100_ID_HQ",
+          "before": "95b3b69b1d6a9683cd7a697274eb259e83fea83378e2d3665d96ef16648db608",
+          "after": "edcd92db6cac8d5f5dab9c698a57925a5db22c0f55206e82e672c3efea34ea67"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_013_ID_HQ",
+          "before": "937ed5a22a3dc42ae5eb89caec3690927a180d89a0a08cb35abc8d0ca2f385cf",
+          "after": "c54c3b9e70d8166e1e90a8d66e20b36eb8ec596d3cf9e3c05f3062de84a312dc"
+        }
+      ],
+      "unchanged_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q005_id.arc",
+      "source_sha256": "fe7b633d4689385faeab1e10a99e71c60f56a3ee90bbfedac99fc12d0bbef3ad",
+      "sha256": "b5af2307d85573323b7b86652d3be83acc50854a2c73e6e5f7963a107607dce7",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_016_ID_HQ",
+          "before": "0fc58182f490fd836352886e084113c145e101581fb55067e151643415e41034",
+          "after": "8d80c486b37792e33784931865391a1ee03e326d73ad01d11a257ac37003b169"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_105_ID_HQ",
+          "before": "4ed2c28b65234489bc9605f0328c7d551cdbf2c1104456c8dff6d86cf57cdecb",
+          "after": "46e39149f038c42410971df2687cc3465402dd190b2da4e718d8914690a39aa5"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_026_ID_HQ",
+          "before": "0c9e330088cf03e16bc807070e9dcf75e0ca6adde2a0d0574fbe3e3093724b29",
+          "after": "6e2e92d6742ef45ecadbacd4d0beb250e21ac082acc874cb0dd033426e121f28"
+        }
+      ],
+      "unchanged_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q006_id.arc",
+      "source_sha256": "c1e571eee63c2218f23a885a2088eef6725d781e41ce04f7c2717b4ddc5124a3",
+      "sha256": "9e4c87b8d4ee8bff7b0d346f98636a52c61bef7a5ab4c577163c3db55c93387f",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_029_ID_HQ",
+          "before": "57d6c429e64de5c2abcd11e41afd327ee55467447c695593cf63df46d792e7be",
+          "after": "7dc2a2989b34f9f859cb904f7e1fdac1008115f4818036202cae99b54e045eeb"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_022_ID_HQ",
+          "before": "48081215c1dc5bd8ae4b3e79e2e3a7a06caf584b1a0f785709d1cb5186ea83c5",
+          "after": "ce71bbed2b85851a8f5847e1e28ecf4649f984c3502ad7d5b0a93e1c7aaf5456"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_024_ID_HQ",
+          "before": "29fda42d0dac078864782d28da2c78c973ee16fafcdff1d4cbe0fe2f199d1bd5",
+          "after": "3fd92d1be8072202040729126b807d3acd654ac2931939be6ac6c9a1768452a7"
+        }
+      ],
+      "unchanged_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q007_id.arc",
+      "source_sha256": "0910c88ddc5c8ba0a34484828373197b4fbef3a9c6d6b5f4c84821f1776d41ee",
+      "sha256": "6d3114a9269aa9b8f039f3865ce361db5a41e0a621578e322fc33d2de18f9ddc",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_018_ID_HQ",
+          "before": "0d5085a2d10808f0a6b676d45dd0a808b35919114b7a8ebeccb7719eaf8d684f",
+          "after": "f59a6e46d6a1a0c1f4fd7d34a9ac31d59e41070cbfd9de189bc418860743422c"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_011_ID_HQ",
+          "before": "9a778f8b5cb36886d73e648095fd9c3e0a2e91e35bacf121a547290826ac0cac",
+          "after": "5bde63c8817cd64847ef0099489b733eff9ea1038973d10eb6eba3a5e39c75b9"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_018_ID_HQ",
+          "before": "e86f64262162962eb2e1b4fa9a9726fd3f80cdb336c6ed79278fbb4480a1ba19",
+          "after": "2d6eb9a99d8c3312a7cbe2bec6ac391c571f914b341528eb0667c30190091e24"
+        },
+        {
+          "index": 9,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_019_ID_HQ",
+          "before": "172fe8951b9bad3116932f8391dc0d4a465b04015b190becb8a0ef10e1fc5c13",
+          "after": "1e5e0846d9da818ab6bb65227cd1134c7777416523542284be6dcf6093fb543d"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q008_id.arc",
+      "source_sha256": "f8bcabdc0d1a2b41a82fdeb1cd3302ed2d20345d27b5a8cc8ecda66bfd560ae4",
+      "sha256": "af1785679b4f993967042aa6879658fbc21c5167d5906559cbf10c9bc453369d",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_003_ID_HQ",
+          "before": "3f33edec3aa248c5f52aa2baec73f451324d785000f291b8860eca990673cbd4",
+          "after": "62f34c59dcccb13d43029dd7d6bd3d4fc2280c9a196cf1c58dcfc6077ed0d734"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_000_ID_HQ",
+          "before": "72ea01434d206fdb3f701105fb5879a75eab16062959d16e6c193733bdf102d7",
+          "after": "03376afe6184a8666d7f61ef31bfd470176d2bd371bd0124ef16d4bd916f36d6"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_018_ID_HQ",
+          "before": "e86f64262162962eb2e1b4fa9a9726fd3f80cdb336c6ed79278fbb4480a1ba19",
+          "after": "2d6eb9a99d8c3312a7cbe2bec6ac391c571f914b341528eb0667c30190091e24"
+        },
+        {
+          "index": 9,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_026_ID_HQ",
+          "before": "0c9e330088cf03e16bc807070e9dcf75e0ca6adde2a0d0574fbe3e3093724b29",
+          "after": "6e2e92d6742ef45ecadbacd4d0beb250e21ac082acc874cb0dd033426e121f28"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q009_id.arc",
+      "source_sha256": "10c559b55bc6c3e997074945ccb557550194f2d0581e4ce0eeb0ed5d4809f154",
+      "sha256": "24207f4c452c024bf164b7c505bc0f7b77fd754dd604a129839ace9ab91a488e",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_002_ID_HQ",
+          "before": "d8dc0855c7c0a89a187c09773dcd3a66311b220d7b8fafab0cdf1bd2e46c5210",
+          "after": "bf55b9363cf21e8ab7f174293749ce684fd67f49cb2d42a934f47a76f626624f"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_001_ID_HQ",
+          "before": "2dce0d4819d1089b81fc64485f813caf2b166cfed75a3b7788e923b1b7b0a94e",
+          "after": "511d34b799f4c562080b0eaae3d4c1dcf3398933cf6994660593faa74cb6e799"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_010_ID_HQ",
+          "before": "7c52757ef8b7b0983a102e535362829d0c7c0b13116b58e12bb597f16c9b2bcc",
+          "after": "932e8fb00b989ad637e93e0ef9e7a61cbc44017db0f70c87c4734922327cb001"
+        },
+        {
+          "index": 9,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_019_ID_HQ",
+          "before": "172fe8951b9bad3116932f8391dc0d4a465b04015b190becb8a0ef10e1fc5c13",
+          "after": "1e5e0846d9da818ab6bb65227cd1134c7777416523542284be6dcf6093fb543d"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q010_id.arc",
+      "source_sha256": "30a63c46b2418eef2749cfe62e4eef61a9f7b48f19ed2c7b3e7402b3f5a4ce39",
+      "sha256": "d2f11ab868d05aaffff0b5b87fbbf88afad4a7bd865176f1f8e3645a805c5740",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_010_ID_HQ",
+          "before": "6decadba6b306d899654fedff5e1885d3e096a2a39048562c15a6a7e3c41b256",
+          "after": "b6504a811b1dd6cd5ab9fc25dce9612afead580698418ef67d4f975e6708e3d9"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_016_ID_HQ",
+          "before": "f1520d14c84c75c3debb5081f7caf24f3b19feb6cf8e883b4aa1334bfc174861",
+          "after": "8baab1717610bc18936904b98ca49f8d24dd2ac991b3e910ff59509ddb89e688"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_019_ID_HQ",
+          "before": "172fe8951b9bad3116932f8391dc0d4a465b04015b190becb8a0ef10e1fc5c13",
+          "after": "1e5e0846d9da818ab6bb65227cd1134c7777416523542284be6dcf6093fb543d"
+        },
+        {
+          "index": 9,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_024_ID_HQ",
+          "before": "29fda42d0dac078864782d28da2c78c973ee16fafcdff1d4cbe0fe2f199d1bd5",
+          "after": "3fd92d1be8072202040729126b807d3acd654ac2931939be6ac6c9a1768452a7"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q011_id.arc",
+      "source_sha256": "39b1ca0de29c583dff45022a504a4a39dfca8ed4e2555afb10281b91a63ce813",
+      "sha256": "a8f0e1fc617fac1b0ee8e4f33b0a3e01795226c4b3d262484608bab15e56571d",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_005_ID_HQ",
+          "before": "2ebeb84418478d239d203000e54ceee7f35d36e53475bf66ad36d967f7330573",
+          "after": "a503ee44a28d23d2e1ae16453b982d6b36e062f4d1e255e93701d0369863ea51"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_012_ID_HQ",
+          "before": "359c6f0ac88f6b00dfbdf03c1862c6b5875f3a91e443a609738e7abdf4a71660",
+          "after": "4b316283453fc77a7da152dc60f7d3a393b914074830e4f824ab27b82991fc4a"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_025_ID_HQ",
+          "before": "c8318eec2bd92273f7c5536c4e717b4bd9b8f615b12a6cd7ccbfe8949a10f821",
+          "after": "10895bafd15a969ac0ccf01347e25c53cc20944019d03ca2f16a67573fa64486"
+        }
+      ],
+      "unchanged_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q012_id.arc",
+      "source_sha256": "b7ad1772dd5106a6a297cda2adafffa6a16f77eddb8a30c8f1ce0aa93d853e1c",
+      "sha256": "dcffd4c8b825a439d86eee332acb4c6fa70670f824f3f7c784958352d77fe276",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_004_ID_HQ",
+          "before": "7ba422a637dbb4d033543bd760d6435d2579c81663223ae34a1b0502677b41a2",
+          "after": "ccb15da27c2bfdef8da1db8c080fefabf1d17c3b4f45f40310ccff1766046cb4"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_006_ID_HQ",
+          "before": "d1008a9e796bba6d9dc3e7bd1f7e734fd2ab21bef9fa0ad52f2f492c9a8361c7",
+          "after": "790df9f5622967c9d74494c95ebef437895c270de71c02205c8e8ebcf894e103"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_014_ID_HQ",
+          "before": "d878d0f49571529400773cd3c08c8b7ab2bbefb81cf1d9ad96ac603e661dd60c",
+          "after": "512bcd6389778c8c0b8d8c142e129cf2569d2ff0a1bcf8af24d80357903b2e14"
+        },
+        {
+          "index": 9,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_024_ID_HQ",
+          "before": "29fda42d0dac078864782d28da2c78c973ee16fafcdff1d4cbe0fe2f199d1bd5",
+          "after": "3fd92d1be8072202040729126b807d3acd654ac2931939be6ac6c9a1768452a7"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q013_id.arc",
+      "source_sha256": "8e5c58ece4cb12b55e270ab1eff608d98c0aab4e9ba80b8341197fa9ff5cd1f3",
+      "sha256": "43a1213f1b967e305a1e292c8297a7b0535b1df3a1b46ad6acffa6ab9cc6b50b",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_007_ID_HQ",
+          "before": "a619112673dbbb345d9c2879f7d1561c018d92c6c44118011f8579f0c340e29c",
+          "after": "7e93644ead45df6a549d79ea93c6d35661aa09b15a36881fa2286be1aa75f4c1"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_021_ID_HQ",
+          "before": "f86e2210d0f94af1d4f9d572e9a17bc098b5c394fbf46461fcb807d0cc24bce9",
+          "after": "6188476abaa86dcb2f0a5dcd4dc2501ecb9a313c1a6d8a854e0fe65cdc77cffc"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_009_ID_HQ",
+          "before": "6dc1e77aaa7bd348f3f4c7ec0f63f9baea2c3c7308b2c71785027c016a560d20",
+          "after": "c172bc839961539b4d90746e94719aff04dec7d3bdfd6b86427a38b70d406dc6"
+        }
+      ],
+      "unchanged_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q014_id.arc",
+      "source_sha256": "729fe9d1b987419a52f608a7055ebb258833aec562bda4c4a38ca8687630fe34",
+      "sha256": "c347a0faf1d60b25866ac32e94cd9bcf9b0fda5557d28043c08bca1738655ab5",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_009_ID_HQ",
+          "before": "92dd18b42a26acef972e55e749b38564069dd9a0ef46c05597876f52a6abf956",
+          "after": "494442c28f61c034557fccda6e94392a0c39ccd4cfaac51322dc477a37423ad4"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_012_ID_HQ",
+          "before": "359c6f0ac88f6b00dfbdf03c1862c6b5875f3a91e443a609738e7abdf4a71660",
+          "after": "4b316283453fc77a7da152dc60f7d3a393b914074830e4f824ab27b82991fc4a"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_017_ID_HQ",
+          "before": "8f1fa20725d6038c24a3a524b4cb690de42699704fb7dab3c4c26579125e7d1b",
+          "after": "8c4e4cbb4863cb33accfb1d080b9c7189b0a437e23392128f11f4337dca405a1"
+        },
+        {
+          "index": 9,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_022_ID_HQ",
+          "before": "48081215c1dc5bd8ae4b3e79e2e3a7a06caf584b1a0f785709d1cb5186ea83c5",
+          "after": "ce71bbed2b85851a8f5847e1e28ecf4649f984c3502ad7d5b0a93e1c7aaf5456"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q015_id.arc",
+      "source_sha256": "76cca305c1687a41e8d393734b29589268a6f5bb023cca9f9f157e570585fd01",
+      "sha256": "42ec62a099b984627edb6672f788dc7c118f7a8162a1099c7fb6735fff94e907",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_025_ID_HQ",
+          "before": "0fa8ad58e9e9b9fec9847eaa53b0a07dc699d6592f9bf514f3c4f3cc251cde9b",
+          "after": "a88417d1710b75a72ccadd26b8d7ca7b2efe13a72b9b9ec29fbc58fa01a7df47"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_024_ID_HQ",
+          "before": "069f37df976e97a00e0f16774b2b0841cfe8c1530c8e8ae4cd7314ad9320516d",
+          "after": "d0c4dc3e990cefba791f71f8fef0c41cedac9c9ba61b9d9ffcf106fd7a9deace"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_101_ID_HQ",
+          "before": "eac8a18d493b68e787c1e8c617bcc58fb370ae8181059346c7c48a2b8f58b839",
+          "after": "8e6f56d7740ffdc6fc79696994a2317e4e464a3e42a1f0d71945a0d3505fd310"
+        },
+        {
+          "index": 9,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_021_ID_HQ",
+          "before": "f86e2210d0f94af1d4f9d572e9a17bc098b5c394fbf46461fcb807d0cc24bce9",
+          "after": "6188476abaa86dcb2f0a5dcd4dc2501ecb9a313c1a6d8a854e0fe65cdc77cffc"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q016_id.arc",
+      "source_sha256": "00cadef6e3a575a318495ca993568cf86fd47fe23c48319c33a416d0038d28c4",
+      "sha256": "7ec5e691f3dff3878d5d747982503abf26ec0e9a16145111813c23d1bc8a6f72",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_011_ID_HQ",
+          "before": "9a778f8b5cb36886d73e648095fd9c3e0a2e91e35bacf121a547290826ac0cac",
+          "after": "5bde63c8817cd64847ef0099489b733eff9ea1038973d10eb6eba3a5e39c75b9"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_014_ID_HQ",
+          "before": "d878d0f49571529400773cd3c08c8b7ab2bbefb81cf1d9ad96ac603e661dd60c",
+          "after": "512bcd6389778c8c0b8d8c142e129cf2569d2ff0a1bcf8af24d80357903b2e14"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_015_ID_HQ",
+          "before": "17617588e101f5c286075ea5ddb69b3bb77cfd08f36d03f407031df5c6028075",
+          "after": "77cec10915f64158c014b09fb07efceece96286e51069123600673943e3a65ba"
+        },
+        {
+          "index": 9,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_027_ID_HQ",
+          "before": "669987b307e9205833d3fcde46fad41c966d5ae3d899bee9e2e1b9fa7eaaf57b",
+          "after": "84cd43bb5d859abebe538a5312048d64595bde6c5de50c7d9faa69c1d1b9cbb0"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q017_id.arc",
+      "source_sha256": "6f6a3a77afc5c9b2d1808398131b527c7216ab08ec7c3fa46f482478942b6f92",
+      "sha256": "2bd38be1a4f86ea5f2a9e8fed5e9052e07609b3b01f6ff1801ad57dc6c77b702",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_008_ID_HQ",
+          "before": "fd1acd7e3384d1273f7e0887a91be52cb5c8f919efcd9dfd800935f1b24f446d",
+          "after": "d487f319f8d6087d08b07515656f40b9dd55d9ac4b727b38ba5fe85d50f11fad"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_020_ID_HQ",
+          "before": "457ae9f876aba53dce62749e550f6cb4fb982eb4793ed8208975e6b644dbf735",
+          "after": "d38e94bf18699caf04339bd29bd10b49b7f1761db82fe1f9bb0db2b07f6efdb4"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_021_ID_HQ",
+          "before": "f86e2210d0f94af1d4f9d572e9a17bc098b5c394fbf46461fcb807d0cc24bce9",
+          "after": "6188476abaa86dcb2f0a5dcd4dc2501ecb9a313c1a6d8a854e0fe65cdc77cffc"
+        }
+      ],
+      "unchanged_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q018_id.arc",
+      "source_sha256": "914532020b68bcb1d786208df38231e7989c3ebf23ccb4b4d7e9bd655c3a8c3b",
+      "sha256": "e37cb01dcfa55c2f2c0b09738dc90e1b1e25429c2ac84f8ddd4dc72a9ec61f6b",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_013_ID_HQ",
+          "before": "51d845463e6adbbc4a4e0c1450e094c0f8251dff8942f43867f40981b91c2374",
+          "after": "60899268489c54c2635b598b936cde5a3c0ccdba78f849b2294e5861840204d6"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_017_ID_HQ",
+          "before": "8f1fa20725d6038c24a3a524b4cb690de42699704fb7dab3c4c26579125e7d1b",
+          "after": "8c4e4cbb4863cb33accfb1d080b9c7189b0a437e23392128f11f4337dca405a1"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_021_ID_HQ",
+          "before": "f86e2210d0f94af1d4f9d572e9a17bc098b5c394fbf46461fcb807d0cc24bce9",
+          "after": "6188476abaa86dcb2f0a5dcd4dc2501ecb9a313c1a6d8a854e0fe65cdc77cffc"
+        },
+        {
+          "index": 9,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_022_ID_HQ",
+          "before": "48081215c1dc5bd8ae4b3e79e2e3a7a06caf584b1a0f785709d1cb5186ea83c5",
+          "after": "ce71bbed2b85851a8f5847e1e28ecf4649f984c3502ad7d5b0a93e1c7aaf5456"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q019_id.arc",
+      "source_sha256": "551c8a60a2635d0e5c42c345e07c386af0a4615258316f13fb6c7abb9a3aeeb0",
+      "sha256": "ebae29727746debde998c4a4677f19e4176a048b129e236b1e0f7201b199bb2a",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_011_ID_HQ",
+          "before": "9f6d407d9c2026567bb47e40fcee41f1f18723ea35593b76cb9b897755904da1",
+          "after": "7ca78ec426151557f05f5761b798ddfc6c3c90a24469b8dff5fab79f7ff5fd25"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_009_ID_HQ",
+          "before": "6dc1e77aaa7bd348f3f4c7ec0f63f9baea2c3c7308b2c71785027c016a560d20",
+          "after": "c172bc839961539b4d90746e94719aff04dec7d3bdfd6b86427a38b70d406dc6"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_020_ID_HQ",
+          "before": "457ae9f876aba53dce62749e550f6cb4fb982eb4793ed8208975e6b644dbf735",
+          "after": "d38e94bf18699caf04339bd29bd10b49b7f1761db82fe1f9bb0db2b07f6efdb4"
+        },
+        {
+          "index": 9,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_025_ID_HQ",
+          "before": "c8318eec2bd92273f7c5536c4e717b4bd9b8f615b12a6cd7ccbfe8949a10f821",
+          "after": "10895bafd15a969ac0ccf01347e25c53cc20944019d03ca2f16a67573fa64486"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q020_id.arc",
+      "source_sha256": "f873c0161668a66d4f3b7b15627964ec221635d84b1ad28a2fc206ed34df44a4",
+      "sha256": "728122f0e207d433fa97bbe91772be4d67c59afa1fdcdfd2d1578a4f9c27426e",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_021_ID_HQ",
+          "before": "1a4a24032753072cc4a6f73ba31fac3f7e0a95e196761eb43069e70fbfc39101",
+          "after": "c9f710e1b6f9f96bfebcc31a265cc811b9c7a0233bb200cbbd1738d17865b442"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_014_ID_HQ",
+          "before": "d878d0f49571529400773cd3c08c8b7ab2bbefb81cf1d9ad96ac603e661dd60c",
+          "after": "512bcd6389778c8c0b8d8c142e129cf2569d2ff0a1bcf8af24d80357903b2e14"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_015_ID_HQ",
+          "before": "17617588e101f5c286075ea5ddb69b3bb77cfd08f36d03f407031df5c6028075",
+          "after": "77cec10915f64158c014b09fb07efceece96286e51069123600673943e3a65ba"
+        },
+        {
+          "index": 9,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_016_ID_HQ",
+          "before": "f1520d14c84c75c3debb5081f7caf24f3b19feb6cf8e883b4aa1334bfc174861",
+          "after": "8baab1717610bc18936904b98ca49f8d24dd2ac991b3e910ff59509ddb89e688"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q021_id.arc",
+      "source_sha256": "acf8400289e42eb7e586ece90d9e3b28c12e3034f985eccb490654df0ec00f2e",
+      "sha256": "d33dc22751488b20c40c3ed5f9995398ffb94328e88c14818ababdef111cb4e3",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_014_ID_HQ",
+          "before": "b8204d9a9a2211007b5c263a030c4b6d491f244e39a3408ace896cf81d11b788",
+          "after": "dd47c54173f62a309d0df8acb8a779d309d59d4f913388f81de5380044425c85"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_013_ID_HQ",
+          "before": "937ed5a22a3dc42ae5eb89caec3690927a180d89a0a08cb35abc8d0ca2f385cf",
+          "after": "c54c3b9e70d8166e1e90a8d66e20b36eb8ec596d3cf9e3c05f3062de84a312dc"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_015_ID_HQ",
+          "before": "17617588e101f5c286075ea5ddb69b3bb77cfd08f36d03f407031df5c6028075",
+          "after": "77cec10915f64158c014b09fb07efceece96286e51069123600673943e3a65ba"
+        },
+        {
+          "index": 9,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_018_ID_HQ",
+          "before": "e86f64262162962eb2e1b4fa9a9726fd3f80cdb336c6ed79278fbb4480a1ba19",
+          "after": "2d6eb9a99d8c3312a7cbe2bec6ac391c571f914b341528eb0667c30190091e24"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q022_id.arc",
+      "source_sha256": "0cacc4c9a29fb80e8130a19daaee86849ebb0f08a57730da290efaf25523016b",
+      "sha256": "698cc0b177132704a4ab67db2e5c8b090ee9dc7c8321c8c612c0635b9cacd4f6",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_012_ID_HQ",
+          "before": "359c6f0ac88f6b00dfbdf03c1862c6b5875f3a91e443a609738e7abdf4a71660",
+          "after": "4b316283453fc77a7da152dc60f7d3a393b914074830e4f824ab27b82991fc4a"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_018_ID_HQ",
+          "before": "e86f64262162962eb2e1b4fa9a9726fd3f80cdb336c6ed79278fbb4480a1ba19",
+          "after": "2d6eb9a99d8c3312a7cbe2bec6ac391c571f914b341528eb0667c30190091e24"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_023_ID_HQ",
+          "before": "5a42b3ec2d5580354bac0d917c03ccc156198045c725deb0d16ceb6698ff37e1",
+          "after": "e64772eea3077cfe18efe55c7548282ff2b5bce0ea8b90d7ec289e39055ddced"
+        }
+      ],
+      "unchanged_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q023_id.arc",
+      "source_sha256": "b025ad6557928f2cf315eacc2e85d1b0067712461bcf5081dd91cdbd76842a0f",
+      "sha256": "039d9d73cc0a111812343675848d1234c7546bd7f79f952f13e082bb0e3dccc7",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_020_ID_HQ",
+          "before": "35572d4d8ef4d8dcef667cd774e01395480b84565318780c67848dd478736fcd",
+          "after": "c962367496960d586987fe416b1e27dafd825b991abd6bec8da46541697e10d7"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_106_ID_HQ",
+          "before": "185fe10af1779be45de8474fe372e1c1d0b52be9a199ab140ba3285b869cbe38",
+          "after": "58856dba2b0da3e32c093bfa65188fe774429b417ef96ce53c1684866fd6f441"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_011_ID_HQ",
+          "before": "9a778f8b5cb36886d73e648095fd9c3e0a2e91e35bacf121a547290826ac0cac",
+          "after": "5bde63c8817cd64847ef0099489b733eff9ea1038973d10eb6eba3a5e39c75b9"
+        },
+        {
+          "index": 9,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_023_ID_HQ",
+          "before": "5a42b3ec2d5580354bac0d917c03ccc156198045c725deb0d16ceb6698ff37e1",
+          "after": "e64772eea3077cfe18efe55c7548282ff2b5bce0ea8b90d7ec289e39055ddced"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q024_id.arc",
+      "source_sha256": "b557408a5343ea759b1db43ef80983f1843ec8ca6e2d96a43c7b633957166a32",
+      "sha256": "eab6a6d4aa380b0c9ce00ee2d6e115b185cd5c1ec9edeffd2f7abddf24a7e40d",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_012_ID_HQ",
+          "before": "94a8db1ff4c9c48e86313ff1b87534f89751c6d6216036a7b2d857342daec123",
+          "after": "219d1bad0d9a8762a79e1f06cb7940200d02db8ec4b9cff5832d9957ed9f1884"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_012_ID_HQ",
+          "before": "359c6f0ac88f6b00dfbdf03c1862c6b5875f3a91e443a609738e7abdf4a71660",
+          "after": "4b316283453fc77a7da152dc60f7d3a393b914074830e4f824ab27b82991fc4a"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_013_ID_HQ",
+          "before": "937ed5a22a3dc42ae5eb89caec3690927a180d89a0a08cb35abc8d0ca2f385cf",
+          "after": "c54c3b9e70d8166e1e90a8d66e20b36eb8ec596d3cf9e3c05f3062de84a312dc"
+        },
+        {
+          "index": 9,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_019_ID_HQ",
+          "before": "172fe8951b9bad3116932f8391dc0d4a465b04015b190becb8a0ef10e1fc5c13",
+          "after": "1e5e0846d9da818ab6bb65227cd1134c7777416523542284be6dcf6093fb543d"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q025_id.arc",
+      "source_sha256": "d8b3deac05edbf8416391cfb6ea75179f8d418b5673c9ff51fe52258c0f33418",
+      "sha256": "1ece4e6b0214f0e8cac5e9a72a710390e66cd0f5e6741ca655cf4b6fa122621d",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_026_ID_HQ",
+          "before": "79f8a2ceae038eae07d94af732384ba5b4d2fd0d3089d7625732b4b7bf6ed629",
+          "after": "c805ed1a6fc2ecb2c0a133531a85249efb4d37ea57f973e2b1f4c1a2a16f4c74"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_009_ID_HQ",
+          "before": "6dc1e77aaa7bd348f3f4c7ec0f63f9baea2c3c7308b2c71785027c016a560d20",
+          "after": "c172bc839961539b4d90746e94719aff04dec7d3bdfd6b86427a38b70d406dc6"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_025_ID_HQ",
+          "before": "c8318eec2bd92273f7c5536c4e717b4bd9b8f615b12a6cd7ccbfe8949a10f821",
+          "after": "10895bafd15a969ac0ccf01347e25c53cc20944019d03ca2f16a67573fa64486"
+        },
+        {
+          "index": 9,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_026_ID_HQ",
+          "before": "0c9e330088cf03e16bc807070e9dcf75e0ca6adde2a0d0574fbe3e3093724b29",
+          "after": "6e2e92d6742ef45ecadbacd4d0beb250e21ac082acc874cb0dd033426e121f28"
+        }
+      ],
+      "unchanged_resources": 6
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q026_id.arc",
+      "source_sha256": "4026b1361dea774f44a689a4c026b394950a73dd1368efef9e2621ca488b067e",
+      "sha256": "289a5fae8c0bc868840f523432cb890ad572f2b0d39d21fbde343957744a3cb5",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_027_ID_HQ",
+          "before": "33d0507e9c020803ad8d4d807ca170b56bb22d9b6563563ae5fff40233550904",
+          "after": "ceae8772a6ddacce54499332852cfd08b0e99969df03267cea0f5f7161d1a607"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_010_ID_HQ",
+          "before": "7c52757ef8b7b0983a102e535362829d0c7c0b13116b58e12bb597f16c9b2bcc",
+          "after": "932e8fb00b989ad637e93e0ef9e7a61cbc44017db0f70c87c4734922327cb001"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_014_ID_HQ",
+          "before": "d878d0f49571529400773cd3c08c8b7ab2bbefb81cf1d9ad96ac603e661dd60c",
+          "after": "512bcd6389778c8c0b8d8c142e129cf2569d2ff0a1bcf8af24d80357903b2e14"
+        }
+      ],
+      "unchanged_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q027_id.arc",
+      "source_sha256": "04db2f0f20bbd9e1f67110a640914e78dc99954d8f1ea7c879612b740b28bba0",
+      "sha256": "b437d35708aab844238080e7aadc0d3a5b77f879383c56da05e34bfbe00db508",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_104_ID_HQ",
+          "before": "c23438bd6be0222f0f423523a987173a4d485fd5696dc2eb9b8a7ecab3dfa08c",
+          "after": "55771f38e559028bfa880d4456da9c52cc210946178e6e8ed89a980cb2a740df"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_013_ID_HQ",
+          "before": "937ed5a22a3dc42ae5eb89caec3690927a180d89a0a08cb35abc8d0ca2f385cf",
+          "after": "c54c3b9e70d8166e1e90a8d66e20b36eb8ec596d3cf9e3c05f3062de84a312dc"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_022_ID_HQ",
+          "before": "48081215c1dc5bd8ae4b3e79e2e3a7a06caf584b1a0f785709d1cb5186ea83c5",
+          "after": "ce71bbed2b85851a8f5847e1e28ecf4649f984c3502ad7d5b0a93e1c7aaf5456"
+        }
+      ],
+      "unchanged_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q028_id.arc",
+      "source_sha256": "cdb85b6028b0de1beeff834ef3cea9a0ea19257d3e245f13e141abba12db8648",
+      "sha256": "10f9460f6553374fc076245ae5bff0089b730b6fafdac4b878c7b86defe10fb9",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_015_ID_HQ",
+          "before": "17617588e101f5c286075ea5ddb69b3bb77cfd08f36d03f407031df5c6028075",
+          "after": "77cec10915f64158c014b09fb07efceece96286e51069123600673943e3a65ba"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_016_ID_HQ",
+          "before": "f1520d14c84c75c3debb5081f7caf24f3b19feb6cf8e883b4aa1334bfc174861",
+          "after": "8baab1717610bc18936904b98ca49f8d24dd2ac991b3e910ff59509ddb89e688"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_020_ID_HQ",
+          "before": "457ae9f876aba53dce62749e550f6cb4fb982eb4793ed8208975e6b644dbf735",
+          "after": "d38e94bf18699caf04339bd29bd10b49b7f1761db82fe1f9bb0db2b07f6efdb4"
+        }
+      ],
+      "unchanged_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q029_id.arc",
+      "source_sha256": "3e4dd20ef438042943e7216fbfd02b7b6604311f8924626676da7b08c5d6dc84",
+      "sha256": "2e5822f3eed949203e67e5b0fb98645a162f5f37f9f7b66f2ae22945c5deac1c",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_011_ID_HQ",
+          "before": "9a778f8b5cb36886d73e648095fd9c3e0a2e91e35bacf121a547290826ac0cac",
+          "after": "5bde63c8817cd64847ef0099489b733eff9ea1038973d10eb6eba3a5e39c75b9"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_023_ID_HQ",
+          "before": "5a42b3ec2d5580354bac0d917c03ccc156198045c725deb0d16ceb6698ff37e1",
+          "after": "e64772eea3077cfe18efe55c7548282ff2b5bce0ea8b90d7ec289e39055ddced"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_024_ID_HQ",
+          "before": "29fda42d0dac078864782d28da2c78c973ee16fafcdff1d4cbe0fe2f199d1bd5",
+          "after": "3fd92d1be8072202040729126b807d3acd654ac2931939be6ac6c9a1768452a7"
+        }
+      ],
+      "unchanged_resources": 5
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/q030_id.arc",
+      "source_sha256": "d4019236801dd9ded8807eda94ecf39d0a5490cdeccf391d14fb6a6596b60400",
+      "sha256": "d97722dc1f01da717664b5dc0156ae0510afc52c438f5d08eb4e66ccd86569c1",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_015_ID_HQ",
+          "before": "1a2191c35f71b63006eb1013a54610293a325fc264061578f904fa35babb8160",
+          "after": "813d76380029cd5f171edf6d93be251b6865c093ca2c91b6d0a5c978fb56c2ee"
+        }
+      ],
+      "unchanged_resources": 3
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/quest/quest_id.arc",
+      "source_sha256": "74fc35b643f3d52c74a2d9087f0f7a7a99800a5522826c43fdb9e0a06532d9d1",
+      "sha256": "85442e750cfc02724844b15d2967bd23b44ac11164f66c1919a935740a517a5e",
+      "changes": [
+        {
+          "index": 3,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_022_ID_HQ",
+          "before": "5c90700aacfb31818c7a48c7277a515582c312e6f7687bd8e6388f1e4ebf7a03",
+          "after": "cfcdde00220bf17a38378b89e10ced123d72573e2044531d02b23db5b543867b"
+        },
+        {
+          "index": 5,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_102_ID_HQ",
+          "before": "204a79dec22bc0a36d48d61641e06a363ad04086e0b320845a29912dd0dc6b39",
+          "after": "383e674b22657ffe70a4ab4ff09345222d77c072033b046f7c2db66480377158"
+        },
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_010_ID_HQ",
+          "before": "7c52757ef8b7b0983a102e535362829d0c7c0b13116b58e12bb597f16c9b2bcc",
+          "after": "932e8fb00b989ad637e93e0ef9e7a61cbc44017db0f70c87c4734922327cb001"
+        },
+        {
+          "index": 12,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_023_ID_HQ",
+          "before": "38e8704266fa9889fc032f0eb94a0c9b8bdfadc3d0e433862535b9aa74f6e09c",
+          "after": "1e1e9082575f675846bd77d10a01c0150c69ed6f84de815a0f9ce2f4a563de58"
+        },
+        {
+          "index": 14,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_017_ID_HQ",
+          "before": "8f1fa20725d6038c24a3a524b4cb690de42699704fb7dab3c4c26579125e7d1b",
+          "after": "8c4e4cbb4863cb33accfb1d080b9c7189b0a437e23392128f11f4337dca405a1"
+        },
+        {
+          "index": 19,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_028_ID_HQ",
+          "before": "f16ed18f9e043a9ef6845f3ae55f9984db2ce24bbff76ba43cd0af04809733e5",
+          "after": "d9ac0938394573e05226462083b6f2f277de9e7e9008bd8a6412e91052484004"
+        },
+        {
+          "index": 21,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_009_ID_HQ",
+          "before": "6dc1e77aaa7bd348f3f4c7ec0f63f9baea2c3c7308b2c71785027c016a560d20",
+          "after": "c172bc839961539b4d90746e94719aff04dec7d3bdfd6b86427a38b70d406dc6"
+        },
+        {
+          "index": 23,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_023_ID_HQ",
+          "before": "5a42b3ec2d5580354bac0d917c03ccc156198045c725deb0d16ceb6698ff37e1",
+          "after": "e64772eea3077cfe18efe55c7548282ff2b5bce0ea8b90d7ec289e39055ddced"
+        },
+        {
+          "index": 25,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_026_ID_HQ",
+          "before": "0c9e330088cf03e16bc807070e9dcf75e0ca6adde2a0d0574fbe3e3093724b29",
+          "after": "6e2e92d6742ef45ecadbacd4d0beb250e21ac082acc874cb0dd033426e121f28"
+        },
+        {
+          "index": 30,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_017_ID_HQ",
+          "before": "74939384cf147c128ec79f73e502bc87f565ebb16c49028e83f5a47b6a19757c",
+          "after": "9fa09b693560a61f30f3b9dc37926d8b339c8ac4c79a818fc9478e14b35b8280"
+        },
+        {
+          "index": 32,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_025_ID_HQ",
+          "before": "c8318eec2bd92273f7c5536c4e717b4bd9b8f615b12a6cd7ccbfe8949a10f821",
+          "after": "10895bafd15a969ac0ccf01347e25c53cc20944019d03ca2f16a67573fa64486"
+        },
+        {
+          "index": 37,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_019_ID_HQ",
+          "before": "da743bad2767a9c79b0ba01e16e06b0eabee9e7f63b23f0965c145e2fd0e934e",
+          "after": "a980a6dffff9cdb2d1fd899fc8a19839b5938321fbb9b07299e7bf4bb580f13c"
+        },
+        {
+          "index": 39,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_100_ID_HQ",
+          "before": "95b3b69b1d6a9683cd7a697274eb259e83fea83378e2d3665d96ef16648db608",
+          "after": "edcd92db6cac8d5f5dab9c698a57925a5db22c0f55206e82e672c3efea34ea67"
+        },
+        {
+          "index": 41,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_013_ID_HQ",
+          "before": "937ed5a22a3dc42ae5eb89caec3690927a180d89a0a08cb35abc8d0ca2f385cf",
+          "after": "c54c3b9e70d8166e1e90a8d66e20b36eb8ec596d3cf9e3c05f3062de84a312dc"
+        },
+        {
+          "index": 46,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_016_ID_HQ",
+          "before": "0fc58182f490fd836352886e084113c145e101581fb55067e151643415e41034",
+          "after": "8d80c486b37792e33784931865391a1ee03e326d73ad01d11a257ac37003b169"
+        },
+        {
+          "index": 48,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_105_ID_HQ",
+          "before": "4ed2c28b65234489bc9605f0328c7d551cdbf2c1104456c8dff6d86cf57cdecb",
+          "after": "46e39149f038c42410971df2687cc3465402dd190b2da4e718d8914690a39aa5"
+        },
+        {
+          "index": 53,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_029_ID_HQ",
+          "before": "57d6c429e64de5c2abcd11e41afd327ee55467447c695593cf63df46d792e7be",
+          "after": "7dc2a2989b34f9f859cb904f7e1fdac1008115f4818036202cae99b54e045eeb"
+        },
+        {
+          "index": 55,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_022_ID_HQ",
+          "before": "48081215c1dc5bd8ae4b3e79e2e3a7a06caf584b1a0f785709d1cb5186ea83c5",
+          "after": "ce71bbed2b85851a8f5847e1e28ecf4649f984c3502ad7d5b0a93e1c7aaf5456"
+        },
+        {
+          "index": 57,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_024_ID_HQ",
+          "before": "29fda42d0dac078864782d28da2c78c973ee16fafcdff1d4cbe0fe2f199d1bd5",
+          "after": "3fd92d1be8072202040729126b807d3acd654ac2931939be6ac6c9a1768452a7"
+        },
+        {
+          "index": 62,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_018_ID_HQ",
+          "before": "0d5085a2d10808f0a6b676d45dd0a808b35919114b7a8ebeccb7719eaf8d684f",
+          "after": "f59a6e46d6a1a0c1f4fd7d34a9ac31d59e41070cbfd9de189bc418860743422c"
+        },
+        {
+          "index": 64,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_011_ID_HQ",
+          "before": "9a778f8b5cb36886d73e648095fd9c3e0a2e91e35bacf121a547290826ac0cac",
+          "after": "5bde63c8817cd64847ef0099489b733eff9ea1038973d10eb6eba3a5e39c75b9"
+        },
+        {
+          "index": 66,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_018_ID_HQ",
+          "before": "e86f64262162962eb2e1b4fa9a9726fd3f80cdb336c6ed79278fbb4480a1ba19",
+          "after": "2d6eb9a99d8c3312a7cbe2bec6ac391c571f914b341528eb0667c30190091e24"
+        },
+        {
+          "index": 68,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_019_ID_HQ",
+          "before": "172fe8951b9bad3116932f8391dc0d4a465b04015b190becb8a0ef10e1fc5c13",
+          "after": "1e5e0846d9da818ab6bb65227cd1134c7777416523542284be6dcf6093fb543d"
+        },
+        {
+          "index": 73,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_003_ID_HQ",
+          "before": "3f33edec3aa248c5f52aa2baec73f451324d785000f291b8860eca990673cbd4",
+          "after": "62f34c59dcccb13d43029dd7d6bd3d4fc2280c9a196cf1c58dcfc6077ed0d734"
+        },
+        {
+          "index": 75,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_000_ID_HQ",
+          "before": "72ea01434d206fdb3f701105fb5879a75eab16062959d16e6c193733bdf102d7",
+          "after": "03376afe6184a8666d7f61ef31bfd470176d2bd371bd0124ef16d4bd916f36d6"
+        },
+        {
+          "index": 80,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_002_ID_HQ",
+          "before": "d8dc0855c7c0a89a187c09773dcd3a66311b220d7b8fafab0cdf1bd2e46c5210",
+          "after": "bf55b9363cf21e8ab7f174293749ce684fd67f49cb2d42a934f47a76f626624f"
+        },
+        {
+          "index": 82,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_001_ID_HQ",
+          "before": "2dce0d4819d1089b81fc64485f813caf2b166cfed75a3b7788e923b1b7b0a94e",
+          "after": "511d34b799f4c562080b0eaae3d4c1dcf3398933cf6994660593faa74cb6e799"
+        },
+        {
+          "index": 87,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_010_ID_HQ",
+          "before": "6decadba6b306d899654fedff5e1885d3e096a2a39048562c15a6a7e3c41b256",
+          "after": "b6504a811b1dd6cd5ab9fc25dce9612afead580698418ef67d4f975e6708e3d9"
+        },
+        {
+          "index": 89,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_016_ID_HQ",
+          "before": "f1520d14c84c75c3debb5081f7caf24f3b19feb6cf8e883b4aa1334bfc174861",
+          "after": "8baab1717610bc18936904b98ca49f8d24dd2ac991b3e910ff59509ddb89e688"
+        },
+        {
+          "index": 94,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_005_ID_HQ",
+          "before": "2ebeb84418478d239d203000e54ceee7f35d36e53475bf66ad36d967f7330573",
+          "after": "a503ee44a28d23d2e1ae16453b982d6b36e062f4d1e255e93701d0369863ea51"
+        },
+        {
+          "index": 96,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_012_ID_HQ",
+          "before": "359c6f0ac88f6b00dfbdf03c1862c6b5875f3a91e443a609738e7abdf4a71660",
+          "after": "4b316283453fc77a7da152dc60f7d3a393b914074830e4f824ab27b82991fc4a"
+        },
+        {
+          "index": 101,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_004_ID_HQ",
+          "before": "7ba422a637dbb4d033543bd760d6435d2579c81663223ae34a1b0502677b41a2",
+          "after": "ccb15da27c2bfdef8da1db8c080fefabf1d17c3b4f45f40310ccff1766046cb4"
+        },
+        {
+          "index": 103,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_006_ID_HQ",
+          "before": "d1008a9e796bba6d9dc3e7bd1f7e734fd2ab21bef9fa0ad52f2f492c9a8361c7",
+          "after": "790df9f5622967c9d74494c95ebef437895c270de71c02205c8e8ebcf894e103"
+        },
+        {
+          "index": 105,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_014_ID_HQ",
+          "before": "d878d0f49571529400773cd3c08c8b7ab2bbefb81cf1d9ad96ac603e661dd60c",
+          "after": "512bcd6389778c8c0b8d8c142e129cf2569d2ff0a1bcf8af24d80357903b2e14"
+        },
+        {
+          "index": 110,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_007_ID_HQ",
+          "before": "a619112673dbbb345d9c2879f7d1561c018d92c6c44118011f8579f0c340e29c",
+          "after": "7e93644ead45df6a549d79ea93c6d35661aa09b15a36881fa2286be1aa75f4c1"
+        },
+        {
+          "index": 112,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_021_ID_HQ",
+          "before": "f86e2210d0f94af1d4f9d572e9a17bc098b5c394fbf46461fcb807d0cc24bce9",
+          "after": "6188476abaa86dcb2f0a5dcd4dc2501ecb9a313c1a6d8a854e0fe65cdc77cffc"
+        },
+        {
+          "index": 117,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_009_ID_HQ",
+          "before": "92dd18b42a26acef972e55e749b38564069dd9a0ef46c05597876f52a6abf956",
+          "after": "494442c28f61c034557fccda6e94392a0c39ccd4cfaac51322dc477a37423ad4"
+        },
+        {
+          "index": 122,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_025_ID_HQ",
+          "before": "0fa8ad58e9e9b9fec9847eaa53b0a07dc699d6592f9bf514f3c4f3cc251cde9b",
+          "after": "a88417d1710b75a72ccadd26b8d7ca7b2efe13a72b9b9ec29fbc58fa01a7df47"
+        },
+        {
+          "index": 124,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_024_ID_HQ",
+          "before": "069f37df976e97a00e0f16774b2b0841cfe8c1530c8e8ae4cd7314ad9320516d",
+          "after": "d0c4dc3e990cefba791f71f8fef0c41cedac9c9ba61b9d9ffcf106fd7a9deace"
+        },
+        {
+          "index": 126,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_101_ID_HQ",
+          "before": "eac8a18d493b68e787c1e8c617bcc58fb370ae8181059346c7c48a2b8f58b839",
+          "after": "8e6f56d7740ffdc6fc79696994a2317e4e464a3e42a1f0d71945a0d3505fd310"
+        },
+        {
+          "index": 131,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_015_ID_HQ",
+          "before": "17617588e101f5c286075ea5ddb69b3bb77cfd08f36d03f407031df5c6028075",
+          "after": "77cec10915f64158c014b09fb07efceece96286e51069123600673943e3a65ba"
+        },
+        {
+          "index": 133,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_027_ID_HQ",
+          "before": "669987b307e9205833d3fcde46fad41c966d5ae3d899bee9e2e1b9fa7eaaf57b",
+          "after": "84cd43bb5d859abebe538a5312048d64595bde6c5de50c7d9faa69c1d1b9cbb0"
+        },
+        {
+          "index": 138,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_008_ID_HQ",
+          "before": "fd1acd7e3384d1273f7e0887a91be52cb5c8f919efcd9dfd800935f1b24f446d",
+          "after": "d487f319f8d6087d08b07515656f40b9dd55d9ac4b727b38ba5fe85d50f11fad"
+        },
+        {
+          "index": 140,
+          "name": "id\\texture\\jpn\\cp_name_nak\\cp_name_nak_020_ID_HQ",
+          "before": "457ae9f876aba53dce62749e550f6cb4fb982eb4793ed8208975e6b644dbf735",
+          "after": "d38e94bf18699caf04339bd29bd10b49b7f1761db82fe1f9bb0db2b07f6efdb4"
+        },
+        {
+          "index": 145,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_013_ID_HQ",
+          "before": "51d845463e6adbbc4a4e0c1450e094c0f8251dff8942f43867f40981b91c2374",
+          "after": "60899268489c54c2635b598b936cde5a3c0ccdba78f849b2294e5861840204d6"
+        },
+        {
+          "index": 150,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_011_ID_HQ",
+          "before": "9f6d407d9c2026567bb47e40fcee41f1f18723ea35593b76cb9b897755904da1",
+          "after": "7ca78ec426151557f05f5761b798ddfc6c3c90a24469b8dff5fab79f7ff5fd25"
+        },
+        {
+          "index": 155,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_021_ID_HQ",
+          "before": "1a4a24032753072cc4a6f73ba31fac3f7e0a95e196761eb43069e70fbfc39101",
+          "after": "c9f710e1b6f9f96bfebcc31a265cc811b9c7a0233bb200cbbd1738d17865b442"
+        },
+        {
+          "index": 160,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_014_ID_HQ",
+          "before": "b8204d9a9a2211007b5c263a030c4b6d491f244e39a3408ace896cf81d11b788",
+          "after": "dd47c54173f62a309d0df8acb8a779d309d59d4f913388f81de5380044425c85"
+        },
+        {
+          "index": 168,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_020_ID_HQ",
+          "before": "35572d4d8ef4d8dcef667cd774e01395480b84565318780c67848dd478736fcd",
+          "after": "c962367496960d586987fe416b1e27dafd825b991abd6bec8da46541697e10d7"
+        },
+        {
+          "index": 170,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_106_ID_HQ",
+          "before": "185fe10af1779be45de8474fe372e1c1d0b52be9a199ab140ba3285b869cbe38",
+          "after": "58856dba2b0da3e32c093bfa65188fe774429b417ef96ce53c1684866fd6f441"
+        },
+        {
+          "index": 175,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_012_ID_HQ",
+          "before": "94a8db1ff4c9c48e86313ff1b87534f89751c6d6216036a7b2d857342daec123",
+          "after": "219d1bad0d9a8762a79e1f06cb7940200d02db8ec4b9cff5832d9957ed9f1884"
+        },
+        {
+          "index": 180,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_026_ID_HQ",
+          "before": "79f8a2ceae038eae07d94af732384ba5b4d2fd0d3089d7625732b4b7bf6ed629",
+          "after": "c805ed1a6fc2ecb2c0a133531a85249efb4d37ea57f973e2b1f4c1a2a16f4c74"
+        },
+        {
+          "index": 185,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_027_ID_HQ",
+          "before": "33d0507e9c020803ad8d4d807ca170b56bb22d9b6563563ae5fff40233550904",
+          "after": "ceae8772a6ddacce54499332852cfd08b0e99969df03267cea0f5f7161d1a607"
+        },
+        {
+          "index": 190,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_104_ID_HQ",
+          "before": "c23438bd6be0222f0f423523a987173a4d485fd5696dc2eb9b8a7ecab3dfa08c",
+          "after": "55771f38e559028bfa880d4456da9c52cc210946178e6e8ed89a980cb2a740df"
+        },
+        {
+          "index": 201,
+          "name": "id\\texture\\jpn\\cp_name_pl\\cp_name_pl_015_ID_HQ",
+          "before": "1a2191c35f71b63006eb1013a54610293a325fc264061578f904fa35babb8160",
+          "after": "813d76380029cd5f171edf6d93be251b6865c093ca2c91b6d0a5c978fb56c2ee"
+        }
+      ],
+      "unchanged_resources": 150
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_common.arc",
+      "source_sha256": "7b2b3cb01c60f9bf81b5ea11ae265ca35063dce706952fd5943517138d0d5c49",
+      "sha256": "bea23a51920cf9427dfd5b55ab4926a34ca0df20900829d6ebf7fd809573862a",
+      "changes": [
+        {
+          "index": 65,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "before": "46814d482874156c5d65a0f4f1f477e6e9a14d3b1dec71c593f7b86e2cc55bd1",
+          "after": "0331f83ffc194f6322e1229fc97c523df892a6d0c5704e166e2b98738130d167"
+        },
+        {
+          "index": 72,
+          "name": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+          "before": "d4e81595cc300bbf36325b3996d921a779b31efac10442521a1a27ea7e4fd83c",
+          "after": "d4e81595cc300bbf36325b3996d921a779b31efac10442521a1a27ea7e4fd83c"
+        }
+      ],
+      "unchanged_resources": 74
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_story.arc",
+      "source_sha256": "36eb4ca07cccfc863420ee428ef511b3b355659828e2d1b227775d1ca5b0c48c",
+      "sha256": "17d399e87765cf3de2879549495f61885a4b122a5e971372c298cfdbc1ddd004",
+      "changes": [
+        {
+          "index": 30,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "before": "12d16714826f5bc4b6bc749d368e95271e234a1660f735baf7d626107fe701a3",
+          "after": "0331f83ffc194f6322e1229fc97c523df892a6d0c5704e166e2b98738130d167"
+        },
+        {
+          "index": 39,
+          "name": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+          "before": "d5ad173b329e42eb0ad235e349f04fa7e25cea7747c26aa94f948d5c96ca5cb7",
+          "after": "f65ba39a3150f9f9827215c36658d7963052e8826d67cf1749989bca569a33d2"
+        }
+      ],
+      "unchanged_resources": 46
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/select/c_versus.arc",
+      "source_sha256": "1f5f2df3de6480381000ee60be1230e32e5d41c9f3c1e93329a4f652044dbe57",
+      "sha256": "b61f2c6b0cd509fe1466055886bb138e4a802d769eee6ffadd0d75e36fb02cd4",
+      "changes": [
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "before": "12d16714826f5bc4b6bc749d368e95271e234a1660f735baf7d626107fe701a3",
+          "after": "0331f83ffc194f6322e1229fc97c523df892a6d0c5704e166e2b98738130d167"
+        }
+      ],
+      "unchanged_resources": 15
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/dream.arc",
+      "source_sha256": "bfdbfeacee5d876b9a1e153a80dd3f293de90ba08a15827695cdf898ccc01267",
+      "sha256": "8e9321754a29b51ebc0f750c6ef585603c96713bd08208b064b52b4e37053f91",
+      "changes": [
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+          "before": "d5ad173b329e42eb0ad235e349f04fa7e25cea7747c26aa94f948d5c96ca5cb7",
+          "after": "f65ba39a3150f9f9827215c36658d7963052e8826d67cf1749989bca569a33d2"
+        },
+        {
+          "index": 19,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "before": "12d16714826f5bc4b6bc749d368e95271e234a1660f735baf7d626107fe701a3",
+          "after": "0331f83ffc194f6322e1229fc97c523df892a6d0c5704e166e2b98738130d167"
+        }
+      ],
+      "unchanged_resources": 87
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_finish_id.arc",
+      "source_sha256": "da0cc18eccb2f2fa36e8a078c4169e8de14c988ff3bffed49393bb48ccc6ae31",
+      "sha256": "e355bbc2b1819ec1ed357be46c1724064ddb3fc06f74bf3948951e835b9be8cb",
+      "changes": [
+        {
+          "index": 7,
+          "name": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+          "before": "d5ad173b329e42eb0ad235e349f04fa7e25cea7747c26aa94f948d5c96ca5cb7",
+          "after": "f65ba39a3150f9f9827215c36658d7963052e8826d67cf1749989bca569a33d2"
+        },
+        {
+          "index": 19,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "before": "12d16714826f5bc4b6bc749d368e95271e234a1660f735baf7d626107fe701a3",
+          "after": "0331f83ffc194f6322e1229fc97c523df892a6d0c5704e166e2b98738130d167"
+        }
+      ],
+      "unchanged_resources": 107
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_id.arc",
+      "source_sha256": "0bf9a7916adf8f8c45cd48a451758c3fcffd63bcc01e44efdd22f0b9815b5c94",
+      "sha256": "86167a5817c96d0cfb8a947af48dc0fa5bfaed3fb7dd764365c7ddcab9c5b16a",
+      "changes": [
+        {
+          "index": 40,
+          "name": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+          "before": "d4e81595cc300bbf36325b3996d921a779b31efac10442521a1a27ea7e4fd83c",
+          "after": "d4e81595cc300bbf36325b3996d921a779b31efac10442521a1a27ea7e4fd83c"
+        },
+        {
+          "index": 73,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "before": "12d16714826f5bc4b6bc749d368e95271e234a1660f735baf7d626107fe701a3",
+          "after": "0331f83ffc194f6322e1229fc97c523df892a6d0c5704e166e2b98738130d167"
+        }
+      ],
+      "unchanged_resources": 80
+    },
+    {
+      "path": "PS3_GAME/USRDIR/nativePS3/rom/eng/versus/menu.arc",
+      "source_sha256": "2c058a28ed258e9a685e40be838259b62aa3d73cbc5effcc394fd122a529567c",
+      "sha256": "1915aaae69e3077c2575f7b12549ca04ccc66c7c531d58ff1d9e1f3bb9d2f613",
+      "changes": [
+        {
+          "index": 57,
+          "name": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+          "before": "1f582f13b77fc213483bbbafda630465522bd36a3cf3966ac287d9de93325ad7",
+          "after": "0331f83ffc194f6322e1229fc97c523df892a6d0c5704e166e2b98738130d167"
+        }
+      ],
+      "unchanged_resources": 95
+    }
+  ],
+  "archives": 41,
+  "changed_resources": 179,
+  "untouched_resources": 949,
+  "backup": "E:\\Utage Patching New\\_codex_select_menu\\quest_v3\\release\\BACKUP_PRE_V3.zip",
+  "backup_sha256": "d39d312310954002b157cbf185a154814d44073524dc3f29e6a84e7b8b5b3689",
+  "lsp_unchanged": true,
+  "runtime_verified": false
+}

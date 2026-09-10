@@ -1,0 +1,11 @@
+{
+ "release": "Utage_Retry_English_V9_CUMULATIVE_ROOT_READY",
+ "zip_sha256": "2f1e01970304987f48ad179271670b250ed944e20991dd983671d89b662bdd16",
+ "zip_bytes": 318844533,
+ "arcs_added": 608,
+ "recovered_from_backup": [
+  "msg_m034_pl015.arc"
+ ],
+ "sets_converted": 608,
+ "utage_only_sets": 802
+}

@@ -1,0 +1,19 @@
+{
+ "geometry": "2020x1267+114+114",
+ "zoomed": false,
+ "body_sashes": [
+  536,
+  1366
+ ],
+ "preview_sashes": [],
+ "review_sashes": [
+  299
+ ],
+ "zoom_mode": "actual",
+ "zoom": 0.75,
+ "last_arc_dir": "",
+ "last_folder_dir": "",
+ "last_output_dir": "",
+ "font_scale": 1.0,
+ "log_lines": 400
+}

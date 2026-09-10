@@ -1,0 +1,220 @@
+{
+  "status": "pass",
+  "patch": "Utage Battle Dialogue V18 Vertical Alignment",
+  "diagnosis": "V16 installed SH's dialogue-panel node geometry but retained Utage's animated 3_0 Y keys. V17 used an invalid ordinal animation-name mapping and spliced unrelated HUD blocks; V18 starts from the pre-V17 V16 backup, proves the long-window, text-line, and text-container blocks already equal SH, and changes only four 3_0 Y values from -2.0 to 3.0.",
+  "pre_v17_backup": "E:\\Utage Patching New\\_codex_tenka_v6\\V17_BACKUP_cockpit1P_pre_v17.zip",
+  "pre_v17_backup_sha256": "2e8a21f6c5fe2fd878d60303cef883a382f2e894f5906d94172a6b30099b20c5",
+  "pre_v18_runtime_backup": "E:\\Utage Patching New\\_codex_tenka_v6\\V18_BACKUP_cockpit1P_pre_v18.zip",
+  "pre_v18_runtime_backup_sha256": "c7ec35b10713ab33aed7a067f24bab8865bb8e1480c83774e5b099f39227602f",
+  "live_hashes_before": {
+    "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit1P.arc": "8fb3bcdf77db193300fdcb937b3784ead7b80475754eaaba9959aee7e217bfe6",
+    "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\jpn\\id\\cockpit1P.arc": "8fb3bcdf77db193300fdcb937b3784ead7b80475754eaaba9959aee7e217bfe6"
+  },
+  "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit1P.arc",
+  "donor_sha256": "1930c937552ca93d0fd8a140bee981f53fffb7bd8c6e46de3aaa1254339d091f",
+  "jobs": [
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/id/cockpit1P.arc",
+      "base": "E:\\Utage Patching New\\_codex_tenka_v6\\V18_BASE_FROM_PRE_V17_BACKUP\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit1P.arc",
+      "base_arc_sha256": "06a8717fe07a7cb800318964473a9602a8b1166fb9fae0a15a1df967728bbb7b",
+      "base_lsp_sha256": "cc476792c7e798d53ec7880541a0ea8076bfdafc3e64b97c8bea5b6146844d39",
+      "output": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_Battle_Dialogue_V18_VERTICAL_ALIGNMENT_ROOT_READY\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit1P.arc",
+      "output_arc_sha256": "888078d0cfc7fdba2033c0feb17a552a3a1f450d5de529fafbbc51b47878edd6",
+      "output_lsp_sha256": "f0507ca166065c3d0cfcbdc0030454d7282f76937baa77877df1eea063555a3f",
+      "entry_count": 39,
+      "changed_arc_entries": [
+        18
+      ],
+      "untouched_compressed_resources_preserved": true,
+      "shared_sh_animation_proofs": [
+        {
+          "node": "Mess1",
+          "stable_id": 182,
+          "utage_node_index": 124,
+          "sh_node_index": 90,
+          "block_count": 3,
+          "block_sha256": [
+            "3e79489e6fc94307ea337309fb9eb496191d3f55293e6b7670a3c255f1ea1ac5",
+            "ab9d03c58b19e4c20d0e9a050110523583868268422ee6946caf9b0f35042269",
+            "b8efed00861dcb663ce057558ab0b7e4b3f7eb38faf8ea7f6a072d8ddcb34cba"
+          ]
+        },
+        {
+          "node": "Line_U",
+          "stable_id": 77,
+          "utage_node_index": 130,
+          "sh_node_index": 96,
+          "block_count": 3,
+          "block_sha256": [
+            "902edaaff9fc5aa77d5aeb465a1356f63237918e399efbd2db29a280f62810ed",
+            "6c6989bf6bdcef36c5b9cb2f0b971f26187543b1cd0ab5a35599722f0d6b47b9",
+            "63939fa47cc997caf4d54a1c2266d6512c46d64dcff2b56977b293466eafe5f3"
+          ]
+        },
+        {
+          "node": "3_1",
+          "stable_id": 76,
+          "utage_node_index": 129,
+          "sh_node_index": 95,
+          "block_count": 2,
+          "block_sha256": [
+            "9a4bbc0eae4290a238e05092a96e6bdd702b7513dbbba48751bd42e2d4af8339",
+            "5918bbbfe9947a7ac95fc9ce8581a6cbe424132f65cb48fdae7d7ec78ba9b6f8"
+          ]
+        }
+      ],
+      "vertical_alignment_edit": {
+        "target_node": "3_0",
+        "stable_id": 72,
+        "utage_node_index": 117,
+        "sh_node_index": 83,
+        "blocks_changed": 2,
+        "f32_values_changed": 4,
+        "raw_bytes_changed": 8,
+        "changed_raw_byte_offsets": [
+          45188,
+          45189,
+          45212,
+          45213,
+          45468,
+          45469,
+          45492,
+          45493
+        ],
+        "edits": [
+          {
+            "block": 0,
+            "lsp_offset": 45188,
+            "block_offset": 136,
+            "before_f32": -2.0,
+            "after_f32": 3.0
+          },
+          {
+            "block": 0,
+            "lsp_offset": 45212,
+            "block_offset": 160,
+            "before_f32": -2.0,
+            "after_f32": 3.0
+          },
+          {
+            "block": 1,
+            "lsp_offset": 45468,
+            "block_offset": 136,
+            "before_f32": -2.0,
+            "after_f32": 3.0
+          },
+          {
+            "block": 1,
+            "lsp_offset": 45492,
+            "block_offset": 160,
+            "before_f32": -2.0,
+            "after_f32": 3.0
+          }
+        ]
+      }
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/jpn/id/cockpit1P.arc",
+      "base": "E:\\Utage Patching New\\_codex_tenka_v6\\V18_BASE_FROM_PRE_V17_BACKUP\\PS3_GAME\\USRDIR\\nativePS3\\rom\\jpn\\id\\cockpit1P.arc",
+      "base_arc_sha256": "06a8717fe07a7cb800318964473a9602a8b1166fb9fae0a15a1df967728bbb7b",
+      "base_lsp_sha256": "cc476792c7e798d53ec7880541a0ea8076bfdafc3e64b97c8bea5b6146844d39",
+      "output": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_Battle_Dialogue_V18_VERTICAL_ALIGNMENT_ROOT_READY\\PS3_GAME\\USRDIR\\nativePS3\\rom\\jpn\\id\\cockpit1P.arc",
+      "output_arc_sha256": "888078d0cfc7fdba2033c0feb17a552a3a1f450d5de529fafbbc51b47878edd6",
+      "output_lsp_sha256": "f0507ca166065c3d0cfcbdc0030454d7282f76937baa77877df1eea063555a3f",
+      "entry_count": 39,
+      "changed_arc_entries": [
+        18
+      ],
+      "untouched_compressed_resources_preserved": true,
+      "shared_sh_animation_proofs": [
+        {
+          "node": "Mess1",
+          "stable_id": 182,
+          "utage_node_index": 124,
+          "sh_node_index": 90,
+          "block_count": 3,
+          "block_sha256": [
+            "3e79489e6fc94307ea337309fb9eb496191d3f55293e6b7670a3c255f1ea1ac5",
+            "ab9d03c58b19e4c20d0e9a050110523583868268422ee6946caf9b0f35042269",
+            "b8efed00861dcb663ce057558ab0b7e4b3f7eb38faf8ea7f6a072d8ddcb34cba"
+          ]
+        },
+        {
+          "node": "Line_U",
+          "stable_id": 77,
+          "utage_node_index": 130,
+          "sh_node_index": 96,
+          "block_count": 3,
+          "block_sha256": [
+            "902edaaff9fc5aa77d5aeb465a1356f63237918e399efbd2db29a280f62810ed",
+            "6c6989bf6bdcef36c5b9cb2f0b971f26187543b1cd0ab5a35599722f0d6b47b9",
+            "63939fa47cc997caf4d54a1c2266d6512c46d64dcff2b56977b293466eafe5f3"
+          ]
+        },
+        {
+          "node": "3_1",
+          "stable_id": 76,
+          "utage_node_index": 129,
+          "sh_node_index": 95,
+          "block_count": 2,
+          "block_sha256": [
+            "9a4bbc0eae4290a238e05092a96e6bdd702b7513dbbba48751bd42e2d4af8339",
+            "5918bbbfe9947a7ac95fc9ce8581a6cbe424132f65cb48fdae7d7ec78ba9b6f8"
+          ]
+        }
+      ],
+      "vertical_alignment_edit": {
+        "target_node": "3_0",
+        "stable_id": 72,
+        "utage_node_index": 117,
+        "sh_node_index": 83,
+        "blocks_changed": 2,
+        "f32_values_changed": 4,
+        "raw_bytes_changed": 8,
+        "changed_raw_byte_offsets": [
+          45188,
+          45189,
+          45212,
+          45213,
+          45468,
+          45469,
+          45492,
+          45493
+        ],
+        "edits": [
+          {
+            "block": 0,
+            "lsp_offset": 45188,
+            "block_offset": 136,
+            "before_f32": -2.0,
+            "after_f32": 3.0
+          },
+          {
+            "block": 0,
+            "lsp_offset": 45212,
+            "block_offset": 160,
+            "before_f32": -2.0,
+            "after_f32": 3.0
+          },
+          {
+            "block": 1,
+            "lsp_offset": 45468,
+            "block_offset": 136,
+            "before_f32": -2.0,
+            "after_f32": 3.0
+          },
+          {
+            "block": 1,
+            "lsp_offset": 45492,
+            "block_offset": 160,
+            "before_f32": -2.0,
+            "after_f32": 3.0
+          }
+        ]
+      }
+    }
+  ],
+  "mirrored_output_sha256": "888078d0cfc7fdba2033c0feb17a552a3a1f450d5de529fafbbc51b47878edd6",
+  "offline_validation": "pass",
+  "runtime_test": "required"
+}

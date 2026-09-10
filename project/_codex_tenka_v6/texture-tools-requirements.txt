@@ -1,0 +1,9 @@
+Pillow>=12.3
+numpy>=2.4
+opencv-contrib-python-headless>=5.0
+imagehash>=4.3
+colour-science>=0.4
+orjson>=3.12
+psutil>=7.2
+rich>=15.0
+typer>=0.27

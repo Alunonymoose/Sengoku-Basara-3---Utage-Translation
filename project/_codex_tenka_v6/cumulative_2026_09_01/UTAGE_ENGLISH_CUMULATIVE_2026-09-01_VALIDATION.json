@@ -1,0 +1,24 @@
+{
+  "status": "pass",
+  "patch": "Sengoku Basara 3 Utage English cumulative patch",
+  "package": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_English_Patch_2026-09-01_CUMULATIVE_ROOT_READY.zip",
+  "package_sha256": "cbb7b4dc3dd944465427a4ed209467224892694977f0f0cbdde964fc186ffd9d",
+  "package_size": 112996368,
+  "zip_entry_count": 893,
+  "zip_game_file_count": 891,
+  "counts": {
+    "game_files": 891,
+    "battle_message_archives": 608,
+    "static_id_archives": 159,
+    "demo_payload_archives": 85,
+    "other_cumulative_game_files": 39
+  },
+  "source_overlay_count": 7,
+  "resolved_overlay_mismatches": 0,
+  "zip_crc_pass": true,
+  "zip_payload_hashes_match": true,
+  "zip_game_payloads_match_live": true,
+  "manifest": "PATCH_MANIFEST_2026-09-01.json",
+  "readme": "README_UTAGE_ENGLISH_CUMULATIVE_2026-09-01.txt",
+  "runtime_test": "required"
+}

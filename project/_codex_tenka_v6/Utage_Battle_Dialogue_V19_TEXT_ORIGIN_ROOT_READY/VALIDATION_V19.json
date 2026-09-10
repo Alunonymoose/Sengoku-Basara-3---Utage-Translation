@@ -1,0 +1,171 @@
+{
+  "status": "pass",
+  "patch": "Utage Battle Dialogue V19 Text Origin",
+  "diagnosis": "Official SH screenshots show the panel height is fixed and V18 places its panel, portrait, and name plate correctly; only the glyph block is about 12-14 output pixels low. V18's dialogue geometry, SH FIM, SH TNF/CSA, and SH atlas are already exact. The remaining first 1P animation block contains two disabled special-root tracks targeting 0xFFFFFFFF where SH uses enabled=1. Utage 2P already matches SH on its layout-specific [1, 0] pair. V19 changes only the two 1P u32 enable values from 0 to 1.",
+  "base": "installed V18",
+  "expected_v18_arc_sha256": "888078d0cfc7fdba2033c0feb17a552a3a1f450d5de529fafbbc51b47878edd6",
+  "expected_v18_lsp_sha256": "f0507ca166065c3d0cfcbdc0030454d7282f76937baa77877df1eea063555a3f",
+  "pre_v19_runtime_backup": "E:\\Utage Patching New\\_codex_tenka_v6\\V19_BACKUP_cockpit1P_pre_v19.zip",
+  "pre_v19_runtime_backup_sha256": "2fd502b87d12f3bb02806f51326f9ec781f1489849e5b726a2b43b13d6fdaeb1",
+  "live_hashes_before": {
+    "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit1P.arc": "888078d0cfc7fdba2033c0feb17a552a3a1f450d5de529fafbbc51b47878edd6",
+    "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\jpn\\id\\cockpit1P.arc": "888078d0cfc7fdba2033c0feb17a552a3a1f450d5de529fafbbc51b47878edd6"
+  },
+  "donor_1p": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit1P.arc",
+  "donor_1p_sha256": "1930c937552ca93d0fd8a140bee981f53fffb7bd8c6e46de3aaa1254339d091f",
+  "shared_sh_animation_proofs": [
+    {
+      "name": "Mess1",
+      "stable_id": 182,
+      "base_node_index": 124,
+      "donor_node_index": 90,
+      "block_count": 3,
+      "block_sha256": [
+        "3e79489e6fc94307ea337309fb9eb496191d3f55293e6b7670a3c255f1ea1ac5",
+        "ab9d03c58b19e4c20d0e9a050110523583868268422ee6946caf9b0f35042269",
+        "b8efed00861dcb663ce057558ab0b7e4b3f7eb38faf8ea7f6a072d8ddcb34cba"
+      ]
+    },
+    {
+      "name": "3_0",
+      "stable_id": 72,
+      "base_node_index": 117,
+      "donor_node_index": 83,
+      "block_count": 2,
+      "block_sha256": [
+        "e6a4b58ae361963a9023aaefb17d17104d7b633806244d7764595f88557bdc6f",
+        "adc1b66aeb5eb25e054963606dd449ba9e0965600a8600a2b693524c598efc96"
+      ]
+    },
+    {
+      "name": "Line_U",
+      "stable_id": 77,
+      "base_node_index": 130,
+      "donor_node_index": 96,
+      "block_count": 3,
+      "block_sha256": [
+        "902edaaff9fc5aa77d5aeb465a1356f63237918e399efbd2db29a280f62810ed",
+        "6c6989bf6bdcef36c5b9cb2f0b971f26187543b1cd0ab5a35599722f0d6b47b9",
+        "63939fa47cc997caf4d54a1c2266d6512c46d64dcff2b56977b293466eafe5f3"
+      ]
+    },
+    {
+      "name": "3_1",
+      "stable_id": 76,
+      "base_node_index": 129,
+      "donor_node_index": 95,
+      "block_count": 2,
+      "block_sha256": [
+        "9a4bbc0eae4290a238e05092a96e6bdd702b7513dbbba48751bd42e2d4af8339",
+        "5918bbbfe9947a7ac95fc9ce8581a6cbe424132f65cb48fdae7d7ec78ba9b6f8"
+      ]
+    }
+  ],
+  "two_player_corroboration": {
+    "utage_archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit2P.arc",
+    "donor_archive": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit2P.arc",
+    "utage_lsp_offset": 45776,
+    "donor_lsp_offset": 36448,
+    "block_length": 208,
+    "enable_values": [
+      1,
+      0
+    ],
+    "blocks_exact": true
+  },
+  "jobs": [
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/id/cockpit1P.arc",
+      "base": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit1P.arc",
+      "base_arc_sha256": "888078d0cfc7fdba2033c0feb17a552a3a1f450d5de529fafbbc51b47878edd6",
+      "base_lsp_sha256": "f0507ca166065c3d0cfcbdc0030454d7282f76937baa77877df1eea063555a3f",
+      "output": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_Battle_Dialogue_V19_TEXT_ORIGIN_ROOT_READY\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit1P.arc",
+      "output_arc_sha256": "6e02355a956d5a645edc908fbc2d5c0c461dd65caed8e9ab05b9e6d996c262c9",
+      "output_lsp_sha256": "aadd36fbf00348b372538b86bf649ccf2e0cca85dffd583e97ecb69e87d6c097",
+      "entry_count": 39,
+      "changed_arc_entries": [
+        18
+      ],
+      "untouched_compressed_resources_preserved": true,
+      "special_root_edit": {
+        "base_block_offset": 42432,
+        "base_block_end": 42640,
+        "donor_block_offset": 30288,
+        "donor_block_end": 30496,
+        "block_length": 208,
+        "target_id": "0xFFFFFFFF",
+        "raw_byte_differences": [
+          3,
+          107
+        ],
+        "edits": [
+          {
+            "block_offset": 0,
+            "lsp_offset": 42432,
+            "before_u32": 0,
+            "after_u32": 1
+          },
+          {
+            "block_offset": 104,
+            "lsp_offset": 42536,
+            "before_u32": 0,
+            "after_u32": 1
+          }
+        ],
+        "changed_raw_byte_offsets": [
+          42435,
+          42539
+        ],
+        "raw_bytes_changed": 2
+      }
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/jpn/id/cockpit1P.arc",
+      "base": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\jpn\\id\\cockpit1P.arc",
+      "base_arc_sha256": "888078d0cfc7fdba2033c0feb17a552a3a1f450d5de529fafbbc51b47878edd6",
+      "base_lsp_sha256": "f0507ca166065c3d0cfcbdc0030454d7282f76937baa77877df1eea063555a3f",
+      "output": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_Battle_Dialogue_V19_TEXT_ORIGIN_ROOT_READY\\PS3_GAME\\USRDIR\\nativePS3\\rom\\jpn\\id\\cockpit1P.arc",
+      "output_arc_sha256": "6e02355a956d5a645edc908fbc2d5c0c461dd65caed8e9ab05b9e6d996c262c9",
+      "output_lsp_sha256": "aadd36fbf00348b372538b86bf649ccf2e0cca85dffd583e97ecb69e87d6c097",
+      "entry_count": 39,
+      "changed_arc_entries": [
+        18
+      ],
+      "untouched_compressed_resources_preserved": true,
+      "special_root_edit": {
+        "base_block_offset": 42432,
+        "base_block_end": 42640,
+        "donor_block_offset": 30288,
+        "donor_block_end": 30496,
+        "block_length": 208,
+        "target_id": "0xFFFFFFFF",
+        "raw_byte_differences": [
+          3,
+          107
+        ],
+        "edits": [
+          {
+            "block_offset": 0,
+            "lsp_offset": 42432,
+            "before_u32": 0,
+            "after_u32": 1
+          },
+          {
+            "block_offset": 104,
+            "lsp_offset": 42536,
+            "before_u32": 0,
+            "after_u32": 1
+          }
+        ],
+        "changed_raw_byte_offsets": [
+          42435,
+          42539
+        ],
+        "raw_bytes_changed": 2
+      }
+    }
+  ],
+  "mirrored_output_sha256": "6e02355a956d5a645edc908fbc2d5c0c461dd65caed8e9ab05b9e6d996c262c9",
+  "offline_validation": "pass",
+  "runtime_test": "required"
+}

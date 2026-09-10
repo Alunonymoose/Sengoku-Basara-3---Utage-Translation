@@ -1,0 +1,72 @@
+[
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\init_ps3.arc",
+    "index": 9,
+    "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result_id.arc",
+    "index": 11,
+    "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\retry.arc",
+    "index": 30,
+    "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\save.arc",
+    "index": 3,
+    "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc",
+    "index": 318,
+    "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title_id.arc",
+    "index": 143,
+    "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\brief\\mode_quest.arc",
+    "index": 18,
+    "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\gallery\\chara.arc",
+    "index": 4,
+    "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\gallery\\movie.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\gallery\\music.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\gallery\\ranking.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\gallery\\trophy.arc",
+    "index": 3,
+    "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\pause\\option.arc",
+    "index": 12,
+    "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_finish_id.arc",
+    "index": 45,
+    "name": "id\\texture\\jpn\\mode_select\\mode_select_000_ID_HQ"
+  }
+]

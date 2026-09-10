@@ -1,0 +1,133 @@
+{
+  "status": "pass",
+  "replacements": [
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl000.arc",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc entry 41",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl001.arc",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc entry 42",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl002.arc",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc entry 43",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl003.arc",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc entry 44",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl004.arc",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc entry 45",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl005.arc",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc entry 46",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl006.arc",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc entry 47",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl007.arc",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc entry 48",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl008.arc",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc entry 49",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl009.arc",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc entry 50",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl010.arc",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc entry 51",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl011.arc",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc entry 52",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl012.arc",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc entry 53",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl013.arc",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc entry 54",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl014.arc",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc entry 55",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl015.arc",
+      "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc entry 56",
+      "changed_entries": [
+        2,
+        4
+      ]
+    }
+  ]
+}

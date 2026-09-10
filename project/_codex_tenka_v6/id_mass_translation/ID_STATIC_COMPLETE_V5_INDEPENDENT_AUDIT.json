@@ -1,0 +1,52 @@
+{
+  "status": "pass",
+  "audit": "independent post-install audit of complete Utage static ID translation",
+  "live_static_archive_count": 159,
+  "live_xets_verified": 503,
+  "immutable_jpn_xets_verified": 503,
+  "initially_official_sh_exact": 66,
+  "archive_local_official_sh_transplants": 248,
+  "global_official_sh_transplants": 14,
+  "versus_official_sh_nameplates": 29,
+  "generated_english_resource_instances": 36,
+  "translated_or_already_official_xets": 393,
+  "intentionally_preserved_nontext_or_custom_xets": 110,
+  "metadata_entries_verified": 546,
+  "untouched_compressed_entries_verified": 219,
+  "all_entry_metadata_preserved": true,
+  "all_untouched_compressed_resources_preserved": true,
+  "package_checks": [
+    {
+      "path": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_ID_Static_Textures_V1_SH_DONORS_ROOT_READY.zip",
+      "sha256": "a2da637cf3e591a222a9c8f02a2ecb559bf0a855f9d46a67444715fa9392990c",
+      "entry_count": 140,
+      "crc_pass": true
+    },
+    {
+      "path": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_ID_Static_Textures_V2_GLOBAL_SH_DONORS_ROOT_READY.zip",
+      "sha256": "c3cbdc37b571cf9e36dcfd3c421d007e9f62f451b0cbd9c90059f18b48c661b2",
+      "entry_count": 6,
+      "crc_pass": true
+    },
+    {
+      "path": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_ID_Static_Textures_V3_VS_NAMES_SH_DONORS_ROOT_READY.zip",
+      "sha256": "5ef6e0ca17e288ae4904d5ea087ba64c90f2bd520e4371e3a9287af28f14ac0b",
+      "entry_count": 1,
+      "crc_pass": true
+    },
+    {
+      "path": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_ID_Static_Textures_V4_GENERATED_ENGLISH_ROOT_READY.zip",
+      "sha256": "ae510deb3aee3ff4cff5e912e608740e5440efb3c9df19194fb827ef7e913bdd",
+      "entry_count": 24,
+      "crc_pass": true
+    },
+    {
+      "path": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_ID_Static_Textures_V5_COMPLETE_ROOT_READY.zip",
+      "sha256": "021fcb9c640e842dfc2d8cbcc96d78836981b3482fbc50b5dd57665a35ec022e",
+      "entry_count": 159,
+      "crc_pass": true
+    }
+  ],
+  "complete_v5_zip_matches_live": true,
+  "runtime_test": "required"
+}

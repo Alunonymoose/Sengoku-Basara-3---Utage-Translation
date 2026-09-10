@@ -1,0 +1,73 @@
+{
+  "patch": "Utage Retry English V5 (cumulative over Free Battle Bounds V4 / Father Route V3)",
+  "created": "2026-08-30",
+  "base_patch_sha256": "8eb42671471c7025482f783eb415efbe89dcc90912e150039bb06b681e2031d3",
+  "source_retry_sha256": "8cc98c0611ab1b34e5702a34ad6636df2013ae9fcc5ec22e1ee0e9666a2cfd61",
+  "output_retry_sha256": "a4a0e4d94515434e09597fc13251785a19e0fcd44bf1b8109854cb0acd4c3029",
+  "target_resource": "id\\texture\\jpn\\common\\common_007_ID_HQ",
+  "type": "0x241F5DEB",
+  "resource_index": 11,
+  "source_xet_sha256": "a36380c7f0ee073e321eb7ec9f718da4c6141b1cb083aafd06a8a021b27f2d31",
+  "output_xet_sha256": "81aff637089be0bdcb9e568ad62239223a5025869dbbba083ccaa6dba621def5",
+  "official_sh_xet_sha256": "0fad169380c2328fd6ee7ffa88b109703af83dc7b7b57d959b08bb2132c1e580",
+  "method": "BC3/DXT5 4x4 block-level surgical transplant. No whole-atlas transplant and no recompression of untouched blocks.",
+  "edits": [
+    {
+      "utage_region_px": [
+        0,
+        196,
+        256,
+        56
+      ],
+      "sh_source_region_px": [
+        256,
+        104,
+        256,
+        52
+      ],
+      "label": "Retry"
+    },
+    {
+      "utage_region_px": [
+        0,
+        260,
+        512,
+        56
+      ],
+      "sh_source_region_px": [
+        0,
+        272,
+        512,
+        44
+      ],
+      "label": "Return to Battle Menu"
+    },
+    {
+      "utage_region_px": [
+        0,
+        388,
+        512,
+        56
+      ],
+      "sh_source_region_px": [
+        0,
+        356,
+        512,
+        44
+      ],
+      "label": "Return to Main Menu (retail SH wording for title/main-menu return)"
+    }
+  ],
+  "preserved": "All Utage-only common_007 rows not intersecting the three target regions; every other retry.arc resource; ARC ordering/types/flags; internal jpn key; XET header.",
+  "dependency_audit": {
+    "explicit_outer_rom_jpn_hits": [],
+    "note": "common_007 is duplicated in several contexts but contents legitimately diverge because Utage adds commands absent from SH. Therefore this patch repairs only retry.arc's presentation-specific rows rather than forcing global hash equality."
+  },
+  "verification": {
+    "retry_arc_entries": 34,
+    "only_target_resource_rebuilt": true,
+    "untouched_compressed_blobs_byte_identical": true,
+    "xet_header_unchanged": true,
+    "xet_size": 262164
+  }
+}

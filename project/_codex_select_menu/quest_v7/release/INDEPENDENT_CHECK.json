@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "archives": 39,
+  "resources": 47,
+  "unchanged_resources": 963,
+  "checks": [
+    "Archive structure and unchanged compressed entries",
+    "Allowed texture blocks only",
+    "Native player slot separation",
+    "Transparent nameplate margins",
+    "Only intended layout floats",
+    "GSM record count and 16 targeted records",
+    "English glyph coverage and line widths"
+  ],
+  "max_description_width": 643,
+  "runtime_verified": false
+}

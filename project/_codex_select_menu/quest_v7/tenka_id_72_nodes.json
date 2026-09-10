@@ -1,0 +1,3040 @@
+[
+  {
+    "index": 0,
+    "name": "SysRoot",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": -1,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "index": 1,
+    "name": "idrama_null",
+    "texture": "",
+    "type": 4,
+    "position": [
+      320.0,
+      153.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 0,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 2,
+    "name": "idrama_a_null",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 3,
+    "name": "kamon00",
+    "texture": "id\\dummy_BM",
+    "type": 3,
+    "position": [
+      -192.0,
+      -49.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 2,
+    "size": [
+      32,
+      256
+    ],
+    "geometry": [
+      -128,
+      -128,
+      128,
+      128
+    ],
+    "uv": [
+      0,
+      0,
+      256,
+      256
+    ]
+  },
+  {
+    "index": 4,
+    "name": "kaiwa00_null",
+    "texture": "",
+    "type": 4,
+    "position": [
+      -240.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 5,
+    "name": "kai00_00",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 2,
+    "position": [
+      240.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -45,
+      -188,
+      45
+    ],
+    "uv": [
+      8,
+      4,
+      200,
+      88
+    ]
+  },
+  {
+    "index": 6,
+    "name": "kai00_01",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 3,
+    "position": [
+      52.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -45,
+      -72,
+      45
+    ],
+    "uv": [
+      8,
+      96,
+      48,
+      180
+    ]
+  },
+  {
+    "index": 7,
+    "name": "kai00_02",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 2,
+    "position": [
+      240.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -45,
+      208,
+      45
+    ],
+    "uv": [
+      8,
+      4,
+      200,
+      88
+    ]
+  },
+  {
+    "index": 8,
+    "name": "kai00_03",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 3,
+    "position": [
+      448.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -45,
+      48,
+      45
+    ],
+    "uv": [
+      160,
+      4,
+      200,
+      88
+    ]
+  },
+  {
+    "index": 9,
+    "name": "maki00_null",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 10,
+    "name": "maki00",
+    "texture": "",
+    "type": 4,
+    "position": [
+      -272.0,
+      4.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 9,
+    "size": [
+      0,
+      256
+    ],
+    "geometry": [
+      0,
+      -44,
+      272,
+      44
+    ],
+    "uv": [
+      0,
+      9,
+      272,
+      97
+    ]
+  },
+  {
+    "index": 11,
+    "name": "maki01",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 9,
+    "size": [
+      0,
+      256
+    ],
+    "geometry": [
+      0,
+      -44,
+      288,
+      44
+    ],
+    "uv": [
+      9,
+      101,
+      297,
+      189
+    ]
+  },
+  {
+    "index": 12,
+    "name": "maki02",
+    "texture": "",
+    "type": 4,
+    "position": [
+      284.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 9,
+    "size": [
+      0,
+      256
+    ],
+    "geometry": [
+      -12,
+      -48,
+      12,
+      48
+    ],
+    "uv": [
+      313,
+      97,
+      337,
+      193
+    ]
+  },
+  {
+    "index": 13,
+    "name": "kao00",
+    "texture": "id\\dummy_BM",
+    "type": 2,
+    "position": [
+      -236.0,
+      -36.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      32,
+      256
+    ],
+    "geometry": [
+      -128,
+      -128,
+      128,
+      128
+    ],
+    "uv": [
+      0,
+      0,
+      256,
+      256
+    ]
+  },
+  {
+    "index": 14,
+    "name": "namae00",
+    "texture": "id\\dummy_BM",
+    "type": 2,
+    "position": [
+      -128.0,
+      -55.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      32,
+      128
+    ],
+    "geometry": [
+      -64,
+      -12,
+      64,
+      12
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      24
+    ]
+  },
+  {
+    "index": 15,
+    "name": "moji_null00",
+    "texture": "",
+    "type": 4,
+    "position": [
+      -164.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 16,
+    "name": "idrama_b_null",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      224.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 17,
+    "name": "kamon10",
+    "texture": "id\\dummy_BM",
+    "type": 3,
+    "position": [
+      -192.0,
+      -49.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 16,
+    "size": [
+      32,
+      256
+    ],
+    "geometry": [
+      -128,
+      -128,
+      128,
+      128
+    ],
+    "uv": [
+      0,
+      0,
+      256,
+      256
+    ]
+  },
+  {
+    "index": 18,
+    "name": "kaiwa10_null",
+    "texture": "",
+    "type": 4,
+    "position": [
+      -240.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 16,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 19,
+    "name": "kai10_00",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 2,
+    "position": [
+      240.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 18,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -45,
+      -188,
+      45
+    ],
+    "uv": [
+      8,
+      4,
+      200,
+      88
+    ]
+  },
+  {
+    "index": 20,
+    "name": "kai10_01",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 3,
+    "position": [
+      52.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 18,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -45,
+      -72,
+      45
+    ],
+    "uv": [
+      8,
+      96,
+      48,
+      180
+    ]
+  },
+  {
+    "index": 21,
+    "name": "kai10_02",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 2,
+    "position": [
+      240.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 18,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -45,
+      208,
+      45
+    ],
+    "uv": [
+      8,
+      4,
+      200,
+      88
+    ]
+  },
+  {
+    "index": 22,
+    "name": "kai10_03",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 3,
+    "position": [
+      448.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 18,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -45,
+      48,
+      45
+    ],
+    "uv": [
+      160,
+      4,
+      200,
+      88
+    ]
+  },
+  {
+    "index": 23,
+    "name": "maki10_null",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 16,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 24,
+    "name": "maki00",
+    "texture": "",
+    "type": 4,
+    "position": [
+      -272.0,
+      4.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 23,
+    "size": [
+      0,
+      256
+    ],
+    "geometry": [
+      0,
+      -44,
+      272,
+      44
+    ],
+    "uv": [
+      0,
+      9,
+      272,
+      97
+    ]
+  },
+  {
+    "index": 25,
+    "name": "maki11",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 23,
+    "size": [
+      0,
+      256
+    ],
+    "geometry": [
+      0,
+      -44,
+      288,
+      44
+    ],
+    "uv": [
+      9,
+      101,
+      297,
+      189
+    ]
+  },
+  {
+    "index": 26,
+    "name": "maki12",
+    "texture": "",
+    "type": 4,
+    "position": [
+      284.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 23,
+    "size": [
+      0,
+      256
+    ],
+    "geometry": [
+      -12,
+      -48,
+      12,
+      48
+    ],
+    "uv": [
+      313,
+      97,
+      337,
+      193
+    ]
+  },
+  {
+    "index": 27,
+    "name": "kao10",
+    "texture": "id\\dummy_BM",
+    "type": 2,
+    "position": [
+      -236.0,
+      -36.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 16,
+    "size": [
+      32,
+      256
+    ],
+    "geometry": [
+      -128,
+      -128,
+      128,
+      128
+    ],
+    "uv": [
+      0,
+      0,
+      256,
+      256
+    ]
+  },
+  {
+    "index": 28,
+    "name": "namae10",
+    "texture": "id\\dummy_BM",
+    "type": 2,
+    "position": [
+      -128.0,
+      -55.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 16,
+    "size": [
+      32,
+      128
+    ],
+    "geometry": [
+      -64,
+      -12,
+      64,
+      12
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      24
+    ]
+  },
+  {
+    "index": 29,
+    "name": "moji_null01",
+    "texture": "",
+    "type": 4,
+    "position": [
+      -164.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 16,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 30,
+    "name": "idrama_c_null",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 31,
+    "name": "kamon20",
+    "texture": "id\\dummy_BM",
+    "type": 3,
+    "position": [
+      192.0,
+      -49.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 30,
+    "size": [
+      32,
+      256
+    ],
+    "geometry": [
+      -128,
+      -128,
+      128,
+      128
+    ],
+    "uv": [
+      0,
+      0,
+      256,
+      256
+    ]
+  },
+  {
+    "index": 32,
+    "name": "kaiwa20_null",
+    "texture": "",
+    "type": 4,
+    "position": [
+      240.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 30,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 33,
+    "name": "kai20_00",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 2,
+    "position": [
+      -240.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 32,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -45,
+      188,
+      45
+    ],
+    "uv": [
+      8,
+      4,
+      200,
+      88
+    ]
+  },
+  {
+    "index": 34,
+    "name": "kai20_01",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 3,
+    "position": [
+      -52.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 32,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -45,
+      72,
+      45
+    ],
+    "uv": [
+      8,
+      96,
+      48,
+      180
+    ]
+  },
+  {
+    "index": 35,
+    "name": "kai20_02",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 2,
+    "position": [
+      -240.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 32,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -45,
+      -208,
+      45
+    ],
+    "uv": [
+      8,
+      4,
+      200,
+      88
+    ]
+  },
+  {
+    "index": 36,
+    "name": "kai20_03",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 3,
+    "position": [
+      -448.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 32,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -45,
+      -48,
+      45
+    ],
+    "uv": [
+      160,
+      4,
+      200,
+      88
+    ]
+  },
+  {
+    "index": 37,
+    "name": "maki20_null",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 30,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 38,
+    "name": "maki20",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 4,
+    "position": [
+      272.0,
+      4.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 37,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -44,
+      -272,
+      44
+    ],
+    "uv": [
+      0,
+      9,
+      272,
+      97
+    ]
+  },
+  {
+    "index": 39,
+    "name": "maki21",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 37,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -44,
+      -288,
+      44
+    ],
+    "uv": [
+      9,
+      101,
+      297,
+      189
+    ]
+  },
+  {
+    "index": 40,
+    "name": "maki22",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 4,
+    "position": [
+      -274.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 37,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -12,
+      -48,
+      12,
+      48
+    ],
+    "uv": [
+      313,
+      97,
+      337,
+      193
+    ]
+  },
+  {
+    "index": 41,
+    "name": "kao20",
+    "texture": "id\\dummy_BM",
+    "type": 2,
+    "position": [
+      236.0,
+      -36.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 30,
+    "size": [
+      32,
+      256
+    ],
+    "geometry": [
+      -128,
+      -128,
+      128,
+      128
+    ],
+    "uv": [
+      0,
+      0,
+      256,
+      256
+    ]
+  },
+  {
+    "index": 42,
+    "name": "namae20",
+    "texture": "id\\dummy_BM",
+    "type": 2,
+    "position": [
+      128.0,
+      -55.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 30,
+    "size": [
+      32,
+      128
+    ],
+    "geometry": [
+      -64,
+      -12,
+      64,
+      12
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      24
+    ]
+  },
+  {
+    "index": 43,
+    "name": "moji_null02",
+    "texture": "",
+    "type": 4,
+    "position": [
+      -240.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 30,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 44,
+    "name": "idrama_d_null",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      224.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 45,
+    "name": "kamon30",
+    "texture": "id\\dummy_BM",
+    "type": 3,
+    "position": [
+      192.0,
+      -49.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 44,
+    "size": [
+      32,
+      256
+    ],
+    "geometry": [
+      -128,
+      -128,
+      128,
+      128
+    ],
+    "uv": [
+      0,
+      0,
+      256,
+      256
+    ]
+  },
+  {
+    "index": 46,
+    "name": "kaiwa30_null",
+    "texture": "",
+    "type": 4,
+    "position": [
+      240.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 44,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 47,
+    "name": "kai30_00",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 2,
+    "position": [
+      -240.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 46,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -45,
+      188,
+      45
+    ],
+    "uv": [
+      8,
+      4,
+      200,
+      88
+    ]
+  },
+  {
+    "index": 48,
+    "name": "kai30_01",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 3,
+    "position": [
+      -52.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 46,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -45,
+      72,
+      45
+    ],
+    "uv": [
+      8,
+      96,
+      48,
+      180
+    ]
+  },
+  {
+    "index": 49,
+    "name": "kai30_02",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 2,
+    "position": [
+      -240.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 46,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -45,
+      -208,
+      45
+    ],
+    "uv": [
+      8,
+      4,
+      200,
+      88
+    ]
+  },
+  {
+    "index": 50,
+    "name": "kai30_03",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 3,
+    "position": [
+      -448.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 46,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -45,
+      -48,
+      45
+    ],
+    "uv": [
+      160,
+      4,
+      200,
+      88
+    ]
+  },
+  {
+    "index": 51,
+    "name": "maki30_null",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 44,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 52,
+    "name": "maki30",
+    "texture": "",
+    "type": 4,
+    "position": [
+      272.0,
+      4.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 51,
+    "size": [
+      0,
+      256
+    ],
+    "geometry": [
+      0,
+      -44,
+      -272,
+      44
+    ],
+    "uv": [
+      0,
+      9,
+      272,
+      97
+    ]
+  },
+  {
+    "index": 53,
+    "name": "maki31",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 51,
+    "size": [
+      0,
+      256
+    ],
+    "geometry": [
+      0,
+      -44,
+      -288,
+      44
+    ],
+    "uv": [
+      9,
+      101,
+      297,
+      189
+    ]
+  },
+  {
+    "index": 54,
+    "name": "maki32",
+    "texture": "",
+    "type": 4,
+    "position": [
+      -274.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 51,
+    "size": [
+      0,
+      256
+    ],
+    "geometry": [
+      -12,
+      -48,
+      12,
+      48
+    ],
+    "uv": [
+      313,
+      97,
+      337,
+      193
+    ]
+  },
+  {
+    "index": 55,
+    "name": "kao30",
+    "texture": "id\\dummy_BM",
+    "type": 2,
+    "position": [
+      236.0,
+      -36.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 44,
+    "size": [
+      32,
+      256
+    ],
+    "geometry": [
+      -128,
+      -128,
+      128,
+      128
+    ],
+    "uv": [
+      0,
+      0,
+      256,
+      256
+    ]
+  },
+  {
+    "index": 56,
+    "name": "namae30",
+    "texture": "id\\dummy_BM",
+    "type": 2,
+    "position": [
+      128.0,
+      -55.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 44,
+    "size": [
+      32,
+      128
+    ],
+    "geometry": [
+      -64,
+      -12,
+      64,
+      12
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      24
+    ]
+  },
+  {
+    "index": 57,
+    "name": "moji_null03",
+    "texture": "",
+    "type": 4,
+    "position": [
+      -240.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 44,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 58,
+    "name": "kai00_04",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 3,
+    "position": [
+      496.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -45,
+      48,
+      45
+    ],
+    "uv": [
+      8,
+      96,
+      48,
+      180
+    ]
+  },
+  {
+    "index": 59,
+    "name": "kai00_05",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 3,
+    "position": [
+      400.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -35,
+      152,
+      35
+    ],
+    "uv": [
+      8,
+      184,
+      160,
+      252
+    ]
+  },
+  {
+    "index": 60,
+    "name": "kai00_06",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 3,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -40,
+      156,
+      40
+    ],
+    "uv": [
+      60,
+      100,
+      216,
+      176
+    ]
+  },
+  {
+    "index": 61,
+    "name": "kai10_04",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 3,
+    "position": [
+      496.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 18,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -45,
+      48,
+      45
+    ],
+    "uv": [
+      8,
+      96,
+      48,
+      180
+    ]
+  },
+  {
+    "index": 62,
+    "name": "kai10_05",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 3,
+    "position": [
+      400.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 18,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -35,
+      152,
+      35
+    ],
+    "uv": [
+      8,
+      184,
+      160,
+      252
+    ]
+  },
+  {
+    "index": 63,
+    "name": "kai10_06",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 3,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 18,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -40,
+      156,
+      40
+    ],
+    "uv": [
+      60,
+      100,
+      216,
+      176
+    ]
+  },
+  {
+    "index": 64,
+    "name": "kaiwa01_null",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 65,
+    "name": "square00_01",
+    "texture": "",
+    "type": 0,
+    "position": [
+      100.0,
+      24.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 64,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -4,
+      -4,
+      4,
+      4
+    ],
+    "uv": [
+      0,
+      0,
+      8,
+      8
+    ]
+  },
+  {
+    "index": 66,
+    "name": "square00_02",
+    "texture": "",
+    "type": 0,
+    "position": [
+      124.0,
+      10.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 64,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -3,
+      -3,
+      3,
+      3
+    ],
+    "uv": [
+      0,
+      0,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 67,
+    "name": "square00_03",
+    "texture": "",
+    "type": 0,
+    "position": [
+      158.0,
+      18.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 64,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -6,
+      -6,
+      6,
+      6
+    ],
+    "uv": [
+      0,
+      0,
+      12,
+      12
+    ]
+  },
+  {
+    "index": 68,
+    "name": "square00_04",
+    "texture": "",
+    "type": 0,
+    "position": [
+      190.0,
+      2.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 64,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -4,
+      -4,
+      4,
+      4
+    ],
+    "uv": [
+      0,
+      0,
+      8,
+      8
+    ]
+  },
+  {
+    "index": 69,
+    "name": "square00_05",
+    "texture": "",
+    "type": 0,
+    "position": [
+      202.0,
+      -16.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 64,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -5,
+      -5,
+      5,
+      5
+    ],
+    "uv": [
+      0,
+      0,
+      10,
+      10
+    ]
+  },
+  {
+    "index": 70,
+    "name": "square00_06",
+    "texture": "",
+    "type": 0,
+    "position": [
+      234.0,
+      -30.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 64,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -3,
+      -3,
+      3,
+      3
+    ],
+    "uv": [
+      0,
+      0,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 71,
+    "name": "kaiwa11_null",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 18,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 72,
+    "name": "square10_01",
+    "texture": "",
+    "type": 0,
+    "position": [
+      100.0,
+      24.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 71,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -4,
+      -4,
+      4,
+      4
+    ],
+    "uv": [
+      0,
+      0,
+      8,
+      8
+    ]
+  },
+  {
+    "index": 73,
+    "name": "square10_02",
+    "texture": "",
+    "type": 0,
+    "position": [
+      124.0,
+      10.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 71,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -3,
+      -3,
+      3,
+      3
+    ],
+    "uv": [
+      0,
+      0,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 74,
+    "name": "square10_03",
+    "texture": "",
+    "type": 0,
+    "position": [
+      158.0,
+      18.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 71,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -6,
+      -6,
+      6,
+      6
+    ],
+    "uv": [
+      0,
+      0,
+      12,
+      12
+    ]
+  },
+  {
+    "index": 75,
+    "name": "square10_04",
+    "texture": "",
+    "type": 0,
+    "position": [
+      190.0,
+      2.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 71,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -4,
+      -4,
+      4,
+      4
+    ],
+    "uv": [
+      0,
+      0,
+      8,
+      8
+    ]
+  },
+  {
+    "index": 76,
+    "name": "square10_05",
+    "texture": "",
+    "type": 0,
+    "position": [
+      202.0,
+      -16.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 71,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -5,
+      -5,
+      5,
+      5
+    ],
+    "uv": [
+      0,
+      0,
+      10,
+      10
+    ]
+  },
+  {
+    "index": 77,
+    "name": "square10_06",
+    "texture": "",
+    "type": 0,
+    "position": [
+      234.0,
+      -30.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 71,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -3,
+      -3,
+      3,
+      3
+    ],
+    "uv": [
+      0,
+      0,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 78,
+    "name": "kai20_04",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 3,
+    "position": [
+      -496.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 32,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -45,
+      -48,
+      45
+    ],
+    "uv": [
+      8,
+      96,
+      48,
+      180
+    ]
+  },
+  {
+    "index": 79,
+    "name": "kai20_05",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 3,
+    "position": [
+      -400.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 32,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -35,
+      -152,
+      35
+    ],
+    "uv": [
+      8,
+      184,
+      160,
+      252
+    ]
+  },
+  {
+    "index": 80,
+    "name": "kai20_06",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 3,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 32,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -40,
+      -156,
+      40
+    ],
+    "uv": [
+      60,
+      100,
+      216,
+      176
+    ]
+  },
+  {
+    "index": 81,
+    "name": "kai30_04",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 3,
+    "position": [
+      -496.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 46,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -45,
+      -48,
+      45
+    ],
+    "uv": [
+      8,
+      96,
+      48,
+      180
+    ]
+  },
+  {
+    "index": 82,
+    "name": "kai30_05",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 3,
+    "position": [
+      -400.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 46,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -35,
+      -152,
+      35
+    ],
+    "uv": [
+      8,
+      184,
+      160,
+      252
+    ]
+  },
+  {
+    "index": 83,
+    "name": "kai30_06",
+    "texture": "id\\texture\\jpn\\tenka_idrama\\tenka_idrama00_ID_HQ",
+    "type": 3,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 46,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      0,
+      -40,
+      -156,
+      40
+    ],
+    "uv": [
+      60,
+      100,
+      216,
+      176
+    ]
+  },
+  {
+    "index": 84,
+    "name": "kaiwa21_null",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 32,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 85,
+    "name": "square20_01",
+    "texture": "",
+    "type": 0,
+    "position": [
+      -100.0,
+      24.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 84,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -4,
+      -4,
+      4,
+      4
+    ],
+    "uv": [
+      0,
+      0,
+      8,
+      8
+    ]
+  },
+  {
+    "index": 86,
+    "name": "square20_02",
+    "texture": "",
+    "type": 0,
+    "position": [
+      -124.0,
+      10.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 84,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -3,
+      -3,
+      3,
+      3
+    ],
+    "uv": [
+      0,
+      0,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 87,
+    "name": "square20_03",
+    "texture": "",
+    "type": 0,
+    "position": [
+      -158.0,
+      18.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 84,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -6,
+      -6,
+      6,
+      6
+    ],
+    "uv": [
+      0,
+      0,
+      12,
+      12
+    ]
+  },
+  {
+    "index": 88,
+    "name": "square20_04",
+    "texture": "",
+    "type": 0,
+    "position": [
+      -190.0,
+      2.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 84,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -4,
+      -4,
+      4,
+      4
+    ],
+    "uv": [
+      0,
+      0,
+      8,
+      8
+    ]
+  },
+  {
+    "index": 89,
+    "name": "square20_05",
+    "texture": "",
+    "type": 0,
+    "position": [
+      -202.0,
+      -16.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 84,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -5,
+      -5,
+      5,
+      5
+    ],
+    "uv": [
+      0,
+      0,
+      10,
+      10
+    ]
+  },
+  {
+    "index": 90,
+    "name": "square20_06",
+    "texture": "",
+    "type": 0,
+    "position": [
+      -234.0,
+      -30.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 84,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -3,
+      -3,
+      3,
+      3
+    ],
+    "uv": [
+      0,
+      0,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 91,
+    "name": "kaiwa31_null",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 46,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 92,
+    "name": "square30_01",
+    "texture": "",
+    "type": 0,
+    "position": [
+      -100.0,
+      24.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 91,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -4,
+      -4,
+      4,
+      4
+    ],
+    "uv": [
+      0,
+      0,
+      8,
+      8
+    ]
+  },
+  {
+    "index": 93,
+    "name": "square30_02",
+    "texture": "",
+    "type": 0,
+    "position": [
+      -124.0,
+      10.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 91,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -3,
+      -3,
+      3,
+      3
+    ],
+    "uv": [
+      0,
+      0,
+      7,
+      7
+    ]
+  },
+  {
+    "index": 94,
+    "name": "square30_03",
+    "texture": "",
+    "type": 0,
+    "position": [
+      -158.0,
+      18.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 91,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -6,
+      -6,
+      6,
+      6
+    ],
+    "uv": [
+      0,
+      0,
+      12,
+      12
+    ]
+  },
+  {
+    "index": 95,
+    "name": "square30_04",
+    "texture": "",
+    "type": 0,
+    "position": [
+      -190.0,
+      2.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 91,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -4,
+      -4,
+      4,
+      4
+    ],
+    "uv": [
+      0,
+      0,
+      8,
+      8
+    ]
+  },
+  {
+    "index": 96,
+    "name": "square30_05",
+    "texture": "",
+    "type": 0,
+    "position": [
+      -202.0,
+      -16.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 91,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -5,
+      -5,
+      5,
+      5
+    ],
+    "uv": [
+      0,
+      0,
+      10,
+      10
+    ]
+  },
+  {
+    "index": 97,
+    "name": "square30_06",
+    "texture": "",
+    "type": 0,
+    "position": [
+      -234.0,
+      -30.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 91,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -3,
+      -3,
+      3,
+      3
+    ],
+    "uv": [
+      0,
+      0,
+      7,
+      7
+    ]
+  }
+]

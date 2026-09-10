@@ -1,0 +1,9 @@
+{
+  "status": "installed_and_readback_verified",
+  "archives": 39,
+  "package": "E:\\Utage Patching New\\_codex_select_menu\\quest_v7\\release\\Utage_Menu_V7_MAP_NAMES_AND_SHOP_ROOT_READY.zip",
+  "package_sha256": "659e8f3a899c7c2c116ca8dd112491532deac08b72150a0e54c4a3f6200e7b8f",
+  "backup": "E:\\Utage Patching New\\_codex_select_menu\\quest_v7\\release\\BACKUP_PRE_V7.zip",
+  "backup_sha256": "77581bd581a0313c1db66a6a880c8c4e29e471a213571a2791e69a3c85987f6b",
+  "runtime_verified": false
+}

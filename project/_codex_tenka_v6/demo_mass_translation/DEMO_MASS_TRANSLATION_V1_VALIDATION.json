@@ -1,0 +1,1087 @@
+{
+  "status": "pass",
+  "patch": "Utage Demo Textures V1 - official SH transplants plus Utage-exclusive English",
+  "created_utc": "2026-08-31T23:36:17.837227+00:00",
+  "package": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_Demo_Textures_V1_ALL_SH_AND_EXCLUSIVES_ROOT_READY.zip",
+  "package_sha256": "87b6f2af57959a7883d50ac3451d3ced0a62da151c69e3d140060e4380bf9816",
+  "package_size": 4016385,
+  "backup": "E:\\Utage Patching New\\_codex_tenka_v6\\demo_mass_translation\\DEMO_V1_BACKUP_UTAGE_EXCLUSIVES_PRE_TRANSLATION.zip",
+  "backup_sha256": "46b9f0b6acec0aa27659b658e1a2e886f56de6945f5f3a8f9e00f32af91e7c69",
+  "payload_count": 85,
+  "official_sh_payloads": 73,
+  "utage_exclusive_payloads": 12,
+  "generated_english_exclusives": 11,
+  "already_english_exclusives_preserved": [
+    "cd040_000"
+  ],
+  "tiny_aliases_packaged": 0,
+  "tiny_aliases_verified_untouched": 237,
+  "live_files_changed_this_run": [
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd035_000.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd040_001.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd040_002.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd040_003.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd041_000.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd041_001.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd041_002.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd042_000.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd044_000.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd044_001.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd044_002.arc"
+  ],
+  "zip_validation": {
+    "entry_count": 85,
+    "bad_crc": null,
+    "payload_hashes_match": true
+  },
+  "runtime_test": "required",
+  "payloads": [
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd000_000.arc",
+      "asset_id": "cd000_000",
+      "category": "shared_exact",
+      "output_size": 44678,
+      "output_sha256": "affcb65b223122e82617b2c6f31d50003159946041df298385efe75d097242c8",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "affcb65b223122e82617b2c6f31d50003159946041df298385efe75d097242c8",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd001_000.arc",
+      "asset_id": "cd001_000",
+      "category": "shared_exact",
+      "output_size": 53870,
+      "output_sha256": "76b74a956ff9afffe14a69948d5a44d1af1b32d13f031e3c69e68ae8bc92b7a7",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "76b74a956ff9afffe14a69948d5a44d1af1b32d13f031e3c69e68ae8bc92b7a7",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd002_000.arc",
+      "asset_id": "cd002_000",
+      "category": "shared_exact",
+      "output_size": 44660,
+      "output_sha256": "685ff1785eff6f25530269b01f300c903d42050f7b8ba233c96fea156c81e693",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "685ff1785eff6f25530269b01f300c903d42050f7b8ba233c96fea156c81e693",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd002_001.arc",
+      "asset_id": "cd002_001",
+      "category": "shared_exact",
+      "output_size": 61691,
+      "output_sha256": "55ac276d077fa05efe34638c669466212070d0d49caf5c7a77d4b994ab94da75",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "55ac276d077fa05efe34638c669466212070d0d49caf5c7a77d4b994ab94da75",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd003_000.arc",
+      "asset_id": "cd003_000",
+      "category": "shared_exact",
+      "output_size": 44691,
+      "output_sha256": "ae95469ebffdc1c7ff8e5103a99f6da1aeab336f7605a8073f471a2047ec0a63",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "ae95469ebffdc1c7ff8e5103a99f6da1aeab336f7605a8073f471a2047ec0a63",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd003_001.arc",
+      "asset_id": "cd003_001",
+      "category": "shared_exact",
+      "output_size": 44636,
+      "output_sha256": "6622f781cdba25f693712f6534f7b37115e4c213cc2bc7cf9096fb6fac03c082",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "6622f781cdba25f693712f6534f7b37115e4c213cc2bc7cf9096fb6fac03c082",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd003_002.arc",
+      "asset_id": "cd003_002",
+      "category": "shared_exact",
+      "output_size": 44679,
+      "output_sha256": "c7a291d660e397d334a2d0d63e4ce50413dbd7ef0d3de8f44b486cb6a583617f",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "c7a291d660e397d334a2d0d63e4ce50413dbd7ef0d3de8f44b486cb6a583617f",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd003_003.arc",
+      "asset_id": "cd003_003",
+      "category": "shared_exact",
+      "output_size": 62257,
+      "output_sha256": "b260d4681a8cf5a6fd7ccace53b2abef19c0b07ed4dbcaf87e2647597211655e",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "b260d4681a8cf5a6fd7ccace53b2abef19c0b07ed4dbcaf87e2647597211655e",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd003_004.arc",
+      "asset_id": "cd003_004",
+      "category": "shared_exact",
+      "output_size": 44675,
+      "output_sha256": "bf597520346bde349e5e45a52917c75ef2d0cf0a14e52e5e75b115191600ac96",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "bf597520346bde349e5e45a52917c75ef2d0cf0a14e52e5e75b115191600ac96",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd003_005.arc",
+      "asset_id": "cd003_005",
+      "category": "shared_exact",
+      "output_size": 61713,
+      "output_sha256": "419eb2140122b0e0f60d7a68c7e2ab1ec59071d7aa1c6142fab1f99e7b0a8422",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "419eb2140122b0e0f60d7a68c7e2ab1ec59071d7aa1c6142fab1f99e7b0a8422",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd003_006.arc",
+      "asset_id": "cd003_006",
+      "category": "shared_exact",
+      "output_size": 68283,
+      "output_sha256": "6e5c8fbc9459066b1ca6e28a284e9e679356a8d0c213a245a746235a1a091921",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "6e5c8fbc9459066b1ca6e28a284e9e679356a8d0c213a245a746235a1a091921",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd004_000.arc",
+      "asset_id": "cd004_000",
+      "category": "shared_exact",
+      "output_size": 44706,
+      "output_sha256": "0dc41871abb7c0b0f97558ccfadaf60aaf1d2e57506d09a818507c49b8b8e7aa",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "0dc41871abb7c0b0f97558ccfadaf60aaf1d2e57506d09a818507c49b8b8e7aa",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd004_001.arc",
+      "asset_id": "cd004_001",
+      "category": "shared_exact",
+      "output_size": 44679,
+      "output_sha256": "94ca605f2304d6bc02a0b4e25a10afe5f9f91f66b7d62cd2227153ca85809604",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "94ca605f2304d6bc02a0b4e25a10afe5f9f91f66b7d62cd2227153ca85809604",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd004_002.arc",
+      "asset_id": "cd004_002",
+      "category": "shared_exact",
+      "output_size": 62168,
+      "output_sha256": "e37c473969bf772393dae254bdfeeb5f09014103608a7ed5f4562d96b461d9d0",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "e37c473969bf772393dae254bdfeeb5f09014103608a7ed5f4562d96b461d9d0",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd005_000.arc",
+      "asset_id": "cd005_000",
+      "category": "shared_exact",
+      "output_size": 44628,
+      "output_sha256": "a35e365c4fb55f6fe969899f17edf95a57c12eac91bf883de80514204e683ab2",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "a35e365c4fb55f6fe969899f17edf95a57c12eac91bf883de80514204e683ab2",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd005_001.arc",
+      "asset_id": "cd005_001",
+      "category": "shared_exact",
+      "output_size": 44638,
+      "output_sha256": "5ac614805a5ede6856ed2457d9f23ef05a3193d5f515b21a054877d21f4afc42",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "5ac614805a5ede6856ed2457d9f23ef05a3193d5f515b21a054877d21f4afc42",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd005_002.arc",
+      "asset_id": "cd005_002",
+      "category": "shared_exact",
+      "output_size": 61679,
+      "output_sha256": "e36adfc85518dfd76e112640ae1774bf94492f7fc5bf712e3991f915055cc8a5",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "e36adfc85518dfd76e112640ae1774bf94492f7fc5bf712e3991f915055cc8a5",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd006_000.arc",
+      "asset_id": "cd006_000",
+      "category": "shared_exact",
+      "output_size": 44647,
+      "output_sha256": "7aa257bba53d7a6f9f5fca5c6763f37fea0d109c44e6bb48a73e5b43cb43e329",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "7aa257bba53d7a6f9f5fca5c6763f37fea0d109c44e6bb48a73e5b43cb43e329",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd006_001.arc",
+      "asset_id": "cd006_001",
+      "category": "shared_exact",
+      "output_size": 44653,
+      "output_sha256": "81217c2681af0aff8a758b9ba8ca46c5e08bbad1ae64114c1cf2a5fd3a2f99c3",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "81217c2681af0aff8a758b9ba8ca46c5e08bbad1ae64114c1cf2a5fd3a2f99c3",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd006_002.arc",
+      "asset_id": "cd006_002",
+      "category": "shared_exact",
+      "output_size": 44657,
+      "output_sha256": "7855f223aefd2cb3d5cd3a12336e9d8d15619cd3f2b8576d3f13d32d923b2fc9",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "7855f223aefd2cb3d5cd3a12336e9d8d15619cd3f2b8576d3f13d32d923b2fc9",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd009_000.arc",
+      "asset_id": "cd009_000",
+      "category": "shared_exact",
+      "output_size": 44665,
+      "output_sha256": "d70cf11c630f38ced342b2c974ef702ac096331fc3e5864dd76ddd92d7c15c06",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "d70cf11c630f38ced342b2c974ef702ac096331fc3e5864dd76ddd92d7c15c06",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd010_000.arc",
+      "asset_id": "cd010_000",
+      "category": "shared_exact",
+      "output_size": 44651,
+      "output_sha256": "6615f15c52824cb2a7216d8ab3af9e0d2511685410a9bf3700fdc31b64c40688",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "6615f15c52824cb2a7216d8ab3af9e0d2511685410a9bf3700fdc31b64c40688",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd011_000.arc",
+      "asset_id": "cd011_000",
+      "category": "shared_exact",
+      "output_size": 44637,
+      "output_sha256": "2f0abc0957be003e1ac6b016e971f6ee40311b1b5722b8d4ad9edd8c883eda44",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "2f0abc0957be003e1ac6b016e971f6ee40311b1b5722b8d4ad9edd8c883eda44",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd011_001.arc",
+      "asset_id": "cd011_001",
+      "category": "shared_exact",
+      "output_size": 44662,
+      "output_sha256": "fc95948310101277ec01d410bc478445d09c5b69ceea030fa0488164a8b975b6",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "fc95948310101277ec01d410bc478445d09c5b69ceea030fa0488164a8b975b6",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd012_000.arc",
+      "asset_id": "cd012_000",
+      "category": "shared_exact",
+      "output_size": 58109,
+      "output_sha256": "4e3589122a49258e8acff00faa7422b13b4e9ddca43de4a92c2838fcd3397eed",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "4e3589122a49258e8acff00faa7422b13b4e9ddca43de4a92c2838fcd3397eed",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd012_001.arc",
+      "asset_id": "cd012_001",
+      "category": "shared_exact",
+      "output_size": 58109,
+      "output_sha256": "4284ec180e24bea0794f7cfdda60a916653b6fc7f388ac9c0c8f8a68ccc925b9",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "4284ec180e24bea0794f7cfdda60a916653b6fc7f388ac9c0c8f8a68ccc925b9",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd012_002.arc",
+      "asset_id": "cd012_002",
+      "category": "shared_exact",
+      "output_size": 58109,
+      "output_sha256": "d054a12254cfa42478987d240daeeb80f081840a01f3724776dc2d6a4b0d0c10",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "d054a12254cfa42478987d240daeeb80f081840a01f3724776dc2d6a4b0d0c10",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd013_000.arc",
+      "asset_id": "cd013_000",
+      "category": "shared_exact",
+      "output_size": 44698,
+      "output_sha256": "f2c9e808bae50fe84c596b525b7861dd5e5acda8130693d8bdf8c08b8504abe1",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "f2c9e808bae50fe84c596b525b7861dd5e5acda8130693d8bdf8c08b8504abe1",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd013_001.arc",
+      "asset_id": "cd013_001",
+      "category": "shared_exact",
+      "output_size": 44688,
+      "output_sha256": "370f3a63876e683338d9d436047691870fa014f2daf6a2e72dee53900e9595d1",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "370f3a63876e683338d9d436047691870fa014f2daf6a2e72dee53900e9595d1",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd013_002.arc",
+      "asset_id": "cd013_002",
+      "category": "shared_exact",
+      "output_size": 44596,
+      "output_sha256": "6123b8fd5aee9706554aa2fb2c4d4a21cba2aa4f69cca4f1872dec8f21433fec",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "6123b8fd5aee9706554aa2fb2c4d4a21cba2aa4f69cca4f1872dec8f21433fec",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd013_003.arc",
+      "asset_id": "cd013_003",
+      "category": "shared_exact",
+      "output_size": 44716,
+      "output_sha256": "6c4f342a810210a5718e52ca1828dd05ad0ce881acb6b9abfda79c16bbf49fe6",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "6c4f342a810210a5718e52ca1828dd05ad0ce881acb6b9abfda79c16bbf49fe6",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd013_004.arc",
+      "asset_id": "cd013_004",
+      "category": "shared_exact",
+      "output_size": 44650,
+      "output_sha256": "5700e50f9b728c438e8775455426f6f573bb61a8ffe9b4ab31cd987b9e6f552b",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "5700e50f9b728c438e8775455426f6f573bb61a8ffe9b4ab31cd987b9e6f552b",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd016_000.arc",
+      "asset_id": "cd016_000",
+      "category": "shared_exact",
+      "output_size": 50787,
+      "output_sha256": "64f9c3fb9f9e1d90e7cd15b4810e722181c6d92abd6fdb01e3ab387ddab044b8",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "64f9c3fb9f9e1d90e7cd15b4810e722181c6d92abd6fdb01e3ab387ddab044b8",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd016_001.arc",
+      "asset_id": "cd016_001",
+      "category": "shared_exact",
+      "output_size": 48637,
+      "output_sha256": "3d8c844016551f847d9781db0b4cb0ec11e76eba085ba7beadbb5b5fc813af83",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "3d8c844016551f847d9781db0b4cb0ec11e76eba085ba7beadbb5b5fc813af83",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd016_002.arc",
+      "asset_id": "cd016_002",
+      "category": "shared_exact",
+      "output_size": 44678,
+      "output_sha256": "f0b0a4cf58ea4f58bd55657e863b939c1410c3b5d07b72718c81d6cf864ee427",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "f0b0a4cf58ea4f58bd55657e863b939c1410c3b5d07b72718c81d6cf864ee427",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd016_003.arc",
+      "asset_id": "cd016_003",
+      "category": "shared_exact",
+      "output_size": 44678,
+      "output_sha256": "2b53c41adf3691e129f16910afbe91956ef5963fe838524b5622cd2a91719d9e",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "2b53c41adf3691e129f16910afbe91956ef5963fe838524b5622cd2a91719d9e",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd017_000.arc",
+      "asset_id": "cd017_000",
+      "category": "shared_exact",
+      "output_size": 64357,
+      "output_sha256": "05b3744057f3a50b8108fdcc80db1b9292a6770fd88a6debfbd80fe8e006e6f3",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "05b3744057f3a50b8108fdcc80db1b9292a6770fd88a6debfbd80fe8e006e6f3",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd018_000.arc",
+      "asset_id": "cd018_000",
+      "category": "shared_exact",
+      "output_size": 44662,
+      "output_sha256": "cac6331c5ae5b87110c3e22cdc1e0d2941ecf88f7675f7abbd75d81386eb7bbe",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "cac6331c5ae5b87110c3e22cdc1e0d2941ecf88f7675f7abbd75d81386eb7bbe",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd018_001.arc",
+      "asset_id": "cd018_001",
+      "category": "shared_exact",
+      "output_size": 48580,
+      "output_sha256": "530db2a0ff12daf3f7502d8a279c27f9f75e98ff601cd6bca220eaddaee6e5f2",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "530db2a0ff12daf3f7502d8a279c27f9f75e98ff601cd6bca220eaddaee6e5f2",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd019_000.arc",
+      "asset_id": "cd019_000",
+      "category": "shared_exact",
+      "output_size": 49840,
+      "output_sha256": "350e59233f554dfc9bd7f2dcad05b300533f89cb0d9196040d04b91ebd2c7dd4",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "350e59233f554dfc9bd7f2dcad05b300533f89cb0d9196040d04b91ebd2c7dd4",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd019_001.arc",
+      "asset_id": "cd019_001",
+      "category": "shared_exact",
+      "output_size": 51018,
+      "output_sha256": "403c2bf339082b40f3b268815aacb663ad86d362a9ec28b70eaa2db6f1c8668d",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "403c2bf339082b40f3b268815aacb663ad86d362a9ec28b70eaa2db6f1c8668d",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd019_002.arc",
+      "asset_id": "cd019_002",
+      "category": "shared_exact",
+      "output_size": 51806,
+      "output_sha256": "0b28818ec2c0fc2baf137a6b73c2e34e67a4fcbc65cf3fa43b734ca9c518c450",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "0b28818ec2c0fc2baf137a6b73c2e34e67a4fcbc65cf3fa43b734ca9c518c450",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd020_000.arc",
+      "asset_id": "cd020_000",
+      "category": "shared_exact",
+      "output_size": 59244,
+      "output_sha256": "bf3eee8daad7e711d7952501fceae56f9656b2e94588efd8bf0df59c6c20dcef",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "bf3eee8daad7e711d7952501fceae56f9656b2e94588efd8bf0df59c6c20dcef",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd020_001.arc",
+      "asset_id": "cd020_001",
+      "category": "shared_exact",
+      "output_size": 58857,
+      "output_sha256": "9f03553a4663cad964357563dff33e8d7e6f83e8a9efc226a0bb830d9ecf57c0",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "9f03553a4663cad964357563dff33e8d7e6f83e8a9efc226a0bb830d9ecf57c0",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd021_000.arc",
+      "asset_id": "cd021_000",
+      "category": "shared_exact",
+      "output_size": 48628,
+      "output_sha256": "c1018735ed74122e657942835fd07fa3b198e5b006e44e117c4e244b8886b10d",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "c1018735ed74122e657942835fd07fa3b198e5b006e44e117c4e244b8886b10d",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd021_001.arc",
+      "asset_id": "cd021_001",
+      "category": "shared_exact",
+      "output_size": 48590,
+      "output_sha256": "9c38e4c1d410bfba43b99faac0ad15c6b03a45ba69c99cbbab7d1949c908b01e",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "9c38e4c1d410bfba43b99faac0ad15c6b03a45ba69c99cbbab7d1949c908b01e",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd021_002.arc",
+      "asset_id": "cd021_002",
+      "category": "shared_exact",
+      "output_size": 48586,
+      "output_sha256": "3e7e59d5fe8e4ba07f87c1273bfe6e922d403428dac6bf76d2d3f99833845ab0",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "3e7e59d5fe8e4ba07f87c1273bfe6e922d403428dac6bf76d2d3f99833845ab0",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd021_003.arc",
+      "asset_id": "cd021_003",
+      "category": "shared_exact",
+      "output_size": 48282,
+      "output_sha256": "e419cabf687475f122ca2b70c95134b8e7356d48f1498b0b27f1b78f53548710",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "e419cabf687475f122ca2b70c95134b8e7356d48f1498b0b27f1b78f53548710",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd021_004.arc",
+      "asset_id": "cd021_004",
+      "category": "shared_exact",
+      "output_size": 48254,
+      "output_sha256": "e29ccedf1c3df3b5b12c02a634dbb867a023bcd1c13c0952f95392ba36026506",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "e29ccedf1c3df3b5b12c02a634dbb867a023bcd1c13c0952f95392ba36026506",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd021_005.arc",
+      "asset_id": "cd021_005",
+      "category": "shared_exact",
+      "output_size": 48269,
+      "output_sha256": "c851fbbde67a431fad35546239f1d14659da4c733f6b414a536320ea6c74635c",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "c851fbbde67a431fad35546239f1d14659da4c733f6b414a536320ea6c74635c",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd023_000.arc",
+      "asset_id": "cd023_000",
+      "category": "shared_exact",
+      "output_size": 52074,
+      "output_sha256": "dbc18b8d348b7032dba72f7875996a7dfeec7f84dd6025c4f94ba9f1cb59501a",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "dbc18b8d348b7032dba72f7875996a7dfeec7f84dd6025c4f94ba9f1cb59501a",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd023_001.arc",
+      "asset_id": "cd023_001",
+      "category": "shared_exact",
+      "output_size": 52013,
+      "output_sha256": "ca9e3ab7b915288a71d369b0ccb1f9ef1d30b870f697694aa29b54903323bfa1",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "ca9e3ab7b915288a71d369b0ccb1f9ef1d30b870f697694aa29b54903323bfa1",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd024_000.arc",
+      "asset_id": "cd024_000",
+      "category": "shared_exact",
+      "output_size": 48002,
+      "output_sha256": "5a7ba953b02320f9dba94f1c5a9f59f4b9d863d325a8a84a9e9cf7f96ff57381",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "5a7ba953b02320f9dba94f1c5a9f59f4b9d863d325a8a84a9e9cf7f96ff57381",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd024_001.arc",
+      "asset_id": "cd024_001",
+      "category": "shared_exact",
+      "output_size": 49229,
+      "output_sha256": "edfee37e9a7e92c8b14847d1e6ed6021eba3534c5f4f0d6425cf88bc2908ded5",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "edfee37e9a7e92c8b14847d1e6ed6021eba3534c5f4f0d6425cf88bc2908ded5",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd025_000.arc",
+      "asset_id": "cd025_000",
+      "category": "shared_exact",
+      "output_size": 50189,
+      "output_sha256": "00e41176178280b18ef1b3f491be58de6718a55b64b1506113e478e923d3c9b3",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "00e41176178280b18ef1b3f491be58de6718a55b64b1506113e478e923d3c9b3",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd026_000.arc",
+      "asset_id": "cd026_000",
+      "category": "shared_exact",
+      "output_size": 47989,
+      "output_sha256": "c33ab431e596d5ed5c17ceb9be7349ff5d44f675d2218a82881cdf23d6849ab0",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "c33ab431e596d5ed5c17ceb9be7349ff5d44f675d2218a82881cdf23d6849ab0",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd026_001.arc",
+      "asset_id": "cd026_001",
+      "category": "shared_exact",
+      "output_size": 49184,
+      "output_sha256": "f445b9c4f5763ca995d2b92bc08187aba2b4250eeae00d0d4d90d2e602574a8f",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "f445b9c4f5763ca995d2b92bc08187aba2b4250eeae00d0d4d90d2e602574a8f",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd027_000.arc",
+      "asset_id": "cd027_000",
+      "category": "shared_exact",
+      "output_size": 48965,
+      "output_sha256": "004f8326261a8d0af9c3901fb3f606cd3215d85b14ad360f98ddb9a95edaed5d",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "004f8326261a8d0af9c3901fb3f606cd3215d85b14ad360f98ddb9a95edaed5d",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd027_001.arc",
+      "asset_id": "cd027_001",
+      "category": "shared_exact",
+      "output_size": 46450,
+      "output_sha256": "4d0c0fab2cc4de71408b51131b921ceacf494afc887992f6f68d5e92c589b1bc",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "4d0c0fab2cc4de71408b51131b921ceacf494afc887992f6f68d5e92c589b1bc",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd029_000.arc",
+      "asset_id": "cd029_000",
+      "category": "shared_exact",
+      "output_size": 44676,
+      "output_sha256": "058109cab77c6a09d28776656f43d5e18766672b64ff35adbe49fcb7f184fce3",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "058109cab77c6a09d28776656f43d5e18766672b64ff35adbe49fcb7f184fce3",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd029_001.arc",
+      "asset_id": "cd029_001",
+      "category": "shared_exact",
+      "output_size": 44662,
+      "output_sha256": "cd3f7f7e2af103e37577ce181a0610d92e9d637b430349a904c3e813c795d7a1",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "cd3f7f7e2af103e37577ce181a0610d92e9d637b430349a904c3e813c795d7a1",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd029_002.arc",
+      "asset_id": "cd029_002",
+      "category": "shared_exact",
+      "output_size": 44675,
+      "output_sha256": "837ed51f4cfbbce4adff462fab4dc142dbad3cfc086005b1751159f08bbddd01",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "837ed51f4cfbbce4adff462fab4dc142dbad3cfc086005b1751159f08bbddd01",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd031_000.arc",
+      "asset_id": "cd031_000",
+      "category": "shared_exact",
+      "output_size": 44678,
+      "output_sha256": "89ebd129c2c21e815dcd4950044f9da980a1cfe4497cad9fd564fc6bd59a6c51",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "89ebd129c2c21e815dcd4950044f9da980a1cfe4497cad9fd564fc6bd59a6c51",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd032_000.arc",
+      "asset_id": "cd032_000",
+      "category": "shared_exact",
+      "output_size": 58931,
+      "output_sha256": "788f1f037ceed17782f03ad1a924a13895017b120659aa16f819c23a5ce29940",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "788f1f037ceed17782f03ad1a924a13895017b120659aa16f819c23a5ce29940",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd032_001.arc",
+      "asset_id": "cd032_001",
+      "category": "shared_exact",
+      "output_size": 44662,
+      "output_sha256": "13c86b420cffec4cb7d7c38e145374be22afb52eaf955229c625510e68ddc5e2",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "13c86b420cffec4cb7d7c38e145374be22afb52eaf955229c625510e68ddc5e2",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd032_002.arc",
+      "asset_id": "cd032_002",
+      "category": "shared_exact",
+      "output_size": 44662,
+      "output_sha256": "8f0c7966404e736f8990ee1c9a4f482d9acd4aca5b425973342970d889d11c2d",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "8f0c7966404e736f8990ee1c9a4f482d9acd4aca5b425973342970d889d11c2d",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd033_000.arc",
+      "asset_id": "cd033_000",
+      "category": "shared_exact",
+      "output_size": 44662,
+      "output_sha256": "1de4142ca5e155f26374bdc5775ad79d6ed87ea8500667f45604584fff60875e",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "1de4142ca5e155f26374bdc5775ad79d6ed87ea8500667f45604584fff60875e",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd034_000.arc",
+      "asset_id": "cd034_000",
+      "category": "shared_exact",
+      "output_size": 44662,
+      "output_sha256": "6c102d361288c50af8cd439b0d39c98b858eaf3b921b5caf6cca90aac73c3e42",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "6c102d361288c50af8cd439b0d39c98b858eaf3b921b5caf6cca90aac73c3e42",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd035_000.arc",
+      "asset_id": "cd035_000",
+      "category": "utage_exclusive",
+      "output_size": 31362,
+      "output_sha256": "abc5663d564ef53b7e2194ba00090d9787e158bc4fb5a858e3e9139c9475197b",
+      "resource_name": "id\\texture\\jpn\\cd\\cd035_000_ID_HQ",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "source_arc_sha256": "1bf064dd720b5ab5436b63a932a0e049a8a790ecf64ab38a0ea9bb003037b38a",
+      "source_xet_sha256": "2598a758d99069741ee8cb39e77f25269f812905460a9842067a8497fa4fd877",
+      "output_arc_sha256": "abc5663d564ef53b7e2194ba00090d9787e158bc4fb5a858e3e9139c9475197b",
+      "output_xet_sha256": "9b9ad7ea2acf0027b29287369bda949251605ff80fb8ccfb3c0743d7ffd372b9",
+      "xet_header_preserved": true,
+      "xet_size_preserved": true,
+      "entry_metadata_preserved": true,
+      "changed_arc_entries": [
+        0
+      ],
+      "mode": "utage-exclusive-generated-english-xet"
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd036_000.arc",
+      "asset_id": "cd036_000",
+      "category": "shared_exact",
+      "output_size": 48613,
+      "output_sha256": "ebd18a2f21719a8e2c0f0b012b9f7c5acc774ecde574b13b974a9e39802abff7",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "ebd18a2f21719a8e2c0f0b012b9f7c5acc774ecde574b13b974a9e39802abff7",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd037_000.arc",
+      "asset_id": "cd037_000",
+      "category": "shared_exact",
+      "output_size": 44636,
+      "output_sha256": "9102389d322d600affd05826ec0e7f6fd7c621b53cbad0849cca574c2a014765",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "9102389d322d600affd05826ec0e7f6fd7c621b53cbad0849cca574c2a014765",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd038_000.arc",
+      "asset_id": "cd038_000",
+      "category": "shared_exact",
+      "output_size": 44679,
+      "output_sha256": "a7acc8fbf7a11f602b8d7d9cd439ea9cf5eeb64a2977115a9dd9ef5cd62d1748",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "a7acc8fbf7a11f602b8d7d9cd439ea9cf5eeb64a2977115a9dd9ef5cd62d1748",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd038_001.arc",
+      "asset_id": "cd038_001",
+      "category": "shared_exact",
+      "output_size": 44691,
+      "output_sha256": "ce4d519880a5ce9cae95ada63a5d4a83bb3cfe318efb006ec9850d71e3fd1294",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "ce4d519880a5ce9cae95ada63a5d4a83bb3cfe318efb006ec9850d71e3fd1294",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd038_002.arc",
+      "asset_id": "cd038_002",
+      "category": "shared_exact",
+      "output_size": 56088,
+      "output_sha256": "f9f46b7ba322bf303e10b454efa8341a711533e70f774db0c2c92d34cd82adb5",
+      "mode": "official-sh-byte-exact",
+      "official_sh_sha256": "f9f46b7ba322bf303e10b454efa8341a711533e70f774db0c2c92d34cd82adb5",
+      "live_already_transplanted": true
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd040_000.arc",
+      "asset_id": "cd040_000",
+      "category": "utage_exclusive",
+      "output_size": 94271,
+      "output_sha256": "e3f049b1118c417b512488537baea70bbf49c277b681f056860a88cb724e5552",
+      "mode": "utage-exclusive-already-english-preserved",
+      "source_sha256": "e3f049b1118c417b512488537baea70bbf49c277b681f056860a88cb724e5552"
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd040_001.arc",
+      "asset_id": "cd040_001",
+      "category": "utage_exclusive",
+      "output_size": 28084,
+      "output_sha256": "c5046bd7f2a0f21d0ffef413fcc323ce4118c18ee8e63d7ea8572e07633a9561",
+      "resource_name": "id\\texture\\jpn\\cd\\cd040_001_ID_HQ",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "source_arc_sha256": "52fea338932c8bdf5d068ccbe6c10ca3a4c6dd6c58b52195ee0ff29f73e71a94",
+      "source_xet_sha256": "892b6e04617599584436b615a3c05ca5da1ce9c3bfce2feceaec71d3b2ff1193",
+      "output_arc_sha256": "c5046bd7f2a0f21d0ffef413fcc323ce4118c18ee8e63d7ea8572e07633a9561",
+      "output_xet_sha256": "9344f73f79c9da0c6e73130c8e1a10661f4976411c36fe45ab9b7e904e4fa338",
+      "xet_header_preserved": true,
+      "xet_size_preserved": true,
+      "entry_metadata_preserved": true,
+      "changed_arc_entries": [
+        0
+      ],
+      "mode": "utage-exclusive-generated-english-xet"
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd040_002.arc",
+      "asset_id": "cd040_002",
+      "category": "utage_exclusive",
+      "output_size": 19533,
+      "output_sha256": "19989a468b503a08858180fa48f378e83abd0459d00874723716530dc4200f99",
+      "resource_name": "id\\texture\\jpn\\cd\\cd040_002_ID_HQ",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "source_arc_sha256": "7f17c2e53edbaef3861b98217303d891ecfdf1e2b53a6617f3b2d7d01164da0b",
+      "source_xet_sha256": "025a94a872b50c757ad012dd7b1b19b27fd2fed89fc010cc1c34718702f1c333",
+      "output_arc_sha256": "19989a468b503a08858180fa48f378e83abd0459d00874723716530dc4200f99",
+      "output_xet_sha256": "ca38f4c0ce6f1b86488089160dc7be2d53472fcf6741f21d7bd21837f580d386",
+      "xet_header_preserved": true,
+      "xet_size_preserved": true,
+      "entry_metadata_preserved": true,
+      "changed_arc_entries": [
+        0
+      ],
+      "mode": "utage-exclusive-generated-english-xet"
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd040_003.arc",
+      "asset_id": "cd040_003",
+      "category": "utage_exclusive",
+      "output_size": 31461,
+      "output_sha256": "a61f1d4faf1688e0bc25a6d1ee93c560126b67bec1c2e031b5a87158f37fa074",
+      "resource_name": "id\\texture\\jpn\\cd\\cd040_003_ID_HQ",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "source_arc_sha256": "3f2a0818a7e04fbc3518ef9328a3ad4bc3336ff212be4b5856529e082942aff1",
+      "source_xet_sha256": "0e665dd9f8ea3542ef98b90235a4a7fd395a9d331d075a300039e53bf4433b19",
+      "output_arc_sha256": "a61f1d4faf1688e0bc25a6d1ee93c560126b67bec1c2e031b5a87158f37fa074",
+      "output_xet_sha256": "8ad2e217e99d95e5bac015c60ffee485ebfeec71220a1fda1b5b32429e90a545",
+      "xet_header_preserved": true,
+      "xet_size_preserved": true,
+      "entry_metadata_preserved": true,
+      "changed_arc_entries": [
+        0
+      ],
+      "mode": "utage-exclusive-generated-english-xet"
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd041_000.arc",
+      "asset_id": "cd041_000",
+      "category": "utage_exclusive",
+      "output_size": 30845,
+      "output_sha256": "3f8a99052475290b7b7026455318b74e9d6f9e3195ba3893970840828944abbb",
+      "resource_name": "id\\texture\\jpn\\cd\\cd041_000_ID_HQ",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "source_arc_sha256": "d2186f8f73fe69a6e2bc02255720f8bbf7a62da76d8c8b2719a59151fb26d57c",
+      "source_xet_sha256": "3064989570e21f87cddcd2d3a7acce9df30942a34416acc4993a91deb1a1ee43",
+      "output_arc_sha256": "3f8a99052475290b7b7026455318b74e9d6f9e3195ba3893970840828944abbb",
+      "output_xet_sha256": "36a37ad07d98890aa8177353d0dc74e9e41e1ba8c7b20246320ca7b45182eee3",
+      "xet_header_preserved": true,
+      "xet_size_preserved": true,
+      "entry_metadata_preserved": true,
+      "changed_arc_entries": [
+        0
+      ],
+      "mode": "utage-exclusive-generated-english-xet"
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd041_001.arc",
+      "asset_id": "cd041_001",
+      "category": "utage_exclusive",
+      "output_size": 33104,
+      "output_sha256": "a435054eb36aab464c89c3c0ae107c911f079272f60fda7e96c4478784828270",
+      "resource_name": "id\\texture\\jpn\\cd\\cd041_001_ID_HQ",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "source_arc_sha256": "f2cd17c7694397b0bb56fa142dff0a006198f01ec75c348895287ae0ae321ec3",
+      "source_xet_sha256": "6baf35195de1419322d4f203e1ea6bd8c8a5bc92b379ca623d96a6494559f8ad",
+      "output_arc_sha256": "a435054eb36aab464c89c3c0ae107c911f079272f60fda7e96c4478784828270",
+      "output_xet_sha256": "4e7d9be4e0ab03b61c3f4b1be31d36e8258cc85cf4caf09aa37c79df040febd6",
+      "xet_header_preserved": true,
+      "xet_size_preserved": true,
+      "entry_metadata_preserved": true,
+      "changed_arc_entries": [
+        0
+      ],
+      "mode": "utage-exclusive-generated-english-xet"
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd041_002.arc",
+      "asset_id": "cd041_002",
+      "category": "utage_exclusive",
+      "output_size": 34929,
+      "output_sha256": "8437fec36aa9091d0887aa9207dfeeb5c0a0bd3530edc336ccf1048bf3cb1e09",
+      "resource_name": "id\\texture\\jpn\\cd\\cd041_002_ID_HQ",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "source_arc_sha256": "ea418450db6d445db737e3be8ed11e153c721eb3079bfba755424d5ab0bee7cd",
+      "source_xet_sha256": "36796de9f1426a849dcd22b4346540eb613504f4167de37d7d0b83641ef2c785",
+      "output_arc_sha256": "8437fec36aa9091d0887aa9207dfeeb5c0a0bd3530edc336ccf1048bf3cb1e09",
+      "output_xet_sha256": "ec365ef0b1635d3beb788227ea8c7459e0ed8f2f42d247362a61ea6f4fa3c7f0",
+      "xet_header_preserved": true,
+      "xet_size_preserved": true,
+      "entry_metadata_preserved": true,
+      "changed_arc_entries": [
+        0
+      ],
+      "mode": "utage-exclusive-generated-english-xet"
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd042_000.arc",
+      "asset_id": "cd042_000",
+      "category": "utage_exclusive",
+      "output_size": 32708,
+      "output_sha256": "967091823c99cb76e7ad2b94eb36f7537377f8e0e4a72e65a55706c701324fe7",
+      "resource_name": "id\\texture\\jpn\\cd\\cd042_000_ID_HQ",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "source_arc_sha256": "eb38cb3e944bb8a1a9758c972fdabe543888394dd980076384a31c8323f358f9",
+      "source_xet_sha256": "c0139aa634f4b9a3fc15993caa78b8f685b7485ea989621d16ddc56393cb4ff9",
+      "output_arc_sha256": "967091823c99cb76e7ad2b94eb36f7537377f8e0e4a72e65a55706c701324fe7",
+      "output_xet_sha256": "f52123d4da3e0a4b56f643504029733f1cb92d3303797a6de397a48c87f62c93",
+      "xet_header_preserved": true,
+      "xet_size_preserved": true,
+      "entry_metadata_preserved": true,
+      "changed_arc_entries": [
+        0
+      ],
+      "mode": "utage-exclusive-generated-english-xet"
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd044_000.arc",
+      "asset_id": "cd044_000",
+      "category": "utage_exclusive",
+      "output_size": 39208,
+      "output_sha256": "85befb176f8df411c80376c6051cfdec7f4cd91c3c66df633e5455b89a1b00ec",
+      "resource_name": "id\\texture\\jpn\\cd\\cd044_000_ID_HQ",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "source_arc_sha256": "5fc1aa41d86bf8f87beb827a9a3d4250a0b3f7048ebc65956b342775cee59f29",
+      "source_xet_sha256": "388ba8e5c3e7f9a46d2ef175ed2eba8558351a04e4f3a20e1483606d8b2a2b38",
+      "output_arc_sha256": "85befb176f8df411c80376c6051cfdec7f4cd91c3c66df633e5455b89a1b00ec",
+      "output_xet_sha256": "b812c9c053d1e715944afe792338f2e2af9a379a3da5c025a0201d1c11b1a64e",
+      "xet_header_preserved": true,
+      "xet_size_preserved": true,
+      "entry_metadata_preserved": true,
+      "changed_arc_entries": [
+        0
+      ],
+      "mode": "utage-exclusive-generated-english-xet"
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd044_001.arc",
+      "asset_id": "cd044_001",
+      "category": "utage_exclusive",
+      "output_size": 39112,
+      "output_sha256": "3077e9addf8bf2754ec47065e277f51e2a3590420bb8781d3ccb72ac31c857af",
+      "resource_name": "id\\texture\\jpn\\cd\\cd044_001_ID_HQ",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "source_arc_sha256": "785467fe117973c09a8d0a1819147f80aa86f505cd11176e5251d32e24b98933",
+      "source_xet_sha256": "2e85df35a2c5f3cd402a1271e3c078a1e31e44f89dc2de120f7651365d1abe5a",
+      "output_arc_sha256": "3077e9addf8bf2754ec47065e277f51e2a3590420bb8781d3ccb72ac31c857af",
+      "output_xet_sha256": "63ff1e04d4381c380707da4c9eaeec0c80d20b5ffd30b1305a5e49e1607c0681",
+      "xet_header_preserved": true,
+      "xet_size_preserved": true,
+      "entry_metadata_preserved": true,
+      "changed_arc_entries": [
+        0
+      ],
+      "mode": "utage-exclusive-generated-english-xet"
+    },
+    {
+      "relative": "PS3_GAME/USRDIR/nativePS3/rom/eng/demo/cd/cd044_002.arc",
+      "asset_id": "cd044_002",
+      "category": "utage_exclusive",
+      "output_size": 32158,
+      "output_sha256": "279e4998b329f139a3ea7d2103e7bb2a000b16722e3334e0f66f73698626c2ce",
+      "resource_name": "id\\texture\\jpn\\cd\\cd044_002_ID_HQ",
+      "xet_info": {
+        "width": 512,
+        "height": 512,
+        "texture_offset": 20,
+        "format_code": 42,
+        "fourcc": "DXT5",
+        "block_size": 16,
+        "payload_size": 262144
+      },
+      "source_arc_sha256": "4888aa254c0d56aebf1e1f6a755cb21d3cb86fe411e7fb75e2ff433297a525f8",
+      "source_xet_sha256": "c4b84f642df13a0a5f994f90c0b407528a4c86572ab61f5ad647352906db5cab",
+      "output_arc_sha256": "279e4998b329f139a3ea7d2103e7bb2a000b16722e3334e0f66f73698626c2ce",
+      "output_xet_sha256": "1869ac5ac408d08d220fc6bfa267460f54e6d0bc74a1e8a39eb7932ccad16828",
+      "xet_header_preserved": true,
+      "xet_size_preserved": true,
+      "entry_metadata_preserved": true,
+      "changed_arc_entries": [
+        0
+      ],
+      "mode": "utage-exclusive-generated-english-xet"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "models": {
+    "qwen2.5vl:7b": {
+      "role": "texture_review",
+      "status": "ready",
+      "seconds": 18.89
+    },
+    "gemma3:4b": {
+      "role": "texture_review_crosscheck",
+      "status": "ready",
+      "seconds": 7.595
+    },
+    "deepseek-r1:7b": {
+      "role": "reasoning",
+      "status": "ready",
+      "seconds": 20.631
+    },
+    "qwen2.5-coder:7b": {
+      "role": "coding",
+      "status": "ready",
+      "seconds": 15.869
+    },
+    "qwen2.5:3b": {
+      "role": "fast_text",
+      "status": "ready",
+      "seconds": 7.739
+    }
+  },
+  "routing": {
+    "texture_review": "qwen2.5vl:7b",
+    "texture_review_crosscheck": "gemma3:4b",
+    "reasoning": "deepseek-r1:7b",
+    "coding": "qwen2.5-coder:7b",
+    "fast_text": "qwen2.5:3b"
+  }
+}

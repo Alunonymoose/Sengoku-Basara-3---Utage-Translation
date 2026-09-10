@@ -1,0 +1,9968 @@
+[
+  {
+    "index": 0,
+    "name": "SysRoot",
+    "texture": "",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": -1,
+    "size": [
+      0,
+      0
+    ],
+    "id": 0,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      0,
+      0,
+      32,
+      32
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 1,
+    "name": "null_0",
+    "texture": "",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 0,
+    "size": [
+      0,
+      0
+    ],
+    "id": 60,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 2,
+    "name": "null_0_0",
+    "texture": "",
+    "position": [
+      -247.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      0,
+      0
+    ],
+    "id": 302,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 3,
+    "name": "null_0_0_0",
+    "texture": "",
+    "position": [
+      246.0,
+      2.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      0,
+      0
+    ],
+    "id": 303,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 4,
+    "name": "null_0_0_0_0",
+    "texture": "",
+    "position": [
+      62.0,
+      260.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 3,
+    "size": [
+      0,
+      0
+    ],
+    "id": 61,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 5,
+    "name": "null_0_0_0_0_0",
+    "texture": "",
+    "position": [
+      0.0,
+      -114.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      0,
+      0
+    ],
+    "id": 74,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 6,
+    "name": "Q_name",
+    "texture": "id\\dummy_BM",
+    "position": [
+      25.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 5,
+    "size": [
+      32,
+      256
+    ],
+    "id": 89,
+    "type": 3,
+    "material": 15,
+    "geometry": [
+      0,
+      -16,
+      180,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      180,
+      32
+    ]
+  },
+  {
+    "index": 7,
+    "name": "Q_K",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 5,
+    "size": [
+      512,
+      256
+    ],
+    "id": 144,
+    "type": 2,
+    "material": 16,
+    "geometry": [
+      0,
+      -24,
+      232,
+      24
+    ],
+    "uv": [
+      0,
+      0,
+      232,
+      48
+    ]
+  },
+  {
+    "index": 8,
+    "name": "New",
+    "texture": "id\\texture\\jpn\\common\\common_018_ID_HQ",
+    "position": [
+      -6.0,
+      -23.0
+    ],
+    "scale": [
+      0.699999988079071,
+      0.699999988079071
+    ],
+    "parent": 5,
+    "size": [
+      128,
+      64
+    ],
+    "id": 157,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      0,
+      0,
+      64,
+      20
+    ],
+    "uv": [
+      0,
+      0,
+      64,
+      20
+    ]
+  },
+  {
+    "index": 9,
+    "name": "Ctn_icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      228.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 5,
+    "size": [
+      256,
+      128
+    ],
+    "id": 82,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 10,
+    "name": "Ctn_icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 9,
+    "size": [
+      32,
+      512
+    ],
+    "id": 18,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      0,
+      0,
+      72,
+      72
+    ]
+  },
+  {
+    "index": 11,
+    "name": "Ctn_icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      2.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 9,
+    "size": [
+      256,
+      128
+    ],
+    "id": 21,
+    "type": 2,
+    "material": 16,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 12,
+    "name": "Tas_icon",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      13.0,
+      2.0
+    ],
+    "scale": [
+      0.949999988079071,
+      0.949999988079071
+    ],
+    "parent": 5,
+    "size": [
+      512,
+      256
+    ],
+    "id": 12,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -20,
+      -26,
+      20,
+      26
+    ],
+    "uv": [
+      148,
+      128,
+      188,
+      180
+    ]
+  },
+  {
+    "index": 13,
+    "name": "null_0_0_0_0_1",
+    "texture": "",
+    "position": [
+      0.0,
+      -70.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      0,
+      0
+    ],
+    "id": 75,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 14,
+    "name": "Q_name",
+    "texture": "id\\dummy_BM",
+    "position": [
+      25.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 13,
+    "size": [
+      32,
+      256
+    ],
+    "id": 90,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      0,
+      -16,
+      180,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      180,
+      32
+    ]
+  },
+  {
+    "index": 15,
+    "name": "Q_K",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 13,
+    "size": [
+      512,
+      256
+    ],
+    "id": 145,
+    "type": 2,
+    "material": 16,
+    "geometry": [
+      0,
+      -24,
+      232,
+      24
+    ],
+    "uv": [
+      0,
+      0,
+      232,
+      48
+    ]
+  },
+  {
+    "index": 16,
+    "name": "New",
+    "texture": "id\\texture\\jpn\\common\\common_018_ID_HQ",
+    "position": [
+      -6.0,
+      -23.0
+    ],
+    "scale": [
+      0.699999988079071,
+      0.699999988079071
+    ],
+    "parent": 13,
+    "size": [
+      128,
+      64
+    ],
+    "id": 158,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      0,
+      0,
+      64,
+      20
+    ],
+    "uv": [
+      0,
+      0,
+      64,
+      20
+    ]
+  },
+  {
+    "index": 17,
+    "name": "Ctn_icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      228.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 13,
+    "size": [
+      256,
+      128
+    ],
+    "id": 122,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 18,
+    "name": "Ctn_icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 17,
+    "size": [
+      32,
+      512
+    ],
+    "id": 20,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      72,
+      0,
+      144,
+      72
+    ]
+  },
+  {
+    "index": 19,
+    "name": "Ctn_icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      2.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 17,
+    "size": [
+      256,
+      128
+    ],
+    "id": 22,
+    "type": 2,
+    "material": 16,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 20,
+    "name": "Tas_icon",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      13.0,
+      2.0
+    ],
+    "scale": [
+      0.949999988079071,
+      0.949999988079071
+    ],
+    "parent": 13,
+    "size": [
+      512,
+      256
+    ],
+    "id": 13,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -20,
+      -26,
+      20,
+      26
+    ],
+    "uv": [
+      148,
+      128,
+      188,
+      180
+    ]
+  },
+  {
+    "index": 21,
+    "name": "null_0_0_0_0_2",
+    "texture": "",
+    "position": [
+      0.0,
+      -26.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      0,
+      0
+    ],
+    "id": 76,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 22,
+    "name": "Q_name",
+    "texture": "id\\dummy_BM",
+    "position": [
+      25.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 21,
+    "size": [
+      32,
+      256
+    ],
+    "id": 91,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      0,
+      -16,
+      180,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      180,
+      32
+    ]
+  },
+  {
+    "index": 23,
+    "name": "Q_K",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 21,
+    "size": [
+      512,
+      256
+    ],
+    "id": 146,
+    "type": 2,
+    "material": 16,
+    "geometry": [
+      0,
+      -24,
+      232,
+      24
+    ],
+    "uv": [
+      0,
+      0,
+      232,
+      48
+    ]
+  },
+  {
+    "index": 24,
+    "name": "New",
+    "texture": "id\\texture\\jpn\\common\\common_018_ID_HQ",
+    "position": [
+      -6.0,
+      -23.0
+    ],
+    "scale": [
+      0.699999988079071,
+      0.699999988079071
+    ],
+    "parent": 21,
+    "size": [
+      128,
+      64
+    ],
+    "id": 159,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      0,
+      0,
+      64,
+      20
+    ],
+    "uv": [
+      0,
+      0,
+      64,
+      20
+    ]
+  },
+  {
+    "index": 25,
+    "name": "Ctn_icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      228.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 21,
+    "size": [
+      256,
+      128
+    ],
+    "id": 123,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 26,
+    "name": "Ctn_icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 25,
+    "size": [
+      32,
+      512
+    ],
+    "id": 23,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      144,
+      0,
+      216,
+      72
+    ]
+  },
+  {
+    "index": 27,
+    "name": "Ctn_icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      2.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 25,
+    "size": [
+      256,
+      128
+    ],
+    "id": 24,
+    "type": 2,
+    "material": 16,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 28,
+    "name": "Tas_icon",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      13.0,
+      2.0
+    ],
+    "scale": [
+      0.949999988079071,
+      0.949999988079071
+    ],
+    "parent": 21,
+    "size": [
+      512,
+      256
+    ],
+    "id": 14,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -20,
+      -26,
+      20,
+      26
+    ],
+    "uv": [
+      148,
+      128,
+      188,
+      180
+    ]
+  },
+  {
+    "index": 29,
+    "name": "null_0_0_0_0_3",
+    "texture": "",
+    "position": [
+      0.0,
+      18.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      0,
+      0
+    ],
+    "id": 77,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 30,
+    "name": "Q_name",
+    "texture": "id\\dummy_BM",
+    "position": [
+      25.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 29,
+    "size": [
+      32,
+      256
+    ],
+    "id": 92,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      0,
+      -16,
+      180,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      180,
+      32
+    ]
+  },
+  {
+    "index": 31,
+    "name": "Q_K",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 29,
+    "size": [
+      512,
+      256
+    ],
+    "id": 147,
+    "type": 2,
+    "material": 16,
+    "geometry": [
+      0,
+      -24,
+      232,
+      24
+    ],
+    "uv": [
+      0,
+      0,
+      232,
+      48
+    ]
+  },
+  {
+    "index": 32,
+    "name": "New",
+    "texture": "id\\texture\\jpn\\common\\common_018_ID_HQ",
+    "position": [
+      -6.0,
+      -23.0
+    ],
+    "scale": [
+      0.699999988079071,
+      0.699999988079071
+    ],
+    "parent": 29,
+    "size": [
+      128,
+      64
+    ],
+    "id": 160,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      0,
+      0,
+      64,
+      20
+    ],
+    "uv": [
+      0,
+      0,
+      64,
+      20
+    ]
+  },
+  {
+    "index": 33,
+    "name": "Ctn_icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      228.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 29,
+    "size": [
+      256,
+      128
+    ],
+    "id": 124,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 34,
+    "name": "Ctn_icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 33,
+    "size": [
+      32,
+      512
+    ],
+    "id": 25,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      216,
+      0,
+      288,
+      72
+    ]
+  },
+  {
+    "index": 35,
+    "name": "Ctn_icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      2.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 33,
+    "size": [
+      256,
+      128
+    ],
+    "id": 26,
+    "type": 2,
+    "material": 16,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 36,
+    "name": "Tas_icon",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      13.0,
+      2.0
+    ],
+    "scale": [
+      0.949999988079071,
+      0.949999988079071
+    ],
+    "parent": 29,
+    "size": [
+      512,
+      256
+    ],
+    "id": 15,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -20,
+      -26,
+      20,
+      26
+    ],
+    "uv": [
+      148,
+      128,
+      188,
+      180
+    ]
+  },
+  {
+    "index": 37,
+    "name": "null_0_0_0_0_4",
+    "texture": "",
+    "position": [
+      0.0,
+      62.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      0,
+      0
+    ],
+    "id": 78,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 38,
+    "name": "Q_name",
+    "texture": "id\\dummy_BM",
+    "position": [
+      25.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 37,
+    "size": [
+      32,
+      256
+    ],
+    "id": 93,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      0,
+      -16,
+      180,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      180,
+      32
+    ]
+  },
+  {
+    "index": 39,
+    "name": "Q_K",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 37,
+    "size": [
+      512,
+      256
+    ],
+    "id": 148,
+    "type": 2,
+    "material": 16,
+    "geometry": [
+      0,
+      -24,
+      232,
+      24
+    ],
+    "uv": [
+      0,
+      0,
+      232,
+      48
+    ]
+  },
+  {
+    "index": 40,
+    "name": "New",
+    "texture": "id\\texture\\jpn\\common\\common_018_ID_HQ",
+    "position": [
+      -6.0,
+      -23.0
+    ],
+    "scale": [
+      0.699999988079071,
+      0.699999988079071
+    ],
+    "parent": 37,
+    "size": [
+      128,
+      64
+    ],
+    "id": 161,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      0,
+      0,
+      64,
+      20
+    ],
+    "uv": [
+      0,
+      0,
+      64,
+      20
+    ]
+  },
+  {
+    "index": 41,
+    "name": "Ctn_icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      228.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 37,
+    "size": [
+      256,
+      128
+    ],
+    "id": 125,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 42,
+    "name": "Ctn_icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 41,
+    "size": [
+      32,
+      512
+    ],
+    "id": 27,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      288,
+      0,
+      360,
+      72
+    ]
+  },
+  {
+    "index": 43,
+    "name": "Ctn_icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      2.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 41,
+    "size": [
+      256,
+      128
+    ],
+    "id": 28,
+    "type": 2,
+    "material": 16,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 44,
+    "name": "Tas_icon",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      13.0,
+      2.0
+    ],
+    "scale": [
+      0.949999988079071,
+      0.949999988079071
+    ],
+    "parent": 37,
+    "size": [
+      512,
+      256
+    ],
+    "id": 16,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -20,
+      -26,
+      20,
+      26
+    ],
+    "uv": [
+      148,
+      128,
+      188,
+      180
+    ]
+  },
+  {
+    "index": 45,
+    "name": "null_0_0_0_0_5",
+    "texture": "",
+    "position": [
+      0.0,
+      106.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 4,
+    "size": [
+      0,
+      0
+    ],
+    "id": 79,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 46,
+    "name": "Q_name",
+    "texture": "id\\dummy_BM",
+    "position": [
+      25.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 45,
+    "size": [
+      32,
+      256
+    ],
+    "id": 94,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      0,
+      -16,
+      180,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      180,
+      32
+    ]
+  },
+  {
+    "index": 47,
+    "name": "Q_K",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 45,
+    "size": [
+      512,
+      256
+    ],
+    "id": 149,
+    "type": 2,
+    "material": 16,
+    "geometry": [
+      0,
+      -24,
+      232,
+      24
+    ],
+    "uv": [
+      0,
+      0,
+      232,
+      48
+    ]
+  },
+  {
+    "index": 48,
+    "name": "New",
+    "texture": "id\\texture\\jpn\\common\\common_018_ID_HQ",
+    "position": [
+      -6.0,
+      -23.0
+    ],
+    "scale": [
+      0.699999988079071,
+      0.699999988079071
+    ],
+    "parent": 45,
+    "size": [
+      128,
+      64
+    ],
+    "id": 162,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      0,
+      0,
+      64,
+      20
+    ],
+    "uv": [
+      0,
+      0,
+      64,
+      20
+    ]
+  },
+  {
+    "index": 49,
+    "name": "Ctn_icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      228.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 45,
+    "size": [
+      256,
+      128
+    ],
+    "id": 128,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 50,
+    "name": "Ctn_icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 49,
+    "size": [
+      32,
+      512
+    ],
+    "id": 29,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      360,
+      0,
+      432,
+      72
+    ]
+  },
+  {
+    "index": 51,
+    "name": "Ctn_icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      2.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 49,
+    "size": [
+      256,
+      128
+    ],
+    "id": 30,
+    "type": 2,
+    "material": 16,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 52,
+    "name": "Tas_icon",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      13.0,
+      2.0
+    ],
+    "scale": [
+      0.949999988079071,
+      0.949999988079071
+    ],
+    "parent": 45,
+    "size": [
+      512,
+      256
+    ],
+    "id": 17,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -20,
+      -26,
+      20,
+      26
+    ],
+    "uv": [
+      148,
+      128,
+      188,
+      180
+    ]
+  },
+  {
+    "index": 53,
+    "name": "null_0_0_0_1",
+    "texture": "",
+    "position": [
+      56.0,
+      257.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 3,
+    "size": [
+      0,
+      0
+    ],
+    "id": 96,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 54,
+    "name": "null_0_0_0_1_0",
+    "texture": "",
+    "position": [
+      -6.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 53,
+    "size": [
+      0,
+      0
+    ],
+    "id": 97,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 55,
+    "name": "Rail",
+    "texture": "id\\texture\\jpn\\common\\common_006_ID_HQ",
+    "position": [
+      0.0,
+      -122.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 54,
+    "size": [
+      64,
+      32
+    ],
+    "id": 99,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -7,
+      -10,
+      7,
+      0
+    ],
+    "uv": [
+      14,
+      0,
+      28,
+      10
+    ]
+  },
+  {
+    "index": 56,
+    "name": "Rail",
+    "texture": "id\\texture\\jpn\\common\\common_006_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 54,
+    "size": [
+      64,
+      32
+    ],
+    "id": 100,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -7,
+      -122,
+      7,
+      122
+    ],
+    "uv": [
+      14,
+      12,
+      28,
+      20
+    ]
+  },
+  {
+    "index": 57,
+    "name": "Rail",
+    "texture": "id\\texture\\jpn\\common\\common_006_ID_HQ",
+    "position": [
+      0.0,
+      122.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 54,
+    "size": [
+      64,
+      32
+    ],
+    "id": 101,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -7,
+      0,
+      7,
+      10
+    ],
+    "uv": [
+      14,
+      22,
+      28,
+      32
+    ]
+  },
+  {
+    "index": 58,
+    "name": "Memori",
+    "texture": "id\\texture\\jpn\\common\\common_006_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 54,
+    "size": [
+      64,
+      32
+    ],
+    "id": 103,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      -7,
+      -120,
+      7,
+      120
+    ],
+    "uv": [
+      0,
+      2,
+      14,
+      12
+    ]
+  },
+  {
+    "index": 59,
+    "name": "Memori",
+    "texture": "id\\texture\\jpn\\common\\common_006_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 54,
+    "size": [
+      64,
+      32
+    ],
+    "id": 107,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      -7,
+      -120,
+      7,
+      120
+    ],
+    "uv": [
+      0,
+      2,
+      14,
+      12
+    ]
+  },
+  {
+    "index": 60,
+    "name": "null_0_0_0_1_1",
+    "texture": "",
+    "position": [
+      -10.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 53,
+    "size": [
+      0,
+      0
+    ],
+    "id": 140,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 61,
+    "name": "Up",
+    "texture": "id\\texture\\jpn\\common\\common_001_ID_HQ",
+    "position": [
+      129.0,
+      -143.0
+    ],
+    "scale": [
+      0.6499999761581421,
+      0.699999988079071
+    ],
+    "parent": 60,
+    "size": [
+      512,
+      256
+    ],
+    "id": 143,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      192,
+      0,
+      224,
+      32
+    ]
+  },
+  {
+    "index": 62,
+    "name": "Up_K",
+    "texture": "id\\texture\\jpn\\common\\common_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 61,
+    "size": [
+      512,
+      256
+    ],
+    "id": 151,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      224,
+      0,
+      256,
+      32
+    ]
+  },
+  {
+    "index": 63,
+    "name": "Down",
+    "texture": "id\\texture\\jpn\\common\\common_001_ID_HQ",
+    "position": [
+      129.0,
+      141.0
+    ],
+    "scale": [
+      0.6499999761581421,
+      0.699999988079071
+    ],
+    "parent": 60,
+    "size": [
+      512,
+      256
+    ],
+    "id": 152,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      192,
+      0,
+      224,
+      32
+    ]
+  },
+  {
+    "index": 64,
+    "name": "Down_K",
+    "texture": "id\\texture\\jpn\\common\\common_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 63,
+    "size": [
+      512,
+      256
+    ],
+    "id": 153,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      224,
+      0,
+      256,
+      32
+    ]
+  },
+  {
+    "index": 65,
+    "name": "null_0_0_0_2",
+    "texture": "",
+    "position": [
+      62.0,
+      260.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 3,
+    "size": [
+      0,
+      0
+    ],
+    "id": 4,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -32,
+      -16,
+      0,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 66,
+    "name": "Carsol",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      0.0,
+      -114.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 65,
+    "size": [
+      512,
+      256
+    ],
+    "id": 19,
+    "type": 2,
+    "material": 16,
+    "geometry": [
+      0,
+      -24,
+      232,
+      24
+    ],
+    "uv": [
+      0,
+      48,
+      232,
+      96
+    ]
+  },
+  {
+    "index": 67,
+    "name": "null_1",
+    "texture": "",
+    "position": [
+      51.0,
+      39.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 0,
+    "size": [
+      0,
+      0
+    ],
+    "id": 6,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      0,
+      0,
+      32,
+      32
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 68,
+    "name": "null_1_0",
+    "texture": "",
+    "position": [
+      -207.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 67,
+    "size": [
+      0,
+      0
+    ],
+    "id": 10,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      0,
+      0,
+      32,
+      32
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 69,
+    "name": "null_1_0_0",
+    "texture": "",
+    "position": [
+      191.0,
+      -17.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 68,
+    "size": [
+      0,
+      0
+    ],
+    "id": 11,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      0,
+      0,
+      32,
+      32
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 70,
+    "name": "Nihonyuugi",
+    "texture": "id\\texture\\jpn\\charasele_00\\charasele_00_000_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.9200000166893005,
+      0.9200000166893005
+    ],
+    "parent": 69,
+    "size": [
+      1024,
+      512
+    ],
+    "id": 7,
+    "type": 2,
+    "material": 12,
+    "geometry": [
+      0,
+      0,
+      144,
+      60
+    ],
+    "uv": [
+      0,
+      120,
+      144,
+      180
+    ]
+  },
+  {
+    "index": 71,
+    "name": "Shingun",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_007_ID_HQ",
+    "position": [
+      -3.0,
+      55.0
+    ],
+    "scale": [
+      1.0,
+      0.9200000166893005
+    ],
+    "parent": 69,
+    "size": [
+      512,
+      256
+    ],
+    "id": 8,
+    "type": 2,
+    "material": 12,
+    "geometry": [
+      0,
+      0,
+      256,
+      30
+    ],
+    "uv": [
+      0,
+      226,
+      256,
+      256
+    ]
+  },
+  {
+    "index": 72,
+    "name": "Shingun_sdw",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_007_ID_HQ",
+    "position": [
+      2.0,
+      2.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 71,
+    "size": [
+      512,
+      256
+    ],
+    "id": 9,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      0,
+      0,
+      256,
+      30
+    ],
+    "uv": [
+      0,
+      226,
+      256,
+      256
+    ]
+  },
+  {
+    "index": 73,
+    "name": "null_2",
+    "texture": "",
+    "position": [
+      320.0,
+      240.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 0,
+    "size": [
+      0,
+      0
+    ],
+    "id": 31,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 74,
+    "name": "null_2_0",
+    "texture": "",
+    "position": [
+      -51.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 73,
+    "size": [
+      0,
+      0
+    ],
+    "id": 32,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 75,
+    "name": "null_2_0_0",
+    "texture": "",
+    "position": [
+      50.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 74,
+    "size": [
+      0,
+      0
+    ],
+    "id": 36,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 76,
+    "name": "null_2_0_0_0",
+    "texture": "",
+    "position": [
+      137.0,
+      -188.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 75,
+    "size": [
+      0,
+      0
+    ],
+    "id": 33,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 77,
+    "name": "Ougi",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_000_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 76,
+    "size": [
+      1024,
+      512
+    ],
+    "id": 34,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -34,
+      -122,
+      34,
+      122
+    ],
+    "uv": [
+      304,
+      224,
+      372,
+      468
+    ]
+  },
+  {
+    "index": 78,
+    "name": "Q_name",
+    "texture": "id\\dummy_BM",
+    "position": [
+      4.5,
+      -2.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 77,
+    "size": [
+      32,
+      256
+    ],
+    "id": 35,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -90,
+      -16,
+      90,
+      16
+    ],
+    "uv": [
+      0,
+      32,
+      180,
+      64
+    ]
+  },
+  {
+    "index": 79,
+    "name": "null_2_0_0_1",
+    "texture": "",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 75,
+    "size": [
+      0,
+      0
+    ],
+    "id": 37,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 80,
+    "name": "Pnl_A1",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_000_ID_HQ",
+    "position": [
+      187.5,
+      -184.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 79,
+    "size": [
+      1024,
+      512
+    ],
+    "id": 38,
+    "type": 2,
+    "material": 16,
+    "geometry": [
+      -204,
+      0,
+      0,
+      224
+    ],
+    "uv": [
+      304,
+      0,
+      508,
+      224
+    ]
+  },
+  {
+    "index": 81,
+    "name": "Pnl_A2",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_000_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      1024,
+      512
+    ],
+    "id": 39,
+    "type": 2,
+    "material": 16,
+    "geometry": [
+      0,
+      0,
+      100,
+      224
+    ],
+    "uv": [
+      376,
+      224,
+      476,
+      448
+    ]
+  },
+  {
+    "index": 82,
+    "name": "Img_frm",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_001_ID_HQ",
+    "position": [
+      -111.0,
+      70.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      512,
+      256
+    ],
+    "id": 41,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -128,
+      -84,
+      128,
+      84
+    ],
+    "uv": [
+      0,
+      0,
+      256,
+      168
+    ]
+  },
+  {
+    "index": 83,
+    "name": "Img_pic",
+    "texture": "id\\dummy_BM",
+    "position": [
+      11.0,
+      21.0
+    ],
+    "scale": [
+      0.7200000286102295,
+      0.7200000286102295
+    ],
+    "parent": 82,
+    "size": [
+      32,
+      256
+    ],
+    "id": 42,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -116,
+      -64,
+      116,
+      64
+    ],
+    "uv": [
+      12,
+      0,
+      244,
+      128
+    ]
+  },
+  {
+    "index": 84,
+    "name": "Nnd_tx",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      39.0,
+      66.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 80,
+    "size": [
+      512,
+      256
+    ],
+    "id": 43,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -42,
+      -12,
+      42,
+      12
+    ],
+    "uv": [
+      108,
+      228,
+      192,
+      252
+    ]
+  },
+  {
+    "index": 85,
+    "name": "Nnd_star_u",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      40.0,
+      85.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      512,
+      256
+    ],
+    "id": 44,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -54,
+      -12,
+      54,
+      12
+    ],
+    "uv": [
+      0,
+      176,
+      108,
+      200
+    ]
+  },
+  {
+    "index": 86,
+    "name": "Star_0",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      -38.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 85,
+    "size": [
+      512,
+      256
+    ],
+    "id": 45,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -12,
+      -12,
+      12,
+      12
+    ],
+    "uv": [
+      108,
+      128,
+      132,
+      152
+    ]
+  },
+  {
+    "index": 87,
+    "name": "Star_1",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      -19.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 85,
+    "size": [
+      512,
+      256
+    ],
+    "id": 46,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -12,
+      -12,
+      12,
+      12
+    ],
+    "uv": [
+      108,
+      128,
+      132,
+      152
+    ]
+  },
+  {
+    "index": 88,
+    "name": "Star_2",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 85,
+    "size": [
+      512,
+      256
+    ],
+    "id": 47,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -12,
+      -12,
+      12,
+      12
+    ],
+    "uv": [
+      108,
+      128,
+      132,
+      152
+    ]
+  },
+  {
+    "index": 89,
+    "name": "Star_3",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      19.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 85,
+    "size": [
+      512,
+      256
+    ],
+    "id": 48,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -12,
+      -12,
+      12,
+      12
+    ],
+    "uv": [
+      108,
+      128,
+      132,
+      152
+    ]
+  },
+  {
+    "index": 90,
+    "name": "Star_4",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      37.5,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 85,
+    "size": [
+      512,
+      256
+    ],
+    "id": 49,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -12,
+      -12,
+      12,
+      12
+    ],
+    "uv": [
+      108,
+      128,
+      132,
+      152
+    ]
+  },
+  {
+    "index": 91,
+    "name": "Spd_tx",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      38.0,
+      110.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 80,
+    "size": [
+      512,
+      256
+    ],
+    "id": 50,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -54,
+      -12,
+      54,
+      12
+    ],
+    "uv": [
+      0,
+      152,
+      108,
+      176
+    ]
+  },
+  {
+    "index": 92,
+    "name": "null_2_0_0_1_0_0",
+    "texture": "",
+    "position": [
+      73.0,
+      131.0
+    ],
+    "scale": [
+      0.75,
+      0.8199999928474426
+    ],
+    "parent": 80,
+    "size": [
+      0,
+      0
+    ],
+    "id": 51,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 93,
+    "name": "Suji_0",
+    "texture": "id\\texture\\jpn\\cockpit\\cockpit_022_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 92,
+    "size": [
+      256,
+      128
+    ],
+    "id": 52,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 94,
+    "name": "Suji_1",
+    "texture": "id\\texture\\jpn\\cockpit\\cockpit_022_ID_HQ",
+    "position": [
+      -16.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 92,
+    "size": [
+      256,
+      128
+    ],
+    "id": 53,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 95,
+    "name": "Suji_2",
+    "texture": "id\\texture\\jpn\\cockpit\\cockpit_022_ID_HQ",
+    "position": [
+      -39.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 92,
+    "size": [
+      256,
+      128
+    ],
+    "id": 54,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 96,
+    "name": "Suji_3",
+    "texture": "id\\texture\\jpn\\cockpit\\cockpit_022_ID_HQ",
+    "position": [
+      -55.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 92,
+    "size": [
+      256,
+      128
+    ],
+    "id": 55,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 97,
+    "name": "Suji_4",
+    "texture": "id\\texture\\jpn\\cockpit\\cockpit_022_ID_HQ",
+    "position": [
+      -80.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 92,
+    "size": [
+      256,
+      128
+    ],
+    "id": 56,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 98,
+    "name": "Suji_5",
+    "texture": "id\\texture\\jpn\\cockpit\\cockpit_022_ID_HQ",
+    "position": [
+      -96.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 92,
+    "size": [
+      256,
+      128
+    ],
+    "id": 57,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 99,
+    "name": "Tenten",
+    "texture": "id\\texture\\jpn\\cockpit\\cockpit_022_ID_HQ",
+    "position": [
+      15.0,
+      -9.5
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.9800000190734863
+    ],
+    "parent": 92,
+    "size": [
+      256,
+      128
+    ],
+    "id": 58,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -9,
+      -7,
+      9,
+      7
+    ],
+    "uv": [
+      100,
+      32,
+      118,
+      46
+    ]
+  },
+  {
+    "index": 100,
+    "name": "Ten",
+    "texture": "id\\texture\\jpn\\cockpit\\cockpit_022_ID_HQ",
+    "position": [
+      -26.0,
+      -10.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      1.0
+    ],
+    "parent": 92,
+    "size": [
+      256,
+      128
+    ],
+    "id": 59,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -7,
+      -7,
+      7,
+      7
+    ],
+    "uv": [
+      100,
+      17,
+      114,
+      32
+    ]
+  },
+  {
+    "index": 101,
+    "name": "Colon",
+    "texture": "id\\texture\\jpn\\cockpit\\cockpit_022_ID_HQ",
+    "position": [
+      -68.0,
+      -1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 92,
+    "size": [
+      256,
+      128
+    ],
+    "id": 62,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -5,
+      -9,
+      5,
+      9
+    ],
+    "uv": [
+      118,
+      27,
+      128,
+      46
+    ]
+  },
+  {
+    "index": 102,
+    "name": "Systx_iti_0",
+    "texture": "",
+    "position": [
+      -183.0,
+      160.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      0,
+      0
+    ],
+    "id": 119,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      0,
+      -9,
+      18,
+      9
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 103,
+    "name": "Systx_iti_1",
+    "texture": "",
+    "position": [
+      -183.0,
+      180.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      0,
+      0
+    ],
+    "id": 121,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      0,
+      -9,
+      18,
+      9
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 104,
+    "name": "Systx_iti_2",
+    "texture": "",
+    "position": [
+      -183.0,
+      200.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      0,
+      0
+    ],
+    "id": 127,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      0,
+      -9,
+      18,
+      9
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 105,
+    "name": "Pnl_B1",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_000_ID_HQ",
+    "position": [
+      -16.0,
+      38.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 79,
+    "size": [
+      1024,
+      512
+    ],
+    "id": 40,
+    "type": 2,
+    "material": 16,
+    "geometry": [
+      0,
+      0,
+      304,
+      132
+    ],
+    "uv": [
+      0,
+      356,
+      304,
+      488
+    ]
+  },
+  {
+    "index": 106,
+    "name": "Ghb_tx",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      32.0,
+      12.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 105,
+    "size": [
+      512,
+      256
+    ],
+    "id": 63,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -32,
+      -16,
+      32,
+      16
+    ],
+    "uv": [
+      192,
+      220,
+      256,
+      252
+    ]
+  },
+  {
+    "index": 107,
+    "name": "Ghb_kakutoku",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      40.0,
+      71.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 105,
+    "size": [
+      512,
+      256
+    ],
+    "id": 64,
+    "type": 2,
+    "material": 12,
+    "geometry": [
+      -34,
+      -46,
+      34,
+      46
+    ],
+    "uv": [
+      188,
+      128,
+      256,
+      220
+    ]
+  },
+  {
+    "index": 108,
+    "name": "Ghb_bg_0",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      175.0,
+      23.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 105,
+    "size": [
+      512,
+      256
+    ],
+    "id": 65,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -116,
+      -16,
+      116,
+      16
+    ],
+    "uv": [
+      0,
+      96,
+      232,
+      128
+    ]
+  },
+  {
+    "index": 109,
+    "name": "Point",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      -101.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 108,
+    "size": [
+      512,
+      256
+    ],
+    "id": 66,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -8,
+      -12,
+      8,
+      12
+    ],
+    "uv": [
+      132,
+      128,
+      148,
+      152
+    ]
+  },
+  {
+    "index": 110,
+    "name": "Kao_u",
+    "texture": "",
+    "position": [
+      -59.0,
+      0.0
+    ],
+    "scale": [
+      1.100000023841858,
+      1.100000023841858
+    ],
+    "parent": 108,
+    "size": [
+      0,
+      0
+    ],
+    "id": 67,
+    "type": 0,
+    "material": 14,
+    "geometry": [
+      -32,
+      -8,
+      32,
+      8
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 111,
+    "name": "Kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 110,
+    "size": [
+      32,
+      64
+    ],
+    "id": 69,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      -32,
+      -8,
+      32,
+      8
+    ],
+    "uv": [
+      0,
+      0,
+      64,
+      16
+    ]
+  },
+  {
+    "index": 112,
+    "name": "Name_0",
+    "texture": "id\\dummy_BM",
+    "position": [
+      -23.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 108,
+    "size": [
+      32,
+      128
+    ],
+    "id": 68,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      0,
+      -12,
+      128,
+      12
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      24
+    ]
+  },
+  {
+    "index": 113,
+    "name": "Name_1",
+    "texture": "id\\dummy_BM",
+    "position": [
+      -23.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 108,
+    "size": [
+      32,
+      128
+    ],
+    "id": 1,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      0,
+      -12,
+      128,
+      12
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      24
+    ]
+  },
+  {
+    "index": 114,
+    "name": "Ryo_iti_0",
+    "texture": "",
+    "position": [
+      246.0,
+      22.5
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.800000011920929
+    ],
+    "parent": 105,
+    "size": [
+      0,
+      0
+    ],
+    "id": 118,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 115,
+    "name": "Ghb_bg_1",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      175.0,
+      45.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 105,
+    "size": [
+      512,
+      256
+    ],
+    "id": 70,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -116,
+      -16,
+      116,
+      16
+    ],
+    "uv": [
+      0,
+      96,
+      232,
+      128
+    ]
+  },
+  {
+    "index": 116,
+    "name": "Point",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      -101.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 115,
+    "size": [
+      512,
+      256
+    ],
+    "id": 71,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -8,
+      -12,
+      8,
+      12
+    ],
+    "uv": [
+      132,
+      128,
+      148,
+      152
+    ]
+  },
+  {
+    "index": 117,
+    "name": "Kao_u",
+    "texture": "",
+    "position": [
+      -59.0,
+      0.0
+    ],
+    "scale": [
+      1.100000023841858,
+      1.100000023841858
+    ],
+    "parent": 115,
+    "size": [
+      0,
+      0
+    ],
+    "id": 72,
+    "type": 0,
+    "material": 14,
+    "geometry": [
+      -32,
+      -8,
+      32,
+      8
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 118,
+    "name": "Kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 117,
+    "size": [
+      32,
+      64
+    ],
+    "id": 73,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      -32,
+      -8,
+      32,
+      8
+    ],
+    "uv": [
+      0,
+      0,
+      64,
+      16
+    ]
+  },
+  {
+    "index": 119,
+    "name": "Name_0",
+    "texture": "id\\dummy_BM",
+    "position": [
+      -23.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 115,
+    "size": [
+      32,
+      128
+    ],
+    "id": 80,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      0,
+      -12,
+      128,
+      12
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      24
+    ]
+  },
+  {
+    "index": 120,
+    "name": "Name_1",
+    "texture": "id\\dummy_BM",
+    "position": [
+      -23.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 115,
+    "size": [
+      32,
+      128
+    ],
+    "id": 2,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      0,
+      -12,
+      128,
+      12
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      24
+    ]
+  },
+  {
+    "index": 121,
+    "name": "Ryo_iti_1",
+    "texture": "",
+    "position": [
+      246.0,
+      44.5
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.800000011920929
+    ],
+    "parent": 105,
+    "size": [
+      0,
+      0
+    ],
+    "id": 120,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 122,
+    "name": "Ghb_bg_2",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      175.0,
+      67.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 105,
+    "size": [
+      512,
+      256
+    ],
+    "id": 81,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -116,
+      -16,
+      116,
+      16
+    ],
+    "uv": [
+      0,
+      96,
+      232,
+      128
+    ]
+  },
+  {
+    "index": 123,
+    "name": "Point",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      -101.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 122,
+    "size": [
+      512,
+      256
+    ],
+    "id": 83,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -8,
+      -12,
+      8,
+      12
+    ],
+    "uv": [
+      132,
+      128,
+      148,
+      152
+    ]
+  },
+  {
+    "index": 124,
+    "name": "Kao_u",
+    "texture": "",
+    "position": [
+      -59.0,
+      0.0
+    ],
+    "scale": [
+      1.100000023841858,
+      1.100000023841858
+    ],
+    "parent": 122,
+    "size": [
+      0,
+      0
+    ],
+    "id": 84,
+    "type": 0,
+    "material": 14,
+    "geometry": [
+      -32,
+      -8,
+      32,
+      8
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 125,
+    "name": "Kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 124,
+    "size": [
+      32,
+      64
+    ],
+    "id": 85,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      -32,
+      -8,
+      32,
+      8
+    ],
+    "uv": [
+      0,
+      0,
+      64,
+      16
+    ]
+  },
+  {
+    "index": 126,
+    "name": "Name_0",
+    "texture": "id\\dummy_BM",
+    "position": [
+      -23.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 122,
+    "size": [
+      32,
+      128
+    ],
+    "id": 86,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      0,
+      -12,
+      128,
+      12
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      24
+    ]
+  },
+  {
+    "index": 127,
+    "name": "Name_1",
+    "texture": "id\\dummy_BM",
+    "position": [
+      -23.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 122,
+    "size": [
+      32,
+      128
+    ],
+    "id": 3,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      0,
+      -12,
+      128,
+      12
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      24
+    ]
+  },
+  {
+    "index": 128,
+    "name": "Ryo_iti_2",
+    "texture": "",
+    "position": [
+      246.0,
+      66.5
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.800000011920929
+    ],
+    "parent": 105,
+    "size": [
+      0,
+      0
+    ],
+    "id": 126,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 129,
+    "name": "Ghb_bg_3",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      175.0,
+      89.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 105,
+    "size": [
+      512,
+      256
+    ],
+    "id": 87,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -116,
+      -16,
+      116,
+      16
+    ],
+    "uv": [
+      0,
+      96,
+      232,
+      128
+    ]
+  },
+  {
+    "index": 130,
+    "name": "Point",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      -101.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 129,
+    "size": [
+      512,
+      256
+    ],
+    "id": 88,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -8,
+      -12,
+      8,
+      12
+    ],
+    "uv": [
+      132,
+      128,
+      148,
+      152
+    ]
+  },
+  {
+    "index": 131,
+    "name": "Kao_u",
+    "texture": "",
+    "position": [
+      -59.0,
+      0.0
+    ],
+    "scale": [
+      1.100000023841858,
+      1.100000023841858
+    ],
+    "parent": 129,
+    "size": [
+      0,
+      0
+    ],
+    "id": 95,
+    "type": 0,
+    "material": 14,
+    "geometry": [
+      -32,
+      -8,
+      32,
+      8
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 132,
+    "name": "Kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 131,
+    "size": [
+      32,
+      64
+    ],
+    "id": 98,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      -32,
+      -8,
+      32,
+      8
+    ],
+    "uv": [
+      0,
+      0,
+      64,
+      16
+    ]
+  },
+  {
+    "index": 133,
+    "name": "Name_0",
+    "texture": "id\\dummy_BM",
+    "position": [
+      -23.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 129,
+    "size": [
+      32,
+      128
+    ],
+    "id": 102,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      0,
+      -12,
+      128,
+      12
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      24
+    ]
+  },
+  {
+    "index": 134,
+    "name": "Name_1",
+    "texture": "id\\dummy_BM",
+    "position": [
+      -23.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 129,
+    "size": [
+      32,
+      128
+    ],
+    "id": 5,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      0,
+      -12,
+      128,
+      12
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      24
+    ]
+  },
+  {
+    "index": 135,
+    "name": "Ryo_iti_3",
+    "texture": "",
+    "position": [
+      246.0,
+      88.5
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.800000011920929
+    ],
+    "parent": 105,
+    "size": [
+      0,
+      0
+    ],
+    "id": 129,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 136,
+    "name": "Ghb_bg_4",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      175.0,
+      111.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 105,
+    "size": [
+      512,
+      256
+    ],
+    "id": 104,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -116,
+      -16,
+      116,
+      16
+    ],
+    "uv": [
+      0,
+      96,
+      232,
+      128
+    ]
+  },
+  {
+    "index": 137,
+    "name": "Point",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      -101.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 136,
+    "size": [
+      512,
+      256
+    ],
+    "id": 105,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -8,
+      -12,
+      8,
+      12
+    ],
+    "uv": [
+      132,
+      128,
+      148,
+      152
+    ]
+  },
+  {
+    "index": 138,
+    "name": "Kao_u",
+    "texture": "",
+    "position": [
+      -59.0,
+      0.0
+    ],
+    "scale": [
+      1.100000023841858,
+      1.100000023841858
+    ],
+    "parent": 136,
+    "size": [
+      0,
+      0
+    ],
+    "id": 106,
+    "type": 0,
+    "material": 14,
+    "geometry": [
+      -32,
+      -8,
+      32,
+      8
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 139,
+    "name": "Kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 138,
+    "size": [
+      32,
+      64
+    ],
+    "id": 108,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      -32,
+      -8,
+      32,
+      8
+    ],
+    "uv": [
+      0,
+      0,
+      64,
+      16
+    ]
+  },
+  {
+    "index": 140,
+    "name": "Name_0",
+    "texture": "id\\dummy_BM",
+    "position": [
+      -23.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 136,
+    "size": [
+      32,
+      128
+    ],
+    "id": 109,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      0,
+      -12,
+      128,
+      12
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      24
+    ]
+  },
+  {
+    "index": 141,
+    "name": "Name_1",
+    "texture": "id\\dummy_BM",
+    "position": [
+      -23.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 136,
+    "size": [
+      32,
+      128
+    ],
+    "id": 307,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      0,
+      -12,
+      128,
+      12
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      24
+    ]
+  },
+  {
+    "index": 142,
+    "name": "Ryo_iti_4",
+    "texture": "",
+    "position": [
+      246.0,
+      110.5
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.800000011920929
+    ],
+    "parent": 105,
+    "size": [
+      0,
+      0
+    ],
+    "id": 131,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 143,
+    "name": "null_2_0_0_1_0_1",
+    "texture": "",
+    "position": [
+      246.0,
+      22.5
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.800000011920929
+    ],
+    "parent": 105,
+    "size": [
+      0,
+      0
+    ],
+    "id": 110,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 144,
+    "name": "Ryo_0",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 143,
+    "size": [
+      256,
+      128
+    ],
+    "id": 111,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 145,
+    "name": "Ryo_1",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "position": [
+      -15.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 143,
+    "size": [
+      256,
+      128
+    ],
+    "id": 112,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 146,
+    "name": "Ryo_2",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "position": [
+      -30.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 143,
+    "size": [
+      256,
+      128
+    ],
+    "id": 113,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 147,
+    "name": "Ryo_3",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "position": [
+      -45.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 143,
+    "size": [
+      256,
+      128
+    ],
+    "id": 114,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 148,
+    "name": "Ryo_4",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "position": [
+      -60.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 143,
+    "size": [
+      256,
+      128
+    ],
+    "id": 115,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 149,
+    "name": "Ryo_5",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "position": [
+      -75.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 143,
+    "size": [
+      256,
+      128
+    ],
+    "id": 116,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 150,
+    "name": "Ryo_ryo",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "position": [
+      21.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      1.0
+    ],
+    "parent": 143,
+    "size": [
+      256,
+      128
+    ],
+    "id": 117,
+    "type": 3,
+    "material": 14,
+    "geometry": [
+      -14,
+      -16,
+      14,
+      16
+    ],
+    "uv": [
+      100,
+      0,
+      128,
+      32
+    ]
+  },
+  {
+    "index": 151,
+    "name": "null_2_0_0_2",
+    "texture": "",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 75,
+    "size": [
+      0,
+      0
+    ],
+    "id": 130,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 152,
+    "name": "Pnl_C1",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_000_ID_HQ",
+    "position": [
+      136.0,
+      -6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 151,
+    "size": [
+      1024,
+      512
+    ],
+    "id": 132,
+    "type": 2,
+    "material": 16,
+    "geometry": [
+      -152,
+      -178,
+      152,
+      178
+    ],
+    "uv": [
+      0,
+      0,
+      304,
+      356
+    ]
+  },
+  {
+    "index": 153,
+    "name": "Tasseibusyo",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+    "position": [
+      0.0,
+      -107.5
+    ],
+    "scale": [
+      1.0199999809265137,
+      1.0199999809265137
+    ],
+    "parent": 152,
+    "size": [
+      512,
+      256
+    ],
+    "id": 133,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      -82,
+      -14,
+      82,
+      14
+    ],
+    "uv": [
+      0,
+      200,
+      164,
+      228
+    ]
+  },
+  {
+    "index": 154,
+    "name": "null_2_0_0_2_0_0",
+    "texture": "",
+    "position": [
+      -5.0,
+      22.0
+    ],
+    "scale": [
+      1.0299999713897705,
+      1.0299999713897705
+    ],
+    "parent": 152,
+    "size": [
+      0,
+      0
+    ],
+    "id": 139,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 155,
+    "name": "null_2_0_0_2_0_0_0",
+    "texture": "",
+    "position": [
+      -107.0,
+      -79.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 134,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 156,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 155,
+    "size": [
+      256,
+      128
+    ],
+    "id": 135,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 157,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 156,
+    "size": [
+      32,
+      512
+    ],
+    "id": 136,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      0,
+      0,
+      72,
+      72
+    ]
+  },
+  {
+    "index": 158,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 156,
+    "size": [
+      256,
+      128
+    ],
+    "id": 137,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 159,
+    "name": "null_2_0_0_2_0_0_1",
+    "texture": "",
+    "position": [
+      -62.0,
+      -79.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 141,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 160,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 159,
+    "size": [
+      256,
+      128
+    ],
+    "id": 142,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 161,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 160,
+    "size": [
+      32,
+      512
+    ],
+    "id": 150,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      72,
+      0,
+      144,
+      72
+    ]
+  },
+  {
+    "index": 162,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 160,
+    "size": [
+      256,
+      128
+    ],
+    "id": 154,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 163,
+    "name": "null_2_0_0_2_0_0_2",
+    "texture": "",
+    "position": [
+      -17.0,
+      -79.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 156,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 164,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 163,
+    "size": [
+      256,
+      128
+    ],
+    "id": 163,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 165,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 164,
+    "size": [
+      32,
+      512
+    ],
+    "id": 164,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      144,
+      0,
+      216,
+      72
+    ]
+  },
+  {
+    "index": 166,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 164,
+    "size": [
+      256,
+      128
+    ],
+    "id": 165,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 167,
+    "name": "null_2_0_0_2_0_0_3",
+    "texture": "",
+    "position": [
+      28.0,
+      -79.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 167,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      288,
+      0,
+      320,
+      32
+    ]
+  },
+  {
+    "index": 168,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 167,
+    "size": [
+      256,
+      128
+    ],
+    "id": 168,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 169,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 168,
+    "size": [
+      32,
+      512
+    ],
+    "id": 169,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      216,
+      0,
+      288,
+      72
+    ]
+  },
+  {
+    "index": 170,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 168,
+    "size": [
+      256,
+      128
+    ],
+    "id": 170,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 171,
+    "name": "null_2_0_0_2_0_0_4",
+    "texture": "",
+    "position": [
+      73.0,
+      -79.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 172,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 172,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 171,
+    "size": [
+      256,
+      128
+    ],
+    "id": 173,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 173,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 172,
+    "size": [
+      32,
+      512
+    ],
+    "id": 174,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      288,
+      0,
+      360,
+      72
+    ]
+  },
+  {
+    "index": 174,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 172,
+    "size": [
+      256,
+      128
+    ],
+    "id": 175,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 175,
+    "name": "null_2_0_0_2_0_0_5",
+    "texture": "",
+    "position": [
+      118.0,
+      -79.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 177,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 176,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 175,
+    "size": [
+      256,
+      128
+    ],
+    "id": 178,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 177,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 176,
+    "size": [
+      32,
+      512
+    ],
+    "id": 179,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      360,
+      0,
+      432,
+      72
+    ]
+  },
+  {
+    "index": 178,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 176,
+    "size": [
+      256,
+      128
+    ],
+    "id": 180,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 179,
+    "name": "null_2_0_0_2_0_0_6",
+    "texture": "",
+    "position": [
+      -107.0,
+      -32.5
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 182,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 180,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 179,
+    "size": [
+      256,
+      128
+    ],
+    "id": 183,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 181,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 180,
+    "size": [
+      32,
+      512
+    ],
+    "id": 184,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      432,
+      0,
+      504,
+      72
+    ]
+  },
+  {
+    "index": 182,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 180,
+    "size": [
+      256,
+      128
+    ],
+    "id": 185,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 183,
+    "name": "null_2_0_0_2_0_0_7",
+    "texture": "",
+    "position": [
+      -62.0,
+      -32.5
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 187,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 184,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 183,
+    "size": [
+      256,
+      128
+    ],
+    "id": 188,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 185,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 184,
+    "size": [
+      32,
+      512
+    ],
+    "id": 189,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      0,
+      72,
+      72,
+      144
+    ]
+  },
+  {
+    "index": 186,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 184,
+    "size": [
+      256,
+      128
+    ],
+    "id": 190,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 187,
+    "name": "null_2_0_0_2_0_0_8",
+    "texture": "",
+    "position": [
+      -17.0,
+      -32.5
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 192,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 188,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 187,
+    "size": [
+      256,
+      128
+    ],
+    "id": 193,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 189,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 188,
+    "size": [
+      32,
+      512
+    ],
+    "id": 194,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      0,
+      0,
+      72,
+      72
+    ]
+  },
+  {
+    "index": 190,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 188,
+    "size": [
+      256,
+      128
+    ],
+    "id": 195,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 191,
+    "name": "null_2_0_0_2_0_0_9",
+    "texture": "",
+    "position": [
+      28.0,
+      -32.5
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 197,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 192,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 191,
+    "size": [
+      256,
+      128
+    ],
+    "id": 198,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 193,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 192,
+    "size": [
+      32,
+      512
+    ],
+    "id": 199,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      72,
+      72,
+      144,
+      144
+    ]
+  },
+  {
+    "index": 194,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 192,
+    "size": [
+      256,
+      128
+    ],
+    "id": 200,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 195,
+    "name": "null_2_0_0_2_0_0_10",
+    "texture": "",
+    "position": [
+      73.0,
+      -32.5
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 202,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 196,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 195,
+    "size": [
+      256,
+      128
+    ],
+    "id": 203,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 197,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 196,
+    "size": [
+      32,
+      512
+    ],
+    "id": 204,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      144,
+      72,
+      216,
+      144
+    ]
+  },
+  {
+    "index": 198,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 196,
+    "size": [
+      256,
+      128
+    ],
+    "id": 205,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 199,
+    "name": "null_2_0_0_2_0_0_11",
+    "texture": "",
+    "position": [
+      118.0,
+      -32.5
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 207,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 200,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 199,
+    "size": [
+      256,
+      128
+    ],
+    "id": 208,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 201,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 200,
+    "size": [
+      32,
+      512
+    ],
+    "id": 209,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      216,
+      72,
+      288,
+      144
+    ]
+  },
+  {
+    "index": 202,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 200,
+    "size": [
+      256,
+      128
+    ],
+    "id": 210,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 203,
+    "name": "null_2_0_0_2_0_0_12",
+    "texture": "",
+    "position": [
+      -107.0,
+      14.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 212,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 204,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 203,
+    "size": [
+      256,
+      128
+    ],
+    "id": 213,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 205,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 204,
+    "size": [
+      32,
+      512
+    ],
+    "id": 214,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      288,
+      72,
+      360,
+      144
+    ]
+  },
+  {
+    "index": 206,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 204,
+    "size": [
+      256,
+      128
+    ],
+    "id": 215,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 207,
+    "name": "null_2_0_0_2_0_0_13",
+    "texture": "",
+    "position": [
+      -62.0,
+      14.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 217,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 208,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 207,
+    "size": [
+      256,
+      128
+    ],
+    "id": 218,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 209,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 208,
+    "size": [
+      32,
+      512
+    ],
+    "id": 219,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      360,
+      72,
+      432,
+      144
+    ]
+  },
+  {
+    "index": 210,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 208,
+    "size": [
+      256,
+      128
+    ],
+    "id": 220,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 211,
+    "name": "null_2_0_0_2_0_0_14",
+    "texture": "",
+    "position": [
+      -17.0,
+      14.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 222,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 212,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 211,
+    "size": [
+      256,
+      128
+    ],
+    "id": 223,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 213,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 212,
+    "size": [
+      32,
+      512
+    ],
+    "id": 224,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      432,
+      72,
+      504,
+      144
+    ]
+  },
+  {
+    "index": 214,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 212,
+    "size": [
+      256,
+      128
+    ],
+    "id": 225,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 215,
+    "name": "null_2_0_0_2_0_0_15",
+    "texture": "",
+    "position": [
+      28.0,
+      14.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 227,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 216,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 215,
+    "size": [
+      256,
+      128
+    ],
+    "id": 228,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 217,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 216,
+    "size": [
+      32,
+      512
+    ],
+    "id": 229,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      0,
+      144,
+      72,
+      216
+    ]
+  },
+  {
+    "index": 218,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 216,
+    "size": [
+      256,
+      128
+    ],
+    "id": 230,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 219,
+    "name": "null_2_0_0_2_0_0_16",
+    "texture": "",
+    "position": [
+      73.0,
+      14.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 232,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 220,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 219,
+    "size": [
+      256,
+      128
+    ],
+    "id": 233,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 221,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 220,
+    "size": [
+      32,
+      512
+    ],
+    "id": 234,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      72,
+      144,
+      144,
+      216
+    ]
+  },
+  {
+    "index": 222,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 220,
+    "size": [
+      256,
+      128
+    ],
+    "id": 235,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 223,
+    "name": "null_2_0_0_2_0_0_17",
+    "texture": "",
+    "position": [
+      118.0,
+      14.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 237,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 224,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 223,
+    "size": [
+      256,
+      128
+    ],
+    "id": 238,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 225,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 224,
+    "size": [
+      32,
+      512
+    ],
+    "id": 239,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      144,
+      144,
+      216,
+      216
+    ]
+  },
+  {
+    "index": 226,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 224,
+    "size": [
+      256,
+      128
+    ],
+    "id": 240,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 227,
+    "name": "null_2_0_0_2_0_0_18",
+    "texture": "",
+    "position": [
+      -107.0,
+      60.5
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 242,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 228,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 227,
+    "size": [
+      256,
+      128
+    ],
+    "id": 243,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 229,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 228,
+    "size": [
+      32,
+      512
+    ],
+    "id": 244,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      216,
+      144,
+      288,
+      216
+    ]
+  },
+  {
+    "index": 230,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 228,
+    "size": [
+      256,
+      128
+    ],
+    "id": 245,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 231,
+    "name": "null_2_0_0_2_0_0_19",
+    "texture": "",
+    "position": [
+      -62.0,
+      60.5
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 247,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 232,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 231,
+    "size": [
+      256,
+      128
+    ],
+    "id": 248,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 233,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 232,
+    "size": [
+      32,
+      512
+    ],
+    "id": 249,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      288,
+      144,
+      360,
+      216
+    ]
+  },
+  {
+    "index": 234,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 232,
+    "size": [
+      256,
+      128
+    ],
+    "id": 250,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 235,
+    "name": "null_2_0_0_2_0_0_20",
+    "texture": "",
+    "position": [
+      -17.0,
+      60.5
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 252,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 236,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 235,
+    "size": [
+      256,
+      128
+    ],
+    "id": 253,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 237,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 236,
+    "size": [
+      32,
+      512
+    ],
+    "id": 254,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      360,
+      144,
+      432,
+      216
+    ]
+  },
+  {
+    "index": 238,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 236,
+    "size": [
+      256,
+      128
+    ],
+    "id": 255,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 239,
+    "name": "null_2_0_0_2_0_0_21",
+    "texture": "",
+    "position": [
+      28.0,
+      60.5
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 257,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 240,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 239,
+    "size": [
+      256,
+      128
+    ],
+    "id": 258,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 241,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 240,
+    "size": [
+      32,
+      512
+    ],
+    "id": 259,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      432,
+      144,
+      504,
+      216
+    ]
+  },
+  {
+    "index": 242,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 240,
+    "size": [
+      256,
+      128
+    ],
+    "id": 260,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 243,
+    "name": "null_2_0_0_2_0_0_22",
+    "texture": "",
+    "position": [
+      73.0,
+      60.5
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 262,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 244,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 243,
+    "size": [
+      256,
+      128
+    ],
+    "id": 263,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 245,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 244,
+    "size": [
+      32,
+      512
+    ],
+    "id": 264,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      0,
+      216,
+      72,
+      288
+    ]
+  },
+  {
+    "index": 246,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 244,
+    "size": [
+      256,
+      128
+    ],
+    "id": 265,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 247,
+    "name": "null_2_0_0_2_0_0_23",
+    "texture": "",
+    "position": [
+      118.0,
+      60.5
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 267,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 248,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 247,
+    "size": [
+      256,
+      128
+    ],
+    "id": 268,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 249,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 248,
+    "size": [
+      32,
+      512
+    ],
+    "id": 269,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      72,
+      216,
+      144,
+      288
+    ]
+  },
+  {
+    "index": 250,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 248,
+    "size": [
+      256,
+      128
+    ],
+    "id": 270,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 251,
+    "name": "null_2_0_0_2_0_0_24",
+    "texture": "",
+    "position": [
+      -107.0,
+      107.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 272,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 252,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 251,
+    "size": [
+      256,
+      128
+    ],
+    "id": 273,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 253,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 252,
+    "size": [
+      32,
+      512
+    ],
+    "id": 274,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      144,
+      216,
+      216,
+      288
+    ]
+  },
+  {
+    "index": 254,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 252,
+    "size": [
+      256,
+      128
+    ],
+    "id": 275,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 255,
+    "name": "null_2_0_0_2_0_0_25",
+    "texture": "",
+    "position": [
+      -62.0,
+      107.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 277,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 256,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 255,
+    "size": [
+      256,
+      128
+    ],
+    "id": 278,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 257,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 256,
+    "size": [
+      32,
+      512
+    ],
+    "id": 279,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      216,
+      216,
+      288,
+      288
+    ]
+  },
+  {
+    "index": 258,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 256,
+    "size": [
+      256,
+      128
+    ],
+    "id": 280,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 259,
+    "name": "null_2_0_0_2_0_0_26",
+    "texture": "",
+    "position": [
+      -17.0,
+      107.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 282,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 260,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 259,
+    "size": [
+      256,
+      128
+    ],
+    "id": 283,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 261,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 260,
+    "size": [
+      32,
+      512
+    ],
+    "id": 284,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      288,
+      216,
+      360,
+      288
+    ]
+  },
+  {
+    "index": 262,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 260,
+    "size": [
+      256,
+      128
+    ],
+    "id": 285,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 263,
+    "name": "null_2_0_0_2_0_0_27",
+    "texture": "",
+    "position": [
+      28.0,
+      107.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 287,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 264,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 263,
+    "size": [
+      256,
+      128
+    ],
+    "id": 288,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 265,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 264,
+    "size": [
+      32,
+      512
+    ],
+    "id": 289,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      360,
+      216,
+      432,
+      288
+    ]
+  },
+  {
+    "index": 266,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 264,
+    "size": [
+      256,
+      128
+    ],
+    "id": 290,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 267,
+    "name": "null_2_0_0_2_0_0_28",
+    "texture": "",
+    "position": [
+      73.0,
+      107.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 292,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 268,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 267,
+    "size": [
+      256,
+      128
+    ],
+    "id": 293,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 269,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 268,
+    "size": [
+      32,
+      512
+    ],
+    "id": 294,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      432,
+      216,
+      504,
+      288
+    ]
+  },
+  {
+    "index": 270,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 268,
+    "size": [
+      256,
+      128
+    ],
+    "id": 295,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 271,
+    "name": "null_2_0_0_2_0_0_29",
+    "texture": "",
+    "position": [
+      118.0,
+      107.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 154,
+    "size": [
+      0,
+      0
+    ],
+    "id": 297,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 272,
+    "name": "Icon_frm",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 271,
+    "size": [
+      256,
+      128
+    ],
+    "id": 298,
+    "type": 3,
+    "material": 13,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 273,
+    "name": "Icon_kao",
+    "texture": "id\\dummy_BM",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5
+    ],
+    "parent": 272,
+    "size": [
+      32,
+      512
+    ],
+    "id": 299,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -36,
+      -36,
+      36,
+      36
+    ],
+    "uv": [
+      0,
+      288,
+      72,
+      360
+    ]
+  },
+  {
+    "index": 274,
+    "name": "Icon_sdw",
+    "texture": "id\\texture\\jpn\\cp_kessen\\cp_kessen_001_ID_HQ",
+    "position": [
+      1.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 272,
+    "size": [
+      256,
+      128
+    ],
+    "id": 300,
+    "type": 2,
+    "material": 15,
+    "geometry": [
+      -26,
+      -24,
+      26,
+      24
+    ],
+    "uv": [
+      72,
+      80,
+      124,
+      128
+    ]
+  },
+  {
+    "index": 275,
+    "name": "null_2_0_0_3",
+    "texture": "",
+    "position": [
+      88.0,
+      -32.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 75,
+    "size": [
+      0,
+      0
+    ],
+    "id": 304,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 276,
+    "name": "Tasseihanko",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_003_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.399999976158142,
+      1.399999976158142
+    ],
+    "parent": 275,
+    "size": [
+      256,
+      128
+    ],
+    "id": 305,
+    "type": 2,
+    "material": 10,
+    "geometry": [
+      -64,
+      -64,
+      64,
+      64
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      128
+    ]
+  },
+  {
+    "index": 277,
+    "name": "White",
+    "texture": "",
+    "position": [
+      -151.0,
+      14.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 275,
+    "size": [
+      0,
+      0
+    ],
+    "id": 306,
+    "type": 0,
+    "material": 5,
+    "geometry": [
+      -427,
+      -244,
+      427,
+      244
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 278,
+    "name": "null_3",
+    "texture": "",
+    "position": [
+      320.0,
+      240.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 0,
+    "size": [
+      0,
+      0
+    ],
+    "id": 308,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 279,
+    "name": "Black",
+    "texture": "",
+    "position": [
+      0.0,
+      176.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 278,
+    "size": [
+      0,
+      0
+    ],
+    "id": 309,
+    "type": 0,
+    "material": 20,
+    "geometry": [
+      -435,
+      0,
+      435,
+      70
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 280,
+    "name": "null_4",
+    "texture": "",
+    "position": [
+      229.0,
+      96.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 0,
+    "size": [
+      0,
+      0
+    ],
+    "id": 312,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -32,
+      -16,
+      0,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 281,
+    "name": "Btnavi_u",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_004_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 283,
+    "size": [
+      256,
+      128
+    ],
+    "id": 310,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      -128,
+      -16,
+      0,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      32
+    ]
+  },
+  {
+    "index": 282,
+    "name": "Btnavi_bt",
+    "texture": "id\\texture\\jpn\\common\\common_001_ID_HQ",
+    "position": [
+      -109.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 283,
+    "size": [
+      512,
+      256
+    ],
+    "id": 311,
+    "type": 2,
+    "material": 12,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      32,
+      0,
+      64,
+      32
+    ]
+  },
+  {
+    "index": 283,
+    "name": "null_4_0",
+    "texture": "",
+    "position": [
+      369.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 280,
+    "size": [
+      0,
+      0
+    ],
+    "id": 313,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -32,
+      -16,
+      0,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 284,
+    "name": "null_0_0_0_1_2",
+    "texture": "",
+    "position": [
+      198.0,
+      142.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 53,
+    "size": [
+      0,
+      0
+    ],
+    "id": 314,
+    "type": 4,
+    "material": 0,
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 285,
+    "name": "Line",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_001_ID_HQ",
+    "position": [
+      -24.5,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 284,
+    "size": [
+      512,
+      256
+    ],
+    "id": 315,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      -12,
+      -16,
+      12,
+      16
+    ],
+    "uv": [
+      42,
+      216,
+      66,
+      248
+    ]
+  },
+  {
+    "index": 286,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 284,
+    "size": [
+      256,
+      128
+    ],
+    "id": 316,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 287,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "position": [
+      -12.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 284,
+    "size": [
+      256,
+      128
+    ],
+    "id": 317,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 288,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "position": [
+      -37.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 284,
+    "size": [
+      256,
+      128
+    ],
+    "id": 318,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 289,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "position": [
+      -49.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 284,
+    "size": [
+      256,
+      128
+    ],
+    "id": 319,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 290,
+    "name": "Count",
+    "texture": "",
+    "position": [
+      212.0,
+      -10.0
+    ],
+    "scale": [
+      1.149999976158142,
+      0.8999999761581421
+    ],
+    "parent": 5,
+    "size": [
+      0,
+      256
+    ],
+    "id": 320,
+    "type": 4,
+    "material": 9,
+    "geometry": [
+      -8,
+      -8,
+      8,
+      8
+    ],
+    "uv": [
+      16,
+      0,
+      32,
+      16
+    ]
+  },
+  {
+    "index": 291,
+    "name": "Count",
+    "texture": "",
+    "position": [
+      212.0,
+      -10.0
+    ],
+    "scale": [
+      1.149999976158142,
+      0.8999999761581421
+    ],
+    "parent": 13,
+    "size": [
+      0,
+      256
+    ],
+    "id": 321,
+    "type": 4,
+    "material": 9,
+    "geometry": [
+      -8,
+      -8,
+      8,
+      8
+    ],
+    "uv": [
+      32,
+      0,
+      48,
+      16
+    ]
+  },
+  {
+    "index": 292,
+    "name": "Count",
+    "texture": "",
+    "position": [
+      212.0,
+      -10.0
+    ],
+    "scale": [
+      1.149999976158142,
+      0.8999999761581421
+    ],
+    "parent": 21,
+    "size": [
+      0,
+      256
+    ],
+    "id": 322,
+    "type": 4,
+    "material": 9,
+    "geometry": [
+      -8,
+      -8,
+      8,
+      8
+    ],
+    "uv": [
+      48,
+      0,
+      64,
+      16
+    ]
+  },
+  {
+    "index": 293,
+    "name": "Count",
+    "texture": "",
+    "position": [
+      212.0,
+      -10.0
+    ],
+    "scale": [
+      1.149999976158142,
+      0.8999999761581421
+    ],
+    "parent": 29,
+    "size": [
+      0,
+      256
+    ],
+    "id": 323,
+    "type": 4,
+    "material": 9,
+    "geometry": [
+      -8,
+      -8,
+      8,
+      8
+    ],
+    "uv": [
+      64,
+      0,
+      80,
+      16
+    ]
+  },
+  {
+    "index": 294,
+    "name": "Count",
+    "texture": "",
+    "position": [
+      212.0,
+      -10.0
+    ],
+    "scale": [
+      1.149999976158142,
+      0.8999999761581421
+    ],
+    "parent": 37,
+    "size": [
+      0,
+      256
+    ],
+    "id": 324,
+    "type": 4,
+    "material": 9,
+    "geometry": [
+      -8,
+      -8,
+      8,
+      8
+    ],
+    "uv": [
+      80,
+      0,
+      96,
+      16
+    ]
+  },
+  {
+    "index": 295,
+    "name": "Count",
+    "texture": "",
+    "position": [
+      212.0,
+      -10.0
+    ],
+    "scale": [
+      1.149999976158142,
+      0.8999999761581421
+    ],
+    "parent": 45,
+    "size": [
+      0,
+      256
+    ],
+    "id": 325,
+    "type": 4,
+    "material": 9,
+    "geometry": [
+      -8,
+      -8,
+      8,
+      8
+    ],
+    "uv": [
+      96,
+      0,
+      112,
+      16
+    ]
+  },
+  {
+    "index": 296,
+    "name": "Count_tit",
+    "texture": "",
+    "position": [
+      102.0,
+      -8.0
+    ],
+    "scale": [
+      1.100000023841858,
+      1.100000023841858
+    ],
+    "parent": 76,
+    "size": [
+      0,
+      256
+    ],
+    "id": 326,
+    "type": 4,
+    "material": 9,
+    "geometry": [
+      -8,
+      -8,
+      8,
+      8
+    ],
+    "uv": [
+      16,
+      0,
+      32,
+      16
+    ]
+  },
+  {
+    "index": 297,
+    "name": "Yugisu",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_001_ID_HQ",
+    "position": [
+      26.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      1.0
+    ],
+    "parent": 284,
+    "size": [
+      512,
+      256
+    ],
+    "id": 327,
+    "type": 2,
+    "material": 13,
+    "geometry": [
+      -21,
+      -16,
+      21,
+      16
+    ],
+    "uv": [
+      0,
+      216,
+      42,
+      248
+    ]
+  },
+  {
+    "index": 298,
+    "name": "Koban",
+    "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_001_ID_HQ",
+    "position": [
+      -146.0,
+      0.5
+    ],
+    "scale": [
+      0.699999988079071,
+      0.800000011920929
+    ],
+    "parent": 143,
+    "size": [
+      512,
+      256
+    ],
+    "id": 138,
+    "type": 2,
+    "material": 14,
+    "geometry": [
+      -24,
+      -24,
+      24,
+      24
+    ],
+    "uv": [
+      0,
+      168,
+      48,
+      216
+    ]
+  },
+  {
+    "index": 299,
+    "name": "White_0",
+    "texture": "",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 278,
+    "size": [
+      0,
+      0
+    ],
+    "id": 171,
+    "type": 1,
+    "material": 22,
+    "geometry": [
+      -430,
+      -245,
+      0,
+      245
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 300,
+    "name": "White_1",
+    "texture": "",
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 278,
+    "size": [
+      0,
+      0
+    ],
+    "id": 155,
+    "type": 1,
+    "material": 22,
+    "geometry": [
+      0,
+      -245,
+      430,
+      245
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 301,
+    "name": "White_2",
+    "texture": "",
+    "position": [
+      0.0,
+      177.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 278,
+    "size": [
+      0,
+      0
+    ],
+    "id": 176,
+    "type": 1,
+    "material": 21,
+    "geometry": [
+      -435,
+      -239,
+      435,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  }
+]

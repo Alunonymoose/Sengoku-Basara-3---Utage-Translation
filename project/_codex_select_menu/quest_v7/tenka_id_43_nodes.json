@@ -1,0 +1,4900 @@
+[
+  {
+    "index": 0,
+    "name": "SysRoot",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": -1,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      32,
+      32
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 1,
+    "name": "0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      320.0,
+      240.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 0,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 2,
+    "name": "0_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      192.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 3,
+    "name": "Obi1_L",
+    "texture": "id\\texture\\jpn\\common\\common_003_ID_HQ",
+    "type": 3,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -430,
+      -16,
+      0,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      430,
+      32
+    ]
+  },
+  {
+    "index": 4,
+    "name": "Obi1_R",
+    "texture": "id\\texture\\jpn\\common\\common_003_ID_HQ",
+    "type": 3,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      430,
+      -16,
+      0,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      430,
+      32
+    ]
+  },
+  {
+    "index": 5,
+    "name": "Obi2_L",
+    "texture": "id\\texture\\jpn\\common\\common_003_ID_HQ",
+    "type": 3,
+    "position": [
+      0.0,
+      32.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -430,
+      -16,
+      0,
+      16
+    ],
+    "uv": [
+      0,
+      32,
+      430,
+      64
+    ]
+  },
+  {
+    "index": 6,
+    "name": "Obi2_R",
+    "texture": "id\\texture\\jpn\\common\\common_003_ID_HQ",
+    "type": 3,
+    "position": [
+      0.0,
+      32.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      430,
+      -16,
+      0,
+      16
+    ],
+    "uv": [
+      0,
+      32,
+      430,
+      64
+    ]
+  },
+  {
+    "index": 7,
+    "name": "0_0_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      -170.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 8,
+    "name": "Stick",
+    "texture": "id\\texture\\jpn\\common\\common_001_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 7,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 9,
+    "name": "Sentaku",
+    "texture": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+    "type": 2,
+    "position": [
+      12.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 7,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -16,
+      128,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      32
+    ]
+  },
+  {
+    "index": 10,
+    "name": "Sentaku2",
+    "texture": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+    "type": 2,
+    "position": [
+      12.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 7,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -16,
+      128,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      32
+    ]
+  },
+  {
+    "index": 11,
+    "name": "0_0_1",
+    "texture": "",
+    "type": 4,
+    "position": [
+      -30.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 12,
+    "name": "A",
+    "texture": "id\\texture\\jpn\\common\\common_001_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 11,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      32,
+      0,
+      64,
+      32
+    ]
+  },
+  {
+    "index": 13,
+    "name": "Kettei",
+    "texture": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+    "type": 2,
+    "position": [
+      12.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 11,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -16,
+      128,
+      16
+    ],
+    "uv": [
+      128,
+      0,
+      256,
+      32
+    ]
+  },
+  {
+    "index": 14,
+    "name": "Kettei2",
+    "texture": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+    "type": 2,
+    "position": [
+      12.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 11,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -16,
+      128,
+      16
+    ],
+    "uv": [
+      128,
+      0,
+      256,
+      32
+    ]
+  },
+  {
+    "index": 15,
+    "name": "0_0_2",
+    "texture": "",
+    "type": 4,
+    "position": [
+      110.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 16,
+    "name": "B",
+    "texture": "id\\texture\\jpn\\common\\common_001_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 15,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      64,
+      0,
+      96,
+      32
+    ]
+  },
+  {
+    "index": 17,
+    "name": "Modoru",
+    "texture": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+    "type": 2,
+    "position": [
+      12.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 15,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -16,
+      128,
+      16
+    ],
+    "uv": [
+      0,
+      32,
+      128,
+      64
+    ]
+  },
+  {
+    "index": 18,
+    "name": "Modoru2",
+    "texture": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+    "type": 2,
+    "position": [
+      12.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 15,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -16,
+      128,
+      16
+    ],
+    "uv": [
+      0,
+      32,
+      128,
+      64
+    ]
+  },
+  {
+    "index": 19,
+    "name": "0_0_3",
+    "texture": "",
+    "type": 4,
+    "position": [
+      110.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 20,
+    "name": "-",
+    "texture": "id\\texture\\jpn\\common\\common_001_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 19,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      96,
+      32,
+      128,
+      64
+    ]
+  },
+  {
+    "index": 21,
+    "name": "Hazusu",
+    "texture": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+    "type": 2,
+    "position": [
+      12.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 19,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -16,
+      128,
+      16
+    ],
+    "uv": [
+      128,
+      64,
+      256,
+      96
+    ]
+  },
+  {
+    "index": 22,
+    "name": "Hazusu2",
+    "texture": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+    "type": 2,
+    "position": [
+      12.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 19,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -16,
+      128,
+      16
+    ],
+    "uv": [
+      128,
+      64,
+      256,
+      96
+    ]
+  },
+  {
+    "index": 23,
+    "name": "0_0_4",
+    "texture": "",
+    "type": 4,
+    "position": [
+      80.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 24,
+    "name": "2PSansen",
+    "texture": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 23,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -16,
+      256,
+      16
+    ],
+    "uv": [
+      0,
+      192,
+      256,
+      224
+    ]
+  },
+  {
+    "index": 25,
+    "name": "2PRidatu",
+    "texture": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 23,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -16,
+      256,
+      16
+    ],
+    "uv": [
+      0,
+      224,
+      256,
+      256
+    ]
+  },
+  {
+    "index": 26,
+    "name": "Plus",
+    "texture": "id\\texture\\jpn\\common\\common_001_ID_HQ",
+    "type": 2,
+    "position": [
+      103.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 25,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      160,
+      0,
+      192,
+      32
+    ]
+  },
+  {
+    "index": 27,
+    "name": "0_0_5",
+    "texture": "",
+    "type": 4,
+    "position": [
+      80.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 28,
+    "name": "C",
+    "texture": "id\\texture\\jpn\\common\\common_001_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 27,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      32,
+      32,
+      64
+    ]
+  },
+  {
+    "index": 29,
+    "name": "NextChr",
+    "texture": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+    "type": 2,
+    "position": [
+      12.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 27,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -16,
+      128,
+      16
+    ],
+    "uv": [
+      128,
+      96,
+      256,
+      128
+    ]
+  },
+  {
+    "index": 30,
+    "name": "NextChr2",
+    "texture": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+    "type": 2,
+    "position": [
+      12.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 27,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -16,
+      128,
+      16
+    ],
+    "uv": [
+      128,
+      96,
+      256,
+      128
+    ]
+  },
+  {
+    "index": 31,
+    "name": "0_0_6",
+    "texture": "",
+    "type": 4,
+    "position": [
+      80.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 32,
+    "name": "plus",
+    "texture": "id\\texture\\jpn\\common\\common_001_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 31,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      160,
+      0,
+      192,
+      32
+    ]
+  },
+  {
+    "index": 33,
+    "name": "partner",
+    "texture": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+    "type": 2,
+    "position": [
+      12.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 31,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -16,
+      256,
+      16
+    ],
+    "uv": [
+      256,
+      192,
+      512,
+      224
+    ]
+  },
+  {
+    "index": 34,
+    "name": "partner2",
+    "texture": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+    "type": 2,
+    "position": [
+      12.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 31,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -16,
+      256,
+      16
+    ],
+    "uv": [
+      256,
+      192,
+      512,
+      224
+    ]
+  },
+  {
+    "index": 35,
+    "name": "0_0_7",
+    "texture": "",
+    "type": 4,
+    "position": [
+      80.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 36,
+    "name": "Z",
+    "texture": "id\\texture\\jpn\\common\\common_001_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 35,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      96,
+      0,
+      128,
+      32
+    ]
+  },
+  {
+    "index": 37,
+    "name": "tokuten",
+    "texture": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+    "type": 2,
+    "position": [
+      12.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 35,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -16,
+      128,
+      16
+    ],
+    "uv": [
+      256,
+      64,
+      384,
+      96
+    ]
+  },
+  {
+    "index": 38,
+    "name": "tokuten2",
+    "texture": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+    "type": 2,
+    "position": [
+      12.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 35,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -16,
+      128,
+      16
+    ],
+    "uv": [
+      256,
+      64,
+      384,
+      96
+    ]
+  },
+  {
+    "index": 39,
+    "name": "1",
+    "texture": "",
+    "type": 4,
+    "position": [
+      320.0,
+      240.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 0,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 40,
+    "name": "1_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      -12.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 39,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 41,
+    "name": "Back",
+    "texture": "",
+    "type": 0,
+    "position": [
+      0.0,
+      12.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 40,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -427,
+      -242,
+      427,
+      242
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 42,
+    "name": "1_0_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 40,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 43,
+    "name": "Obi",
+    "texture": "",
+    "type": 1,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 42,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -427,
+      -121,
+      427,
+      121
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 44,
+    "name": "Line",
+    "texture": "",
+    "type": 0,
+    "position": [
+      0.0,
+      -122.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 42,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -427,
+      -1,
+      427,
+      1
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 45,
+    "name": "Line",
+    "texture": "",
+    "type": 0,
+    "position": [
+      0.0,
+      122.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 42,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -427,
+      -1,
+      427,
+      1
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 46,
+    "name": "1_1",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 39,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 47,
+    "name": "Nannido",
+    "texture": "id\\texture\\jpn\\common\\common_024_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      -100.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 46,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -64,
+      -21,
+      64,
+      21
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      42
+    ]
+  },
+  {
+    "index": 48,
+    "name": "1_1_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      -10.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 46,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 49,
+    "name": "Norma",
+    "texture": "id\\texture\\jpn\\common\\common_007_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 50,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -64,
+      -16,
+      64,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      32
+    ]
+  },
+  {
+    "index": 50,
+    "name": "Norma_K",
+    "texture": "id\\texture\\jpn\\common\\common_022_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      -38.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 48,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -128,
+      -21,
+      128,
+      21
+    ],
+    "uv": [
+      0,
+      0,
+      256,
+      42
+    ]
+  },
+  {
+    "index": 51,
+    "name": "Diffi",
+    "texture": "id\\texture\\jpn\\common\\common_007_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 52,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -64,
+      -16,
+      64,
+      16
+    ],
+    "uv": [
+      128,
+      0,
+      256,
+      32
+    ]
+  },
+  {
+    "index": 52,
+    "name": "Diffi_K",
+    "texture": "id\\texture\\jpn\\common\\common_022_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      12.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 48,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -128,
+      -21,
+      128,
+      21
+    ],
+    "uv": [
+      0,
+      0,
+      256,
+      42
+    ]
+  },
+  {
+    "index": 53,
+    "name": "Kyuky",
+    "texture": "id\\texture\\jpn\\common\\common_007_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 54,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -64,
+      -16,
+      64,
+      16
+    ],
+    "uv": [
+      0,
+      32,
+      128,
+      64
+    ]
+  },
+  {
+    "index": 54,
+    "name": "Kyuky_K",
+    "texture": "id\\texture\\jpn\\common\\common_022_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      62.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 48,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -128,
+      -21,
+      128,
+      21
+    ],
+    "uv": [
+      0,
+      0,
+      256,
+      42
+    ]
+  },
+  {
+    "index": 55,
+    "name": "Basara",
+    "texture": "id\\texture\\jpn\\common\\common_007_ID_HQ",
+    "type": 2,
+    "position": [
+      7.999999979801942e-06,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 56,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -64,
+      -16,
+      64,
+      16
+    ],
+    "uv": [
+      128,
+      32,
+      256,
+      64
+    ]
+  },
+  {
+    "index": 56,
+    "name": "Basara_K",
+    "texture": "id\\texture\\jpn\\common\\common_022_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      82.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 48,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -128,
+      -21,
+      128,
+      21
+    ],
+    "uv": [
+      0,
+      0,
+      256,
+      42
+    ]
+  },
+  {
+    "index": 57,
+    "name": "1_2",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      -10.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 39,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 58,
+    "name": "Hajim",
+    "texture": "id\\texture\\jpn\\common\\common_007_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 59,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -64,
+      -16,
+      64,
+      16
+    ],
+    "uv": [
+      0,
+      64,
+      128,
+      96
+    ]
+  },
+  {
+    "index": 59,
+    "name": "Hajim_K",
+    "texture": "id\\texture\\jpn\\common\\common_022_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      -30.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 57,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -128,
+      -21,
+      128,
+      21
+    ],
+    "uv": [
+      0,
+      0,
+      256,
+      42
+    ]
+  },
+  {
+    "index": 60,
+    "name": "Tuduk",
+    "texture": "id\\texture\\jpn\\common\\common_007_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 61,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -64,
+      -16,
+      64,
+      16
+    ],
+    "uv": [
+      128,
+      64,
+      256,
+      96
+    ]
+  },
+  {
+    "index": 61,
+    "name": "Tuduk_K",
+    "texture": "id\\texture\\jpn\\common\\common_022_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      30.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 57,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -128,
+      -21,
+      128,
+      21
+    ],
+    "uv": [
+      0,
+      0,
+      256,
+      42
+    ]
+  },
+  {
+    "index": 62,
+    "name": "1_3",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      -10.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 39,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 63,
+    "name": "Saich",
+    "texture": "id\\texture\\jpn\\common\\common_007_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 64,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -64,
+      -16,
+      64,
+      16
+    ],
+    "uv": [
+      0,
+      96,
+      128,
+      128
+    ]
+  },
+  {
+    "index": 64,
+    "name": "Saich_K",
+    "texture": "id\\texture\\jpn\\common\\common_022_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      -50.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 62,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -128,
+      -21,
+      128,
+      21
+    ],
+    "uv": [
+      0,
+      0,
+      256,
+      42
+    ]
+  },
+  {
+    "index": 65,
+    "name": "Henko",
+    "texture": "id\\texture\\jpn\\common\\common_007_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 66,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -128,
+      -16,
+      128,
+      16
+    ],
+    "uv": [
+      0,
+      128,
+      256,
+      160
+    ]
+  },
+  {
+    "index": 66,
+    "name": "Henko_K",
+    "texture": "id\\texture\\jpn\\common\\common_022_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 62,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -128,
+      -21,
+      128,
+      21
+    ],
+    "uv": [
+      0,
+      0,
+      256,
+      42
+    ]
+  },
+  {
+    "index": 67,
+    "name": "Title",
+    "texture": "id\\texture\\jpn\\common\\common_007_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 68,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -128,
+      -16,
+      128,
+      16
+    ],
+    "uv": [
+      0,
+      192,
+      256,
+      224
+    ]
+  },
+  {
+    "index": 68,
+    "name": "Title_K",
+    "texture": "id\\texture\\jpn\\common\\common_022_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      50.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 62,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -128,
+      -21,
+      128,
+      21
+    ],
+    "uv": [
+      0,
+      0,
+      256,
+      42
+    ]
+  },
+  {
+    "index": 69,
+    "name": "1_4",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      -40.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 39,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 70,
+    "name": "Cursol",
+    "texture": "id\\texture\\jpn\\common\\common_022_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 69,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -128,
+      -21,
+      128,
+      21
+    ],
+    "uv": [
+      0,
+      84,
+      256,
+      126
+    ]
+  },
+  {
+    "index": 71,
+    "name": "1_5",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      -14.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 39,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 72,
+    "name": "2P_Join",
+    "texture": "id\\texture\\jpn\\common\\common_023_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 71,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -128,
+      -32,
+      128,
+      32
+    ],
+    "uv": [
+      0,
+      0,
+      256,
+      64
+    ]
+  },
+  {
+    "index": 73,
+    "name": "1_5_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 71,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 74,
+    "name": "Obi",
+    "texture": "",
+    "type": 1,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 73,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -427,
+      -40,
+      427,
+      40
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 75,
+    "name": "Line",
+    "texture": "",
+    "type": 0,
+    "position": [
+      0.0,
+      -40.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 73,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -427,
+      -1,
+      427,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 76,
+    "name": "Line",
+    "texture": "",
+    "type": 0,
+    "position": [
+      0.0,
+      40.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 73,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -427,
+      0,
+      427,
+      1
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 77,
+    "name": "3",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 0,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 78,
+    "name": "3_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      134.0,
+      70.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 77,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 79,
+    "name": "3_0_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      222.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 78,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 80,
+    "name": "3_0_0_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 79,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 81,
+    "name": "Status",
+    "texture": "id\\texture\\jpn\\common\\common_014_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 79,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -77,
+      -37,
+      77,
+      37
+    ],
+    "uv": [
+      0,
+      0,
+      154,
+      74
+    ]
+  },
+  {
+    "index": 82,
+    "name": "Zokusei",
+    "texture": "id\\texture\\jpn\\common\\common_008_ID_HQ",
+    "type": 2,
+    "position": [
+      60.0,
+      -22.0
+    ],
+    "scale": [
+      0.699999988079071,
+      0.699999988079071
+    ],
+    "parent": 80,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 83,
+    "name": "Red",
+    "texture": "",
+    "type": 1,
+    "position": [
+      -22.0,
+      -5.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      40,
+      4
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 84,
+    "name": "Yellow",
+    "texture": "",
+    "type": 1,
+    "position": [
+      -22.0,
+      9.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      40,
+      4
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 85,
+    "name": "Green",
+    "texture": "",
+    "type": 1,
+    "position": [
+      -22.0,
+      23.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      40,
+      4
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 86,
+    "name": "Red_K",
+    "texture": "",
+    "type": 0,
+    "position": [
+      -22.0,
+      -5.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      40,
+      4
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 87,
+    "name": "Yello_K",
+    "texture": "",
+    "type": 0,
+    "position": [
+      -22.0,
+      9.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      40,
+      4
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 88,
+    "name": "Green_K",
+    "texture": "",
+    "type": 0,
+    "position": [
+      -22.0,
+      23.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      40,
+      4
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 89,
+    "name": "Nannido",
+    "texture": "id\\texture\\jpn\\common\\common_014_ID_HQ",
+    "type": 2,
+    "position": [
+      -105.0,
+      -31.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      1.0
+    ],
+    "parent": 80,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -51,
+      -12,
+      51,
+      12
+    ],
+    "uv": [
+      154,
+      0,
+      256,
+      24
+    ]
+  },
+  {
+    "index": 90,
+    "name": "3_0_0_1",
+    "texture": "",
+    "type": 4,
+    "position": [
+      -17.0,
+      -22.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 79,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 91,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_015_ID_HQ",
+    "type": 2,
+    "position": [
+      13.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      0.699999988079071
+    ],
+    "parent": 90,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 92,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_015_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      0.699999988079071
+    ],
+    "parent": 90,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 93,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_015_ID_HQ",
+    "type": 2,
+    "position": [
+      -13.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      0.699999988079071
+    ],
+    "parent": 90,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 94,
+    "name": "MAX",
+    "texture": "id\\texture\\jpn\\common\\common_008_ID_HQ",
+    "type": 2,
+    "position": [
+      -2.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      0.8999999761581421
+    ],
+    "parent": 90,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -32,
+      -16,
+      32,
+      16
+    ],
+    "uv": [
+      64,
+      32,
+      128,
+      64
+    ]
+  },
+  {
+    "index": 95,
+    "name": "3_0_0_2",
+    "texture": "",
+    "type": 4,
+    "position": [
+      68.0,
+      -4.0
+    ],
+    "scale": [
+      0.75,
+      0.699999988079071
+    ],
+    "parent": 79,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 96,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 95,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 97,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": 2,
+    "position": [
+      -13.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 95,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 98,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": 2,
+    "position": [
+      -26.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 95,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 99,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": 2,
+    "position": [
+      -39.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 95,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 100,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": 2,
+    "position": [
+      -52.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 95,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 101,
+    "name": "3_0_0_3",
+    "texture": "",
+    "type": 4,
+    "position": [
+      68.0,
+      10.0
+    ],
+    "scale": [
+      0.75,
+      0.699999988079071
+    ],
+    "parent": 79,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 102,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 101,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 103,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": 2,
+    "position": [
+      -13.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 101,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 104,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": 2,
+    "position": [
+      -26.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 101,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 105,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": 2,
+    "position": [
+      -39.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 101,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 106,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": 2,
+    "position": [
+      -52.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 101,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 107,
+    "name": "3_0_0_4",
+    "texture": "",
+    "type": 4,
+    "position": [
+      68.0,
+      24.0
+    ],
+    "scale": [
+      0.75,
+      0.699999988079071
+    ],
+    "parent": 79,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 108,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 107,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 109,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": 2,
+    "position": [
+      -13.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 107,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 110,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": 2,
+    "position": [
+      -26.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 107,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 111,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": 2,
+    "position": [
+      -39.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 107,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 112,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_010_ID_HQ",
+    "type": 2,
+    "position": [
+      -52.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 107,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 113,
+    "name": "4",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      384.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 0,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 114,
+    "name": "Gaku",
+    "texture": "id\\texture\\jpn\\common\\common_005_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 113,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      0,
+      -35,
+      854,
+      35
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      64
+    ]
+  },
+  {
+    "index": 115,
+    "name": "Message",
+    "texture": "",
+    "type": 1,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 113,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      -35,
+      854,
+      35
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 116,
+    "name": "4_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      88.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 113,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 117,
+    "name": "Waku_K",
+    "texture": "id\\texture\\jpn\\common\\common_002_ID_HQ",
+    "type": 3,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 116,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -64,
+      -32,
+      64,
+      32
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      64
+    ]
+  },
+  {
+    "index": 118,
+    "name": "Buki",
+    "texture": "id\\dummy_BM",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.6800000071525574,
+      0.6800000071525574
+    ],
+    "parent": 116,
+    "size": [
+      32,
+      256
+    ],
+    "geometry": [
+      -64,
+      -32,
+      64,
+      32
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      64
+    ]
+  },
+  {
+    "index": 119,
+    "name": "Menuki",
+    "texture": "id\\dummy_BM",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 116,
+    "size": [
+      32,
+      256
+    ],
+    "geometry": [
+      -42,
+      -21,
+      42,
+      21
+    ],
+    "uv": [
+      0,
+      0,
+      85,
+      42
+    ]
+  },
+  {
+    "index": 120,
+    "name": "Nakama1",
+    "texture": "id\\dummy_BM",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 116,
+    "size": [
+      32,
+      128
+    ],
+    "geometry": [
+      -48,
+      -32,
+      48,
+      32
+    ],
+    "uv": [
+      32,
+      0,
+      128,
+      64
+    ]
+  },
+  {
+    "index": 121,
+    "name": "Nakama2",
+    "texture": "id\\dummy_BM",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 116,
+    "size": [
+      32,
+      128
+    ],
+    "geometry": [
+      -32,
+      -32,
+      32,
+      32
+    ],
+    "uv": [
+      0,
+      0,
+      64,
+      64
+    ]
+  },
+  {
+    "index": 122,
+    "name": "Jinchi",
+    "texture": "id\\texture\\jpn\\common\\common_008_ID_HQ",
+    "type": 2,
+    "position": [
+      480.0,
+      -20.0
+    ],
+    "scale": [
+      0.550000011920929,
+      0.550000011920929
+    ],
+    "parent": 116,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -21,
+      -21,
+      21,
+      21
+    ],
+    "uv": [
+      42,
+      64,
+      84,
+      106
+    ]
+  },
+  {
+    "index": 123,
+    "name": "Zokusei",
+    "texture": "id\\texture\\jpn\\common\\common_008_ID_HQ",
+    "type": 2,
+    "position": [
+      280.0,
+      -20.0
+    ],
+    "scale": [
+      0.699999988079071,
+      0.699999988079071
+    ],
+    "parent": 116,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 124,
+    "name": "NakamLv",
+    "texture": "id\\texture\\jpn\\tenka\\tenka_014_ID_HQ",
+    "type": 2,
+    "position": [
+      314.0,
+      -20.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 116,
+    "size": [
+      128,
+      64
+    ],
+    "geometry": [
+      -32,
+      -5,
+      32,
+      5
+    ],
+    "uv": [
+      0,
+      0,
+      64,
+      10
+    ]
+  },
+  {
+    "index": 125,
+    "name": "Kou",
+    "texture": "id\\texture\\jpn\\common\\common_008_ID_HQ",
+    "type": 2,
+    "position": [
+      35.0,
+      -18.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 116,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -16,
+      -11,
+      16,
+      11
+    ],
+    "uv": [
+      0,
+      106,
+      32,
+      128
+    ]
+  },
+  {
+    "index": 126,
+    "name": "Koban",
+    "texture": "id\\texture\\jpn\\result\\result_005_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 116,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      -32,
+      -32,
+      32,
+      32
+    ],
+    "uv": [
+      192,
+      128,
+      256,
+      192
+    ]
+  },
+  {
+    "index": 127,
+    "name": "4_0_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      82.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 116,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 128,
+    "name": "Menuki",
+    "texture": "id\\dummy_BM",
+    "type": 2,
+    "position": [
+      0.0,
+      11.0
+    ],
+    "scale": [
+      0.75,
+      0.75
+    ],
+    "parent": 127,
+    "size": [
+      32,
+      256
+    ],
+    "geometry": [
+      -42,
+      -21,
+      42,
+      21
+    ],
+    "uv": [
+      0,
+      0,
+      85,
+      42
+    ]
+  },
+  {
+    "index": 129,
+    "name": "Menuki_K",
+    "texture": "id\\texture\\jpn\\common\\common_017_ID_HQ",
+    "type": 3,
+    "position": [
+      0.0,
+      11.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 127,
+    "size": [
+      128,
+      64
+    ],
+    "geometry": [
+      -33,
+      -20,
+      33,
+      20
+    ],
+    "uv": [
+      0,
+      0,
+      64,
+      32
+    ]
+  },
+  {
+    "index": 130,
+    "name": "4_0_1",
+    "texture": "",
+    "type": 4,
+    "position": [
+      420.0,
+      -19.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 116,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 131,
+    "name": "Baika_K",
+    "texture": "id\\texture\\jpn\\common\\common_014_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 130,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -77,
+      -13,
+      77,
+      13
+    ],
+    "uv": [
+      0,
+      102,
+      154,
+      128
+    ]
+  },
+  {
+    "index": 132,
+    "name": "Ryo",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "type": 2,
+    "position": [
+      62.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 130,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -14,
+      -16,
+      14,
+      16
+    ],
+    "uv": [
+      100,
+      0,
+      128,
+      32
+    ]
+  },
+  {
+    "index": 133,
+    "name": "4_0_1_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      44.0,
+      1.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.699999988079071
+    ],
+    "parent": 130,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 134,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 133,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 135,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "type": 2,
+    "position": [
+      -16.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 133,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 136,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "type": 2,
+    "position": [
+      -32.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 133,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 137,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "type": 2,
+    "position": [
+      -48.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 133,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 138,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "type": 2,
+    "position": [
+      -64.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 133,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 139,
+    "name": "Suji",
+    "texture": "id\\texture\\jpn\\common\\common_009_ID_HQ",
+    "type": 2,
+    "position": [
+      -80.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 133,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -10,
+      -16,
+      10,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      20,
+      32
+    ]
+  },
+  {
+    "index": 140,
+    "name": "5",
+    "texture": "",
+    "type": 4,
+    "position": [
+      320.0,
+      384.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 0,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 141,
+    "name": "5_0",
+    "texture": "",
+    "type": 4,
+    "position": [
+      180.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 140,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 142,
+    "name": "Yes",
+    "texture": "id\\texture\\jpn\\common\\common_021_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 143,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -64,
+      -16,
+      64,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      128,
+      32
+    ]
+  },
+  {
+    "index": 143,
+    "name": "Yes_K",
+    "texture": "id\\texture\\jpn\\common\\common_022_ID_HQ",
+    "type": 2,
+    "position": [
+      -50.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 141,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -64,
+      -21,
+      64,
+      21
+    ],
+    "uv": [
+      0,
+      42,
+      128,
+      84
+    ]
+  },
+  {
+    "index": 144,
+    "name": "No",
+    "texture": "id\\texture\\jpn\\common\\common_021_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 145,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -64,
+      -16,
+      64,
+      16
+    ],
+    "uv": [
+      0,
+      32,
+      128,
+      64
+    ]
+  },
+  {
+    "index": 145,
+    "name": "No_K",
+    "texture": "id\\texture\\jpn\\common\\common_022_ID_HQ",
+    "type": 2,
+    "position": [
+      50.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 141,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -64,
+      -21,
+      64,
+      21
+    ],
+    "uv": [
+      0,
+      42,
+      128,
+      84
+    ]
+  },
+  {
+    "index": 146,
+    "name": "Cursol",
+    "texture": "id\\texture\\jpn\\common\\common_022_ID_HQ",
+    "type": 2,
+    "position": [
+      -50.0,
+      0.0
+    ],
+    "scale": [
+      0.8999999761581421,
+      0.8999999761581421
+    ],
+    "parent": 141,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -64,
+      -21,
+      64,
+      21
+    ],
+    "uv": [
+      128,
+      42,
+      256,
+      84
+    ]
+  },
+  {
+    "index": 147,
+    "name": "6",
+    "texture": "",
+    "type": 4,
+    "position": [
+      320.0,
+      175.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 0,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 148,
+    "name": "takami",
+    "texture": "id\\dummy_BM",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 147,
+    "size": [
+      32,
+      512
+    ],
+    "geometry": [
+      -256,
+      -32,
+      256,
+      32
+    ],
+    "uv": [
+      0,
+      0,
+      512,
+      64
+    ]
+  },
+  {
+    "index": 149,
+    "name": "Mode",
+    "texture": "id\\texture\\jpn\\common\\common_025_ID_HQ",
+    "type": 2,
+    "position": [
+      34.0,
+      -22.0
+    ],
+    "scale": [
+      0.75,
+      0.699999988079071
+    ],
+    "parent": 80,
+    "size": [
+      64,
+      32
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 150,
+    "name": "Sinshohin",
+    "texture": "id\\dummy_BM",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 71,
+    "size": [
+      32,
+      512
+    ],
+    "geometry": [
+      -256,
+      -32,
+      256,
+      32
+    ],
+    "uv": [
+      0,
+      0,
+      512,
+      64
+    ]
+  },
+  {
+    "index": 151,
+    "name": "Assist",
+    "texture": "id\\dummy_BM",
+    "type": 2,
+    "position": [
+      -120.0,
+      34.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 57,
+    "size": [
+      32,
+      256
+    ],
+    "geometry": [
+      -128,
+      -128,
+      128,
+      0
+    ],
+    "uv": [
+      0,
+      1,
+      256,
+      129
+    ]
+  },
+  {
+    "index": 152,
+    "name": "Tag",
+    "texture": "id\\dummy_BM",
+    "type": 2,
+    "position": [
+      120.0,
+      34.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 57,
+    "size": [
+      32,
+      256
+    ],
+    "geometry": [
+      -128,
+      -128,
+      128,
+      0
+    ],
+    "uv": [
+      0,
+      129,
+      256,
+      257
+    ]
+  },
+  {
+    "index": 153,
+    "name": "0_0_8",
+    "texture": "",
+    "type": 4,
+    "position": [
+      110.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 2,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 154,
+    "name": "-",
+    "texture": "id\\texture\\jpn\\common\\common_001_ID_HQ",
+    "type": 2,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 153,
+    "size": [
+      512,
+      256
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      96,
+      32,
+      128,
+      64
+    ]
+  },
+  {
+    "index": 155,
+    "name": "2P_IN",
+    "texture": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+    "type": 2,
+    "position": [
+      12.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 153,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -16,
+      128,
+      16
+    ],
+    "uv": [
+      0,
+      192,
+      128,
+      224
+    ]
+  },
+  {
+    "index": 156,
+    "name": "2P_IN2",
+    "texture": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+    "type": 2,
+    "position": [
+      12.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 153,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -16,
+      128,
+      16
+    ],
+    "uv": [
+      0,
+      192,
+      128,
+      224
+    ]
+  },
+  {
+    "index": 157,
+    "name": "2P_panel",
+    "texture": "id\\texture\\jpn\\common\\common_000_ID_HQ",
+    "type": 2,
+    "position": [
+      -16.0,
+      0.0
+    ],
+    "scale": [
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "parent": 153,
+    "size": [
+      1024,
+      512
+    ],
+    "geometry": [
+      0,
+      -16,
+      128,
+      16
+    ],
+    "uv": [
+      384,
+      96,
+      512,
+      128
+    ]
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "status": "pass",
+  "archives": 23,
+  "changed_resources": 42,
+  "untouched_compressed_resources": 1673,
+  "copies": {
+    "join": 8,
+    "join_layout": 7,
+    "char": 9,
+    "mode": 14,
+    "options": 2,
+    "mode_layout": 2
+  },
+  "changed_lsp_fields": 76,
+  "all_changes_within_declared_texture_cells_or_exact_layout_fields": true,
+  "compact_banner_layout_restored_exactly": true,
+  "visible_and_faint_background_stray_pixels": 0,
+  "runtime_verified": false
+}

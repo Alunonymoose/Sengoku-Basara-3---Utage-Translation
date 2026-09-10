@@ -1,0 +1,59 @@
+﻿# ======================================================
+# Sengoku BASARA 3 Utage Translation
+# Retail/copyrighted game content must never be committed
+# ======================================================
+
+# PS3 executables / packages
+*.iso
+*.pkg
+*.bin
+*.elf
+*.self
+*.sprx
+
+# MT Framework / game assets
+*.arc
+*.tex
+*.xet
+*.dds
+*.gmd
+*.msg
+*.fim
+*.lsp
+
+# Audio / video
+*.wav
+*.at3
+*.mp3
+*.ogg
+*.pmf
+
+# Archives
+*.zip
+*.7z
+*.rar
+
+# Extracted game trees
+PS3_GAME/
+USRDIR/
+nativePS3/
+rom/eng/
+rom/jpn/
+
+# RPCS3
+rpcs3/
+RPCS3/
+dev_hdd0/
+
+# Temporary / generated
+__pycache__/
+*.pyc
+*.tmp
+*.bak
+*.cache
+Thumbs.db
+.DS_Store
+
+# Editors
+.vscode/
+.idea/

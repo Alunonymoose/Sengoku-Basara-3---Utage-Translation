@@ -1,0 +1,19 @@
+{
+ "geometry": "1720x1000+228+228",
+ "zoomed": false,
+ "body_sashes": [
+  476,
+  1156
+ ],
+ "preview_sashes": [],
+ "review_sashes": [
+  251
+ ],
+ "zoom_mode": "fit",
+ "zoom": 1.0,
+ "last_arc_dir": "",
+ "last_folder_dir": "",
+ "last_output_dir": "",
+ "font_scale": 1.0,
+ "log_lines": 400
+}

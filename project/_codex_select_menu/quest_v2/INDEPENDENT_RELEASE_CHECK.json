@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "archives": 34,
+  "changed_textures": 259,
+  "preserved_compressed_resources": 341,
+  "all_metadata_and_resource_order_preserved": true,
+  "all_non_texture_payloads_preserved": true,
+  "zip_crc_pass": true,
+  "package_sha256": "fd10d305665dfb2abea497297e87a820e19805ede07a3165eca7781031be68eb",
+  "runtime": "required"
+}

@@ -1,0 +1,30 @@
+{
+  "status": "pass",
+  "text": "WINNING BET!",
+  "archives": [
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\brief\\mode_tenka.arc",
+      "entries": [
+        21
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\brief\\og\\mode_tenka.arc",
+      "entries": [
+        21
+      ]
+    }
+  ],
+  "changed_entries": [
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\brief\\mode_tenka.arc",
+      "entry": 21
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\brief\\og\\mode_tenka.arc",
+      "entry": 21
+    }
+  ],
+  "archive_count": 2,
+  "resource_count": 2
+}

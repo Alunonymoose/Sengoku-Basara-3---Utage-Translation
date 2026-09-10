@@ -1,0 +1,311 @@
+{
+  "status": "pass",
+  "donor": "E:\\SAMURAI HEROES\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\title.arc",
+  "archives": [
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl000.arc",
+      "name": "Masamune Date",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl001.arc",
+      "name": "Yukimura Sanada",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl002.arc",
+      "name": "Mitsunari Ishida",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl003.arc",
+      "name": "Ieyasu Tokugawa",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl004.arc",
+      "name": "Toshiie Maeda",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl005.arc",
+      "name": "Kanbei Kuroda",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl006.arc",
+      "name": "Kenshin Uesugi",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl007.arc",
+      "name": "Naotora Ii",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl008.arc",
+      "name": "Kotaro Fuma",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl009.arc",
+      "name": "Motochika Chosokabe",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl010.arc",
+      "name": "Yoshitsugu Otani",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl011.arc",
+      "name": "Yoshihiro Shimazu",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl012.arc",
+      "name": "Oichi",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl013.arc",
+      "name": "Motonari Mori",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl014.arc",
+      "name": "Tadakatsu Honda",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl015.arc",
+      "name": "Nobunaga Oda",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl016.arc",
+      "name": "Muneshige Tachibana",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl017.arc",
+      "name": "Hideaki Kobayakawa",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl018.arc",
+      "name": "Yoshiaki Mogami",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl019.arc",
+      "name": "Tenkai",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl020.arc",
+      "name": "Kenshin Uesugi",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl021.arc",
+      "name": "Kasuga",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl022.arc",
+      "name": "Sasuke Sarutobi",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl023.arc",
+      "name": "Kojiro Katakura",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl024.arc",
+      "name": "Matsu",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl025.arc",
+      "name": "Toshiie Maeda",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl026.arc",
+      "name": "Ujiyasu Hojo",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl027.arc",
+      "name": "Shingen Takeda",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl028.arc",
+      "name": "Hisahide Matsunaga",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl029.arc",
+      "name": "Sorin Otomo",
+      "changed_entries": [
+        2,
+        4
+      ]
+    }
+  ],
+  "limitations": "Entries without an exact SH English name donor use the actual SH donor pixel texture/alpha as a brush transfer over a hand-lettered skeleton; no system-font palette or plain fill is used.",
+  "validated_archives": 30,
+  "preview_contact_sheet": "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\result_final_contact_sheet.png",
+  "preview_paths": [
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl000_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl000_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl001_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl001_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl002_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl002_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl003_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl003_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl004_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl004_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl005_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl005_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl006_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl006_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl007_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl007_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl008_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl008_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl009_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl009_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl010_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl010_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl011_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl011_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl012_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl012_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl013_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl013_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl014_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl014_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl015_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl015_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl016_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl016_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl017_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl017_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl018_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl018_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl019_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl019_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl020_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl020_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl021_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl021_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl022_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl022_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl023_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl023_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl024_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl024_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl025_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl025_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl026_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl026_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl027_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl027_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl028_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl028_entry_4.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl029_entry_2.png",
+    "E:\\Utage Patching New\\_codex_tenka_v6\\result_final\\pl029_entry_4.png"
+  ]
+}

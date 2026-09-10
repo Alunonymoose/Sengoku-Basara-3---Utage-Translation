@@ -1,0 +1,529 @@
+[
+  {
+    "quest_index": 0,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q000_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_000_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "98ebef69612d1f78b076e991db755bddb2ec8ec2dd54591ebf7439f4e9ec42dd",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 1,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q001_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_001_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "1748b8313cd7c958ee4ad089f91dcbe5d8efd0d49cb8c947fd0b6680727c5660",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 2,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q002_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_002_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "781cb146520ddd9e1982f6dbc1afb823be73568688af8eda3dbe6eca0d29a786",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 3,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q003_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_003_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "dbdea23393ada40c155cc825a92c4a5de4699ae86e8825f4a27db0d14722c1db",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 4,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q004_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_004_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "65602713e2b797172f95bfb264f657c222988588b4d740363be2081faeadeb3d",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 5,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q005_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_005_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "842fac8b3ea2877519b3ec964a063e3fd912267d0184bbce8d47534d84a46822",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 6,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q006_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_006_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "a36189756ec7f8fd5bf1065fb46305f7171d8ebef0bf2e282f97ea187c17de97",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 7,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q007_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_007_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "b3270442dea364de2d7fe9c39f4500b50d9a289e25861a126c4f1de5b78a7c3f",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 8,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q008_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_008_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "98210d97e42554a8e952310f29253bc0d4a37f09c2a2b1307c2a47cbc8e35098",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 9,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q009_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_009_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "8e2b9428659a65d8432614b2a158615e01cf310f9516e68b8d59a53458947cdb",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 10,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q010_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_010_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "58f05d3bebecd37f1bf06d2a1da7c714242ab6ba00c75429877bcaf71bb3efac",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 11,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q011_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_011_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "23ebfc2d1b93f1b48112e845e12d19109519c82d9428097bf3051ac5d8b427e6",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 12,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q012_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_012_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "0fbecaeb0c815653b994e535f572d6916111f41110fd1c2630c9f501747c46b8",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 13,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q013_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_013_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "4cafea1121dcf4487c5aea58153cfda08a0172c45d2d1d64df72fa2a6a2a2c30",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 14,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q014_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_014_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "14d85e0833e5748d42ff340c3ded23500ee6043b5f1787f66fcc1a11f782fdc0",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 15,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q015_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_015_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "ae51554278ed72a22fc615ad11e5303794f082755566705c197c9f0e4a830895",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 16,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q016_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_016_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "d464e6da7a05b30ce7e5979140515a01fdeb030a658406fe3353e90b34370b5d",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 17,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q017_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_017_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "c2a039c0cb075843d9588ef6fe9e053c963eccb6de8f951461460241846dc79e",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 18,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q018_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_018_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "76a21b9a5dd7e1830e2f4fe0e66786a793dfd9e532ccfb2e1a871a8d90bb167f",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 19,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q019_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_019_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "badfcd09c437889ff1164528377ccc84d6e135685fa9c18168086c5af5d96093",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 20,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q020_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_020_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "d8b799e6795e35309281743c48c9f1dd6539587ebac4b596d834a7ded0ff5a54",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 21,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q021_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_021_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "398d2e661ae976d03cbc198c91c90bc609b1f9d1cb663aa0cc538e80720aefa4",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 22,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q022_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_022_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "de268fe468f503ea67fa0c8d8523f0b342d6835178f40dba3af2f563141dd489",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 23,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q023_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_023_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "37935d4edf3b753bfcc51dd8382b5fab73f2ee665e5654a0e8ee1f001687b38f",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 24,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q024_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_024_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "3f86ab785ce9f701724dd552f07cbe945d60ca2e195e4a8792efa9af8f0aebc2",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 25,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q025_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_025_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "7ff5cc60d3e45cc9500c8e014ac869738b76f0a68d48a660a2bcc9efbe106980",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 26,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q026_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_026_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "61948dbfd527f4020ab9b10e25b88ca7912457339bdb5726170044d0d13b7a4e",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 27,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q027_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_027_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "8d0eed1410fc7b6955444bc71cd37e50525f7a7b5d0f06f20671080f3faae267",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 28,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q028_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_028_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "fc0f47e3c6d42c5e08af79cb842020eda0bd6f538a4b880f8b551b9859ab9135",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 29,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q029_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_029_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "e7775d99c75ff56554a9a2d4cafb846fc01826d5a322252ada88ef1026562316",
+    "matches_quest_id_archive": true
+  },
+  {
+    "quest_index": 30,
+    "archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q030_id.arc",
+    "entry": 0,
+    "resource_name": "id\\texture\\jpn\\quest\\quest_030_ID_HQ",
+    "texture_info": {
+      "width": 512,
+      "height": 128,
+      "texture_offset": 20,
+      "format_code": 42,
+      "fourcc": "DXT5",
+      "block_size": 16,
+      "payload_size": 65536
+    },
+    "raw_sha256": "efe399aea5e24b2242782e2f30fb906436f26cb091ab4fbcf3d7cc900ee55d9c",
+    "matches_quest_id_archive": true
+  }
+]

@@ -1,0 +1,352 @@
+[
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result_id.arc",
+    "index": 41,
+    "name": "id\\texture\\jpn\\common\\common_013_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result_id.arc",
+    "index": 42,
+    "name": "id\\texture\\jpn\\tenka\\tenka_005_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result_id.arc",
+    "index": 46,
+    "name": "id\\lsp\\jpn\\tenka\\top_00"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result_id.arc",
+    "index": 61,
+    "name": "id\\lsp\\jpn\\tenka\\soubi_00"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl000.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl001.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_001_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl002.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_002_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl003.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_003_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl004.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_004_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl005.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_005_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl006.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_006_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl007.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_007_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl008.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_008_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl009.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_009_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl010.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_010_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl011.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_011_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl012.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_012_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl013.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_013_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl014.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_014_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl015.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_015_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl016.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_016_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl017.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_017_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl018.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_018_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl019.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_019_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl020.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_020_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl021.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_021_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl022.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_022_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl023.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_023_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl024.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_024_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl025.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_025_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl026.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_026_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl027.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_027_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl028.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_028_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\result\\pl029.arc",
+    "index": 2,
+    "name": "id\\texture\\jpn\\name\\name_029_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\equip.arc",
+    "index": 52,
+    "name": "id\\lsp\\jpn\\tenka\\soubi_00"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\smith.arc",
+    "index": 55,
+    "name": "id\\lsp\\jpn\\tenka\\soubi_00"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_finish_id.arc",
+    "index": 74,
+    "name": "id\\texture\\jpn\\common\\common_013_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_id.arc",
+    "index": 66,
+    "name": "id\\texture\\jpn\\common\\common_013_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_id.arc",
+    "index": 67,
+    "name": "id\\texture\\jpn\\tenka\\tenka_005_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_id.arc",
+    "index": 70,
+    "name": "id\\lsp\\jpn\\tenka\\top_00"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl000.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_000_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl001.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_001_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl002.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_002_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl003.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_003_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl004.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_004_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl005.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_005_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl006.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_006_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl007.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_007_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl008.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_008_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl009.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_009_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl010.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_010_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl011.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_011_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl012.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_012_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl013.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_013_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl014.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_014_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl015.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_015_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl016.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_016_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl017.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_017_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl018.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_018_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl019.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_019_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl020.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_020_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl021.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_021_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl022.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_022_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl023.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_023_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl024.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_024_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl025.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_025_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl026.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_026_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl027.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_027_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl028.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_028_ID_HQ"
+  },
+  {
+    "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_pl029.arc",
+    "index": 0,
+    "name": "id\\texture\\jpn\\name\\name_029_ID_HQ"
+  }
+]

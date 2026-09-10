@@ -1,0 +1,87 @@
+{
+  "status": "pass",
+  "patch": "Utage ID Static Textures V2 - global official SH donor reuse",
+  "created_utc": "2026-09-01T00:00:23.610608+00:00",
+  "package": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_ID_Static_Textures_V2_GLOBAL_SH_DONORS_ROOT_READY.zip",
+  "package_sha256": "c3cbdc37b571cf9e36dcfd3c421d007e9f62f451b0cbd9c90059f18b48c661b2",
+  "package_size": 347435,
+  "archive_count": 6,
+  "official_sh_resources_transplanted": 14,
+  "backup": "E:\\Utage Patching New\\_codex_tenka_v6\\id_mass_translation\\ID_STATIC_V2_BACKUP_PRE_GLOBAL_SH_TRANSPLANTS.zip",
+  "backup_sha256": "91e4bcd896d90005540a2d69bb1b7a954a42fc888a8e5c5dd40ada9fba173d0c",
+  "zip_crc_pass": true,
+  "zip_payload_hashes_match": true,
+  "live_archives_installed": [
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m039_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m040_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m042_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m043_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m044_enemy.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/m045_enemy.arc"
+  ],
+  "runtime_test": "required",
+  "archives": [
+    {
+      "archive": "m039_enemy.arc",
+      "resource_count": 2,
+      "entry_indices": [
+        0,
+        1
+      ],
+      "source_sha256": "1af835012b4ad3764d15580d241a0fbeb65b640c176dc2d641055a61e84e5899",
+      "output_sha256": "8a1b39aa2e66641ff0667b9cb9a17db80f5ed587cb34dee922ea390fa270aced"
+    },
+    {
+      "archive": "m040_enemy.arc",
+      "resource_count": 4,
+      "entry_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "source_sha256": "fdaef7395a240000629d40a47db462a0630983a753e2172dd157d2923d5824e5",
+      "output_sha256": "95a7691fd0c35ac6926da62ffa53644eec263df352ba038c9c0945eff206a16b"
+    },
+    {
+      "archive": "m042_enemy.arc",
+      "resource_count": 2,
+      "entry_indices": [
+        0,
+        1
+      ],
+      "source_sha256": "e7438dd111b3daf9cd2f84be5a89139acddcd8b46c608d0c486dfa923cad43c8",
+      "output_sha256": "98bdb5ca2893b3fef8e3d6066710e8eaab13e0b32aac080d70a77e279c84daa5"
+    },
+    {
+      "archive": "m043_enemy.arc",
+      "resource_count": 2,
+      "entry_indices": [
+        0,
+        1
+      ],
+      "source_sha256": "2d8c94a3260e81847cbdfc142ada254c4161fe5c46c08a4d1499c4c3eb17c6a6",
+      "output_sha256": "2fc4a9645fe53e37cbfe688194865e479c797de665a7a52885514eadec579d3f"
+    },
+    {
+      "archive": "m044_enemy.arc",
+      "resource_count": 2,
+      "entry_indices": [
+        0,
+        1
+      ],
+      "source_sha256": "f27878188d3ceef12dadae5e9e670eb045df2decdbce145fcfc614fc618d648e",
+      "output_sha256": "4b3254d07d93b623fd60e5f06b183559c6d6d66860159b9cc9c6950bdcc6cbae"
+    },
+    {
+      "archive": "m045_enemy.arc",
+      "resource_count": 2,
+      "entry_indices": [
+        0,
+        1
+      ],
+      "source_sha256": "0b3e144ef4c72c33eda8ae35d513314ca52602efdf15663b016b439747c120b6",
+      "output_sha256": "a2468f9d32b154dc51af69b1615769ac498392103ab50b968e6e1822e0c1e665"
+    }
+  ]
+}

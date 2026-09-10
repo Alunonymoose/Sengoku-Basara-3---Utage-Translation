@@ -1,0 +1,5342 @@
+{
+  "counts": {
+    "archives": 2666,
+    "resources": 28582,
+    "lsp_checked": 96,
+    "excluded": 1976
+  },
+  "copies": [
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q000_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_000_ID_HQ",
+      "size": 65556,
+      "sha256": "98ebef69612d1f78b076e991db755bddb2ec8ec2dd54591ebf7439f4e9ec42dd"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q001_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_001_ID_HQ",
+      "size": 65556,
+      "sha256": "1748b8313cd7c958ee4ad089f91dcbe5d8efd0d49cb8c947fd0b6680727c5660"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q002_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_002_ID_HQ",
+      "size": 65556,
+      "sha256": "781cb146520ddd9e1982f6dbc1afb823be73568688af8eda3dbe6eca0d29a786"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q003_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_003_ID_HQ",
+      "size": 65556,
+      "sha256": "dbdea23393ada40c155cc825a92c4a5de4699ae86e8825f4a27db0d14722c1db"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q004_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_004_ID_HQ",
+      "size": 65556,
+      "sha256": "65602713e2b797172f95bfb264f657c222988588b4d740363be2081faeadeb3d"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q005_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_005_ID_HQ",
+      "size": 65556,
+      "sha256": "842fac8b3ea2877519b3ec964a063e3fd912267d0184bbce8d47534d84a46822"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q006_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_006_ID_HQ",
+      "size": 65556,
+      "sha256": "a36189756ec7f8fd5bf1065fb46305f7171d8ebef0bf2e282f97ea187c17de97"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q007_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_007_ID_HQ",
+      "size": 65556,
+      "sha256": "b3270442dea364de2d7fe9c39f4500b50d9a289e25861a126c4f1de5b78a7c3f"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q008_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_008_ID_HQ",
+      "size": 65556,
+      "sha256": "98210d97e42554a8e952310f29253bc0d4a37f09c2a2b1307c2a47cbc8e35098"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q009_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_009_ID_HQ",
+      "size": 65556,
+      "sha256": "8e2b9428659a65d8432614b2a158615e01cf310f9516e68b8d59a53458947cdb"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q010_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_010_ID_HQ",
+      "size": 65556,
+      "sha256": "58f05d3bebecd37f1bf06d2a1da7c714242ab6ba00c75429877bcaf71bb3efac"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q011_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_011_ID_HQ",
+      "size": 65556,
+      "sha256": "23ebfc2d1b93f1b48112e845e12d19109519c82d9428097bf3051ac5d8b427e6"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q012_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_012_ID_HQ",
+      "size": 65556,
+      "sha256": "0fbecaeb0c815653b994e535f572d6916111f41110fd1c2630c9f501747c46b8"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q013_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_013_ID_HQ",
+      "size": 65556,
+      "sha256": "4cafea1121dcf4487c5aea58153cfda08a0172c45d2d1d64df72fa2a6a2a2c30"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q014_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_014_ID_HQ",
+      "size": 65556,
+      "sha256": "14d85e0833e5748d42ff340c3ded23500ee6043b5f1787f66fcc1a11f782fdc0"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q015_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_015_ID_HQ",
+      "size": 65556,
+      "sha256": "ae51554278ed72a22fc615ad11e5303794f082755566705c197c9f0e4a830895"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q016_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_016_ID_HQ",
+      "size": 65556,
+      "sha256": "d464e6da7a05b30ce7e5979140515a01fdeb030a658406fe3353e90b34370b5d"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q017_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_017_ID_HQ",
+      "size": 65556,
+      "sha256": "c2a039c0cb075843d9588ef6fe9e053c963eccb6de8f951461460241846dc79e"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q018_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_018_ID_HQ",
+      "size": 65556,
+      "sha256": "76a21b9a5dd7e1830e2f4fe0e66786a793dfd9e532ccfb2e1a871a8d90bb167f"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q019_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_019_ID_HQ",
+      "size": 65556,
+      "sha256": "badfcd09c437889ff1164528377ccc84d6e135685fa9c18168086c5af5d96093"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q020_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_020_ID_HQ",
+      "size": 65556,
+      "sha256": "d8b799e6795e35309281743c48c9f1dd6539587ebac4b596d834a7ded0ff5a54"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q021_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_021_ID_HQ",
+      "size": 65556,
+      "sha256": "398d2e661ae976d03cbc198c91c90bc609b1f9d1cb663aa0cc538e80720aefa4"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q022_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_022_ID_HQ",
+      "size": 65556,
+      "sha256": "de268fe468f503ea67fa0c8d8523f0b342d6835178f40dba3af2f563141dd489"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q023_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_023_ID_HQ",
+      "size": 65556,
+      "sha256": "37935d4edf3b753bfcc51dd8382b5fab73f2ee665e5654a0e8ee1f001687b38f"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q024_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_024_ID_HQ",
+      "size": 65556,
+      "sha256": "3f86ab785ce9f701724dd552f07cbe945d60ca2e195e4a8792efa9af8f0aebc2"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q025_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_025_ID_HQ",
+      "size": 65556,
+      "sha256": "7ff5cc60d3e45cc9500c8e014ac869738b76f0a68d48a660a2bcc9efbe106980"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q026_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_026_ID_HQ",
+      "size": 65556,
+      "sha256": "61948dbfd527f4020ab9b10e25b88ca7912457339bdb5726170044d0d13b7a4e"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q027_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_027_ID_HQ",
+      "size": 65556,
+      "sha256": "8d0eed1410fc7b6955444bc71cd37e50525f7a7b5d0f06f20671080f3faae267"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q028_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_028_ID_HQ",
+      "size": 65556,
+      "sha256": "fc0f47e3c6d42c5e08af79cb842020eda0bd6f538a4b880f8b551b9859ab9135"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q029_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_029_ID_HQ",
+      "size": 65556,
+      "sha256": "e7775d99c75ff56554a9a2d4cafb846fc01826d5a322252ada88ef1026562316"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\q030_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_030_ID_HQ",
+      "size": 65556,
+      "sha256": "efe399aea5e24b2242782e2f30fb906436f26cb091ab4fbcf3d7cc900ee55d9c"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_000_ID_HQ",
+      "size": 65556,
+      "sha256": "98ebef69612d1f78b076e991db755bddb2ec8ec2dd54591ebf7439f4e9ec42dd"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 9,
+      "name": "id\\texture\\jpn\\quest\\quest_001_ID_HQ",
+      "size": 65556,
+      "sha256": "1748b8313cd7c958ee4ad089f91dcbe5d8efd0d49cb8c947fd0b6680727c5660"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 16,
+      "name": "id\\texture\\jpn\\quest\\quest_002_ID_HQ",
+      "size": 65556,
+      "sha256": "781cb146520ddd9e1982f6dbc1afb823be73568688af8eda3dbe6eca0d29a786"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 27,
+      "name": "id\\texture\\jpn\\quest\\quest_003_ID_HQ",
+      "size": 65556,
+      "sha256": "dbdea23393ada40c155cc825a92c4a5de4699ae86e8825f4a27db0d14722c1db"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 34,
+      "name": "id\\texture\\jpn\\quest\\quest_004_ID_HQ",
+      "size": 65556,
+      "sha256": "65602713e2b797172f95bfb264f657c222988588b4d740363be2081faeadeb3d"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 43,
+      "name": "id\\texture\\jpn\\quest\\quest_005_ID_HQ",
+      "size": 65556,
+      "sha256": "842fac8b3ea2877519b3ec964a063e3fd912267d0184bbce8d47534d84a46822"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 50,
+      "name": "id\\texture\\jpn\\quest\\quest_006_ID_HQ",
+      "size": 65556,
+      "sha256": "a36189756ec7f8fd5bf1065fb46305f7171d8ebef0bf2e282f97ea187c17de97"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 59,
+      "name": "id\\texture\\jpn\\quest\\quest_007_ID_HQ",
+      "size": 65556,
+      "sha256": "b3270442dea364de2d7fe9c39f4500b50d9a289e25861a126c4f1de5b78a7c3f"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 70,
+      "name": "id\\texture\\jpn\\quest\\quest_008_ID_HQ",
+      "size": 65556,
+      "sha256": "98210d97e42554a8e952310f29253bc0d4a37f09c2a2b1307c2a47cbc8e35098"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 77,
+      "name": "id\\texture\\jpn\\quest\\quest_009_ID_HQ",
+      "size": 65556,
+      "sha256": "8e2b9428659a65d8432614b2a158615e01cf310f9516e68b8d59a53458947cdb"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 84,
+      "name": "id\\texture\\jpn\\quest\\quest_010_ID_HQ",
+      "size": 65556,
+      "sha256": "58f05d3bebecd37f1bf06d2a1da7c714242ab6ba00c75429877bcaf71bb3efac"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 91,
+      "name": "id\\texture\\jpn\\quest\\quest_011_ID_HQ",
+      "size": 65556,
+      "sha256": "23ebfc2d1b93f1b48112e845e12d19109519c82d9428097bf3051ac5d8b427e6"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 98,
+      "name": "id\\texture\\jpn\\quest\\quest_012_ID_HQ",
+      "size": 65556,
+      "sha256": "0fbecaeb0c815653b994e535f572d6916111f41110fd1c2630c9f501747c46b8"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 107,
+      "name": "id\\texture\\jpn\\quest\\quest_013_ID_HQ",
+      "size": 65556,
+      "sha256": "4cafea1121dcf4487c5aea58153cfda08a0172c45d2d1d64df72fa2a6a2a2c30"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 114,
+      "name": "id\\texture\\jpn\\quest\\quest_014_ID_HQ",
+      "size": 65556,
+      "sha256": "14d85e0833e5748d42ff340c3ded23500ee6043b5f1787f66fcc1a11f782fdc0"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 119,
+      "name": "id\\texture\\jpn\\quest\\quest_015_ID_HQ",
+      "size": 65556,
+      "sha256": "ae51554278ed72a22fc615ad11e5303794f082755566705c197c9f0e4a830895"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 128,
+      "name": "id\\texture\\jpn\\quest\\quest_016_ID_HQ",
+      "size": 65556,
+      "sha256": "d464e6da7a05b30ce7e5979140515a01fdeb030a658406fe3353e90b34370b5d"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 135,
+      "name": "id\\texture\\jpn\\quest\\quest_017_ID_HQ",
+      "size": 65556,
+      "sha256": "c2a039c0cb075843d9588ef6fe9e053c963eccb6de8f951461460241846dc79e"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 142,
+      "name": "id\\texture\\jpn\\quest\\quest_018_ID_HQ",
+      "size": 65556,
+      "sha256": "76a21b9a5dd7e1830e2f4fe0e66786a793dfd9e532ccfb2e1a871a8d90bb167f"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 147,
+      "name": "id\\texture\\jpn\\quest\\quest_019_ID_HQ",
+      "size": 65556,
+      "sha256": "badfcd09c437889ff1164528377ccc84d6e135685fa9c18168086c5af5d96093"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 152,
+      "name": "id\\texture\\jpn\\quest\\quest_020_ID_HQ",
+      "size": 65556,
+      "sha256": "d8b799e6795e35309281743c48c9f1dd6539587ebac4b596d834a7ded0ff5a54"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 157,
+      "name": "id\\texture\\jpn\\quest\\quest_021_ID_HQ",
+      "size": 65556,
+      "sha256": "398d2e661ae976d03cbc198c91c90bc609b1f9d1cb663aa0cc538e80720aefa4"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 162,
+      "name": "id\\texture\\jpn\\quest\\quest_022_ID_HQ",
+      "size": 65556,
+      "sha256": "de268fe468f503ea67fa0c8d8523f0b342d6835178f40dba3af2f563141dd489"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 165,
+      "name": "id\\texture\\jpn\\quest\\quest_023_ID_HQ",
+      "size": 65556,
+      "sha256": "37935d4edf3b753bfcc51dd8382b5fab73f2ee665e5654a0e8ee1f001687b38f"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 172,
+      "name": "id\\texture\\jpn\\quest\\quest_024_ID_HQ",
+      "size": 65556,
+      "sha256": "3f86ab785ce9f701724dd552f07cbe945d60ca2e195e4a8792efa9af8f0aebc2"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 177,
+      "name": "id\\texture\\jpn\\quest\\quest_025_ID_HQ",
+      "size": 65556,
+      "sha256": "7ff5cc60d3e45cc9500c8e014ac869738b76f0a68d48a660a2bcc9efbe106980"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 182,
+      "name": "id\\texture\\jpn\\quest\\quest_026_ID_HQ",
+      "size": 65556,
+      "sha256": "61948dbfd527f4020ab9b10e25b88ca7912457339bdb5726170044d0d13b7a4e"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 187,
+      "name": "id\\texture\\jpn\\quest\\quest_027_ID_HQ",
+      "size": 65556,
+      "sha256": "8d0eed1410fc7b6955444bc71cd37e50525f7a7b5d0f06f20671080f3faae267"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 192,
+      "name": "id\\texture\\jpn\\quest\\quest_028_ID_HQ",
+      "size": 65556,
+      "sha256": "fc0f47e3c6d42c5e08af79cb842020eda0bd6f538a4b880f8b551b9859ab9135"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 195,
+      "name": "id\\texture\\jpn\\quest\\quest_029_ID_HQ",
+      "size": 65556,
+      "sha256": "e7775d99c75ff56554a9a2d4cafb846fc01826d5a322252ada88ef1026562316"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\quest_id.arc",
+      "index": 198,
+      "name": "id\\texture\\jpn\\quest\\quest_030_ID_HQ",
+      "size": 65556,
+      "sha256": "efe399aea5e24b2242782e2f30fb906436f26cb091ab4fbcf3d7cc900ee55d9c"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 31,
+      "name": "id\\texture\\jpn\\quest\\quest_000_ID_HQ",
+      "size": 65556,
+      "sha256": "abd2afb82d1026a270302b336fdf5a0be8adae60c83e795e486be8729bd0e49d"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 32,
+      "name": "id\\texture\\jpn\\quest\\quest_001_ID_HQ",
+      "size": 65556,
+      "sha256": "ab782c43b36167c2e043448083f101797dbd17650c810098904d150c6f626059"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 33,
+      "name": "id\\texture\\jpn\\quest\\quest_002_ID_HQ",
+      "size": 65556,
+      "sha256": "075b260e7be5f858356b79761435bfc020322209458885364a4518213ee710b7"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 34,
+      "name": "id\\texture\\jpn\\quest\\quest_003_ID_HQ",
+      "size": 65556,
+      "sha256": "9599c640399db76855cc30b4dacc93c969f25d5b4ef14c7e96d5e77763d00c6b"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 35,
+      "name": "id\\texture\\jpn\\quest\\quest_004_ID_HQ",
+      "size": 65556,
+      "sha256": "eb28f80838d85e80a4c011af05d6328f818e3a78f1f41eab5023366ef1e5dde7"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 36,
+      "name": "id\\texture\\jpn\\quest\\quest_005_ID_HQ",
+      "size": 65556,
+      "sha256": "d68747307af8c267e31d199898bcd6b49f638874fd49fcb97eb54357658a099a"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 37,
+      "name": "id\\texture\\jpn\\quest\\quest_006_ID_HQ",
+      "size": 65556,
+      "sha256": "b161db1133698ca69c92b0cb20e7dfe9683f12d6cad92cda802a2302c5dd64d7"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 38,
+      "name": "id\\texture\\jpn\\quest\\quest_007_ID_HQ",
+      "size": 65556,
+      "sha256": "bb837c9b8b364875babdc4aa1f7b85eeead9e1024b8765d124b7b832722ed809"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 39,
+      "name": "id\\texture\\jpn\\quest\\quest_008_ID_HQ",
+      "size": 65556,
+      "sha256": "1db3a9b2f34dda0c1f60a48d58ee90b9e68f327d9157da5f9fa303ff41cef376"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 40,
+      "name": "id\\texture\\jpn\\quest\\quest_009_ID_HQ",
+      "size": 65556,
+      "sha256": "22c0ac2b36585b0641680dc6b51939f64d0512856cf0dfc076d3d4f5cd68bfc0"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 41,
+      "name": "id\\texture\\jpn\\quest\\quest_010_ID_HQ",
+      "size": 65556,
+      "sha256": "9ac9246ccb3eac4d1b3c64dda5cd8f1ab91f3ddb5e5e2d7d3c844f994ddd3bc6"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 42,
+      "name": "id\\texture\\jpn\\quest\\quest_011_ID_HQ",
+      "size": 65556,
+      "sha256": "6624733b73145c4d44913c8b8c480efc713afa5e75e15a7213f00241d9e32d0e"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 43,
+      "name": "id\\texture\\jpn\\quest\\quest_012_ID_HQ",
+      "size": 65556,
+      "sha256": "57b04bd82f60fc58ee54929b04b64d56cd9c191166714c7683b9713f4d366beb"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 44,
+      "name": "id\\texture\\jpn\\quest\\quest_013_ID_HQ",
+      "size": 65556,
+      "sha256": "371810119075f7037970c66a7a01d1ed6112025967c0579060be7d236953645a"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 45,
+      "name": "id\\texture\\jpn\\quest\\quest_014_ID_HQ",
+      "size": 65556,
+      "sha256": "be9619c9b3ba0efcc009888b33911ffbddff29324537687a542c4e8b2db3d7ff"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 46,
+      "name": "id\\texture\\jpn\\quest\\quest_015_ID_HQ",
+      "size": 65556,
+      "sha256": "010df0ee8c72d734882fec344f92692067f6d3926581a6998924667e772d10cd"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 47,
+      "name": "id\\texture\\jpn\\quest\\quest_016_ID_HQ",
+      "size": 65556,
+      "sha256": "bed6a7613b1bab07efddfee5b7e9eb7750f30f5014dbb2732c5f1c367a53c3b1"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 48,
+      "name": "id\\texture\\jpn\\quest\\quest_017_ID_HQ",
+      "size": 65556,
+      "sha256": "da46bbb6fd50f1d219756717d9445581faf22f66206f768f7fe7dc0a7fc07450"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 49,
+      "name": "id\\texture\\jpn\\quest\\quest_018_ID_HQ",
+      "size": 65556,
+      "sha256": "28f31ec3a545e8db5bad712a3b2dfa09ddc2f3cf7624ac2ef87802a17087d97b"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 50,
+      "name": "id\\texture\\jpn\\quest\\quest_019_ID_HQ",
+      "size": 65556,
+      "sha256": "586c55f56605a664b70ed018c39462a77a1189806b6cf18b19997a63c54a12fe"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 51,
+      "name": "id\\texture\\jpn\\quest\\quest_020_ID_HQ",
+      "size": 65556,
+      "sha256": "05aae270de9e32bf050be843bd518903455b39b48fa567c97e6e15f3718224e6"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 52,
+      "name": "id\\texture\\jpn\\quest\\quest_021_ID_HQ",
+      "size": 65556,
+      "sha256": "a3eb87758a7eaf80c7e6bdc71765b6930b046f426a9dd542ac6cccf851d812f6"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 53,
+      "name": "id\\texture\\jpn\\quest\\quest_022_ID_HQ",
+      "size": 65556,
+      "sha256": "98b74ceb4473be60b848d191ab2b2ccfac276e6561360dd8e70f787e7c1830d5"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 54,
+      "name": "id\\texture\\jpn\\quest\\quest_023_ID_HQ",
+      "size": 65556,
+      "sha256": "c9e7f01f89d9ed9da36e831b75ac9c339937d55600e6bab9175f64fd8ab55741"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 55,
+      "name": "id\\texture\\jpn\\quest\\quest_024_ID_HQ",
+      "size": 65556,
+      "sha256": "560d6d8de8913b11c72ebb62bdcea9ea3e615114c28e96bba76cddc296033378"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 56,
+      "name": "id\\texture\\jpn\\quest\\quest_025_ID_HQ",
+      "size": 65556,
+      "sha256": "71c212434fb757b5d5923f3c6f826cc74470cfe34f977886e154d1284f69fe23"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 57,
+      "name": "id\\texture\\jpn\\quest\\quest_026_ID_HQ",
+      "size": 65556,
+      "sha256": "ffabd1c39ee530ff626a1cb0f1239c3174846fb89629ed1d71fe906b1980a73a"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 58,
+      "name": "id\\texture\\jpn\\quest\\quest_027_ID_HQ",
+      "size": 65556,
+      "sha256": "e547b5be6d7feaef78936ca413bdacb0874b89d85b5f23e6968e4ba775bdd87d"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 59,
+      "name": "id\\texture\\jpn\\quest\\quest_028_ID_HQ",
+      "size": 65556,
+      "sha256": "1260279aca7b04150e60d2e307b6884fb89f59ab01055862c10d464ef58163e9"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 60,
+      "name": "id\\texture\\jpn\\quest\\quest_029_ID_HQ",
+      "size": 65556,
+      "sha256": "8c35f9d9892adf02d4136cfe4b1fc23166cb2a0d59410b5bd92e3351fb0e3d0a"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 61,
+      "name": "id\\texture\\jpn\\quest\\quest_030_ID_HQ",
+      "size": 65556,
+      "sha256": "842055a548430261064d67c936fd552e08c6da82021146d95b8ded956b0a0149"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q000.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_000_ID_HQ",
+      "size": 65556,
+      "sha256": "abd2afb82d1026a270302b336fdf5a0be8adae60c83e795e486be8729bd0e49d"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q001.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_001_ID_HQ",
+      "size": 65556,
+      "sha256": "ab782c43b36167c2e043448083f101797dbd17650c810098904d150c6f626059"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q002.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_002_ID_HQ",
+      "size": 65556,
+      "sha256": "075b260e7be5f858356b79761435bfc020322209458885364a4518213ee710b7"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q003.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_003_ID_HQ",
+      "size": 65556,
+      "sha256": "9599c640399db76855cc30b4dacc93c969f25d5b4ef14c7e96d5e77763d00c6b"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q004.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_004_ID_HQ",
+      "size": 65556,
+      "sha256": "eb28f80838d85e80a4c011af05d6328f818e3a78f1f41eab5023366ef1e5dde7"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q005.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_005_ID_HQ",
+      "size": 65556,
+      "sha256": "d68747307af8c267e31d199898bcd6b49f638874fd49fcb97eb54357658a099a"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q006.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_006_ID_HQ",
+      "size": 65556,
+      "sha256": "b161db1133698ca69c92b0cb20e7dfe9683f12d6cad92cda802a2302c5dd64d7"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q007.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_007_ID_HQ",
+      "size": 65556,
+      "sha256": "bb837c9b8b364875babdc4aa1f7b85eeead9e1024b8765d124b7b832722ed809"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q008.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_008_ID_HQ",
+      "size": 65556,
+      "sha256": "1db3a9b2f34dda0c1f60a48d58ee90b9e68f327d9157da5f9fa303ff41cef376"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q009.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_009_ID_HQ",
+      "size": 65556,
+      "sha256": "22c0ac2b36585b0641680dc6b51939f64d0512856cf0dfc076d3d4f5cd68bfc0"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q010.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_010_ID_HQ",
+      "size": 65556,
+      "sha256": "9ac9246ccb3eac4d1b3c64dda5cd8f1ab91f3ddb5e5e2d7d3c844f994ddd3bc6"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q011.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_011_ID_HQ",
+      "size": 65556,
+      "sha256": "6624733b73145c4d44913c8b8c480efc713afa5e75e15a7213f00241d9e32d0e"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q012.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_012_ID_HQ",
+      "size": 65556,
+      "sha256": "57b04bd82f60fc58ee54929b04b64d56cd9c191166714c7683b9713f4d366beb"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q013.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_013_ID_HQ",
+      "size": 65556,
+      "sha256": "371810119075f7037970c66a7a01d1ed6112025967c0579060be7d236953645a"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q014.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_014_ID_HQ",
+      "size": 65556,
+      "sha256": "be9619c9b3ba0efcc009888b33911ffbddff29324537687a542c4e8b2db3d7ff"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q015.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_015_ID_HQ",
+      "size": 65556,
+      "sha256": "010df0ee8c72d734882fec344f92692067f6d3926581a6998924667e772d10cd"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q016.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_016_ID_HQ",
+      "size": 65556,
+      "sha256": "bed6a7613b1bab07efddfee5b7e9eb7750f30f5014dbb2732c5f1c367a53c3b1"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q017.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_017_ID_HQ",
+      "size": 65556,
+      "sha256": "da46bbb6fd50f1d219756717d9445581faf22f66206f768f7fe7dc0a7fc07450"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q018.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_018_ID_HQ",
+      "size": 65556,
+      "sha256": "28f31ec3a545e8db5bad712a3b2dfa09ddc2f3cf7624ac2ef87802a17087d97b"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q019.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_019_ID_HQ",
+      "size": 65556,
+      "sha256": "586c55f56605a664b70ed018c39462a77a1189806b6cf18b19997a63c54a12fe"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q020.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_020_ID_HQ",
+      "size": 65556,
+      "sha256": "05aae270de9e32bf050be843bd518903455b39b48fa567c97e6e15f3718224e6"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q021.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_021_ID_HQ",
+      "size": 65556,
+      "sha256": "a3eb87758a7eaf80c7e6bdc71765b6930b046f426a9dd542ac6cccf851d812f6"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q022.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_022_ID_HQ",
+      "size": 65556,
+      "sha256": "98b74ceb4473be60b848d191ab2b2ccfac276e6561360dd8e70f787e7c1830d5"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q023.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_023_ID_HQ",
+      "size": 65556,
+      "sha256": "c9e7f01f89d9ed9da36e831b75ac9c339937d55600e6bab9175f64fd8ab55741"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q024.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_024_ID_HQ",
+      "size": 65556,
+      "sha256": "560d6d8de8913b11c72ebb62bdcea9ea3e615114c28e96bba76cddc296033378"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q025.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_025_ID_HQ",
+      "size": 65556,
+      "sha256": "71c212434fb757b5d5923f3c6f826cc74470cfe34f977886e154d1284f69fe23"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q026.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_026_ID_HQ",
+      "size": 65556,
+      "sha256": "ffabd1c39ee530ff626a1cb0f1239c3174846fb89629ed1d71fe906b1980a73a"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q027.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_027_ID_HQ",
+      "size": 65556,
+      "sha256": "e547b5be6d7feaef78936ca413bdacb0874b89d85b5f23e6968e4ba775bdd87d"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q028.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_028_ID_HQ",
+      "size": 65556,
+      "sha256": "1260279aca7b04150e60d2e307b6884fb89f59ab01055862c10d464ef58163e9"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q029.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_029_ID_HQ",
+      "size": 65556,
+      "sha256": "8c35f9d9892adf02d4136cfe4b1fc23166cb2a0d59410b5bd92e3351fb0e3d0a"
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\quest_q030.arc",
+      "index": 0,
+      "name": "id\\texture\\jpn\\quest\\quest_030_ID_HQ",
+      "size": 65556,
+      "sha256": "842055a548430261064d67c936fd552e08c6da82021146d95b8ded956b0a0149"
+    }
+  ],
+  "references": [
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\brief\\mode_quest.arc",
+      "index": 15,
+      "name": "id\\lsp\\jpn\\yuugi_quest\\yuugi_quest",
+      "extracted": "E:\\Utage Patching New\\_codex_select_menu\\audit\\mode_quest__15.lsp",
+      "node_count": 302,
+      "nodes": [
+        {
+          "index": 7,
+          "name": "Q_K",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 5,
+          "size": [
+            512,
+            256
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            -24,
+            232,
+            24
+          ],
+          "uv": [
+            0,
+            0,
+            232,
+            48
+          ]
+        },
+        {
+          "index": 12,
+          "name": "Tas_icon",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            13.0,
+            2.0
+          ],
+          "scale": [
+            0.949999988079071,
+            0.949999988079071
+          ],
+          "parent": 5,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -20,
+            -26,
+            20,
+            26
+          ],
+          "uv": [
+            148,
+            128,
+            188,
+            180
+          ]
+        },
+        {
+          "index": 15,
+          "name": "Q_K",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 13,
+          "size": [
+            512,
+            256
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            -24,
+            232,
+            24
+          ],
+          "uv": [
+            0,
+            0,
+            232,
+            48
+          ]
+        },
+        {
+          "index": 20,
+          "name": "Tas_icon",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            13.0,
+            2.0
+          ],
+          "scale": [
+            0.949999988079071,
+            0.949999988079071
+          ],
+          "parent": 13,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -20,
+            -26,
+            20,
+            26
+          ],
+          "uv": [
+            148,
+            128,
+            188,
+            180
+          ]
+        },
+        {
+          "index": 23,
+          "name": "Q_K",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 21,
+          "size": [
+            512,
+            256
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            -24,
+            232,
+            24
+          ],
+          "uv": [
+            0,
+            0,
+            232,
+            48
+          ]
+        },
+        {
+          "index": 28,
+          "name": "Tas_icon",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            13.0,
+            2.0
+          ],
+          "scale": [
+            0.949999988079071,
+            0.949999988079071
+          ],
+          "parent": 21,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -20,
+            -26,
+            20,
+            26
+          ],
+          "uv": [
+            148,
+            128,
+            188,
+            180
+          ]
+        },
+        {
+          "index": 31,
+          "name": "Q_K",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 29,
+          "size": [
+            512,
+            256
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            -24,
+            232,
+            24
+          ],
+          "uv": [
+            0,
+            0,
+            232,
+            48
+          ]
+        },
+        {
+          "index": 36,
+          "name": "Tas_icon",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            13.0,
+            2.0
+          ],
+          "scale": [
+            0.949999988079071,
+            0.949999988079071
+          ],
+          "parent": 29,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -20,
+            -26,
+            20,
+            26
+          ],
+          "uv": [
+            148,
+            128,
+            188,
+            180
+          ]
+        },
+        {
+          "index": 39,
+          "name": "Q_K",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 37,
+          "size": [
+            512,
+            256
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            -24,
+            232,
+            24
+          ],
+          "uv": [
+            0,
+            0,
+            232,
+            48
+          ]
+        },
+        {
+          "index": 44,
+          "name": "Tas_icon",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            13.0,
+            2.0
+          ],
+          "scale": [
+            0.949999988079071,
+            0.949999988079071
+          ],
+          "parent": 37,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -20,
+            -26,
+            20,
+            26
+          ],
+          "uv": [
+            148,
+            128,
+            188,
+            180
+          ]
+        },
+        {
+          "index": 47,
+          "name": "Q_K",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 45,
+          "size": [
+            512,
+            256
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            -24,
+            232,
+            24
+          ],
+          "uv": [
+            0,
+            0,
+            232,
+            48
+          ]
+        },
+        {
+          "index": 52,
+          "name": "Tas_icon",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            13.0,
+            2.0
+          ],
+          "scale": [
+            0.949999988079071,
+            0.949999988079071
+          ],
+          "parent": 45,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -20,
+            -26,
+            20,
+            26
+          ],
+          "uv": [
+            148,
+            128,
+            188,
+            180
+          ]
+        },
+        {
+          "index": 66,
+          "name": "Carsol",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            -114.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 65,
+          "size": [
+            512,
+            256
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            -24,
+            232,
+            24
+          ],
+          "uv": [
+            0,
+            48,
+            232,
+            96
+          ]
+        },
+        {
+          "index": 77,
+          "name": "Ougi",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_000_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 76,
+          "size": [
+            1024,
+            512
+          ],
+          "material": 15,
+          "geometry": [
+            -34,
+            -122,
+            34,
+            122
+          ],
+          "uv": [
+            304,
+            224,
+            372,
+            468
+          ]
+        },
+        {
+          "index": 80,
+          "name": "Pnl_A1",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_000_ID_HQ",
+          "type": 2,
+          "position": [
+            187.5,
+            -184.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 79,
+          "size": [
+            1024,
+            512
+          ],
+          "material": 16,
+          "geometry": [
+            -204,
+            0,
+            0,
+            224
+          ],
+          "uv": [
+            304,
+            0,
+            508,
+            224
+          ]
+        },
+        {
+          "index": 81,
+          "name": "Pnl_A2",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_000_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 80,
+          "size": [
+            1024,
+            512
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            0,
+            100,
+            224
+          ],
+          "uv": [
+            376,
+            224,
+            476,
+            448
+          ]
+        },
+        {
+          "index": 82,
+          "name": "Img_frm",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_001_ID_HQ",
+          "type": 2,
+          "position": [
+            -111.0,
+            70.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 80,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -128,
+            -84,
+            128,
+            84
+          ],
+          "uv": [
+            0,
+            0,
+            256,
+            168
+          ]
+        },
+        {
+          "index": 84,
+          "name": "Nnd_tx",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            39.0,
+            66.0
+          ],
+          "scale": [
+            0.8999999761581421,
+            0.8999999761581421
+          ],
+          "parent": 80,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -42,
+            -12,
+            42,
+            12
+          ],
+          "uv": [
+            108,
+            228,
+            192,
+            252
+          ]
+        },
+        {
+          "index": 85,
+          "name": "Nnd_star_u",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            40.0,
+            85.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 80,
+          "size": [
+            512,
+            256
+          ],
+          "material": 15,
+          "geometry": [
+            -54,
+            -12,
+            54,
+            12
+          ],
+          "uv": [
+            0,
+            176,
+            108,
+            200
+          ]
+        },
+        {
+          "index": 86,
+          "name": "Star_0",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            -38.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 85,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -12,
+            -12,
+            12,
+            12
+          ],
+          "uv": [
+            108,
+            128,
+            132,
+            152
+          ]
+        },
+        {
+          "index": 87,
+          "name": "Star_1",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            -19.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 85,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -12,
+            -12,
+            12,
+            12
+          ],
+          "uv": [
+            108,
+            128,
+            132,
+            152
+          ]
+        },
+        {
+          "index": 88,
+          "name": "Star_2",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 85,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -12,
+            -12,
+            12,
+            12
+          ],
+          "uv": [
+            108,
+            128,
+            132,
+            152
+          ]
+        },
+        {
+          "index": 89,
+          "name": "Star_3",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            19.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 85,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -12,
+            -12,
+            12,
+            12
+          ],
+          "uv": [
+            108,
+            128,
+            132,
+            152
+          ]
+        },
+        {
+          "index": 90,
+          "name": "Star_4",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            37.5,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 85,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -12,
+            -12,
+            12,
+            12
+          ],
+          "uv": [
+            108,
+            128,
+            132,
+            152
+          ]
+        },
+        {
+          "index": 91,
+          "name": "Spd_tx",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            38.0,
+            110.0
+          ],
+          "scale": [
+            0.8999999761581421,
+            0.8999999761581421
+          ],
+          "parent": 80,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -54,
+            -12,
+            54,
+            12
+          ],
+          "uv": [
+            0,
+            152,
+            108,
+            176
+          ]
+        },
+        {
+          "index": 105,
+          "name": "Pnl_B1",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_000_ID_HQ",
+          "type": 2,
+          "position": [
+            -16.0,
+            38.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 79,
+          "size": [
+            1024,
+            512
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            0,
+            304,
+            132
+          ],
+          "uv": [
+            0,
+            356,
+            304,
+            488
+          ]
+        },
+        {
+          "index": 106,
+          "name": "Ghb_tx",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            32.0,
+            12.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 105,
+          "size": [
+            512,
+            256
+          ],
+          "material": 15,
+          "geometry": [
+            -32,
+            -16,
+            32,
+            16
+          ],
+          "uv": [
+            192,
+            220,
+            256,
+            252
+          ]
+        },
+        {
+          "index": 107,
+          "name": "Ghb_kakutoku",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            40.0,
+            71.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 105,
+          "size": [
+            512,
+            256
+          ],
+          "material": 12,
+          "geometry": [
+            -34,
+            -46,
+            34,
+            46
+          ],
+          "uv": [
+            188,
+            128,
+            256,
+            220
+          ]
+        },
+        {
+          "index": 108,
+          "name": "Ghb_bg_0",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            175.0,
+            23.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 105,
+          "size": [
+            512,
+            256
+          ],
+          "material": 15,
+          "geometry": [
+            -116,
+            -16,
+            116,
+            16
+          ],
+          "uv": [
+            0,
+            96,
+            232,
+            128
+          ]
+        },
+        {
+          "index": 109,
+          "name": "Point",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            -101.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 108,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -8,
+            -12,
+            8,
+            12
+          ],
+          "uv": [
+            132,
+            128,
+            148,
+            152
+          ]
+        },
+        {
+          "index": 115,
+          "name": "Ghb_bg_1",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            175.0,
+            45.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 105,
+          "size": [
+            512,
+            256
+          ],
+          "material": 15,
+          "geometry": [
+            -116,
+            -16,
+            116,
+            16
+          ],
+          "uv": [
+            0,
+            96,
+            232,
+            128
+          ]
+        },
+        {
+          "index": 116,
+          "name": "Point",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            -101.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 115,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -8,
+            -12,
+            8,
+            12
+          ],
+          "uv": [
+            132,
+            128,
+            148,
+            152
+          ]
+        },
+        {
+          "index": 122,
+          "name": "Ghb_bg_2",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            175.0,
+            67.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 105,
+          "size": [
+            512,
+            256
+          ],
+          "material": 15,
+          "geometry": [
+            -116,
+            -16,
+            116,
+            16
+          ],
+          "uv": [
+            0,
+            96,
+            232,
+            128
+          ]
+        },
+        {
+          "index": 123,
+          "name": "Point",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            -101.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 122,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -8,
+            -12,
+            8,
+            12
+          ],
+          "uv": [
+            132,
+            128,
+            148,
+            152
+          ]
+        },
+        {
+          "index": 129,
+          "name": "Ghb_bg_3",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            175.0,
+            89.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 105,
+          "size": [
+            512,
+            256
+          ],
+          "material": 15,
+          "geometry": [
+            -116,
+            -16,
+            116,
+            16
+          ],
+          "uv": [
+            0,
+            96,
+            232,
+            128
+          ]
+        },
+        {
+          "index": 130,
+          "name": "Point",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            -101.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 129,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -8,
+            -12,
+            8,
+            12
+          ],
+          "uv": [
+            132,
+            128,
+            148,
+            152
+          ]
+        },
+        {
+          "index": 136,
+          "name": "Ghb_bg_4",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            175.0,
+            111.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 105,
+          "size": [
+            512,
+            256
+          ],
+          "material": 15,
+          "geometry": [
+            -116,
+            -16,
+            116,
+            16
+          ],
+          "uv": [
+            0,
+            96,
+            232,
+            128
+          ]
+        },
+        {
+          "index": 137,
+          "name": "Point",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            -101.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 136,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -8,
+            -12,
+            8,
+            12
+          ],
+          "uv": [
+            132,
+            128,
+            148,
+            152
+          ]
+        },
+        {
+          "index": 152,
+          "name": "Pnl_C1",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_000_ID_HQ",
+          "type": 2,
+          "position": [
+            136.0,
+            -6.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 151,
+          "size": [
+            1024,
+            512
+          ],
+          "material": 16,
+          "geometry": [
+            -152,
+            -178,
+            152,
+            178
+          ],
+          "uv": [
+            0,
+            0,
+            304,
+            356
+          ]
+        },
+        {
+          "index": 153,
+          "name": "Tasseibusyo",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            -107.5
+          ],
+          "scale": [
+            1.0199999809265137,
+            1.0199999809265137
+          ],
+          "parent": 152,
+          "size": [
+            512,
+            256
+          ],
+          "material": 13,
+          "geometry": [
+            -82,
+            -14,
+            82,
+            14
+          ],
+          "uv": [
+            0,
+            200,
+            164,
+            228
+          ]
+        },
+        {
+          "index": 276,
+          "name": "Tasseihanko",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_003_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.399999976158142,
+            1.399999976158142
+          ],
+          "parent": 275,
+          "size": [
+            256,
+            128
+          ],
+          "material": 10,
+          "geometry": [
+            -64,
+            -64,
+            64,
+            64
+          ],
+          "uv": [
+            0,
+            0,
+            128,
+            128
+          ]
+        },
+        {
+          "index": 281,
+          "name": "Btnavi_u",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_004_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 283,
+          "size": [
+            256,
+            128
+          ],
+          "material": 13,
+          "geometry": [
+            -128,
+            -16,
+            0,
+            16
+          ],
+          "uv": [
+            0,
+            0,
+            128,
+            32
+          ]
+        },
+        {
+          "index": 285,
+          "name": "Line",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_001_ID_HQ",
+          "type": 2,
+          "position": [
+            -24.5,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 284,
+          "size": [
+            512,
+            256
+          ],
+          "material": 13,
+          "geometry": [
+            -12,
+            -16,
+            12,
+            16
+          ],
+          "uv": [
+            42,
+            216,
+            66,
+            248
+          ]
+        },
+        {
+          "index": 297,
+          "name": "Yugisu",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_001_ID_HQ",
+          "type": 2,
+          "position": [
+            26.0,
+            0.0
+          ],
+          "scale": [
+            0.8999999761581421,
+            1.0
+          ],
+          "parent": 284,
+          "size": [
+            512,
+            256
+          ],
+          "material": 13,
+          "geometry": [
+            -21,
+            -16,
+            21,
+            16
+          ],
+          "uv": [
+            0,
+            216,
+            42,
+            248
+          ]
+        },
+        {
+          "index": 298,
+          "name": "Koban",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_001_ID_HQ",
+          "type": 2,
+          "position": [
+            -146.0,
+            0.5
+          ],
+          "scale": [
+            0.699999988079071,
+            0.800000011920929
+          ],
+          "parent": 143,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -24,
+            -24,
+            24,
+            24
+          ],
+          "uv": [
+            0,
+            168,
+            48,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\brief\\og\\mode_quest.arc",
+      "index": 15,
+      "name": "id\\lsp\\jpn\\yuugi_quest\\yuugi_quest",
+      "extracted": "E:\\Utage Patching New\\_codex_select_menu\\audit\\mode_quest__15.lsp",
+      "node_count": 302,
+      "nodes": [
+        {
+          "index": 7,
+          "name": "Q_K",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 5,
+          "size": [
+            512,
+            256
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            -24,
+            232,
+            24
+          ],
+          "uv": [
+            0,
+            0,
+            232,
+            48
+          ]
+        },
+        {
+          "index": 12,
+          "name": "Tas_icon",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            13.0,
+            2.0
+          ],
+          "scale": [
+            0.949999988079071,
+            0.949999988079071
+          ],
+          "parent": 5,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -20,
+            -26,
+            20,
+            26
+          ],
+          "uv": [
+            148,
+            128,
+            188,
+            180
+          ]
+        },
+        {
+          "index": 15,
+          "name": "Q_K",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 13,
+          "size": [
+            512,
+            256
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            -24,
+            232,
+            24
+          ],
+          "uv": [
+            0,
+            0,
+            232,
+            48
+          ]
+        },
+        {
+          "index": 20,
+          "name": "Tas_icon",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            13.0,
+            2.0
+          ],
+          "scale": [
+            0.949999988079071,
+            0.949999988079071
+          ],
+          "parent": 13,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -20,
+            -26,
+            20,
+            26
+          ],
+          "uv": [
+            148,
+            128,
+            188,
+            180
+          ]
+        },
+        {
+          "index": 23,
+          "name": "Q_K",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 21,
+          "size": [
+            512,
+            256
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            -24,
+            232,
+            24
+          ],
+          "uv": [
+            0,
+            0,
+            232,
+            48
+          ]
+        },
+        {
+          "index": 28,
+          "name": "Tas_icon",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            13.0,
+            2.0
+          ],
+          "scale": [
+            0.949999988079071,
+            0.949999988079071
+          ],
+          "parent": 21,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -20,
+            -26,
+            20,
+            26
+          ],
+          "uv": [
+            148,
+            128,
+            188,
+            180
+          ]
+        },
+        {
+          "index": 31,
+          "name": "Q_K",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 29,
+          "size": [
+            512,
+            256
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            -24,
+            232,
+            24
+          ],
+          "uv": [
+            0,
+            0,
+            232,
+            48
+          ]
+        },
+        {
+          "index": 36,
+          "name": "Tas_icon",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            13.0,
+            2.0
+          ],
+          "scale": [
+            0.949999988079071,
+            0.949999988079071
+          ],
+          "parent": 29,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -20,
+            -26,
+            20,
+            26
+          ],
+          "uv": [
+            148,
+            128,
+            188,
+            180
+          ]
+        },
+        {
+          "index": 39,
+          "name": "Q_K",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 37,
+          "size": [
+            512,
+            256
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            -24,
+            232,
+            24
+          ],
+          "uv": [
+            0,
+            0,
+            232,
+            48
+          ]
+        },
+        {
+          "index": 44,
+          "name": "Tas_icon",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            13.0,
+            2.0
+          ],
+          "scale": [
+            0.949999988079071,
+            0.949999988079071
+          ],
+          "parent": 37,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -20,
+            -26,
+            20,
+            26
+          ],
+          "uv": [
+            148,
+            128,
+            188,
+            180
+          ]
+        },
+        {
+          "index": 47,
+          "name": "Q_K",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 45,
+          "size": [
+            512,
+            256
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            -24,
+            232,
+            24
+          ],
+          "uv": [
+            0,
+            0,
+            232,
+            48
+          ]
+        },
+        {
+          "index": 52,
+          "name": "Tas_icon",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            13.0,
+            2.0
+          ],
+          "scale": [
+            0.949999988079071,
+            0.949999988079071
+          ],
+          "parent": 45,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -20,
+            -26,
+            20,
+            26
+          ],
+          "uv": [
+            148,
+            128,
+            188,
+            180
+          ]
+        },
+        {
+          "index": 66,
+          "name": "Carsol",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            -114.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 65,
+          "size": [
+            512,
+            256
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            -24,
+            232,
+            24
+          ],
+          "uv": [
+            0,
+            48,
+            232,
+            96
+          ]
+        },
+        {
+          "index": 77,
+          "name": "Ougi",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_000_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 76,
+          "size": [
+            1024,
+            512
+          ],
+          "material": 15,
+          "geometry": [
+            -34,
+            -122,
+            34,
+            122
+          ],
+          "uv": [
+            304,
+            224,
+            372,
+            468
+          ]
+        },
+        {
+          "index": 80,
+          "name": "Pnl_A1",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_000_ID_HQ",
+          "type": 2,
+          "position": [
+            187.5,
+            -184.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 79,
+          "size": [
+            1024,
+            512
+          ],
+          "material": 16,
+          "geometry": [
+            -204,
+            0,
+            0,
+            224
+          ],
+          "uv": [
+            304,
+            0,
+            508,
+            224
+          ]
+        },
+        {
+          "index": 81,
+          "name": "Pnl_A2",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_000_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 80,
+          "size": [
+            1024,
+            512
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            0,
+            100,
+            224
+          ],
+          "uv": [
+            376,
+            224,
+            476,
+            448
+          ]
+        },
+        {
+          "index": 82,
+          "name": "Img_frm",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_001_ID_HQ",
+          "type": 2,
+          "position": [
+            -111.0,
+            70.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 80,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -128,
+            -84,
+            128,
+            84
+          ],
+          "uv": [
+            0,
+            0,
+            256,
+            168
+          ]
+        },
+        {
+          "index": 84,
+          "name": "Nnd_tx",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            39.0,
+            66.0
+          ],
+          "scale": [
+            0.8999999761581421,
+            0.8999999761581421
+          ],
+          "parent": 80,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -42,
+            -12,
+            42,
+            12
+          ],
+          "uv": [
+            108,
+            228,
+            192,
+            252
+          ]
+        },
+        {
+          "index": 85,
+          "name": "Nnd_star_u",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            40.0,
+            85.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 80,
+          "size": [
+            512,
+            256
+          ],
+          "material": 15,
+          "geometry": [
+            -54,
+            -12,
+            54,
+            12
+          ],
+          "uv": [
+            0,
+            176,
+            108,
+            200
+          ]
+        },
+        {
+          "index": 86,
+          "name": "Star_0",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            -38.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 85,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -12,
+            -12,
+            12,
+            12
+          ],
+          "uv": [
+            108,
+            128,
+            132,
+            152
+          ]
+        },
+        {
+          "index": 87,
+          "name": "Star_1",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            -19.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 85,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -12,
+            -12,
+            12,
+            12
+          ],
+          "uv": [
+            108,
+            128,
+            132,
+            152
+          ]
+        },
+        {
+          "index": 88,
+          "name": "Star_2",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 85,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -12,
+            -12,
+            12,
+            12
+          ],
+          "uv": [
+            108,
+            128,
+            132,
+            152
+          ]
+        },
+        {
+          "index": 89,
+          "name": "Star_3",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            19.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 85,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -12,
+            -12,
+            12,
+            12
+          ],
+          "uv": [
+            108,
+            128,
+            132,
+            152
+          ]
+        },
+        {
+          "index": 90,
+          "name": "Star_4",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            37.5,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 85,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -12,
+            -12,
+            12,
+            12
+          ],
+          "uv": [
+            108,
+            128,
+            132,
+            152
+          ]
+        },
+        {
+          "index": 91,
+          "name": "Spd_tx",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            38.0,
+            110.0
+          ],
+          "scale": [
+            0.8999999761581421,
+            0.8999999761581421
+          ],
+          "parent": 80,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -54,
+            -12,
+            54,
+            12
+          ],
+          "uv": [
+            0,
+            152,
+            108,
+            176
+          ]
+        },
+        {
+          "index": 105,
+          "name": "Pnl_B1",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_000_ID_HQ",
+          "type": 2,
+          "position": [
+            -16.0,
+            38.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 79,
+          "size": [
+            1024,
+            512
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            0,
+            304,
+            132
+          ],
+          "uv": [
+            0,
+            356,
+            304,
+            488
+          ]
+        },
+        {
+          "index": 106,
+          "name": "Ghb_tx",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            32.0,
+            12.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 105,
+          "size": [
+            512,
+            256
+          ],
+          "material": 15,
+          "geometry": [
+            -32,
+            -16,
+            32,
+            16
+          ],
+          "uv": [
+            192,
+            220,
+            256,
+            252
+          ]
+        },
+        {
+          "index": 107,
+          "name": "Ghb_kakutoku",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            40.0,
+            71.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 105,
+          "size": [
+            512,
+            256
+          ],
+          "material": 12,
+          "geometry": [
+            -34,
+            -46,
+            34,
+            46
+          ],
+          "uv": [
+            188,
+            128,
+            256,
+            220
+          ]
+        },
+        {
+          "index": 108,
+          "name": "Ghb_bg_0",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            175.0,
+            23.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 105,
+          "size": [
+            512,
+            256
+          ],
+          "material": 15,
+          "geometry": [
+            -116,
+            -16,
+            116,
+            16
+          ],
+          "uv": [
+            0,
+            96,
+            232,
+            128
+          ]
+        },
+        {
+          "index": 109,
+          "name": "Point",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            -101.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 108,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -8,
+            -12,
+            8,
+            12
+          ],
+          "uv": [
+            132,
+            128,
+            148,
+            152
+          ]
+        },
+        {
+          "index": 115,
+          "name": "Ghb_bg_1",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            175.0,
+            45.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 105,
+          "size": [
+            512,
+            256
+          ],
+          "material": 15,
+          "geometry": [
+            -116,
+            -16,
+            116,
+            16
+          ],
+          "uv": [
+            0,
+            96,
+            232,
+            128
+          ]
+        },
+        {
+          "index": 116,
+          "name": "Point",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            -101.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 115,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -8,
+            -12,
+            8,
+            12
+          ],
+          "uv": [
+            132,
+            128,
+            148,
+            152
+          ]
+        },
+        {
+          "index": 122,
+          "name": "Ghb_bg_2",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            175.0,
+            67.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 105,
+          "size": [
+            512,
+            256
+          ],
+          "material": 15,
+          "geometry": [
+            -116,
+            -16,
+            116,
+            16
+          ],
+          "uv": [
+            0,
+            96,
+            232,
+            128
+          ]
+        },
+        {
+          "index": 123,
+          "name": "Point",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            -101.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 122,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -8,
+            -12,
+            8,
+            12
+          ],
+          "uv": [
+            132,
+            128,
+            148,
+            152
+          ]
+        },
+        {
+          "index": 129,
+          "name": "Ghb_bg_3",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            175.0,
+            89.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 105,
+          "size": [
+            512,
+            256
+          ],
+          "material": 15,
+          "geometry": [
+            -116,
+            -16,
+            116,
+            16
+          ],
+          "uv": [
+            0,
+            96,
+            232,
+            128
+          ]
+        },
+        {
+          "index": 130,
+          "name": "Point",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            -101.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 129,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -8,
+            -12,
+            8,
+            12
+          ],
+          "uv": [
+            132,
+            128,
+            148,
+            152
+          ]
+        },
+        {
+          "index": 136,
+          "name": "Ghb_bg_4",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            175.0,
+            111.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 105,
+          "size": [
+            512,
+            256
+          ],
+          "material": 15,
+          "geometry": [
+            -116,
+            -16,
+            116,
+            16
+          ],
+          "uv": [
+            0,
+            96,
+            232,
+            128
+          ]
+        },
+        {
+          "index": 137,
+          "name": "Point",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            -101.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 136,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -8,
+            -12,
+            8,
+            12
+          ],
+          "uv": [
+            132,
+            128,
+            148,
+            152
+          ]
+        },
+        {
+          "index": 152,
+          "name": "Pnl_C1",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_000_ID_HQ",
+          "type": 2,
+          "position": [
+            136.0,
+            -6.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 151,
+          "size": [
+            1024,
+            512
+          ],
+          "material": 16,
+          "geometry": [
+            -152,
+            -178,
+            152,
+            178
+          ],
+          "uv": [
+            0,
+            0,
+            304,
+            356
+          ]
+        },
+        {
+          "index": 153,
+          "name": "Tasseibusyo",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            -107.5
+          ],
+          "scale": [
+            1.0199999809265137,
+            1.0199999809265137
+          ],
+          "parent": 152,
+          "size": [
+            512,
+            256
+          ],
+          "material": 13,
+          "geometry": [
+            -82,
+            -14,
+            82,
+            14
+          ],
+          "uv": [
+            0,
+            200,
+            164,
+            228
+          ]
+        },
+        {
+          "index": 276,
+          "name": "Tasseihanko",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_003_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.399999976158142,
+            1.399999976158142
+          ],
+          "parent": 275,
+          "size": [
+            256,
+            128
+          ],
+          "material": 10,
+          "geometry": [
+            -64,
+            -64,
+            64,
+            64
+          ],
+          "uv": [
+            0,
+            0,
+            128,
+            128
+          ]
+        },
+        {
+          "index": 281,
+          "name": "Btnavi_u",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_004_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 283,
+          "size": [
+            256,
+            128
+          ],
+          "material": 13,
+          "geometry": [
+            -128,
+            -16,
+            0,
+            16
+          ],
+          "uv": [
+            0,
+            0,
+            128,
+            32
+          ]
+        },
+        {
+          "index": 285,
+          "name": "Line",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_001_ID_HQ",
+          "type": 2,
+          "position": [
+            -24.5,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 284,
+          "size": [
+            512,
+            256
+          ],
+          "material": 13,
+          "geometry": [
+            -12,
+            -16,
+            12,
+            16
+          ],
+          "uv": [
+            42,
+            216,
+            66,
+            248
+          ]
+        },
+        {
+          "index": 297,
+          "name": "Yugisu",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_001_ID_HQ",
+          "type": 2,
+          "position": [
+            26.0,
+            0.0
+          ],
+          "scale": [
+            0.8999999761581421,
+            1.0
+          ],
+          "parent": 284,
+          "size": [
+            512,
+            256
+          ],
+          "material": 13,
+          "geometry": [
+            -21,
+            -16,
+            21,
+            16
+          ],
+          "uv": [
+            0,
+            216,
+            42,
+            248
+          ]
+        },
+        {
+          "index": 298,
+          "name": "Koban",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_001_ID_HQ",
+          "type": 2,
+          "position": [
+            -146.0,
+            0.5
+          ],
+          "scale": [
+            0.699999988079071,
+            0.800000011920929
+          ],
+          "parent": 143,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -24,
+            -24,
+            24,
+            24
+          ],
+          "uv": [
+            0,
+            168,
+            48,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\quest\\menu.arc",
+      "index": 44,
+      "name": "id\\lsp\\jpn\\yuugi_quest\\yuugi_quest",
+      "extracted": "E:\\Utage Patching New\\_codex_select_menu\\audit\\menu__44.lsp",
+      "node_count": 302,
+      "nodes": [
+        {
+          "index": 7,
+          "name": "Q_K",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 5,
+          "size": [
+            512,
+            256
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            -24,
+            232,
+            24
+          ],
+          "uv": [
+            0,
+            0,
+            232,
+            48
+          ]
+        },
+        {
+          "index": 12,
+          "name": "Tas_icon",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            13.0,
+            2.0
+          ],
+          "scale": [
+            0.949999988079071,
+            0.949999988079071
+          ],
+          "parent": 5,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -20,
+            -26,
+            20,
+            26
+          ],
+          "uv": [
+            148,
+            128,
+            188,
+            180
+          ]
+        },
+        {
+          "index": 15,
+          "name": "Q_K",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 13,
+          "size": [
+            512,
+            256
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            -24,
+            232,
+            24
+          ],
+          "uv": [
+            0,
+            0,
+            232,
+            48
+          ]
+        },
+        {
+          "index": 20,
+          "name": "Tas_icon",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            13.0,
+            2.0
+          ],
+          "scale": [
+            0.949999988079071,
+            0.949999988079071
+          ],
+          "parent": 13,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -20,
+            -26,
+            20,
+            26
+          ],
+          "uv": [
+            148,
+            128,
+            188,
+            180
+          ]
+        },
+        {
+          "index": 23,
+          "name": "Q_K",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 21,
+          "size": [
+            512,
+            256
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            -24,
+            232,
+            24
+          ],
+          "uv": [
+            0,
+            0,
+            232,
+            48
+          ]
+        },
+        {
+          "index": 28,
+          "name": "Tas_icon",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            13.0,
+            2.0
+          ],
+          "scale": [
+            0.949999988079071,
+            0.949999988079071
+          ],
+          "parent": 21,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -20,
+            -26,
+            20,
+            26
+          ],
+          "uv": [
+            148,
+            128,
+            188,
+            180
+          ]
+        },
+        {
+          "index": 31,
+          "name": "Q_K",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 29,
+          "size": [
+            512,
+            256
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            -24,
+            232,
+            24
+          ],
+          "uv": [
+            0,
+            0,
+            232,
+            48
+          ]
+        },
+        {
+          "index": 36,
+          "name": "Tas_icon",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            13.0,
+            2.0
+          ],
+          "scale": [
+            0.949999988079071,
+            0.949999988079071
+          ],
+          "parent": 29,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -20,
+            -26,
+            20,
+            26
+          ],
+          "uv": [
+            148,
+            128,
+            188,
+            180
+          ]
+        },
+        {
+          "index": 39,
+          "name": "Q_K",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 37,
+          "size": [
+            512,
+            256
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            -24,
+            232,
+            24
+          ],
+          "uv": [
+            0,
+            0,
+            232,
+            48
+          ]
+        },
+        {
+          "index": 44,
+          "name": "Tas_icon",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            13.0,
+            2.0
+          ],
+          "scale": [
+            0.949999988079071,
+            0.949999988079071
+          ],
+          "parent": 37,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -20,
+            -26,
+            20,
+            26
+          ],
+          "uv": [
+            148,
+            128,
+            188,
+            180
+          ]
+        },
+        {
+          "index": 47,
+          "name": "Q_K",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 45,
+          "size": [
+            512,
+            256
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            -24,
+            232,
+            24
+          ],
+          "uv": [
+            0,
+            0,
+            232,
+            48
+          ]
+        },
+        {
+          "index": 52,
+          "name": "Tas_icon",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            13.0,
+            2.0
+          ],
+          "scale": [
+            0.949999988079071,
+            0.949999988079071
+          ],
+          "parent": 45,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -20,
+            -26,
+            20,
+            26
+          ],
+          "uv": [
+            148,
+            128,
+            188,
+            180
+          ]
+        },
+        {
+          "index": 66,
+          "name": "Carsol",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            -114.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 65,
+          "size": [
+            512,
+            256
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            -24,
+            232,
+            24
+          ],
+          "uv": [
+            0,
+            48,
+            232,
+            96
+          ]
+        },
+        {
+          "index": 77,
+          "name": "Ougi",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_000_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 76,
+          "size": [
+            1024,
+            512
+          ],
+          "material": 15,
+          "geometry": [
+            -34,
+            -122,
+            34,
+            122
+          ],
+          "uv": [
+            304,
+            224,
+            372,
+            468
+          ]
+        },
+        {
+          "index": 80,
+          "name": "Pnl_A1",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_000_ID_HQ",
+          "type": 2,
+          "position": [
+            187.5,
+            -184.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 79,
+          "size": [
+            1024,
+            512
+          ],
+          "material": 16,
+          "geometry": [
+            -204,
+            0,
+            0,
+            224
+          ],
+          "uv": [
+            304,
+            0,
+            508,
+            224
+          ]
+        },
+        {
+          "index": 81,
+          "name": "Pnl_A2",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_000_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 80,
+          "size": [
+            1024,
+            512
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            0,
+            100,
+            224
+          ],
+          "uv": [
+            376,
+            224,
+            476,
+            448
+          ]
+        },
+        {
+          "index": 82,
+          "name": "Img_frm",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_001_ID_HQ",
+          "type": 2,
+          "position": [
+            -111.0,
+            70.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 80,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -128,
+            -84,
+            128,
+            84
+          ],
+          "uv": [
+            0,
+            0,
+            256,
+            168
+          ]
+        },
+        {
+          "index": 84,
+          "name": "Nnd_tx",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            39.0,
+            66.0
+          ],
+          "scale": [
+            0.8999999761581421,
+            0.8999999761581421
+          ],
+          "parent": 80,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -42,
+            -12,
+            42,
+            12
+          ],
+          "uv": [
+            108,
+            228,
+            192,
+            252
+          ]
+        },
+        {
+          "index": 85,
+          "name": "Nnd_star_u",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            40.0,
+            85.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 80,
+          "size": [
+            512,
+            256
+          ],
+          "material": 15,
+          "geometry": [
+            -54,
+            -12,
+            54,
+            12
+          ],
+          "uv": [
+            0,
+            176,
+            108,
+            200
+          ]
+        },
+        {
+          "index": 86,
+          "name": "Star_0",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            -38.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 85,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -12,
+            -12,
+            12,
+            12
+          ],
+          "uv": [
+            108,
+            128,
+            132,
+            152
+          ]
+        },
+        {
+          "index": 87,
+          "name": "Star_1",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            -19.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 85,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -12,
+            -12,
+            12,
+            12
+          ],
+          "uv": [
+            108,
+            128,
+            132,
+            152
+          ]
+        },
+        {
+          "index": 88,
+          "name": "Star_2",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 85,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -12,
+            -12,
+            12,
+            12
+          ],
+          "uv": [
+            108,
+            128,
+            132,
+            152
+          ]
+        },
+        {
+          "index": 89,
+          "name": "Star_3",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            19.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 85,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -12,
+            -12,
+            12,
+            12
+          ],
+          "uv": [
+            108,
+            128,
+            132,
+            152
+          ]
+        },
+        {
+          "index": 90,
+          "name": "Star_4",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            37.5,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 85,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -12,
+            -12,
+            12,
+            12
+          ],
+          "uv": [
+            108,
+            128,
+            132,
+            152
+          ]
+        },
+        {
+          "index": 91,
+          "name": "Spd_tx",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            38.0,
+            110.0
+          ],
+          "scale": [
+            0.8999999761581421,
+            0.8999999761581421
+          ],
+          "parent": 80,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -54,
+            -12,
+            54,
+            12
+          ],
+          "uv": [
+            0,
+            152,
+            108,
+            176
+          ]
+        },
+        {
+          "index": 105,
+          "name": "Pnl_B1",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_000_ID_HQ",
+          "type": 2,
+          "position": [
+            -16.0,
+            38.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 79,
+          "size": [
+            1024,
+            512
+          ],
+          "material": 16,
+          "geometry": [
+            0,
+            0,
+            304,
+            132
+          ],
+          "uv": [
+            0,
+            356,
+            304,
+            488
+          ]
+        },
+        {
+          "index": 106,
+          "name": "Ghb_tx",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            32.0,
+            12.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 105,
+          "size": [
+            512,
+            256
+          ],
+          "material": 15,
+          "geometry": [
+            -32,
+            -16,
+            32,
+            16
+          ],
+          "uv": [
+            192,
+            220,
+            256,
+            252
+          ]
+        },
+        {
+          "index": 107,
+          "name": "Ghb_kakutoku",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            40.0,
+            71.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 105,
+          "size": [
+            512,
+            256
+          ],
+          "material": 12,
+          "geometry": [
+            -34,
+            -46,
+            34,
+            46
+          ],
+          "uv": [
+            188,
+            128,
+            256,
+            220
+          ]
+        },
+        {
+          "index": 108,
+          "name": "Ghb_bg_0",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            175.0,
+            23.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 105,
+          "size": [
+            512,
+            256
+          ],
+          "material": 15,
+          "geometry": [
+            -116,
+            -16,
+            116,
+            16
+          ],
+          "uv": [
+            0,
+            96,
+            232,
+            128
+          ]
+        },
+        {
+          "index": 109,
+          "name": "Point",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            -101.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 108,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -8,
+            -12,
+            8,
+            12
+          ],
+          "uv": [
+            132,
+            128,
+            148,
+            152
+          ]
+        },
+        {
+          "index": 115,
+          "name": "Ghb_bg_1",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            175.0,
+            45.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 105,
+          "size": [
+            512,
+            256
+          ],
+          "material": 15,
+          "geometry": [
+            -116,
+            -16,
+            116,
+            16
+          ],
+          "uv": [
+            0,
+            96,
+            232,
+            128
+          ]
+        },
+        {
+          "index": 116,
+          "name": "Point",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            -101.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 115,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -8,
+            -12,
+            8,
+            12
+          ],
+          "uv": [
+            132,
+            128,
+            148,
+            152
+          ]
+        },
+        {
+          "index": 122,
+          "name": "Ghb_bg_2",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            175.0,
+            67.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 105,
+          "size": [
+            512,
+            256
+          ],
+          "material": 15,
+          "geometry": [
+            -116,
+            -16,
+            116,
+            16
+          ],
+          "uv": [
+            0,
+            96,
+            232,
+            128
+          ]
+        },
+        {
+          "index": 123,
+          "name": "Point",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            -101.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 122,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -8,
+            -12,
+            8,
+            12
+          ],
+          "uv": [
+            132,
+            128,
+            148,
+            152
+          ]
+        },
+        {
+          "index": 129,
+          "name": "Ghb_bg_3",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            175.0,
+            89.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 105,
+          "size": [
+            512,
+            256
+          ],
+          "material": 15,
+          "geometry": [
+            -116,
+            -16,
+            116,
+            16
+          ],
+          "uv": [
+            0,
+            96,
+            232,
+            128
+          ]
+        },
+        {
+          "index": 130,
+          "name": "Point",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            -101.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 129,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -8,
+            -12,
+            8,
+            12
+          ],
+          "uv": [
+            132,
+            128,
+            148,
+            152
+          ]
+        },
+        {
+          "index": 136,
+          "name": "Ghb_bg_4",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            175.0,
+            111.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 105,
+          "size": [
+            512,
+            256
+          ],
+          "material": 15,
+          "geometry": [
+            -116,
+            -16,
+            116,
+            16
+          ],
+          "uv": [
+            0,
+            96,
+            232,
+            128
+          ]
+        },
+        {
+          "index": 137,
+          "name": "Point",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            -101.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 136,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -8,
+            -12,
+            8,
+            12
+          ],
+          "uv": [
+            132,
+            128,
+            148,
+            152
+          ]
+        },
+        {
+          "index": 152,
+          "name": "Pnl_C1",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_000_ID_HQ",
+          "type": 2,
+          "position": [
+            136.0,
+            -6.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 151,
+          "size": [
+            1024,
+            512
+          ],
+          "material": 16,
+          "geometry": [
+            -152,
+            -178,
+            152,
+            178
+          ],
+          "uv": [
+            0,
+            0,
+            304,
+            356
+          ]
+        },
+        {
+          "index": 153,
+          "name": "Tasseibusyo",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_002_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            -107.5
+          ],
+          "scale": [
+            1.0199999809265137,
+            1.0199999809265137
+          ],
+          "parent": 152,
+          "size": [
+            512,
+            256
+          ],
+          "material": 13,
+          "geometry": [
+            -82,
+            -14,
+            82,
+            14
+          ],
+          "uv": [
+            0,
+            200,
+            164,
+            228
+          ]
+        },
+        {
+          "index": 276,
+          "name": "Tasseihanko",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_003_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.399999976158142,
+            1.399999976158142
+          ],
+          "parent": 275,
+          "size": [
+            256,
+            128
+          ],
+          "material": 10,
+          "geometry": [
+            -64,
+            -64,
+            64,
+            64
+          ],
+          "uv": [
+            0,
+            0,
+            128,
+            128
+          ]
+        },
+        {
+          "index": 281,
+          "name": "Btnavi_u",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_004_ID_HQ",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 283,
+          "size": [
+            256,
+            128
+          ],
+          "material": 13,
+          "geometry": [
+            -128,
+            -16,
+            0,
+            16
+          ],
+          "uv": [
+            0,
+            0,
+            128,
+            32
+          ]
+        },
+        {
+          "index": 285,
+          "name": "Line",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_001_ID_HQ",
+          "type": 2,
+          "position": [
+            -24.5,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 284,
+          "size": [
+            512,
+            256
+          ],
+          "material": 13,
+          "geometry": [
+            -12,
+            -16,
+            12,
+            16
+          ],
+          "uv": [
+            42,
+            216,
+            66,
+            248
+          ]
+        },
+        {
+          "index": 297,
+          "name": "Yugisu",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_001_ID_HQ",
+          "type": 2,
+          "position": [
+            26.0,
+            0.0
+          ],
+          "scale": [
+            0.8999999761581421,
+            1.0
+          ],
+          "parent": 284,
+          "size": [
+            512,
+            256
+          ],
+          "material": 13,
+          "geometry": [
+            -21,
+            -16,
+            21,
+            16
+          ],
+          "uv": [
+            0,
+            216,
+            42,
+            248
+          ]
+        },
+        {
+          "index": 298,
+          "name": "Koban",
+          "texture": "id\\texture\\jpn\\yuugi_quest\\yuugi_quest_001_ID_HQ",
+          "type": 2,
+          "position": [
+            -146.0,
+            0.5
+          ],
+          "scale": [
+            0.699999988079071,
+            0.800000011920929
+          ],
+          "parent": 143,
+          "size": [
+            512,
+            256
+          ],
+          "material": 14,
+          "geometry": [
+            -24,
+            -24,
+            24,
+            24
+          ],
+          "uv": [
+            0,
+            168,
+            48,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_common.arc",
+      "index": 75,
+      "name": "id\\lsp\\jpn\\charasele\\charasele_hanyo",
+      "extracted": "E:\\Utage Patching New\\_codex_select_menu\\audit\\c_common__75.lsp",
+      "node_count": 413,
+      "nodes": [
+        {
+          "index": 403,
+          "name": "Questname",
+          "texture": "id\\dummy_BM",
+          "type": 2,
+          "position": [
+            21.0,
+            84.0
+          ],
+          "scale": [
+            0.8999999761581421,
+            0.949999988079071
+          ],
+          "parent": 398,
+          "size": [
+            32,
+            256
+          ],
+          "material": 12,
+          "geometry": [
+            0,
+            0,
+            256,
+            32
+          ],
+          "uv": [
+            0,
+            0,
+            256,
+            32
+          ]
+        }
+      ]
+    },
+    {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_finish_id.arc",
+      "index": 42,
+      "name": "id\\lsp\\jpn\\result\\kakutoku",
+      "extracted": "E:\\Utage Patching New\\_codex_select_menu\\audit\\tenka_finish_id__42.lsp",
+      "node_count": 69,
+      "nodes": [
+        {
+          "index": 58,
+          "name": "Quest",
+          "texture": "id\\dummy_BM",
+          "type": 2,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            0.6000000238418579,
+            0.6000000238418579
+          ],
+          "parent": 6,
+          "size": [
+            32,
+            256
+          ],
+          "material": 6,
+          "geometry": [
+            -104,
+            -64,
+            104,
+            64
+          ],
+          "uv": [
+            24,
+            0,
+            232,
+            128
+          ]
+        },
+        {
+          "index": 59,
+          "name": "Quest_mask",
+          "texture": "id\\texture\\jpn\\kakutoku\\kakutoku_009_ID_HQ",
+          "type": 5,
+          "position": [
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0
+          ],
+          "parent": 6,
+          "size": [
+            256,
+            128
+          ],
+          "material": 6,
+          "geometry": [
+            -64,
+            -40,
+            64,
+            40
+          ],
+          "uv": [
+            1,
+            25,
+            129,
+            105
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,3 @@
+from pathlib import Path
+p=Path(r'E:\Utage Patching New\_codex_select_menu\quest_v4\build_charasele_v4.py');s=p.read_text().replace('if len(part)<150:', 'if len(part)<600:').replace("cell.alpha_composite(sprite,((w-sprite.width)//2,(h-sprite.height)//2))", "sprite.putalpha(sprite.getchannel('A').point(lambda v:0 if v<24 else v))\n sprite.save(W/f'sprite_{k}.png')\n cell.alpha_composite(sprite,((w-sprite.width)//2,(h-sprite.height)//2))");p.write_text(s)
+p=p.with_name('codec_v4.py');s=p.read_text().replace("k=min(range(4),key=lambda k:sum((p[c]-palette[k][c])**2 for c in range(3)));bits|=k<<(2*i)","k=min(range(4),key=lambda k:palette[k][1]) if p[1]==0 else min(range(4),key=lambda k:sum((p[c]-palette[k][c])**2 for c in range(3)))\n  bits|=k<<(2*i)");p.write_text(s)

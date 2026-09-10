@@ -1,0 +1,317 @@
+{
+  "patch": "Utage Cockpit KOs Repair V8 cumulative over V7",
+  "created": "2026-08-30",
+  "base_zip_sha256": "84e4def0da1d452052fc0a9a710eb2bff5718740401df28096ae5dd450dfcdef",
+  "official_donor": "Samurai Heroes cockpit_005_ID_HQ, exact separate 128x64 BC3 resource",
+  "official_donor_raw_sha256": "b78df3541d43d133e761e218d0057d24782938f2fc0a61c35c7263fa6670a11b",
+  "targets": [
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/cockpit1P.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/id/cockpit2P.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/jpn/id/cockpit1P.arc",
+    "PS3_GAME/USRDIR/nativePS3/rom/jpn/id/cockpit2P.arc"
+  ],
+  "route_coverage": "Both dynamic ENG HUD paths and hardcoded JPN cockpit preload paths",
+  "method": "Restore/preserve Utage's clean 128x128 cockpit_005 atlas; append the untouched Samurai Heroes KOs texture as cockpit_026; reroute only Kill nodes while preserving Utage node flags and sizing.",
+  "validation": {
+    "status": "pass",
+    "method": "exact SH donor resource with byte-identical ENG-to-JPN route mirroring",
+    "built_archives": [
+      {
+        "language": "eng",
+        "player": "1P",
+        "source_archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit1P.arc",
+        "source_archive_sha256": "69f425817738467e4e50f951b7e9056aebcbd499fa0f458bbd223734c258591a",
+        "output_archive": "E:\\Utage Patching New\\_codex_tenka_v6\\cockpit_eng1P_v8.arc",
+        "output_archive_sha256": "d2eb213b7a64b7a4a9fb427b605f1330f1073b4e96514bde8129d522bfe5c2db",
+        "entry_count_before": 38,
+        "entry_count_after": 39,
+        "changed_existing_resource_indices": [
+          6,
+          18
+        ],
+        "clean_atlas_entry": 6,
+        "clean_atlas_sha256": "7c2c7f681327c1a90619c15da03911c3f48e1fc04dabdedd1e362edb9b225da8",
+        "clean_atlas_action": "restored",
+        "layout_entry": 18,
+        "appended_entry": 38,
+        "appended_key": "id\\texture\\jpn\\cockpit\\cockpit_026_ID_HQ",
+        "appended_raw_sha256": "b78df3541d43d133e761e218d0057d24782938f2fc0a61c35c7263fa6670a11b",
+        "appended_dimensions": [
+          128,
+          64
+        ],
+        "appended_compressed_blob_matches_sh": true,
+        "kill_nodes": [
+          {
+            "node": 34,
+            "texture_before": "id\\texture\\jpn\\cockpit\\cockpit_005_ID_HQ",
+            "texture_after": "id\\texture\\jpn\\cockpit\\cockpit_026_ID_HQ",
+            "position_before": [
+              0.0,
+              0.0
+            ],
+            "position_after": [
+              12.0,
+              0.0
+            ],
+            "size_preserved": [
+              128,
+              64
+            ],
+            "utage_flags_preserved": [
+              0,
+              0
+            ],
+            "geometry_before": [
+              -14,
+              -16,
+              14,
+              16
+            ],
+            "geometry_after": [
+              -32,
+              -16,
+              32,
+              16
+            ],
+            "uv_before": [
+              0,
+              0,
+              28,
+              32
+            ],
+            "uv_after": [
+              0,
+              0,
+              64,
+              32
+            ]
+          },
+          {
+            "node": 96,
+            "texture_before": "id\\texture\\jpn\\cockpit\\cockpit_005_ID_HQ",
+            "texture_after": "id\\texture\\jpn\\cockpit\\cockpit_026_ID_HQ",
+            "position_before": [
+              -12.0,
+              0.0
+            ],
+            "position_after": [
+              -14.0,
+              0.0
+            ],
+            "size_preserved": [
+              128,
+              64
+            ],
+            "utage_flags_preserved": [
+              0,
+              0
+            ],
+            "geometry_before": [
+              0,
+              -16,
+              28,
+              16
+            ],
+            "geometry_after": [
+              0,
+              -16,
+              64,
+              16
+            ],
+            "uv_before": [
+              0,
+              0,
+              28,
+              32
+            ],
+            "uv_after": [
+              0,
+              0,
+              64,
+              32
+            ]
+          }
+        ],
+        "all_other_compressed_blobs_identical": true
+      },
+      {
+        "language": "eng",
+        "player": "2P",
+        "source_archive": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\id\\cockpit2P.arc",
+        "source_archive_sha256": "52719ee5e6d16be27e1fa8565af933ea140f23b1848b3e9bc15c70cdd9cb6f05",
+        "output_archive": "E:\\Utage Patching New\\_codex_tenka_v6\\cockpit_eng2P_v8.arc",
+        "output_archive_sha256": "68d341b027b10a95c8eb3b4e8b704d7a6e6c0d43c082ba55688e1574a44a0e1b",
+        "entry_count_before": 39,
+        "entry_count_after": 40,
+        "changed_existing_resource_indices": [
+          6,
+          19
+        ],
+        "clean_atlas_entry": 6,
+        "clean_atlas_sha256": "7c2c7f681327c1a90619c15da03911c3f48e1fc04dabdedd1e362edb9b225da8",
+        "clean_atlas_action": "restored",
+        "layout_entry": 19,
+        "appended_entry": 39,
+        "appended_key": "id\\texture\\jpn\\cockpit\\cockpit_026_ID_HQ",
+        "appended_raw_sha256": "b78df3541d43d133e761e218d0057d24782938f2fc0a61c35c7263fa6670a11b",
+        "appended_dimensions": [
+          128,
+          64
+        ],
+        "appended_compressed_blob_matches_sh": true,
+        "kill_nodes": [
+          {
+            "node": 34,
+            "texture_before": "id\\texture\\jpn\\cockpit\\cockpit_005_ID_HQ",
+            "texture_after": "id\\texture\\jpn\\cockpit\\cockpit_026_ID_HQ",
+            "position_before": [
+              0.0,
+              0.0
+            ],
+            "position_after": [
+              12.0,
+              0.0
+            ],
+            "size_preserved": [
+              128,
+              64
+            ],
+            "utage_flags_preserved": [
+              0,
+              0
+            ],
+            "geometry_before": [
+              -16,
+              -16,
+              16,
+              16
+            ],
+            "geometry_after": [
+              -32,
+              -16,
+              32,
+              16
+            ],
+            "uv_before": [
+              0,
+              0,
+              32,
+              32
+            ],
+            "uv_after": [
+              0,
+              0,
+              64,
+              32
+            ]
+          },
+          {
+            "node": 81,
+            "texture_before": "id\\texture\\jpn\\cockpit\\cockpit_005_ID_HQ",
+            "texture_after": "id\\texture\\jpn\\cockpit\\cockpit_026_ID_HQ",
+            "position_before": [
+              0.0,
+              0.0
+            ],
+            "position_after": [
+              12.0,
+              0.0
+            ],
+            "size_preserved": [
+              128,
+              64
+            ],
+            "utage_flags_preserved": [
+              0,
+              0
+            ],
+            "geometry_before": [
+              -16,
+              -16,
+              16,
+              16
+            ],
+            "geometry_after": [
+              -32,
+              -16,
+              32,
+              16
+            ],
+            "uv_before": [
+              0,
+              0,
+              32,
+              32
+            ],
+            "uv_after": [
+              0,
+              0,
+              64,
+              32
+            ]
+          },
+          {
+            "node": 98,
+            "texture_before": "id\\texture\\jpn\\cockpit\\cockpit_005_ID_HQ",
+            "texture_after": "id\\texture\\jpn\\cockpit\\cockpit_026_ID_HQ",
+            "position_before": [
+              -14.0,
+              0.0
+            ],
+            "position_after": [
+              -14.0,
+              0.0
+            ],
+            "size_preserved": [
+              128,
+              64
+            ],
+            "utage_flags_preserved": [
+              0,
+              0
+            ],
+            "geometry_before": [
+              0,
+              -16,
+              28,
+              16
+            ],
+            "geometry_after": [
+              0,
+              -16,
+              64,
+              16
+            ],
+            "uv_before": [
+              0,
+              0,
+              28,
+              32
+            ],
+            "uv_after": [
+              0,
+              0,
+              64,
+              32
+            ]
+          }
+        ],
+        "all_other_compressed_blobs_identical": true
+      }
+    ],
+    "mirrored_routes": [
+      {
+        "source": "PS3_GAME/USRDIR/nativePS3/rom/eng/id/cockpit1P.arc",
+        "target": "PS3_GAME/USRDIR/nativePS3/rom/jpn/id/cockpit1P.arc",
+        "reason": "preserve all existing translated cockpit resources on the hardcoded JPN fallback"
+      },
+      {
+        "source": "PS3_GAME/USRDIR/nativePS3/rom/eng/id/cockpit2P.arc",
+        "target": "PS3_GAME/USRDIR/nativePS3/rom/jpn/id/cockpit2P.arc",
+        "reason": "preserve all existing translated cockpit resources on the hardcoded JPN fallback"
+      }
+    ]
+  },
+  "engine_smoke_test": "required"
+}

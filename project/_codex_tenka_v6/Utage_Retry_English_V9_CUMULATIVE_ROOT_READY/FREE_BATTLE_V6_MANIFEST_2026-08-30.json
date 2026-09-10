@@ -1,0 +1,179 @@
+{
+  "patch": "Utage Free Battle English and Bounds V6 (cumulative over Retry English V5)",
+  "created": "2026-08-30",
+  "base_zip": "C:\\Users\\aluna\\Downloads\\Utage_Retry_English_V5_CUMULATIVE_ROOT_READY.zip",
+  "base_zip_sha256": "238ad7abbd82f3e6683623f9ffb4521178d3d600989b2ad3be5430df83810596",
+  "target_arc": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_id.arc",
+  "source_tenka_id_sha256": "dba81ec463dcf1d823a5c92fa33bab4501e253b9babd0bf41e821bd1c73eea17",
+  "output_tenka_id_sha256": "eb2c1b46ff41fda29584ce070ce0cf78154d83e41f06c5583537a7dabe83c3de",
+  "changes": [
+    {
+      "resource": "id\\lsp\\jpn\\tenka\\tenka_00",
+      "change": "Free Battle stage-name horizontal fit",
+      "nodes": [
+        108,
+        113,
+        118,
+        123,
+        128,
+        133,
+        137
+      ],
+      "scale_x_before": [
+        0.699999988079071,
+        0.699999988079071,
+        0.699999988079071,
+        0.699999988079071,
+        0.699999988079071,
+        0.699999988079071,
+        0.699999988079071
+      ],
+      "scale_x_after": 0.54,
+      "scale_y_unchanged": true
+    },
+    {
+      "resource": "id\\texture\\jpn\\tenka\\tenka_005_ID_HQ",
+      "change": "Free Battle header: Japanese -> Quick Battles",
+      "target_rect_physical": [
+        672,
+        96,
+        824,
+        128
+      ],
+      "rendered_label_size": [
+        148,
+        28
+      ],
+      "source": "official Samurai Heroes terminology; Arial Bold raster for BC3 legibility"
+    },
+    {
+      "resource": "id\\texture\\jpn\\tenka\\tenka_029_ID_HQ",
+      "change": "Battle count suffix: Japanese -> Battles",
+      "target_rect_physical": [
+        96,
+        0,
+        180,
+        64
+      ],
+      "rendered_label_size": [
+        82,
+        40
+      ],
+      "source": "official Samurai Heroes terminology; Arial Bold raster for BC3 legibility"
+    }
+  ],
+  "changed_resources": [
+    {
+      "index": 56,
+      "name": "id\\texture\\jpn\\tenka\\tenka_029_ID_HQ",
+      "type_hash": "0x241F5DEB",
+      "old_raw_sha256": "74347d0bde705a403c06bb23a9008cc3ced0038e98ca3477a82b1340b849750d",
+      "new_raw_sha256": "ea597611227c1d9024fa3112169fdfe3da4e8e320ae14d4011b52dc43fe782b6",
+      "old_raw_size": 16404,
+      "new_raw_size": 16404
+    },
+    {
+      "index": 59,
+      "name": "id\\lsp\\jpn\\tenka\\tenka_00",
+      "type_hash": "0x60DD1B16",
+      "old_raw_sha256": "1bd8eaa1151a38782f5b1e66501f45636516c5f66e0481453ac5870a1de7bde6",
+      "new_raw_sha256": "13d02b0a9b7888f6c770e27400c14afa4fe0c551689a7bec140c8b2c5b82292b",
+      "old_raw_size": 66296,
+      "new_raw_size": 66296
+    },
+    {
+      "index": 67,
+      "name": "id\\texture\\jpn\\tenka\\tenka_005_ID_HQ",
+      "type_hash": "0x241F5DEB",
+      "old_raw_sha256": "21b0fb28d09e8abe7fb1abf4909fab84796c94469b870e5329e0c5ff40726cb7",
+      "new_raw_sha256": "fcd3096efb5566ed2698e5666b9c1534bdc29a4ac1b0369fc6c146c9950eeb82",
+      "old_raw_size": 131092,
+      "new_raw_size": 131092
+    }
+  ],
+  "texture_verification": {
+    "tenka_005_ID_HQ": {
+      "header_unchanged": true,
+      "size_unchanged": true,
+      "changed_bc3_blocks": 304,
+      "first_changed_block_offset": 101012,
+      "last_changed_block_offset": 130276
+    },
+    "tenka_029_ID_HQ": {
+      "header_unchanged": true,
+      "size_unchanged": true,
+      "changed_bc3_blocks": 336,
+      "first_changed_block_offset": 404,
+      "last_changed_block_offset": 16084
+    }
+  },
+  "layout_verification": {
+    "resource": "id\\lsp\\jpn\\tenka\\tenka_00",
+    "nodes": [
+      108,
+      113,
+      118,
+      123,
+      128,
+      133,
+      137
+    ],
+    "scale_x_before": 0.7,
+    "scale_x_after": 0.54,
+    "scale_y": 0.88,
+    "only_expected_scale_bytes_changed": true,
+    "changed_raw_byte_offsets": [
+      19057,
+      19058,
+      19059,
+      19937,
+      19938,
+      19939,
+      20817,
+      20818,
+      20819,
+      21697,
+      21698,
+      21699,
+      22577,
+      22578,
+      22579,
+      23457,
+      23458,
+      23459,
+      24161,
+      24162,
+      24163
+    ]
+  },
+  "dependency_audit": {
+    "output_tenka_id.arc": {
+      "path": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_Retry_English_V6_CUMULATIVE_ROOT_READY\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka_id.arc",
+      "sha256": "eb2c1b46ff41fda29584ce070ce0cf78154d83e41f06c5583537a7dabe83c3de",
+      "explicit_outer_rom_jpn_hits": []
+    },
+    "current_tenka.arc": {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\tenka\\tenka.arc",
+      "sha256": "ccef18426b8a76b7e05528fdc6ceff9a00c981331e97a3cb424668425d958384",
+      "explicit_outer_rom_jpn_hits": []
+    },
+    "current_free_stage.arc": {
+      "path": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\tenka\\free_stage.arc",
+      "sha256": "8fc0624a41598ef121f24aedbcec56b8d6c0d74ae1b1a27d8be597d9e8a4a44e",
+      "explicit_outer_rom_jpn_hits": []
+    }
+  },
+  "preserved": "All V5 cumulative files; all tenka_id.arc resources except indices 56, 59, and 67; ARC entry order, type hashes, flags, internal jpn resource keys, XET headers, and XET sizes.",
+  "verification": {
+    "status": "pass",
+    "arc_entries": 82,
+    "changed_resource_indices": [
+      56,
+      59,
+      67
+    ],
+    "untouched_compressed_blobs_byte_identical": true,
+    "all_resources_unpack": true,
+    "engine_smoke_test": "required"
+  }
+}

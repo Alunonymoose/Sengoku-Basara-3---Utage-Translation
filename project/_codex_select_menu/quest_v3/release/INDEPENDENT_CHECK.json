@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "archives": 41,
+  "changed_resources": 179,
+  "untouched_compressed_resources": 949,
+  "untouched_lsp_resources": 20,
+  "selection_frames_original_blocks": true,
+  "reward_row_original_blocks": true,
+  "stars_original_blocks": true,
+  "name_row_bounds_pass": true,
+  "runtime_verified": false
+}

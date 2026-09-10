@@ -1,0 +1,121 @@
+{
+  "status": "pass",
+  "archives": [
+    {
+      "archive": "pl016.arc",
+      "candidate": "E:\\Utage Patching New\\_codex_tenka_v6\\utage_exclusive_sh_match\\pl016.arc",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "pl017.arc",
+      "candidate": "E:\\Utage Patching New\\_codex_tenka_v6\\utage_exclusive_sh_match\\pl017.arc",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "pl018.arc",
+      "candidate": "E:\\Utage Patching New\\_codex_tenka_v6\\utage_exclusive_sh_match\\pl018.arc",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "pl019.arc",
+      "candidate": "E:\\Utage Patching New\\_codex_tenka_v6\\utage_exclusive_sh_match\\pl019.arc",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "pl020.arc",
+      "candidate": "E:\\Utage Patching New\\_codex_tenka_v6\\utage_exclusive_sh_match\\pl020.arc",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "pl021.arc",
+      "candidate": "E:\\Utage Patching New\\_codex_tenka_v6\\utage_exclusive_sh_match\\pl021.arc",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "pl022.arc",
+      "candidate": "E:\\Utage Patching New\\_codex_tenka_v6\\utage_exclusive_sh_match\\pl022.arc",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "pl023.arc",
+      "candidate": "E:\\Utage Patching New\\_codex_tenka_v6\\utage_exclusive_sh_match\\pl023.arc",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "pl024.arc",
+      "candidate": "E:\\Utage Patching New\\_codex_tenka_v6\\utage_exclusive_sh_match\\pl024.arc",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "pl025.arc",
+      "candidate": "E:\\Utage Patching New\\_codex_tenka_v6\\utage_exclusive_sh_match\\pl025.arc",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "pl026.arc",
+      "candidate": "E:\\Utage Patching New\\_codex_tenka_v6\\utage_exclusive_sh_match\\pl026.arc",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "pl027.arc",
+      "candidate": "E:\\Utage Patching New\\_codex_tenka_v6\\utage_exclusive_sh_match\\pl027.arc",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "pl028.arc",
+      "candidate": "E:\\Utage Patching New\\_codex_tenka_v6\\utage_exclusive_sh_match\\pl028.arc",
+      "changed_entries": [
+        2,
+        4
+      ]
+    },
+    {
+      "archive": "pl029.arc",
+      "candidate": "E:\\Utage Patching New\\_codex_tenka_v6\\utage_exclusive_sh_match\\pl029.arc",
+      "changed_entries": [
+        2,
+        4
+      ]
+    }
+  ],
+  "changed_entries": [
+    2,
+    4
+  ]
+}

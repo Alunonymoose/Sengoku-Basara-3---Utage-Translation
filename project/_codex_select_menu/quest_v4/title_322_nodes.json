@@ -1,0 +1,622 @@
+[
+  {
+    "index": 0,
+    "name": "SysRoot",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": -1,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "uv": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "index": 1,
+    "name": "shinki_null",
+    "texture": "",
+    "type": 4,
+    "position": [
+      320.0,
+      350.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 0,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 2,
+    "name": "shinki00",
+    "texture": "id\\texture\\jpn\\tenka_makura\\tenka_makura00_ID_HQ",
+    "type": 2,
+    "position": [
+      -280.0,
+      -3.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -8,
+      -32,
+      8,
+      32
+    ],
+    "uv": [
+      0,
+      0,
+      16,
+      64
+    ]
+  },
+  {
+    "index": 3,
+    "name": "shinki01",
+    "texture": "id\\texture\\jpn\\tenka_makura\\tenka_makura00_ID_HQ",
+    "type": 3,
+    "position": [
+      -276.0,
+      -3.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      0,
+      -32,
+      276,
+      32
+    ],
+    "uv": [
+      35,
+      0,
+      41,
+      64
+    ]
+  },
+  {
+    "index": 4,
+    "name": "shinki02",
+    "texture": "id\\texture\\jpn\\tenka_makura\\tenka_makura00_ID_HQ",
+    "type": 2,
+    "position": [
+      280.0,
+      -3.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -8,
+      -32,
+      8,
+      32
+    ],
+    "uv": [
+      16,
+      0,
+      32,
+      64
+    ]
+  },
+  {
+    "index": 5,
+    "name": "mozi_null",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      0,
+      512
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      157,
+      32,
+      189
+    ]
+  },
+  {
+    "index": 6,
+    "name": "shinki03",
+    "texture": "id\\texture\\jpn\\tenka_makura\\tenka_makura00_ID_HQ",
+    "type": 3,
+    "position": [
+      0.0,
+      -3.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      0,
+      -32,
+      276,
+      32
+    ],
+    "uv": [
+      35,
+      64,
+      41,
+      128
+    ]
+  },
+  {
+    "index": 7,
+    "name": "kazari_null",
+    "texture": "",
+    "type": 4,
+    "position": [
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -16,
+      -16,
+      16,
+      16
+    ],
+    "uv": [
+      0,
+      0,
+      32,
+      32
+    ]
+  },
+  {
+    "index": 8,
+    "name": "mask1",
+    "texture": "id\\texture\\jpn\\tenka_makura\\tenka_makura00_ID_HQ",
+    "type": 5,
+    "position": [
+      0.0,
+      -3.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 7,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      -276,
+      -32,
+      276,
+      32
+    ],
+    "uv": [
+      55,
+      64,
+      61,
+      128
+    ]
+  },
+  {
+    "index": 9,
+    "name": "square_00",
+    "texture": "",
+    "type": 0,
+    "position": [
+      -212.0,
+      -16.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 7,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -5,
+      -5,
+      5,
+      5
+    ],
+    "uv": [
+      0,
+      0,
+      10,
+      10
+    ]
+  },
+  {
+    "index": 10,
+    "name": "square_01",
+    "texture": "",
+    "type": 0,
+    "position": [
+      -236.0,
+      8.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 7,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -4,
+      -4,
+      4,
+      4
+    ],
+    "uv": [
+      0,
+      0,
+      8,
+      8
+    ]
+  },
+  {
+    "index": 11,
+    "name": "square_02",
+    "texture": "",
+    "type": 0,
+    "position": [
+      -246.0,
+      -10.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 7,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -3,
+      -3,
+      3,
+      3
+    ],
+    "uv": [
+      0,
+      0,
+      6,
+      6
+    ]
+  },
+  {
+    "index": 12,
+    "name": "square_10",
+    "texture": "",
+    "type": 0,
+    "position": [
+      212.0,
+      11.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 7,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -5,
+      -5,
+      5,
+      5
+    ],
+    "uv": [
+      0,
+      0,
+      10,
+      10
+    ]
+  },
+  {
+    "index": 13,
+    "name": "square_11",
+    "texture": "",
+    "type": 0,
+    "position": [
+      236.0,
+      -12.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 7,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -4,
+      -4,
+      4,
+      4
+    ],
+    "uv": [
+      0,
+      0,
+      8,
+      8
+    ]
+  },
+  {
+    "index": 14,
+    "name": "square_12",
+    "texture": "",
+    "type": 0,
+    "position": [
+      246.0,
+      6.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 7,
+    "size": [
+      0,
+      0
+    ],
+    "geometry": [
+      -3,
+      -3,
+      3,
+      3
+    ],
+    "uv": [
+      0,
+      0,
+      6,
+      6
+    ]
+  },
+  {
+    "index": 15,
+    "name": "shinki04",
+    "texture": "id\\texture\\jpn\\tenka_makura\\tenka_makura00_ID_HQ",
+    "type": 3,
+    "position": [
+      -276.0,
+      -3.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      0,
+      -32,
+      552,
+      32
+    ],
+    "uv": [
+      45,
+      0,
+      51,
+      64
+    ]
+  },
+  {
+    "index": 16,
+    "name": "moyou_L",
+    "texture": "id\\texture\\jpn\\tenka_makura\\tenka_makura00_ID_HQ",
+    "type": 2,
+    "position": [
+      -276.0,
+      -3.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      0,
+      -32,
+      56,
+      32
+    ],
+    "uv": [
+      64,
+      0,
+      120,
+      64
+    ]
+  },
+  {
+    "index": 17,
+    "name": "moyou_R",
+    "texture": "id\\texture\\jpn\\tenka_makura\\tenka_makura00_ID_HQ",
+    "type": 2,
+    "position": [
+      276.0,
+      -3.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      0,
+      -32,
+      -56,
+      32
+    ],
+    "uv": [
+      64,
+      0,
+      120,
+      -64
+    ]
+  },
+  {
+    "index": 18,
+    "name": "mask_L",
+    "texture": "id\\texture\\jpn\\tenka_makura\\tenka_makura00_ID_HQ",
+    "type": 5,
+    "position": [
+      -276.0,
+      -3.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      0,
+      -32,
+      -56,
+      32
+    ],
+    "uv": [
+      56,
+      2,
+      60,
+      6
+    ]
+  },
+  {
+    "index": 19,
+    "name": "mask_R",
+    "texture": "id\\texture\\jpn\\tenka_makura\\tenka_makura00_ID_HQ",
+    "type": 5,
+    "position": [
+      278.0,
+      -3.0
+    ],
+    "scale": [
+      1.0,
+      1.0
+    ],
+    "parent": 1,
+    "size": [
+      256,
+      128
+    ],
+    "geometry": [
+      0,
+      -32,
+      278,
+      32
+    ],
+    "uv": [
+      56,
+      2,
+      60,
+      6
+    ]
+  }
+]

@@ -1,0 +1,47 @@
+{
+  "status": "pass",
+  "zip": "E:\\Utage Patching New\\_codex_tenka_v6\\Utage_Retry_English_V7_CUMULATIVE_ROOT_READY.zip",
+  "zip_sha256": "84e4def0da1d452052fc0a9a710eb2bff5718740401df28096ae5dd450dfcdef",
+  "zip_file_count": 47,
+  "changed_base_members": [
+    "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_id.arc",
+    "README_TEST_FIRST.txt"
+  ],
+  "added_members": [
+    "FREE_BATTLE_V7_MANIFEST_2026-08-30.json",
+    "FREE_BATTLE_V7_VALIDATION_2026-08-30.json",
+    "README_FREE_BATTLE_V7.txt"
+  ],
+  "removed_members": [],
+  "arc_file_count": 35,
+  "arc_entry_count": 553,
+  "resource_unpack_count": 553,
+  "tenka_id_entry_count": 82,
+  "tenka_id_changed_resource_indices_vs_v6": [
+    59
+  ],
+  "inherited_declared_size_warnings": [
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/retry.arc",
+      "entry": 20,
+      "resource": "id\\dummy_BM",
+      "declared": 1432,
+      "actual": 1044
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_id.arc",
+      "entry": 1,
+      "resource": "msg\\id_tenka\\jpn\\id_tenka",
+      "declared": 55628,
+      "actual": 55606
+    },
+    {
+      "archive": "PS3_GAME/USRDIR/nativePS3/rom/eng/tenka/tenka_id.arc",
+      "entry": 36,
+      "resource": "id\\dummy_BM",
+      "declared": 1432,
+      "actual": 1044
+    }
+  ],
+  "runtime_test": "required"
+}
