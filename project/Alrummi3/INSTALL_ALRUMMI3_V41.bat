@@ -54,12 +54,12 @@ if not exist "%TARGET%\dist-v41\Alrummi3_V41.exe" goto :build_fail
 echo.
 echo ====================================================================
 echo   READY
-necho ====================================================================
+echo ====================================================================
 echo.
 echo Open ARC ^> select texture ^> FIX TEXTURE ^> preview ^> APPLY TO ARC
 echo.
 echo V4.1 now SKIPS same-Japanese / identical donor textures instead of
-necho falsely calling them a successful lossless fix.
+echo falsely calling them a successful lossless fix.
 echo.
 start "" "%TARGET%\dist-v41\Alrummi3_V41.exe"
 exit /b 0
@@ -74,10 +74,10 @@ exit /b 1
 echo.
 echo ====================================================================
 echo   V4.1 BUILD / PREFLIGHT FAILED
-necho ====================================================================
+echo ====================================================================
 echo.
 echo Existing builds were not replaced. Send a screenshot of the first
-necho error above; the preflight should identify the broken stage.
+echo error above; the preflight should identify the broken stage.
 echo.
 pause
 exit /b 1
