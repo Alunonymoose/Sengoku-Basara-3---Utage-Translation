@@ -1,0 +1,30 @@
+name: Alrummi3 Drive Factory
+
+on:
+  push:
+    paths:
+      - 'project/Alrummi3/drive_factory.py'
+      - 'project/Alrummi3/drive_factory_controller.py'
+      - 'project/Alrummi3/drive_factory_selftest.py'
+      - '.github/workflows/alrummi3-drive-factory.yml'
+  pull_request:
+    paths:
+      - 'project/Alrummi3/drive_factory.py'
+      - 'project/Alrummi3/drive_factory_controller.py'
+      - 'project/Alrummi3/drive_factory_selftest.py'
+      - '.github/workflows/alrummi3-drive-factory.yml'
+
+jobs:
+  factory-selftest:
+    runs-on: windows-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Pillow
+        run: python -m pip install --disable-pip-version-check Pillow
+      - name: Run Drive factory safety checks
+        working-directory: project/Alrummi3
+        run: python drive_factory_selftest.py
