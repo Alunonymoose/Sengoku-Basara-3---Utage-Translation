@@ -1,18 +1,12 @@
 """Source-safe installer for the Alrummi3 v31 Drive factory bridge.
 
 Designed for the user's newer local v31 tree, whose exact module filename may
-not match the older GitHub copy.  The installer discovers the GUI source by the
+not match the older GitHub copy. The installer discovers the GUI source by the
 TWO visible button labels rather than by filename, makes a timestamped backup,
 and injects a tiny startup hook only.
 
 It never touches ARC/game files and never deletes the existing ChatGPT export
 or import implementation.
-
-Run from the Alrummi3 source folder:
-    python install_v31_drive_bridge.py
-
-Optional:
-    set ALRUMMI3_FACTORY_ROOT=G:\My Drive\Alrummi3_AI_Factory
 """
 
 from __future__ import annotations
@@ -28,7 +22,7 @@ import sys
 MARKER_BEGIN = "# >>> ALRUMMI3_V31_DRIVE_FACTORY_BRIDGE >>>"
 MARKER_END = "# <<< ALRUMMI3_V31_DRIVE_FACTORY_BRIDGE <<<"
 NEEDLES = ("SEND TO CHATGPT", "IMPORT CHATGPT RESULT")
-BRIDGE_FILES = ("v31_drive_bridge.py",)
+BRIDGE_FILES = ("v31_drive_bridge.py", "chatgpt_web_handoff.py")
 
 
 class InstallError(RuntimeError):
@@ -45,9 +39,6 @@ def discover_gui_sources(root: Path) -> list[Path]:
         except OSError:
             continue
         if all(needle.casefold() in text.casefold() for needle in NEEDLES):
-            # Prefer the most recently modified, then the largest.  This
-            # normally selects alrummi3_v41.py over an old v4 compatibility
-            # source without hard-coding either filename.
             try:
                 stat = path.stat()
                 score = int(stat.st_mtime_ns) + stat.st_size
@@ -59,7 +50,6 @@ def discover_gui_sources(root: Path) -> list[Path]:
 
 
 def _find_mainloop_line(text: str) -> tuple[int, str] | None:
-    """Return (line-index, receiver-expression) for the final .mainloop()."""
     lines = text.splitlines()
     pattern = re.compile(r"^(?P<indent>\s*)(?P<obj>[A-Za-z_][\w.]*)\.mainloop\s*\(\s*\)\s*(?:#.*)?$")
     found: tuple[int, str] | None = None
@@ -71,14 +61,38 @@ def _find_mainloop_line(text: str) -> tuple[int, str] | None:
 
 
 def build_hook(indent: str, app_expr: str) -> list[str]:
-    # Install on Tk's event loop, after all widgets/buttons exist.  Failure is
-    # reported to console but deliberately does not stop Alrummi from opening.
     return [
         indent + MARKER_BEGIN,
         indent + "def _install_alrummi3_drive_factory_bridge():",
         indent + "    try:",
         indent + "        from v31_drive_bridge import install_v31_drive_bridge",
-        indent + f"        {app_expr}._alrummi3_drive_factory_bridge = install_v31_drive_bridge({app_expr})",
+        indent + "        from chatgpt_web_handoff import (",
+        indent + "            attach_handoff, pick_handoff_pngs, read_handoff_prompt, ChatGPTHandoffError,",
+        indent + "        )",
+        indent + f"        _bridge = install_v31_drive_bridge({app_expr})",
+        indent + f"        {app_expr}._alrummi3_drive_factory_bridge = _bridge",
+        indent + "        _original_send = _bridge.send_to_factory",
+        indent + "        def _send_with_real_attachments():",
+        indent + "            _original_send()",
+        indent + "            _job = getattr(_bridge, 'current_job', None)",
+        indent + "            if _job is None:",
+        indent + "                return",
+        indent + "            try:",
+        indent + "                _files = pick_handoff_pngs(_job.local_pack)",
+        indent + "                _prompt = read_handoff_prompt(_job.local_pack)",
+        indent + "                attach_handoff(files=_files, prompt=_prompt)",
+        indent + "                try:",
+        indent + f"                    {app_expr}._set_status('ChatGPT opened with real PNG attachments; review and press Send')",
+        indent + "                except Exception:",
+        indent + "                    pass",
+        indent + "            except ChatGPTHandoffError as _attach_exc:",
+        indent + "                print(f'[Alrummi3 ChatGPT Attach] {_attach_exc}')",
+        indent + "                try:",
+        indent + f"                    {app_expr}._set_status(f'Attachment handoff failed: {{_attach_exc}}')",
+        indent + "                except Exception:",
+        indent + "                    pass",
+        indent + "        if getattr(_bridge, 'send_button', None) is not None:",
+        indent + "            _bridge.send_button.configure(command=_send_with_real_attachments)",
         indent + "    except Exception as _drive_bridge_exc:",
         indent + "        print(f'[Alrummi3 Drive Bridge] not enabled: {_drive_bridge_exc}')",
         indent + f"{app_expr}.after(400, _install_alrummi3_drive_factory_bridge)",
@@ -94,8 +108,7 @@ def patch_source(path: Path, *, dry_run: bool = False) -> tuple[Path | None, boo
     result = _find_mainloop_line(text)
     if result is None:
         raise InstallError(
-            f"{path.name} contains the v31 ChatGPT buttons but no simple app.mainloop() call was found. "
-            "No source was changed."
+            f"{path.name} contains the v31 ChatGPT buttons but no simple app.mainloop() call was found. No source was changed."
         )
     line_index, app_expr = result
     lines = text.splitlines()
@@ -120,18 +133,18 @@ def patch_source(path: Path, *, dry_run: bool = False) -> tuple[Path | None, boo
     return backup, True
 
 
-def verify_bridge_module(root: Path) -> Path:
-    path = root / "v31_drive_bridge.py"
-    if not path.is_file():
-        raise InstallError(
-            f"Missing {path.name}. Copy v31_drive_bridge.py beside this installer/source tree first."
-        )
-    compile(path.read_text(encoding="utf-8"), str(path), "exec")
-    return path
+def verify_bridge_modules(root: Path) -> tuple[Path, Path]:
+    bridge = root / "v31_drive_bridge.py"
+    handoff = root / "chatgpt_web_handoff.py"
+    for path in (bridge, handoff):
+        if not path.is_file():
+            raise InstallError(f"Missing {path.name}. Copy it beside this installer/source tree first.")
+        compile(path.read_text(encoding="utf-8"), str(path), "exec")
+    return bridge, handoff
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Install Alrummi3 v31 Google Drive factory bridge")
+    parser = argparse.ArgumentParser(description="Install Alrummi3 v31 Google Drive + real ChatGPT attachment bridge")
     parser.add_argument("root", nargs="?", default=".", help="Alrummi3 source folder")
     parser.add_argument("--source", help="Explicit GUI .py source instead of auto-discovery")
     parser.add_argument("--dry-run", action="store_true", help="Discover/validate but change nothing")
@@ -140,7 +153,7 @@ def main(argv: list[str] | None = None) -> int:
     root = Path(args.root).expanduser().resolve()
     if not root.is_dir():
         raise InstallError(f"Not a directory: {root}")
-    bridge = verify_bridge_module(root)
+    bridge, handoff = verify_bridge_modules(root)
 
     if args.source:
         source = Path(args.source)
@@ -153,8 +166,7 @@ def main(argv: list[str] | None = None) -> int:
         candidates = discover_gui_sources(root)
         if not candidates:
             raise InstallError(
-                "No top-level Python source containing both 'SEND TO CHATGPT' and "
-                "'IMPORT CHATGPT RESULT' was found. No source was changed."
+                "No top-level Python source containing both 'SEND TO CHATGPT' and 'IMPORT CHATGPT RESULT' was found. No source was changed."
             )
         source = candidates[0]
         if len(candidates) > 1:
@@ -164,16 +176,18 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"  {index}. {path.name}{mark}")
 
     backup, changed = patch_source(source, dry_run=args.dry_run)
-    print(f"Bridge module: {bridge}")
-    print(f"GUI source:    {source}")
+    print(f"Drive bridge:   {bridge}")
+    print(f"Attach helper:  {handoff}")
+    print(f"GUI source:     {source}")
     if args.dry_run:
         print("DRY RUN: startup hook can be inserted; no file changed.")
     elif not changed:
         print("Already installed; no source change required.")
     else:
         print(f"Installed. Backup: {backup}")
-        print("Next launch will wrap v31's existing SEND/IMPORT workflow with the Drive queue.")
-        print("Set ALRUMMI3_FACTORY_ROOT if Drive for desktop does not expose the factory in a standard path.")
+        print("Next launch wraps SEND with Drive queue + real ChatGPT browser attachments.")
+        print("On first use, sign in once in the dedicated Alrummi3 Chrome/Edge profile.")
+        print("The prompt is filled but never auto-submitted; review it and press Send yourself.")
     return 0
 
 
