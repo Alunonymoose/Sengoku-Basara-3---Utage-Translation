@@ -7,9 +7,7 @@ if ($LASTEXITCODE -ne 0) {
     Write-Error "PyInstaller is not installed. Install it with: python -m pip install pyinstaller"
 }
 
-# Stage Tcl/Tk outside AppData before PyInstaller scans the GUI.  Tcl can list
-# the original files on this machine but cannot stat them, which makes
-# PyInstaller incorrectly exclude tkinter and leaves the EXE without a GUI.
+# Stage Tcl/Tk outside AppData before PyInstaller scans the GUI.
 $pythonPath = (Get-Command python).Source
 $pythonRoot = Split-Path -Parent $pythonPath
 $sourceTcl = Join-Path $pythonRoot "tcl\tcl8.6"
@@ -43,6 +41,11 @@ python -m PyInstaller --noconfirm --clean --windowed --onefile `
     --hidden-import _tkinter `
     --hidden-import ai_extensions.api `
     --hidden-import ai_extensions.registry `
+    --hidden-import v31_drive_bridge `
+    --hidden-import chatgpt_web_handoff `
+    --hidden-import selenium `
+    --hidden-import selenium.webdriver `
+    --collect-submodules selenium `
     --collect-data rapidocr_onnxruntime `
     --hidden-import onnxruntime `
     --add-binary "$tclDll;." `
@@ -52,17 +55,12 @@ if ($LASTEXITCODE -ne 0) {
     throw "PyInstaller failed with exit code $LASTEXITCODE. The executable was not replaced."
 }
 
-# Keep the extension and update folders beside the executable so future local
-# AI updates remain visible after PyInstaller creates a one-file bundle.
 New-Item -ItemType Directory -Force -Path "$appRoot\dist\ai_extensions", "$appRoot\dist\updates" | Out-Null
 Get-ChildItem -LiteralPath "$appRoot\ai_extensions" -Force | Where-Object { $_.Name -ne "__pycache__" } | ForEach-Object {
     Copy-Item -LiteralPath $_.FullName -Destination "$appRoot\dist\ai_extensions" -Recurse -Force
 }
 Copy-Item -Path "$appRoot\updates\*" -Destination "$appRoot\dist\updates" -Recurse -Force
 
-# The project's own dictionary and roster are authoritative over any model, so
-# they ship beside the executable.  The index caches are copied when present so
-# a fresh EXE is immediately useful without rebuilding them.
 if (Test-Path -LiteralPath "$appRoot\project_data") {
     New-Item -ItemType Directory -Force -Path "$appRoot\dist\project_data" | Out-Null
     Copy-Item -Path "$appRoot\project_data\*" -Destination "$appRoot\dist\project_data" -Recurse -Force
