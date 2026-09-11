@@ -6,7 +6,10 @@
     {"name":"part00.txt","sha256":"1505ed1bd7fb90e7f7ba154e7e127b50c56e91de4a641454a9d3e51c3e0169a4"},
     {"name":"part01.txt","sha256":"0b6fe1639be3f29003135a10ee15fe2dc0786a795d9623aaa79c4f0a82314747"},
     {"name":"part02.txt","sha256":"a240a36ca8656f4e072ec06d40f8551d9c2c74252ba686299789039bdbea9a57"},
-    {"name":"part03.txt","sha256":"71a538d68d20d95e0353bbec0336009dc7b0a45cc750e5ddb387e64e4731df56"},
+    {"name":"part03_0.txt","sha256":"9091d00f0cb771747786e6b3d611209878ac6b885a77ede1662c042949dd97be"},
+    {"name":"part03_1.txt","sha256":"1fd9c6a07ee5f974dc7b80e7caa5efe0c251056dd991d4834f18469134a92175"},
+    {"name":"part03_2.txt","sha256":"f104fa9744d97c00ae61ee3dfe90476ea49244b53325b4e52af121d23cd00856"},
+    {"name":"part03_3.txt","sha256":"679501cd31dd1de8d212011aef3d1e200750902fb9ad85a2ff1874970e146933"},
     {"name":"part04.txt","sha256":"34a1f8b08ec721b0c8c4388c1a4e4a9b073ec093129ab402b07cb56c4cc5a299"}
   ]
 }
