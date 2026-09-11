@@ -3,7 +3,7 @@
 Designed for the user's newer local v31 tree, whose exact module filename may
 not match the older GitHub copy. The installer discovers the GUI source by the
 TWO visible button labels rather than by filename, makes a timestamped backup,
-and injects a tiny startup hook only.
+and injects or upgrades a tiny startup hook only.
 
 It never touches ARC/game files and never deletes the existing ChatGPT export
 or import implementation.
@@ -100,10 +100,22 @@ def build_hook(indent: str, app_expr: str) -> list[str]:
     ]
 
 
+def _strip_existing_hook(text: str) -> tuple[str, bool]:
+    lines = text.splitlines()
+    begin = next((i for i, line in enumerate(lines) if MARKER_BEGIN in line), None)
+    if begin is None:
+        return text, False
+    end = next((i for i in range(begin + 1, len(lines)) if MARKER_END in lines[i]), None)
+    if end is None:
+        raise InstallError("Existing Drive bridge marker is incomplete; source was not changed.")
+    new_lines = lines[:begin] + lines[end + 1 :]
+    cleaned = "\n".join(new_lines) + ("\n" if text.endswith("\n") else "")
+    return cleaned, True
+
+
 def patch_source(path: Path, *, dry_run: bool = False) -> tuple[Path | None, bool]:
-    text = path.read_text(encoding="utf-8", errors="strict")
-    if MARKER_BEGIN in text:
-        return None, False
+    original_text = path.read_text(encoding="utf-8", errors="strict")
+    text, upgraded = _strip_existing_hook(original_text)
 
     result = _find_mainloop_line(text)
     if result is None:
@@ -118,11 +130,14 @@ def patch_source(path: Path, *, dry_run: bool = False) -> tuple[Path | None, boo
     new_lines = lines[:line_index] + hook + [mainloop_line] + lines[line_index + 1 :]
     new_text = "\n".join(new_lines) + ("\n" if text.endswith("\n") else "")
 
+    if new_text == original_text:
+        return None, False
     if dry_run:
         return None, True
 
     stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    backup = path.with_name(f"{path.name}.pre_drive_bridge_{stamp}.bak")
+    suffix = "pre_drive_bridge_upgrade" if upgraded else "pre_drive_bridge"
+    backup = path.with_name(f"{path.name}.{suffix}_{stamp}.bak")
     shutil.copy2(path, backup)
     try:
         path.write_text(new_text, encoding="utf-8")
@@ -144,7 +159,7 @@ def verify_bridge_modules(root: Path) -> tuple[Path, Path]:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Install Alrummi3 v31 Google Drive + real ChatGPT attachment bridge")
+    parser = argparse.ArgumentParser(description="Install/upgrade Alrummi3 v31 Google Drive + real ChatGPT attachment bridge")
     parser.add_argument("root", nargs="?", default=".", help="Alrummi3 source folder")
     parser.add_argument("--source", help="Explicit GUI .py source instead of auto-discovery")
     parser.add_argument("--dry-run", action="store_true", help="Discover/validate but change nothing")
@@ -180,11 +195,11 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Attach helper:  {handoff}")
     print(f"GUI source:     {source}")
     if args.dry_run:
-        print("DRY RUN: startup hook can be inserted; no file changed.")
+        print("DRY RUN: current hook can be installed/upgraded; no file changed.")
     elif not changed:
-        print("Already installed; no source change required.")
+        print("Current attachment-aware bridge is already installed; no source change required.")
     else:
-        print(f"Installed. Backup: {backup}")
+        print(f"Installed/upgraded. Backup: {backup}")
         print("Next launch wraps SEND with Drive queue + real ChatGPT browser attachments.")
         print("On first use, sign in once in the dedicated Alrummi3 Chrome/Edge profile.")
         print("The prompt is filled but never auto-submitted; review it and press Send yourself.")
