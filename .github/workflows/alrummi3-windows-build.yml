@@ -30,6 +30,20 @@ jobs:
         working-directory: project/Alrummi3
         run: python restore_v35_delta.py
 
+      - name: Apply real ChatGPT PNG attachment handoff
+        working-directory: project/Alrummi3
+        run: python apply_v35_attachment_handoff.py
+
+      - name: Verify attachment handoff contract
+        shell: pwsh
+        working-directory: project/Alrummi3
+        run: |
+          $s = Get-Content -Raw -LiteralPath 'alrummi3_v4.py'
+          if (!$s.Contains('attach_handoff(files=png_attachments, prompt=prompt)')) { throw 'real PNG attachment handoff is missing' }
+          if (!$s.Contains('Browser attachment fallback reason')) { throw 'v35 manual fallback is missing' }
+          if (!$s.Contains('IMPORT CHATGPT RESULT')) { throw 'existing ChatGPT import workflow was lost' }
+          if ($s.Contains('click_send') -or $s.Contains('.submit(')) { throw 'unexpected auto-submit behavior detected' }
+
       - name: Install dependencies
         shell: pwsh
         run: |
@@ -70,7 +84,7 @@ jobs:
           $size = (Get-Item -LiteralPath $exe).Length
           "APP=Alrummi3_2.0_studio" | Out-File -Encoding ascii project/Alrummi3/dist-v35/BUILD_INFO.txt
           "ENTRYPOINT=alrummi3_v41.py" | Out-File -Encoding ascii -Append project/Alrummi3/dist-v35/BUILD_INFO.txt
-          "BASELINE=v35" | Out-File -Encoding ascii -Append project/Alrummi3/dist-v35/BUILD_INFO.txt
+          "BASELINE=v35-attachment-aware" | Out-File -Encoding ascii -Append project/Alrummi3/dist-v35/BUILD_INFO.txt
           "PYTHON=3.11" | Out-File -Encoding ascii -Append project/Alrummi3/dist-v35/BUILD_INFO.txt
           "SOURCE_DELTA_SHA256=00c7e8a32966a6d4c4759ca739063d3f726bd4d0f524b7217bf28dfaaac14592" | Out-File -Encoding ascii -Append project/Alrummi3/dist-v35/BUILD_INFO.txt
           "SHA256=$hash" | Out-File -Encoding ascii -Append project/Alrummi3/dist-v35/BUILD_INFO.txt
@@ -81,7 +95,7 @@ jobs:
       - name: Upload v35 Windows build
         uses: actions/upload-artifact@v4
         with:
-          name: Alrummi3-v35-Windows
+          name: Alrummi3-v35-Attachment-Aware-Windows
           path: |
             project/Alrummi3/dist-v35/Alrummi3_2.0_studio.exe
             project/Alrummi3/dist-v35/BUILD_INFO.txt
