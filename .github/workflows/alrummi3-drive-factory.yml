@@ -6,12 +6,18 @@ on:
       - 'project/Alrummi3/drive_factory.py'
       - 'project/Alrummi3/drive_factory_controller.py'
       - 'project/Alrummi3/drive_factory_selftest.py'
+      - 'project/Alrummi3/v31_drive_bridge.py'
+      - 'project/Alrummi3/install_v31_drive_bridge.py'
+      - 'project/Alrummi3/install_v31_drive_bridge_selftest.py'
       - '.github/workflows/alrummi3-drive-factory.yml'
   pull_request:
     paths:
       - 'project/Alrummi3/drive_factory.py'
       - 'project/Alrummi3/drive_factory_controller.py'
       - 'project/Alrummi3/drive_factory_selftest.py'
+      - 'project/Alrummi3/v31_drive_bridge.py'
+      - 'project/Alrummi3/install_v31_drive_bridge.py'
+      - 'project/Alrummi3/install_v31_drive_bridge_selftest.py'
       - '.github/workflows/alrummi3-drive-factory.yml'
 
 jobs:
@@ -28,3 +34,6 @@ jobs:
       - name: Run Drive factory safety checks
         working-directory: project/Alrummi3
         run: python drive_factory_selftest.py
+      - name: Run v31 bridge installer checks
+        working-directory: project/Alrummi3
+        run: python install_v31_drive_bridge_selftest.py
