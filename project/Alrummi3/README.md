@@ -39,6 +39,19 @@ It is designed as an upgraded, focused Kuriimu-style workflow:
 
 The source ARC is never overwritten. The write step preserves untouched compressed blobs, entry order, type hashes, flags, and resource names, and verifies that exactly one entry changed.
 
+## Drive-backed ChatGPT factory
+
+For high-quality art that benefits from ChatGPT's image editing but should not use the paid image API, Alrummi now has a Drive-backed handoff layer:
+
+- `drive_factory.py` creates a self-contained job in a locally synced Google Drive folder.
+- Each job can contain the full source atlas, pristine JPN reference, Samurai Heroes donor, current ENG state, in-game mockup, contact sheet, sprite crops, edit regions, manifest, and prompt.
+- ChatGPT returns one full-size `replacement.png` to the matching OUTBOX job folder.
+- `drive_factory_controller.py` can poll OUTBOX without blocking Tk, validate the returned image, and deliver it to the GUI as a candidate.
+- Remote results never write an ARC directly. User approval remains mandatory before the existing rebuild/install path.
+- If editable regions are known, the validator can reject unrelated changes outside those boxes instead of accepting a generator-redrawn atlas.
+
+See `DRIVE_FACTORY.md` for the queue structure and the narrow v31 integration contract. Run `python drive_factory_selftest.py` for the offline safety checks.
+
 ## Run
 
 From PowerShell:
