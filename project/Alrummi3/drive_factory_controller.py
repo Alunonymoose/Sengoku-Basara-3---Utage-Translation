@@ -45,6 +45,7 @@ class FactoryController:
         self._tk_owner: Any | None = None
         self._after_id: Any | None = None
         self._delivered_job_id: str | None = None
+        self._last_result_signature: tuple[int, int] | None = None
 
     def status(self, message: str) -> None:
         if self.on_status:
@@ -81,6 +82,7 @@ class FactoryController:
         )
         self.current_job = job
         self._delivered_job_id = None
+        self._last_result_signature = None
         self.status(
             f"ChatGPT factory job {job.job_id} is ready in Drive. "
             f"Watching OUTBOX for replacement.png…"
@@ -101,13 +103,30 @@ class FactoryController:
         self._after_id = None
         self._tk_owner = None
 
+    def _result_signature(self, job: FactoryJob) -> tuple[int, int] | None:
+        try:
+            stat = job.result_path.stat()
+            return stat.st_size, stat.st_mtime_ns
+        except OSError:
+            return None
+
     def poll_once(self) -> bool:
-        """Return True only when a new valid candidate is delivered."""
+        """Return True only when a new valid candidate is delivered.
+
+        An unchanged rejected/partial Drive result is not re-reported every
+        1.5 seconds. Replacing the file changes its size or mtime and triggers
+        a fresh validation pass automatically.
+        """
         job = self.current_job
         if job is None or self._delivered_job_id == job.job_id:
             return False
         if not result_available(job):
             return False
+
+        signature = self._result_signature(job)
+        if signature is not None and signature == self._last_result_signature:
+            return False
+        self._last_result_signature = signature
 
         report = validate_result(self.config, job)
         write_validation_report(job, report)
