@@ -1,0 +1,12 @@
+{
+  "format": "alrummi3-v35-delta-v1",
+  "archive_name": "v35_delta.tar.xz",
+  "archive_sha256": "00c7e8a32966a6d4c4759ca739063d3f726bd4d0f524b7217bf28dfaaac14592",
+  "parts": [
+    {"name":"part00.txt","sha256":"1505ed1bd7fb90e7f7ba154e7e127b50c56e91de4a641454a9d3e51c3e0169a4"},
+    {"name":"part01.txt","sha256":"0b6fe1639be3f29003135a10ee15fe2dc0786a795d9623aaa79c4f0a82314747"},
+    {"name":"part02.txt","sha256":"a240a36ca8656f4e072ec06d40f8551d9c2c74252ba686299789039bdbea9a57"},
+    {"name":"part03.txt","sha256":"71a538d68d20d95e0353bbec0336009dc7b0a45cc750e5ddb387e64e4731df56"},
+    {"name":"part04.txt","sha256":"34a1f8b08ec721b0c8c4388c1a4e4a9b073ec093129ab402b07cb56c4cc5a299"}
+  ]
+}
