@@ -1,8 +1,11 @@
-name: Alrummi3 Windows Build
+name: Alrummi3 v35 Windows Build
 
 on:
   workflow_dispatch:
   push:
+    branches:
+      - main
+      - alrummi3-v35-import
     paths:
       - 'project/Alrummi3/**'
       - '.github/workflows/alrummi3-windows-build.yml'
@@ -10,18 +13,22 @@ on:
 jobs:
   build-windows:
     runs-on: windows-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.11'
           cache: 'pip'
           cache-dependency-path: project/Alrummi3/requirements.txt
+
+      - name: Restore and verify v35 source delta
+        working-directory: project/Alrummi3
+        run: python restore_v35_delta.py
 
       - name: Install dependencies
         shell: pwsh
@@ -29,40 +36,58 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r project/Alrummi3/requirements.txt pyinstaller
 
-      - name: Run Drive factory safety checks
+      - name: Run existing safety checks
         working-directory: project/Alrummi3
         run: python drive_factory_selftest.py
 
-      - name: Run v31 bridge installer checks
+      - name: Run v35 regression preflight
         working-directory: project/Alrummi3
-        run: python install_v31_drive_bridge_selftest.py
+        run: python v41_selftest.py
 
-      - name: Build Alrummi3
+      - name: Disable post-build GUI launch in CI
         shell: pwsh
         working-directory: project/Alrummi3
-        run: ./Build_Alrummi3.ps1
+        run: |
+          $p = 'build_alrummi3_v41.py'
+          $s = Get-Content -Raw -LiteralPath $p
+          $s = $s.Replace('if os.name == "nt":`r`n        os.startfile(EXE)', 'if os.name == "nt" and os.environ.get("ALRUMMI3_NO_LAUNCH") != "1":`r`n        os.startfile(EXE)')
+          $s = $s.Replace('if os.name == "nt":`n        os.startfile(EXE)', 'if os.name == "nt" and os.environ.get("ALRUMMI3_NO_LAUNCH") != "1":`n        os.startfile(EXE)')
+          Set-Content -NoNewline -Encoding utf8 -LiteralPath $p -Value $s
 
-      - name: Verify executable
+      - name: Build v35 studio
+        shell: pwsh
+        working-directory: project/Alrummi3
+        env:
+          ALRUMMI3_NO_LAUNCH: '1'
+        run: python build_alrummi3_v41.py
+
+      - name: Verify v35 executable
         shell: pwsh
         run: |
-          $exe = 'project/Alrummi3/dist/Alrummi3.exe'
-          if (!(Test-Path -LiteralPath $exe)) { throw 'Alrummi3.exe was not produced' }
+          $exe = 'project/Alrummi3/dist-v35/Alrummi3_2.0_studio.exe'
+          if (!(Test-Path -LiteralPath $exe)) { throw 'Alrummi3_2.0_studio.exe was not produced' }
           $hash = (Get-FileHash -Algorithm SHA256 -LiteralPath $exe).Hash
           $size = (Get-Item -LiteralPath $exe).Length
-          "SHA256=$hash" | Out-File -Encoding ascii project/Alrummi3/dist/BUILD_INFO.txt
-          "SIZE=$size" | Out-File -Encoding ascii -Append project/Alrummi3/dist/BUILD_INFO.txt
-          "COMMIT=${{ github.sha }}" | Out-File -Encoding ascii -Append project/Alrummi3/dist/BUILD_INFO.txt
-          Get-Content project/Alrummi3/dist/BUILD_INFO.txt
+          "APP=Alrummi3_2.0_studio" | Out-File -Encoding ascii project/Alrummi3/dist-v35/BUILD_INFO.txt
+          "ENTRYPOINT=alrummi3_v41.py" | Out-File -Encoding ascii -Append project/Alrummi3/dist-v35/BUILD_INFO.txt
+          "BASELINE=v35" | Out-File -Encoding ascii -Append project/Alrummi3/dist-v35/BUILD_INFO.txt
+          "PYTHON=3.11" | Out-File -Encoding ascii -Append project/Alrummi3/dist-v35/BUILD_INFO.txt
+          "SOURCE_DELTA_SHA256=00c7e8a32966a6d4c4759ca739063d3f726bd4d0f524b7217bf28dfaaac14592" | Out-File -Encoding ascii -Append project/Alrummi3/dist-v35/BUILD_INFO.txt
+          "SHA256=$hash" | Out-File -Encoding ascii -Append project/Alrummi3/dist-v35/BUILD_INFO.txt
+          "SIZE=$size" | Out-File -Encoding ascii -Append project/Alrummi3/dist-v35/BUILD_INFO.txt
+          "COMMIT=${{ github.sha }}" | Out-File -Encoding ascii -Append project/Alrummi3/dist-v35/BUILD_INFO.txt
+          Get-Content project/Alrummi3/dist-v35/BUILD_INFO.txt
 
-      - name: Upload Windows build
+      - name: Upload v35 Windows build
         uses: actions/upload-artifact@v4
         with:
-          name: Alrummi3-Windows
+          name: Alrummi3-v35-Windows
           path: |
-            project/Alrummi3/dist/Alrummi3.exe
-            project/Alrummi3/dist/BUILD_INFO.txt
-            project/Alrummi3/dist/project_data/**
-            project/Alrummi3/dist/ai_extensions/**
-            project/Alrummi3/dist/updates/**
+            project/Alrummi3/dist-v35/Alrummi3_2.0_studio.exe
+            project/Alrummi3/dist-v35/BUILD_INFO.txt
+            project/Alrummi3/dist-v35/project_data/**
+            project/Alrummi3/dist-v35/ai_extensions/**
+            project/Alrummi3/dist-v35/updates/**
+            project/Alrummi3/dist-v35/*.json
           if-no-files-found: error
           retention-days: 30
