@@ -17,54 +17,58 @@ except Exception:
         pass
 '''
 
-ANCHOR_OLD = '''        width, height = job["width"], job["height"]
+ANCHOR_OLD = '''            width, height = job["width"], job["height"]
 
-        handoff_note = ""
+            # Put real file references on the clipboard. In ChatGPT, one
 '''
 
-ANCHOR_NEW = '''        width, height = job["width"], job["height"]
+ANCHOR_NEW = '''            width, height = job["width"], job["height"]
 
-        # Prefer a real browser upload so image_gen receives actual current-
-        # conversation image attachments.  This deliberately does not submit
-        # the prompt: the operator remains the final approval gate.
-        browser_error = None
-        png_attachments = [selected_path]
-        if reference_path is not None:
-            png_attachments.append(reference_path)
-        if self.candidate_image is not None:
-            candidate_path = export_root / "03_current_candidate.png"
-            if candidate_path.is_file():
-                png_attachments.append(candidate_path)
+            # Prefer a real browser upload so ChatGPT receives actual current-
+            # conversation PNG attachments.  This deliberately does not submit
+            # the prompt: the operator remains the final approval gate.
+            browser_error = None
+            png_attachments = [selected_path]
+            if reference_path is not None:
+                png_attachments.append(reference_path)
+            if self.candidate_image is not None:
+                candidate_path = export_root / "03_current_candidate.png"
+                if candidate_path.is_file():
+                    png_attachments.append(candidate_path)
 
-        if attach_handoff is not None:
-            try:
-                result = attach_handoff(files=png_attachments, prompt=prompt)
-                names = ", ".join(path.name for path in result.attached)
-                self._set_status(
-                    f"ChatGPT ready in {result.browser}: {names}; review and press Send"
-                )
-                messagebox.showinfo(
-                    "ChatGPT handoff ready",
-                    f"ChatGPT opened in {result.browser} with the real PNG attachment(s):\\n"
-                    f"{names}\\n\\nThe editing prompt is already in the composer. "
-                    "Review the attachments and press Send when ready.\\n\\n"
-                    f"Return one full {width}×{height} PNG, then use "
-                    "IMPORT CHATGPT RESULT… in Alrummi 3.",
-                )
-                return
-            except ChatGPTHandoffError as exc:
-                browser_error = str(exc)
-            except Exception as exc:
-                browser_error = str(exc)
+            if attach_handoff is not None:
+                try:
+                    result = attach_handoff(files=png_attachments, prompt=prompt)
+                    names = ", ".join(path.name for path in result.attached)
+                    self._set_status(
+                        f"ChatGPT ready in {result.browser}: {names}; review and press Send"
+                    )
+                    messagebox.showinfo(
+                        "ChatGPT handoff ready",
+                        f"ChatGPT opened in {result.browser} with the real PNG attachment(s):\\n"
+                        f"{names}\\n\\nThe editing prompt is already in the composer. "
+                        "Review the attachments and press Send when ready.\\n\\n"
+                        f"Return one full {width}×{height} PNG, then use "
+                        "IMPORT CHATGPT RESULT… in Alrummi 3.",
+                    )
+                    return
+                except ChatGPTHandoffError as exc:
+                    browser_error = str(exc)
+                except Exception as exc:
+                    browser_error = str(exc)
 
-        handoff_note = ""
+            # Put real file references on the clipboard. In ChatGPT, one
 '''
 
-FALLBACK_OLD = '''        self._set_status(handoff_note)
+FALLBACK_OLD = '''            self._set_status(
+                f"ChatGPT handoff ready: {handoff_note}"
+            )
 '''
-FALLBACK_NEW = '''        if browser_error:
-            handoff_note += f" Browser attachment fallback reason: {browser_error}"
-        self._set_status(handoff_note)
+FALLBACK_NEW = '''            if browser_error:
+                handoff_note += f" Browser attachment fallback reason: {browser_error}"
+            self._set_status(
+                f"ChatGPT handoff ready: {handoff_note}"
+            )
 '''
 
 
@@ -86,12 +90,16 @@ def main() -> None:
     text = replace_once(text, ANCHOR_OLD, ANCHOR_NEW, "send_to_chatgpt hook")
     text = replace_once(text, FALLBACK_OLD, FALLBACK_NEW, "fallback status hook")
 
-    # Guard the two critical behavioral contracts: actual file attachment and
-    # preservation of v35's manual fallback path.
+    # Guard the critical behavioral contracts: actual file attachment,
+    # preservation of v35's manual fallback, and no automatic Send.
     if "attach_handoff(files=png_attachments, prompt=prompt)" not in text:
         raise SystemExit("attachment call missing after patch")
-    if "handoff_note" not in text or "Browser attachment fallback reason" not in text:
+    if "_copy_files_to_windows_clipboard(clipboard_paths)" not in text:
         raise SystemExit("clipboard/manual fallback was not preserved")
+    if "IMPORT CHATGPT RESULT" not in text:
+        raise SystemExit("existing result-import workflow was lost")
+    if "Browser attachment fallback reason" not in text:
+        raise SystemExit("fallback reason reporting is missing")
     if ".submit(" in text or "click_send" in text:
         raise SystemExit("unexpected automatic submission path detected")
 
