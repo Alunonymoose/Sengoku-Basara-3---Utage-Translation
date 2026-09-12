@@ -10,6 +10,8 @@ public sealed record SingleEntryXetGraftAudit(
     DateTimeOffset CreatedAtUtc,
     string SourceArcSha256,
     string OutputArcSha256,
+    string TargetResourceSha256,
+    string PristineBaseSha256,
     int MemberIndex,
     string MemberName,
     uint TypeHash,
@@ -36,23 +38,28 @@ public sealed record SingleEntryXetGraftResult(
 /// <summary>
 /// Certified production transaction for one XET member inside one Utage ARC.
 ///
-/// The source ARC is never mutated. The returned bytes are a sibling archive.
-/// Optional <paramref name="pristineXetOverride"/> supplies the Japanese (or other)
-/// compressed artwork base when the selected ENG member is not trusted as base art.
+/// The selected ARC/member is the structural target only. Production artwork
+/// MUST be based on an explicitly supplied pristine counterpart XET (normally
+/// Japanese). A current ENG member may contain an old paste or lossy re-encode,
+/// so silently falling back to it as pristine art is forbidden.
 /// </summary>
 public static class UtageSingleEntryXetGraft
 {
-    private const int AuditSchema = 2;
+    private const int AuditSchema = 3;
 
     public static SingleEntryXetGraftResult BuildSibling(
         ReadOnlySpan<byte> sourceArc,
         int memberIndex,
+        ReadOnlySpan<byte> pristineXet,
         ReadOnlySpan<byte> candidateRgba,
         ReadOnlySpan<byte> editMask01,
-        ReadOnlySpan<byte> pristineXetOverride = default,
         DateTimeOffset? createdAtUtc = null)
     {
+        if (pristineXet.IsEmpty)
+            throw new ArgumentException("A pristine counterpart XET is mandatory for production grafts.", nameof(pristineXet));
+
         var sourceBytes = sourceArc.ToArray();
+        var pristineBytes = pristineXet.ToArray();
         using var sourceStream = new MemoryStream(sourceBytes, writable: false);
         var archive = UtageArcReader.Read(sourceStream, "<single-entry-graft-source>");
 
@@ -67,31 +74,10 @@ public static class UtageSingleEntryXetGraft
         }
 
         sourceStream.Position = 0;
-        var memberXet = UtageArcReader.ReadDecompressedPayload(sourceStream, entry);
-        var usedOverride = !pristineXetOverride.IsEmpty;
-        byte[] pristineXet;
-        if (usedOverride)
-        {
-            pristineXet = pristineXetOverride.ToArray();
-            var memberInfo = UtageXetReader.ReadInfo(memberXet);
-            var overrideInfo = UtageXetReader.ReadInfo(pristineXet);
-            if (memberInfo.Width != overrideInfo.Width ||
-                memberInfo.Height != overrideInfo.Height ||
-                memberInfo.FormatCode != overrideInfo.FormatCode ||
-                memberInfo.MipCount != overrideInfo.MipCount)
-            {
-                throw new InvalidDataException(
-                    "pristineXetOverride layout does not match the target ARC member XET " +
-                    $"(member {memberInfo.Width}x{memberInfo.Height} fmt=0x{memberInfo.FormatCode:X2} mips={memberInfo.MipCount}; " +
-                    $"override {overrideInfo.Width}x{overrideInfo.Height} fmt=0x{overrideInfo.FormatCode:X2} mips={overrideInfo.MipCount}).");
-            }
-        }
-        else
-        {
-            pristineXet = memberXet;
-        }
+        var targetXet = UtageArcReader.ReadDecompressedPayload(sourceStream, entry);
+        EnsureCompatibleTarget(targetXet, pristineBytes);
 
-        var graft = UtageBc3BlockGraft.GraftTopLevel(pristineXet, candidateRgba, editMask01);
+        var graft = UtageBc3BlockGraft.GraftTopLevel(pristineBytes, candidateRgba, editMask01);
         if (!graft.Report.Ok)
         {
             throw new InvalidOperationException(
@@ -104,9 +90,10 @@ public static class UtageSingleEntryXetGraft
         if (build.ReplacedMemberCount != 1)
             throw new InvalidDataException($"Expected one replaced ARC member, got {build.ReplacedMemberCount}.");
 
-        // Writer already verifies untouched stored payloads; restate for audit clarity.
+        // UtageArcWriter already byte-verifies every untouched stored payload;
+        // assert the replacement set again at this transaction boundary.
         var untouched = build.Members.Count(m => !m.Replaced);
-        if (untouched != archive.Entries.Count - 1)
+        if (untouched != archive.Entries.Count - 1 || build.Members.Count(m => m.Replaced) != 1)
             throw new InvalidDataException("Unexpected replaced-member set after ARC rebuild.");
 
         using var verifyStream = new MemoryStream(build.Bytes, writable: false);
@@ -118,29 +105,35 @@ public static class UtageSingleEntryXetGraft
         if (!roundTripVerified)
             throw new InvalidDataException("Sibling ARC target member does not round-trip to the grafted XET bytes.");
 
-        var sourceHash = Sha256(sourceBytes);
-        var outputHash = Sha256(build.Bytes);
-
+        var sourceArcHash = Sha256(sourceBytes);
+        var outputArcHash = Sha256(build.Bytes);
+        var targetHash = Sha256(targetXet);
+        var pristineHash = Sha256(pristineBytes);
         var notes = new List<string>(graft.Report.Notes)
         {
+            "production artwork base = explicit pristine counterpart XET",
+            "selected target XET used only for compatibility/identity validation",
             "single ARC member replacement verified",
+            "all non-target ARC stored payloads verified unchanged by UtageArcWriter",
             "source ARC retained as immutable input; output is sibling bytes",
-            usedOverride
-                ? "artwork base = pristineXetOverride (JPN/counterpart)"
-                : "artwork base = selected ARC member payload",
         };
 
-        var approvalEvidence = AssetApprovalEvidence.ForUtageBc3GraftArc(
-            sourceHash,
-            outputHash,
-            memberIndex,
-            notes);
+        var approvalEvidence = new AssetApprovalEvidence(
+            productionWriteVerified: graft.Report.Ok && roundTripVerified,
+            proofKind: AssetApprovalEvidence.UtageBc3GraftArcProofKind,
+            sourceArcSha256: sourceArcHash,
+            outputArcSha256: outputArcHash,
+            memberIndex: memberIndex,
+            memberName: entry.Name,
+            notes: notes);
 
         var audit = new SingleEntryXetGraftAudit(
             Schema: AuditSchema,
             CreatedAtUtc: createdAtUtc ?? DateTimeOffset.UtcNow,
-            SourceArcSha256: sourceHash,
-            OutputArcSha256: outputHash,
+            SourceArcSha256: sourceArcHash,
+            OutputArcSha256: outputArcHash,
+            TargetResourceSha256: targetHash,
+            PristineBaseSha256: pristineHash,
             MemberIndex: memberIndex,
             MemberName: entry.Name,
             TypeHash: entry.TypeHash,
@@ -150,7 +143,7 @@ public static class UtageSingleEntryXetGraft
             BlocksReplaced: graft.Report.BlocksReplaced,
             MaskPixels: graft.Report.MaskPixels,
             OutsideMaskPixelDelta: graft.Report.OutsideMaskPixelDelta,
-            UsedPristineOverride: usedOverride,
+            UsedPristineOverride: true,
             GraftOk: graft.Report.Ok,
             ArcRoundTripVerified: roundTripVerified,
             ApprovedEligible: approvalEvidence.ProductionWriteVerified,
@@ -168,6 +161,30 @@ public static class UtageSingleEntryXetGraft
             build,
             approvalEvidence);
     }
+
+    private static void EnsureCompatibleTarget(ReadOnlySpan<byte> targetXet, ReadOnlySpan<byte> pristineXet)
+    {
+        var target = UtageXetReader.ReadInfo(targetXet);
+        var pristine = UtageXetReader.ReadInfo(pristineXet);
+
+        if (target.Version != pristine.Version ||
+            target.Width != pristine.Width ||
+            target.Height != pristine.Height ||
+            target.FormatCode != pristine.FormatCode ||
+            target.MipCount != pristine.MipCount ||
+            target.Swizzle != pristine.Swizzle ||
+            target.TextureOffset != pristine.TextureOffset)
+        {
+            throw new InvalidDataException(
+                "Pristine counterpart XET is not structurally compatible with the selected target texture. " +
+                $"Target={Describe(target)}; pristine={Describe(pristine)}.");
+        }
+
+        UtageXetCodec.RequireEncodingCapability(pristine);
+    }
+
+    private static string Describe(XetInfo info) =>
+        $"v=0x{info.Version:X2} {info.Width}x{info.Height} fmt=0x{info.FormatCode:X2} mip={info.MipCount} swizzle={info.Swizzle} offset={info.TextureOffset}";
 
     private static string Sha256(ReadOnlySpan<byte> bytes) =>
         Convert.ToHexString(SHA256.HashData(bytes)).ToLowerInvariant();
