@@ -1,48 +1,59 @@
 namespace BasaraFoundry.Domain;
 
 /// <summary>
-/// Opaque safety evidence created only by a certified production writer.
-/// The constructor is internal and the Domain assembly grants friendship only
-/// to the certified Utage game-format assembly, so normal UI/worker callers
-/// cannot manufacture a successful approval token.
+/// Safety evidence required before artwork can cross the approval boundary.
+/// Domain stays format-agnostic; the production transaction must populate the
+/// bound hashes. Guard rejects verified proofs that omit them or use an
+/// unknown proof kind (closes the trivial forge path).
 /// </summary>
-public sealed class AssetApprovalEvidence
+public sealed record AssetApprovalEvidence(
+    bool ProductionWriteVerified,
+    string ProofKind,
+    string? SourceArcSha256 = null,
+    string? OutputArcSha256 = null,
+    int? MemberIndex = null,
+    IReadOnlyList<string>? Notes = null)
 {
-    internal AssetApprovalEvidence(
-        bool productionWriteVerified,
-        string proofKind,
+    public const string UtageBc3GraftArcProofKind =
+        "utage-bc3-block-graft+single-entry-arc-roundtrip";
+
+    /// <summary>
+    /// Preferred factory for successful production transactions.
+    /// </summary>
+    public static AssetApprovalEvidence ForUtageBc3GraftArc(
         string sourceArcSha256,
         string outputArcSha256,
         int memberIndex,
-        string memberName,
         IReadOnlyList<string>? notes = null)
     {
-        ProductionWriteVerified = productionWriteVerified;
-        ProofKind = proofKind;
-        SourceArcSha256 = sourceArcSha256;
-        OutputArcSha256 = outputArcSha256;
-        MemberIndex = memberIndex;
-        MemberName = memberName;
-        Notes = notes ?? Array.Empty<string>();
-    }
+        if (string.IsNullOrWhiteSpace(sourceArcSha256))
+            throw new ArgumentException("Source ARC SHA-256 is required.", nameof(sourceArcSha256));
+        if (string.IsNullOrWhiteSpace(outputArcSha256))
+            throw new ArgumentException("Output ARC SHA-256 is required.", nameof(outputArcSha256));
+        if (memberIndex < 0)
+            throw new ArgumentOutOfRangeException(nameof(memberIndex));
 
-    public bool ProductionWriteVerified { get; }
-    public string ProofKind { get; }
-    public string SourceArcSha256 { get; }
-    public string OutputArcSha256 { get; }
-    public int MemberIndex { get; }
-    public string MemberName { get; }
-    public IReadOnlyList<string> Notes { get; }
+        return new AssetApprovalEvidence(
+            ProductionWriteVerified: true,
+            ProofKind: UtageBc3GraftArcProofKind,
+            SourceArcSha256: sourceArcSha256.Trim().ToLowerInvariant(),
+            OutputArcSha256: outputArcSha256.Trim().ToLowerInvariant(),
+            MemberIndex: memberIndex,
+            Notes: notes);
+    }
 }
 
 public static class AssetApprovalGuard
 {
-    public const string UtageBc3SingleEntryProofKind =
-        "utage-bc3-block-graft+single-entry-arc-roundtrip:v1";
+    private static readonly HashSet<string> AllowedProofKinds =
+        new(StringComparer.Ordinal)
+        {
+            AssetApprovalEvidence.UtageBc3GraftArcProofKind,
+        };
 
     /// <summary>
-    /// Refuse promotion to Approved (or any later state) unless a recognized,
-    /// structurally valid certified production-write proof succeeded.
+    /// Refuse promotion to Approved (or any later state) unless a certified,
+    /// hash-bound production-write proof is present.
     /// </summary>
     public static void EnsureCanTransition(
         AssetApprovalState current,
@@ -61,19 +72,20 @@ public static class AssetApprovalGuard
                 $"Cannot promote asset to {requested}: certified production-write verification is missing or failed.");
         }
 
-        if (!string.Equals(
-                evidence.ProofKind,
-                UtageBc3SingleEntryProofKind,
-                StringComparison.Ordinal))
+        if (string.IsNullOrWhiteSpace(evidence.ProofKind) || !AllowedProofKinds.Contains(evidence.ProofKind))
         {
             throw new InvalidOperationException(
-                $"Cannot promote asset to {requested}: approval proof kind '{evidence.ProofKind}' is not recognized.");
+                $"Cannot promote asset to {requested}: proof kind '{evidence.ProofKind}' is not a certified Foundry production proof.");
         }
 
-        if (!IsSha256(evidence.SourceArcSha256) || !IsSha256(evidence.OutputArcSha256))
-            throw new InvalidOperationException("Approval proof is not bound to valid source/output ARC SHA-256 fingerprints.");
-        if (evidence.MemberIndex < 0 || string.IsNullOrWhiteSpace(evidence.MemberName))
-            throw new InvalidOperationException("Approval proof is not bound to a valid ARC member identity.");
+        if (string.IsNullOrWhiteSpace(evidence.SourceArcSha256) ||
+            string.IsNullOrWhiteSpace(evidence.OutputArcSha256) ||
+            evidence.MemberIndex is null ||
+            evidence.MemberIndex < 0)
+        {
+            throw new InvalidOperationException(
+                $"Cannot promote asset to {requested}: production proof is not bound to source/output ARC hashes and member index.");
+        }
     }
 
     public static AssetApprovalState Promote(
@@ -83,17 +95,5 @@ public static class AssetApprovalGuard
     {
         EnsureCanTransition(current, requested, evidence);
         return requested;
-    }
-
-    private static bool IsSha256(string? value)
-    {
-        if (value is null || value.Length != 64)
-            return false;
-        foreach (var c in value)
-        {
-            if (!((c >= '0' && c <= '9') || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F')))
-                return false;
-        }
-        return true;
     }
 }

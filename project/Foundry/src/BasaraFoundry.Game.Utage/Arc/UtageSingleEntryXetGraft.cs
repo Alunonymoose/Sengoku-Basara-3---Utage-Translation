@@ -19,6 +19,7 @@ public sealed record SingleEntryXetGraftAudit(
     int BlocksReplaced,
     int MaskPixels,
     int OutsideMaskPixelDelta,
+    bool UsedPristineOverride,
     bool GraftOk,
     bool ArcRoundTripVerified,
     bool ApprovedEligible,
@@ -36,19 +37,19 @@ public sealed record SingleEntryXetGraftResult(
 /// Certified production transaction for one XET member inside one Utage ARC.
 ///
 /// The source ARC is never mutated. The returned bytes are a sibling archive.
-/// The transaction fails closed unless the BC3 block graft succeeds, exactly one
-/// ARC member is replaced, the rebuilt member round-trips to the grafted XET,
-/// and all writer safety checks pass.
+/// Optional <paramref name="pristineXetOverride"/> supplies the Japanese (or other)
+/// compressed artwork base when the selected ENG member is not trusted as base art.
 /// </summary>
 public static class UtageSingleEntryXetGraft
 {
-    private const int AuditSchema = 1;
+    private const int AuditSchema = 2;
 
     public static SingleEntryXetGraftResult BuildSibling(
         ReadOnlySpan<byte> sourceArc,
         int memberIndex,
         ReadOnlySpan<byte> candidateRgba,
         ReadOnlySpan<byte> editMask01,
+        ReadOnlySpan<byte> pristineXetOverride = default,
         DateTimeOffset? createdAtUtc = null)
     {
         var sourceBytes = sourceArc.ToArray();
@@ -66,7 +67,30 @@ public static class UtageSingleEntryXetGraft
         }
 
         sourceStream.Position = 0;
-        var pristineXet = UtageArcReader.ReadDecompressedPayload(sourceStream, entry);
+        var memberXet = UtageArcReader.ReadDecompressedPayload(sourceStream, entry);
+        var usedOverride = !pristineXetOverride.IsEmpty;
+        byte[] pristineXet;
+        if (usedOverride)
+        {
+            pristineXet = pristineXetOverride.ToArray();
+            var memberInfo = UtageXetReader.ReadInfo(memberXet);
+            var overrideInfo = UtageXetReader.ReadInfo(pristineXet);
+            if (memberInfo.Width != overrideInfo.Width ||
+                memberInfo.Height != overrideInfo.Height ||
+                memberInfo.FormatCode != overrideInfo.FormatCode ||
+                memberInfo.MipCount != overrideInfo.MipCount)
+            {
+                throw new InvalidDataException(
+                    "pristineXetOverride layout does not match the target ARC member XET " +
+                    $"(member {memberInfo.Width}x{memberInfo.Height} fmt=0x{memberInfo.FormatCode:X2} mips={memberInfo.MipCount}; " +
+                    $"override {overrideInfo.Width}x{overrideInfo.Height} fmt=0x{overrideInfo.FormatCode:X2} mips={overrideInfo.MipCount}).");
+            }
+        }
+        else
+        {
+            pristineXet = memberXet;
+        }
+
         var graft = UtageBc3BlockGraft.GraftTopLevel(pristineXet, candidateRgba, editMask01);
         if (!graft.Report.Ok)
         {
@@ -80,6 +104,11 @@ public static class UtageSingleEntryXetGraft
         if (build.ReplacedMemberCount != 1)
             throw new InvalidDataException($"Expected one replaced ARC member, got {build.ReplacedMemberCount}.");
 
+        // Writer already verifies untouched stored payloads; restate for audit clarity.
+        var untouched = build.Members.Count(m => !m.Replaced);
+        if (untouched != archive.Entries.Count - 1)
+            throw new InvalidDataException("Unexpected replaced-member set after ARC rebuild.");
+
         using var verifyStream = new MemoryStream(build.Bytes, writable: false);
         var rebuilt = UtageArcReader.Read(verifyStream, "<single-entry-graft-output>");
         var rebuiltEntry = rebuilt.Entries[memberIndex];
@@ -89,22 +118,29 @@ public static class UtageSingleEntryXetGraft
         if (!roundTripVerified)
             throw new InvalidDataException("Sibling ARC target member does not round-trip to the grafted XET bytes.");
 
+        var sourceHash = Sha256(sourceBytes);
+        var outputHash = Sha256(build.Bytes);
+
         var notes = new List<string>(graft.Report.Notes)
         {
             "single ARC member replacement verified",
             "source ARC retained as immutable input; output is sibling bytes",
+            usedOverride
+                ? "artwork base = pristineXetOverride (JPN/counterpart)"
+                : "artwork base = selected ARC member payload",
         };
 
-        var approvalEvidence = new AssetApprovalEvidence(
-            ProductionWriteVerified: graft.Report.Ok && roundTripVerified,
-            ProofKind: "utage-bc3-block-graft+single-entry-arc-roundtrip",
-            Notes: notes);
+        var approvalEvidence = AssetApprovalEvidence.ForUtageBc3GraftArc(
+            sourceHash,
+            outputHash,
+            memberIndex,
+            notes);
 
         var audit = new SingleEntryXetGraftAudit(
             Schema: AuditSchema,
             CreatedAtUtc: createdAtUtc ?? DateTimeOffset.UtcNow,
-            SourceArcSha256: Sha256(sourceBytes),
-            OutputArcSha256: Sha256(build.Bytes),
+            SourceArcSha256: sourceHash,
+            OutputArcSha256: outputHash,
             MemberIndex: memberIndex,
             MemberName: entry.Name,
             TypeHash: entry.TypeHash,
@@ -114,6 +150,7 @@ public static class UtageSingleEntryXetGraft
             BlocksReplaced: graft.Report.BlocksReplaced,
             MaskPixels: graft.Report.MaskPixels,
             OutsideMaskPixelDelta: graft.Report.OutsideMaskPixelDelta,
+            UsedPristineOverride: usedOverride,
             GraftOk: graft.Report.Ok,
             ArcRoundTripVerified: roundTripVerified,
             ApprovedEligible: approvalEvidence.ProductionWriteVerified,
