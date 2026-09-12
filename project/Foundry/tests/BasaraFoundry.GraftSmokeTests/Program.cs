@@ -5,7 +5,10 @@ namespace BasaraFoundry.GraftSmokeTests;
 
 /// <summary>
 /// Synthetic proof of the Research Ledger BC3 block-graft production rule.
-/// Does not require private game fixtures.
+/// Does not require private game fixtures. Candidate artwork deliberately
+/// begins from the pristine XET's decoded RGBA, because protected-pixel
+/// identity is defined against the actual compressed source, not a hypothetical
+/// pre-compression image that may differ after BC3 quantisation.
 /// </summary>
 internal static class Program
 {
@@ -14,22 +17,24 @@ internal static class Program
         // 16x8 = 8 BC3 blocks. Edit only the top-left 4x4 block.
         const int width = 16;
         const int height = 8;
-        var baseRgba = new byte[width * height * 4];
+        var sourceRgba = new byte[width * height * 4];
         for (var y = 0; y < height; y++)
         {
             for (var x = 0; x < width; x++)
             {
                 var i = (y * width + x) * 4;
-                baseRgba[i] = (byte)(10 + (x / 4) * 30);
-                baseRgba[i + 1] = 80;
-                baseRgba[i + 2] = 20;
-                baseRgba[i + 3] = 255;
+                sourceRgba[i] = (byte)(10 + (x / 4) * 30);
+                sourceRgba[i + 1] = 80;
+                sourceRgba[i + 2] = 20;
+                sourceRgba[i + 3] = 255;
             }
         }
 
-        var pristineXet = BuildXetFromRgba(baseRgba, width, height);
-        var candidate = (byte[])baseRgba.Clone();
-        // Lettering-style edit inside block (0,0)
+        var pristineXet = BuildXetFromRgba(sourceRgba, width, height);
+        var pristineDecoded = UtageXetCodec.DecodeTopLevel(pristineXet).Rgba;
+        var candidate = pristineDecoded.ToArray();
+
+        // Lettering-style edit inside block (0,0).
         for (var y = 1; y < 3; y++)
         {
             for (var x = 1; x < 3; x++)
@@ -58,9 +63,10 @@ internal static class Program
         // Header must be unchanged.
         True(pristineXet.AsSpan(0, 20).SequenceEqual(result.XetBytes.AsSpan(0, 20)), "XET header preserved");
 
-        // Reject path: mutate outside the mask
-        var bad = (byte[])candidate.Clone();
-        bad[(0 * width + 8) * 4] = 0; // pixel in another block, outside mask
+        // Reject path: mutate one guaranteed-different pixel outside the mask.
+        var bad = candidate.ToArray();
+        var badOffset = (0 * width + 8) * 4;
+        bad[badOffset] ^= 0x7F;
         var rejected = UtageBc3BlockGraft.GraftTopLevel(pristineXet, bad, mask);
         True(!rejected.Report.Ok, "rejects outside-mask changes");
         True(rejected.Report.OutsideMaskPixelDelta > 0, "reports outside-mask delta");
@@ -87,8 +93,9 @@ internal static class Program
         BinaryPrimitives.WriteUInt32BigEndian(shell.AsSpan(12, 4), (uint)(1 | (0x2A << 8)));
         BinaryPrimitives.WriteUInt32BigEndian(shell.AsSpan(16, 4), textureOffset);
 
-        // Seed payload with zeros then use ReplaceSingleLevel as the only full-sheet
-        // path (preview) to obtain a real BC3 pristine base for graft tests.
+        // ReplaceSingleLevel is used only to manufacture a synthetic compressed
+        // pristine fixture. The graft test itself never production-reencodes the
+        // untouched blocks.
         var built = UtageXetCodec.ReplaceSingleLevel(shell, rgba);
         return built.XetBytes;
     }
