@@ -1,0 +1,3 @@
+# Fragment note: merge into foundry-ci.yml — run style-kit smoke after graft smoke.
+# - name: Run style-kit smoke tests
+#   run: dotnet run --project tests/BasaraFoundry.StyleKitSmokeTests/BasaraFoundry.StyleKitSmokeTests.csproj -c Release
