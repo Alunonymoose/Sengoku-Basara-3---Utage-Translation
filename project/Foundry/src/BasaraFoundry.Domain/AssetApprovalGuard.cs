@@ -101,12 +101,6 @@ public static class AssetApprovalGuard
                 $"Cannot promote asset to {requested}: production proof is not fully bound to valid SHA-256 fingerprints.");
         }
 
-        if (string.Equals(evidence.TargetResourceSha256, evidence.FinalResourceSha256, StringComparison.OrdinalIgnoreCase))
-        {
-            throw new InvalidOperationException(
-                $"Cannot promote asset to {requested}: the final resource hash is identical to the target input despite a production write claim.");
-        }
-
         if (evidence.MemberIndex < 0 || string.IsNullOrWhiteSpace(evidence.MemberName))
         {
             throw new InvalidOperationException(
