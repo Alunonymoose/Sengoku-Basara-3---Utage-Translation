@@ -5,17 +5,25 @@ namespace BasaraFoundry.Domain;
 /// The constructor is internal; the Domain assembly grants friendship only to
 /// the certified Utage format assembly. UI/worker callers can inspect evidence
 /// but cannot construct a successful token through the normal API surface.
+///
+/// Evidence is bound not only to the source/output ARC and member identity but
+/// also to every production texture input that can change the built bytes.
 /// </summary>
 public sealed class AssetApprovalEvidence
 {
     public const string UtageBc3GraftArcProofKind =
-        "utage-bc3-block-graft+single-entry-arc-roundtrip:v1";
+        "utage-bc3-block-graft+target-shell+single-entry-arc-roundtrip:v2";
 
     internal AssetApprovalEvidence(
         bool productionWriteVerified,
         string proofKind,
         string sourceArcSha256,
         string outputArcSha256,
+        string targetResourceSha256,
+        string pristineResourceSha256,
+        string candidateSha256,
+        string editMaskSha256,
+        string finalResourceSha256,
         int memberIndex,
         string memberName,
         IReadOnlyList<string>? notes = null)
@@ -24,6 +32,11 @@ public sealed class AssetApprovalEvidence
         ProofKind = proofKind;
         SourceArcSha256 = sourceArcSha256;
         OutputArcSha256 = outputArcSha256;
+        TargetResourceSha256 = targetResourceSha256;
+        PristineResourceSha256 = pristineResourceSha256;
+        CandidateSha256 = candidateSha256;
+        EditMaskSha256 = editMaskSha256;
+        FinalResourceSha256 = finalResourceSha256;
         MemberIndex = memberIndex;
         MemberName = memberName;
         Notes = notes ?? Array.Empty<string>();
@@ -33,6 +46,11 @@ public sealed class AssetApprovalEvidence
     public string ProofKind { get; }
     public string SourceArcSha256 { get; }
     public string OutputArcSha256 { get; }
+    public string TargetResourceSha256 { get; }
+    public string PristineResourceSha256 { get; }
+    public string CandidateSha256 { get; }
+    public string EditMaskSha256 { get; }
+    public string FinalResourceSha256 { get; }
     public int MemberIndex { get; }
     public string MemberName { get; }
     public IReadOnlyList<string> Notes { get; }
@@ -42,7 +60,8 @@ public static class AssetApprovalGuard
 {
     /// <summary>
     /// Refuse promotion to Approved (or any later state) unless a recognized,
-    /// structurally valid certified production-write proof succeeded.
+    /// structurally valid certified production-write proof succeeded and is
+    /// bound to the exact source, production inputs and final built resource.
     /// </summary>
     public static void EnsureCanTransition(
         AssetApprovalState current,
@@ -70,10 +89,22 @@ public static class AssetApprovalGuard
                 $"Cannot promote asset to {requested}: proof kind '{evidence.ProofKind}' is not a certified Foundry production proof.");
         }
 
-        if (!IsSha256(evidence.SourceArcSha256) || !IsSha256(evidence.OutputArcSha256))
+        if (!IsSha256(evidence.SourceArcSha256) ||
+            !IsSha256(evidence.OutputArcSha256) ||
+            !IsSha256(evidence.TargetResourceSha256) ||
+            !IsSha256(evidence.PristineResourceSha256) ||
+            !IsSha256(evidence.CandidateSha256) ||
+            !IsSha256(evidence.EditMaskSha256) ||
+            !IsSha256(evidence.FinalResourceSha256))
         {
             throw new InvalidOperationException(
-                $"Cannot promote asset to {requested}: production proof is not bound to valid source/output ARC SHA-256 fingerprints.");
+                $"Cannot promote asset to {requested}: production proof is not fully bound to valid SHA-256 fingerprints.");
+        }
+
+        if (string.Equals(evidence.TargetResourceSha256, evidence.FinalResourceSha256, StringComparison.OrdinalIgnoreCase))
+        {
+            throw new InvalidOperationException(
+                $"Cannot promote asset to {requested}: the final resource hash is identical to the target input despite a production write claim.");
         }
 
         if (evidence.MemberIndex < 0 || string.IsNullOrWhiteSpace(evidence.MemberName))
@@ -94,7 +125,7 @@ public static class AssetApprovalGuard
 
     private static bool IsSha256(string value)
     {
-        if (value.Length != 64)
+        if (value is null || value.Length != 64)
             return false;
         foreach (var c in value)
         {
