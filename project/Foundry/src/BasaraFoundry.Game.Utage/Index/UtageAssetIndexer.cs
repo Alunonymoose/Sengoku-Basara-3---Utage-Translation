@@ -62,6 +62,25 @@ public sealed class UtageAssetIndex
         Resources: Resources,
         Issues: Issues);
 
+    /// <summary>
+    /// Returns every ARC member in this resolved route whose internal resource
+    /// identity exactly matches the supplied name/type pair. Slash direction is
+    /// normalized because tooling may surface either separator; resource casing
+    /// remains significant so distinct engine names are never merged silently.
+    /// </summary>
+    public IReadOnlyList<IndexedUtageResource> FindOwners(string resourceName, uint typeHash)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(resourceName);
+        var identity = NormalizeResourceIdentity(resourceName);
+        return Resources
+            .Where(resource =>
+                resource.TypeHash == typeHash &&
+                NormalizeResourceIdentity(resource.ResourceName).Equals(identity, StringComparison.Ordinal))
+            .OrderBy(resource => resource.ArchivePath, StringComparer.OrdinalIgnoreCase)
+            .ThenBy(resource => resource.EntryIndex)
+            .ToArray();
+    }
+
     public IReadOnlyList<AssetSearchHit> Search(string query, int limit = 50)
     {
         if (string.IsNullOrWhiteSpace(query) || limit <= 0)
@@ -111,6 +130,7 @@ public sealed class UtageAssetIndex
     }
 
     private static string Normalize(string value) => value.Replace('/', '\\').ToLowerInvariant();
+    private static string NormalizeResourceIdentity(string value) => value.Replace('/', '\\');
 }
 
 /// <summary>
