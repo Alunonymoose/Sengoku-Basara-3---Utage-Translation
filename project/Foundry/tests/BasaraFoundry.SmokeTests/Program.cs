@@ -3,6 +3,7 @@ using System.Text;
 using BasaraFoundry.Domain;
 using BasaraFoundry.Game.Utage.Arc;
 using BasaraFoundry.Game.Utage.Xet;
+using BasaraFoundry.Project;
 
 namespace BasaraFoundry.SmokeTests;
 
@@ -14,6 +15,7 @@ internal static class Program
         Console.WriteLine("--------------------------------");
 
         TestProjectSafetyDefaults();
+        TestProjectPersistenceAndFreshness();
         TestPixelMaskSafety();
         TestArcReader();
         TestArcWriter();
@@ -23,16 +25,77 @@ internal static class Program
         return 0;
     }
 
+    private static FoundryProject SafeProject() => new(
+        Schema: 1,
+        ProjectName: "Sengoku BASARA 3 Utage English",
+        Target: "SB3U_PS3",
+        Sources: new SourceRoots(null, null, null, null),
+        Rules: new ProjectRules());
+
     private static void TestProjectSafetyDefaults()
     {
-        var project = new FoundryProject(
-            Schema: 1,
-            ProjectName: "Sengoku BASARA 3 Utage English",
-            Target: "SB3U_PS3",
-            Sources: new SourceRoots(null, null, null, null),
-            Rules: new ProjectRules());
+        var project = SafeProject();
         Smoke.True(project.Rules.CanonicalSourcesReadOnly, "project defaults to read-only canonical sources");
         Smoke.True(project.Rules.ArtRequiresApproval, "art approval gate defaults on");
+    }
+
+    private static void TestProjectPersistenceAndFreshness()
+    {
+        var root = Path.Combine(Path.GetTempPath(), $"basara-foundry-smoke-{Guid.NewGuid():N}");
+        Directory.CreateDirectory(root);
+        try
+        {
+            var projectPath = Path.Combine(root, "project.foundry.json");
+            FoundryProjectStore.SaveAtomic(projectPath, SafeProject());
+            var loaded = FoundryProjectStore.Load(projectPath);
+            Smoke.Equal("SB3U_PS3", loaded.Target, "project JSON round-trip");
+            Smoke.True(
+                !Directory.EnumerateFiles(root, "*.tmp-*", SearchOption.TopDirectoryOnly).Any(),
+                "atomic project save leaves no temp file");
+
+            // Exercise the replace-existing path as well as first-create.
+            FoundryProjectStore.SaveAtomic(projectPath, loaded);
+            Smoke.True(File.Exists(projectPath), "atomic project overwrite succeeds");
+
+            var unsafeProject = loaded with
+            {
+                Rules = loaded.Rules with { CanonicalSourcesReadOnly = false },
+            };
+            Smoke.Throws<InvalidDataException>(
+                () => FoundryProjectStore.SaveAtomic(Path.Combine(root, "unsafe.json"), unsafeProject),
+                "project store refuses weakened safety rules");
+
+            var sourcePath = Path.Combine(root, "cockpit1P.arc");
+            File.WriteAllText(sourcePath, "base-v1", Encoding.ASCII);
+            var fingerprint = SourceFingerprintService.Compute(sourcePath);
+            var recipe = new BuildRecipe(
+                Id: "roulette-000-test",
+                Target: new AssetKey("SB3U", "cockpit1P.arc", "roulette_000_ID_HQ", "XET"),
+                BaseSource: fingerprint,
+                Operation: BuildOperation.ReplaceResource,
+                ApprovedInputPath: "approved/roulette_000.png",
+                CreatedAtUtc: DateTimeOffset.UtcNow);
+
+            Smoke.Equal(RecipeFreshness.Current, SourceFingerprintService.Assess(recipe), "fresh recipe matches source hash");
+            SourceFingerprintService.RequireCurrent(recipe);
+
+            File.WriteAllText(sourcePath, "base-v2", Encoding.ASCII); // same byte length, different hash
+            Smoke.Equal(RecipeFreshness.HashChanged, SourceFingerprintService.Assess(recipe), "same-size source mutation is detected by hash");
+            Smoke.Throws<InvalidOperationException>(
+                () => SourceFingerprintService.RequireCurrent(recipe),
+                "stale recipe is blocked");
+
+            File.WriteAllText(sourcePath, "base-version-three-is-longer", Encoding.ASCII);
+            Smoke.Equal(RecipeFreshness.LengthChanged, SourceFingerprintService.Assess(recipe), "source length drift is detected");
+
+            File.Delete(sourcePath);
+            Smoke.Equal(RecipeFreshness.MissingSource, SourceFingerprintService.Assess(recipe), "missing recipe source is detected");
+        }
+        finally
+        {
+            if (Directory.Exists(root))
+                Directory.Delete(root, recursive: true);
+        }
     }
 
     private static void TestPixelMaskSafety()

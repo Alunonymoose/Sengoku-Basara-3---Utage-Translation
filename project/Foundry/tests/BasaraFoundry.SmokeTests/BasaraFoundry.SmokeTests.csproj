@@ -8,5 +8,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\BasaraFoundry.Domain\BasaraFoundry.Domain.csproj" />
     <ProjectReference Include="..\..\src\BasaraFoundry.Game.Utage\BasaraFoundry.Game.Utage.csproj" />
+    <ProjectReference Include="..\..\src\BasaraFoundry.Project\BasaraFoundry.Project.csproj" />
   </ItemGroup>
 </Project>
