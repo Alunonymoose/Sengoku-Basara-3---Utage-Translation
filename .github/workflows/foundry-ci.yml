@@ -44,6 +44,8 @@ jobs:
         run: dotnet run --project tests/BasaraFoundry.RouteSmokeTests/BasaraFoundry.RouteSmokeTests.csproj -c Release
       - name: Run BC3 block-graft smoke tests
         run: dotnet run --project tests/BasaraFoundry.GraftSmokeTests/BasaraFoundry.GraftSmokeTests.csproj -c Release
+      - name: Run runtime evidence smoke tests
+        run: dotnet run --project tests/BasaraFoundry.RuntimeEvidenceSmokeTests/BasaraFoundry.RuntimeEvidenceSmokeTests.csproj -c Release
 
   winui-alpha:
     needs: core-and-smoke
