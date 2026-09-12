@@ -293,7 +293,7 @@ public sealed partial class MainWindow
             proposal);
 
         ProtectedPixelsText.Text =
-            $"VERIFIED BUILD · {audit.BlocksReplaced}/{audit.BlocksTotal} BC3 blocks · outside-mask delta {audit.OutsideMaskPixelDelta}";
+            $"VERIFIED BUILD · {audit.BlocksReplaced}/{audit.BlocksTotal} BC3 blocks · protected pixels unchanged";
         SetVerifiedBuildForRuntimeEvidence(audit, outputArc, auditPath);
     }
 
@@ -389,8 +389,11 @@ public sealed partial class MainWindow
             PropertyNameCaseInsensitive = true,
         }) ?? throw new InvalidDataException("Production audit JSON was empty.");
 
-        if (audit.Schema != 3 || !audit.GraftOk || !audit.ArcRoundTripVerified || !audit.ApprovedEligible || !audit.UsedPristineOverride)
-            throw new InvalidDataException("Production audit does not represent a fully verified mandatory-pristine transaction.");
+        if (audit.Schema != 4 || !audit.GraftOk || !audit.ArcRoundTripVerified || !audit.ApprovedEligible ||
+            !audit.UsedPristineOverride || !audit.TargetShellPreserved || audit.OutsideMaskPixelDelta != 0)
+        {
+            throw new InvalidDataException("Production audit does not represent a fully verified target-shell-preserving mandatory-pristine transaction.");
+        }
         if (audit.MemberIndex != target.EntryIndex || !audit.MemberName.Equals(target.ResourceName, StringComparison.Ordinal))
             throw new InvalidDataException("Production audit member identity does not match the active target.");
         if (string.IsNullOrWhiteSpace(_activeSourceResourceSha256) ||
@@ -398,12 +401,27 @@ public sealed partial class MainWindow
             throw new InvalidDataException("Current ENG texture changed after review; production output is stale.");
         if (!audit.PristineBaseSha256.Equals(pristine.SourceResourceSha256, StringComparison.Ordinal))
             throw new InvalidDataException("Production audit used a different pristine JP XET than the reviewed reference.");
+        if (!audit.CandidateRgbaSha256.Equals(candidate.Sha256, StringComparison.Ordinal) ||
+            !audit.CandidateRgbaSha256.Equals(proposal.CandidateRgbaSha256, StringComparison.Ordinal))
+            throw new InvalidDataException("Production audit is not bound to the reviewed candidate RGBA.");
+        if (!audit.EditMaskSha256.Equals(proposal.MaskSha256, StringComparison.Ordinal))
+            throw new InvalidDataException("Production audit is not bound to the approved edit mask.");
         if (audit.MaskPixels != proposal.ChangedPixels || audit.BlocksReplaced != proposal.AffectedBlocks)
             throw new InvalidDataException("Production audit mask/block counts do not match the approved mask proposal.");
         if (!Sha256(File.ReadAllBytes(outputArc)).Equals(audit.OutputArcSha256, StringComparison.Ordinal))
             throw new InvalidDataException("Production ARC hash does not match its audit.");
-        if (!candidate.Sha256.Equals(proposal.CandidateRgbaSha256, StringComparison.Ordinal))
-            throw new InvalidDataException("Production proposal no longer matches the frozen candidate.");
+
+        using var outputStream = File.Open(outputArc, FileMode.Open, FileAccess.Read, FileShare.Read);
+        var rebuilt = UtageArcReader.Read(outputStream, outputArc);
+        if ((uint)audit.MemberIndex >= (uint)rebuilt.Entries.Count)
+            throw new InvalidDataException("Production ARC no longer contains the audited target member.");
+        var rebuiltEntry = rebuilt.Entries[audit.MemberIndex];
+        if (!rebuiltEntry.Name.Equals(audit.MemberName, StringComparison.Ordinal))
+            throw new InvalidDataException("Production ARC target member identity does not match the audit.");
+        outputStream.Position = 0;
+        var finalResource = UtageArcReader.ReadDecompressedPayload(outputStream, rebuiltEntry);
+        if (!Sha256(finalResource).Equals(audit.FinalResourceSha256, StringComparison.Ordinal))
+            throw new InvalidDataException("Production ARC target resource hash does not match the fully bound audit.");
 
         return audit;
     }
