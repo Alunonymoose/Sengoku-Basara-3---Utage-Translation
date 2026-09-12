@@ -8,10 +8,37 @@ public sealed partial class MainWindow
 {
     private UtageAssetIndex? _japaneseIndex;
     private UtageAssetIndex? _samuraiHeroesIndex;
+    private IndexedUtageResource? _samuraiHeroesProductionResource;
+    private UtageXetPreviewSnapshot? _samuraiHeroesProductionPreview;
+
+    private void ClearSamuraiHeroesProductionReference(long generation)
+    {
+        if (!IsReviewCurrent(generation))
+            return;
+        _samuraiHeroesProductionResource = null;
+        _samuraiHeroesProductionPreview = null;
+        GenerateReplacementButton.IsEnabled = false;
+    }
+
+    private void SetSamuraiHeroesProductionReference(
+        IndexedUtageResource resource,
+        UtageXetPreviewSnapshot preview,
+        long generation)
+    {
+        if (!IsReviewCurrent(generation))
+            return;
+        _samuraiHeroesProductionResource = resource;
+        _samuraiHeroesProductionPreview = preview;
+        GenerateReplacementButton.IsEnabled =
+            preview.CanEncode &&
+            preview.Width == _activeWidth &&
+            preview.Height == _activeHeight;
+    }
 
     private async Task LoadReferencePreviewsAsync(IndexedUtageResource currentResource, long reviewGeneration)
     {
         ClearJapaneseProductionReference(reviewGeneration);
+        ClearSamuraiHeroesProductionReference(reviewGeneration);
 
         await LoadOneReferenceAsync(
             label: "Original JP",
@@ -41,7 +68,8 @@ public sealed partial class MainWindow
             getIndex: () => _samuraiHeroesIndex,
             setImage: bitmap => SamuraiHeroesImage.Source = bitmap,
             setPlaceholder: visible => SamuraiHeroesPlaceholder.Visibility = visible ? Visibility.Visible : Visibility.Collapsed,
-            setMeta: text => SamuraiHeroesMeta.Text = text);
+            setMeta: text => SamuraiHeroesMeta.Text = text,
+            onResolved: (resource, preview) => SetSamuraiHeroesProductionReference(resource, preview, reviewGeneration));
     }
 
     private async Task LoadOneReferenceAsync(
