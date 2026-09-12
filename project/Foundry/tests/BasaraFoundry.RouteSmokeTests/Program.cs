@@ -15,6 +15,7 @@ internal static class Program
             TestDirectArcFallback(root);
             TestAmbiguousParent(root);
             TestMissingRoute(root);
+            TestSelectedRootIndexIsolation(root);
             Console.WriteLine("Route resolution smoke tests passed.");
             return 0;
         }
@@ -73,6 +74,29 @@ internal static class Program
         Throws<InvalidDataException>(
             () => UtageRouteResolver.Resolve(empty, UtageContentRoute.English),
             "folder without a concrete ARC route is rejected");
+    }
+
+    private static void TestSelectedRootIndexIsolation(string sandbox)
+    {
+        var game = Path.Combine(sandbox, "indexed-game");
+        var eng = Path.Combine(game, "PS3_GAME", "USRDIR", "nativePS3", "rom", "eng");
+        var jpn = Path.Combine(game, "PS3_GAME", "USRDIR", "nativePS3", "rom", "jpn");
+        Directory.CreateDirectory(eng);
+        Directory.CreateDirectory(jpn);
+        File.WriteAllBytes(Path.Combine(eng, "eng-only.arc"), [1, 2, 3]);
+        File.WriteAllBytes(Path.Combine(jpn, "jpn-only.arc"), [4, 5, 6]);
+
+        var engIndex = UtageAssetIndexer.IndexSelectedRoot(game, UtageContentRoute.English);
+        var jpnIndex = UtageAssetIndexer.IndexSelectedRoot(game, UtageContentRoute.Japanese);
+        Equal(Path.GetFullPath(game), engIndex.Root, "selected parent remains index identity root");
+        Equal(1, engIndex.Issues.Count, "English route scan sees only one English ARC issue");
+        True(engIndex.Issues[0].RelativePath.Contains($"{Path.DirectorySeparatorChar}eng{Path.DirectorySeparatorChar}", StringComparison.OrdinalIgnoreCase),
+            "English route scan path stays under eng");
+        True(!engIndex.Issues[0].RelativePath.Contains($"{Path.DirectorySeparatorChar}jpn{Path.DirectorySeparatorChar}", StringComparison.OrdinalIgnoreCase),
+            "English route scan does not leak Japanese ARC tree");
+        Equal(1, jpnIndex.Issues.Count, "Japanese route scan sees only one Japanese ARC issue");
+        True(jpnIndex.Issues[0].RelativePath.Contains($"{Path.DirectorySeparatorChar}jpn{Path.DirectorySeparatorChar}", StringComparison.OrdinalIgnoreCase),
+            "Japanese route scan path stays under jpn");
     }
 
     private static void MakeRoute(string path)

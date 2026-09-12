@@ -115,24 +115,42 @@ public sealed class UtageAssetIndex
 
 /// <summary>
 /// Read-only metadata indexer. A bad/special ARC becomes an issue row rather
-/// than aborting the entire project scan.
+/// than aborting the entire project scan. Parent game folders are resolved to
+/// one concrete ENG/JPN route before scanning, while archive paths remain
+/// relative to the selected root so subsequent preview containment is stable.
 /// </summary>
 public static class UtageAssetIndexer
 {
     public static UtageAssetIndex IndexRoot(string root, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(root);
-        var fullRoot = Path.GetFullPath(root);
+        var fullRoot = Path.TrimEndingDirectorySeparator(Path.GetFullPath(root));
         if (!Directory.Exists(fullRoot))
             throw new DirectoryNotFoundException(fullRoot);
+        return IndexTree(fullRoot, fullRoot, cancellationToken);
+    }
 
+    public static UtageAssetIndex IndexSelectedRoot(
+        string selectedRoot,
+        UtageContentRoute route,
+        CancellationToken cancellationToken = default)
+    {
+        var resolved = UtageRouteResolver.Resolve(selectedRoot, route);
+        return IndexTree(resolved.SelectedRoot, resolved.RouteRoot, cancellationToken);
+    }
+
+    private static UtageAssetIndex IndexTree(
+        string identityRoot,
+        string scanRoot,
+        CancellationToken cancellationToken)
+    {
         var archives = new List<IndexedUtageArchive>();
         var issues = new List<UtageIndexIssue>();
-        foreach (var path in Directory.EnumerateFiles(fullRoot, "*.arc", SearchOption.AllDirectories)
+        foreach (var path in Directory.EnumerateFiles(scanRoot, "*.arc", SearchOption.AllDirectories)
                                       .OrderBy(path => path, StringComparer.OrdinalIgnoreCase))
         {
             cancellationToken.ThrowIfCancellationRequested();
-            var relative = Path.GetRelativePath(fullRoot, path);
+            var relative = Path.GetRelativePath(identityRoot, path);
             try
             {
                 var arc = UtageArcReader.Read(path);
@@ -152,7 +170,7 @@ public static class UtageAssetIndexer
             }
         }
 
-        return new UtageAssetIndex(fullRoot, archives, issues);
+        return new UtageAssetIndex(identityRoot, archives, issues);
     }
 
     public static IReadOnlyList<LayoutTextureReference> InspectLayoutReferences(string archivePath)

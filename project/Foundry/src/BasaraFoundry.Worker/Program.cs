@@ -15,7 +15,7 @@ static string? Option(string[] args, string name)
 static int Usage()
 {
     Console.Error.WriteLine("Usage:");
-    Console.Error.WriteLine("  BasaraFoundry.Worker index --root <source-root> --output <snapshot.json>");
+    Console.Error.WriteLine("  BasaraFoundry.Worker index --root <source-root> [--route eng|jpn|direct] --output <snapshot.json>");
     Console.Error.WriteLine("  BasaraFoundry.Worker preview-xet --root <source-root> --archive <relative.arc> --entry <index> --name <resource> --output <preview.json>");
     Console.Error.WriteLine("  BasaraFoundry.Worker roundtrip-xet --root <source-root> --archive <relative.arc> --entry <index> --name <resource> --rgba <candidate.rgba> --output <preview.json>");
     return 64;
@@ -86,13 +86,21 @@ try
 
         root = Path.GetFullPath(root);
         output = Path.GetFullPath(output);
-        var index = UtageAssetIndexer.IndexRoot(root);
+        var route = (Option(args, "--route") ?? "eng").Trim().ToLowerInvariant();
+        var index = route switch
+        {
+            "eng" or "english" => UtageAssetIndexer.IndexSelectedRoot(root, UtageContentRoute.English),
+            "jpn" or "jp" or "japanese" => UtageAssetIndexer.IndexSelectedRoot(root, UtageContentRoute.Japanese),
+            "direct" => UtageAssetIndexer.IndexRoot(root),
+            _ => throw new ArgumentException($"Unsupported index route '{route}'. Expected eng, jpn, or direct."),
+        };
         var snapshot = index.ToSnapshot(DateTimeOffset.UtcNow);
         await WriteAtomicJsonAsync(output, snapshot);
         Console.WriteLine(JsonSerializer.Serialize(new
         {
             ok = true,
             command = "index",
+            route,
             snapshot = output,
             archives = snapshot.Archives.Count,
             resources = snapshot.Resources.Count,
