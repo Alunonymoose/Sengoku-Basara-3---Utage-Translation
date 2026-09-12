@@ -90,8 +90,6 @@ public static class UtageSingleEntryXetGraft
         if (build.ReplacedMemberCount != 1)
             throw new InvalidDataException($"Expected one replaced ARC member, got {build.ReplacedMemberCount}.");
 
-        // UtageArcWriter already byte-verifies every untouched stored payload;
-        // assert the replacement set again at this transaction boundary.
         var untouched = build.Members.Count(m => !m.Replaced);
         if (untouched != archive.Entries.Count - 1 || build.Members.Count(m => m.Replaced) != 1)
             throw new InvalidDataException("Unexpected replaced-member set after ARC rebuild.");
@@ -183,7 +181,7 @@ public static class UtageSingleEntryXetGraft
         UtageXetCodec.RequireEncodingCapability(pristine);
     }
 
-    private static string Describe(XetInfo info) =>
+    private static string Describe(UtageXetInfo info) =>
         $"v=0x{info.Version:X2} {info.Width}x{info.Height} fmt=0x{info.FormatCode:X2} mip={info.MipCount} swizzle={info.Swizzle} offset={info.TextureOffset}";
 
     private static string Sha256(ReadOnlySpan<byte> bytes) =>
