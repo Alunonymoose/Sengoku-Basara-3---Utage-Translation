@@ -8,10 +8,18 @@ public sealed class AssetApprovalEvidence
         string targetResourceSha256, string pristineResourceSha256, string candidateSha256, string editMaskSha256,
         string finalResourceSha256, int memberIndex, string memberName, IReadOnlyList<string>? notes = null)
     {
-        ProductionWriteVerified = productionWriteVerified; ProofKind = proofKind; SourceArcSha256 = sourceArcSha256;
-        OutputArcSha256 = outputArcSha256; TargetResourceSha256 = targetResourceSha256; PristineResourceSha256 = pristineResourceSha256;
-        CandidateSha256 = candidateSha256; EditMaskSha256 = editMaskSha256; FinalResourceSha256 = finalResourceSha256;
-        MemberIndex = memberIndex; MemberName = memberName; Notes = notes ?? Array.Empty<string>();
+        ProductionWriteVerified = productionWriteVerified;
+        ProofKind = proofKind;
+        SourceArcSha256 = sourceArcSha256;
+        OutputArcSha256 = outputArcSha256;
+        TargetResourceSha256 = targetResourceSha256;
+        PristineResourceSha256 = pristineResourceSha256;
+        CandidateSha256 = candidateSha256;
+        EditMaskSha256 = editMaskSha256;
+        FinalResourceSha256 = finalResourceSha256;
+        MemberIndex = memberIndex;
+        MemberName = memberName;
+        Notes = notes ?? Array.Empty<string>();
     }
 
     public bool ProductionWriteVerified { get; }
