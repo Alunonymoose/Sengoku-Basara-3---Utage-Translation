@@ -117,6 +117,41 @@ jobs:
           $payload = (Resolve-Path $payload).Path
           dotnet publish src/BasaraFoundry.Bootstrap/BasaraFoundry.Bootstrap.csproj -c Release -r win-x64 --self-contained true -o out/onefile "-p:FoundryPayloadZip=$payload"
           if (-not (Test-Path 'out/onefile/BasaraFoundry.exe')) { throw 'One-file launcher was not produced.' }
+      - name: Launch-test one-file bootstrap
+        shell: pwsh
+        run: |
+          $startupLog = Join-Path $env:LOCALAPPDATA 'BASARA Foundry\startup.log'
+          Remove-Item $startupLog -Force -ErrorAction SilentlyContinue
+          $exe = (Resolve-Path 'out/onefile/BasaraFoundry.exe').Path
+          $process = Start-Process -FilePath $exe -WorkingDirectory (Split-Path $exe -Parent) -PassThru
+          if (-not $process.WaitForExit(10000)) {
+            Write-Host 'One-file bootstrap did not exit after launching the embedded app.'
+            Stop-Process -Id $process.Id -Force -ErrorAction SilentlyContinue
+            exit 1
+          }
+          if ($process.ExitCode -ne 0) {
+            Write-Host "One-file bootstrap exited with code $($process.ExitCode)."
+            if (Test-Path $startupLog) { Get-Content $startupLog }
+            exit 1
+          }
+          $activated = $false
+          for ($i = 0; $i -lt 30; $i++) {
+            Start-Sleep -Milliseconds 500
+            if (Test-Path $startupLog) {
+              $text = Get-Content $startupLog -Raw
+              if ($text -match 'MainWindow activated successfully') {
+                $activated = $true
+                break
+              }
+            }
+          }
+          if (-not $activated) {
+            Write-Host 'One-file bootstrap exited cleanly but the embedded app did not prove MainWindow activation.'
+            if (Test-Path $startupLog) { Get-Content $startupLog }
+            exit 1
+          }
+          Get-Content $startupLog
+          Get-Process BasaraFoundry -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
       - uses: actions/upload-artifact@v4
         with:
           name: BasaraFoundry-win-x64-${{ github.run_number }}
