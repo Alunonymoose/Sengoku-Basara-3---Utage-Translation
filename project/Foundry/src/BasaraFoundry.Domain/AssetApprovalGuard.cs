@@ -58,11 +58,6 @@ public sealed class AssetApprovalEvidence
 
 public static class AssetApprovalGuard
 {
-    /// <summary>
-    /// Refuse promotion to Approved (or any later state) unless a recognized,
-    /// structurally valid certified production-write proof succeeded and is
-    /// bound to the exact source, production inputs and final built resource.
-    /// </summary>
     public static void EnsureCanTransition(
         AssetApprovalState current,
         AssetApprovalState requested,
@@ -75,19 +70,10 @@ public static class AssetApprovalGuard
             return;
 
         if (evidence is null || !evidence.ProductionWriteVerified)
-        {
-            throw new InvalidOperationException(
-                $"Cannot promote asset to {requested}: certified production-write verification is missing or failed.");
-        }
+            throw new InvalidOperationException($"Cannot promote asset to {requested}: certified production-write verification is missing or failed.");
 
-        if (!string.Equals(
-                evidence.ProofKind,
-                AssetApprovalEvidence.UtageBc3GraftArcProofKind,
-                StringComparison.Ordinal))
-        {
-            throw new InvalidOperationException(
-                $"Cannot promote asset to {requested}: proof kind '{evidence.ProofKind}' is not a certified Foundry production proof.");
-        }
+        if (!string.Equals(evidence.ProofKind, AssetApprovalEvidence.UtageBc3GraftArcProofKind, StringComparison.Ordinal))
+            throw new InvalidOperationException($"Cannot promote asset to {requested}: proof kind '{evidence.ProofKind}' is not a certified Foundry production proof.");
 
         if (!IsSha256(evidence.SourceArcSha256) ||
             !IsSha256(evidence.OutputArcSha256) ||
@@ -96,22 +82,13 @@ public static class AssetApprovalGuard
             !IsSha256(evidence.CandidateSha256) ||
             !IsSha256(evidence.EditMaskSha256) ||
             !IsSha256(evidence.FinalResourceSha256))
-        {
-            throw new InvalidOperationException(
-                $"Cannot promote asset to {requested}: production proof is not fully bound to valid SHA-256 fingerprints.");
-        }
+            throw new InvalidOperationException($"Cannot promote asset to {requested}: production proof is not fully bound to valid SHA-256 fingerprints.");
 
         if (evidence.MemberIndex < 0 || string.IsNullOrWhiteSpace(evidence.MemberName))
-        {
-            throw new InvalidOperationException(
-                $"Cannot promote asset to {requested}: production proof is not bound to a valid ARC member identity.");
-        }
+            throw new InvalidOperationException($"Cannot promote asset to {requested}: production proof is not bound to a valid ARC member identity.");
     }
 
-    public static AssetApprovalState Promote(
-        AssetApprovalState current,
-        AssetApprovalState requested,
-        AssetApprovalEvidence? evidence)
+    public static AssetApprovalState Promote(AssetApprovalState current, AssetApprovalState requested, AssetApprovalEvidence? evidence)
     {
         EnsureCanTransition(current, requested, evidence);
         return requested;
