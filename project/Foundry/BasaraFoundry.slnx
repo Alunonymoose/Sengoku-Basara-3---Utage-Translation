@@ -9,5 +9,6 @@
   <Folder Name="/tests/">
     <Project Path="tests/BasaraFoundry.SmokeTests/BasaraFoundry.SmokeTests.csproj" />
     <Project Path="tests/BasaraFoundry.PreviewSmokeTests/BasaraFoundry.PreviewSmokeTests.csproj" />
+    <Project Path="tests/BasaraFoundry.ReferenceSmokeTests/BasaraFoundry.ReferenceSmokeTests.csproj" />
   </Folder>
 </Solution>
