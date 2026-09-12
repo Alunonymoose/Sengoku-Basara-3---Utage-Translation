@@ -2,6 +2,7 @@ using System.Buffers.Binary;
 using System.Text;
 using BasaraFoundry.Domain;
 using BasaraFoundry.Game.Utage.Arc;
+using BasaraFoundry.Game.Utage.Xet;
 
 namespace BasaraFoundry.SmokeTests;
 
@@ -12,6 +13,16 @@ internal static class Program
         Console.WriteLine("BASARA Foundry v0.1 smoke tests");
         Console.WriteLine("--------------------------------");
 
+        TestProjectSafetyDefaults();
+        TestArcReader();
+        TestXetMetadata();
+
+        Console.WriteLine($"\nSmoke tests passed: {Smoke.Passed}");
+        return 0;
+    }
+
+    private static void TestProjectSafetyDefaults()
+    {
         var project = new FoundryProject(
             Schema: 1,
             ProjectName: "Sengoku BASARA 3 Utage English",
@@ -20,7 +31,10 @@ internal static class Program
             Rules: new ProjectRules());
         Smoke.True(project.Rules.CanonicalSourcesReadOnly, "project defaults to read-only canonical sources");
         Smoke.True(project.Rules.ArtRequiresApproval, "art approval gate defaults on");
+    }
 
+    private static void TestArcReader()
+    {
         var bytes = BuildSyntheticArc();
         using (var stream = new MemoryStream(bytes, writable: false))
         {
@@ -51,9 +65,33 @@ internal static class Program
             using var stream = new MemoryStream(little, writable: false);
             _ = UtageArcReader.Read(stream, "wrong-platform.arc");
         }, "uncertified ARC platform is rejected");
+    }
 
-        Console.WriteLine($"\nSmoke tests passed: {Smoke.Passed}");
-        return 0;
+    private static void TestXetMetadata()
+    {
+        var raw = BuildSyntheticXet(width: 512, height: 256, formatCode: 0x2A);
+        var info = UtageXetReader.ReadInfo(raw);
+        Smoke.Equal(0x97, info.Version, "XET v0x97 header");
+        Smoke.Equal(512, info.Width, "XET width bitfield");
+        Smoke.Equal(256, info.Height, "XET height bitfield");
+        Smoke.Equal(0x2A, info.FormatCode, "XET format code");
+        Smoke.Equal("DXT5", info.BlockFormat!, "XET Utage format mapping");
+        Smoke.Equal(2, info.AlphaFlags, "XET alpha flags");
+        Smoke.True(info.CanDecodeTopLevel, "linear known XET is decode-capable");
+        Smoke.Equal(131072, info.TopLevelSizeBytes!.Value, "XET BC3 top-level byte size");
+        UtageXetReader.RequireTopLevelDecodeCapability(info);
+
+        var swizzled = UtageXetReader.ReadInfo(BuildSyntheticXet(128, 128, 0x2A, swizzle: 7));
+        Smoke.True(!swizzled.CanDecodeTopLevel, "swizzled XET is not silently treated as linear");
+        Smoke.Throws<NotSupportedException>(
+            () => UtageXetReader.RequireTopLevelDecodeCapability(swizzled),
+            "swizzled XET decode is blocked");
+
+        var unknown = UtageXetReader.ReadInfo(BuildSyntheticXet(64, 64, 0x7E));
+        Smoke.True(!unknown.HasKnownBlockFormat, "unknown XET format is not guessed as DXT5");
+        Smoke.Throws<NotSupportedException>(
+            () => UtageXetReader.RequireTopLevelDecodeCapability(unknown),
+            "unknown XET format decode is blocked");
     }
 
     private static byte[] BuildSyntheticArc(bool corruptSecondOffset = false)
@@ -92,6 +130,34 @@ internal static class Program
         Entry(0, first, 0x241F5DEB, payload1, payload1Offset);
         Entry(1, second, 0x60DD1B16, payload2, corruptSecondOffset ? 0x100000 : payload2Offset);
         return arc;
+    }
+
+    private static byte[] BuildSyntheticXet(int width, int height, int formatCode, int swizzle = 0)
+    {
+        const int textureOffset = 20;
+        var blockSize = formatCode switch
+        {
+            0x13 or 0x14 or 0x19 => 8,
+            0x15 or 0x17 or 0x18 or 0x2A or 0x2B => 16,
+            _ => 0,
+        };
+        var payloadSize = blockSize == 0
+            ? 0
+            : Math.Max(1, (width + 3) / 4) * Math.Max(1, (height + 3) / 4) * blockSize;
+        var raw = new byte[textureOffset + payloadSize];
+        raw[0] = 0;
+        raw[1] = (byte)'X';
+        raw[2] = (byte)'E';
+        raw[3] = (byte)'T';
+
+        var block4 = (uint)(0x97 | (swizzle << 12) | (2 << 28));
+        var block8 = (uint)(1 | (width << 6) | (height << 19));
+        var block12 = (uint)(1 | (formatCode << 8));
+        BinaryPrimitives.WriteUInt32BigEndian(raw.AsSpan(4, 4), block4);
+        BinaryPrimitives.WriteUInt32BigEndian(raw.AsSpan(8, 4), block8);
+        BinaryPrimitives.WriteUInt32BigEndian(raw.AsSpan(12, 4), block12);
+        BinaryPrimitives.WriteUInt32BigEndian(raw.AsSpan(16, 4), textureOffset);
+        return raw;
     }
 
     private static class Smoke
