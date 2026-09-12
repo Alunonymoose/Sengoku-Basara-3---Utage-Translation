@@ -20,7 +20,7 @@ static int Usage()
     Console.Error.WriteLine("  BasaraFoundry.Worker index --root <source-root> [--route eng|jpn|direct] --output <snapshot.json>");
     Console.Error.WriteLine("  BasaraFoundry.Worker preview-xet --root <source-root> --archive <relative.arc> --entry <index> --name <resource> --output <preview.json>");
     Console.Error.WriteLine("  BasaraFoundry.Worker roundtrip-xet --root <source-root> --archive <relative.arc> --entry <index> --name <resource> --rgba <candidate.rgba> --output <preview.json>");
-    Console.Error.WriteLine("  BasaraFoundry.Worker graft-xet --root <source-root> --archive <relative.arc> --entry <index> --name <resource> --rgba <candidate.rgba> --mask <mask.bin> --output-arc <sibling.arc> --audit <audit.json>");
+    Console.Error.WriteLine("  BasaraFoundry.Worker graft-xet --root <eng-root> --archive <relative.arc> --entry <index> --name <resource> --pristine-root <jpn-root> --pristine-archive <relative.arc> --pristine-entry <index> --pristine-name <resource> --rgba <candidate.rgba> --mask <mask.bin> --output-arc <build.arc> --audit <audit.json>");
     return 64;
 }
 
@@ -89,15 +89,52 @@ static string ResolveArchivePath(string root, string archiveRelativePath)
         .Replace('\\', Path.DirectorySeparatorChar)
         .Replace('/', Path.DirectorySeparatorChar);
     var archivePath = Path.GetFullPath(Path.Combine(fullRoot, normalizedRelative));
-    var comparison = OperatingSystem.IsWindows()
-        ? StringComparison.OrdinalIgnoreCase
-        : StringComparison.Ordinal;
-    var prefix = fullRoot + Path.DirectorySeparatorChar;
-    if (!archivePath.StartsWith(prefix, comparison))
+    if (!IsWithinRoot(fullRoot, archivePath, allowEqual: false))
         throw new InvalidDataException("Texture archive path escapes the configured source root.");
     if (!File.Exists(archivePath))
         throw new FileNotFoundException("Indexed texture archive no longer exists.", archivePath);
     return archivePath;
+}
+
+static byte[] ReadCertifiedTextureRaw(
+    string root,
+    string archiveRelativePath,
+    int entryIndex,
+    string expectedName,
+    out string archivePath)
+{
+    archivePath = ResolveArchivePath(root, archiveRelativePath);
+    using var stream = File.Open(archivePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+    var parsed = UtageArcReader.Read(stream, archivePath);
+    if ((uint)entryIndex >= (uint)parsed.Entries.Count)
+        throw new InvalidDataException("Indexed ARC member no longer exists at the recorded entry index.");
+    var entry = parsed.Entries[entryIndex];
+    if (entry.Index != entryIndex || !entry.Name.Equals(expectedName, StringComparison.Ordinal))
+        throw new InvalidDataException("Indexed ARC member identity changed; reindex before building this asset.");
+    if (entry.TypeHash != UtageTypeHashes.Texture)
+        throw new NotSupportedException("Selected ARC member is not a certified Utage texture resource.");
+    stream.Position = 0;
+    return UtageArcReader.ReadDecompressedPayload(stream, entry);
+}
+
+static bool IsWithinRoot(string root, string candidate, bool allowEqual)
+{
+    var fullRoot = Path.TrimEndingDirectorySeparator(Path.GetFullPath(root));
+    var fullCandidate = Path.TrimEndingDirectorySeparator(Path.GetFullPath(candidate));
+    var comparison = OperatingSystem.IsWindows()
+        ? StringComparison.OrdinalIgnoreCase
+        : StringComparison.Ordinal;
+    if (string.Equals(fullRoot, fullCandidate, comparison))
+        return allowEqual;
+    return fullCandidate.StartsWith(fullRoot + Path.DirectorySeparatorChar, comparison);
+}
+
+static bool PathsEqual(string left, string right)
+{
+    var comparison = OperatingSystem.IsWindows()
+        ? StringComparison.OrdinalIgnoreCase
+        : StringComparison.Ordinal;
+    return string.Equals(Path.GetFullPath(left), Path.GetFullPath(right), comparison);
 }
 
 static bool TryCommonPreviewArgs(
@@ -213,54 +250,69 @@ try
         var root = Option(args, "--root") ?? "";
         var archive = Option(args, "--archive") ?? "";
         var name = Option(args, "--name") ?? "";
+        var pristineRoot = Option(args, "--pristine-root") ?? "";
+        var pristineArchive = Option(args, "--pristine-archive") ?? "";
+        var pristineName = Option(args, "--pristine-name") ?? "";
         var rgbaPath = Option(args, "--rgba") ?? "";
         var maskPath = Option(args, "--mask") ?? "";
         var outputArc = Option(args, "--output-arc") ?? "";
         var auditPath = Option(args, "--audit") ?? "";
         var entryText = Option(args, "--entry");
+        var pristineEntryText = Option(args, "--pristine-entry");
         if (string.IsNullOrWhiteSpace(root) ||
             string.IsNullOrWhiteSpace(archive) ||
             string.IsNullOrWhiteSpace(name) ||
+            string.IsNullOrWhiteSpace(pristineRoot) ||
+            string.IsNullOrWhiteSpace(pristineArchive) ||
+            string.IsNullOrWhiteSpace(pristineName) ||
             string.IsNullOrWhiteSpace(rgbaPath) ||
             string.IsNullOrWhiteSpace(maskPath) ||
             string.IsNullOrWhiteSpace(outputArc) ||
             string.IsNullOrWhiteSpace(auditPath) ||
-            !int.TryParse(entryText, out var entryIndex) || entryIndex < 0)
+            !int.TryParse(entryText, out var entryIndex) || entryIndex < 0 ||
+            !int.TryParse(pristineEntryText, out var pristineEntryIndex) || pristineEntryIndex < 0)
         {
             return Usage();
         }
 
-        var sourceArcPath = ResolveArchivePath(root, archive);
+        root = Path.TrimEndingDirectorySeparator(Path.GetFullPath(root));
+        pristineRoot = Path.TrimEndingDirectorySeparator(Path.GetFullPath(pristineRoot));
+        if (PathsEqual(root, pristineRoot))
+            throw new InvalidOperationException("Production graft requires a distinct pristine counterpart root; ENG cannot certify itself as JPN artwork authority.");
+
+        _ = ReadCertifiedTextureRaw(root, archive, entryIndex, name, out var sourceArcPath);
+        var pristineXet = ReadCertifiedTextureRaw(
+            pristineRoot,
+            pristineArchive,
+            pristineEntryIndex,
+            pristineName,
+            out var pristineArcPath);
+        if (PathsEqual(sourceArcPath, pristineArcPath))
+            throw new InvalidOperationException("Target ARC and pristine counterpart ARC must be distinct source files.");
+
         rgbaPath = Path.GetFullPath(rgbaPath);
         maskPath = Path.GetFullPath(maskPath);
         outputArc = Path.GetFullPath(outputArc);
         auditPath = Path.GetFullPath(auditPath);
 
-        var pathComparison = OperatingSystem.IsWindows()
-            ? StringComparison.OrdinalIgnoreCase
-            : StringComparison.Ordinal;
-        if (string.Equals(sourceArcPath, outputArc, pathComparison))
-            throw new InvalidOperationException("Production graft output must be a sibling ARC; overwriting the source ARC is forbidden.");
-        if (string.Equals(sourceArcPath, auditPath, pathComparison) ||
-            string.Equals(outputArc, auditPath, pathComparison))
-            throw new InvalidOperationException("Source ARC, sibling ARC, and audit paths must all be distinct.");
+        if (PathsEqual(sourceArcPath, outputArc) || PathsEqual(pristineArcPath, outputArc))
+            throw new InvalidOperationException("Production output must never overwrite a canonical source ARC.");
+        if (PathsEqual(sourceArcPath, auditPath) || PathsEqual(pristineArcPath, auditPath) || PathsEqual(outputArc, auditPath))
+            throw new InvalidOperationException("Source ARC, pristine ARC, output ARC, and audit paths must be distinct.");
+        if (IsWithinRoot(root, outputArc, allowEqual: true) || IsWithinRoot(pristineRoot, outputArc, allowEqual: true))
+            throw new InvalidOperationException("Production output must be written outside canonical ENG/JPN source roots.");
+        if (IsWithinRoot(root, auditPath, allowEqual: true) || IsWithinRoot(pristineRoot, auditPath, allowEqual: true))
+            throw new InvalidOperationException("Production audit must be written outside canonical ENG/JPN source roots.");
 
         var sourceArc = await File.ReadAllBytesAsync(sourceArcPath);
-        using (var sourceStream = new MemoryStream(sourceArc, writable: false))
-        {
-            var parsed = UtageArcReader.Read(sourceStream, sourceArcPath);
-            if ((uint)entryIndex >= (uint)parsed.Entries.Count)
-                throw new InvalidDataException("Indexed ARC member no longer exists at the recorded entry index.");
-            var entry = parsed.Entries[entryIndex];
-            if (!entry.Name.Equals(name, StringComparison.Ordinal))
-                throw new InvalidDataException("Indexed ARC member identity changed; reindex before building this asset.");
-            if (entry.TypeHash != UtageTypeHashes.Texture)
-                throw new NotSupportedException("Selected ARC member is not a certified Utage texture resource.");
-        }
-
         var candidate = await File.ReadAllBytesAsync(rgbaPath);
         var mask = await File.ReadAllBytesAsync(maskPath);
-        var transaction = UtageSingleEntryXetGraft.BuildSibling(sourceArc, entryIndex, candidate, mask);
+        var transaction = UtageSingleEntryXetGraft.BuildSibling(
+            sourceArc,
+            entryIndex,
+            pristineXet,
+            candidate,
+            mask);
 
         await WriteAtomicBytesAsync(outputArc, transaction.SiblingArcBytes);
         await WriteAtomicJsonAsync(auditPath, transaction.Audit);
@@ -270,15 +322,18 @@ try
             ok = true,
             command = "graft-xet",
             sourceArc = sourceArcPath,
+            pristineArc = pristineArcPath,
             siblingArc = outputArc,
             audit = auditPath,
             resource = transaction.Audit.MemberName,
+            pristineResource = pristineName,
             blocksReplaced = transaction.Audit.BlocksReplaced,
             blocksTotal = transaction.Audit.BlocksTotal,
             outsideMaskPixelDelta = transaction.Audit.OutsideMaskPixelDelta,
             approvedEligible = transaction.Audit.ApprovedEligible,
             sourceArcSha256 = transaction.Audit.SourceArcSha256,
             outputArcSha256 = transaction.Audit.OutputArcSha256,
+            pristineBaseSha256 = transaction.Audit.PristineBaseSha256,
         }));
         return 0;
     }
