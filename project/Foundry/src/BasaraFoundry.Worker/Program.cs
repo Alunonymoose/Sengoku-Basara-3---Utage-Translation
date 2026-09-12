@@ -15,8 +15,9 @@ static string? Option(string[] args, string name)
 static int Usage()
 {
     Console.Error.WriteLine("Usage:");
-    Console.Error.WriteLine("  BasaraFoundry.Worker index --root <utage-root> --output <snapshot.json>");
-    Console.Error.WriteLine("  BasaraFoundry.Worker preview-xet --root <utage-root> --archive <relative.arc> --entry <index> --name <resource> --output <preview.json>");
+    Console.Error.WriteLine("  BasaraFoundry.Worker index --root <source-root> --output <snapshot.json>");
+    Console.Error.WriteLine("  BasaraFoundry.Worker preview-xet --root <source-root> --archive <relative.arc> --entry <index> --name <resource> --output <preview.json>");
+    Console.Error.WriteLine("  BasaraFoundry.Worker roundtrip-xet --root <source-root> --archive <relative.arc> --entry <index> --name <resource> --rgba <candidate.rgba> --output <preview.json>");
     return 64;
 }
 
@@ -47,6 +48,27 @@ static async Task WriteAtomicJsonAsync<T>(string output, T value)
         if (File.Exists(temp))
             File.Delete(temp);
     }
+}
+
+static bool TryCommonPreviewArgs(
+    string[] args,
+    out string root,
+    out string archive,
+    out int entryIndex,
+    out string name,
+    out string output)
+{
+    root = Option(args, "--root") ?? "";
+    archive = Option(args, "--archive") ?? "";
+    name = Option(args, "--name") ?? "";
+    output = Option(args, "--output") ?? "";
+    var entryText = Option(args, "--entry");
+    return !string.IsNullOrWhiteSpace(root) &&
+           !string.IsNullOrWhiteSpace(archive) &&
+           !string.IsNullOrWhiteSpace(name) &&
+           !string.IsNullOrWhiteSpace(output) &&
+           int.TryParse(entryText, out entryIndex) &&
+           entryIndex >= 0;
 }
 
 if (args.Length == 0)
@@ -80,21 +102,8 @@ try
 
     if (args[0].Equals("preview-xet", StringComparison.OrdinalIgnoreCase))
     {
-        var root = Option(args, "--root");
-        var archive = Option(args, "--archive");
-        var entryText = Option(args, "--entry");
-        var name = Option(args, "--name");
-        var output = Option(args, "--output");
-        if (string.IsNullOrWhiteSpace(root) ||
-            string.IsNullOrWhiteSpace(archive) ||
-            string.IsNullOrWhiteSpace(entryText) ||
-            string.IsNullOrWhiteSpace(name) ||
-            string.IsNullOrWhiteSpace(output) ||
-            !int.TryParse(entryText, out var entryIndex) ||
-            entryIndex < 0)
-        {
+        if (!TryCommonPreviewArgs(args, out var root, out var archive, out var entryIndex, out var name, out var output))
             return Usage();
-        }
 
         root = Path.GetFullPath(root);
         output = Path.GetFullPath(output);
@@ -110,6 +119,32 @@ try
             height = preview.Height,
             format = preview.BlockFormat,
             canEncode = preview.CanEncode,
+        }));
+        return 0;
+    }
+
+    if (args[0].Equals("roundtrip-xet", StringComparison.OrdinalIgnoreCase))
+    {
+        if (!TryCommonPreviewArgs(args, out var root, out var archive, out var entryIndex, out var name, out var output))
+            return Usage();
+        var rgbaPath = Option(args, "--rgba");
+        if (string.IsNullOrWhiteSpace(rgbaPath))
+            return Usage();
+
+        root = Path.GetFullPath(root);
+        output = Path.GetFullPath(output);
+        rgbaPath = Path.GetFullPath(rgbaPath);
+        var candidate = await File.ReadAllBytesAsync(rgbaPath);
+        var roundTrip = UtageXetRoundTripService.Create(root, archive, entryIndex, name, candidate);
+        await WriteAtomicJsonAsync(output, roundTrip);
+        Console.WriteLine(JsonSerializer.Serialize(new
+        {
+            ok = true,
+            command = "roundtrip-xet",
+            preview = output,
+            resource = roundTrip.ResourceName,
+            meanAbsoluteChannelError = roundTrip.MeanAbsoluteChannelError,
+            maxChannelError = roundTrip.MaxChannelError,
         }));
         return 0;
     }
