@@ -44,7 +44,10 @@ public sealed partial class MainWindow
                                   (preview.CanEncode ? "certified writable" : "preview only");
             DimensionsText.Text = $"Dimensions: {preview.Width}×{preview.Height}";
             DependencyAuditText.Text = "Dependency audit: indexed · controller geometry pending";
-            SearchStatusText.Text = $"Loaded Current ENG preview from {resource.ArchivePath} [{resource.EntryIndex}]. Source remains read only.";
+            SearchStatusText.Text = $"Loaded Current ENG preview from {resource.ArchivePath} [{resource.EntryIndex}]. Resolving reference evidence…";
+
+            await LoadReferencePreviewsAsync(resource);
+            SearchStatusText.Text = $"Loaded {resource.ResourceName}. Current source remains read only; reference matches are evidence-only.";
         }
         catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or InvalidDataException or NotSupportedException or JsonException or TimeoutException or ArgumentException)
         {
@@ -73,7 +76,7 @@ public sealed partial class MainWindow
         if (preview.Schema != 1)
             throw new NotSupportedException($"Unsupported preview snapshot schema {preview.Schema}.");
         if (!PathsEqual(preview.Root, expectedRoot))
-            throw new InvalidDataException("Preview snapshot belongs to a different Utage English source root.");
+            throw new InvalidDataException("Preview snapshot belongs to a different source root.");
         if (!preview.ArchivePath.Equals(expectedResource.ArchivePath, StringComparison.OrdinalIgnoreCase) ||
             preview.EntryIndex != expectedResource.EntryIndex ||
             !preview.ResourceName.Equals(expectedResource.ResourceName, StringComparison.Ordinal))
