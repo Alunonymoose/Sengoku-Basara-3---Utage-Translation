@@ -9,36 +9,56 @@ public sealed record SiblingArcWriteResult(
 
 /// <summary>
 /// Filesystem promotion for a certified single-entry graft transaction.
-/// Never overwrites the source ARC path.
+/// Canonical source directories are input-only: callers must provide an explicit
+/// output path in a different directory. Foundry project builds satisfy this by
+/// writing under the project build tree.
 /// </summary>
 public static class UtageSiblingArcStore
 {
     public static SiblingArcWriteResult Write(
         string sourceArcPath,
         SingleEntryXetGraftResult transaction,
-        string? outputArcPath = null)
+        string outputArcPath)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(sourceArcPath);
         ArgumentNullException.ThrowIfNull(transaction);
+        ArgumentException.ThrowIfNullOrWhiteSpace(outputArcPath);
 
         var sourceFull = Path.GetFullPath(sourceArcPath);
         if (!File.Exists(sourceFull))
             throw new FileNotFoundException("Source ARC does not exist.", sourceFull);
 
-        var outputFull = Path.GetFullPath(outputArcPath ?? DefaultSiblingPath(sourceFull));
+        var outputFull = Path.GetFullPath(outputArcPath);
         if (PathsEqual(sourceFull, outputFull))
             throw new InvalidOperationException("Refusing to overwrite the source ARC path.");
 
-        var auditFull = outputFull + ".audit.json";
-        Directory.CreateDirectory(Path.GetDirectoryName(outputFull)!);
+        var sourceDir = Path.GetDirectoryName(sourceFull)
+            ?? throw new InvalidOperationException("Source ARC has no parent directory.");
+        var outputDir = Path.GetDirectoryName(outputFull)
+            ?? throw new InvalidOperationException("Output ARC has no parent directory.");
+        if (PathsEqual(sourceDir, outputDir))
+        {
+            throw new InvalidOperationException(
+                "Refusing to write production output beside the canonical source ARC. Choose a Foundry project build directory.");
+        }
 
-        // Write to temp then move for slightly safer promotion on the same volume.
-        var tmpArc = outputFull + ".tmp";
-        var tmpAudit = auditFull + ".tmp";
-        File.WriteAllBytes(tmpArc, transaction.SiblingArcBytes);
-        File.WriteAllText(tmpAudit, transaction.AuditJson);
-        File.Move(tmpArc, outputFull, overwrite: true);
-        File.Move(tmpAudit, auditFull, overwrite: true);
+        var auditFull = outputFull + ".audit.json";
+        Directory.CreateDirectory(outputDir);
+
+        var tmpArc = outputFull + ".tmp." + Guid.NewGuid().ToString("N");
+        var tmpAudit = auditFull + ".tmp." + Guid.NewGuid().ToString("N");
+        try
+        {
+            File.WriteAllBytes(tmpArc, transaction.SiblingArcBytes);
+            File.WriteAllText(tmpAudit, transaction.AuditJson);
+            File.Move(tmpArc, outputFull, overwrite: true);
+            File.Move(tmpAudit, auditFull, overwrite: true);
+        }
+        finally
+        {
+            if (File.Exists(tmpArc)) File.Delete(tmpArc);
+            if (File.Exists(tmpAudit)) File.Delete(tmpAudit);
+        }
 
         return new SiblingArcWriteResult(
             sourceFull,
@@ -46,16 +66,6 @@ public static class UtageSiblingArcStore
             auditFull,
             transaction.Audit.SourceArcSha256,
             transaction.Audit.OutputArcSha256);
-    }
-
-    public static string DefaultSiblingPath(string sourceArcPath)
-    {
-        var dir = Path.GetDirectoryName(Path.GetFullPath(sourceArcPath)) ?? Environment.CurrentDirectory;
-        var stem = Path.GetFileNameWithoutExtension(sourceArcPath);
-        var ext = Path.GetExtension(sourceArcPath);
-        if (string.IsNullOrEmpty(ext))
-            ext = ".arc";
-        return Path.Combine(dir, stem + ".foundry" + ext);
     }
 
     private static bool PathsEqual(string a, string b) =>
