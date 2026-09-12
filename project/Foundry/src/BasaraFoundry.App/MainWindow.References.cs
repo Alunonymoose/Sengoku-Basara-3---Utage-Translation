@@ -8,7 +8,7 @@ public sealed partial class MainWindow
     private UtageAssetIndex? _japaneseIndex;
     private UtageAssetIndex? _samuraiHeroesIndex;
 
-    private async Task LoadReferencePreviewsAsync(IndexedUtageResource currentResource)
+    private async Task LoadReferencePreviewsAsync(IndexedUtageResource currentResource, long reviewGeneration)
     {
         await LoadOneReferenceAsync(
             label: "Original JP",
@@ -16,11 +16,15 @@ public sealed partial class MainWindow
             route: UtageContentRoute.Japanese,
             cacheFileName: "utage-jpn.index.json",
             currentResource,
+            reviewGeneration,
             setIndex: index => _japaneseIndex = index,
             getIndex: () => _japaneseIndex,
             setImage: bitmap => OriginalJpImage.Source = bitmap,
             setPlaceholder: visible => OriginalJpPlaceholder.Visibility = visible ? Visibility.Visible : Visibility.Collapsed,
             setMeta: text => OriginalJpMeta.Text = text);
+
+        if (!IsReviewCurrent(reviewGeneration))
+            return;
 
         await LoadOneReferenceAsync(
             label: "Samurai Heroes",
@@ -28,6 +32,7 @@ public sealed partial class MainWindow
             route: UtageContentRoute.English,
             cacheFileName: "samurai-heroes.index.json",
             currentResource,
+            reviewGeneration,
             setIndex: index => _samuraiHeroesIndex = index,
             getIndex: () => _samuraiHeroesIndex,
             setImage: bitmap => SamuraiHeroesImage.Source = bitmap,
@@ -41,12 +46,16 @@ public sealed partial class MainWindow
         UtageContentRoute route,
         string cacheFileName,
         IndexedUtageResource currentResource,
+        long reviewGeneration,
         Action<UtageAssetIndex> setIndex,
         Func<UtageAssetIndex?> getIndex,
         Action<Microsoft.UI.Xaml.Media.ImageSource?> setImage,
         Action<bool> setPlaceholder,
         Action<string> setMeta)
     {
+        if (!IsReviewCurrent(reviewGeneration))
+            return;
+
         if (string.IsNullOrWhiteSpace(root))
         {
             setImage(null);
@@ -68,6 +77,8 @@ public sealed partial class MainWindow
                     "cache",
                     cacheFileName);
                 await RunRoutedIndexWorkerAsync(root, snapshotPath, route);
+                if (!IsReviewCurrent(reviewGeneration))
+                    return;
                 index = LoadIndexSnapshot(snapshotPath, root);
                 setIndex(index);
             }
@@ -75,6 +86,8 @@ public sealed partial class MainWindow
             var match = ReferenceMatcher.TryResolveUniqueStrong(currentResource, index);
             if (match is null)
             {
+                if (!IsReviewCurrent(reviewGeneration))
+                    return;
                 setImage(null);
                 setPlaceholder(true);
                 var candidates = ReferenceMatcher.FindCandidates(currentResource, index, 3);
@@ -86,22 +99,29 @@ public sealed partial class MainWindow
 
             var previewPath = Path.Combine(
                 Path.GetDirectoryName(_projectPath)!,
-                "cache",
-                "previews",
-                cacheFileName.Replace(".index.json", ".preview.json", StringComparison.OrdinalIgnoreCase));
+                "cache", "previews", "reference",
+                $"{cacheFileName.Replace(".index.json", "", StringComparison.OrdinalIgnoreCase)}-{reviewGeneration}-{Guid.NewGuid():N}.json");
             await RunPreviewWorkerAsync(
                 root,
                 match.Resource.ArchivePath,
                 match.Resource.EntryIndex,
                 match.Resource.ResourceName,
                 previewPath);
+            if (!IsReviewCurrent(reviewGeneration))
+                return;
+
             var preview = LoadPreviewSnapshot(previewPath, root, match.Resource);
+            if (!IsReviewCurrent(reviewGeneration))
+                return;
+
             setImage(PreviewBitmapFactory.FromRgba(preview.Width, preview.Height, preview.Rgba));
             setPlaceholder(false);
-            setMeta($"{match.Confidence} · {match.Why} · {preview.Width}×{preview.Height} {preview.BlockFormat}");
+            setMeta($"{match.Confidence} · {match.Why} · {preview.Width}×{preview.Height} {preview.BlockFormat} · source {preview.SourceResourceSha256[..12]}…");
         }
         catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or InvalidDataException or NotSupportedException or System.Text.Json.JsonException or TimeoutException or ArgumentException)
         {
+            if (!IsReviewCurrent(reviewGeneration))
+                return;
             setImage(null);
             setPlaceholder(true);
             setMeta($"Reference blocked safely: {ex.Message}");

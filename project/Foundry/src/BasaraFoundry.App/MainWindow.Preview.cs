@@ -20,11 +20,11 @@ public sealed partial class MainWindow
         }
 
         var resource = selected.Hit.Resource;
+        var reviewGeneration = BeginAssetReview();
         var output = Path.Combine(
             Path.GetDirectoryName(_projectPath)!,
-            "cache",
-            "previews",
-            "current-eng.json");
+            "cache", "previews", "asset",
+            $"current-eng-{reviewGeneration}-{Guid.NewGuid():N}.json");
 
         try
         {
@@ -37,24 +37,36 @@ public sealed partial class MainWindow
                 resource.ResourceName,
                 output);
 
+            if (!IsReviewCurrent(reviewGeneration))
+                return;
+
             var preview = LoadPreviewSnapshot(output, root, resource);
+            if (!IsReviewCurrent(reviewGeneration))
+                return;
+
             CurrentEngImage.Source = PreviewBitmapFactory.FromRgba(preview.Width, preview.Height, preview.Rgba);
             CurrentEngPlaceholder.Visibility = Visibility.Collapsed;
             CurrentEngMeta.Text = $"XET v0x{preview.Version:X2} · {preview.BlockFormat}/0x{preview.FormatCode:X2} · {preview.MipCount} mip · " +
-                                  (preview.CanEncode ? "certified writable" : "preview only");
+                                  (preview.CanEncode ? "certified writable" : "preview only") +
+                                  $" · source {preview.SourceResourceSha256[..12]}…";
             DimensionsText.Text = $"Dimensions: {preview.Width}×{preview.Height}";
             DependencyAuditText.Text = "Dependency audit: indexed · controller geometry pending";
+            SetActiveTexture(resource, preview, reviewGeneration);
             SearchStatusText.Text = $"Loaded Current ENG preview from {resource.ArchivePath} [{resource.EntryIndex}]. Resolving reference evidence…";
 
-            await LoadReferencePreviewsAsync(resource);
-            SearchStatusText.Text = $"Loaded {resource.ResourceName}. Current source remains read only; reference matches are evidence-only.";
+            await LoadReferencePreviewsAsync(resource, reviewGeneration);
+            if (IsReviewCurrent(reviewGeneration))
+                SearchStatusText.Text = $"Loaded {resource.ResourceName}. Current source remains read only; reference matches are evidence-only.";
         }
         catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or InvalidDataException or NotSupportedException or JsonException or TimeoutException or ArgumentException)
         {
-            CurrentEngImage.Source = null;
-            CurrentEngPlaceholder.Visibility = Visibility.Visible;
-            CurrentEngMeta.Text = "Preview blocked";
-            SearchStatusText.Text = $"Preview stopped safely: {ex.Message}";
+            if (IsReviewCurrent(reviewGeneration))
+            {
+                CurrentEngImage.Source = null;
+                CurrentEngPlaceholder.Visibility = Visibility.Visible;
+                CurrentEngMeta.Text = "Preview blocked";
+                SearchStatusText.Text = $"Preview stopped safely: {ex.Message}";
+            }
         }
         finally
         {
@@ -88,6 +100,8 @@ public sealed partial class MainWindow
         {
             throw new InvalidDataException("Preview snapshot has invalid image dimensions or RGBA length.");
         }
+        if (preview.SourceResourceSha256.Length != 64)
+            throw new InvalidDataException("Preview snapshot source fingerprint is missing or invalid.");
 
         return preview;
     }
@@ -136,14 +150,7 @@ public sealed partial class MainWindow
         }
         catch (OperationCanceledException)
         {
-            try
-            {
-                process.Kill(entireProcessTree: true);
-            }
-            catch
-            {
-                // Best effort. An incomplete preview is rejected below.
-            }
+            try { process.Kill(entireProcessTree: true); } catch { }
             throw new TimeoutException("Preview worker exceeded the 30-second safety limit and was terminated.");
         }
 
