@@ -1,0 +1,3 @@
+# Fragment note: merge into foundry-ci.yml — run graft smoke after round-trip.
+# - name: Run BC3 block-graft smoke tests
+#   run: dotnet run --project tests/BasaraFoundry.GraftSmokeTests/BasaraFoundry.GraftSmokeTests.csproj -c Release
