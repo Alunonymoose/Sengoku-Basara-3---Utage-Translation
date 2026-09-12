@@ -20,6 +20,7 @@ public sealed partial class MainWindow
     private string? _approvedCandidateSha256;
     private string? _approvedPristineSha256;
     private bool _approvalClickHooked;
+    private bool _workingImageHooked;
 
     private void ClearJapaneseProductionReference(long generation)
     {
@@ -39,6 +40,7 @@ public sealed partial class MainWindow
             return;
         _productionJapaneseResource = resource;
         _productionJapanesePreview = preview;
+        RefreshMaskProposalSafe();
     }
 
     private void ResetMaskReviewState()
@@ -55,9 +57,33 @@ public sealed partial class MainWindow
             SendForApprovalButton.Click += SendForApproval_Click;
             _approvalClickHooked = true;
         }
+        if (!_workingImageHooked)
+        {
+            WorkingImage.ImageOpened += WorkingImage_ImageOpened;
+            _workingImageHooked = true;
+        }
 
         SendForApprovalButton.Content = "Review edit mask";
         SendForApprovalButton.IsEnabled = false;
+    }
+
+    private async void WorkingImage_ImageOpened(object sender, RoutedEventArgs e) =>
+        await RefreshMaskProposalSafeAsync();
+
+    private async void RefreshMaskProposalSafe() =>
+        await RefreshMaskProposalSafeAsync();
+
+    private async Task RefreshMaskProposalSafeAsync()
+    {
+        try
+        {
+            await RefreshMaskProposalAsync();
+        }
+        catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or InvalidDataException or NotSupportedException or ArgumentException or InvalidOperationException)
+        {
+            SearchStatusText.Text = $"Mask proposal stopped safely: {ex.Message}";
+            SendForApprovalButton.IsEnabled = false;
+        }
     }
 
     private async Task RefreshMaskProposalAsync()
@@ -344,7 +370,7 @@ public sealed partial class MainWindow
             throw new InvalidDataException("Production worker reported success but did not create both ARC and audit outputs.");
     }
 
-    private static SingleEntryXetGraftAudit LoadAndVerifyProductionAudit(
+    private SingleEntryXetGraftAudit LoadAndVerifyProductionAudit(
         string auditPath,
         string outputArc,
         IndexedUtageResource target,
@@ -362,7 +388,8 @@ public sealed partial class MainWindow
             throw new InvalidDataException("Production audit does not represent a fully verified mandatory-pristine transaction.");
         if (audit.MemberIndex != target.EntryIndex || !audit.MemberName.Equals(target.ResourceName, StringComparison.Ordinal))
             throw new InvalidDataException("Production audit member identity does not match the active target.");
-        if (!audit.TargetResourceSha256.Equals(_activeSourceResourceSha256, StringComparison.Ordinal))
+        if (string.IsNullOrWhiteSpace(_activeSourceResourceSha256) ||
+            !audit.TargetResourceSha256.Equals(_activeSourceResourceSha256, StringComparison.Ordinal))
             throw new InvalidDataException("Current ENG texture changed after review; production output is stale.");
         if (!audit.PristineBaseSha256.Equals(pristine.SourceResourceSha256, StringComparison.Ordinal))
             throw new InvalidDataException("Production audit used a different pristine JP XET than the reviewed reference.");
