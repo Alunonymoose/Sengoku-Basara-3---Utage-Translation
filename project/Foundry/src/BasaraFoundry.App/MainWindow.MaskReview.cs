@@ -51,6 +51,7 @@ public sealed partial class MainWindow
         _approvedMaskSha256 = null;
         _approvedCandidateSha256 = null;
         _approvedPristineSha256 = null;
+        ResetRuntimeEvidenceState();
 
         if (!_approvalClickHooked)
         {
@@ -100,6 +101,7 @@ public sealed partial class MainWindow
         _approvedMaskSha256 = null;
         _approvedCandidateSha256 = null;
         _approvedPristineSha256 = null;
+        ResetRuntimeEvidenceState();
         SendForApprovalButton.Content = "Review edit mask";
         SendForApprovalButton.IsEnabled = false;
 
@@ -150,6 +152,12 @@ public sealed partial class MainWindow
     {
         try
         {
+            if (HasVerifiedBuildAwaitingRuntimeEvidence)
+            {
+                await AttachRuntimeEvidenceAsync();
+                return;
+            }
+
             if (!_editMaskApproved)
             {
                 await ReviewEditMaskAsync();
@@ -286,10 +294,7 @@ public sealed partial class MainWindow
 
         ProtectedPixelsText.Text =
             $"VERIFIED BUILD · {audit.BlocksReplaced}/{audit.BlocksTotal} BC3 blocks · outside-mask delta {audit.OutsideMaskPixelDelta}";
-        SendForApprovalButton.Content = "Verified build created";
-        SendForApprovalButton.IsEnabled = false;
-        SearchStatusText.Text =
-            $"Verified sibling ARC created: {outputArc} · audit {auditPath} · output {audit.OutputArcSha256[..12]}…";
+        SetVerifiedBuildForRuntimeEvidence(audit, outputArc, auditPath);
     }
 
     private bool MaskBindingsCurrent(
