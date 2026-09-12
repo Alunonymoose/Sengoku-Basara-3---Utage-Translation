@@ -65,25 +65,17 @@ public static class AssetApprovalGuard
     {
         if (requested < current)
             throw new InvalidOperationException($"Approval state cannot move backwards from {current} to {requested}.");
-
         if (requested < AssetApprovalState.Approved)
             return;
-
         if (evidence is null || !evidence.ProductionWriteVerified)
             throw new InvalidOperationException($"Cannot promote asset to {requested}: certified production-write verification is missing or failed.");
-
         if (!string.Equals(evidence.ProofKind, AssetApprovalEvidence.UtageBc3GraftArcProofKind, StringComparison.Ordinal))
             throw new InvalidOperationException($"Cannot promote asset to {requested}: proof kind '{evidence.ProofKind}' is not a certified Foundry production proof.");
-
-        if (!IsSha256(evidence.SourceArcSha256) ||
-            !IsSha256(evidence.OutputArcSha256) ||
-            !IsSha256(evidence.TargetResourceSha256) ||
-            !IsSha256(evidence.PristineResourceSha256) ||
-            !IsSha256(evidence.CandidateSha256) ||
-            !IsSha256(evidence.EditMaskSha256) ||
+        if (!IsSha256(evidence.SourceArcSha256) || !IsSha256(evidence.OutputArcSha256) ||
+            !IsSha256(evidence.TargetResourceSha256) || !IsSha256(evidence.PristineResourceSha256) ||
+            !IsSha256(evidence.CandidateSha256) || !IsSha256(evidence.EditMaskSha256) ||
             !IsSha256(evidence.FinalResourceSha256))
             throw new InvalidOperationException($"Cannot promote asset to {requested}: production proof is not fully bound to valid SHA-256 fingerprints.");
-
         if (evidence.MemberIndex < 0 || string.IsNullOrWhiteSpace(evidence.MemberName))
             throw new InvalidOperationException($"Cannot promote asset to {requested}: production proof is not bound to a valid ARC member identity.");
     }
@@ -99,10 +91,8 @@ public static class AssetApprovalGuard
         if (value is null || value.Length != 64)
             return false;
         foreach (var c in value)
-        {
-            if (!((c >= '0' && c <= '9') || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F')))
+            if (!Uri.IsHexDigit(c))
                 return false;
-        }
         return true;
     }
 }
