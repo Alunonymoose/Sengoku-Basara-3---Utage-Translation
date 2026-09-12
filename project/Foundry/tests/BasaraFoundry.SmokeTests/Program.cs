@@ -2,6 +2,8 @@ using System.Buffers.Binary;
 using System.Text;
 using BasaraFoundry.Domain;
 using BasaraFoundry.Game.Utage.Arc;
+using BasaraFoundry.Game.Utage.Index;
+using BasaraFoundry.Game.Utage.Layout;
 using BasaraFoundry.Game.Utage.Xet;
 using BasaraFoundry.Project;
 
@@ -20,6 +22,9 @@ internal static class Program
         TestArcReader();
         TestArcWriter();
         TestXetMetadata();
+        TestXetCodec();
+        TestLayoutInventory();
+        TestAssetIndexer();
 
         Console.WriteLine($"\nSmoke tests passed: {Smoke.Passed}");
         return 0;
@@ -53,7 +58,6 @@ internal static class Program
                 !Directory.EnumerateFiles(root, "*.tmp-*", SearchOption.TopDirectoryOnly).Any(),
                 "atomic project save leaves no temp file");
 
-            // Exercise the replace-existing path as well as first-create.
             FoundryProjectStore.SaveAtomic(projectPath, loaded);
             Smoke.True(File.Exists(projectPath), "atomic project overwrite succeeds");
 
@@ -79,7 +83,7 @@ internal static class Program
             Smoke.Equal(RecipeFreshness.Current, SourceFingerprintService.Assess(recipe), "fresh recipe matches source hash");
             SourceFingerprintService.RequireCurrent(recipe);
 
-            File.WriteAllText(sourcePath, "base-v2", Encoding.ASCII); // same byte length, different hash
+            File.WriteAllText(sourcePath, "base-v2", Encoding.ASCII);
             Smoke.Equal(RecipeFreshness.HashChanged, SourceFingerprintService.Assess(recipe), "same-size source mutation is detected by hash");
             Smoke.Throws<InvalidOperationException>(
                 () => SourceFingerprintService.RequireCurrent(recipe),
@@ -217,6 +221,87 @@ internal static class Program
             "unknown XET format decode is blocked");
     }
 
+    private static void TestXetCodec()
+    {
+        const int width = 8;
+        const int height = 8;
+        var original = BuildSyntheticXet(width, height, 0x2A);
+        var rgba = new byte[width * height * 4];
+        for (var i = 0; i < width * height; i++)
+        {
+            var o = i * 4;
+            rgba[o] = 214;
+            rgba[o + 1] = 73;
+            rgba[o + 2] = 31;
+            rgba[o + 3] = 201;
+        }
+
+        var built = UtageXetCodec.ReplaceSingleLevel(original, rgba);
+        Smoke.True(
+            original.AsSpan(0, 20).SequenceEqual(built.XetBytes.AsSpan(0, 20)),
+            "XET codec preserves the header");
+        Smoke.Equal(width * height * 4, built.VerificationDecode.Rgba.Length, "BC3 verification decode pixel count");
+
+        long absoluteError = 0;
+        for (var i = 0; i < rgba.Length; i++)
+            absoluteError += Math.Abs(rgba[i] - built.VerificationDecode.Rgba[i]);
+        var meanError = absoluteError / (double)rgba.Length;
+        Smoke.True(meanError < 10.0, "BC3 best-quality round trip stays within smoke quality floor");
+
+        Smoke.Throws<NotSupportedException>(
+            () => UtageXetCodec.ReplaceSingleLevel(BuildSyntheticXet(width, height, 0x14), rgba),
+            "DXT1 writing remains blocked until certified");
+
+        var withTrailingData = BuildSyntheticXet(width, height, 0x2A).Concat(new byte[16]).ToArray();
+        Smoke.Throws<NotSupportedException>(
+            () => UtageXetCodec.ReplaceSingleLevel(withTrailingData, rgba),
+            "single-level writer refuses trailing mip data");
+    }
+
+    private static void TestLayoutInventory()
+    {
+        var raw = BuildSyntheticLayout();
+        var layout = UtageLayoutReader.ReadInventory(raw, "id\\lsp\\roulette\\roulette_000");
+        Smoke.Equal(3, layout.DeclaredNodeCount, "PSL declared node count");
+        Smoke.Equal(1, layout.DeclaredTextureCount, "PSL declared texture count");
+        Smoke.True(layout.InventoryComplete, "PSL node-name inventory reaches declared count");
+        var users = layout.NodesUsing("roulette_000_ID_HQ");
+        Smoke.Equal(2, users.Count, "PSL inventory finds both nodes using roulette texture");
+        Smoke.Equal("frame", users[0].Role, "PSL Japanese node prefix gains readable role");
+        Smoke.Equal("backing plate", users[1].Role, "PSL second node role is preserved");
+    }
+
+    private static void TestAssetIndexer()
+    {
+        var root = Path.Combine(Path.GetTempPath(), $"basara-foundry-index-{Guid.NewGuid():N}");
+        Directory.CreateDirectory(root);
+        try
+        {
+            var goodPath = Path.Combine(root, "cockpit1P.arc");
+            File.WriteAllBytes(goodPath, BuildSyntheticArc());
+            File.WriteAllBytes(Path.Combine(root, "broken.arc"), Encoding.ASCII.GetBytes("NOT-ARC!"));
+
+            var index = UtageAssetIndexer.IndexRoot(root);
+            Smoke.Equal(1, index.Archives.Count, "indexer keeps readable ARC");
+            Smoke.Equal(1, index.Issues.Count, "indexer isolates malformed ARC as issue");
+            Smoke.Equal(2, index.Resources.Count, "indexer records ARC resources");
+
+            var hits = index.Search("roulette_000_ID_HQ");
+            Smoke.True(hits.Count > 0, "asset search finds roulette resource");
+            Smoke.Equal(100, hits[0].Score, "asset search ranks exact resource first");
+
+            var refs = UtageAssetIndexer.InspectLayoutReferences(goodPath);
+            Smoke.Equal(2, refs.Count, "dependency inspection finds layout-to-texture references");
+            Smoke.True(refs.All(reference => reference.TextureResource.Contains("roulette_000_ID_HQ", StringComparison.OrdinalIgnoreCase)),
+                "dependency references point to the selected roulette texture");
+        }
+        finally
+        {
+            if (Directory.Exists(root))
+                Directory.Delete(root, recursive: true);
+        }
+    }
+
     private static byte[] BuildSyntheticArc(bool corruptSecondOffset = false)
     {
         const int entrySize = 80;
@@ -227,7 +312,7 @@ internal static class Program
         var first = Encoding.ASCII.GetBytes("id\\texture\\roulette_000_ID_HQ");
         var second = Encoding.ASCII.GetBytes("id\\lsp\\roulette\\roulette_000");
         var payload1 = Encoding.ASCII.GetBytes("TEST_TEXTURE_0001");
-        var payload2 = Encoding.ASCII.GetBytes("LAYOUT_NODE_TEST");
+        var payload2 = BuildSyntheticLayout();
         var length = payload2Offset + payload2.Length;
         var arc = new byte[length];
 
@@ -253,6 +338,26 @@ internal static class Program
         Entry(0, first, 0x241F5DEB, payload1, payload1Offset);
         Entry(1, second, 0x60DD1B16, payload2, corruptSecondOffset ? 0x100000 : payload2Offset);
         return arc;
+    }
+
+    private static byte[] BuildSyntheticLayout()
+    {
+        var strings = Encoding.ASCII.GetBytes(
+            "SysRoot\0" +
+            "waku1\0" +
+            "id\\texture\\jpn\\roulette\\roulette_000_ID_HQ\0" +
+            "sitaji1\0" +
+            "id\\texture\\jpn\\roulette\\roulette_000_ID_HQ\0");
+        var raw = new byte[16 + strings.Length];
+        raw[0] = 0;
+        raw[1] = (byte)'P';
+        raw[2] = (byte)'S';
+        raw[3] = (byte)'L';
+        BinaryPrimitives.WriteUInt32BigEndian(raw.AsSpan(4, 4), 0x00010000);
+        BinaryPrimitives.WriteUInt16BigEndian(raw.AsSpan(12, 2), 3);
+        BinaryPrimitives.WriteUInt16BigEndian(raw.AsSpan(14, 2), 1);
+        strings.CopyTo(raw.AsSpan(16));
+        return raw;
     }
 
     private static byte[] BuildSyntheticXet(int width, int height, int formatCode, int swizzle = 0)
