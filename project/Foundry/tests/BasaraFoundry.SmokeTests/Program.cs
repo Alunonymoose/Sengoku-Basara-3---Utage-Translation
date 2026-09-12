@@ -14,6 +14,7 @@ internal static class Program
         Console.WriteLine("--------------------------------");
 
         TestProjectSafetyDefaults();
+        TestPixelMaskSafety();
         TestArcReader();
         TestXetMetadata();
 
@@ -31,6 +32,26 @@ internal static class Program
             Rules: new ProjectRules());
         Smoke.True(project.Rules.CanonicalSourcesReadOnly, "project defaults to read-only canonical sources");
         Smoke.True(project.Rules.ArtRequiresApproval, "art approval gate defaults on");
+    }
+
+    private static void TestPixelMaskSafety()
+    {
+        const int width = 4;
+        const int height = 2;
+        var source = new byte[width * height * 4];
+        var candidate = source.ToArray();
+        var mask = new EditMask([new PixelRect(1, 0, 3, 1)]);
+
+        candidate[(0 * width + 1) * 4] = 255;
+        var good = PixelDiffValidator.CompareRgba(source, candidate, width, height, mask);
+        Smoke.Equal(1, good.ChangedPixels, "pixel diff counts changed pixels");
+        Smoke.Equal(0, good.ChangedOutsideMask, "mask accepts approved-region change");
+        Smoke.True(good.IsSafe, "approved-region candidate is safe");
+
+        candidate[(1 * width + 3) * 4 + 1] = 200;
+        var bad = PixelDiffValidator.CompareRgba(source, candidate, width, height, mask);
+        Smoke.Equal(1, bad.ChangedOutsideMask, "mask counts unexpected outside change");
+        Smoke.True(!bad.IsSafe, "outside-mask change blocks production");
     }
 
     private static void TestArcReader()
