@@ -13,43 +13,37 @@ public sealed partial class MainWindow
             var donor = _samuraiHeroesProductionResource;
             var donorPreview = _samuraiHeroesProductionPreview;
             var pristine = _productionJapanesePreview;
-            if (active is null || donor is null || donorPreview is null || pristine is null)
+            if (active is null || pristine is null)
+                throw new InvalidOperationException("Preview a texture with a certified pristine Japanese counterpart first.");
+
+            GenerateReplacementButton.IsEnabled = false;
+
+            if (donor is not null && donorPreview is { CanEncode: true } &&
+                donorPreview.Width == _activeWidth && donorPreview.Height == _activeHeight)
             {
+                if (donorPreview.Rgba.Length != pristine.Rgba.Length)
+                    throw new InvalidDataException("Official donor and pristine Japanese atlas sizes differ.");
+
+                SearchStatusText.Text = "Creating one-click replacement from Capcom's official Samurai Heroes artwork…";
+                await AttachGeneratedCandidateAsync(
+                    donorPreview.Rgba,
+                    $"Official Samurai Heroes · {donor.ResourceName}",
+                    "OFFICIAL DONOR");
                 SearchStatusText.Text =
-                    "No certified official English donor is available for this texture yet. " +
-                    "Foundry will use the AI repair path for Utage-only artwork once that provider is configured.";
+                    "Replacement ready from official Samurai Heroes artwork. " +
+                    "The preview is now the working candidate; pristine Japanese pixels remain the production authority outside approved changes.";
                 return;
             }
 
-            if (!donorPreview.CanEncode)
-                throw new InvalidDataException("The official donor is preview-only and cannot be promoted into a writable candidate.");
-            if (donorPreview.Width != _activeWidth || donorPreview.Height != _activeHeight)
-                throw new InvalidDataException(
-                    $"Official donor is {donorPreview.Width}×{donorPreview.Height}; target is {_activeWidth}×{_activeHeight}. Foundry will not resize an atlas silently.");
-            if (donorPreview.Rgba.Length != pristine.Rgba.Length)
-                throw new InvalidDataException("Official donor and pristine Japanese atlas sizes differ.");
-
-            GenerateReplacementButton.IsEnabled = false;
-            SearchStatusText.Text = "Creating one-click replacement from Capcom's official Samurai Heroes artwork…";
-            await AttachGeneratedCandidateAsync(
-                donorPreview.Rgba,
-                $"Official Samurai Heroes · {donor.ResourceName}",
-                "OFFICIAL DONOR");
-            SearchStatusText.Text =
-                "Replacement ready from official Samurai Heroes artwork. " +
-                "The preview is now the working candidate; pristine Japanese pixels remain the production authority outside approved changes.";
+            await GenerateAiRepairCandidateAsync();
         }
-        catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or InvalidDataException or NotSupportedException or ArgumentException or InvalidOperationException)
+        catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or InvalidDataException or NotSupportedException or ArgumentException or InvalidOperationException or HttpRequestException or TaskCanceledException)
         {
             SearchStatusText.Text = $"One-click replacement stopped safely: {ex.Message}";
         }
         finally
         {
-            if (_samuraiHeroesProductionPreview is { CanEncode: true } sh &&
-                sh.Width == _activeWidth && sh.Height == _activeHeight)
-            {
-                GenerateReplacementButton.IsEnabled = true;
-            }
+            RefreshGenerateReplacementAvailability();
         }
     }
 
