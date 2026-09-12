@@ -5,14 +5,11 @@ namespace BasaraFoundry.Domain;
 /// The constructor is internal; the Domain assembly grants friendship only to
 /// the certified Utage format assembly. UI/worker callers can inspect evidence
 /// but cannot construct a successful token through the normal API surface.
-///
-/// Evidence is bound not only to the source/output ARC and member identity but
-/// also to every production texture input that can change the built bytes.
+/// Evidence is bound to every production input that can change the built bytes.
 /// </summary>
 public sealed class AssetApprovalEvidence
 {
-    public const string UtageBc3GraftArcProofKind =
-        "utage-bc3-block-graft+target-shell+single-entry-arc-roundtrip:v2";
+    public const string UtageBc3GraftArcProofKind = "utage-bc3-block-graft+target-shell+single-entry-arc-roundtrip:v2";
 
     internal AssetApprovalEvidence(
         bool productionWriteVerified,
@@ -58,10 +55,7 @@ public sealed class AssetApprovalEvidence
 
 public static class AssetApprovalGuard
 {
-    public static void EnsureCanTransition(
-        AssetApprovalState current,
-        AssetApprovalState requested,
-        AssetApprovalEvidence? evidence)
+    public static void EnsureCanTransition(AssetApprovalState current, AssetApprovalState requested, AssetApprovalEvidence? evidence)
     {
         if (requested < current)
             throw new InvalidOperationException($"Approval state cannot move backwards from {current} to {requested}.");
@@ -73,8 +67,7 @@ public static class AssetApprovalGuard
             throw new InvalidOperationException($"Cannot promote asset to {requested}: proof kind '{evidence.ProofKind}' is not a certified Foundry production proof.");
         if (!IsSha256(evidence.SourceArcSha256) || !IsSha256(evidence.OutputArcSha256) ||
             !IsSha256(evidence.TargetResourceSha256) || !IsSha256(evidence.PristineResourceSha256) ||
-            !IsSha256(evidence.CandidateSha256) || !IsSha256(evidence.EditMaskSha256) ||
-            !IsSha256(evidence.FinalResourceSha256))
+            !IsSha256(evidence.CandidateSha256) || !IsSha256(evidence.EditMaskSha256) || !IsSha256(evidence.FinalResourceSha256))
             throw new InvalidOperationException($"Cannot promote asset to {requested}: production proof is not fully bound to valid SHA-256 fingerprints.");
         if (evidence.MemberIndex < 0 || string.IsNullOrWhiteSpace(evidence.MemberName))
             throw new InvalidOperationException($"Cannot promote asset to {requested}: production proof is not bound to a valid ARC member identity.");
