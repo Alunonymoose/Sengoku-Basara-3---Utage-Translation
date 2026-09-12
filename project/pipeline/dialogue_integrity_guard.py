@@ -69,6 +69,22 @@ def parse_gsm(raw:bytes):
 
 def envelope(slot): return tuple(t for t in slot['tokens'] if t>=0xF000)
 def fmt_env(env): return ' '.join(f'{x:04X}' for x in env)
+
+def only_inserts(current, base, allowed=(0xFFFE,)):
+    """True when current is base with only allowed tokens inserted.
+
+    0xFFFE is a newline marker in earlier Sengoku BASARA MSG research and is
+    also used by official Samurai Heroes English resources. Newline-only drift
+    is formatting, not evidence of progression/control corruption.
+    """
+    if base is None: return False
+    i=0
+    for token in current:
+        if i < len(base) and token == base[i]: i += 1
+        elif token in allowed: continue
+        else: return False
+    return i == len(base)
+
 def fim_header(raw:bytes):
     if raw[:4]!=FIM_MAGIC: return None
     n=min(len(raw)//4,16)
@@ -82,7 +98,7 @@ def compare(args):
     cg=parse_gsm(choose_resource(cur,GSM_MAGIC).raw); jg=parse_gsm(choose_resource(jp,GSM_MAGIC).raw)
     sg=parse_gsm(choose_resource(sh,GSM_MAGIC).raw) if sh else None
     rows=[]; counts={k:0 for k in ['BOTH','SH_ONLY','JP_ONLY','CUSTOM']}
-    env_counts={k:0 for k in ['JP','SH_ONLY','NEITHER']}
+    env_counts={k:0 for k in ['JP','SH_ONLY','FORMAT_ONLY','UNSUPPORTED']}
     low_current={s['index'] for s in cg['slots'] if s['length']<=6}
     low_jp={s['index'] for s in jg['slots'] if s['length']<=6}
     for i,c in enumerate(cg['slots']):
@@ -96,7 +112,8 @@ def compare(args):
         ce=envelope(c); je=envelope(j) if j else None; se=envelope(s) if s else None
         if je is not None and ce==je: ecls='JP'
         elif se is not None and ce==se: ecls='SH_ONLY'
-        else: ecls='NEITHER'
+        elif only_inserts(ce, je) or only_inserts(ce, se): ecls='FORMAT_ONLY'
+        else: ecls='UNSUPPORTED'
         env_counts[ecls]+=1
         rows.append({'index':i,'payload_class':cls,'control_class':ecls,'current_length':c['length'],
                      'jp_length':j['length'] if j else None,'sh_length':s['length'] if s else None,
@@ -114,7 +131,7 @@ def compare(args):
                                          'lost_from_jp':sorted(low_jp-low_current),'gained_vs_jp':sorted(low_current-low_jp)},
       'payload_slot_classes':counts,
       'control_envelope_classes':env_counts,
-      'unjustified_control_indices':[r['index'] for r in rows if r['control_class']=='NEITHER'],
+      'unsupported_control_indices':[r['index'] for r in rows if r['control_class']=='UNSUPPORTED'],
       'fim':{'current':fim_header(cf),'jp':fim_header(jf),'sh':fim_header(sf) if sf else None,
              'current_equals_jp':cf==jf,'current_equals_sh':bool(sf is not None and cf==sf)},
       'voice_companion':None,
@@ -128,7 +145,7 @@ def compare(args):
     if cg['count']!=jg['count']: failures.append(f'primary GSM slot count current={cg["count"]} != pristine JP={jg["count"]}')
     if len(cur['entries'])!=len(jp['entries']): failures.append(f'ARC entry count current={len(cur["entries"])} != pristine JP={len(jp["entries"])}')
     if low_current!=low_jp: failures.append('low-length/control slot index set drifted from pristine JP')
-    if env_counts['NEITHER'] and not args.allow_unjustified_control: failures.append(f'{env_counts["NEITHER"]} control envelopes match neither pristine JP nor official SH')
+    if env_counts['UNSUPPORTED'] and not args.allow_unjustified_control: failures.append(f'{env_counts["UNSUPPORTED"]} control envelopes contain non-format mutations unsupported by pristine JP or official SH')
     if report['voice_companion'] and not report['voice_companion']['same_qrts']: failures.append('voice QRTS companion differs from pristine JP')
     report['status']='FAIL' if failures else 'PASS'; report['failures']=failures
     return report
