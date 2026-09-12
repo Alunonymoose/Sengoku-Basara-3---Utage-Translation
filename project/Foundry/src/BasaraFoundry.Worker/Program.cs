@@ -62,6 +62,7 @@ static bool TryCommonPreviewArgs(
     archive = Option(args, "--archive") ?? "";
     name = Option(args, "--name") ?? "";
     output = Option(args, "--output") ?? "";
+    entryIndex = -1;
     var entryText = Option(args, "--entry");
     return !string.IsNullOrWhiteSpace(root) &&
            !string.IsNullOrWhiteSpace(archive) &&
