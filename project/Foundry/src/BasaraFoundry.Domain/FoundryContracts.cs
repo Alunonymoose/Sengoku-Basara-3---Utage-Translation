@@ -54,6 +54,7 @@ public sealed record DependencyEvidence(
     string Evidence,
     double Confidence);
 
+[Obsolete("Use RuntimeVerificationEvidence. Legacy runtime evidence is not sufficient for RuntimeVerified state.")]
 public sealed record RuntimeEvidence(
     string ScreenshotPath,
     string BuildId,
@@ -66,7 +67,7 @@ public sealed record AssetRecord(
     AssetApprovalState Approval,
     FormatCapabilities Capabilities,
     IReadOnlyList<DependencyEvidence> Dependencies,
-    IReadOnlyList<RuntimeEvidence> RuntimeEvidence);
+    IReadOnlyList<RuntimeVerificationEvidence> RuntimeEvidence);
 
 public sealed record SourceRoots(
     string? UtageEnglish,
