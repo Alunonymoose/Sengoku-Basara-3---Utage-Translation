@@ -21,6 +21,7 @@ static int Usage()
     Console.Error.WriteLine("  BasaraFoundry.Worker preview-xet --root <source-root> --archive <relative.arc> --entry <index> --name <resource> --output <preview.json>");
     Console.Error.WriteLine("  BasaraFoundry.Worker roundtrip-xet --root <source-root> --archive <relative.arc> --entry <index> --name <resource> --rgba <candidate.rgba> --output <preview.json>");
     Console.Error.WriteLine("  BasaraFoundry.Worker graft-xet --root <eng-root> --archive <relative.arc> --entry <index> --name <resource> --pristine-root <jpn-root> --pristine-archive <relative.arc> --pristine-entry <index> --pristine-name <resource> --rgba <candidate.rgba> --mask <mask.bin> --output-arc <build.arc> --audit <audit.json>");
+    Console.Error.WriteLine(SharedOwnerWorkerCommand.UsageLine);
     return 64;
 }
 
@@ -174,6 +175,10 @@ if (args.Length == 0)
 
 try
 {
+    var sharedOwnerResult = await SharedOwnerWorkerCommand.TryRunAsync(args);
+    if (sharedOwnerResult.HasValue)
+        return sharedOwnerResult.Value;
+
     if (args[0].Equals("index", StringComparison.OrdinalIgnoreCase))
     {
         var root = Option(args, "--root");
