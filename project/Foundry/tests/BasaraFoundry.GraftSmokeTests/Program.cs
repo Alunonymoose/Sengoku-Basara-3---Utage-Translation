@@ -9,7 +9,7 @@ namespace BasaraFoundry.GraftSmokeTests;
 
 /// <summary>
 /// Synthetic proof of the Research Ledger BC3 block-graft production rule and
-/// the production transaction that carries one verified XET into one sibling ARC.
+/// the production transaction that carries one verified XET into one external build ARC.
 /// </summary>
 internal static class Program
 {
@@ -59,6 +59,15 @@ internal static class Program
             height);
         True(mask.AsSpan().SequenceEqual(fromRects), "EditMaskCodec matches hand-built mask01");
 
+        var proposal = UtageEditMaskProposalService.Create(pristineDecoded, candidate, width, height);
+        Equal(4, proposal.ChangedPixels, "mask proposal exact changed-pixel count");
+        Equal(1, proposal.AffectedBlocks, "mask proposal affected BC3 block count");
+        Equal(16, proposal.EffectiveBlockPixels, "mask proposal effective block footprint");
+        Equal(12, proposal.PotentialCollateralPixels, "mask proposal exposes block-neighbour pixels");
+        Equal(new PixelRect(1, 1, 3, 3), proposal.ChangedBounds!, "mask proposal changed bounds");
+        True(mask.AsSpan().SequenceEqual(proposal.Mask01), "mask proposal equals exact candidate delta");
+        Equal(candidate.Length, UtageEditMaskProposalService.CreateReviewRgba(candidate, proposal).Length, "mask review RGBA dimensions preserved");
+
         var result = UtageBc3BlockGraft.GraftTopLevel(pristineXet, candidate, mask);
         True(result.Report.Ok, "graft reports ok");
         Equal(1, result.Report.BlocksReplaced, "exactly one block replaced");
@@ -103,8 +112,6 @@ internal static class Program
         Equal(tx.Audit.OutputArcSha256, tx.ApprovalEvidence.OutputArcSha256, "evidence bound to output ARC hash");
         Equal(tx.Audit.MemberName, tx.ApprovalEvidence.MemberName, "evidence bound to member identity");
 
-        // The public API must expose no constructor/factory capable of minting a
-        // successful approval token. Only the friend Utage format assembly can.
         True(typeof(AssetApprovalEvidence).GetConstructors().Length == 0, "approval evidence has no public constructor");
         True(!typeof(AssetApprovalEvidence)
             .GetMethods(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
@@ -130,18 +137,25 @@ internal static class Program
         Equal(AssetApprovalState.Approved, approved, "approval accepted with opaque bound graft+ARC proof");
 
         var root = Path.Combine(Path.GetTempPath(), $"basara-foundry-sibling-{Guid.NewGuid():N}");
-        Directory.CreateDirectory(root);
+        var sourceDir = Path.Combine(root, "canonical-source");
+        var buildDir = Path.Combine(root, "foundry-build");
+        Directory.CreateDirectory(sourceDir);
+        Directory.CreateDirectory(buildDir);
         try
         {
-            var sourcePath = Path.Combine(root, "cockpit1P.arc");
+            var sourcePath = Path.Combine(sourceDir, "cockpit1P.arc");
+            var outputPath = Path.Combine(buildDir, "cockpit1P.foundry.arc");
             File.WriteAllBytes(sourcePath, sourceArc);
-            var written = UtageSiblingArcStore.Write(sourcePath, tx);
-            True(File.Exists(written.OutputArcPath), "sibling ARC written");
+            var written = UtageSiblingArcStore.Write(sourcePath, tx, outputPath);
+            True(File.Exists(written.OutputArcPath), "external build ARC written");
             True(File.Exists(written.AuditJsonPath), "audit JSON written");
-            True(!PathsEqual(written.SourceArcPath, written.OutputArcPath), "sibling path differs from source");
+            True(!PathsEqual(written.SourceArcPath, written.OutputArcPath), "build path differs from source");
             Throws<InvalidOperationException>(
                 () => UtageSiblingArcStore.Write(sourcePath, tx, sourcePath),
                 "disk writer refuses source overwrite");
+            Throws<InvalidOperationException>(
+                () => UtageSiblingArcStore.Write(sourcePath, tx, Path.Combine(sourceDir, "cockpit1P.foundry.arc")),
+                "disk writer refuses output beside canonical source");
         }
         finally
         {
