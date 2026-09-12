@@ -71,7 +71,9 @@ public static partial class UtageLayoutReader
             pending = null;
         }
 
-        foreach (var text in PrintableRuns(raw[16..]))
+        // Materialise only the string-table scan region. Iterators compile to
+        // heap state machines and must not capture a ReadOnlySpan/ref struct.
+        foreach (var text in PrintableRuns(raw[16..].ToArray()))
         {
             var reference = text.TrimStart('+');
             if (ContainsTexturePath(reference))
@@ -103,9 +105,8 @@ public static partial class UtageLayoutReader
         return new UtageLayoutInfo(name, version, nodeCount, textureCount, nodes, textures);
     }
 
-    private static IEnumerable<string> PrintableRuns(ReadOnlySpan<byte> raw)
+    private static IEnumerable<string> PrintableRuns(byte[] bytes)
     {
-        var bytes = raw.ToArray();
         var start = -1;
         for (var i = 0; i <= bytes.Length; i++)
         {
