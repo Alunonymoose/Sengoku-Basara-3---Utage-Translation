@@ -1,4 +1,6 @@
 using System.Text.Json;
+using BasaraFoundry.Game.Utage;
+using BasaraFoundry.Game.Utage.Arc;
 using BasaraFoundry.Game.Utage.Index;
 using BasaraFoundry.Game.Utage.Preview;
 
@@ -18,6 +20,7 @@ static int Usage()
     Console.Error.WriteLine("  BasaraFoundry.Worker index --root <source-root> [--route eng|jpn|direct] --output <snapshot.json>");
     Console.Error.WriteLine("  BasaraFoundry.Worker preview-xet --root <source-root> --archive <relative.arc> --entry <index> --name <resource> --output <preview.json>");
     Console.Error.WriteLine("  BasaraFoundry.Worker roundtrip-xet --root <source-root> --archive <relative.arc> --entry <index> --name <resource> --rgba <candidate.rgba> --output <preview.json>");
+    Console.Error.WriteLine("  BasaraFoundry.Worker graft-xet --root <source-root> --archive <relative.arc> --entry <index> --name <resource> --rgba <candidate.rgba> --mask <mask.bin> --output-arc <sibling.arc> --audit <audit.json>");
     return 64;
 }
 
@@ -48,6 +51,53 @@ static async Task WriteAtomicJsonAsync<T>(string output, T value)
         if (File.Exists(temp))
             File.Delete(temp);
     }
+}
+
+static async Task WriteAtomicBytesAsync(string output, ReadOnlyMemory<byte> bytes)
+{
+    output = Path.GetFullPath(output);
+    var directory = Path.GetDirectoryName(output);
+    if (string.IsNullOrWhiteSpace(directory))
+        throw new InvalidOperationException("Worker output must have a parent directory.");
+    Directory.CreateDirectory(directory);
+
+    var temp = output + ".tmp." + Guid.NewGuid().ToString("N");
+    try
+    {
+        await File.WriteAllBytesAsync(temp, bytes.ToArray());
+        File.Move(temp, output, overwrite: true);
+    }
+    finally
+    {
+        if (File.Exists(temp))
+            File.Delete(temp);
+    }
+}
+
+static string ResolveArchivePath(string root, string archiveRelativePath)
+{
+    ArgumentException.ThrowIfNullOrWhiteSpace(root);
+    ArgumentException.ThrowIfNullOrWhiteSpace(archiveRelativePath);
+
+    var fullRoot = Path.TrimEndingDirectorySeparator(Path.GetFullPath(root));
+    if (!Directory.Exists(fullRoot))
+        throw new DirectoryNotFoundException(fullRoot);
+    if (Path.IsPathRooted(archiveRelativePath))
+        throw new InvalidDataException("Texture archive path must be relative to the configured source root.");
+
+    var normalizedRelative = archiveRelativePath
+        .Replace('\\', Path.DirectorySeparatorChar)
+        .Replace('/', Path.DirectorySeparatorChar);
+    var archivePath = Path.GetFullPath(Path.Combine(fullRoot, normalizedRelative));
+    var comparison = OperatingSystem.IsWindows()
+        ? StringComparison.OrdinalIgnoreCase
+        : StringComparison.Ordinal;
+    var prefix = fullRoot + Path.DirectorySeparatorChar;
+    if (!archivePath.StartsWith(prefix, comparison))
+        throw new InvalidDataException("Texture archive path escapes the configured source root.");
+    if (!File.Exists(archivePath))
+        throw new FileNotFoundException("Indexed texture archive no longer exists.", archivePath);
+    return archivePath;
 }
 
 static bool TryCommonPreviewArgs(
@@ -154,6 +204,81 @@ try
             resource = roundTrip.ResourceName,
             meanAbsoluteChannelError = roundTrip.MeanAbsoluteChannelError,
             maxChannelError = roundTrip.MaxChannelError,
+        }));
+        return 0;
+    }
+
+    if (args[0].Equals("graft-xet", StringComparison.OrdinalIgnoreCase))
+    {
+        var root = Option(args, "--root") ?? "";
+        var archive = Option(args, "--archive") ?? "";
+        var name = Option(args, "--name") ?? "";
+        var rgbaPath = Option(args, "--rgba") ?? "";
+        var maskPath = Option(args, "--mask") ?? "";
+        var outputArc = Option(args, "--output-arc") ?? "";
+        var auditPath = Option(args, "--audit") ?? "";
+        var entryText = Option(args, "--entry");
+        if (string.IsNullOrWhiteSpace(root) ||
+            string.IsNullOrWhiteSpace(archive) ||
+            string.IsNullOrWhiteSpace(name) ||
+            string.IsNullOrWhiteSpace(rgbaPath) ||
+            string.IsNullOrWhiteSpace(maskPath) ||
+            string.IsNullOrWhiteSpace(outputArc) ||
+            string.IsNullOrWhiteSpace(auditPath) ||
+            !int.TryParse(entryText, out var entryIndex) || entryIndex < 0)
+        {
+            return Usage();
+        }
+
+        var sourceArcPath = ResolveArchivePath(root, archive);
+        rgbaPath = Path.GetFullPath(rgbaPath);
+        maskPath = Path.GetFullPath(maskPath);
+        outputArc = Path.GetFullPath(outputArc);
+        auditPath = Path.GetFullPath(auditPath);
+
+        var pathComparison = OperatingSystem.IsWindows()
+            ? StringComparison.OrdinalIgnoreCase
+            : StringComparison.Ordinal;
+        if (string.Equals(sourceArcPath, outputArc, pathComparison))
+            throw new InvalidOperationException("Production graft output must be a sibling ARC; overwriting the source ARC is forbidden.");
+        if (string.Equals(sourceArcPath, auditPath, pathComparison) ||
+            string.Equals(outputArc, auditPath, pathComparison))
+            throw new InvalidOperationException("Source ARC, sibling ARC, and audit paths must all be distinct.");
+
+        var sourceArc = await File.ReadAllBytesAsync(sourceArcPath);
+        using (var sourceStream = new MemoryStream(sourceArc, writable: false))
+        {
+            var parsed = UtageArcReader.Read(sourceStream, sourceArcPath);
+            if ((uint)entryIndex >= (uint)parsed.Entries.Count)
+                throw new InvalidDataException("Indexed ARC member no longer exists at the recorded entry index.");
+            var entry = parsed.Entries[entryIndex];
+            if (!entry.Name.Equals(name, StringComparison.Ordinal))
+                throw new InvalidDataException("Indexed ARC member identity changed; reindex before building this asset.");
+            if (entry.TypeHash != UtageTypeHashes.Texture)
+                throw new NotSupportedException("Selected ARC member is not a certified Utage texture resource.");
+        }
+
+        var candidate = await File.ReadAllBytesAsync(rgbaPath);
+        var mask = await File.ReadAllBytesAsync(maskPath);
+        var transaction = UtageSingleEntryXetGraft.BuildSibling(sourceArc, entryIndex, candidate, mask);
+
+        await WriteAtomicBytesAsync(outputArc, transaction.SiblingArcBytes);
+        await WriteAtomicJsonAsync(auditPath, transaction.Audit);
+
+        Console.WriteLine(JsonSerializer.Serialize(new
+        {
+            ok = true,
+            command = "graft-xet",
+            sourceArc = sourceArcPath,
+            siblingArc = outputArc,
+            audit = auditPath,
+            resource = transaction.Audit.MemberName,
+            blocksReplaced = transaction.Audit.BlocksReplaced,
+            blocksTotal = transaction.Audit.BlocksTotal,
+            outsideMaskPixelDelta = transaction.Audit.OutsideMaskPixelDelta,
+            approvedEligible = transaction.Audit.ApprovedEligible,
+            sourceArcSha256 = transaction.Audit.SourceArcSha256,
+            outputArcSha256 = transaction.Audit.OutputArcSha256,
         }));
         return 0;
     }
