@@ -113,10 +113,10 @@
                         <TextBox x:Name="AssetSearchBox" PlaceholderText="Search indexed Utage ENG assets, e.g. roulette_000_ID_HQ" />
                         <Button x:Name="SearchAssetsButton" Grid.Column="1" Content="Search assets" Padding="18,10" Click="SearchAssets_Click" />
                         <Button x:Name="ReindexAssetsButton" Grid.Column="2" Content="Reindex" Padding="18,10" Click="ReindexAssets_Click" />
-                        <Button x:Name="OpenAssetButton" Grid.Column="3" Content="Open asset" Padding="18,10" IsEnabled="False" Click="OpenAsset_Click" />
+                        <Button x:Name="OpenAssetButton" Grid.Column="3" Content="Preview asset" Padding="18,10" IsEnabled="False" Click="PreviewAsset_Click" />
                     </Grid>
                     <ListView x:Name="AssetResultsList" Grid.Row="1" MaxHeight="150" SelectionMode="Single" SelectionChanged="AssetResultsList_SelectionChanged" />
-                    <TextBlock x:Name="SearchStatusText" Grid.Row="2" Text="Indexing runs outside the UI process. Search reads a versioned snapshot; canonical source files remain untouched." Opacity="0.7" TextWrapping="Wrap" />
+                    <TextBlock x:Name="SearchStatusText" Grid.Row="2" Text="Indexing and texture decode run outside the UI process. Canonical source files remain untouched." Opacity="0.7" TextWrapping="Wrap" />
                 </Grid>
             </Border>
 
@@ -129,7 +129,16 @@
                     <StackPanel Spacing="8"><TextBlock Text="ORIGINAL JP" FontWeight="SemiBold"/><Border Height="360" Background="#171717" CornerRadius="6"><TextBlock Text="Pristine reference" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.55"/></Border></StackPanel>
                 </Border>
                 <Border Grid.Column="1" CornerRadius="10" BorderBrush="#3D3D3D" BorderThickness="1" Padding="12">
-                    <StackPanel Spacing="8"><TextBlock Text="CURRENT ENG" FontWeight="SemiBold"/><Border Height="360" Background="#171717" CornerRadius="6"><TextBlock Text="Current build" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.55"/></Border></StackPanel>
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="CURRENT ENG" FontWeight="SemiBold"/>
+                        <Border Height="360" Background="#171717" CornerRadius="6">
+                            <Grid>
+                                <Image x:Name="CurrentEngImage" Stretch="Uniform" />
+                                <TextBlock x:Name="CurrentEngPlaceholder" Text="Current build" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.55"/>
+                            </Grid>
+                        </Border>
+                        <TextBlock x:Name="CurrentEngMeta" Text="No asset previewed" FontSize="12" Opacity="0.62" TextWrapping="Wrap" />
+                    </StackPanel>
                 </Border>
                 <Border Grid.Column="2" CornerRadius="10" BorderBrush="#3D3D3D" BorderThickness="1" Padding="12">
                     <StackPanel Spacing="8"><TextBlock Text="SAMURAI HEROES" FontWeight="SemiBold"/><Border Height="360" Background="#171717" CornerRadius="6"><TextBlock Text="Official reference" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.55"/></Border></StackPanel>
@@ -145,7 +154,9 @@
             <Grid Grid.Row="3" ColumnSpacing="12">
                 <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
                 <StackPanel Orientation="Horizontal" Spacing="18" VerticalAlignment="Center">
-                    <TextBlock Text="Protected pixels: —"/><TextBlock Text="Dimensions: —"/><TextBlock Text="Dependency audit: —"/>
+                    <TextBlock Text="Protected pixels: —"/>
+                    <TextBlock x:Name="DimensionsText" Text="Dimensions: —"/>
+                    <TextBlock x:Name="DependencyAuditText" Text="Dependency audit: —"/>
                     <TextBlock Text="Controller geometry: UNKNOWN" Foreground="#F6C344"/>
                 </StackPanel>
                 <Button Grid.Column="1" Content="Send for approval" Padding="24,12" IsEnabled="False" />
