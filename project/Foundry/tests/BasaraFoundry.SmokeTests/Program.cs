@@ -16,6 +16,7 @@ internal static class Program
         TestProjectSafetyDefaults();
         TestPixelMaskSafety();
         TestArcReader();
+        TestArcWriter();
         TestXetMetadata();
 
         Console.WriteLine($"\nSmoke tests passed: {Smoke.Passed}");
@@ -86,6 +87,44 @@ internal static class Program
             using var stream = new MemoryStream(little, writable: false);
             _ = UtageArcReader.Read(stream, "wrong-platform.arc");
         }, "uncertified ARC platform is rejected");
+    }
+
+    private static void TestArcWriter()
+    {
+        var original = BuildSyntheticArc();
+        var noOp = UtageArcWriter.Rebuild(original, new Dictionary<int, byte[]>());
+        Smoke.True(noOp.IsNoOp, "ARC no-op build is identified");
+        Smoke.True(original.AsSpan().SequenceEqual(noOp.Bytes), "ARC no-op build is byte-identical");
+        Smoke.Equal(32, noOp.Alignment, "ARC alignment inferred from real offsets");
+
+        var replacement = Encoding.ASCII.GetBytes("ENGLISH_TEXTURE_REPLACEMENT_IS_LONGER");
+        var built = UtageArcWriter.Rebuild(
+            original,
+            new Dictionary<int, byte[]> { [0] = replacement });
+        Smoke.Equal(1, built.ReplacedMemberCount, "ARC build reports one replacement");
+
+        using var oldStream = new MemoryStream(original, writable: false);
+        using var newStream = new MemoryStream(built.Bytes, writable: false);
+        var before = UtageArcReader.Read(oldStream, "before.arc");
+        var after = UtageArcReader.Read(newStream, "after.arc");
+
+        Smoke.Equal(before.Entries.Count, after.Entries.Count, "ARC writer preserves member count");
+        Smoke.Equal(before.Entries[0].Name, after.Entries[0].Name, "ARC writer preserves replacement member name");
+        Smoke.Equal(before.Entries[1].Name, after.Entries[1].Name, "ARC writer preserves untouched member name");
+        Smoke.Equal(before.Entries[1].TypeHash, after.Entries[1].TypeHash, "ARC writer preserves untouched type hash");
+        Smoke.Equal(before.Entries[1].Flags, after.Entries[1].Flags, "ARC writer preserves untouched flags");
+
+        var decodedReplacement = UtageArcReader.ReadDecompressedPayload(newStream, after.Entries[0]);
+        Smoke.True(replacement.AsSpan().SequenceEqual(decodedReplacement), "ARC replacement round-trips exact raw bytes");
+
+        var oldUntouched = UtageArcReader.ReadStoredPayload(oldStream, before.Entries[1]);
+        var newUntouched = UtageArcReader.ReadStoredPayload(newStream, after.Entries[1]);
+        Smoke.True(oldUntouched.AsSpan().SequenceEqual(newUntouched), "ARC untouched stored payload remains byte-identical");
+        Smoke.True(after.Entries[1].PayloadOffset > before.Entries[1].PayloadOffset, "ARC safely relocates later member when replacement grows");
+
+        Smoke.Throws<ArgumentOutOfRangeException>(() =>
+            UtageArcWriter.Rebuild(original, new Dictionary<int, byte[]> { [99] = [1, 2, 3] }),
+            "ARC writer rejects nonexistent replacement member");
     }
 
     private static void TestXetMetadata()
