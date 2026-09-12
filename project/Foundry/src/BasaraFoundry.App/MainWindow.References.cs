@@ -1,4 +1,5 @@
 using BasaraFoundry.Game.Utage.Index;
+using BasaraFoundry.Game.Utage.Preview;
 using Microsoft.UI.Xaml;
 
 namespace BasaraFoundry.App;
@@ -10,6 +11,8 @@ public sealed partial class MainWindow
 
     private async Task LoadReferencePreviewsAsync(IndexedUtageResource currentResource, long reviewGeneration)
     {
+        ClearJapaneseProductionReference(reviewGeneration);
+
         await LoadOneReferenceAsync(
             label: "Original JP",
             root: _project?.Sources.UtageJapanese,
@@ -21,7 +24,8 @@ public sealed partial class MainWindow
             getIndex: () => _japaneseIndex,
             setImage: bitmap => OriginalJpImage.Source = bitmap,
             setPlaceholder: visible => OriginalJpPlaceholder.Visibility = visible ? Visibility.Visible : Visibility.Collapsed,
-            setMeta: text => OriginalJpMeta.Text = text);
+            setMeta: text => OriginalJpMeta.Text = text,
+            onResolved: (resource, preview) => SetJapaneseProductionReference(resource, preview, reviewGeneration));
 
         if (!IsReviewCurrent(reviewGeneration))
             return;
@@ -51,7 +55,8 @@ public sealed partial class MainWindow
         Func<UtageAssetIndex?> getIndex,
         Action<Microsoft.UI.Xaml.Media.ImageSource?> setImage,
         Action<bool> setPlaceholder,
-        Action<string> setMeta)
+        Action<string> setMeta,
+        Action<IndexedUtageResource, UtageXetPreviewSnapshot>? onResolved = null)
     {
         if (!IsReviewCurrent(reviewGeneration))
             return;
@@ -117,6 +122,7 @@ public sealed partial class MainWindow
             setImage(PreviewBitmapFactory.FromRgba(preview.Width, preview.Height, preview.Rgba));
             setPlaceholder(false);
             setMeta($"{match.Confidence} · {match.Why} · {preview.Width}×{preview.Height} {preview.BlockFormat} · source {preview.SourceResourceSha256[..12]}…");
+            onResolved?.Invoke(match.Resource, preview);
         }
         catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or InvalidDataException or NotSupportedException or System.Text.Json.JsonException or TimeoutException or ArgumentException)
         {
