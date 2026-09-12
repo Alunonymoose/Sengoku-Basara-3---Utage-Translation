@@ -51,14 +51,33 @@ public sealed partial class MainWindow
                                   (preview.CanEncode ? "certified writable" : "preview only") +
                                   $" · source {preview.SourceResourceSha256[..12]}…";
             DimensionsText.Text = $"Dimensions: {preview.Width}×{preview.Height}";
-            DependencyAuditText.Text = "Dependency audit: indexed · controller geometry pending";
+
+            var currentIndex = _utageIndex ?? await EnsureIndexAsync(forceReindex: false);
+            if (!IsReviewCurrent(reviewGeneration))
+                return;
+            var owners = currentIndex.FindOwners(resource.ResourceName, resource.TypeHash);
+            DependencyAuditText.Text = owners.Count switch
+            {
+                0 => "Dependency audit: BLOCKED — selected resource could not be rediscovered in the ENG owner index",
+                1 => $"Dependency audit: 1 exact owner · {owners[0].ArchivePath} · controller geometry pending",
+                _ => $"Dependency audit: SHARED RESOURCE · {owners.Count} exact owners · " +
+                     string.Join(" · ", owners.Select(owner => $"{owner.ArchivePath}[{owner.EntryIndex}]")) +
+                     " · single-owner production is blocked",
+            };
+
             SetActiveTexture(resource, preview, reviewGeneration);
             SetCurrentEnglishPreview(preview, reviewGeneration);
-            SearchStatusText.Text = $"Loaded Current ENG preview from {resource.ArchivePath} [{resource.EntryIndex}]. Resolving reference evidence…";
+            SearchStatusText.Text = owners.Count > 1
+                ? $"Loaded Current ENG preview. {owners.Count} exact owners share this resource; Foundry will refuse a one-ARC production build. Resolving reference evidence…"
+                : $"Loaded Current ENG preview from {resource.ArchivePath} [{resource.EntryIndex}]. Resolving reference evidence…";
 
             await LoadReferencePreviewsAsync(resource, reviewGeneration);
             if (IsReviewCurrent(reviewGeneration))
-                SearchStatusText.Text = $"Loaded {resource.ResourceName}. Use MAKE ENGLISH TEXTURE for the best available official-donor or locked AI replacement path.";
+            {
+                SearchStatusText.Text = owners.Count > 1
+                    ? $"Loaded {resource.ResourceName}. Shared-owner dependency is visible and fail-closed; synchronized owner-set build support is required before production."
+                    : $"Loaded {resource.ResourceName}. Use MAKE ENGLISH TEXTURE for the best available official-donor or locked AI replacement path.";
+            }
         }
         catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or InvalidDataException or NotSupportedException or JsonException or TimeoutException or ArgumentException)
         {
