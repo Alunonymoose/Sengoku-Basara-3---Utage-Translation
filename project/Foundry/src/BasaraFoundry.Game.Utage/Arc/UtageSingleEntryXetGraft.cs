@@ -113,7 +113,7 @@ public static class UtageSingleEntryXetGraft
             "selected target XET used only for compatibility/identity validation",
             "single ARC member replacement verified",
             "all non-target ARC stored payloads verified unchanged by UtageArcWriter",
-            "source ARC retained as immutable input; output is sibling bytes",
+            "source ARC retained as immutable input; output is build bytes",
         };
 
         var approvalEvidence = new AssetApprovalEvidence(
@@ -124,6 +124,14 @@ public static class UtageSingleEntryXetGraft
             memberIndex: memberIndex,
             memberName: entry.Name,
             notes: notes);
+
+        // Do not stamp approval eligibility merely because evidence was created.
+        // Exercise the same domain gate a real promotion must pass.
+        AssetApprovalGuard.EnsureCanTransition(
+            AssetApprovalState.Review,
+            AssetApprovalState.Approved,
+            approvalEvidence);
+        notes.Add("domain approval guard accepted the opaque, hash-bound production proof");
 
         var audit = new SingleEntryXetGraftAudit(
             Schema: AuditSchema,
@@ -144,7 +152,7 @@ public static class UtageSingleEntryXetGraft
             UsedPristineOverride: true,
             GraftOk: graft.Report.Ok,
             ArcRoundTripVerified: roundTripVerified,
-            ApprovedEligible: approvalEvidence.ProductionWriteVerified,
+            ApprovedEligible: true,
             Notes: notes);
 
         var auditJson = JsonSerializer.Serialize(
