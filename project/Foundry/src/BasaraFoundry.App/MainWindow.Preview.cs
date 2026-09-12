@@ -21,6 +21,7 @@ public sealed partial class MainWindow
 
         var resource = selected.Hit.Resource;
         var reviewGeneration = BeginAssetReview();
+        ClearCurrentEnglishPreview(reviewGeneration);
         var output = Path.Combine(
             Path.GetDirectoryName(_projectPath)!,
             "cache", "previews", "asset",
@@ -52,11 +53,12 @@ public sealed partial class MainWindow
             DimensionsText.Text = $"Dimensions: {preview.Width}×{preview.Height}";
             DependencyAuditText.Text = "Dependency audit: indexed · controller geometry pending";
             SetActiveTexture(resource, preview, reviewGeneration);
+            SetCurrentEnglishPreview(preview, reviewGeneration);
             SearchStatusText.Text = $"Loaded Current ENG preview from {resource.ArchivePath} [{resource.EntryIndex}]. Resolving reference evidence…";
 
             await LoadReferencePreviewsAsync(resource, reviewGeneration);
             if (IsReviewCurrent(reviewGeneration))
-                SearchStatusText.Text = $"Loaded {resource.ResourceName}. Current source remains read only; reference matches are evidence-only.";
+                SearchStatusText.Text = $"Loaded {resource.ResourceName}. Use MAKE ENGLISH TEXTURE for the best available official-donor or locked AI replacement path.";
         }
         catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or InvalidDataException or NotSupportedException or JsonException or TimeoutException or ArgumentException)
         {
@@ -65,6 +67,7 @@ public sealed partial class MainWindow
                 CurrentEngImage.Source = null;
                 CurrentEngPlaceholder.Visibility = Visibility.Visible;
                 CurrentEngMeta.Text = "Preview blocked";
+                GenerateReplacementButton.IsEnabled = false;
                 SearchStatusText.Text = $"Preview stopped safely: {ex.Message}";
             }
         }
