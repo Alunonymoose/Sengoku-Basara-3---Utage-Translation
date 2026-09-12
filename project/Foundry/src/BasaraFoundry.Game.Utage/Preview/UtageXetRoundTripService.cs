@@ -1,5 +1,4 @@
 using System.Security.Cryptography;
-using BasaraFoundry.Game.Utage.Arc;
 using BasaraFoundry.Game.Utage.Xet;
 
 namespace BasaraFoundry.Game.Utage.Preview;
@@ -27,6 +26,8 @@ public sealed record UtageXetRoundTripSnapshot(
 /// Non-production visual round-trip. It proves what a candidate would look
 /// like after Foundry's certified BCn encode/decode path but emits no ARC and
 /// grants no approval. Production build remains a separate gated operation.
+/// The selected texture is loaded once so validation and encoding cannot bind
+/// to different source bytes.
 /// </summary>
 public static class UtageXetRoundTripService
 {
@@ -37,41 +38,24 @@ public static class UtageXetRoundTripService
         string expectedResourceName,
         ReadOnlySpan<byte> candidateRgba)
     {
-        // Reuse the read-only preview gate first: this validates root escape,
-        // member identity, texture type, XET metadata and decode capability.
-        var preview = UtageXetPreviewService.Create(
+        var selected = UtageSelectedTextureLoader.Load(
             root,
             archiveRelativePath,
             entryIndex,
             expectedResourceName);
+        var info = selected.Decoded.Info;
 
-        var expectedRgbaLength = checked(preview.Width * preview.Height * 4);
+        var expectedRgbaLength = checked(selected.Decoded.Width * selected.Decoded.Height * 4);
         if (candidateRgba.Length != expectedRgbaLength)
         {
             throw new ArgumentException(
-                $"Candidate contains {candidateRgba.Length} RGBA bytes; selected {preview.Width}x{preview.Height} texture requires {expectedRgbaLength}.",
+                $"Candidate contains {candidateRgba.Length} RGBA bytes; selected {selected.Decoded.Width}x{selected.Decoded.Height} texture requires {expectedRgbaLength}.",
                 nameof(candidateRgba));
         }
 
-        var archivePath = ResolveValidatedArchivePath(preview.Root, preview.ArchivePath);
-        using var stream = File.Open(archivePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-        var archive = UtageArcReader.Read(stream, archivePath);
-        if ((uint)entryIndex >= (uint)archive.Entries.Count)
-            throw new InvalidDataException("Selected ARC member changed after preview validation.");
-
-        var entry = archive.Entries[entryIndex];
-        if (!entry.Name.Equals(expectedResourceName, StringComparison.Ordinal) ||
-            entry.TypeHash != UtageTypeHashes.Texture)
-        {
-            throw new InvalidDataException("Selected ARC member identity changed after preview validation.");
-        }
-
-        var originalXet = UtageArcReader.ReadDecompressedPayload(stream, entry);
-        var sourceHash = Hex(SHA256.HashData(originalXet));
         var candidateBytes = candidateRgba.ToArray();
         var candidateHash = Hex(SHA256.HashData(candidateBytes));
-
-        var build = UtageXetCodec.ReplaceSingleLevel(originalXet, candidateBytes);
+        var build = UtageXetCodec.ReplaceSingleLevel(selected.RawXet, candidateBytes);
         var encodedHash = Hex(SHA256.HashData(build.XetBytes));
         var verification = build.VerificationDecode.Rgba;
         if (verification.Length != candidateBytes.Length)
@@ -89,38 +73,22 @@ public static class UtageXetRoundTripService
 
         return new UtageXetRoundTripSnapshot(
             Schema: 1,
-            Root: preview.Root,
-            ArchivePath: preview.ArchivePath,
-            EntryIndex: preview.EntryIndex,
-            ResourceName: preview.ResourceName,
+            Root: selected.Root,
+            ArchivePath: selected.ArchiveRelativePath,
+            EntryIndex: selected.EntryIndex,
+            ResourceName: selected.ResourceName,
             CreatedAtUtc: DateTimeOffset.UtcNow,
-            Width: preview.Width,
-            Height: preview.Height,
-            Version: preview.Version,
-            FormatCode: preview.FormatCode,
-            BlockFormat: preview.BlockFormat,
-            SourceResourceSha256: sourceHash,
+            Width: selected.Decoded.Width,
+            Height: selected.Decoded.Height,
+            Version: info.Version,
+            FormatCode: info.FormatCode,
+            BlockFormat: info.BlockFormat ?? "unknown",
+            SourceResourceSha256: selected.SourceResourceSha256,
             CandidateRgbaSha256: candidateHash,
             EncodedXetSha256: encodedHash,
             MeanAbsoluteChannelError: totalError / (double)candidateBytes.Length,
             MaxChannelError: maxError,
             VerificationRgba: verification);
-    }
-
-    private static string ResolveValidatedArchivePath(string root, string relative)
-    {
-        var fullRoot = Path.TrimEndingDirectorySeparator(Path.GetFullPath(root));
-        var normalizedRelative = relative
-            .Replace('\\', Path.DirectorySeparatorChar)
-            .Replace('/', Path.DirectorySeparatorChar);
-        var candidate = Path.GetFullPath(Path.Combine(fullRoot, normalizedRelative));
-        var comparison = OperatingSystem.IsWindows()
-            ? StringComparison.OrdinalIgnoreCase
-            : StringComparison.Ordinal;
-        var prefix = fullRoot + Path.DirectorySeparatorChar;
-        if (!candidate.StartsWith(prefix, comparison))
-            throw new InvalidDataException("Round-trip archive path escapes the configured source root.");
-        return candidate;
     }
 
     private static string Hex(ReadOnlySpan<byte> value) => Convert.ToHexString(value).ToLowerInvariant();
