@@ -88,7 +88,13 @@ def only_inserts(current, base, allowed=(0xFFFE,)):
 def fim_header(raw:bytes):
     if raw[:4]!=FIM_MAGIC: return None
     n=min(len(raw)//4,16)
-    return {'length':len(raw),'sha256':sha256(raw),'head_u32':[f'0x{x:08X}' for x in struct.unpack_from(f'>{n}I',raw,0)]}
+    c1,c2,c3=struct.unpack_from('>III',raw,8)
+    section1_end=32+c1*20
+    expected=section1_end+c2*44
+    return {'length':len(raw),'sha256':sha256(raw),'counts':[c1,c2,c3],
+            'section1_end':section1_end,'shape_32_plus_c1x20_plus_c2x44':expected==len(raw),
+            'head_u32':[f'0x{x:08X}' for x in struct.unpack_from(f'>{n}I',raw,0)]}
+
 def qrts_summary(arc):
     hits=[e for e in arc['entries'] if e.raw[:4]==QRTS_MAGIC or e.type_hash==0x167DBBFF]
     return [{'index':e.index,'name':e.name,'length':len(e.raw),'sha256':sha256(e.raw)} for e in hits]
@@ -133,10 +139,14 @@ def compare(args):
       'control_envelope_classes':env_counts,
       'unsupported_control_indices':[r['index'] for r in rows if r['control_class']=='UNSUPPORTED'],
       'fim':{'current':fim_header(cf),'jp':fim_header(jf),'sh':fim_header(sf) if sf else None,
-             'current_equals_jp':cf==jf,'current_equals_sh':bool(sf is not None and cf==sf)},
+             'current_equals_jp':cf==jf,'current_equals_sh':bool(sf is not None and cf==sf),
+             'per_message_section_equals_jp':False},
       'voice_companion':None,
       'rows':rows
     }
+    fh_cur=report['fim']['current']; fh_jp=report['fim']['jp']
+    if fh_cur and fh_jp and fh_cur['counts'][0]==fh_jp['counts'][0]:
+        report['fim']['per_message_section_equals_jp'] = cf[:fh_cur['section1_end']] == jf[:fh_jp['section1_end']]
     if args.current_msg and args.jp_msg:
         cm=read_arc(Path(args.current_msg)); jm=read_arc(Path(args.jp_msg))
         cqr=qrts_summary(cm); jqr=qrts_summary(jm)
@@ -145,6 +155,9 @@ def compare(args):
     if cg['count']!=jg['count']: failures.append(f'primary GSM slot count current={cg["count"]} != pristine JP={jg["count"]}')
     if len(cur['entries'])!=len(jp['entries']): failures.append(f'ARC entry count current={len(cur["entries"])} != pristine JP={len(jp["entries"])}')
     if low_current!=low_jp: failures.append('low-length/control slot index set drifted from pristine JP')
+    if not report['fim']['current']['shape_32_plus_c1x20_plus_c2x44']: failures.append('current FIM shape is not 32 + count1*20 + count2*44')
+    if report['fim']['current']['counts'] != report['fim']['jp']['counts']: failures.append('current FIM header counts differ from pristine JP')
+    if not report['fim']['per_message_section_equals_jp']: failures.append('current FIM per-message 20-byte section differs from pristine JP')
     if env_counts['UNSUPPORTED'] and not args.allow_unjustified_control: failures.append(f'{env_counts["UNSUPPORTED"]} control envelopes contain non-format mutations unsupported by pristine JP or official SH')
     if report['voice_companion'] and not report['voice_companion']['same_qrts']: failures.append('voice QRTS companion differs from pristine JP')
     report['status']='FAIL' if failures else 'PASS'; report['failures']=failures
@@ -163,6 +176,6 @@ def main():
     if a.csv:
         with open(a.csv,'w',newline='',encoding='utf-8') as f:
             w=csv.DictWriter(f,fieldnames=list(r['rows'][0].keys()) if r['rows'] else ['index']); w.writeheader(); w.writerows(r['rows'])
-    print(json.dumps({k:r[k] for k in ['status','arc_entry_counts','primary_gsm_counts','low_length_control_indices_le_6','payload_slot_classes','control_envelope_classes','voice_companion','failures']},indent=2))
+    print(json.dumps({k:r[k] for k in ['status','arc_entry_counts','primary_gsm_counts','low_length_control_indices_le_6','payload_slot_classes','control_envelope_classes','fim','voice_companion','failures']},indent=2))
     return 1 if r['status']=='FAIL' else 0
 if __name__=='__main__': raise SystemExit(main())
