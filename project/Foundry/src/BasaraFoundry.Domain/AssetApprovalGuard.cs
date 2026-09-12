@@ -1,12 +1,5 @@
 namespace BasaraFoundry.Domain;
 
-/// <summary>
-/// Opaque safety evidence created only by a certified production writer.
-/// The constructor is internal; the Domain assembly grants friendship only to
-/// the certified Utage format assembly. UI/worker callers can inspect evidence
-/// but cannot construct a successful token through the normal API surface.
-/// Evidence is bound to every production input that can change the built bytes.
-/// </summary>
 public sealed class AssetApprovalEvidence
 {
     public const string UtageBc3GraftArcProofKind = "utage-bc3-block-graft+target-shell+single-entry-arc-roundtrip:v2";
@@ -15,18 +8,10 @@ public sealed class AssetApprovalEvidence
         string targetResourceSha256, string pristineResourceSha256, string candidateSha256, string editMaskSha256,
         string finalResourceSha256, int memberIndex, string memberName, IReadOnlyList<string>? notes = null)
     {
-        ProductionWriteVerified = productionWriteVerified;
-        ProofKind = proofKind;
-        SourceArcSha256 = sourceArcSha256;
-        OutputArcSha256 = outputArcSha256;
-        TargetResourceSha256 = targetResourceSha256;
-        PristineResourceSha256 = pristineResourceSha256;
-        CandidateSha256 = candidateSha256;
-        EditMaskSha256 = editMaskSha256;
-        FinalResourceSha256 = finalResourceSha256;
-        MemberIndex = memberIndex;
-        MemberName = memberName;
-        Notes = notes ?? Array.Empty<string>();
+        ProductionWriteVerified = productionWriteVerified; ProofKind = proofKind; SourceArcSha256 = sourceArcSha256;
+        OutputArcSha256 = outputArcSha256; TargetResourceSha256 = targetResourceSha256; PristineResourceSha256 = pristineResourceSha256;
+        CandidateSha256 = candidateSha256; EditMaskSha256 = editMaskSha256; FinalResourceSha256 = finalResourceSha256;
+        MemberIndex = memberIndex; MemberName = memberName; Notes = notes ?? Array.Empty<string>();
     }
 
     public bool ProductionWriteVerified { get; }
@@ -56,15 +41,8 @@ public static class AssetApprovalGuard
     }
 
     public static AssetApprovalState Promote(AssetApprovalState current, AssetApprovalState requested, AssetApprovalEvidence? evidence)
-    {
-        EnsureCanTransition(current, requested, evidence);
-        return requested;
-    }
+    { EnsureCanTransition(current, requested, evidence); return requested; }
 
     private static bool IsSha256(string value)
-    {
-        if (value is null || value.Length != 64) return false;
-        foreach (var c in value) if (!Uri.IsHexDigit(c)) return false;
-        return true;
-    }
+    { if (value is null || value.Length != 64) return false; foreach (var c in value) if (!Uri.IsHexDigit(c)) return false; return true; }
 }
