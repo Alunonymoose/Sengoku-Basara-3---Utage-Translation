@@ -16,6 +16,7 @@ internal static class Program
             TestAmbiguousParent(root);
             TestMissingRoute(root);
             TestSelectedRootIndexIsolation(root);
+            TestDistinctRouteGate(root);
             Console.WriteLine("Route resolution smoke tests passed.");
             return 0;
         }
@@ -38,7 +39,7 @@ internal static class Program
         var resolvedJpn = UtageRouteResolver.Resolve(game, UtageContentRoute.Japanese);
         Equal(Path.GetFullPath(eng), resolvedEng.RouteRoot, "parent game root resolves English route only");
         Equal(Path.GetFullPath(jpn), resolvedJpn.RouteRoot, "parent game root resolves Japanese route only");
-        True(!PathsEqual(resolvedEng.RouteRoot, resolvedJpn.RouteRoot), "English and Japanese routes remain distinct");
+        True(!UtageRouteResolver.PathsEqual(resolvedEng.RouteRoot, resolvedJpn.RouteRoot), "English and Japanese routes remain distinct");
     }
 
     private static void TestExactRoute(string sandbox)
@@ -99,17 +100,32 @@ internal static class Program
             "Japanese route scan path stays under jpn");
     }
 
+    private static void TestDistinctRouteGate(string sandbox)
+    {
+        var game = Path.Combine(sandbox, "distinct-game");
+        var eng = Path.Combine(game, "PS3_GAME", "USRDIR", "nativePS3", "rom", "eng");
+        var jpn = Path.Combine(game, "PS3_GAME", "USRDIR", "nativePS3", "rom", "jpn");
+        MakeRoute(eng);
+        MakeRoute(jpn);
+
+        UtageRouteResolver.RequireDistinct(
+            game, UtageContentRoute.English,
+            game, UtageContentRoute.Japanese,
+            "Original JP");
+        Console.WriteLine("PASS same game-root ENG and JPN resolve as distinct content routes");
+
+        Throws<InvalidDataException>(() => UtageRouteResolver.RequireDistinct(
+            game, UtageContentRoute.English,
+            game, UtageContentRoute.English,
+            "Samurai Heroes"),
+            "same ENG route cannot masquerade as a reference source");
+    }
+
     private static void MakeRoute(string path)
     {
         Directory.CreateDirectory(path);
         File.WriteAllBytes(Path.Combine(path, "basara.arc"), [0]);
     }
-
-    private static bool PathsEqual(string left, string right) =>
-        string.Equals(
-            Path.TrimEndingDirectorySeparator(Path.GetFullPath(left)),
-            Path.TrimEndingDirectorySeparator(Path.GetFullPath(right)),
-            OperatingSystem.IsWindows() ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal);
 
     private static void Equal<T>(T expected, T actual, string label) where T : notnull
     {

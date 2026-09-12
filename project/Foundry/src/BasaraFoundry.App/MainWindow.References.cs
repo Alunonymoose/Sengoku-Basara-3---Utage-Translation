@@ -13,6 +13,7 @@ public sealed partial class MainWindow
         await LoadOneReferenceAsync(
             label: "Original JP",
             root: _project?.Sources.UtageJapanese,
+            route: UtageContentRoute.Japanese,
             cacheFileName: "utage-jpn.index.json",
             currentResource,
             setIndex: index => _japaneseIndex = index,
@@ -24,6 +25,7 @@ public sealed partial class MainWindow
         await LoadOneReferenceAsync(
             label: "Samurai Heroes",
             root: _project?.Sources.SamuraiHeroes,
+            route: UtageContentRoute.English,
             cacheFileName: "samurai-heroes.index.json",
             currentResource,
             setIndex: index => _samuraiHeroesIndex = index,
@@ -36,6 +38,7 @@ public sealed partial class MainWindow
     private async Task LoadOneReferenceAsync(
         string label,
         string? root,
+        UtageContentRoute route,
         string cacheFileName,
         IndexedUtageResource currentResource,
         Action<UtageAssetIndex> setIndex,
@@ -55,6 +58,8 @@ public sealed partial class MainWindow
         try
         {
             root = Path.GetFullPath(root);
+            RequireDistinctReferenceRoute(root, route, label);
+
             var index = getIndex();
             if (index is null || !PathsEqual(index.Root, root))
             {
@@ -62,7 +67,7 @@ public sealed partial class MainWindow
                     Path.GetDirectoryName(_projectPath)!,
                     "cache",
                     cacheFileName);
-                await RunIndexWorkerAsync(root, snapshotPath);
+                await RunRoutedIndexWorkerAsync(root, snapshotPath, route);
                 index = LoadIndexSnapshot(snapshotPath, root);
                 setIndex(index);
             }

@@ -74,6 +74,28 @@ public static class UtageRouteResolver
             $"Could not resolve one {leaf} ARC route below '{selected}'. Choose the exact rom/{leaf} folder or a parent containing one standard nativePS3 route.");
     }
 
+    public static void RequireDistinct(
+        string firstSelectedRoot,
+        UtageContentRoute firstRoute,
+        string secondSelectedRoot,
+        UtageContentRoute secondRoute,
+        string secondLabel)
+    {
+        var first = Resolve(firstSelectedRoot, firstRoute);
+        var second = Resolve(secondSelectedRoot, secondRoute);
+        if (PathsEqual(first.RouteRoot, second.RouteRoot))
+        {
+            throw new InvalidDataException(
+                $"{secondLabel} resolves to the same content route as the primary source. Choose a genuinely separate source/reference route.");
+        }
+    }
+
+    public static bool PathsEqual(string left, string right) =>
+        string.Equals(
+            Path.TrimEndingDirectorySeparator(Path.GetFullPath(left)),
+            Path.TrimEndingDirectorySeparator(Path.GetFullPath(right)),
+            OperatingSystem.IsWindows() ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal);
+
     private static bool LooksLikeArcRoute(string path)
     {
         if (!Directory.Exists(path))
