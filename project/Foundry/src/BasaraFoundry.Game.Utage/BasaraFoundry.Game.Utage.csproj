@@ -5,6 +5,7 @@
     <AssemblyName>BasaraFoundry.Game.Utage</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="BCnEncoder.Net" Version="2.3.0" />
     <ProjectReference Include="..\BasaraFoundry.Domain\BasaraFoundry.Domain.csproj" />
   </ItemGroup>
 </Project>
