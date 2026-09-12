@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://basara-foundry.local/schemas/project-v1.schema.json",
+  "title": "BASARA Foundry Project v1",
+  "type": "object",
+  "required": ["schema", "projectName", "target", "sources", "rules"],
+  "properties": {
+    "schema": { "const": 1 },
+    "projectName": { "type": "string", "minLength": 1 },
+    "target": { "const": "SB3U_PS3" },
+    "sources": {
+      "type": "object",
+      "required": ["utageEnglish", "utageJapanese", "samuraiHeroes", "sumeragiReference"],
+      "properties": {
+        "utageEnglish": { "type": ["string", "null"] },
+        "utageJapanese": { "type": ["string", "null"] },
+        "samuraiHeroes": { "type": ["string", "null"] },
+        "sumeragiReference": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "rules": {
+      "type": "object",
+      "required": [
+        "canonicalSourcesReadOnly",
+        "artRequiresApproval",
+        "dependencyAuditRequired",
+        "runtimeEvidenceRequiredForRuntimeVerified",
+        "rejectUnexpectedPixelsOutsideEditMask"
+      ],
+      "properties": {
+        "canonicalSourcesReadOnly": { "const": true },
+        "artRequiresApproval": { "const": true },
+        "dependencyAuditRequired": { "const": true },
+        "runtimeEvidenceRequiredForRuntimeVerified": { "const": true },
+        "rejectUnexpectedPixelsOutsideEditMask": { "const": true }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

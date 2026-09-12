@@ -1,0 +1,44 @@
+name: Foundry CI
+
+on:
+  push:
+    branches: [ foundry-v0.1 ]
+    paths:
+      - 'project/Foundry/**'
+      - '.github/workflows/foundry-ci.yml'
+  pull_request:
+    paths:
+      - 'project/Foundry/**'
+      - '.github/workflows/foundry-ci.yml'
+
+jobs:
+  core-and-smoke:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: project/Foundry
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Toolchain
+        run: dotnet --info
+      - name: Build core
+        run: dotnet build src/BasaraFoundry.Game.Utage/BasaraFoundry.Game.Utage.csproj -c Release
+      - name: Run smoke tests
+        run: dotnet run --project tests/BasaraFoundry.SmokeTests/BasaraFoundry.SmokeTests.csproj -c Release
+
+  winui-shell:
+    needs: core-and-smoke
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: project/Foundry
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Build WinUI shell
+        run: dotnet build src/BasaraFoundry.App/BasaraFoundry.App.csproj -c Release

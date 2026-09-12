@@ -1,0 +1,19 @@
+{
+  "$schema": "./schemas/project-v1.schema.json",
+  "schema": 1,
+  "projectName": "Sengoku BASARA 3 Utage English",
+  "target": "SB3U_PS3",
+  "sources": {
+    "utageEnglish": null,
+    "utageJapanese": null,
+    "samuraiHeroes": null,
+    "sumeragiReference": null
+  },
+  "rules": {
+    "canonicalSourcesReadOnly": true,
+    "artRequiresApproval": true,
+    "dependencyAuditRequired": true,
+    "runtimeEvidenceRequiredForRuntimeVerified": true,
+    "rejectUnexpectedPixelsOutsideEditMask": true
+  }
+}
