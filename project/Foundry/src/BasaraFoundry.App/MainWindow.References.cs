@@ -29,10 +29,7 @@ public sealed partial class MainWindow
             return;
         _samuraiHeroesProductionResource = resource;
         _samuraiHeroesProductionPreview = preview;
-        GenerateReplacementButton.IsEnabled =
-            preview.CanEncode &&
-            preview.Width == _activeWidth &&
-            preview.Height == _activeHeight;
+        RefreshGenerateReplacementAvailability();
     }
 
     private async Task LoadReferencePreviewsAsync(IndexedUtageResource currentResource, long reviewGeneration)
@@ -70,6 +67,9 @@ public sealed partial class MainWindow
             setPlaceholder: visible => SamuraiHeroesPlaceholder.Visibility = visible ? Visibility.Visible : Visibility.Collapsed,
             setMeta: text => SamuraiHeroesMeta.Text = text,
             onResolved: (resource, preview) => SetSamuraiHeroesProductionReference(resource, preview, reviewGeneration));
+
+        if (IsReviewCurrent(reviewGeneration))
+            RefreshGenerateReplacementAvailability();
     }
 
     private async Task LoadOneReferenceAsync(
