@@ -19,6 +19,14 @@ public sealed record IndexedUtageArchive(
 
 public sealed record UtageIndexIssue(string RelativePath, string ErrorType, string Message);
 
+public sealed record UtageIndexSnapshot(
+    int Schema,
+    string Root,
+    DateTimeOffset CreatedAtUtc,
+    IReadOnlyList<IndexedUtageArchive> Archives,
+    IReadOnlyList<IndexedUtageResource> Resources,
+    IReadOnlyList<UtageIndexIssue> Issues);
+
 public sealed record LayoutTextureReference(
     string ArchivePath,
     string LayoutResource,
@@ -45,6 +53,14 @@ public sealed class UtageAssetIndex
     public IReadOnlyList<IndexedUtageArchive> Archives { get; }
     public IReadOnlyList<IndexedUtageResource> Resources { get; }
     public IReadOnlyList<UtageIndexIssue> Issues { get; }
+
+    public UtageIndexSnapshot ToSnapshot(DateTimeOffset createdAtUtc) => new(
+        Schema: 1,
+        Root: Root,
+        CreatedAtUtc: createdAtUtc,
+        Archives: Archives,
+        Resources: Resources,
+        Issues: Issues);
 
     public IReadOnlyList<AssetSearchHit> Search(string query, int limit = 50)
     {
