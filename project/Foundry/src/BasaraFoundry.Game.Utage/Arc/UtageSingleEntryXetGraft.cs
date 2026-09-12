@@ -24,6 +24,8 @@ public sealed record SingleEntryXetGraftAudit(
     int BlocksReplaced,
     int MaskPixels,
     int OutsideMaskPixelDelta,
+    int OutsideEffectiveBlockPixelDelta,
+    int CompressionCollateralPixels,
     bool TargetShellPreserved,
     bool UsedPristineOverride,
     bool GraftOk,
@@ -41,12 +43,9 @@ public sealed record SingleEntryXetGraftResult(
 
 /// <summary>
 /// Certified production transaction for one XET member inside one Utage ARC.
-///
-/// The selected ARC/member owns the output container identity. Production
-/// artwork MUST be based on an explicitly supplied pristine counterpart XET
-/// (normally Japanese), but the pristine XET must never replace the target
-/// shell wholesale. The final XET is constructed from the target shell plus
-/// the certified pristine/grafted top-level image payload.
+/// The selected target owns output container identity; pristine JPN supplies
+/// trusted image payload bytes; only approved touched BC3 blocks come from the
+/// localized candidate.
 /// </summary>
 public static class UtageSingleEntryXetGraft
 {
@@ -75,10 +74,7 @@ public static class UtageSingleEntryXetGraft
 
         var entry = archive.Entries[memberIndex];
         if (entry.TypeHash != UtageTypeHashes.Texture)
-        {
-            throw new InvalidDataException(
-                $"ARC member {memberIndex} ('{entry.Name}') is {UtageTypeHashes.Label(entry.TypeHash)}, not a certified texture member.");
-        }
+            throw new InvalidDataException($"ARC member {memberIndex} ('{entry.Name}') is {UtageTypeHashes.Label(entry.TypeHash)}, not a certified texture member.");
 
         sourceStream.Position = 0;
         var targetXet = UtageArcReader.ReadDecompressedPayload(sourceStream, entry);
@@ -86,31 +82,28 @@ public static class UtageSingleEntryXetGraft
 
         var graft = UtageBc3BlockGraft.GraftTopLevel(pristineBytes, candidateBytes, maskBytes);
         if (!graft.Report.Ok)
-        {
-            throw new InvalidOperationException(
-                "BC3 production graft failed: " + string.Join(" | ", graft.Report.Notes));
-        }
+            throw new InvalidOperationException("BC3 production graft failed: " + string.Join(" | ", graft.Report.Notes));
 
-        // Critical ownership rule: preserve the exact target XET shell/header and
-        // only replace the certified top-level image payload range with the
-        // pristine-derived block graft. Never transplant the pristine donor XET
-        // wholesale into the live target ARC.
         var finalXet = targetXet.ToArray();
         var targetInfo = compatibility.Target;
         var pristineInfo = compatibility.Pristine;
         var payloadLength = compatibility.TopLevelPayloadLength;
-        graft.XetBytes.AsSpan(pristineInfo.TextureOffset, payloadLength)
-            .CopyTo(finalXet.AsSpan(targetInfo.TextureOffset, payloadLength));
+
+        graft.GraftedPayload.AsSpan().CopyTo(finalXet.AsSpan(targetInfo.TextureOffset, payloadLength));
 
         if (!finalXet.AsSpan(0, targetInfo.TextureOffset).SequenceEqual(targetXet.AsSpan(0, targetInfo.TextureOffset)))
             throw new InvalidDataException("Target XET shell/header changed during production graft.");
-        if (!finalXet.AsSpan(targetInfo.TextureOffset + payloadLength)
-                .SequenceEqual(targetXet.AsSpan(targetInfo.TextureOffset + payloadLength)))
+        if (!finalXet.AsSpan(targetInfo.TextureOffset + payloadLength).SequenceEqual(targetXet.AsSpan(targetInfo.TextureOffset + payloadLength)))
             throw new InvalidDataException("Target XET bytes after the certified payload range changed during production graft.");
+
+        var finalDecode = UtageXetCodec.DecodeTopLevel(finalXet);
+        if (graft.VerificationDecode is null || !finalDecode.Rgba.AsSpan().SequenceEqual(graft.VerificationDecode.Rgba))
+            throw new InvalidDataException("Target-shell final XET decode differs from the verified pristine-shell graft decode.");
+        if (graft.Report.OutsideEffectiveBlockPixelDelta != 0)
+            throw new InvalidDataException($"Final decoded output changed {graft.Report.OutsideEffectiveBlockPixelDelta} pixels outside the effective BC3 block mask.");
 
         var replacements = new Dictionary<int, byte[]> { [memberIndex] = finalXet };
         var build = UtageArcWriter.Rebuild(sourceBytes, replacements);
-
         if (build.ReplacedMemberCount != 1)
             throw new InvalidDataException($"Expected one replaced ARC member, got {build.ReplacedMemberCount}.");
 
@@ -137,17 +130,17 @@ public static class UtageSingleEntryXetGraft
         var notes = new List<string>(graft.Report.Notes)
         {
             "production artwork base = explicit pristine counterpart XET image payload",
-            "selected target XET owns and preserves output shell/header/container identity",
+            "selected target XET owns output shell/header/container identity",
             $"certified top-level payload bytes copied = {payloadLength}",
-            "bytes before target textureOffset preserved exactly from target XET",
-            "bytes after certified top-level payload preserved exactly from target XET",
+            "target XET shell and non-payload bytes preserved exactly",
+            "target-shell final decode equals verified pristine-shell graft decode",
             "single ARC member replacement verified",
             "all non-target ARC stored payloads verified unchanged by UtageArcWriter",
             "source ARC retained as immutable input; output is build bytes",
         };
 
         var approvalEvidence = new AssetApprovalEvidence(
-            productionWriteVerified: graft.Report.Ok && roundTripVerified,
+            productionWriteVerified: graft.Report.Ok && roundTripVerified && graft.Report.OutsideEffectiveBlockPixelDelta == 0,
             proofKind: AssetApprovalEvidence.UtageBc3GraftArcProofKind,
             sourceArcSha256: sourceArcHash,
             outputArcSha256: outputArcHash,
@@ -160,11 +153,8 @@ public static class UtageSingleEntryXetGraft
             memberName: entry.Name,
             notes: notes);
 
-        AssetApprovalGuard.EnsureCanTransition(
-            AssetApprovalState.Review,
-            AssetApprovalState.Approved,
-            approvalEvidence);
-        notes.Add("domain approval guard accepted the opaque, fully input-bound production proof");
+        AssetApprovalGuard.EnsureCanTransition(AssetApprovalState.Review, AssetApprovalState.Approved, approvalEvidence);
+        notes.Add("domain approval guard accepted opaque proof bound to target/pristine/candidate/mask/final hashes");
 
         var audit = new SingleEntryXetGraftAudit(
             Schema: AuditSchema,
@@ -185,6 +175,8 @@ public static class UtageSingleEntryXetGraft
             BlocksReplaced: graft.Report.BlocksReplaced,
             MaskPixels: graft.Report.MaskPixels,
             OutsideMaskPixelDelta: graft.Report.OutsideMaskPixelDelta,
+            OutsideEffectiveBlockPixelDelta: graft.Report.OutsideEffectiveBlockPixelDelta,
+            CompressionCollateralPixels: graft.Report.CompressionCollateralPixels,
             TargetShellPreserved: true,
             UsedPristineOverride: true,
             GraftOk: graft.Report.Ok,
@@ -192,17 +184,8 @@ public static class UtageSingleEntryXetGraft
             ApprovedEligible: true,
             Notes: notes);
 
-        var auditJson = JsonSerializer.Serialize(
-            audit,
-            new JsonSerializerOptions { WriteIndented = true });
-
-        return new SingleEntryXetGraftResult(
-            build.Bytes,
-            auditJson,
-            audit,
-            graft,
-            build,
-            approvalEvidence);
+        var auditJson = JsonSerializer.Serialize(audit, new JsonSerializerOptions { WriteIndented = true });
+        return new SingleEntryXetGraftResult(build.Bytes, auditJson, audit, graft, build, approvalEvidence);
     }
 
     private static XetCompatibility EnsureCompatibleTarget(ReadOnlySpan<byte> targetXet, ReadOnlySpan<byte> pristineXet)
@@ -210,13 +193,13 @@ public static class UtageSingleEntryXetGraft
         var target = UtageXetReader.ReadInfo(targetXet);
         var pristine = UtageXetReader.ReadInfo(pristineXet);
 
-        if (target.Version != pristine.Version ||
-            target.Width != pristine.Width ||
-            target.Height != pristine.Height ||
-            target.FormatCode != pristine.FormatCode ||
-            target.MipCount != pristine.MipCount ||
-            target.Swizzle != pristine.Swizzle ||
-            target.TextureOffset != pristine.TextureOffset)
+        if (target.Version != pristine.Version || target.Swizzle != pristine.Swizzle ||
+            target.Reserved != pristine.Reserved || target.AlphaFlags != pristine.AlphaFlags ||
+            target.MipCount != pristine.MipCount || target.Width != pristine.Width || target.Height != pristine.Height ||
+            target.ImageCount != pristine.ImageCount || target.FormatCode != pristine.FormatCode ||
+            target.Unknown3 != pristine.Unknown3 || target.TextureOffset != pristine.TextureOffset ||
+            target.BlockFormat != pristine.BlockFormat || target.BlockSizeBytes != pristine.BlockSizeBytes ||
+            target.TopLevelSizeBytes != pristine.TopLevelSizeBytes)
         {
             throw new InvalidDataException(
                 "Pristine counterpart XET is not structurally compatible with the selected target texture. " +
@@ -226,25 +209,22 @@ public static class UtageSingleEntryXetGraft
         UtageXetCodec.RequireEncodingCapability(pristine);
         UtageXetCodec.RequireEncodingCapability(target);
 
-        var payloadLength = UtageXetCodec.TopLevelEncodedSize(pristine);
-        if (target.TextureOffset < 0 || pristine.TextureOffset < 0 ||
-            target.TextureOffset + payloadLength > targetXet.Length ||
-            pristine.TextureOffset + payloadLength > pristineXet.Length)
-        {
-            throw new InvalidDataException("Target/pristine XET does not contain the complete certified top-level image payload range.");
-        }
+        var payloadLength = pristine.TopLevelSizeBytes
+            ?? throw new NotSupportedException("XET encoded top-level byte size is unknown.");
+        var targetEnd = checked(target.TextureOffset + payloadLength);
+        var pristineEnd = checked(pristine.TextureOffset + payloadLength);
+
+        if (target.MipCount > 1 || pristine.MipCount > 1 || targetXet.Length != targetEnd || pristineXet.Length != pristineEnd)
+            throw new NotSupportedException("Target-shell graft v0.1 is single-level only and refuses trailing or multi-mip XET data.");
 
         return new XetCompatibility(target, pristine, payloadLength);
     }
 
     private static string Describe(UtageXetInfo info) =>
-        $"v=0x{info.Version:X2} {info.Width}x{info.Height} fmt=0x{info.FormatCode:X2} mip={info.MipCount} swizzle={info.Swizzle} offset={info.TextureOffset}";
+        $"v=0x{info.Version:X2} {info.Width}x{info.Height} fmt=0x{info.FormatCode:X2} mip={info.MipCount} swizzle={info.Swizzle} " +
+        $"reserved={info.Reserved} alpha={info.AlphaFlags} images={info.ImageCount} unk3=0x{info.Unknown3:X4} offset={info.TextureOffset}";
 
-    private static string Sha256(ReadOnlySpan<byte> bytes) =>
-        Convert.ToHexString(SHA256.HashData(bytes)).ToLowerInvariant();
+    private static string Sha256(ReadOnlySpan<byte> bytes) => Convert.ToHexString(SHA256.HashData(bytes)).ToLowerInvariant();
 
-    private sealed record XetCompatibility(
-        UtageXetInfo Target,
-        UtageXetInfo Pristine,
-        int TopLevelPayloadLength);
+    private sealed record XetCompatibility(UtageXetInfo Target, UtageXetInfo Pristine, int TopLevelPayloadLength);
 }
