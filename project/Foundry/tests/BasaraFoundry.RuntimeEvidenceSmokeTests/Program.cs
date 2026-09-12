@@ -60,6 +60,63 @@ internal static class Program
             () => RuntimeVerificationGuard.EnsureValidForBuild("RPCS3", outputArcHash, forgedBuildId),
             "forged build ID is rejected");
 
+        // Shared-resource builds must be certified as a complete synchronized set.
+        // Binding only the active ARC would reintroduce the cockpit1P/cockpit2P/
+        // vs_cockpit failure class, so the runtime evidence has a separate contract.
+        var buildSetHash = new string('c', 64);
+        var otherBuildSetHash = new string('d', 64);
+        var anchorArcHash = new string('e', 64);
+        var otherAnchorArcHash = new string('f', 64);
+        var setEvidence = OwnerSetRuntimeVerificationGuard.CreateEvidence(
+            runtime: "RPCS3",
+            buildSetSha256: buildSetHash,
+            anchorOutputArcSha256: anchorArcHash,
+            screenshotBytes: screenshot,
+            screenshotPath: "runtime-evidence/set/screenshot.png",
+            capturedAtUtc: captured,
+            notes: "all synchronized cockpit owners installed together");
+
+        Equal(OwnerSetRuntimeVerificationGuard.EvidenceSchema, setEvidence.Schema, "owner-set runtime evidence schema");
+        Equal("sb3u-set-cccccccccccccccc", setEvidence.BuildId, "owner-set build ID derives from complete set hash");
+        Equal(buildSetHash, setEvidence.BuildSetSha256, "owner-set evidence binds exact BuildSetSha256");
+        Equal(anchorArcHash, setEvidence.AnchorOutputArcSha256, "owner-set evidence also binds reviewed anchor ARC");
+        OwnerSetRuntimeVerificationGuard.EnsureValidForBuild("RPCS3", buildSetHash, anchorArcHash, setEvidence);
+        OwnerSetRuntimeVerificationGuard.VerifyScreenshotBytes(setEvidence, screenshot);
+        Equal(
+            AssetApprovalState.RuntimeVerified,
+            OwnerSetRuntimeVerificationGuard.PromoteToRuntimeVerified(
+                AssetApprovalState.Built,
+                "RPCS3",
+                buildSetHash,
+                anchorArcHash,
+                setEvidence),
+            "Built owner set promotes with matching set-bound evidence");
+
+        Throws<InvalidOperationException>(
+            () => OwnerSetRuntimeVerificationGuard.EnsureValidForBuild("RPCS3", otherBuildSetHash, anchorArcHash, setEvidence),
+            "owner-set evidence from another complete build set is rejected");
+        Throws<InvalidOperationException>(
+            () => OwnerSetRuntimeVerificationGuard.EnsureValidForBuild("RPCS3", buildSetHash, otherAnchorArcHash, setEvidence),
+            "owner-set evidence from another anchor ARC is rejected");
+        Throws<InvalidOperationException>(
+            () => OwnerSetRuntimeVerificationGuard.EnsureValidForBuild("Real PS3", buildSetHash, anchorArcHash, setEvidence),
+            "owner-set evidence from another runtime is rejected");
+        Throws<InvalidOperationException>(
+            () => OwnerSetRuntimeVerificationGuard.PromoteToRuntimeVerified(
+                AssetApprovalState.Approved,
+                "RPCS3",
+                buildSetHash,
+                anchorArcHash,
+                setEvidence),
+            "owner-set RuntimeVerified cannot skip Built state");
+        Throws<InvalidOperationException>(
+            () => OwnerSetRuntimeVerificationGuard.VerifyScreenshotBytes(setEvidence, tamperedScreenshot),
+            "owner-set evidence rejects tampered screenshot bytes");
+        var forgedSetBuildId = setEvidence with { BuildId = "sb3u-set-deadbeefdeadbeef" };
+        Throws<InvalidOperationException>(
+            () => OwnerSetRuntimeVerificationGuard.EnsureValidForBuild("RPCS3", buildSetHash, anchorArcHash, forgedSetBuildId),
+            "forged owner-set build ID is rejected");
+
         Console.WriteLine("Runtime evidence smoke tests passed.");
         return 0;
     }
