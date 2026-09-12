@@ -53,7 +53,6 @@ internal static class Program
                 mask[y * width + x] = 1;
         }
 
-        // Domain rect mask converts to the same flat mask.
         var fromRects = EditMaskCodec.ToMask01(
             new EditMask([new PixelRect(1, 1, 3, 3)]),
             width,
@@ -70,27 +69,46 @@ internal static class Program
         var rejected = UtageBc3BlockGraft.GraftTopLevel(pristineXet, bad, mask);
         True(!rejected.Report.Ok, "rejects outside-mask changes");
 
-        // ENG-like member bytes that differ outside the mask must not be the art base
-        // when a JPN override is supplied — override is the pristine decode base.
+        // Simulate an already-damaged ENG texture. Corrupt block (2,0), which is
+        // outside the candidate's edit block. Production must still take that
+        // untouched block from the pristine Japanese XET, never from ENG.
         var engMemberRgba = pristineDecoded.ToArray();
-        engMemberRgba[0] ^= 0x11; // outside mask corruption on ENG member art
+        engMemberRgba[(0 * width + 8) * 4] ^= 0x55;
         var engMemberXet = BuildXetFromRgba(engMemberRgba, width, height);
         var sourceArc = BuildSingleEntryArc("roulette_000_ID_HQ", engMemberXet);
         var sourceArcSnapshot = sourceArc.ToArray();
 
+        Throws<ArgumentException>(
+            () => UtageSingleEntryXetGraft.BuildSibling(
+                sourceArc,
+                0,
+                Array.Empty<byte>(),
+                candidate,
+                mask),
+            "production transaction rejects missing pristine counterpart");
+
         var tx = UtageSingleEntryXetGraft.BuildSibling(
             sourceArc,
             memberIndex: 0,
+            pristineXet,
             candidate,
             mask,
-            pristineXetOverride: pristineXet,
-            createdAtUtc: new DateTimeOffset(2026, 9, 12, 0, 0, 0, TimeSpan.Zero));
+            new DateTimeOffset(2026, 9, 12, 0, 0, 0, TimeSpan.Zero));
 
         True(sourceArc.AsSpan().SequenceEqual(sourceArcSnapshot), "source ARC remains byte-identical");
-        True(tx.Audit.UsedPristineOverride, "audit records pristine override");
+        True(tx.Audit.UsedPristineOverride, "audit records mandatory pristine base");
+        True(!tx.Audit.TargetResourceSha256.Equals(tx.Audit.PristineBaseSha256, StringComparison.Ordinal), "audit proves ENG target and JPN base differ");
         True(tx.Audit.GraftOk && tx.Audit.ArcRoundTripVerified && tx.Audit.ApprovedEligible, "transaction fully verified");
-        True(!string.IsNullOrWhiteSpace(tx.ApprovalEvidence.SourceArcSha256), "evidence bound to source hash");
-        True(!string.IsNullOrWhiteSpace(tx.ApprovalEvidence.OutputArcSha256), "evidence bound to output hash");
+        Equal(tx.Audit.SourceArcSha256, tx.ApprovalEvidence.SourceArcSha256, "evidence bound to source ARC hash");
+        Equal(tx.Audit.OutputArcSha256, tx.ApprovalEvidence.OutputArcSha256, "evidence bound to output ARC hash");
+        Equal(tx.Audit.MemberName, tx.ApprovalEvidence.MemberName, "evidence bound to member identity");
+
+        // The public API must expose no constructor/factory capable of minting a
+        // successful approval token. Only the friend Utage format assembly can.
+        True(typeof(AssetApprovalEvidence).GetConstructors().Length == 0, "approval evidence has no public constructor");
+        True(!typeof(AssetApprovalEvidence)
+            .GetMethods(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
+            .Any(m => m.ReturnType == typeof(AssetApprovalEvidence)), "approval evidence has no public minting factory");
 
         var review = AssetApprovalGuard.Promote(
             AssetApprovalState.Draft,
@@ -102,23 +120,14 @@ internal static class Program
             () => AssetApprovalGuard.Promote(
                 AssetApprovalState.Review,
                 AssetApprovalState.Approved,
-                new AssetApprovalEvidence(true, "forged-proof")),
-            "approval rejected for unknown proof kind");
-
-        Throws<InvalidOperationException>(
-            () => AssetApprovalGuard.Promote(
-                AssetApprovalState.Review,
-                AssetApprovalState.Approved,
-                new AssetApprovalEvidence(
-                    true,
-                    AssetApprovalEvidence.UtageBc3GraftArcProofKind)),
-            "approval rejected when proof kind is known but hashes are missing");
+                null),
+            "approval rejected without certified evidence");
 
         var approved = AssetApprovalGuard.Promote(
             AssetApprovalState.Review,
             AssetApprovalState.Approved,
             tx.ApprovalEvidence);
-        Equal(AssetApprovalState.Approved, approved, "approval accepted with bound graft+ARC proof");
+        Equal(AssetApprovalState.Approved, approved, "approval accepted with opaque bound graft+ARC proof");
 
         var root = Path.Combine(Path.GetTempPath(), $"basara-foundry-sibling-{Guid.NewGuid():N}");
         Directory.CreateDirectory(root);
