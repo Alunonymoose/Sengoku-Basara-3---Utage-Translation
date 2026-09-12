@@ -4,6 +4,7 @@
     <Project Path="src/BasaraFoundry.Domain/BasaraFoundry.Domain.csproj" />
     <Project Path="src/BasaraFoundry.Game.Utage/BasaraFoundry.Game.Utage.csproj" />
     <Project Path="src/BasaraFoundry.Project/BasaraFoundry.Project.csproj" />
+    <Project Path="src/BasaraFoundry.Worker/BasaraFoundry.Worker.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/BasaraFoundry.SmokeTests/BasaraFoundry.SmokeTests.csproj" />

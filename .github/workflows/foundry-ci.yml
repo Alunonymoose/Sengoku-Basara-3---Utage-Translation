@@ -30,6 +30,8 @@ jobs:
         run: dotnet --info
       - name: Build core
         run: dotnet build src/BasaraFoundry.Game.Utage/BasaraFoundry.Game.Utage.csproj -c Release
+      - name: Build isolated worker
+        run: dotnet build src/BasaraFoundry.Worker/BasaraFoundry.Worker.csproj -c Release
       - name: Run smoke tests
         run: dotnet run --project tests/BasaraFoundry.SmokeTests/BasaraFoundry.SmokeTests.csproj -c Release
 
@@ -46,6 +48,8 @@ jobs:
           dotnet-version: '10.0.x'
       - name: Publish self-contained WinUI alpha
         run: dotnet publish src/BasaraFoundry.App/BasaraFoundry.App.csproj -c Release -r win-x64 --self-contained true -o out/Foundry-win-x64
+      - name: Publish isolated indexing worker
+        run: dotnet publish src/BasaraFoundry.Worker/BasaraFoundry.Worker.csproj -c Release -r win-x64 --self-contained true -o out/Foundry-win-x64/worker
       - name: Write build provenance
         shell: pwsh
         run: |
@@ -57,6 +61,7 @@ jobs:
             target = 'win-x64'
             framework = 'net10.0'
             windows_app_sdk = '2.4.0'
+            worker = 'worker/BasaraFoundry.Worker.exe'
           } | ConvertTo-Json
           Set-Content -Path 'out/Foundry-win-x64/FOUNDry_BUILD.json' -Value $manifest -Encoding utf8
       - uses: actions/upload-artifact@v4
