@@ -12,5 +12,8 @@
     <Project Path="tests/BasaraFoundry.ReferenceSmokeTests/BasaraFoundry.ReferenceSmokeTests.csproj" />
     <Project Path="tests/BasaraFoundry.RoundTripSmokeTests/BasaraFoundry.RoundTripSmokeTests.csproj" />
     <Project Path="tests/BasaraFoundry.RouteSmokeTests/BasaraFoundry.RouteSmokeTests.csproj" />
+    <Project Path="tests/BasaraFoundry.GraftSmokeTests/BasaraFoundry.GraftSmokeTests.csproj" />
+    <Project Path="tests/BasaraFoundry.RuntimeEvidenceSmokeTests/BasaraFoundry.RuntimeEvidenceSmokeTests.csproj" />
+    <Project Path="tests/BasaraFoundry.StyleKitSmokeTests/BasaraFoundry.StyleKitSmokeTests.csproj" />
   </Folder>
 </Solution>
