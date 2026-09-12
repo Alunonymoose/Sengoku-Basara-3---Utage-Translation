@@ -137,6 +137,16 @@ static bool PathsEqual(string left, string right)
     return string.Equals(Path.GetFullPath(left), Path.GetFullPath(right), comparison);
 }
 
+static bool ArchivePathsEqual(string left, string right)
+{
+    var normalizedLeft = left.Replace('\\', '/');
+    var normalizedRight = right.Replace('\\', '/');
+    var comparison = OperatingSystem.IsWindows()
+        ? StringComparison.OrdinalIgnoreCase
+        : StringComparison.Ordinal;
+    return normalizedLeft.Equals(normalizedRight, comparison);
+}
+
 static bool TryCommonPreviewArgs(
     string[] args,
     out string root,
@@ -280,6 +290,30 @@ try
         if (PathsEqual(root, pristineRoot))
             throw new InvalidOperationException("Production graft requires a distinct pristine counterpart root; ENG cannot certify itself as JPN artwork authority.");
 
+        // Production edits are not allowed to pretend a duplicated internal
+        // resource is owned by only the selected ARC. This is the exact class
+        // of failure that previously left cockpit1P/cockpit2P/vs_cockpit out
+        // of sync. Until the synchronized owner-set transaction is invoked,
+        // the legacy single-owner command fails closed.
+        var engIndex = UtageAssetIndexer.IndexRoot(root);
+        var owners = engIndex.FindOwners(name, UtageTypeHashes.Texture);
+        if (owners.Count == 0)
+            throw new InvalidDataException("Production owner audit could not rediscover the selected texture in the ENG source root.");
+        if (!owners.Any(owner =>
+                owner.EntryIndex == entryIndex &&
+                ArchivePathsEqual(owner.ArchivePath, archive) &&
+                owner.ResourceName.Equals(name, StringComparison.Ordinal)))
+        {
+            throw new InvalidDataException("Production owner audit does not contain the selected ARC/member identity; reindex before building.");
+        }
+        if (owners.Count > 1)
+        {
+            var ownerList = string.Join(", ", owners.Select(owner => $"{owner.ArchivePath}#{owner.EntryIndex}"));
+            throw new InvalidOperationException(
+                $"Resource '{name}' has {owners.Count} exact ENG owners. Refusing unsafe single-owner graft; " +
+                $"use a synchronized multi-owner build. Owners: {ownerList}");
+        }
+
         _ = ReadCertifiedTextureRaw(root, archive, entryIndex, name, out var sourceArcPath);
         var pristineXet = ReadCertifiedTextureRaw(
             pristineRoot,
@@ -327,6 +361,7 @@ try
             audit = auditPath,
             resource = transaction.Audit.MemberName,
             pristineResource = pristineName,
+            owners = owners.Count,
             blocksReplaced = transaction.Audit.BlocksReplaced,
             blocksTotal = transaction.Audit.BlocksTotal,
             outsideMaskPixelDelta = transaction.Audit.OutsideMaskPixelDelta,
