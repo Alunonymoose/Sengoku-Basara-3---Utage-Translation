@@ -11,6 +11,10 @@ on:
       - 'project/Foundry/**'
       - '.github/workflows/foundry-ci.yml'
 
+concurrency:
+  group: foundry-ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   core-and-smoke:
     runs-on: windows-latest
@@ -29,7 +33,7 @@ jobs:
       - name: Run smoke tests
         run: dotnet run --project tests/BasaraFoundry.SmokeTests/BasaraFoundry.SmokeTests.csproj -c Release
 
-  winui-shell:
+  winui-alpha:
     needs: core-and-smoke
     runs-on: windows-latest
     defaults:
@@ -40,5 +44,24 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.x'
-      - name: Build WinUI shell
-        run: dotnet build src/BasaraFoundry.App/BasaraFoundry.App.csproj -c Release
+      - name: Publish self-contained WinUI alpha
+        run: dotnet publish src/BasaraFoundry.App/BasaraFoundry.App.csproj -c Release -r win-x64 --self-contained true -o out/Foundry-win-x64
+      - name: Write build provenance
+        shell: pwsh
+        run: |
+          $manifest = @{
+            name = 'BASARA Foundry'
+            channel = 'foundry-v0.1'
+            git_commit = '${{ github.sha }}'
+            run_number = '${{ github.run_number }}'
+            target = 'win-x64'
+            framework = 'net10.0'
+            windows_app_sdk = '2.4.0'
+          } | ConvertTo-Json
+          Set-Content -Path 'out/Foundry-win-x64/FOUNDry_BUILD.json' -Value $manifest -Encoding utf8
+      - uses: actions/upload-artifact@v4
+        with:
+          name: BasaraFoundry-win-x64-${{ github.run_number }}
+          path: project/Foundry/out/Foundry-win-x64/**
+          if-no-files-found: error
+          retention-days: 14

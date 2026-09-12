@@ -4,108 +4,146 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="BASARA Foundry">
 
-    <Grid Padding="24" RowSpacing="18">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer x:Name="SetupPanel" Visibility="Visible">
+            <Grid MaxWidth="980" Padding="36" RowSpacing="22" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" ColumnSpacing="16">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <StackPanel>
-                <TextBlock Text="BASARA FOUNDRY" FontSize="28" FontWeight="SemiBold" />
-                <TextBlock Text="Utage-first translation workstation · v0.1 vertical slice" Opacity="0.65" />
-            </StackPanel>
-            <Border Grid.Column="1" CornerRadius="8" Padding="12,8" Background="#183F2A">
-                <TextBlock Text="CANONICAL SOURCES: READ ONLY" Foreground="#B9F6CA" FontWeight="SemiBold" />
-            </Border>
-        </Grid>
-
-        <Grid Grid.Row="1" ColumnSpacing="12">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <Border CornerRadius="8" Padding="14" BorderBrush="#404040" BorderThickness="1">
-                <TextBlock Text="Drop an RPCS3 screenshot here, or search for an asset…" Opacity="0.7" />
-            </Border>
-            <Button Grid.Column="1" Content="Search assets" Padding="18,10" />
-            <Button Grid.Column="2" Content="Open asset" Padding="18,10" />
-        </Grid>
-
-        <Grid Grid.Row="2" ColumnSpacing="10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
-            <Border Grid.Column="0" CornerRadius="10" BorderBrush="#3D3D3D" BorderThickness="1" Padding="12">
-                <StackPanel Spacing="8">
-                    <TextBlock Text="ORIGINAL JP" FontWeight="SemiBold" />
-                    <Border Height="360" Background="#171717" CornerRadius="6">
-                        <TextBlock Text="Source preview" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.55" />
-                    </Border>
+                <StackPanel Grid.Row="0" Spacing="5">
+                    <TextBlock Text="BASARA FOUNDRY" FontSize="31" FontWeight="SemiBold" />
+                    <TextBlock Text="Connect the source games once. Foundry never edits these folders directly." FontSize="15" Opacity="0.7" />
                 </StackPanel>
-            </Border>
 
-            <Border Grid.Column="1" CornerRadius="10" BorderBrush="#3D3D3D" BorderThickness="1" Padding="12">
-                <StackPanel Spacing="8">
-                    <TextBlock Text="CURRENT ENG" FontWeight="SemiBold" />
-                    <Border Height="360" Background="#171717" CornerRadius="6">
-                        <TextBlock Text="Current build" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.55" />
-                    </Border>
+                <Border Grid.Row="1" Padding="16" CornerRadius="9" Background="#182F24">
+                    <StackPanel Spacing="4">
+                        <TextBlock Text="CANONICAL SOURCES ARE READ ONLY" Foreground="#B9F6CA" FontWeight="SemiBold" />
+                        <TextBlock Text="All edits live in Foundry project files and generated builds. A source hash change invalidates stale work instead of silently rebasing it." Foreground="#D6F5E0" TextWrapping="Wrap" />
+                    </StackPanel>
+                </Border>
+
+                <StackPanel Grid.Row="2" Spacing="7">
+                    <TextBlock Text="Current Utage English" FontWeight="SemiBold" />
+                    <TextBlock Text="Your working nativePS3/rom/eng tree, or a higher folder containing it." Opacity="0.62" />
+                    <Grid ColumnSpacing="8">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+                        <TextBox x:Name="UtageEnglishBox" PlaceholderText="Choose the current English Utage root…" />
+                        <Button Grid.Column="1" Content="Browse…" Click="BrowseUtageEnglish_Click" />
+                    </Grid>
                 </StackPanel>
-            </Border>
 
-            <Border Grid.Column="2" CornerRadius="10" BorderBrush="#3D3D3D" BorderThickness="1" Padding="12">
-                <StackPanel Spacing="8">
-                    <TextBlock Text="SAMURAI HEROES" FontWeight="SemiBold" />
-                    <Border Height="360" Background="#171717" CornerRadius="6">
-                        <TextBlock Text="Official reference" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.55" />
-                    </Border>
+                <StackPanel Grid.Row="3" Spacing="7">
+                    <TextBlock Text="Pristine Utage Japanese" FontWeight="SemiBold" />
+                    <TextBlock Text="Artwork and binary-reference authority. This should not be your edited English tree." Opacity="0.62" />
+                    <Grid ColumnSpacing="8">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+                        <TextBox x:Name="UtageJapaneseBox" PlaceholderText="Choose the pristine Japanese Utage root…" />
+                        <Button Grid.Column="1" Content="Browse…" Click="BrowseUtageJapanese_Click" />
+                    </Grid>
                 </StackPanel>
-            </Border>
 
-            <Border Grid.Column="3" CornerRadius="10" BorderBrush="#5C8DD6" BorderThickness="2" Padding="12">
-                <StackPanel Spacing="8">
-                    <TextBlock Text="WORKING" FontWeight="SemiBold" />
-                    <Border Height="360" Background="#171717" CornerRadius="6">
-                        <TextBlock Text="Editable candidate" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.55" />
-                    </Border>
+                <StackPanel Grid.Row="4" Spacing="7">
+                    <TextBlock Text="Samurai Heroes" FontWeight="SemiBold" />
+                    <TextBlock Text="Official English donor/reference bank. Foundry treats matches as evidence, not automatic transplants." Opacity="0.62" />
+                    <Grid ColumnSpacing="8">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+                        <TextBox x:Name="SamuraiHeroesBox" PlaceholderText="Choose the Samurai Heroes root…" />
+                        <Button Grid.Column="1" Content="Browse…" Click="BrowseSamuraiHeroes_Click" />
+                    </Grid>
                 </StackPanel>
-            </Border>
 
-            <Border Grid.Column="4" CornerRadius="10" BorderBrush="#3D3D3D" BorderThickness="1" Padding="12">
-                <StackPanel Spacing="8">
-                    <TextBlock Text="ENCODED RESULT" FontWeight="SemiBold" />
-                    <Border Height="360" Background="#171717" CornerRadius="6">
-                        <TextBlock Text="Game-format round trip" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.55" TextAlignment="Center" TextWrapping="Wrap" />
-                    </Border>
+                <StackPanel Grid.Row="5" Spacing="7">
+                    <TextBlock Text="Sumeragi reference (optional)" FontWeight="SemiBold" />
+                    <TextBlock Text="Later BASARA/MT Framework lineage reference only. Not a production dependency." Opacity="0.62" />
+                    <Grid ColumnSpacing="8">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+                        <TextBox x:Name="SumeragiBox" PlaceholderText="Optional…" />
+                        <Button Grid.Column="1" Content="Browse…" Click="BrowseSumeragi_Click" />
+                    </Grid>
                 </StackPanel>
-            </Border>
-        </Grid>
 
-        <Grid Grid.Row="3" ColumnSpacing="12">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <StackPanel Orientation="Horizontal" Spacing="18" VerticalAlignment="Center">
-                <TextBlock Text="Protected pixels: —" />
-                <TextBlock Text="Dimensions: —" />
-                <TextBlock Text="Dependency audit: —" />
-                <TextBlock Text="Controller geometry: UNKNOWN" Foreground="#F6C344" />
-            </StackPanel>
-            <Button Grid.Column="1" Content="Send for approval" Padding="24,12" IsEnabled="False" />
+                <Border Grid.Row="6" Padding="13" CornerRadius="7" BorderBrush="#3A3A3A" BorderThickness="1">
+                    <StackPanel Spacing="3">
+                        <TextBlock Text="Project file" FontWeight="SemiBold" />
+                        <TextBlock x:Name="ProjectPathText" TextWrapping="Wrap" Opacity="0.65" />
+                    </StackPanel>
+                </Border>
+
+                <Grid Grid.Row="7" ColumnSpacing="12">
+                    <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+                    <TextBlock x:Name="SetupStatusText" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="#F6C344" />
+                    <Button Grid.Column="1" Content="Save &amp; open Foundry" Padding="22,11" Click="SaveSources_Click" />
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+
+        <Grid x:Name="WorkspacePanel" Visibility="Collapsed" Padding="24" RowSpacing="18">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" ColumnSpacing="16">
+                <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+                <StackPanel>
+                    <TextBlock Text="BASARA FOUNDRY" FontSize="28" FontWeight="SemiBold" />
+                    <TextBlock x:Name="WorkspaceSubtitle" Text="Utage-first translation workstation · v0.1" Opacity="0.65" />
+                </StackPanel>
+                <Border Grid.Column="1" CornerRadius="8" Padding="12,8" Background="#183F2A" VerticalAlignment="Center">
+                    <TextBlock Text="SOURCES: READ ONLY" Foreground="#B9F6CA" FontWeight="SemiBold" />
+                </Border>
+                <Button Grid.Column="2" Content="Source setup" Click="ShowSetup_Click" VerticalAlignment="Center" />
+            </Grid>
+
+            <Grid Grid.Row="1" ColumnSpacing="12">
+                <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+                <Border CornerRadius="8" Padding="14" BorderBrush="#404040" BorderThickness="1">
+                    <TextBlock Text="Screenshot-to-source and indexed search arrive next. The review workspace is already locked to the production five-view model." Opacity="0.7" TextWrapping="Wrap" />
+                </Border>
+                <Button Grid.Column="1" Content="Search assets" Padding="18,10" IsEnabled="False" />
+                <Button Grid.Column="2" Content="Open asset" Padding="18,10" IsEnabled="False" />
+            </Grid>
+
+            <Grid Grid.Row="2" ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" CornerRadius="10" BorderBrush="#3D3D3D" BorderThickness="1" Padding="12">
+                    <StackPanel Spacing="8"><TextBlock Text="ORIGINAL JP" FontWeight="SemiBold"/><Border Height="360" Background="#171717" CornerRadius="6"><TextBlock Text="Pristine reference" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.55"/></Border></StackPanel>
+                </Border>
+                <Border Grid.Column="1" CornerRadius="10" BorderBrush="#3D3D3D" BorderThickness="1" Padding="12">
+                    <StackPanel Spacing="8"><TextBlock Text="CURRENT ENG" FontWeight="SemiBold"/><Border Height="360" Background="#171717" CornerRadius="6"><TextBlock Text="Current build" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.55"/></Border></StackPanel>
+                </Border>
+                <Border Grid.Column="2" CornerRadius="10" BorderBrush="#3D3D3D" BorderThickness="1" Padding="12">
+                    <StackPanel Spacing="8"><TextBlock Text="SAMURAI HEROES" FontWeight="SemiBold"/><Border Height="360" Background="#171717" CornerRadius="6"><TextBlock Text="Official reference" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.55"/></Border></StackPanel>
+                </Border>
+                <Border Grid.Column="3" CornerRadius="10" BorderBrush="#5C8DD6" BorderThickness="2" Padding="12">
+                    <StackPanel Spacing="8"><TextBlock Text="WORKING" FontWeight="SemiBold"/><Border Height="360" Background="#171717" CornerRadius="6"><TextBlock Text="Editable candidate" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.55"/></Border></StackPanel>
+                </Border>
+                <Border Grid.Column="4" CornerRadius="10" BorderBrush="#3D3D3D" BorderThickness="1" Padding="12">
+                    <StackPanel Spacing="8"><TextBlock Text="ENCODED RESULT" FontWeight="SemiBold"/><Border Height="360" Background="#171717" CornerRadius="6"><TextBlock Text="Actual BCn round-trip" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.55" TextAlignment="Center" TextWrapping="Wrap"/></Border></StackPanel>
+                </Border>
+            </Grid>
+
+            <Grid Grid.Row="3" ColumnSpacing="12">
+                <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" Spacing="18" VerticalAlignment="Center">
+                    <TextBlock Text="Protected pixels: —"/><TextBlock Text="Dimensions: —"/><TextBlock Text="Dependency audit: —"/>
+                    <TextBlock Text="Controller geometry: UNKNOWN" Foreground="#F6C344"/>
+                </StackPanel>
+                <Button Grid.Column="1" Content="Send for approval" Padding="24,12" IsEnabled="False" />
+            </Grid>
         </Grid>
     </Grid>
 </Window>

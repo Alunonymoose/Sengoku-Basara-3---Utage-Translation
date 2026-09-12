@@ -15,5 +15,6 @@
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.4.0" />
     <ProjectReference Include="..\BasaraFoundry.Domain\BasaraFoundry.Domain.csproj" />
     <ProjectReference Include="..\BasaraFoundry.Game.Utage\BasaraFoundry.Game.Utage.csproj" />
+    <ProjectReference Include="..\BasaraFoundry.Project\BasaraFoundry.Project.csproj" />
   </ItemGroup>
 </Project>
