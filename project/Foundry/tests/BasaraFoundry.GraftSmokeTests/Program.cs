@@ -1,4 +1,5 @@
 using System.Buffers.Binary;
+using System.Diagnostics;
 using System.Text;
 using BasaraFoundry.Domain;
 using BasaraFoundry.Game.Utage;
@@ -10,6 +11,7 @@ namespace BasaraFoundry.GraftSmokeTests;
 /// <summary>
 /// Synthetic proof of the Research Ledger BC3 block-graft production rule and
 /// the production transaction that carries one verified XET into one external build ARC.
+/// Also exercises the actual isolated Worker CLI used by the WinUI application.
 /// </summary>
 internal static class Program
 {
@@ -85,6 +87,7 @@ internal static class Program
         engMemberRgba[(0 * width + 8) * 4] ^= 0x55;
         var engMemberXet = BuildXetFromRgba(engMemberRgba, width, height);
         var sourceArc = BuildSingleEntryArc("roulette_000_ID_HQ", engMemberXet);
+        var pristineArc = BuildSingleEntryArc("roulette_000_ID_HQ", pristineXet);
         var sourceArcSnapshot = sourceArc.ToArray();
 
         Throws<ArgumentException>(
@@ -111,6 +114,7 @@ internal static class Program
         Equal(tx.Audit.SourceArcSha256, tx.ApprovalEvidence.SourceArcSha256, "evidence bound to source ARC hash");
         Equal(tx.Audit.OutputArcSha256, tx.ApprovalEvidence.OutputArcSha256, "evidence bound to output ARC hash");
         Equal(tx.Audit.MemberName, tx.ApprovalEvidence.MemberName, "evidence bound to member identity");
+        True(tx.Audit.Notes.Any(n => n.Contains("domain approval guard accepted", StringComparison.Ordinal)), "audit eligibility was exercised through domain guard");
 
         True(typeof(AssetApprovalEvidence).GetConstructors().Length == 0, "approval evidence has no public constructor");
         True(!typeof(AssetApprovalEvidence)
@@ -137,15 +141,22 @@ internal static class Program
         Equal(AssetApprovalState.Approved, approved, "approval accepted with opaque bound graft+ARC proof");
 
         var root = Path.Combine(Path.GetTempPath(), $"basara-foundry-sibling-{Guid.NewGuid():N}");
-        var sourceDir = Path.Combine(root, "canonical-source");
+        var engDir = Path.Combine(root, "canonical-eng");
+        var jpnDir = Path.Combine(root, "canonical-jpn");
         var buildDir = Path.Combine(root, "foundry-build");
-        Directory.CreateDirectory(sourceDir);
+        var workDir = Path.Combine(root, "work");
+        Directory.CreateDirectory(engDir);
+        Directory.CreateDirectory(jpnDir);
         Directory.CreateDirectory(buildDir);
+        Directory.CreateDirectory(workDir);
         try
         {
-            var sourcePath = Path.Combine(sourceDir, "cockpit1P.arc");
+            var sourcePath = Path.Combine(engDir, "cockpit1P.arc");
+            var pristinePath = Path.Combine(jpnDir, "cockpit1P.arc");
             var outputPath = Path.Combine(buildDir, "cockpit1P.foundry.arc");
             File.WriteAllBytes(sourcePath, sourceArc);
+            File.WriteAllBytes(pristinePath, pristineArc);
+
             var written = UtageSiblingArcStore.Write(sourcePath, tx, outputPath);
             True(File.Exists(written.OutputArcPath), "external build ARC written");
             True(File.Exists(written.AuditJsonPath), "audit JSON written");
@@ -154,8 +165,65 @@ internal static class Program
                 () => UtageSiblingArcStore.Write(sourcePath, tx, sourcePath),
                 "disk writer refuses source overwrite");
             Throws<InvalidOperationException>(
-                () => UtageSiblingArcStore.Write(sourcePath, tx, Path.Combine(sourceDir, "cockpit1P.foundry.arc")),
+                () => UtageSiblingArcStore.Write(sourcePath, tx, Path.Combine(engDir, "cockpit1P.foundry.arc")),
                 "disk writer refuses output beside canonical source");
+
+            var candidatePath = Path.Combine(workDir, "candidate.rgba");
+            var maskPath = Path.Combine(workDir, "mask.bin");
+            File.WriteAllBytes(candidatePath, candidate);
+            File.WriteAllBytes(maskPath, mask);
+
+            var workerDll = FindWorkerDll();
+            var workerOutput = Path.Combine(buildDir, "cockpit1P.worker.arc");
+            var workerAudit = workerOutput + ".audit.json";
+            var workerExit = RunWorker(
+                workerDll,
+                [
+                    "graft-xet",
+                    "--root", engDir,
+                    "--archive", "cockpit1P.arc",
+                    "--entry", "0",
+                    "--name", "roulette_000_ID_HQ",
+                    "--pristine-root", jpnDir,
+                    "--pristine-archive", "cockpit1P.arc",
+                    "--pristine-entry", "0",
+                    "--pristine-name", "roulette_000_ID_HQ",
+                    "--rgba", candidatePath,
+                    "--mask", maskPath,
+                    "--output-arc", workerOutput,
+                    "--audit", workerAudit,
+                ],
+                out var workerStdout,
+                out var workerStderr);
+            Equal(0, workerExit, $"Worker production CLI succeeds ({workerStderr})");
+            True(File.Exists(workerOutput) && File.Exists(workerAudit), "Worker created ARC + audit pair");
+            True(sourceArc.AsSpan().SequenceEqual(File.ReadAllBytes(sourcePath)), "Worker left canonical ENG ARC byte-identical");
+            True(pristineArc.AsSpan().SequenceEqual(File.ReadAllBytes(pristinePath)), "Worker left canonical JPN ARC byte-identical");
+            True(workerStdout.Contains("\"approvedEligible\":true", StringComparison.OrdinalIgnoreCase), "Worker reports verified approval eligibility");
+
+            var forbiddenOutput = Path.Combine(engDir, "forbidden.arc");
+            var forbiddenExit = RunWorker(
+                workerDll,
+                [
+                    "graft-xet",
+                    "--root", engDir,
+                    "--archive", "cockpit1P.arc",
+                    "--entry", "0",
+                    "--name", "roulette_000_ID_HQ",
+                    "--pristine-root", jpnDir,
+                    "--pristine-archive", "cockpit1P.arc",
+                    "--pristine-entry", "0",
+                    "--pristine-name", "roulette_000_ID_HQ",
+                    "--rgba", candidatePath,
+                    "--mask", maskPath,
+                    "--output-arc", forbiddenOutput,
+                    "--audit", forbiddenOutput + ".audit.json",
+                ],
+                out _,
+                out var forbiddenError);
+            Equal(2, forbiddenExit, "Worker rejects production output inside canonical ENG root");
+            True(!File.Exists(forbiddenOutput), "forbidden Worker output was not created");
+            True(forbiddenError.Contains("outside canonical ENG/JPN source roots", StringComparison.OrdinalIgnoreCase), "Worker explains canonical-root rejection");
         }
         finally
         {
@@ -167,6 +235,55 @@ internal static class Program
         Console.WriteLine($"  blocks_replaced={result.Report.BlocksReplaced}/{result.Report.BlocksTotal}");
         Console.WriteLine($"  sibling_arc_sha256={tx.Audit.OutputArcSha256}");
         return 0;
+    }
+
+    private static string FindWorkerDll()
+    {
+        for (var dir = new DirectoryInfo(AppContext.BaseDirectory); dir is not null; dir = dir.Parent)
+        {
+            var candidate = Path.Combine(
+                dir.FullName,
+                "src",
+                "BasaraFoundry.Worker",
+                "bin",
+                "Release",
+                "net10.0",
+                "BasaraFoundry.Worker.dll");
+            if (File.Exists(candidate))
+                return candidate;
+        }
+
+        throw new FileNotFoundException("Could not locate the already-built BasaraFoundry.Worker.dll for CLI integration smoke.");
+    }
+
+    private static int RunWorker(
+        string workerDll,
+        IReadOnlyList<string> arguments,
+        out string stdout,
+        out string stderr)
+    {
+        var start = new ProcessStartInfo
+        {
+            FileName = "dotnet",
+            UseShellExecute = false,
+            CreateNoWindow = true,
+            RedirectStandardOutput = true,
+            RedirectStandardError = true,
+        };
+        start.ArgumentList.Add(workerDll);
+        foreach (var argument in arguments)
+            start.ArgumentList.Add(argument);
+
+        using var process = Process.Start(start)
+            ?? throw new IOException("Could not start Worker integration smoke process.");
+        stdout = process.StandardOutput.ReadToEnd();
+        stderr = process.StandardError.ReadToEnd();
+        if (!process.WaitForExit(60_000))
+        {
+            try { process.Kill(entireProcessTree: true); } catch { }
+            throw new TimeoutException("Worker integration smoke exceeded 60 seconds.");
+        }
+        return process.ExitCode;
     }
 
     private static byte[] BuildXetFromRgba(byte[] rgba, int width, int height)
