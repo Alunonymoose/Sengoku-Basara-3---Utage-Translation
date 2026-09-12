@@ -105,14 +105,20 @@
                 <Button Grid.Column="2" Content="Source setup" Click="ShowSetup_Click" VerticalAlignment="Center" />
             </Grid>
 
-            <Grid Grid.Row="1" ColumnSpacing="12">
-                <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
-                <Border CornerRadius="8" Padding="14" BorderBrush="#404040" BorderThickness="1">
-                    <TextBlock Text="Screenshot-to-source and indexed search arrive next. The review workspace is already locked to the production five-view model." Opacity="0.7" TextWrapping="Wrap" />
-                </Border>
-                <Button Grid.Column="1" Content="Search assets" Padding="18,10" IsEnabled="False" />
-                <Button Grid.Column="2" Content="Open asset" Padding="18,10" IsEnabled="False" />
-            </Grid>
+            <Border Grid.Row="1" CornerRadius="8" Padding="14" BorderBrush="#404040" BorderThickness="1">
+                <Grid RowSpacing="9">
+                    <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+                    <Grid Grid.Row="0" ColumnSpacing="8">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+                        <TextBox x:Name="AssetSearchBox" PlaceholderText="Search indexed Utage ENG assets, e.g. roulette_000_ID_HQ" />
+                        <Button x:Name="SearchAssetsButton" Grid.Column="1" Content="Search assets" Padding="18,10" Click="SearchAssets_Click" />
+                        <Button x:Name="ReindexAssetsButton" Grid.Column="2" Content="Reindex" Padding="18,10" Click="ReindexAssets_Click" />
+                        <Button x:Name="OpenAssetButton" Grid.Column="3" Content="Open asset" Padding="18,10" IsEnabled="False" Click="OpenAsset_Click" />
+                    </Grid>
+                    <ListView x:Name="AssetResultsList" Grid.Row="1" MaxHeight="150" SelectionMode="Single" SelectionChanged="AssetResultsList_SelectionChanged" />
+                    <TextBlock x:Name="SearchStatusText" Grid.Row="2" Text="Indexing runs outside the UI process. Search reads a versioned snapshot; canonical source files remain untouched." Opacity="0.7" TextWrapping="Wrap" />
+                </Grid>
+            </Border>
 
             <Grid Grid.Row="2" ColumnSpacing="10">
                 <Grid.ColumnDefinitions>
