@@ -72,6 +72,13 @@ public sealed partial class MainWindow
                 $"Automatic repair region covers {repairMask.Coverage:P0} of the atlas, which is too broad for a safe one-click edit. " +
                 "Foundry refused to let the image model repaint that much artwork.");
 
+        if (!await ConfirmAutomaticRepairRegionAsync(pristine, repairMask))
+        {
+            SearchStatusText.Text =
+                "AI repair region was not approved. No API key was requested and no image-generation request was sent.";
+            return;
+        }
+
         var apiKey = await GetOpenAiApiKeyAsync();
         if (string.IsNullOrWhiteSpace(apiKey))
         {
@@ -100,7 +107,7 @@ public sealed partial class MainWindow
         await File.WriteAllBytesAsync(Path.Combine(aiDir, "03-edit-mask.png"), maskPng);
 
         SearchStatusText.Text =
-            $"Generating polished English artwork in {repairMask.ChangedBlocks:N0} inferred text blocks; " +
+            $"Generating polished English artwork in {repairMask.ChangedBlocks:N0} approved difference blocks; " +
             "everything outside that region will be restored from pristine JP exactly…";
 
         var generatedPng = await RequestOpenAiTextureEditAsync(
@@ -123,11 +130,63 @@ public sealed partial class MainWindow
 
         await AttachGeneratedCandidateAsync(
             lockedCandidate,
-            $"AI polished repair · {repairMask.ChangedBlocks:N0} text blocks",
+            $"AI polished repair · {repairMask.ChangedBlocks:N0} approved difference blocks",
             "AI REPAIR · PROTECTED ART LOCKED");
         SearchStatusText.Text =
-            $"AI replacement ready · {repairMask.ChangedBlocks:N0} inferred text blocks · " +
+            $"AI replacement ready · {repairMask.ChangedBlocks:N0} approved difference blocks · " +
             "0 protected pixels changed. Review the replacement art before building it.";
+    }
+
+    private async Task<bool> ConfirmAutomaticRepairRegionAsync(
+        UtageXetPreviewSnapshot pristine,
+        AutomaticRepairMask repairMask)
+    {
+        var overlay = (byte[])pristine.Rgba.Clone();
+        for (var i = 0; i < repairMask.Mask01.Length; i++)
+        {
+            if (repairMask.Mask01[i] == 0)
+                continue;
+
+            var p = i * 4;
+            // Magenta tint marks exactly the pixels the image model would be
+            // permitted to repaint. Alpha is left untouched so atlas shape is visible.
+            overlay[p] = (byte)Math.Min(255, (overlay[p] + 255) / 2);
+            overlay[p + 1] = (byte)(overlay[p + 1] / 3);
+            overlay[p + 2] = (byte)Math.Min(255, (overlay[p + 2] + 255) / 2);
+        }
+
+        var stack = new StackPanel { Spacing = 10, MaxWidth = 940 };
+        stack.Children.Add(new TextBlock
+        {
+            Text =
+                $"Foundry inferred {repairMask.ChangedBlocks:N0} 4×4 difference blocks " +
+                $"({repairMask.Coverage:P1} of the atlas) by comparing Current ENG with pristine JP.\n\n" +
+                "MAGENTA = pixels the AI would be allowed to repaint. This is only a difference-based proposal; " +
+                "Foundry has NOT proved that every highlighted difference is lettering. Reject this region if it includes cards, seals, borders, symbols or other artwork that should remain pristine.\n\n" +
+                "No API key prompt or image-generation request occurs until you approve this region.",
+            TextWrapping = Microsoft.UI.Xaml.TextWrapping.Wrap,
+        });
+        stack.Children.Add(new Border
+        {
+            Height = 560,
+            Background = new Microsoft.UI.Xaml.Media.SolidColorBrush(Windows.UI.Color.FromArgb(255, 18, 18, 18)),
+            Child = new Image
+            {
+                Source = PreviewBitmapFactory.FromRgba(pristine.Width, pristine.Height, overlay),
+                Stretch = Microsoft.UI.Xaml.Media.Stretch.Uniform,
+            },
+        });
+
+        var dialog = new ContentDialog
+        {
+            XamlRoot = WorkspacePanel.XamlRoot,
+            Title = "Review inferred AI repair region",
+            PrimaryButtonText = "Use this repair region",
+            CloseButtonText = "Cancel",
+            DefaultButton = ContentDialogButton.Close,
+            Content = stack,
+        };
+        return await dialog.ShowAsync() == ContentDialogResult.Primary;
     }
 
     private async Task<string?> GetOpenAiApiKeyAsync()
