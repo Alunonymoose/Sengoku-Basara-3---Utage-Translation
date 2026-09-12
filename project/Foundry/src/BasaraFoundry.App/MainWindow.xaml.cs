@@ -134,6 +134,7 @@ public sealed partial class MainWindow : Window
             : $"{_project.ProjectName} · v0.1 vertical slice";
         ResetMaskReviewState();
         TryRestoreVerifiedBuildState();
+        TryRestoreVerifiedOwnerSetState();
     }
 
     private async void SearchAssets_Click(object sender, RoutedEventArgs e)
