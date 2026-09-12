@@ -6,10 +6,14 @@
     <RootNamespace>BasaraFoundry.App</RootNamespace>
     <AssemblyName>BasaraFoundry</AssemblyName>
     <UseWinUI>true</UseWinUI>
+    <AppxPackage>false</AppxPackage>
     <WindowsPackageType>None</WindowsPackageType>
+    <EnableMsixTooling>true</EnableMsixTooling>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <SelfContained>true</SelfContained>
     <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+    <PublishTrimmed>false</PublishTrimmed>
+    <PublishReadyToRun>false</PublishReadyToRun>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.4.0" />
