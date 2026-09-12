@@ -40,6 +40,8 @@ jobs:
         run: dotnet run --project tests/BasaraFoundry.ReferenceSmokeTests/BasaraFoundry.ReferenceSmokeTests.csproj -c Release
       - name: Run BC3 round-trip smoke tests
         run: dotnet run --project tests/BasaraFoundry.RoundTripSmokeTests/BasaraFoundry.RoundTripSmokeTests.csproj -c Release
+      - name: Run route resolution smoke tests
+        run: dotnet run --project tests/BasaraFoundry.RouteSmokeTests/BasaraFoundry.RouteSmokeTests.csproj -c Release
 
   winui-alpha:
     needs: core-and-smoke
