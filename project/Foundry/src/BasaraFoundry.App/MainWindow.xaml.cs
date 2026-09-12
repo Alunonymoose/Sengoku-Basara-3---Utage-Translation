@@ -132,6 +132,7 @@ public sealed partial class MainWindow : Window
         WorkspaceSubtitle.Text = _project is null
             ? "Utage-first translation workstation · v0.1"
             : $"{_project.ProjectName} · v0.1 vertical slice";
+        ResetMaskReviewState();
         TryRestoreVerifiedBuildState();
     }
 
