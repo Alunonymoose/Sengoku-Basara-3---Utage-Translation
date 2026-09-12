@@ -52,6 +52,7 @@ public sealed partial class MainWindow
         _approvedCandidateSha256 = null;
         _approvedPristineSha256 = null;
         ResetRuntimeEvidenceState();
+        ResetOwnerSetRuntimeEvidenceState();
 
         if (!_approvalClickHooked)
         {
@@ -102,6 +103,7 @@ public sealed partial class MainWindow
         _approvedCandidateSha256 = null;
         _approvedPristineSha256 = null;
         ResetRuntimeEvidenceState();
+        ResetOwnerSetRuntimeEvidenceState();
         SendForApprovalButton.Content = "Review edit mask";
         SendForApprovalButton.IsEnabled = false;
 
@@ -152,6 +154,12 @@ public sealed partial class MainWindow
     {
         try
         {
+            if (HasVerifiedOwnerSetBuildAwaitingRuntimeEvidence)
+            {
+                await AttachOwnerSetRuntimeEvidenceAsync();
+                return;
+            }
+
             if (HasVerifiedBuildAwaitingRuntimeEvidence)
             {
                 await AttachRuntimeEvidenceAsync();
@@ -234,7 +242,7 @@ public sealed partial class MainWindow
         _approvedPristineSha256 = pristine.SourceResourceSha256;
         ProtectedPixelsText.Text =
             $"Mask APPROVED · {proposal.ChangedPixels:N0} px · {proposal.AffectedBlocks:N0} BC3 blocks";
-        SendForApprovalButton.Content = "Build verified sibling ARC";
+        SendForApprovalButton.Content = "Build verified production";
         SendForApprovalButton.IsEnabled = true;
         SearchStatusText.Text = "Edit mask approved. Source files are still untouched; production build is now unlocked.";
     }
@@ -264,6 +272,41 @@ public sealed partial class MainWindow
             throw new InvalidOperationException("Approved mask binding is stale; review the mask again before building.");
         }
 
+        var currentIndex = _utageIndex ?? await EnsureIndexAsync(forceReindex: false);
+        var owners = currentIndex.FindOwners(target.ResourceName, target.TypeHash);
+        if (owners.Count == 0)
+            throw new InvalidDataException("Production owner audit could not rediscover the active resource. Reindex before building.");
+        if (!owners.Any(owner =>
+                owner.EntryIndex == target.EntryIndex &&
+                owner.ArchivePath.Replace('\\', '/').Equals(target.ArchivePath.Replace('\\', '/'), StringComparison.OrdinalIgnoreCase)))
+        {
+            throw new InvalidDataException("Production owner audit does not contain the active ARC/member identity. Reindex before building.");
+        }
+
+        SendForApprovalButton.IsEnabled = false;
+        ResetRuntimeEvidenceState();
+        ResetOwnerSetRuntimeEvidenceState();
+
+        if (owners.Count > 1)
+        {
+            var set = await BuildAndVerifySharedOwnerSetAsync(
+                Path.GetFullPath(engRoot),
+                owners,
+                target,
+                Path.GetFullPath(jpnRoot),
+                pristineResource,
+                candidate,
+                pristine,
+                proposal,
+                candidate.RgbaPath,
+                maskPath);
+
+            ProtectedPixelsText.Text =
+                $"VERIFIED OWNER SET · {set.GroupAudit.OwnerCount} synchronized ARCs · build {set.GroupAudit.BuildSetSha256[..12]}…";
+            SetVerifiedOwnerSetBuildForRuntimeEvidence(set);
+            return;
+        }
+
         var projectDir = Path.GetDirectoryName(_projectPath)!;
         var archiveStem = Path.GetFileNameWithoutExtension(target.ArchivePath);
         var buildDir = Path.Combine(projectDir, "builds", "texture-grafts", $"{archiveStem}-{candidate.Sha256[..12]}");
@@ -271,7 +314,6 @@ public sealed partial class MainWindow
         var outputArc = Path.Combine(buildDir, $"{archiveStem}.foundry.arc");
         var auditPath = outputArc + ".audit.json";
 
-        SendForApprovalButton.IsEnabled = false;
         SearchStatusText.Text = "Building from pristine JP compressed blocks in the isolated worker; canonical sources remain read only…";
 
         await RunGraftWorkerAsync(
