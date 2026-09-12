@@ -34,6 +34,8 @@ jobs:
         run: dotnet build src/BasaraFoundry.Worker/BasaraFoundry.Worker.csproj -c Release
       - name: Run smoke tests
         run: dotnet run --project tests/BasaraFoundry.SmokeTests/BasaraFoundry.SmokeTests.csproj -c Release
+      - name: Run preview safety smoke tests
+        run: dotnet run --project tests/BasaraFoundry.PreviewSmokeTests/BasaraFoundry.PreviewSmokeTests.csproj -c Release
 
   winui-alpha:
     needs: core-and-smoke
