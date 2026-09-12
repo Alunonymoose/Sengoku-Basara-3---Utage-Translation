@@ -76,9 +76,56 @@ jobs:
             worker = 'worker/BasaraFoundry.Worker.exe'
           } | ConvertTo-Json
           Set-Content -Path 'out/Foundry-win-x64/FOUNDry_BUILD.json' -Value $manifest -Encoding utf8
+      - name: Launch-test published GUI
+        shell: pwsh
+        run: |
+          $startupLog = Join-Path $env:LOCALAPPDATA 'BASARA Foundry\startup.log'
+          Remove-Item $startupLog -Force -ErrorAction SilentlyContinue
+          $exe = (Resolve-Path 'out/Foundry-win-x64/BasaraFoundry.exe').Path
+          $work = (Resolve-Path 'out/Foundry-win-x64').Path
+          $process = Start-Process -FilePath $exe -WorkingDirectory $work -PassThru
+          $activated = $false
+          for ($i = 0; $i -lt 30; $i++) {
+            Start-Sleep -Milliseconds 500
+            $process.Refresh()
+            if ($process.HasExited) {
+              Write-Host "Foundry exited during launch smoke test with code $($process.ExitCode)."
+              if (Test-Path $startupLog) { Get-Content $startupLog }
+              exit 1
+            }
+            if (Test-Path $startupLog) {
+              $text = Get-Content $startupLog -Raw
+              if ($text -match 'MainWindow activated successfully') {
+                $activated = $true
+                break
+              }
+            }
+          }
+          if (-not $activated) {
+            Write-Host 'Foundry stayed alive but did not prove MainWindow activation.'
+            if (Test-Path $startupLog) { Get-Content $startupLog }
+            Stop-Process -Id $process.Id -Force -ErrorAction SilentlyContinue
+            exit 1
+          }
+          Get-Content $startupLog
+          Stop-Process -Id $process.Id -Force -ErrorAction SilentlyContinue
+      - name: Build one-file BASARA Foundry launcher
+        shell: pwsh
+        run: |
+          $payload = Join-Path $PWD 'out/BasaraFoundry-payload.zip'
+          Compress-Archive -Path 'out/Foundry-win-x64/*' -DestinationPath $payload -CompressionLevel Optimal -Force
+          $payload = (Resolve-Path $payload).Path
+          dotnet publish src/BasaraFoundry.Bootstrap/BasaraFoundry.Bootstrap.csproj -c Release -r win-x64 --self-contained true -o out/onefile "-p:FoundryPayloadZip=$payload"
+          if (-not (Test-Path 'out/onefile/BasaraFoundry.exe')) { throw 'One-file launcher was not produced.' }
       - uses: actions/upload-artifact@v4
         with:
           name: BasaraFoundry-win-x64-${{ github.run_number }}
           path: project/Foundry/out/Foundry-win-x64/**
+          if-no-files-found: error
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        with:
+          name: BasaraFoundry-onefile-${{ github.run_number }}
+          path: project/Foundry/out/onefile/BasaraFoundry.exe
           if-no-files-found: error
           retention-days: 14
