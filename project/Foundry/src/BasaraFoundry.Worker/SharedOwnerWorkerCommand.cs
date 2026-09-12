@@ -73,6 +73,7 @@ internal static class SharedOwnerWorkerCommand
         {
             throw new InvalidDataException("Shared-owner audit does not contain the selected anchor ARC/member identity; reindex before building.");
         }
+        var initialOwnerKeys = owners.Select(OwnerKey).OrderBy(value => value, StringComparer.OrdinalIgnoreCase).ToArray();
 
         var pristineXet = ReadCertifiedTextureRaw(
             pristineRoot,
@@ -104,6 +105,40 @@ internal static class SharedOwnerWorkerCommand
             pristineXet,
             candidate,
             mask);
+
+        // Anti-stale barrier. The owner graph and every byte source involved in
+        // the certified transaction are checked again immediately before any
+        // staging directory is created. A concurrent source/candidate/mask edit
+        // therefore discards the build rather than promoting stale evidence.
+        var currentIndex = UtageAssetIndexer.IndexRoot(root);
+        var currentOwners = currentIndex.FindOwners(name, UtageTypeHashes.Texture);
+        var currentOwnerKeys = currentOwners.Select(OwnerKey).OrderBy(value => value, StringComparer.OrdinalIgnoreCase).ToArray();
+        if (!initialOwnerKeys.SequenceEqual(currentOwnerKeys, StringComparer.OrdinalIgnoreCase))
+            throw new InvalidOperationException("Shared-resource owner set changed during production build; output discarded. Reindex and review again.");
+
+        foreach (var ownerAudit in set.Audit.Owners)
+        {
+            var ownerPath = ResolveArchivePath(root, ownerAudit.ArchivePath);
+            var currentArcHash = Sha256(await File.ReadAllBytesAsync(ownerPath));
+            if (!currentArcHash.Equals(ownerAudit.SourceArcSha256, StringComparison.Ordinal))
+                throw new InvalidOperationException($"Shared owner '{ownerAudit.ArchivePath}' changed during production build; output discarded.");
+        }
+
+        var currentPristine = ReadCertifiedTextureRaw(
+            pristineRoot,
+            pristineArchive,
+            pristineEntryIndex,
+            pristineName,
+            out var currentPristineArcPath);
+        if (!PathsEqual(pristineArcPath, currentPristineArcPath) ||
+            !Sha256(currentPristine).Equals(set.Audit.PristineBaseSha256, StringComparison.Ordinal))
+        {
+            throw new InvalidOperationException("Pristine JP reference changed during production build; output discarded.");
+        }
+        if (!Sha256(await File.ReadAllBytesAsync(rgbaPath)).Equals(set.Audit.CandidateRgbaSha256, StringComparison.Ordinal))
+            throw new InvalidOperationException("Candidate RGBA changed during production build; output discarded.");
+        if (!Sha256(await File.ReadAllBytesAsync(maskPath)).Equals(set.Audit.EditMaskSha256, StringComparison.Ordinal))
+            throw new InvalidOperationException("Approved edit mask changed during production build; output discarded.");
 
         var outputParent = Path.GetDirectoryName(outputDir)
             ?? throw new InvalidOperationException("Shared-owner output directory has no parent.");
@@ -251,6 +286,9 @@ internal static class SharedOwnerWorkerCommand
         var comparison = OperatingSystem.IsWindows() ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal;
         return left.Replace('\\', '/').Equals(right.Replace('\\', '/'), comparison);
     }
+
+    private static string OwnerKey(IndexedUtageResource owner) =>
+        $"{owner.ArchivePath.Replace('\\', '/')}#{owner.EntryIndex}";
 
     private static bool PathsEqual(string left, string right)
     {
