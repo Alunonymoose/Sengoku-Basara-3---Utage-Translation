@@ -173,9 +173,25 @@ internal static class Program
                 () => UtageSiblingArcStore.Write(sourcePath, tx, Path.Combine(engDir, "cockpit1P.foundry.arc")),
                 "disk writer refuses output beside canonical source");
 
+            // The Worker command is the NORMAL incremental production path. Its
+            // candidate must therefore be based on the current live target decode,
+            // not on the pristine restore fixture used above.
+            var workerCandidate = UtageXetCodec.DecodeTopLevel(engMemberXet).Rgba.ToArray();
+            for (var y = 1; y < 3; y++)
+            {
+                for (var x = 1; x < 3; x++)
+                {
+                    var i = (y * width + x) * 4;
+                    workerCandidate[i] = 255;
+                    workerCandidate[i + 1] = 255;
+                    workerCandidate[i + 2] = 120;
+                    workerCandidate[i + 3] = 255;
+                }
+            }
+
             var candidatePath = Path.Combine(workDir, "candidate.rgba");
             var maskPath = Path.Combine(workDir, "mask.bin");
-            File.WriteAllBytes(candidatePath, candidate);
+            File.WriteAllBytes(candidatePath, workerCandidate);
             File.WriteAllBytes(maskPath, mask);
 
             var workerDll = FindWorkerDll();
