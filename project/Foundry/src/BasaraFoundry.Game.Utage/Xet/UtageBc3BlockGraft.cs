@@ -22,9 +22,11 @@ public sealed record Bc3GraftResult(
 
 /// <summary>
 /// Production BC3 writer for Utage XET.
-/// Starts from pristine compressed artwork, requires candidate equality outside
-/// the exact edit mask, expands only to intersecting 4x4 BC3 blocks, preserves
-/// all untouched compressed blocks byte-for-byte, then verifies the final decode.
+/// Starts from the supplied BASE compressed artwork, expands the exact edit mask
+/// to intersecting 4x4 blocks, and replaces only those candidate blocks.
+/// Candidate differences in completely untouched blocks are ignored; candidate
+/// differences inside a touched block but outside the exact edit mask fail closed.
+/// All untouched compressed blocks remain byte-identical to the supplied base.
 /// </summary>
 public static class UtageBc3BlockGraft
 {
@@ -61,9 +63,9 @@ public static class UtageBc3BlockGraft
         return delta;
     }
 
-    public static Bc3GraftResult GraftTopLevel(ReadOnlySpan<byte> pristineXet, ReadOnlySpan<byte> candidateRgba, ReadOnlySpan<byte> editMask01)
+    public static Bc3GraftResult GraftTopLevel(ReadOnlySpan<byte> baseXet, ReadOnlySpan<byte> candidateRgba, ReadOnlySpan<byte> editMask01)
     {
-        var info = UtageXetReader.ReadInfo(pristineXet);
+        var info = UtageXetReader.ReadInfo(baseXet);
         UtageXetCodec.RequireEncodingCapability(info);
 
         var expectedRgba = checked(info.Width * info.Height * 4);
@@ -74,19 +76,11 @@ public static class UtageBc3BlockGraft
 
         var topLevelBytes = info.TopLevelSizeBytes ?? throw new NotSupportedException("XET encoded byte size is unknown.");
         var expectedEnd = checked(info.TextureOffset + topLevelBytes);
-        if (info.MipCount > 1 || pristineXet.Length != expectedEnd)
+        if (info.MipCount > 1 || baseXet.Length != expectedEnd)
             throw new NotSupportedException("Block-graft v0.1 is single-level only. Refuse multi-mip or trailing payload XETs.");
 
         var notes = new List<string>();
-        var baseDecode = UtageXetCodec.DecodeTopLevel(pristineXet);
-        var outsideDelta = CountOutsideMaskDeltas(baseDecode.Rgba, candidateRgba, editMask01, info.Width, info.Height);
-        if (outsideDelta != 0)
-        {
-            notes.Add($"REJECT: {outsideDelta} pixels outside edit mask differ from pristine decode.");
-            return Failure(info, CountMask(editMask01), outsideDelta, Array.Empty<(int, int)>(), notes);
-        }
-        notes.Add("candidate pixel-identical to pristine decode outside exact edit mask");
-
+        var baseDecode = UtageXetCodec.DecodeTopLevel(baseXet);
         var blocks = MaskToBlockSet(editMask01, info.Width, info.Height);
         if (blocks.Count == 0)
         {
@@ -94,12 +88,36 @@ public static class UtageBc3BlockGraft
             return Failure(info, 0, 0, blocks, notes);
         }
 
+        var effectiveMask = BuildEffectiveBlockMask(blocks, info.Width, info.Height);
+        var allOutsideDelta = CountOutsideMaskDeltas(baseDecode.Rgba, candidateRgba, editMask01, info.Width, info.Height);
+        var unsafeOutsideDelta = 0;
+        var ignoredUntouchedBlockDelta = 0;
+        var pixels = checked(info.Width * info.Height);
+        for (var i = 0; i < pixels; i++)
+        {
+            if (editMask01[i] != 0 || !PixelDiffers(baseDecode.Rgba, candidateRgba, i))
+                continue;
+            if (effectiveMask[i] != 0) unsafeOutsideDelta++;
+            else ignoredUntouchedBlockDelta++;
+        }
+
+        if (unsafeOutsideDelta != 0)
+        {
+            notes.Add($"REJECT: {unsafeOutsideDelta} candidate pixels inside touched BC3 blocks but outside the exact edit mask differ from the graft base.");
+            return Failure(info, CountMask(editMask01), unsafeOutsideDelta, blocks, notes);
+        }
+        notes.Add("candidate is base-identical outside the exact mask within every touched BC3 block");
+        if (ignoredUntouchedBlockDelta != 0)
+            notes.Add($"ignored {ignoredUntouchedBlockDelta} candidate pixel differences in completely untouched BC3 blocks; live base bytes are preserved there");
+        if (allOutsideDelta == 0)
+            notes.Add("candidate is also base-identical across all untouched pixels");
+
         var fullEncoded = EncodeFullBc3(candidateRgba, info.Width, info.Height);
         if (fullEncoded.Length != topLevelBytes)
             throw new InvalidDataException($"BC3 encoder returned {fullEncoded.Length} bytes; XET requires {topLevelBytes}.");
 
-        var pristinePayload = pristineXet.Slice(info.TextureOffset, topLevelBytes).ToArray();
-        var grafted = (byte[])pristinePayload.Clone();
+        var basePayload = baseXet.Slice(info.TextureOffset, topLevelBytes).ToArray();
+        var grafted = (byte[])basePayload.Clone();
         var bw = Math.Max(1, (info.Width + 3) / 4);
 
         foreach (var (bx, by) in blocks)
@@ -114,23 +132,21 @@ public static class UtageBc3BlockGraft
         {
             if (touched.Contains(i)) continue;
             var start = i * BlockBytes;
-            if (!pristinePayload.AsSpan(start, BlockBytes).SequenceEqual(grafted.AsSpan(start, BlockBytes)))
+            if (!basePayload.AsSpan(start, BlockBytes).SequenceEqual(grafted.AsSpan(start, BlockBytes)))
             {
                 notes.Add($"REJECT: untouched block {i} changed — graft bug");
                 return new Bc3GraftResult(Array.Empty<byte>(), grafted,
                     new Bc3GraftReport(totalBlocks, blocks.Count, CountMask(editMask01), 0, 0, 0, blocks, false, notes), null);
             }
         }
-        notes.Add("all untouched BC3 blocks byte-identical to pristine payload");
+        notes.Add("all untouched BC3 blocks byte-identical to graft base payload");
 
-        var output = pristineXet.ToArray();
+        var output = baseXet.ToArray();
         grafted.CopyTo(output.AsSpan(info.TextureOffset, topLevelBytes));
         var verification = UtageXetCodec.DecodeTopLevel(output);
 
-        var effectiveMask = BuildEffectiveBlockMask(blocks, info.Width, info.Height);
         var outsideEffective = 0;
         var collateral = 0;
-        var pixels = checked(info.Width * info.Height);
         for (var i = 0; i < pixels; i++)
         {
             if (!PixelDiffers(baseDecode.Rgba, verification.Rgba, i)) continue;
