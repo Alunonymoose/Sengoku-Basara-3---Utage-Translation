@@ -25,14 +25,9 @@ public sealed record ArcBuildResult(
 
 /// <summary>
 /// Surgical writer for the certified PS3 Utage ARC v8 form.
-///
-/// Safety contract:
-/// - the source archive is reparsed from the exact bytes being rebuilt;
-/// - a no-op build returns those source bytes exactly;
-/// - untouched stored member payloads are copied byte-for-byte;
-/// - entry names, type hashes and flag bits are preserved;
-/// - only size/offset fields required by relocation are rewritten;
-/// - output is reparsed before it is returned.
+/// Untouched member payloads are copied byte-for-byte. Unknown non-zero bytes
+/// between payloads or after the final payload fail closed rather than being
+/// silently zeroed/dropped. A zero trailer is reproduced at its original size.
 /// </summary>
 public static class UtageArcWriter
 {
@@ -74,9 +69,13 @@ public static class UtageArcWriter
 
         ValidateReplacementKeys(archive, rawReplacements);
         ValidatePayloadRanges(archive, sourceBytes.Length);
+        var trailingZeroBytes = ValidateOpaquePaddingAndGetTrailerLength(archive, sourceBytes);
 
         var alignment = DetectAlignment(archive.Entries);
         var physicalEntries = archive.Entries.OrderBy(entry => entry.PayloadOffset).ToArray();
+        if (physicalEntries.Length == 0)
+            throw new InvalidDataException("Cannot rebuild an empty ARC with member replacements.");
+
         var firstPayload = physicalEntries[0].PayloadOffset;
         var output = new List<byte>(Math.Max(sourceBytes.Length, firstPayload));
         output.AddRange(sourceBytes.AsSpan(0, firstPayload).ToArray());
@@ -114,6 +113,9 @@ public static class UtageArcWriter
             output.AddRange(stored);
         }
 
+        if (trailingZeroBytes > 0)
+            output.AddRange(new byte[trailingZeroBytes]);
+
         var rebuilt = output.ToArray();
         foreach (var entry in archive.Entries)
         {
@@ -122,8 +124,6 @@ public static class UtageArcWriter
             var rawSize = rawSizes[entry.Index];
             var packedSize = checked(((uint)rawSize << 3) | (uint)(entry.Flags & 0x7));
 
-            // Preserve name + type hash exactly. Rewrite only compressed size,
-            // packed raw size/flags, and payload offset.
             BinaryPrimitives.WriteUInt32BigEndian(
                 rebuilt.AsSpan(recordOffset + 68, 4),
                 checked((uint)stored.Length));
@@ -133,6 +133,13 @@ public static class UtageArcWriter
             BinaryPrimitives.WriteUInt32BigEndian(
                 rebuilt.AsSpan(recordOffset + 76, 4),
                 checked((uint)newOffsets[entry.Index]));
+
+            // Name + type hash bytes are protected metadata. Because the table
+            // begins as an exact source copy, anything changing here is a writer bug.
+            if (!rebuilt.AsSpan(recordOffset, 68).SequenceEqual(entry.OriginalRecord.AsSpan(0, 68)))
+                throw new InvalidDataException($"ARC writer modified protected record bytes for member {entry.Index}.");
+            if ((BinaryPrimitives.ReadUInt32BigEndian(rebuilt.AsSpan(recordOffset + 72, 4)) & 0x7) != (uint)(entry.Flags & 0x7))
+                throw new InvalidDataException($"ARC writer changed packed flag bits for member {entry.Index}.");
         }
 
         VerifyRebuiltArchive(sourceBytes, archive, rebuilt, rawReplacements);
@@ -192,6 +199,42 @@ public static class UtageArcWriter
                 throw new InvalidDataException($"ARC member {entry.Index} exceeds the source archive.");
             previousEnd = end;
         }
+    }
+
+    private static int ValidateOpaquePaddingAndGetTrailerLength(UtageArcArchive archive, ReadOnlySpan<byte> source)
+    {
+        var ordered = archive.Entries.OrderBy(entry => entry.PayloadOffset).ToArray();
+        if (ordered.Length == 0)
+            return 0;
+
+        for (var i = 0; i < ordered.Length - 1; i++)
+        {
+            var end = checked(ordered[i].PayloadOffset + ordered[i].CompressedSize);
+            var next = ordered[i + 1].PayloadOffset;
+            if (next < end)
+                throw new InvalidDataException($"ARC member {ordered[i].Index} overlaps member {ordered[i + 1].Index}.");
+            var gap = source.Slice(end, next - end);
+            if (ContainsNonZero(gap))
+            {
+                throw new NotSupportedException(
+                    $"ARC contains unexplained non-zero bytes between members {ordered[i].Index} and {ordered[i + 1].Index}; refusing to rebuild and discard opaque structure.");
+            }
+        }
+
+        var last = ordered[^1];
+        var trailerStart = checked(last.PayloadOffset + last.CompressedSize);
+        var trailer = source[trailerStart..];
+        if (ContainsNonZero(trailer))
+            throw new NotSupportedException("ARC contains unexplained non-zero trailing data after the final member; refusing to rebuild and discard opaque structure.");
+        return trailer.Length;
+    }
+
+    private static bool ContainsNonZero(ReadOnlySpan<byte> bytes)
+    {
+        foreach (var value in bytes)
+            if (value != 0)
+                return true;
+        return false;
     }
 
     private static void EnsurePackedSizeFits(int rawSize, int index)
