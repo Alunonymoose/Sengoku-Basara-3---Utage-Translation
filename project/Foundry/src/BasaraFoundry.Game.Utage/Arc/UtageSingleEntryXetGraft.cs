@@ -63,9 +63,27 @@ public static class UtageSingleEntryXetGraft
         int memberIndex,
         ReadOnlySpan<byte> pristineXet,
         ReadOnlySpan<byte> candidateRgba,
+        ReadOnlySpan<byte> editMask01) =>
+        BuildSibling(sourceArc, memberIndex, pristineXet, candidateRgba, editMask01, null, XetGraftBaseMode.CurrentTarget);
+
+    [Obsolete("Legacy restore overload retained for historical regression fixtures. Production callers must pass XetGraftBaseMode explicitly or use the five-argument incremental overload.")]
+    public static SingleEntryXetGraftResult BuildSibling(
+        ReadOnlySpan<byte> sourceArc,
+        int memberIndex,
+        ReadOnlySpan<byte> pristineXet,
+        ReadOnlySpan<byte> candidateRgba,
         ReadOnlySpan<byte> editMask01,
-        DateTimeOffset? createdAtUtc = null,
-        XetGraftBaseMode baseMode = XetGraftBaseMode.CurrentTarget)
+        DateTimeOffset? createdAtUtc) =>
+        BuildSibling(sourceArc, memberIndex, pristineXet, candidateRgba, editMask01, createdAtUtc, XetGraftBaseMode.PristineRestore);
+
+    public static SingleEntryXetGraftResult BuildSibling(
+        ReadOnlySpan<byte> sourceArc,
+        int memberIndex,
+        ReadOnlySpan<byte> pristineXet,
+        ReadOnlySpan<byte> candidateRgba,
+        ReadOnlySpan<byte> editMask01,
+        DateTimeOffset? createdAtUtc,
+        XetGraftBaseMode baseMode)
     {
         if (pristineXet.IsEmpty)
             throw new ArgumentException("A pristine counterpart XET is mandatory for compatibility/reference checks.", nameof(pristineXet));
