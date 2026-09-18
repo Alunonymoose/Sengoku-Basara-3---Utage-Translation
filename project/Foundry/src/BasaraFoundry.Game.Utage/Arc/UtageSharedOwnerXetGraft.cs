@@ -52,11 +52,12 @@ public sealed record SharedOwnerXetGraftSetResult(
 /// Automatic synchronization is intentionally limited to duplicate owners whose
 /// current raw target XET bytes are identical; divergent duplicates require an
 /// explicit dependency investigation rather than guessing that they should be
-/// made the same.
+/// made the same. Incremental production uses the common live target payload as
+/// its untouched-art base; pristine XET is compatibility/reference evidence.
 /// </summary>
 public static class UtageSharedOwnerXetGraft
 {
-    private const int AuditSchema = 1;
+    private const int AuditSchema = 2;
 
     public static SharedOwnerXetGraftSetResult BuildSet(
         IReadOnlyList<SharedOwnerXetSource> owners,
@@ -71,7 +72,7 @@ public static class UtageSharedOwnerXetGraft
         if (owners.Count < 2)
             throw new ArgumentException("Shared-owner transaction requires at least two target owners.", nameof(owners));
         if (pristineXet.IsEmpty)
-            throw new ArgumentException("A pristine counterpart XET is mandatory for shared-owner production grafts.", nameof(pristineXet));
+            throw new ArgumentException("A pristine counterpart XET is mandatory for shared-owner compatibility/reference checks.", nameof(pristineXet));
 
         var timestamp = createdAtUtc ?? DateTimeOffset.UtcNow;
         var ordered = owners
@@ -112,7 +113,6 @@ public static class UtageSharedOwnerXetGraft
 
             stream.Position = 0;
             var targetXet = UtageArcReader.ReadDecompressedPayload(stream, entry);
-            // Parse now so malformed target bytes fail before any owner transaction is built.
             _ = UtageXetReader.ReadInfo(targetXet);
             inspected.Add((owner, targetXet, Sha256(targetXet)));
         }
@@ -139,15 +139,17 @@ public static class UtageSharedOwnerXetGraft
                 pristineXet,
                 candidateRgba,
                 editMask01,
-                timestamp);
+                timestamp,
+                XetGraftBaseMode.CurrentTarget);
             if (!transaction.Audit.MemberName.Equals(expectedResourceName, StringComparison.Ordinal) ||
                 !transaction.Audit.TargetResourceSha256.Equals(commonTargetHash, StringComparison.Ordinal) ||
                 !transaction.Audit.TargetShellPreserved ||
                 !transaction.Audit.ArcRoundTripVerified ||
                 !transaction.Audit.ApprovedEligible ||
-                transaction.Audit.OutsideEffectiveBlockPixelDelta != 0)
+                transaction.Audit.OutsideEffectiveBlockPixelDelta != 0 ||
+                transaction.Audit.UsedPristineOverride)
             {
-                throw new InvalidDataException($"Shared-owner output for '{item.Owner.ArchivePath}' did not satisfy the certified production invariants.");
+                throw new InvalidDataException($"Shared-owner output for '{item.Owner.ArchivePath}' did not satisfy the certified incremental-production invariants.");
             }
             outputs.Add(new SharedOwnerXetGraftOutput(item.Owner.ArchivePath, item.Owner.MemberIndex, transaction));
         }
@@ -159,7 +161,7 @@ public static class UtageSharedOwnerXetGraft
                 !output.Transaction.Audit.EditMaskSha256.Equals(first.EditMaskSha256, StringComparison.Ordinal) ||
                 !output.Transaction.Audit.FinalResourceSha256.Equals(first.FinalResourceSha256, StringComparison.Ordinal)))
         {
-            throw new InvalidDataException("Shared-owner outputs do not agree on pristine/candidate/mask/final-resource hashes.");
+            throw new InvalidDataException("Shared-owner outputs do not agree on pristine-reference/candidate/mask/final-resource hashes.");
         }
 
         var ownerAudits = outputs.Select(output => new SharedOwnerXetGraftOwnerAudit(
@@ -185,7 +187,7 @@ public static class UtageSharedOwnerXetGraft
             "v0.1 shared-owner synchronization requires byte-identical raw target XET payloads across owners",
             "divergent duplicate payloads fail closed for dependency investigation",
             "each ARC is rebuilt from its own source container; only the certified texture member is replaced",
-            "each final XET preserves the common target shell and uses the same pristine/candidate/mask transaction",
+            "incremental untouched-art base is the common live target payload; pristine XET is compatibility/reference evidence only",
             "group build hash binds the complete sorted owner/output set",
         };
         var audit = new SharedOwnerXetGraftGroupAudit(
@@ -218,7 +220,7 @@ public static class UtageSharedOwnerXetGraft
         IReadOnlyList<SharedOwnerXetGraftOwnerAudit> owners)
     {
         var builder = new StringBuilder();
-        builder.Append("shared-owner-xet-v1\n")
+        builder.Append("shared-owner-xet-v2\n")
             .Append(resourceName).Append('\n')
             .Append(pristineHash).Append('\n')
             .Append(candidateHash).Append('\n')
