@@ -89,6 +89,12 @@ A separate texture-pipeline hardening change-set established/validated the follo
 
 Always inspect the latest branch/PR/checkpoint before production work.
 
+## Runtime-verified title 0x2A closure — 2026-09-18
+
+The `title_004_ID_HQ` Sengoku repair is no longer an open research problem. The exact PS3 0x2A YCbCr channel contract and the clean-edge reconstruction used by the accepted title build are recorded in `basara-utage-texture-engineering/SKILL.md` and the supporting file `TITLE_0x2A_RUNTIME_VERIFIED_2026-09-18.md`.
+
+Future agents must recover that record before title-logo XET work and must not restart from generic RGBA assumptions, global neutral-chroma experiments, or stale pre-2026-09-18 title notes.
+
 ## Keeping skills current
 
 When a discovery changes engineering behavior:
