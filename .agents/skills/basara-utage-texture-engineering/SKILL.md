@@ -79,6 +79,65 @@ Do not silently map an ambiguous format to BC3 just because the byte size fits.
 
 Do not override Utage-specific evidence with a generic MT Framework table. Inspect current Foundry fixtures/canon before changing its mapping.
 
+### Format 0x2A / title-logo YCbCr — runtime verified on `title_004`
+
+PS3 format `0x2A` is BC3/DXT5 storage with Kuriimu2's `MtTex_YCbCrColorShader` channel transform on the verified Utage title fixture.
+
+For stored channels `(R,G,B,A)`:
+
+- stored `G` = rendered alpha / coverage
+- stored `A` = Y luminance
+- stored `R` = Cr around neutral 123
+- stored `B` = Cb around neutral 123
+
+Exact Kuriimu2 read transform:
+
+```text
+alpha = G
+Y  = A
+Cb = B - 123
+Cr = R - 123
+outR = clamp(Y + 1.402*Cr)
+outG = clamp(Y - 0.344136*Cb - 0.714136*Cr)
+outB = clamp(Y + 1.772*Cb)
+```
+
+Exact Kuriimu2 write transform from normal RGBA:
+
+```text
+Y  = 0.299R + 0.587G + 0.114B
+Cb = 123 - 0.168736R - 0.331264G + 0.5B
+Cr = 123 + 0.5R - 0.418688G - 0.081312B
+stored = (Cr, inputAlpha, Cb, Y)
+```
+
+#### Runtime-verified clean-edge rule for `title_004_ID_HQ`
+
+On 2026-09-18 the clean Sengoku title repair was runtime visually verified and explicitly approved by the user. The accepted exact build is recorded in BASARA Foundry as `00 FINAL TITLE 0x2A RUNTIME VERIFIED — 2026-09-18` and under `04 Runtime Evidence/TITLE_004_RUNTIME_VERIFIED_2026-09-18`.
+
+Accepted build hashes:
+
+- source ARC: `201010cc5d4bbee203c5988f5c4827da18e09a91e87c83525debb94047bb75dd`
+- final `title_004` XET: `978f00c5709edb4553473ba8b1b3ae6bd760a8517a5fdb34b0371125775a3808`
+- final ARC: `6350620a27ab0dcd43fa695ef305a387bf8a3067be9d6cfa4489231266b11c82`
+- root-ready ZIP: `fa4e3eb325a0c1bce75af22d8c8ed2e2738569870ea8aa53dd8648654727eb1c`
+
+The runtime-verified reconstruction rule for this fixture is:
+
+1. preserve the full grayscale antialiased alpha mask; never threshold it to binary alpha;
+2. preserve the intended visible Sengoku blue/gradient;
+3. prefill RGB beneath alpha-zero pixels with representative Sengoku blue before the 0x2A YCbCr transform, rather than leaving black transparent RGB to enter BC3 edge blocks;
+4. convert with the exact Kuriimu2 write transform above;
+5. BC3 encode deterministically;
+6. graft only certified 4x4 blocks inside the fixture-proven `logo_sengoku` source rectangle, 184x88 logical = 368x176 HQ pixels;
+7. preserve the target XET shell/header and every block outside that region byte-for-byte;
+8. leave `title_005` and `title_006` untouched for a Sengoku-only repair unless newer evidence requires otherwise;
+9. re-extract and decode the built XET before runtime use.
+
+Do **not** regress this solved title path by writing conventional RGBA into 0x2A, globally forcing R/B to 123, using black RGB under transparent edge pixels, or rediscovering the channel semantics from generic MT Framework tables.
+
+Scope: the 0x2A channel contract is source-verified and runtime-validated on `title_004`. The transparent-RGB edge-preconditioning strategy is runtime verified for this specific title fixture and approved art; inspect pristine/reference behavior before generalizing that artwork-specific edge strategy to unrelated 0x2A assets.
+
 ### Format 0x2B / RBxG
 
 Do not expose 0x2B as ordinary artist-facing RGBA.
