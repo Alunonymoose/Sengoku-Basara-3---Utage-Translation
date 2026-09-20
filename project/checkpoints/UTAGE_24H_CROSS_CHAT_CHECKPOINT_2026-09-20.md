@@ -121,4 +121,17 @@ Do not revive these as current truth:
 - Do not infer “Japanese visual” from an internal \jpn\ path alone.
 - Every material discovery, failed theory, approved patch, runtime result, donor mapping, and supersession goes back into BASARA Foundry.
 - Final patch delivery should be a single ROOT-READY ZIP with correct game-root structure unless explicitly requested otherwise.
-END CHECKPOINT.
+END CHECKPOINT
+## 13. ADDITIONAL 24H FORENSIC DETAILS — PRESERVE
+- The charasele_02 synchronization covered 210/210 exact approved payload instances across 123 ARCs. The synchronized common/pl_face/pl_all.arc SHA-256 recorded during that pass is 162014634c2a37cfacd8773fa87f16cf49e0b8793bc88179542369e4237b2ed5. In pl_all, 30 intended targets changed and 82/82 unrelated members remained byte-identical.
+- Earlier current-title inspection found title.arc contains charasele_02_000..029 at 512x512. At that point _000..015 differed from pl_all while _016..029 matched, which helped isolate the stale character-name layer before the full synchronization.
+- c_story CROPFIX3 was structurally verified: 30 cp_name_pl XETs, 18 unrelated members byte-identical, zero leakage, SHA-256 4e554d…713512. Runtime testing proved that structurally-correct c_story patch did not drive the visible generic Character Select names.
+- A separate executable/resource-system lead remains relevant outside the now-proven charasele_02 path: resource type rNameId has identifier 0x6450A37A. Earlier scanning targeted the ROM tree to locate central-name ownership. Preserve this as a lead, not as a proven owner for the generic Character Select screen.
+- game.arc forensic snapshot: 38 entries, primarily actorParam pl000–029 plus weapon/marble data; recorded SHA-256 ef7da03…312d14. name_com contains only four generic cp_name_han textures. These findings helped rule out simplistic “single master cp_name texture archive” assumptions.
+- FIM repair corpus statistics from the forensic pass: 1,410 archives were repaired/analysed in the broader FIM normalization run, covering 371,836 budgets and 206,393 offsets. The later recovered production package is the authoritative deployable state: 1,379-archive undo ledger; separator fix hardware-proven on 1,287 archives / 1,590 slots; 93 clean; 30 m999 skipped; glued-run repair affected 483 archives / 1,061 joins. Preserve both sets of numbers with their scope distinction rather than treating them as contradictory.
+- E: backup policy was refined: authoritative ARC-only delta synchronization supersedes attempting a brute-force full mirror of the working tree. The earlier full-mirror approach was rejected as inefficient because it traversed irrelevant .git/node_modules objects. Back up production ARCs, evidence, manifests, scripts, and canonical docs deterministically instead of mirroring development noise.
+- Roulette exact technical fixture: cockpit1P.arc -> id\\texture\\jpn\\roulette\\roulette_000_ID_HQ is 512x256, XET v0x97, BC3/DXT5 format 0x2A, one mip. ENG and pristine-JPN cockpit1P.arc were both observed with 313 entries.
+- SH atlas-only experiment detail: ascii_00/01 donor atlases structurally matched the Utage target slots (512x512, BC3/0x2A, one mip, 262,164 bytes) but atlas-only replacement failed at runtime and damaged text elsewhere. This is strong evidence that the surrounding TNF/CSA/LSP/FIM bundle contract matters.
+- Current Western-font baseline remains the SH Western Font Contract Pass V1 approach: exact SH TNF/atlas 00/01 where bundle-compatible plus mapped SB3-JP→SH top-LSP Name/Army deltas. Remaining Waza/equip/result/finish/message/friend families should be handled as per-bundle localisation bridges, not one global font swap.
+END ADDITIONAL DETAILS.
+.
