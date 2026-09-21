@@ -197,7 +197,7 @@ public static class UtagePslReader
         var value = U32(record, 0x38);
         if (value == uint.MaxValue)
             return null;
-        if (value >= recordCount)
+        if (value >= (uint)recordCount)
             throw new InvalidDataException($"PSL parent record index {value} is outside record count {recordCount}.");
         return checked((int)value);
     }
