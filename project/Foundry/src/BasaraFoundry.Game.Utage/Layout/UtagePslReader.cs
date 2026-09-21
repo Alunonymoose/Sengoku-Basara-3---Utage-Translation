@@ -8,8 +8,8 @@ public sealed record UtagePslNodeRecord(
     int Offset,
     float X,
     float Y,
-    uint Word38,
-    uint Word50,
+    int? ParentRecordIndex,
+    uint NodeBindingId,
     IReadOnlyList<uint> Words70To90,
     IReadOnlyList<uint> Words94ToA0,
     byte[] RawRecord);
@@ -38,6 +38,8 @@ public sealed record UtagePslInfo(
 /// - the big-endian u16 at +0x0C is the number of 0xB0/176-byte records;
 /// - the u16 at +0x0E is a separate secondary header count and must NOT be
 ///   added to the record count;
+/// - record +0x38 is the parent record index, with 0xFFFFFFFF marking the
+///   single scene-graph root;
 /// - a variable middle section may follow the record array;
 /// - many, but not all, fixtures carry a trailing hierarchy/string table
 ///   beginning with a u32 entry count and a u32 length-prefixed "SysRoot\0"
@@ -90,7 +92,7 @@ public static class UtagePslReader
                 offset,
                 F32(record, 0x00),
                 F32(record, 0x04),
-                U32(record, 0x38),
+                ParentIndex(record, recordCount),
                 U32(record, 0x50),
                 words70To90,
                 words94ToA0,
@@ -188,6 +190,16 @@ public static class UtagePslReader
         }
 
         return true;
+    }
+
+    private static int? ParentIndex(ReadOnlySpan<byte> record, int recordCount)
+    {
+        var value = U32(record, 0x38);
+        if (value == uint.MaxValue)
+            return null;
+        if (value >= recordCount)
+            throw new InvalidDataException($"PSL parent record index {value} is outside record count {recordCount}.");
+        return checked((int)value);
     }
 
     private static ushort U16(ReadOnlySpan<byte> raw, int offset) =>
