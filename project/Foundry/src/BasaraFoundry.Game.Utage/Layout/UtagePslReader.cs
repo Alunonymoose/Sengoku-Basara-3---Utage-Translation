@@ -25,8 +25,8 @@ public sealed record UtagePslInfo(
     ushort RecordCount,
     ushort SecondaryHeaderCount,
     int RecordsEnd,
-    int StringTableOffset,
-    uint StringTableEntryCount,
+    int? StringTableOffset,
+    uint? StringTableEntryCount,
     IReadOnlyList<UtagePslNodeRecord> Records,
     IReadOnlyList<UtagePslString> StringInventory);
 
@@ -39,8 +39,9 @@ public sealed record UtagePslInfo(
 /// - the u16 at +0x0E is a separate secondary header count and must NOT be
 ///   added to the record count;
 /// - a variable middle section may follow the record array;
-/// - the trailing hierarchy/string table begins with a u32 entry count and a
-///   u32 length-prefixed "SysRoot\0" sentinel.
+/// - many, but not all, fixtures carry a trailing hierarchy/string table
+///   beginning with a u32 entry count and a u32 length-prefixed "SysRoot\0"
+///   sentinel.
 ///
 /// The hierarchy after SysRoot is variable and is not yet generically decoded.
 /// In particular, node names/textures are NOT assumed to map one-for-one to
@@ -96,9 +97,11 @@ public static class UtagePslReader
                 record.ToArray()));
         }
 
-        var stringTableOffset = LocateStringTable(raw, recordsEnd);
-        var stringTableEntryCount = U32(raw, stringTableOffset);
-        var strings = ExtractLengthPrefixedAsciiStrings(raw, stringTableOffset + 4);
+        var stringTableOffset = TryLocateStringTable(raw, recordsEnd);
+        var stringTableEntryCount = stringTableOffset.HasValue ? U32(raw, stringTableOffset.Value) : null;
+        var strings = stringTableOffset.HasValue
+            ? ExtractLengthPrefixedAsciiStrings(raw, stringTableOffset.Value + 4)
+            : Array.Empty<UtagePslString>();
 
         return new UtagePslInfo(
             version,
@@ -112,7 +115,7 @@ public static class UtagePslReader
             strings);
     }
 
-    private static int LocateStringTable(ReadOnlySpan<byte> raw, int recordsEnd)
+    private static int? TryLocateStringTable(ReadOnlySpan<byte> raw, int recordsEnd)
     {
         // Real fixtures are not necessarily 4-byte aligned here. Search byte by
         // byte for the length-prefixed SysRoot sentinel.
@@ -138,8 +141,10 @@ public static class UtagePslReader
             return tableOffset;
         }
 
-        throw new InvalidDataException(
-            "PSL string table could not be located with the proven u32-length-prefixed SysRoot sentinel.");
+        // Some valid PSLs (for example loading/capcom/mode-select fixtures)
+        // do not expose this SysRoot hierarchy form. Record parsing remains
+        // valid; callers must treat hierarchy linkage as unavailable.
+        return null;
     }
 
     private static IReadOnlyList<UtagePslString> ExtractLengthPrefixedAsciiStrings(
