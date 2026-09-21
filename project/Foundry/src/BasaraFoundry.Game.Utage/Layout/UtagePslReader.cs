@@ -124,7 +124,7 @@ public static class UtagePslReader
                 continue;
 
             var lengthPrefixOffset = payloadOffset - 4;
-            if (lengthPrefixOffset < recordsEnd || U32(raw, lengthPrefixOffset) != SysRoot.Length)
+            if (lengthPrefixOffset < recordsEnd || U32(raw, lengthPrefixOffset) != (uint)SysRoot.Length)
                 continue;
 
             var tableOffset = lengthPrefixOffset - 4;
