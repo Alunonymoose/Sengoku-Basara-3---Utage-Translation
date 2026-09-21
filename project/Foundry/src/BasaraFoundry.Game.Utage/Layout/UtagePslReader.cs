@@ -98,7 +98,7 @@ public static class UtagePslReader
         }
 
         var stringTableOffset = TryLocateStringTable(raw, recordsEnd);
-        var stringTableEntryCount = stringTableOffset.HasValue ? U32(raw, stringTableOffset.Value) : null;
+        uint? stringTableEntryCount = stringTableOffset.HasValue ? U32(raw, stringTableOffset.Value) : null;
         var strings = stringTableOffset.HasValue
             ? ExtractLengthPrefixedAsciiStrings(raw, stringTableOffset.Value + 4)
             : Array.Empty<UtagePslString>();
