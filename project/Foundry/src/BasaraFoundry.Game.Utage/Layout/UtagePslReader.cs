@@ -3,131 +3,194 @@ using System.Text;
 
 namespace BasaraFoundry.Game.Utage.Layout;
 
-public sealed record UtagePslNode(
+public sealed record UtagePslNodeRecord(
     int Index,
-    string Group,
     int Offset,
-    string Name,
-    string Texture,
-    int? NameStringOffset,
-    int? TextureStringOffset,
     float X,
     float Y,
-    IReadOnlyList<uint> UvWords,
-    IReadOnlyList<uint> ColourWords,
+    uint Word38,
+    uint Word50,
+    IReadOnlyList<uint> Words70To90,
+    IReadOnlyList<uint> Words94ToA0,
     byte[] RawRecord);
+
+public sealed record UtagePslString(
+    int LengthPrefixOffset,
+    int PayloadOffset,
+    string Value);
 
 public sealed record UtagePslInfo(
     uint Version,
-    ushort RenderNodeCount,
-    ushort AuxiliaryNodeCount,
-    int RecordCount,
+    uint HeaderWord08,
+    ushort RecordCount,
+    ushort SecondaryHeaderCount,
+    int RecordsEnd,
     int StringTableOffset,
-    IReadOnlyList<UtagePslNode> Nodes);
+    uint StringTableEntryCount,
+    IReadOnlyList<UtagePslNodeRecord> Records,
+    IReadOnlyList<UtagePslString> StringInventory);
 
 /// <summary>
-/// Structured, read-only parser for the real Utage PSL v0x21 family proven by
-/// title.arc and the legacy mt_arc_explorer fixtures. Record size is 0xB0/176.
-/// Unknown record fields are deliberately retained in RawRecord; this parser
-/// does not imply a generic layout writer is safe.
+/// Conservative, read-only parser for BASARA PSL v0x21 layouts.
+///
+/// Fixture work across Utage and Samurai Heroes proves:
+/// - header size = 0x10;
+/// - the big-endian u16 at +0x0C is the number of 0xB0/176-byte records;
+/// - the u16 at +0x0E is a separate secondary header count and must NOT be
+///   added to the record count;
+/// - a variable middle section may follow the record array;
+/// - the trailing hierarchy/string table begins with a u32 entry count and a
+///   u32 length-prefixed "SysRoot\0" sentinel.
+///
+/// The hierarchy after SysRoot is variable and is not yet generically decoded.
+/// In particular, node names/textures are NOT assumed to map one-for-one to
+/// record indices. Raw records and a conservative length-prefixed ASCII string
+/// inventory are exposed so callers can gather evidence without inventing
+/// unsupported geometry or hierarchy semantics.
 /// </summary>
 public static class UtagePslReader
 {
-    private const int HeaderSize = 16;
-    private const int RecordSize = 176;
+    private const int HeaderSize = 0x10;
+    private const int RecordSize = 0xB0;
+    private static ReadOnlySpan<byte> Magic => [0x00, 0x50, 0x53, 0x4C]; // \0PSL
+    private static ReadOnlySpan<byte> SysRoot => "SysRoot\0"u8;
 
     public static UtagePslInfo Read(ReadOnlySpan<byte> raw)
     {
-        if (raw.Length < HeaderSize || raw[0] != 0 || raw[1] != (byte)'P' || raw[2] != (byte)'S' || raw[3] != (byte)'L')
+        if (raw.Length < HeaderSize || !raw[..4].SequenceEqual(Magic))
             throw new InvalidDataException("Resource is not a PSL layout.");
 
         var version = U32(raw, 4);
-        var groupA = U16(raw, 12);
-        var groupB = U16(raw, 14);
-        var count = checked(groupA + groupB);
-        var recordsEnd = checked(HeaderSize + count * RecordSize);
+        var headerWord08 = U32(raw, 8);
+        var recordCount = U16(raw, 12);
+        var secondaryHeaderCount = U16(raw, 14);
+
+        var recordsEnd = checked(HeaderSize + recordCount * RecordSize);
         if (recordsEnd > raw.Length)
-            throw new InvalidDataException("PSL node records overrun resource.");
+            throw new InvalidDataException(
+                $"PSL record array overruns resource: {recordCount} * 0x{RecordSize:X} + 0x{HeaderSize:X} > 0x{raw.Length:X}.");
 
-        var stringTableOffset = LocateStringTable(raw, count);
-        var cursor = checked(stringTableOffset + 7);
-        var names = new (string Name, string Texture, int NameOffset, int TextureOffset)[groupA];
-        for (var i = 0; i < groupA; i++)
-        {
-            var name = ReadPaddedString(raw, cursor);
-            cursor = name.NextOffset;
-            var texture = ReadPaddedString(raw, cursor);
-            cursor = texture.NextOffset;
-            names[i] = (name.Value, texture.Value, name.PayloadOffset, texture.PayloadOffset);
-        }
-
-        var nodes = new List<UtagePslNode>(count);
-        for (var index = 0; index < count; index++)
+        var records = new List<UtagePslNodeRecord>(recordCount);
+        for (var index = 0; index < recordCount; index++)
         {
             var offset = checked(HeaderSize + index * RecordSize);
             var record = raw.Slice(offset, RecordSize);
-            var isRender = index < groupA;
-            var uvWords = new[] { U32(record, 0x84), U32(record, 0x88), U32(record, 0x8C), U32(record, 0x90) };
-            var colourWords = new[] { U32(record, 0x94), U32(record, 0x98), U32(record, 0x9C), U32(record, 0xA0) };
 
-            nodes.Add(new UtagePslNode(
+            var words70To90 = new uint[9];
+            for (var i = 0; i < words70To90.Length; i++)
+                words70To90[i] = U32(record, 0x70 + i * 4);
+
+            var words94ToA0 = new uint[4];
+            for (var i = 0; i < words94ToA0.Length; i++)
+                words94ToA0[i] = U32(record, 0x94 + i * 4);
+
+            records.Add(new UtagePslNodeRecord(
                 index,
-                isRender ? "A/render" : "B/aux",
                 offset,
-                isRender ? names[index].Name : $"group_b_{index - groupA:000}",
-                isRender ? names[index].Texture : string.Empty,
-                isRender ? names[index].NameOffset : null,
-                isRender ? names[index].TextureOffset : null,
-                F32(record, 0),
-                F32(record, 4),
-                uvWords,
-                colourWords,
+                F32(record, 0x00),
+                F32(record, 0x04),
+                U32(record, 0x38),
+                U32(record, 0x50),
+                words70To90,
+                words94ToA0,
                 record.ToArray()));
         }
 
-        return new UtagePslInfo(version, groupA, groupB, count, stringTableOffset, nodes);
+        var stringTableOffset = LocateStringTable(raw, recordsEnd);
+        var stringTableEntryCount = U32(raw, stringTableOffset);
+        var strings = ExtractLengthPrefixedAsciiStrings(raw, stringTableOffset + 4);
+
+        return new UtagePslInfo(
+            version,
+            headerWord08,
+            recordCount,
+            secondaryHeaderCount,
+            recordsEnd,
+            stringTableOffset,
+            stringTableEntryCount,
+            records,
+            strings);
     }
 
-    private static int LocateStringTable(ReadOnlySpan<byte> raw, int recordCount)
+    private static int LocateStringTable(ReadOnlySpan<byte> raw, int recordsEnd)
     {
-        var start = checked(HeaderSize + recordCount * RecordSize);
-        for (var offset = start; offset <= raw.Length - 12; offset += 4)
+        // Real fixtures are not necessarily 4-byte aligned here. Search byte by
+        // byte for the length-prefixed SysRoot sentinel.
+        for (var payloadOffset = checked(recordsEnd + 8);
+             payloadOffset <= raw.Length - SysRoot.Length;
+             payloadOffset++)
         {
-            if (!raw.Slice(offset, 4).SequenceEqual(new byte[] { 0xFF, 0xFF, 0xFF, 0xFF }))
+            if (!raw.Slice(payloadOffset, SysRoot.Length).SequenceEqual(SysRoot))
                 continue;
 
-            var length = raw[offset + 7];
-            if (length is < 1 or > 128 || offset + 8 + length > raw.Length)
+            var lengthPrefixOffset = payloadOffset - 4;
+            if (lengthPrefixOffset < recordsEnd || U32(raw, lengthPrefixOffset) != SysRoot.Length)
                 continue;
 
-            var value = raw.Slice(offset + 8, length);
-            if (value[^1] == 0 && value[..^1].SequenceEqual("SysRoot"u8))
-                return offset;
+            var tableOffset = lengthPrefixOffset - 4;
+            if (tableOffset < recordsEnd)
+                continue;
+
+            var entryCount = U32(raw, tableOffset);
+            if (entryCount is 0 or > 0x10000)
+                continue;
+
+            return tableOffset;
         }
-        throw new InvalidDataException("PSL string table could not be located with the proven SysRoot sentinel.");
+
+        throw new InvalidDataException(
+            "PSL string table could not be located with the proven u32-length-prefixed SysRoot sentinel.");
     }
 
-    private static (string Value, int NextOffset, int PayloadOffset) ReadPaddedString(ReadOnlySpan<byte> raw, int offset)
+    private static IReadOnlyList<UtagePslString> ExtractLengthPrefixedAsciiStrings(
+        ReadOnlySpan<byte> raw,
+        int start)
     {
-        if ((uint)offset >= (uint)raw.Length)
-            throw new InvalidDataException("PSL string offset is outside the resource.");
-        var length = raw[offset];
-        offset++;
-        var payloadOffset = offset;
-        var end = checked(offset + length);
-        if (length == 0 || end > raw.Length)
-            throw new InvalidDataException("PSL packed string is invalid.");
+        var strings = new List<UtagePslString>();
+        var seen = new HashSet<(int Offset, string Value)>();
 
-        var payload = raw.Slice(offset, length);
-        var actualLength = payload.Length > 0 && payload[^1] == 0 ? payload.Length - 1 : payload.Length;
-        var value = Encoding.ASCII.GetString(payload[..actualLength]);
-        offset = end;
-        while (offset < raw.Length && raw[offset] == 0)
-            offset++;
-        return (value, offset, payloadOffset);
+        // Strings inside the hierarchy are u32-length-prefixed but are not
+        // guaranteed to be 4-byte aligned, so scan every byte. This is an
+        // inventory only; it deliberately does not claim hierarchy linkage.
+        for (var offset = start; offset <= raw.Length - 5; offset++)
+        {
+            var length = U32(raw, offset);
+            if (length is < 1 or > 0x400 || offset + 4L + length > raw.Length)
+                continue;
+
+            var payload = raw.Slice(offset + 4, checked((int)length));
+            if (payload[^1] != 0)
+                continue;
+
+            var textBytes = payload[..^1];
+            if (textBytes.Length == 0 || !IsPrintableAscii(textBytes))
+                continue;
+
+            var value = Encoding.ASCII.GetString(textBytes);
+            if (seen.Add((offset, value)))
+                strings.Add(new UtagePslString(offset, offset + 4, value));
+        }
+
+        return strings;
     }
 
-    private static ushort U16(ReadOnlySpan<byte> raw, int offset) => BinaryPrimitives.ReadUInt16BigEndian(raw.Slice(offset, 2));
-    private static uint U32(ReadOnlySpan<byte> raw, int offset) => BinaryPrimitives.ReadUInt32BigEndian(raw.Slice(offset, 4));
-    private static float F32(ReadOnlySpan<byte> raw, int offset) => BitConverter.Int32BitsToSingle(BinaryPrimitives.ReadInt32BigEndian(raw.Slice(offset, 4)));
+    private static bool IsPrintableAscii(ReadOnlySpan<byte> value)
+    {
+        foreach (var b in value)
+        {
+            if (b is < 0x20 or > 0x7E)
+                return false;
+        }
+
+        return true;
+    }
+
+    private static ushort U16(ReadOnlySpan<byte> raw, int offset) =>
+        BinaryPrimitives.ReadUInt16BigEndian(raw.Slice(offset, 2));
+
+    private static uint U32(ReadOnlySpan<byte> raw, int offset) =>
+        BinaryPrimitives.ReadUInt32BigEndian(raw.Slice(offset, 4));
+
+    private static float F32(ReadOnlySpan<byte> raw, int offset) =>
+        BitConverter.Int32BitsToSingle(BinaryPrimitives.ReadInt32BigEndian(raw.Slice(offset, 4)));
 }
