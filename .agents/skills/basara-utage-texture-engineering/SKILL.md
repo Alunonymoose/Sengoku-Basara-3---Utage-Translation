@@ -138,6 +138,8 @@ Do **not** regress this solved title path by writing conventional RGBA into 0x2A
 
 Scope: the 0x2A channel contract is source-verified and runtime-validated on `title_004`. The transparent-RGB edge-preconditioning strategy is runtime verified for this specific title fixture and approved art; inspect pristine/reference behavior before generalizing that artwork-specific edge strategy to unrelated 0x2A assets.
 
+**Encoder-backend qualification:** the surviving accepted-build evidence records the YCbCr transform, deterministic BC3 encoding and surgical block graft, but does not identify BCnEncoder.Net as the compressor that produced the accepted `title_004` XET. Foundry currently uses `BCnEncoder.Net BcEncoder / BC3 BestQuality / mipmaps disabled`. Treat that backend as structurally verified by CI, **not runtime-certified**, until one real Utage 0x2A fixture built by Foundry itself passes extract/decode/runtime validation. Do not collapse “0x2A contract runtime verified” into “this specific compressor backend runtime verified.”
+
 ### Format 0x2B / stored-channel preservation view
 
 Do not expose raw 0x2B BC3 channels as ordinary artist-facing RGBA.
