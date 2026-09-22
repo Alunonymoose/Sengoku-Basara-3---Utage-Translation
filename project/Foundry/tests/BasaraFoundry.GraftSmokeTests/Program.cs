@@ -75,14 +75,18 @@ internal static class Program
         Equal(1, result.Report.BlocksReplaced, "exactly one block replaced");
         Equal(0, result.Report.OutsideMaskPixelDelta, "outside-mask delta is zero");
 
+        // The candidate may differ freely in completely untouched blocks because
+        // those compressed bytes are never imported. It must NOT differ outside
+        // the exact mask inside a touched 4x4 block, because that would be baked
+        // into the replacement block as unapproved collateral.
         var bad = candidate.ToArray();
-        bad[(0 * width + 8) * 4] ^= 0x7F;
+        bad[(0 * width + 0) * 4] ^= 0x7F;
         var rejected = UtageBc3BlockGraft.GraftTopLevel(pristineXet, bad, mask);
-        True(!rejected.Report.Ok, "rejects outside-mask changes");
+        True(!rejected.Report.Ok, "rejects unmasked changes inside a touched BC3 block");
 
-        // Simulate an already-damaged ENG texture. Corrupt block (2,0), which is
-        // outside the candidate's edit block. Production must still take that
-        // untouched block from the pristine Japanese XET, never from ENG.
+        // Historical explicit restore-mode fixture: corrupt block (2,0), which is
+        // outside the candidate's edit block. Restore mode intentionally takes that
+        // untouched block from the pristine Japanese XET rather than ENG.
         var engMemberRgba = pristineDecoded.ToArray();
         engMemberRgba[(0 * width + 8) * 4] ^= 0x55;
         var engMemberXet = BuildXetFromRgba(engMemberRgba, width, height);
@@ -105,10 +109,11 @@ internal static class Program
             pristineXet,
             candidate,
             mask,
-            new DateTimeOffset(2026, 9, 12, 0, 0, 0, TimeSpan.Zero));
+            new DateTimeOffset(2026, 9, 12, 0, 0, 0, TimeSpan.Zero),
+            XetGraftBaseMode.PristineRestore);
 
         True(sourceArc.AsSpan().SequenceEqual(sourceArcSnapshot), "source ARC remains byte-identical");
-        True(tx.Audit.UsedPristineOverride, "audit records mandatory pristine base");
+        True(tx.Audit.UsedPristineOverride, "audit records explicit pristine restore base");
         True(!tx.Audit.TargetResourceSha256.Equals(tx.Audit.PristineBaseSha256, StringComparison.Ordinal), "audit proves ENG target and JPN base differ");
         True(tx.Audit.GraftOk && tx.Audit.ArcRoundTripVerified && tx.Audit.ApprovedEligible, "transaction fully verified");
         Equal(tx.Audit.SourceArcSha256, tx.ApprovalEvidence.SourceArcSha256, "evidence bound to source ARC hash");
@@ -168,9 +173,25 @@ internal static class Program
                 () => UtageSiblingArcStore.Write(sourcePath, tx, Path.Combine(engDir, "cockpit1P.foundry.arc")),
                 "disk writer refuses output beside canonical source");
 
+            // The Worker command is the NORMAL incremental production path. Its
+            // candidate must therefore be based on the current live target decode,
+            // not on the pristine restore fixture used above.
+            var workerCandidate = UtageXetCodec.DecodeTopLevel(engMemberXet).Rgba.ToArray();
+            for (var y = 1; y < 3; y++)
+            {
+                for (var x = 1; x < 3; x++)
+                {
+                    var i = (y * width + x) * 4;
+                    workerCandidate[i] = 255;
+                    workerCandidate[i + 1] = 255;
+                    workerCandidate[i + 2] = 120;
+                    workerCandidate[i + 3] = 255;
+                }
+            }
+
             var candidatePath = Path.Combine(workDir, "candidate.rgba");
             var maskPath = Path.Combine(workDir, "mask.bin");
-            File.WriteAllBytes(candidatePath, candidate);
+            File.WriteAllBytes(candidatePath, workerCandidate);
             File.WriteAllBytes(maskPath, mask);
 
             var workerDll = FindWorkerDll();

@@ -4,16 +4,18 @@ using System.Text;
 namespace BasaraFoundry.Game.Utage.Arc;
 
 /// <summary>
-/// Recomputes the schema-1 owner-set binding from a persisted group audit.
+/// Recomputes the versioned owner-set binding from a persisted group audit.
 /// Consumers must not trust BuildSetSha256 merely because it is 64 hex chars;
 /// it must be derived again from the complete sorted owner/output set.
+/// Schema 2 is the incremental-safe transaction introduced on 2026-09-17;
+/// schema 1 remains readable for historical persisted audits.
 /// </summary>
 public static class UtageSharedOwnerAuditVerifier
 {
     public static void EnsureValid(SharedOwnerXetGraftGroupAudit audit)
     {
         ArgumentNullException.ThrowIfNull(audit);
-        if (audit.Schema != 1)
+        if (audit.Schema is not (1 or 2))
             throw new NotSupportedException($"Unsupported shared-owner audit schema {audit.Schema}.");
         if (string.IsNullOrWhiteSpace(audit.ResourceName) || audit.TypeHash != UtageTypeHashes.Texture)
             throw new InvalidDataException("Shared-owner audit resource identity is invalid.");
@@ -68,8 +70,15 @@ public static class UtageSharedOwnerAuditVerifier
     public static string ComputeBuildSetSha256(SharedOwnerXetGraftGroupAudit audit)
     {
         ArgumentNullException.ThrowIfNull(audit);
+        var bindingPrefix = audit.Schema switch
+        {
+            1 => "shared-owner-xet-v1\n",
+            2 => "shared-owner-xet-v2\n",
+            _ => throw new NotSupportedException($"Unsupported shared-owner audit schema {audit.Schema}."),
+        };
+
         var builder = new StringBuilder();
-        builder.Append("shared-owner-xet-v1\n")
+        builder.Append(bindingPrefix)
             .Append(audit.ResourceName).Append('\n')
             .Append(audit.PristineBaseSha256).Append('\n')
             .Append(audit.CandidateRgbaSha256).Append('\n')
