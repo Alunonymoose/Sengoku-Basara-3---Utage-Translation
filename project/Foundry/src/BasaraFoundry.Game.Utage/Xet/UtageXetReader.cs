@@ -38,7 +38,8 @@ public static class UtageXetReader
         {
             [0x13] = "DXT1",
             [0x14] = "DXT1",
-            [0x15] = "DXT3", // Kuriimu2 Capcom MT Framework mapping; real Utage wep_000 fixture matches BC2 storage.\n            [0x17] = "DXT5",
+            [0x15] = "DXT3", // Kuriimu2 Capcom MT Framework mapping; real Utage wep_000 fixture matches BC2 storage.
+            [0x17] = "DXT5",
             [0x18] = "DXT5",
             [0x19] = "DXT1", // Verified against real Utage PS3 samples; generic MT tables differ.
             [0x2A] = "DXT5",
@@ -82,7 +83,8 @@ public static class UtageXetReader
         int? blockSize = blockFormat switch
         {
             "DXT1" => 8,
-            "DXT3" => 16,\n            "DXT5" => 16,
+            "DXT3" => 16,
+            "DXT5" => 16,
             _ => null,
         };
 
