@@ -36,8 +36,18 @@ internal static class TargetShellRegression
         var pristineXet = BuildXet(sourceRgba, width, height, textureOffset, "JPN!");
         var pristineDecoded = UtageXetCodec.DecodeTopLevel(pristineXet).Rgba;
 
-        // Candidate changes one exact pixel in block 0.
-        var candidate = pristineDecoded.ToArray();
+        // Current ENG target already contains an earlier approved English edit
+        // in block 1 plus a distinct target-only extension shell. A later edit in
+        // block 0 must preserve both.
+        var currentTargetRgba = pristineDecoded.ToArray();
+        var earlierEnglishPixel = 1 * width + 6;
+        currentTargetRgba[earlierEnglishPixel * 4] ^= 0x7f;
+        var targetXet = BuildXet(currentTargetRgba, width, height, textureOffset, "ENG!");
+        var targetDecoded = UtageXetCodec.DecodeTopLevel(targetXet).Rgba;
+        var sourceArc = BuildSingleEntryArc("roulette_000_ID_HQ", targetXet);
+
+        // Candidate is based on the live target and changes one exact pixel in block 0.
+        var candidate = targetDecoded.ToArray();
         var changedPixel = 1 * width + 1;
         var changedOffset = changedPixel * 4;
         candidate[changedOffset] = 240;
@@ -46,15 +56,6 @@ internal static class TargetShellRegression
         candidate[changedOffset + 3] = 255;
         var mask = new byte[width * height];
         mask[changedPixel] = 1;
-
-        // Current ENG target contains unrelated damage in block 1 and a distinct
-        // target-only extension shell. Neither may be taken as pristine art;
-        // the shell, however, is the live container identity and must survive.
-        var damagedTargetRgba = pristineDecoded.ToArray();
-        var damagedPixel = 1 * width + 6;
-        damagedTargetRgba[damagedPixel * 4] ^= 0x7f;
-        var targetXet = BuildXet(damagedTargetRgba, width, height, textureOffset, "ENG!");
-        var sourceArc = BuildSingleEntryArc("roulette_000_ID_HQ", targetXet);
 
         var tx = UtageSingleEntryXetGraft.BuildSibling(
             sourceArc,
@@ -73,8 +74,10 @@ internal static class TargetShellRegression
             "output shell is not the pristine donor shell");
 
         var finalDecoded = UtageXetCodec.DecodeTopLevel(finalXet).Rgba;
-        Assert(PixelEqual(finalDecoded, pristineDecoded, damagedPixel),
-            "unrelated damaged ENG block restored from pristine compressed artwork");
+        Assert(PixelEqual(finalDecoded, targetDecoded, earlierEnglishPixel),
+            "earlier English edit outside approved footprint survives from live target");
+        Assert(!PixelEqual(finalDecoded, pristineDecoded, earlierEnglishPixel),
+            "earlier English edit is not reverted to pristine JPN");
         Assert(tx.Audit.TargetShellPreserved, "audit records target-shell preservation");
         Assert(tx.Audit.OutsideEffectiveBlockPixelDelta == 0,
             "audit proves zero final decoded delta outside effective BC3 footprint");
