@@ -19,13 +19,14 @@ public sealed record XetSingleLevelBuildResult(
 /// Certified top-level BCn codec boundary for Utage PS3 XET resources.
 ///
 /// Read support follows the XET metadata capability table. Write support is
-/// intentionally narrower: v0.1 only re-encodes the DXT5 codes already proven
-/// in the Utage project. DXT1 and the ambiguous 0x15 form remain read-only
-/// until real-game fixtures certify Foundry's writer.
+/// intentionally narrower: v0.1 only re-encodes plain-RGBA DXT5 codes proven
+/// in the Utage project. Format 0x2A requires the dedicated Kuriimu2 YCbCr
+/// transform and 0x2B requires the dedicated RBxG dual-plane path, so the
+/// generic one-RGBA writer must fail closed for both.
 /// </summary>
 public static class UtageXetCodec
 {
-    private static readonly HashSet<int> WritableDxt5Codes = [0x17, 0x18, 0x2A, 0x2B];
+    private static readonly HashSet<int> WritableDxt5Codes = [0x17, 0x18];
 
     public static XetDecodedImage DecodeTopLevel(ReadOnlySpan<byte> raw)
     {
