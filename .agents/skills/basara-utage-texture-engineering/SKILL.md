@@ -138,30 +138,36 @@ Do **not** regress this solved title path by writing conventional RGBA into 0x2A
 
 Scope: the 0x2A channel contract is source-verified and runtime-validated on `title_004`. The transparent-RGB edge-preconditioning strategy is runtime verified for this specific title fixture and approved art; inspect pristine/reference behavior before generalizing that artwork-specific edge strategy to unrelated 0x2A assets.
 
-### Format 0x2B / RBxG
+### Format 0x2B / stored-channel preservation view
 
-Do not expose 0x2B as ordinary artist-facing RGBA.
+Do not expose raw 0x2B BC3 channels as ordinary artist-facing RGBA.
 
-The stored payload is BC3, but the editing representation has special channel semantics.
+Current Kuriimu2 PS3 source applies the same `MtTex_YCbCrColorShader` to **both 0x2A and 0x2B**. Therefore the best-supported display interpretation is the same YCbCr mapping used above.
 
-For a decoded stored-channel pixel `(R,G,B,A)`, the proven project representation is:
+The older project "RBxG" representation remains useful, but it is not a competing screen-colour model. It is an exact lossless decomposition of the stored YCbCr/alpha channels.
+
+For stored `(R,G,B,A)`:
 
 `base = (A,A,A,G)`
 
 `mask = (R,B,0,255)`
 
-Reconstruction back to stored channels is:
+Under the YCbCr interpretation this means:
+
+- `base.RGB = stored.A = Y`
+- `base.A = stored.G = rendered alpha`
+- `mask.R = stored.R = Cr + 123`
+- `mask.G = stored.B = Cb + 123`
+
+Reconstruction:
 
 `stored = (mask.R, base.A, mask.G, base.G)`
 
-Project observation aligns with:
+So the base+mask view preserves Y, alpha and both chroma channels without loss; the YCbCr shader converts those recombined stored channels to screen/display colour.
 
-- green controlling opacity
-- alpha controlling brightness/luminance-like visible intensity
+Do not implement 0x2B as a naive G/A swap, and do not discard the R/B chroma channels.
 
-Preserve hidden R/B information through the mask plane. Do not implement 0x2B as a naive G/A swap.
-
-Generic one-PNG RGBA writes to 0x2B must fail closed. Use a dedicated RBxG path with base+mask representation and verification.
+**Production write status:** fail closed. Kuriimu2 source gives strong static evidence for the display transform, but the project has not yet certified a real Utage 0x2B edit/rebuild/extract/runtime fixture. Generic one-PNG writes and the old unverified RBxG writer must not be promoted until that gate is passed.
 
 ## BC-compressed edit-mask rule
 
