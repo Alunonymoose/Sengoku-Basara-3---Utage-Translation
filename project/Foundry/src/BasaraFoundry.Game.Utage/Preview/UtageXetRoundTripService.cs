@@ -55,9 +55,21 @@ public static class UtageXetRoundTripService
 
         var candidateBytes = candidateRgba.ToArray();
         var candidateHash = Hex(SHA256.HashData(candidateBytes));
-        var build = UtageXetCodec.ReplaceSingleLevel(selected.RawXet, candidateBytes);
-        var encodedHash = Hex(SHA256.HashData(build.XetBytes));
-        var verification = build.VerificationDecode.Rgba;
+        byte[] encodedXet;
+        byte[] verification;
+        if (info.FormatCode == 0x2A)
+        {
+            var build = UtageXetCodec.ReplaceYcbcrSingleLevel(selected.RawXet, candidateBytes);
+            encodedXet = build.XetBytes;
+            verification = build.VerificationDisplayDecode.Rgba;
+        }
+        else
+        {
+            var build = UtageXetCodec.ReplaceSingleLevel(selected.RawXet, candidateBytes);
+            encodedXet = build.XetBytes;
+            verification = build.VerificationDecode.Rgba;
+        }
+        var encodedHash = Hex(SHA256.HashData(encodedXet));
         if (verification.Length != candidateBytes.Length)
             throw new InvalidDataException("Verification decode returned an unexpected RGBA length.");
 
