@@ -55,7 +55,7 @@ public static class UtageXetPreviewService
             BlockFormat: info.BlockFormat ?? "unknown",
             MipCount: info.MipCount,
             Swizzle: info.Swizzle,
-            CanEncode: UtageXetCodec.CanEncode(info),
+            CanEncode: UtageXetCodec.CanEncodeForEditing(info),
             SourceResourceSha256: selected.SourceResourceSha256,
             Rgba: selected.Decoded.Rgba);
     }
