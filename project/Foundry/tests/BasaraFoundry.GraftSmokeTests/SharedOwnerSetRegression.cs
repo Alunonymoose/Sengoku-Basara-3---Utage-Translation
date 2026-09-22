@@ -205,7 +205,7 @@ internal static class SharedOwnerSetRegression
         shell[3] = (byte)'T';
         BinaryPrimitives.WriteUInt32BigEndian(shell.AsSpan(4, 4), (uint)(0x97 | (2 << 28)));
         BinaryPrimitives.WriteUInt32BigEndian(shell.AsSpan(8, 4), (uint)(1 | (width << 6) | (height << 19)));
-        BinaryPrimitives.WriteUInt32BigEndian(shell.AsSpan(12, 4), (uint)(1 | (0x2A << 8)));
+        BinaryPrimitives.WriteUInt32BigEndian(shell.AsSpan(12, 4), (uint)(1 | (0x17 << 8)));
         BinaryPrimitives.WriteUInt32BigEndian(shell.AsSpan(16, 4), textureOffset);
         return UtageXetCodec.ReplaceSingleLevel(shell, rgba).XetBytes;
     }
