@@ -42,8 +42,8 @@ public sealed partial class MainWindow
         var hasAiRepairInputs =
             current is not null &&
             pristine is not null &&
-            current.CanEncodeForEditing &&
-            pristine.CanEncodeForEditing &&
+            current.CanEncode &&
+            pristine.CanEncode &&
             current.Width == _activeWidth && current.Height == _activeHeight &&
             pristine.Width == _activeWidth && pristine.Height == _activeHeight;
 
