@@ -43,9 +43,11 @@ public sealed record SingleEntryXetGraftResult(
 
 /// <summary>
 /// Certified production transaction for one XET member inside one Utage ARC.
-/// The selected target owns output container identity; pristine JPN supplies
-/// trusted image payload bytes; only approved touched BC3 blocks come from the
-/// localized candidate.
+/// The selected current target owns both output container identity and the
+/// untouched compressed-art preservation base. Pristine JPN is a mandatory
+/// structural/reference authority only; approved touched BC3 blocks come from
+/// the localized candidate. This prevents later edits from reverting earlier
+/// approved English work elsewhere in the same atlas.
 /// </summary>
 public static class UtageSingleEntryXetGraft
 {
@@ -80,7 +82,10 @@ public static class UtageSingleEntryXetGraft
         var targetXet = UtageArcReader.ReadDecompressedPayload(sourceStream, entry);
         var compatibility = EnsureCompatibleTarget(targetXet, pristineBytes);
 
-        var graft = UtageBc3BlockGraft.GraftTopLevel(pristineBytes, candidateBytes, maskBytes);
+        // Incremental localisation must preserve the current live target outside
+        // the approved BC3 footprint. Pristine remains mandatory for compatibility
+        // and provenance, but is not the untouched-art base.
+        var graft = UtageBc3BlockGraft.GraftTopLevel(targetXet, candidateBytes, maskBytes);
         if (!graft.Report.Ok)
             throw new InvalidOperationException("BC3 production graft failed: " + string.Join(" | ", graft.Report.Notes));
 
@@ -98,7 +103,7 @@ public static class UtageSingleEntryXetGraft
 
         var finalDecode = UtageXetCodec.DecodeTopLevel(finalXet);
         if (graft.VerificationDecode is null || !finalDecode.Rgba.AsSpan().SequenceEqual(graft.VerificationDecode.Rgba))
-            throw new InvalidDataException("Target-shell final XET decode differs from the verified pristine-shell graft decode.");
+            throw new InvalidDataException("Target-shell final XET decode differs from the verified live-target-base graft decode.");
         if (graft.Report.OutsideEffectiveBlockPixelDelta != 0)
             throw new InvalidDataException($"Final decoded output changed {graft.Report.OutsideEffectiveBlockPixelDelta} pixels outside the effective BC3 block mask.");
 
@@ -129,11 +134,12 @@ public static class UtageSingleEntryXetGraft
         var finalHash = Sha256(finalXet);
         var notes = new List<string>(graft.Report.Notes)
         {
-            "production artwork base = explicit pristine counterpart XET image payload",
+            "production artwork base = current live target XET image payload",
+            "pristine counterpart is mandatory structural/reference authority, not the default untouched-art base",
             "selected target XET owns output shell/header/container identity",
             $"certified top-level payload bytes copied = {payloadLength}",
             "target XET shell and non-payload bytes preserved exactly",
-            "target-shell final decode equals verified pristine-shell graft decode",
+            "target-shell final decode equals verified live-target-base graft decode",
             "single ARC member replacement verified",
             "all non-target ARC stored payloads verified unchanged by UtageArcWriter",
             "source ARC retained as immutable input; output is build bytes",
@@ -178,7 +184,7 @@ public static class UtageSingleEntryXetGraft
             OutsideEffectiveBlockPixelDelta: graft.Report.OutsideEffectiveBlockPixelDelta,
             CompressionCollateralPixels: graft.Report.CompressionCollateralPixels,
             TargetShellPreserved: true,
-            UsedPristineOverride: true,
+            UsedPristineOverride: false,
             GraftOk: graft.Report.Ok,
             ArcRoundTripVerified: roundTripVerified,
             ApprovedEligible: true,
