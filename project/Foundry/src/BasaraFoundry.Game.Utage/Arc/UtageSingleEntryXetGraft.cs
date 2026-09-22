@@ -128,7 +128,7 @@ public static class UtageSingleEntryXetGraft
         if (!finalXet.AsSpan(targetInfo.TextureOffset + payloadLength).SequenceEqual(targetXet.AsSpan(targetInfo.TextureOffset + payloadLength)))
             throw new InvalidDataException("Target XET bytes after the certified payload range changed during production graft.");
 
-        var finalDecode = UtageXetCodec.DecodeTopLevel(finalXet);
+        var finalDecode = UtageXetCodec.DecodeDisplayTopLevel(finalXet);
         if (graft.VerificationDecode is null || !finalDecode.Rgba.AsSpan().SequenceEqual(graft.VerificationDecode.Rgba))
             throw new InvalidDataException("Target-shell final XET decode differs from the verified graft-base decode.");
         if (graft.Report.OutsideEffectiveBlockPixelDelta != 0)
@@ -241,8 +241,8 @@ public static class UtageSingleEntryXetGraft
                 $"Target={Describe(target)}; pristine={Describe(pristine)}.");
         }
 
-        UtageXetCodec.RequireEncodingCapability(pristine);
-        UtageXetCodec.RequireEncodingCapability(target);
+        RequireProductionEncodingCapability(pristine);
+        RequireProductionEncodingCapability(target);
 
         var payloadLength = pristine.TopLevelSizeBytes
             ?? throw new NotSupportedException("XET encoded top-level byte size is unknown.");
@@ -253,6 +253,14 @@ public static class UtageSingleEntryXetGraft
             throw new NotSupportedException("Target-shell graft v0.1 is single-level only and refuses trailing or multi-mip XET data.");
 
         return new XetCompatibility(target, pristine, payloadLength);
+    }
+
+    private static void RequireProductionEncodingCapability(UtageXetInfo info)
+    {
+        if (info.FormatCode == 0x2A)
+            UtageXetCodec.RequireYcbcrEncodingCapability(info);
+        else
+            UtageXetCodec.RequireEncodingCapability(info);
     }
 
     private static string Describe(UtageXetInfo info) =>
