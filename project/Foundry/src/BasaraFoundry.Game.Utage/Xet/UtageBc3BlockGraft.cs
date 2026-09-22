@@ -31,7 +31,7 @@ public sealed record Bc3GraftResult(
 public static class UtageBc3BlockGraft
 {
     public const int BlockBytes = 16;
-    public const string EncoderBackend = "BCnEncoder.Net BcEncoder / BC3 BestQuality / mipmaps disabled";
+    public const string EncoderBackend = "BCnEncoder.Net 2.2.1 BcEncoder / BC3 Balanced / mipmaps disabled";
 
     public static IReadOnlyList<(int Bx, int By)> MaskToBlockSet(ReadOnlySpan<byte> mask01, int width, int height)
     {
@@ -89,7 +89,7 @@ public static class UtageBc3BlockGraft
         };
         if (info.FormatCode == 0x2A)
         {
-            notes.Add("0x2A YCbCr transform is source-verified/runtime-validated; the Foundry BCnEncoder.Net backend is not yet independently runtime-certified against the accepted title_004 build.");
+            notes.Add("0x2A YCbCr transform is source-verified/runtime-validated; Foundry now matches Kuriimu2's BCnEncoder.Net 2.2.1 + Balanced-quality compressor profile; this exact Foundry production path still requires its own runtime gate against a real 0x2A edit.");
         }
         var baseDecode = UtageXetCodec.DecodeDisplayTopLevel(baseXet);
         var blocks = MaskToBlockSet(editMask01, info.Width, info.Height);
@@ -211,7 +211,7 @@ public static class UtageBc3BlockGraft
 
         var encoder = new BcEncoder();
         encoder.OutputOptions.Format = CompressionFormat.Bc3;
-        encoder.OutputOptions.Quality = CompressionQuality.BestQuality;
+        encoder.OutputOptions.Quality = CompressionQuality.Balanced;
         encoder.OutputOptions.GenerateMipMaps = false;
         var levels = encoder.EncodeToRawBytes(storedRgba, info.Width, info.Height, PixelFormat.Rgba32);
         if (levels.Length != 1)
