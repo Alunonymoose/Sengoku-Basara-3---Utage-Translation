@@ -97,7 +97,7 @@ public sealed partial class MainWindow
             if (!finalHash.Equals(audit.FinalResourceSha256, StringComparison.Ordinal))
                 throw new InvalidDataException("Decoded-review resource does not match the production audit final-resource hash.");
 
-            var decoded = UtageXetCodec.DecodeTopLevel(finalResource);
+            var decoded = UtageXetCodec.DecodeDisplayTopLevel(finalResource);
             var stack = new StackPanel { Spacing = 10, MaxWidth = 940 };
             stack.Children.Add(new TextBlock
             {
