@@ -171,7 +171,7 @@ public static class UtageXetCodec
     {
         var encoder = new BcEncoder();
         encoder.OutputOptions.Format = CompressionFormat.Bc3;
-        encoder.OutputOptions.Quality = CompressionQuality.BestQuality;
+        encoder.OutputOptions.Quality = CompressionQuality.Balanced;
         encoder.OutputOptions.GenerateMipMaps = false;
         var levels = encoder.EncodeToRawBytes(rgba.ToArray(), width, height, PixelFormat.Rgba32);
         if (levels.Length != 1)
