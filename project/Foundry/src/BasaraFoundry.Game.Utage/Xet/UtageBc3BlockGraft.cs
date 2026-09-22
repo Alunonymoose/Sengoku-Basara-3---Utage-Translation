@@ -22,7 +22,7 @@ public sealed record Bc3GraftResult(
 
 /// <summary>
 /// Production BC3 writer for Utage XET.
-/// Starts from preservation base compressed artwork, requires candidate equality outside
+/// Starts from the selected preservation-base compressed artwork, requires candidate equality outside
 /// the exact edit mask, expands only to intersecting 4x4 BC3 blocks, preserves
 /// all untouched compressed blocks byte-for-byte, then verifies the final decode.
 /// </summary>
@@ -98,8 +98,8 @@ public static class UtageBc3BlockGraft
         if (fullEncoded.Length != topLevelBytes)
             throw new InvalidDataException($"BC3 encoder returned {fullEncoded.Length} bytes; XET requires {topLevelBytes}.");
 
-        var preservation basePayload = preservationXet.Slice(info.TextureOffset, topLevelBytes).ToArray();
-        var grafted = (byte[])preservation basePayload.Clone();
+        var preservationBasePayload = preservationXet.Slice(info.TextureOffset, topLevelBytes).ToArray();
+        var grafted = (byte[])preservationBasePayload.Clone();
         var bw = Math.Max(1, (info.Width + 3) / 4);
 
         foreach (var (bx, by) in blocks)
@@ -114,7 +114,7 @@ public static class UtageBc3BlockGraft
         {
             if (touched.Contains(i)) continue;
             var start = i * BlockBytes;
-            if (!preservation basePayload.AsSpan(start, BlockBytes).SequenceEqual(grafted.AsSpan(start, BlockBytes)))
+            if (!preservationBasePayload.AsSpan(start, BlockBytes).SequenceEqual(grafted.AsSpan(start, BlockBytes)))
             {
                 notes.Add($"REJECT: untouched block {i} changed — graft bug");
                 return new Bc3GraftResult(Array.Empty<byte>(), grafted,
