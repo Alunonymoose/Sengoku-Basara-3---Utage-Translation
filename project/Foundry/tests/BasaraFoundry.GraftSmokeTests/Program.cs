@@ -91,6 +91,24 @@ internal static class Program
         var engMemberRgba = pristineDecoded.ToArray();
         engMemberRgba[(0 * width + 8) * 4] ^= 0x55;
         var engMemberXet = BuildXetFromRgba(engMemberRgba, width, height);
+        var engDecoded = UtageXetCodec.DecodeDisplayTopLevel(engMemberXet).Rgba;
+
+        // A real cumulative candidate starts from the decoded Current ENG target,
+        // not from a separately encoded pristine image. Reapply only today's
+        // approved 2x2 edit so all touched-block neighbours remain target-identical.
+        var transactionCandidate = engDecoded.ToArray();
+        for (var y = 1; y < 3; y++)
+        {
+            for (var x = 1; x < 3; x++)
+            {
+                var i = (y * width + x) * 4;
+                transactionCandidate[i] = 255;
+                transactionCandidate[i + 1] = 255;
+                transactionCandidate[i + 2] = 120;
+                transactionCandidate[i + 3] = 255;
+            }
+        }
+
         var sourceArc = BuildSingleEntryArc("roulette_000_ID_HQ", engMemberXet);
         var pristineArc = BuildSingleEntryArc("roulette_000_ID_HQ", pristineXet);
         var sourceArcSnapshot = sourceArc.ToArray();
@@ -100,7 +118,7 @@ internal static class Program
                 sourceArc,
                 0,
                 Array.Empty<byte>(),
-                candidate,
+                transactionCandidate,
                 mask),
             "production transaction rejects missing pristine counterpart");
 
@@ -108,7 +126,7 @@ internal static class Program
             sourceArc,
             memberIndex: 0,
             pristineXet,
-            candidate,
+            transactionCandidate,
             mask,
             new DateTimeOffset(2026, 9, 12, 0, 0, 0, TimeSpan.Zero),
             XetGraftBaseMode.CurrentTarget);
@@ -176,7 +194,7 @@ internal static class Program
 
             var candidatePath = Path.Combine(workDir, "candidate.rgba");
             var maskPath = Path.Combine(workDir, "mask.bin");
-            File.WriteAllBytes(candidatePath, candidate);
+            File.WriteAllBytes(candidatePath, transactionCandidate);
             File.WriteAllBytes(maskPath, mask);
 
             var workerDll = FindWorkerDll();
