@@ -185,7 +185,7 @@ public static class UtageXetCodec
     private static CompressionFormat ToCompressionFormat(UtageXetInfo info) => info.BlockFormat switch
     {
         "DXT1" => CompressionFormat.Bc1,
-        "DXT5" => CompressionFormat.Bc3,
+        "DXT3" => CompressionFormat.Bc2,\n        "DXT5" => CompressionFormat.Bc3,
         _ => throw new NotSupportedException(
             $"No BCn decoder mapping exists for XET format 0x{info.FormatCode:X2}.")
     };
