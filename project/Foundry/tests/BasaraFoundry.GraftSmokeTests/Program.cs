@@ -75,14 +75,19 @@ internal static class Program
         Equal(1, result.Report.BlocksReplaced, "exactly one block replaced");
         Equal(0, result.Report.OutsideMaskPixelDelta, "outside-mask delta is zero");
 
-        var bad = candidate.ToArray();
-        bad[(0 * width + 8) * 4] ^= 0x7F;
-        var rejected = UtageBc3BlockGraft.GraftTopLevel(pristineXet, bad, mask);
-        True(!rejected.Report.Ok, "rejects outside-mask changes");
+        var unrelated = candidate.ToArray();
+        unrelated[(0 * width + 8) * 4] ^= 0x7F; // wholly untouched BC3 block (2,0)
+        var unrelatedResult = UtageBc3BlockGraft.GraftTopLevel(pristineXet, unrelated, mask);
+        True(unrelatedResult.Report.Ok, "ignores candidate differences in wholly untouched blocks");
 
-        // Simulate an already-damaged ENG texture. Corrupt block (2,0), which is
-        // outside the candidate's edit block. Production must still take that
-        // untouched block from the pristine Japanese XET, never from ENG.
+        var bad = candidate.ToArray();
+        bad[(0 * width + 0) * 4] ^= 0x7F; // touched block (0,0), but outside exact mask
+        var rejected = UtageBc3BlockGraft.GraftTopLevel(pristineXet, bad, mask);
+        True(!rejected.Report.Ok, "rejects unapproved changes inside a touched BC3 block");
+
+        // Simulate an existing live English edit in block (2,0), outside the
+        // approved edit block. Normal incremental production must preserve the
+        // live target's compressed block rather than restoring pristine JP.
         var engMemberRgba = pristineDecoded.ToArray();
         engMemberRgba[(0 * width + 8) * 4] ^= 0x55;
         var engMemberXet = BuildXetFromRgba(engMemberRgba, width, height);
@@ -105,11 +110,12 @@ internal static class Program
             pristineXet,
             candidate,
             mask,
-            new DateTimeOffset(2026, 9, 12, 0, 0, 0, TimeSpan.Zero));
+            new DateTimeOffset(2026, 9, 12, 0, 0, 0, TimeSpan.Zero),
+            XetGraftBaseMode.CurrentTarget);
 
         True(sourceArc.AsSpan().SequenceEqual(sourceArcSnapshot), "source ARC remains byte-identical");
-        True(tx.Audit.UsedPristineOverride, "audit records mandatory pristine base");
-        True(!tx.Audit.TargetResourceSha256.Equals(tx.Audit.PristineBaseSha256, StringComparison.Ordinal), "audit proves ENG target and JPN base differ");
+        True(!tx.Audit.UsedPristineOverride, "audit records normal live-target preservation mode");
+        True(!tx.Audit.TargetResourceSha256.Equals(tx.Audit.PristineBaseSha256, StringComparison.Ordinal), "audit proves live target and pristine reference differ");
         True(tx.Audit.GraftOk && tx.Audit.ArcRoundTripVerified && tx.Audit.ApprovedEligible, "transaction fully verified");
         Equal(tx.Audit.SourceArcSha256, tx.ApprovalEvidence.SourceArcSha256, "evidence bound to source ARC hash");
         Equal(tx.Audit.OutputArcSha256, tx.ApprovalEvidence.OutputArcSha256, "evidence bound to output ARC hash");
