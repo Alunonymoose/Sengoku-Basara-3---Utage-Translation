@@ -84,6 +84,8 @@ Do not compare artist candidates to raw stored 0x2A channels.
 
 Production uses the dedicated YCbCr editing path; generic plain-RGBA writing is rejected.
 
+Foundry's current compressor backend is `BCnEncoder.Net BcEncoder / BC3 BestQuality / mipmaps disabled`. The 2026-09-18 runtime-accepted title evidence proves the 0x2A YCbCr contract and surgical block-graft recipe, but the surviving provenance does not identify BCnEncoder.Net as the compressor that made that accepted XET. Therefore the backend is CI/structurally verified, not yet runtime-certified. The graft audit records this provenance explicitly.
+
 ### 0x2B
 
 Kuriimu2 applies the same PS3 YCbCr display shader to 0x2B.
