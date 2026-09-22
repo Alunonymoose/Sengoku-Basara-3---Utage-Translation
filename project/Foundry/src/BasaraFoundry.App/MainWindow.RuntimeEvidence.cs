@@ -304,11 +304,11 @@ public sealed partial class MainWindow
 
     private void ValidateProductionAuditForResume(SingleEntryXetGraftAudit audit, string physicalOutputHash)
     {
-        if (audit.Schema != 4)
-            throw new NotSupportedException($"Unsupported production graft audit schema {audit.Schema}; target-shell production requires schema 4.");
+        if (audit.Schema != 5)
+            throw new NotSupportedException($"Unsupported production graft audit schema {audit.Schema}; cumulative target-shell production requires schema 5.");
         if (!audit.GraftOk || !audit.ArcRoundTripVerified || !audit.ApprovedEligible ||
-            !audit.UsedPristineOverride || !audit.TargetShellPreserved)
-            throw new InvalidDataException("Production audit is not eligible to restore a target-shell-preserving verified build.");
+            audit.UsedPristineOverride || !audit.TargetShellPreserved)
+            throw new InvalidDataException("Production audit is not eligible to restore a cumulative live-target-preserving verified build.");
         if (audit.OutsideMaskPixelDelta != 0 || audit.OutsideEffectiveBlockPixelDelta != 0)
             throw new InvalidDataException("Production audit reports changed pixels outside the certified edit footprint.");
         if (!audit.OutputArcSha256.Equals(physicalOutputHash, StringComparison.Ordinal))
