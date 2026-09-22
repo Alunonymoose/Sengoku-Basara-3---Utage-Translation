@@ -241,6 +241,11 @@ def main() -> int:
         action="store_true",
         help="inspect every decoded member for XET magic instead of only type hash 0x241F5DEB",
     )
+    ap.add_argument(
+        "--include-dummy",
+        action="store_true",
+        help="include id\\dummy_BM placeholder resources in capability totals",
+    )
     args = ap.parse_args()
 
     root = args.root.resolve()
@@ -252,6 +257,7 @@ def main() -> int:
     arc_errors: list[dict] = []
     total_entries = 0
     texture_entries = 0
+    dummy_entries_skipped = 0
 
     for arc_no, arc_path in enumerate(arc_paths, 1):
         rel = arc_path.relative_to(root).as_posix()
@@ -271,6 +277,11 @@ def main() -> int:
                     continue
 
                 if not args.all_xet_magic and meta["type_hash"] != XET_TYPE_HASH:
+                    continue
+
+                normalized_name = meta["name"].replace("/", "\\").lower()
+                if not args.include_dummy and normalized_name.endswith("id\\dummy_bm"):
+                    dummy_entries_skipped += 1
                     continue
 
                 raw, member_decode = decode_member(stored, meta["raw_size"])
@@ -374,6 +385,7 @@ def main() -> int:
         "arc_parse_errors": arc_errors,
         "arc_entries_seen": total_entries,
         "xet_instances_parsed": valid_rows,
+        "dummy_entries_skipped": dummy_entries_skipped,
         "xet_unique_payload_hashes": len(unique_payloads),
         "xet_unique_logical_paths": len(unique_paths),
         "format_counts": dict(sorted(fmt_counts.items())),
@@ -407,6 +419,7 @@ def main() -> int:
         "arc_files": len(arc_paths),
         "xet_instances": valid_rows,
         "arc_errors": len(arc_errors),
+        "dummy_entries_skipped": dummy_entries_skipped,
         "write_modes": summary["write_mode_counts"],
         "blockers": summary["blocker_counts"],
     }, indent=2))
