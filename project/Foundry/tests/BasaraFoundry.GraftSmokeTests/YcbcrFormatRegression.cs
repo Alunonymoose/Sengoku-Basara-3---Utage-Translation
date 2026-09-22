@@ -53,10 +53,14 @@ internal static class YcbcrFormatRegression
 
         var xet15 = BuildXet(0x15);
         var info15 = UtageXetReader.ReadInfo(xet15);
-        True(!info15.HasKnownBlockFormat, "ambiguous 0x15 has no certified block decoder");
+        True(info15.HasKnownBlockFormat, "source-verified 0x15 has a certified DXT3/BC2 decoder");
+        Equal("DXT3", info15.BlockFormat!, "0x15 maps to DXT3");
+        UtageXetReader.RequireTopLevelDecodeCapability(info15);
+        Equal(candidate.Length, UtageXetCodec.DecodeTopLevel(xet15).Rgba.Length, "0x15 BC2 preview decode length");
+        True(!UtageXetCodec.CanEncodeForEditing(info15), "0x15 production writing remains fail-closed");
         Throws<NotSupportedException>(
-            () => UtageXetReader.RequireTopLevelDecodeCapability(info15),
-            "ambiguous 0x15 decode fails closed");
+            () => UtageXetCodec.ReplaceSingleLevel(xet15, candidate),
+            "0x15 production writer remains fail-closed");
 
         Console.WriteLine("PASS YCbCr/format semantic regression");
     }
