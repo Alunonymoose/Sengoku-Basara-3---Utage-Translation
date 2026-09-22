@@ -40,8 +40,8 @@ public sealed partial class MainWindow
             donor.Width == _activeWidth &&
             donor.Height == _activeHeight;
         var hasAiRepairInputs =
-            current is not null &&
-            pristine is not null &&
+            current is { CanEncode: true } &&
+            pristine is { CanEncode: true } &&
             current.Width == _activeWidth && current.Height == _activeHeight &&
             pristine.Width == _activeWidth && pristine.Height == _activeHeight;
 
