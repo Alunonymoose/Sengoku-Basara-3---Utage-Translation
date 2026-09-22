@@ -92,6 +92,7 @@ public sealed partial class MainWindow
     {
         var generation = Volatile.Read(ref _reviewGeneration);
         var candidate = _candidateReview;
+        var current = _currentEnglishPreview;
         var pristine = _productionJapanesePreview;
         var pristineResource = _productionJapaneseResource;
         var active = _activeResource;
@@ -107,13 +108,18 @@ public sealed partial class MainWindow
         SendForApprovalButton.Content = "Review edit mask";
         SendForApprovalButton.IsEnabled = false;
 
-        if (candidate is null || pristine is null || pristineResource is null || active is null)
+        if (candidate is null || current is null || pristine is null || pristineResource is null || active is null)
         {
-            ProtectedPixelsText.Text = "Protected pixels: waiting for candidate + unique pristine JP reference";
+            ProtectedPixelsText.Text = "Protected pixels: waiting for candidate + Current ENG + unique pristine JP reference";
             return;
         }
         if (candidate.Generation != generation || !IsReviewCurrent(generation))
             return;
+        if (current.Width != _activeWidth || current.Height != _activeHeight)
+        {
+            ProtectedPixelsText.Text = "Protected pixels: BLOCKED — Current ENG preview dimensions differ";
+            return;
+        }
         if (pristine.Width != _activeWidth || pristine.Height != _activeHeight)
         {
             ProtectedPixelsText.Text = "Protected pixels: BLOCKED — JP counterpart dimensions differ";
@@ -121,7 +127,7 @@ public sealed partial class MainWindow
         }
 
         var proposal = UtageEditMaskProposalService.Create(
-            pristine.Rgba,
+            current.Rgba,
             candidate.Rgba,
             _activeWidth,
             _activeHeight);
@@ -130,7 +136,7 @@ public sealed partial class MainWindow
 
         if (!proposal.HasChanges)
         {
-            ProtectedPixelsText.Text = "Protected pixels: no candidate changes versus pristine JP";
+            ProtectedPixelsText.Text = "Protected pixels: no candidate changes versus Current ENG";
             return;
         }
 
@@ -212,7 +218,7 @@ public sealed partial class MainWindow
         });
         stack.Children.Add(new TextBlock
         {
-            Text = $"Candidate {candidate.Sha256[..12]}… · pristine JP {pristine.SourceResourceSha256[..12]}… · mask {proposal.MaskSha256[..12]}…",
+            Text = $"Candidate {candidate.Sha256[..12]}… · Current ENG {_activeSourceResourceSha256?[..12]}… · pristine JP {pristine.SourceResourceSha256[..12]}… · mask {proposal.MaskSha256[..12]}…",
             Opacity = 0.65,
             TextWrapping = TextWrapping.Wrap,
         });
@@ -314,7 +320,7 @@ public sealed partial class MainWindow
         var outputArc = Path.Combine(buildDir, $"{archiveStem}.foundry.arc");
         var auditPath = outputArc + ".audit.json";
 
-        SearchStatusText.Text = "Building from pristine JP compressed blocks in the isolated worker; canonical sources remain read only…";
+        SearchStatusText.Text = "Building cumulatively from Current ENG compressed blocks; pristine JP remains structural/reference authority; canonical sources remain read only…";
 
         await RunGraftWorkerAsync(
             Path.GetFullPath(engRoot),
@@ -346,7 +352,9 @@ public sealed partial class MainWindow
         IsReviewCurrent(candidate.Generation) &&
         _candidateReview?.Sha256 == candidate.Sha256 &&
         proposal.CandidateRgbaSha256 == candidate.Sha256 &&
-        proposal.PristineRgbaSha256 == Sha256(pristine.Rgba) &&
+        _currentEnglishPreview is not null &&
+        proposal.PristineRgbaSha256 == Sha256(_currentEnglishPreview.Rgba) &&
+        _currentEnglishPreview.SourceResourceSha256 == _activeSourceResourceSha256 &&
         pristine.SourceResourceSha256 == _productionJapanesePreview?.SourceResourceSha256;
 
     private static async Task RunGraftWorkerAsync(
@@ -431,10 +439,10 @@ public sealed partial class MainWindow
             PropertyNameCaseInsensitive = true,
         }) ?? throw new InvalidDataException("Production audit JSON was empty.");
 
-        if (audit.Schema != 4 || !audit.GraftOk || !audit.ArcRoundTripVerified || !audit.ApprovedEligible ||
-            !audit.UsedPristineOverride || !audit.TargetShellPreserved || audit.OutsideMaskPixelDelta != 0)
+        if (audit.Schema != 5 || !audit.GraftOk || !audit.ArcRoundTripVerified || !audit.ApprovedEligible ||
+            audit.UsedPristineOverride || !audit.TargetShellPreserved || audit.OutsideMaskPixelDelta != 0)
         {
-            throw new InvalidDataException("Production audit does not represent a fully verified target-shell-preserving mandatory-pristine transaction.");
+            throw new InvalidDataException("Production audit does not represent a fully verified cumulative live-target-preserving transaction.");
         }
         if (audit.MemberIndex != target.EntryIndex || !audit.MemberName.Equals(target.ResourceName, StringComparison.Ordinal))
             throw new InvalidDataException("Production audit member identity does not match the active target.");
