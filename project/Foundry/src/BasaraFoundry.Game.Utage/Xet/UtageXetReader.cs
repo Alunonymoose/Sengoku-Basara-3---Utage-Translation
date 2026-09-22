@@ -20,11 +20,14 @@ public sealed record UtageXetInfo(
 {
     public bool HasKnownBlockFormat => BlockFormat is not null && BlockSizeBytes is not null;
     public bool CanDecodeTopLevel => Swizzle == 0 && HasKnownBlockFormat;
+    public bool HasYcbcrColorShader => FormatCode is 0x2A or 0x2B;
 }
 
 /// <summary>
 /// Metadata parser for the PS3 big-endian XET form used by Utage.
-/// This deliberately does not treat unknown format codes as DXT5.
+/// Unknown or ambiguous formats are deliberately not guessed.
+/// 0x2A/0x2B are BC3 storage; their artist-facing colour interpretation is
+/// handled separately by the PS3 MT Framework YCbCr display shader.
 /// </summary>
 public static class UtageXetReader
 {
@@ -35,10 +38,10 @@ public static class UtageXetReader
         {
             [0x13] = "DXT1",
             [0x14] = "DXT1",
-            [0x15] = "DXT5", // Utage samples are BC2/BC3-ambiguous; donor swap is byte-compatible.
+            // 0x15 intentionally omitted: real Utage samples remain BC2/BC3-ambiguous.
             [0x17] = "DXT5",
             [0x18] = "DXT5",
-            [0x19] = "DXT1", // Verified against real Utage PS3 samples; generic MT tables say BC4.
+            [0x19] = "DXT1", // Verified against real Utage PS3 samples; generic MT tables differ.
             [0x2A] = "DXT5",
             [0x2B] = "DXT5",
         };
