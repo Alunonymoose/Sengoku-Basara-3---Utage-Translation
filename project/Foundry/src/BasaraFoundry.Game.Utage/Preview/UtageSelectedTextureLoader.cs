@@ -63,7 +63,7 @@ internal static class UtageSelectedTextureLoader
             throw new NotSupportedException("Selected ARC member is not a certified Utage texture resource.");
 
         var raw = UtageArcReader.ReadDecompressedPayload(stream, entry);
-        var decoded = UtageXetCodec.DecodeTopLevel(raw);
+        var decoded = UtageXetCodec.DecodeDisplayTopLevel(raw);
         var sourceHash = Convert.ToHexString(SHA256.HashData(raw)).ToLowerInvariant();
 
         return new UtageSelectedTexture(
