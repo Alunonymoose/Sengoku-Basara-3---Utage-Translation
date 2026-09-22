@@ -1,75 +1,122 @@
 # Production XET graft transaction
 
-Foundry production texture writes are fail-closed transactions. Canonical ENG/JPN source trees are immutable inputs; successful work produces a verified ARC plus audit JSON under the Foundry project build tree.
+Foundry production texture writes are fail-closed transactions. Canonical source trees are immutable inputs; successful work produces verified sibling ARC output plus audit evidence.
+
+## Preservation model
+
+Normal incremental localisation uses:
+
+`current live target + approved edit -> current live target with only approved touched BC blocks changed`
+
+Pristine Japanese is mandatory **reference/compatibility evidence**, not the default untouched-art base.
+
+An explicit `PristineRestore` mode exists for intentional repair/restore transactions. It must never be selected implicitly.
 
 ## Certified path
 
-1. Re-read the selected ENG source as PS3 Utage ARC v8 and revalidate the exact indexed member name/type.
-2. Resolve a **unique pristine counterpart** from the separately configured Japanese source route. Ambiguity is a hard stop.
-3. Re-read that JPN ARC/member independently and require a certified texture resource.
-4. Require target/pristine structural compatibility: XET version, dimensions, format, mip count, swizzle and texture offset.
-5. Use the pristine JPN XET compressed payload as the **mandatory production artwork base**. The current ENG XET is never an implicit fallback.
-6. Bind the frozen candidate RGBA to an explicit per-pixel edit mask. A UI proposal may be generated from pristine-JP decode vs candidate delta, but the proposal is not approval.
-7. Show both the exact changed-pixel mask and the minimum intersecting 4×4 BC3 block footprint. The operator must explicitly approve that mask before a production build can run.
-8. Run `UtageBc3BlockGraft.GraftTopLevel` and refuse the transaction unless `Bc3GraftReport.Ok` is true.
-9. Rebuild the ARC through `UtageArcWriter` with exactly one replacement; untouched stored member payloads remain byte-identical.
-10. Re-read the built ARC and require the target raw member to equal the grafted XET byte-for-byte.
-11. Emit audit schema 3 with source/output ARC hashes, target-resource hash, pristine-base hash, member identity, mask/block counts and verification flags.
-12. Create opaque `AssetApprovalEvidence` inside the certified Utage format assembly only; normal UI/Worker callers cannot mint a successful approval token.
-13. Write ARC/audit output to an explicit Foundry project build directory. Writing over or beside a canonical source ARC is forbidden.
+1. Re-read the selected live target ARC and revalidate exact member name/type.
+2. Resolve and re-read a unique pristine counterpart for structural/reference checks.
+3. Require target/pristine XET compatibility: version, swizzle, reserved/alpha fields, dimensions, image/mip counts, format, unknown3, texture offset and top-level payload size.
+4. Preserve the live target XET shell/header/non-payload bytes.
+5. Freeze the approved candidate and explicit pixel edit mask.
+6. Convert the mask to intersecting 4×4 BC blocks.
+7. For normal incremental mode, use the **current target compressed payload** as the untouched-block base.
+8. Candidate differences in completely untouched blocks are ignored; those live target block bytes remain authoritative.
+9. Candidate differences inside a touched BC block but outside the exact approved mask are rejected.
+10. Use the format-aware encoder:
+   - ordinary 0x17/0x18 BC3: direct RGBA -> BC3;
+   - 0x2A: display RGBA -> exact PS3 MT YCbCr shader -> BC3;
+   - 0x2B: production write currently fail-closed pending real-fixture certification;
+   - 0x15: ambiguous and fail-closed.
+11. Replace only approved compressed blocks.
+12. Decode the final resource in **display space** and prove zero pixel delta outside the effective touched-block footprint.
+13. Rebuild the ARC; every untouched stored ARC member must remain byte-identical.
+14. Re-read the built ARC and require the target raw member to equal the final XET byte-for-byte.
+15. Bind source ARC, target XET, pristine reference, candidate, mask, final XET and output ARC hashes in the audit.
+16. Final encoded-output human review remains separate from software proof.
 
 ## API
 
+Normal incremental production:
+
 ```csharp
-var proposal = UtageEditMaskProposalService.Create(
-    pristineDecodedRgba,
-    candidateRgba,
-    width,
-    height);
-
-// Operator reviews proposal.Mask01 plus proposal.BlockCoords before build.
-
 var tx = UtageSingleEntryXetGraft.BuildSibling(
     sourceArc,
     memberIndex,
-    pristineJpnXet,
-    candidateRgba,
-    proposal.Mask01);
-
-AssetApprovalGuard.EnsureCanTransition(
-    AssetApprovalState.Review,
-    AssetApprovalState.Approved,
-    tx.ApprovalEvidence);
-
-var disk = UtageSiblingArcStore.Write(
-    sourceArcPath,
-    tx,
-    projectBuildArcPath);
+    pristineReferenceXet,
+    approvedCandidateRgba,
+    approvedMask01);
 ```
 
-Domain rectangle masks can also be converted explicitly:
+Explicit pristine restore:
 
 ```csharp
-var mask01 = EditMaskCodec.ToMask01(editMask, width, height);
+var tx = UtageSingleEntryXetGraft.BuildSibling(
+    sourceArc,
+    memberIndex,
+    pristineReferenceXet,
+    approvedCandidateRgba,
+    approvedMask01,
+    createdAtUtc,
+    XetGraftBaseMode.PristineRestore);
 ```
 
-## Mask-review semantics
+The default five-argument overload is `CurrentTarget`.
 
-- **Exact mask pixels** are the pixels the candidate intentionally changes relative to the reviewed pristine JP decode.
-- **Affected BC3 blocks** are the minimum 4×4 compressed blocks intersecting that exact mask.
-- Pixels inside an affected block but outside the exact mask are shown separately as **potential compression collateral**.
-- Automatic delta detection may propose a mask; it must never silently approve one.
-- Any change to candidate, pristine reference, selected asset, or mask invalidates the previous approval binding.
+## Format semantics
+
+### Stored vs display RGBA
+
+`UtageXetCodec.DecodeTopLevel` exposes physical BCn stored channels.
+
+`UtageXetCodec.DecodeDisplayTopLevel` is the artist/review boundary. For 0x2A/0x2B it applies the PS3 MT Framework YCbCr shader used by Kuriimu2.
+
+Do not compare artist candidates to raw stored 0x2A channels.
+
+### 0x2A
+
+0x2A is BC3 storage with the exact Kuriimu2 PS3 YCbCr transform:
+
+- stored G = display alpha
+- stored A = Y
+- stored R = Cr + 123
+- stored B = Cb + 123
+
+Production uses the dedicated YCbCr editing path; generic plain-RGBA writing is rejected.
+
+### 0x2B
+
+Kuriimu2 applies the same PS3 YCbCr display shader to 0x2B.
+
+Historical project RBxG/base+mask handling is a lossless **stored-channel decomposition**:
+
+- base = (stored.A, stored.A, stored.A, stored.G) = (Y,Y,Y,alpha)
+- mask = (stored.R, stored.B, 0, 255) = (Cr+123,Cb+123,0,255)
+- reconstruction = (mask.R, base.A, mask.G, base.G)
+
+This does not conflict with YCbCr; it preserves the underlying channels separately. Until a real Utage 0x2B edit/rebuild/runtime fixture is certified, production writing remains fail-closed.
 
 ## Non-negotiable rules
 
-- Never write production output into a canonical ENG/JPN source tree or beside the source ARC.
-- Never production-base a texture on the current ENG member when a pristine counterpart is required.
-- Never use `UtageXetCodec.ReplaceSingleLevel` as the production texture writer.
-- Never approve a texture candidate from visual appearance alone; review the exact mask and BC3 footprint.
-- Never bypass a failed outside-mask identity check.
-- Never treat an ARC rebuild as verified until the target raw member round-trips to the exact grafted XET.
-- Never allow ordinary application/worker code to construct successful production approval evidence.
-- Never claim a private fixture passed unless the raw ARC/XET fixture itself was actually exercised.
+- Do not overwrite canonical source ARCs.
+- Do not use pristine JPN as the normal incremental preservation base.
+- Do not transplant a pristine/donor whole XET shell.
+- Do not use plain RGBA writing for 0x2A or 0x2B.
+- Do not guess 0x15 as DXT5.
+- Do not write only one member of a proven shared-owner class.
+- Do not accept candidate changes hidden inside touched blocks but outside the approved pixel mask.
+- Do not call software verification human approval.
+- Do not skip final extract/decode from the rebuilt ARC.
 
-The synthetic graft suite covers exact-mask proposal math, BC3 block footprint/collateral reporting, outside-mask rejection, mandatory pristine-JP base, corrupted-ENG isolation, single-entry ARC rebuild/round-trip, source-byte immutability, opaque approval evidence, audit output and external build-directory enforcement.
+## Regression coverage
+
+The texture hardening suite includes:
+
+- incremental live-target preservation across untouched BC blocks;
+- explicit pristine-restore behavior;
+- target-shell preservation;
+- synchronized shared-owner handling;
+- exact PS3 YCbCr transform checks;
+- plain-writer rejection for 0x2A/0x2B;
+- 0x2B production fail-closed behavior;
+- 0x15 ambiguous-format fail-closed behavior.
