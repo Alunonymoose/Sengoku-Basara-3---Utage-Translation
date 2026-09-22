@@ -40,13 +40,15 @@ internal static class SharedOwnerSetRegression
             var pristineXet = BuildXetFromRgba(pristineRgba, width, height);
             var pristineDecoded = UtageXetCodec.DecodeTopLevel(pristineXet).Rgba;
 
-            // The current ENG duplicate may already contain damage outside the
-            // intended edit. All owners use the same current target bytes so the
-            // shared-owner transaction is allowed to synchronize them; pristine
-            // JPN remains the untouched-art authority.
+            // The current ENG duplicate already contains an earlier approved
+            // English edit outside today's intended edit. All owners use the same
+            // current target bytes, and that prior edit must survive this grouped
+            // transaction. Pristine JPN remains structural/reference authority.
             var currentEngRgba = pristineDecoded.ToArray();
-            currentEngRgba[(0 * width + 8) * 4] ^= 0x55;
+            var earlierEnglishPixel = 0 * width + 8;
+            currentEngRgba[earlierEnglishPixel * 4] ^= 0x55;
             var commonTargetXet = BuildXetFromRgba(currentEngRgba, width, height);
+            var commonTargetDecoded = UtageXetCodec.DecodeTopLevel(commonTargetXet).Rgba;
             var commonTargetArc = BuildSingleEntryArc(resourceName, commonTargetXet);
 
             var ownerNames = new[] { "cockpit1P.arc", "cockpit2P.arc", "vs_cockpit.arc" };
@@ -59,7 +61,7 @@ internal static class SharedOwnerSetRegression
             }
             File.WriteAllBytes(Path.Combine(jpnDir, "cockpit1P.arc"), BuildSingleEntryArc(resourceName, pristineXet));
 
-            var candidate = pristineDecoded.ToArray();
+            var candidate = commonTargetDecoded.ToArray();
             var mask = new byte[width * height];
             for (var y = 1; y < 3; y++)
             {
@@ -126,6 +128,13 @@ internal static class SharedOwnerSetRegression
                 finalResourceHashes.Add(ReadMemberSha256(outputArc, resourceName));
             }
             Equal(1, finalResourceHashes.Count, "all owners contain byte-identical final XET");
+            var firstOutput = Path.Combine(outputDir, "cockpit1P.foundry.arc");
+            var firstFinalXet = ReadMemberBytes(firstOutput, resourceName);
+            var firstFinalDecoded = UtageXetCodec.DecodeTopLevel(firstFinalXet).Rgba;
+            True(PixelEqual(firstFinalDecoded, commonTargetDecoded, earlierEnglishPixel),
+                "shared-owner build preserves earlier English edit outside approved footprint");
+            True(!PixelEqual(firstFinalDecoded, pristineDecoded, earlierEnglishPixel),
+                "shared-owner build does not revert earlier English edit to pristine JPN");
             True(stdout.Contains("\"owners\":3", StringComparison.OrdinalIgnoreCase), "Worker reports complete owner count");
 
             foreach (var pair in sourceSnapshots)
@@ -235,15 +244,23 @@ internal static class SharedOwnerSetRegression
         return arc;
     }
 
-    private static string ReadMemberSha256(string archivePath, string expectedName)
+    private static byte[] ReadMemberBytes(string archivePath, string expectedName)
     {
         using var stream = File.OpenRead(archivePath);
         var arc = UtageArcReader.Read(stream, archivePath);
         if (arc.Entries.Count != 1 || !arc.Entries[0].Name.Equals(expectedName, StringComparison.Ordinal))
             throw new InvalidDataException("Synthetic synchronized output member identity changed.");
         stream.Position = 0;
-        var raw = UtageArcReader.ReadDecompressedPayload(stream, arc.Entries[0]);
-        return Convert.ToHexString(SHA256.HashData(raw)).ToLowerInvariant();
+        return UtageArcReader.ReadDecompressedPayload(stream, arc.Entries[0]);
+    }
+
+    private static string ReadMemberSha256(string archivePath, string expectedName) =>
+        Convert.ToHexString(SHA256.HashData(ReadMemberBytes(archivePath, expectedName))).ToLowerInvariant();
+
+    private static bool PixelEqual(ReadOnlySpan<byte> a, ReadOnlySpan<byte> b, int pixel)
+    {
+        var o = pixel * 4;
+        return a.Slice(o, 4).SequenceEqual(b.Slice(o, 4));
     }
 
     private static string FindWorkerDll()
