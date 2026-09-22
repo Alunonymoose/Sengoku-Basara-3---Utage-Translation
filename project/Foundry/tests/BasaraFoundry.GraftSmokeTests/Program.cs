@@ -34,8 +34,16 @@ internal static class Program
 
         var pristineXet = BuildXetFromRgba(sourceRgba, width, height);
         var pristineDecoded = UtageXetCodec.DecodeTopLevel(pristineXet).Rgba;
-        var candidate = pristineDecoded.ToArray();
 
+        // Current ENG target already contains an earlier approved English edit
+        // outside today's mask. A cumulative production write must preserve it.
+        var engMemberRgba = pristineDecoded.ToArray();
+        var earlierEnglishPixel = 0 * width + 8;
+        engMemberRgba[earlierEnglishPixel * 4] ^= 0x55;
+        var engMemberXet = BuildXetFromRgba(engMemberRgba, width, height);
+        var engDecoded = UtageXetCodec.DecodeTopLevel(engMemberXet).Rgba;
+
+        var candidate = engDecoded.ToArray();
         for (var y = 1; y < 3; y++)
         {
             for (var x = 1; x < 3; x++)
@@ -61,7 +69,7 @@ internal static class Program
             height);
         True(mask.AsSpan().SequenceEqual(fromRects), "EditMaskCodec matches hand-built mask01");
 
-        var proposal = UtageEditMaskProposalService.Create(pristineDecoded, candidate, width, height);
+        var proposal = UtageEditMaskProposalService.Create(engDecoded, candidate, width, height);
         Equal(4, proposal.ChangedPixels, "mask proposal exact changed-pixel count");
         Equal(1, proposal.AffectedBlocks, "mask proposal affected BC3 block count");
         Equal(16, proposal.EffectiveBlockPixels, "mask proposal effective block footprint");
@@ -70,22 +78,16 @@ internal static class Program
         True(mask.AsSpan().SequenceEqual(proposal.Mask01), "mask proposal equals exact candidate delta");
         Equal(candidate.Length, UtageEditMaskProposalService.CreateReviewRgba(candidate, proposal).Length, "mask review RGBA dimensions preserved");
 
-        var result = UtageBc3BlockGraft.GraftTopLevel(pristineXet, candidate, mask);
+        var result = UtageBc3BlockGraft.GraftTopLevel(engMemberXet, candidate, mask);
         True(result.Report.Ok, "graft reports ok");
         Equal(1, result.Report.BlocksReplaced, "exactly one block replaced");
         Equal(0, result.Report.OutsideMaskPixelDelta, "outside-mask delta is zero");
 
         var bad = candidate.ToArray();
         bad[(0 * width + 8) * 4] ^= 0x7F;
-        var rejected = UtageBc3BlockGraft.GraftTopLevel(pristineXet, bad, mask);
+        var rejected = UtageBc3BlockGraft.GraftTopLevel(engMemberXet, bad, mask);
         True(!rejected.Report.Ok, "rejects outside-mask changes");
 
-        // Simulate an already-damaged ENG texture. Corrupt block (2,0), which is
-        // outside the candidate's edit block. Production must still take that
-        // untouched block from the pristine Japanese XET, never from ENG.
-        var engMemberRgba = pristineDecoded.ToArray();
-        engMemberRgba[(0 * width + 8) * 4] ^= 0x55;
-        var engMemberXet = BuildXetFromRgba(engMemberRgba, width, height);
         var sourceArc = BuildSingleEntryArc("roulette_000_ID_HQ", engMemberXet);
         var pristineArc = BuildSingleEntryArc("roulette_000_ID_HQ", pristineXet);
         var sourceArcSnapshot = sourceArc.ToArray();
@@ -108,9 +110,13 @@ internal static class Program
             new DateTimeOffset(2026, 9, 12, 0, 0, 0, TimeSpan.Zero));
 
         True(sourceArc.AsSpan().SequenceEqual(sourceArcSnapshot), "source ARC remains byte-identical");
-        True(tx.Audit.UsedPristineOverride, "audit records mandatory pristine base");
-        True(!tx.Audit.TargetResourceSha256.Equals(tx.Audit.PristineBaseSha256, StringComparison.Ordinal), "audit proves ENG target and JPN base differ");
+        True(!tx.Audit.UsedPristineOverride, "audit records live-target preservation base");
+        True(!tx.Audit.TargetResourceSha256.Equals(tx.Audit.PristineBaseSha256, StringComparison.Ordinal), "audit proves ENG target and JPN reference differ");
         True(tx.Audit.GraftOk && tx.Audit.ArcRoundTripVerified && tx.Audit.ApprovedEligible, "transaction fully verified");
+        var finalMember = ReadMember(tx.SiblingArcBytes, 0);
+        var finalDecoded = UtageXetCodec.DecodeTopLevel(finalMember).Rgba;
+        True(PixelEqual(finalDecoded, engDecoded, earlierEnglishPixel), "earlier English edit survives cumulative graft");
+        True(!PixelEqual(finalDecoded, pristineDecoded, earlierEnglishPixel), "cumulative graft does not revert earlier English edit to pristine");
         Equal(tx.Audit.SourceArcSha256, tx.ApprovalEvidence.SourceArcSha256, "evidence bound to source ARC hash");
         Equal(tx.Audit.OutputArcSha256, tx.ApprovalEvidence.OutputArcSha256, "evidence bound to output ARC hash");
         Equal(tx.Audit.MemberName, tx.ApprovalEvidence.MemberName, "evidence bound to member identity");
@@ -297,7 +303,7 @@ internal static class Program
         shell[3] = (byte)'T';
         BinaryPrimitives.WriteUInt32BigEndian(shell.AsSpan(4, 4), (uint)(0x97 | (2 << 28)));
         BinaryPrimitives.WriteUInt32BigEndian(shell.AsSpan(8, 4), (uint)(1 | (width << 6) | (height << 19)));
-        BinaryPrimitives.WriteUInt32BigEndian(shell.AsSpan(12, 4), (uint)(1 | (0x2A << 8)));
+        BinaryPrimitives.WriteUInt32BigEndian(shell.AsSpan(12, 4), (uint)(1 | (0x17 << 8)));
         BinaryPrimitives.WriteUInt32BigEndian(shell.AsSpan(16, 4), textureOffset);
         var built = UtageXetCodec.ReplaceSingleLevel(shell, rgba);
         return built.XetBytes;
@@ -326,6 +332,20 @@ internal static class Program
         BinaryPrimitives.WriteUInt32BigEndian(record.Slice(76, 4), payloadOffset);
         rawPayload.CopyTo(arc.AsSpan(payloadOffset));
         return arc;
+    }
+
+    private static byte[] ReadMember(byte[] arcBytes, int index)
+    {
+        using var stream = new MemoryStream(arcBytes, writable: false);
+        var arc = UtageArcReader.Read(stream, "<graft-smoke-output>");
+        stream.Position = 0;
+        return UtageArcReader.ReadDecompressedPayload(stream, arc.Entries[index]);
+    }
+
+    private static bool PixelEqual(ReadOnlySpan<byte> a, ReadOnlySpan<byte> b, int pixel)
+    {
+        var o = pixel * 4;
+        return a.Slice(o, 4).SequenceEqual(b.Slice(o, 4));
     }
 
     private static bool PathsEqual(string a, string b) =>
