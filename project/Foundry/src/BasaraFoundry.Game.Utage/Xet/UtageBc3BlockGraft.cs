@@ -31,6 +31,7 @@ public sealed record Bc3GraftResult(
 public static class UtageBc3BlockGraft
 {
     public const int BlockBytes = 16;
+    public const string EncoderBackend = "BCnEncoder.Net BcEncoder / BC3 BestQuality / mipmaps disabled";
 
     public static IReadOnlyList<(int Bx, int By)> MaskToBlockSet(ReadOnlySpan<byte> mask01, int width, int height)
     {
@@ -82,7 +83,14 @@ public static class UtageBc3BlockGraft
         if (info.MipCount > 1 || baseXet.Length != expectedEnd)
             throw new NotSupportedException("Block-graft v0.1 is single-level only. Refuse multi-mip or trailing payload XETs.");
 
-        var notes = new List<string>();
+        var notes = new List<string>
+        {
+            $"BC3 encoder backend = {EncoderBackend}"
+        };
+        if (info.FormatCode == 0x2A)
+        {
+            notes.Add("0x2A YCbCr transform is source-verified/runtime-validated; the Foundry BCnEncoder.Net backend is not yet independently runtime-certified against the accepted title_004 build.");
+        }
         var baseDecode = UtageXetCodec.DecodeDisplayTopLevel(baseXet);
         var blocks = MaskToBlockSet(editMask01, info.Width, info.Height);
         if (blocks.Count == 0)
