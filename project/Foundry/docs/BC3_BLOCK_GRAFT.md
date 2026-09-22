@@ -29,6 +29,8 @@ Status: implemented in `BasaraFoundry.Game.Utage.Xet.UtageBc3BlockGraft`.
 
 Verification decodes BC3 stored channels and then applies the inverse YCbCr display shader before visual/pixel comparison.
 
+Current compressor backend: `BCnEncoder.Net BcEncoder / BC3 BestQuality / mipmaps disabled`. This backend is not yet independently runtime-certified against the accepted `title_004` build; the runtime evidence certifies the 0x2A transform + surgical graft method, not an unnamed compressor implementation. Every production audit records the backend string so future runtime evidence can bind the exact encoder.
+
 ### 0x2B
 
 Kuriimu2 applies the same YCbCr display shader, and the project's older RBxG representation is a lossless decomposition of those stored channels. Production writes remain fail-closed until a real Utage 0x2B fixture passes the full transaction and runtime gate.
