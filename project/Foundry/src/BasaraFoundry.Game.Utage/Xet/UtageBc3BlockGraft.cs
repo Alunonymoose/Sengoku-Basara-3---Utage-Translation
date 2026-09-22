@@ -66,7 +66,10 @@ public static class UtageBc3BlockGraft
     public static Bc3GraftResult GraftTopLevel(ReadOnlySpan<byte> baseXet, ReadOnlySpan<byte> candidateRgba, ReadOnlySpan<byte> editMask01)
     {
         var info = UtageXetReader.ReadInfo(baseXet);
-        UtageXetCodec.RequireEncodingCapability(info);
+        if (info.FormatCode == 0x2A)
+            UtageXetCodec.RequireYcbcrEncodingCapability(info);
+        else
+            UtageXetCodec.RequireEncodingCapability(info);
 
         var expectedRgba = checked(info.Width * info.Height * 4);
         if (candidateRgba.Length != expectedRgba)
@@ -80,7 +83,7 @@ public static class UtageBc3BlockGraft
             throw new NotSupportedException("Block-graft v0.1 is single-level only. Refuse multi-mip or trailing payload XETs.");
 
         var notes = new List<string>();
-        var baseDecode = UtageXetCodec.DecodeTopLevel(baseXet);
+        var baseDecode = UtageXetCodec.DecodeDisplayTopLevel(baseXet);
         var blocks = MaskToBlockSet(editMask01, info.Width, info.Height);
         if (blocks.Count == 0)
         {
@@ -112,7 +115,7 @@ public static class UtageBc3BlockGraft
         if (allOutsideDelta == 0)
             notes.Add("candidate is also base-identical across all untouched pixels");
 
-        var fullEncoded = EncodeFullBc3(candidateRgba, info.Width, info.Height);
+        var fullEncoded = EncodeFullBc3(candidateRgba, info);
         if (fullEncoded.Length != topLevelBytes)
             throw new InvalidDataException($"BC3 encoder returned {fullEncoded.Length} bytes; XET requires {topLevelBytes}.");
 
@@ -143,7 +146,7 @@ public static class UtageBc3BlockGraft
 
         var output = baseXet.ToArray();
         grafted.CopyTo(output.AsSpan(info.TextureOffset, topLevelBytes));
-        var verification = UtageXetCodec.DecodeTopLevel(output);
+        var verification = UtageXetCodec.DecodeDisplayTopLevel(output);
 
         var outsideEffective = 0;
         var collateral = 0;
@@ -192,13 +195,17 @@ public static class UtageBc3BlockGraft
         return a[o] != b[o] || a[o + 1] != b[o + 1] || a[o + 2] != b[o + 2] || a[o + 3] != b[o + 3];
     }
 
-    private static byte[] EncodeFullBc3(ReadOnlySpan<byte> rgba, int width, int height)
+    private static byte[] EncodeFullBc3(ReadOnlySpan<byte> editingRgba, UtageXetInfo info)
     {
+        var storedRgba = info.FormatCode == 0x2A
+            ? UtageYcbcrColorShader.DisplayToStored(editingRgba)
+            : editingRgba.ToArray();
+
         var encoder = new BcEncoder();
         encoder.OutputOptions.Format = CompressionFormat.Bc3;
         encoder.OutputOptions.Quality = CompressionQuality.BestQuality;
         encoder.OutputOptions.GenerateMipMaps = false;
-        var levels = encoder.EncodeToRawBytes(rgba.ToArray(), width, height, PixelFormat.Rgba32);
+        var levels = encoder.EncodeToRawBytes(storedRgba, info.Width, info.Height, PixelFormat.Rgba32);
         if (levels.Length != 1)
             throw new InvalidDataException($"BCn encoder returned {levels.Length} levels for a single-level request.");
         return levels[0];
