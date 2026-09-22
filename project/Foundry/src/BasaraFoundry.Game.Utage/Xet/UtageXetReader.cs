@@ -25,7 +25,7 @@ public sealed record UtageXetInfo(
 
 /// <summary>
 /// Metadata parser for the PS3 big-endian XET form used by Utage.
-/// Unknown or ambiguous formats are deliberately not guessed.
+/// Unknown formats are deliberately not guessed. 0x15 is source-verified against Kuriimu2 as DXT3/BC2; writing remains separately gated.
 /// 0x2A/0x2B are BC3 storage; their artist-facing colour interpretation is
 /// handled separately by the PS3 MT Framework YCbCr display shader.
 /// </summary>
