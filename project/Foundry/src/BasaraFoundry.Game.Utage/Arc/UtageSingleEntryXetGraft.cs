@@ -5,6 +5,12 @@ using BasaraFoundry.Game.Utage.Xet;
 
 namespace BasaraFoundry.Game.Utage.Arc;
 
+public enum XetGraftBaseMode
+{
+    CurrentTarget = 0,
+    PristineRestore = 1,
+}
+
 public sealed record SingleEntryXetGraftAudit(
     int Schema,
     DateTimeOffset CreatedAtUtc,
@@ -43,13 +49,32 @@ public sealed record SingleEntryXetGraftResult(
 
 /// <summary>
 /// Certified production transaction for one XET member inside one Utage ARC.
-/// The selected target owns output container identity; pristine JPN supplies
-/// trusted image payload bytes; only approved touched BC3 blocks come from the
-/// localized candidate.
+/// Normal localisation preserves the selected live target payload and replaces
+/// only approved touched BC3 blocks. PristineRestore is an explicit recovery
+/// mode for intentionally restoring untouched artwork from an official donor.
+/// The selected target always owns output container identity.
 /// </summary>
 public static class UtageSingleEntryXetGraft
 {
-    private const int AuditSchema = 4;
+    private const int AuditSchema = 5;
+
+    public static SingleEntryXetGraftResult BuildSibling(
+        ReadOnlySpan<byte> sourceArc,
+        int memberIndex,
+        ReadOnlySpan<byte> pristineXet,
+        ReadOnlySpan<byte> candidateRgba,
+        ReadOnlySpan<byte> editMask01) =>
+        BuildSibling(sourceArc, memberIndex, pristineXet, candidateRgba, editMask01, null, XetGraftBaseMode.CurrentTarget);
+
+    [Obsolete("Legacy restore overload retained for historical regression fixtures. Production callers must pass XetGraftBaseMode explicitly or use the five-argument incremental overload.")]
+    public static SingleEntryXetGraftResult BuildSibling(
+        ReadOnlySpan<byte> sourceArc,
+        int memberIndex,
+        ReadOnlySpan<byte> pristineXet,
+        ReadOnlySpan<byte> candidateRgba,
+        ReadOnlySpan<byte> editMask01,
+        DateTimeOffset? createdAtUtc) =>
+        BuildSibling(sourceArc, memberIndex, pristineXet, candidateRgba, editMask01, createdAtUtc, XetGraftBaseMode.PristineRestore);
 
     public static SingleEntryXetGraftResult BuildSibling(
         ReadOnlySpan<byte> sourceArc,
@@ -57,10 +82,11 @@ public static class UtageSingleEntryXetGraft
         ReadOnlySpan<byte> pristineXet,
         ReadOnlySpan<byte> candidateRgba,
         ReadOnlySpan<byte> editMask01,
-        DateTimeOffset? createdAtUtc = null)
+        DateTimeOffset? createdAtUtc,
+        XetGraftBaseMode baseMode)
     {
         if (pristineXet.IsEmpty)
-            throw new ArgumentException("A pristine counterpart XET is mandatory for production grafts.", nameof(pristineXet));
+            throw new ArgumentException("A pristine counterpart XET is mandatory for compatibility/reference checks.", nameof(pristineXet));
 
         var sourceBytes = sourceArc.ToArray();
         var pristineBytes = pristineXet.ToArray();
@@ -80,13 +106,19 @@ public static class UtageSingleEntryXetGraft
         var targetXet = UtageArcReader.ReadDecompressedPayload(sourceStream, entry);
         var compatibility = EnsureCompatibleTarget(targetXet, pristineBytes);
 
-        var graft = UtageBc3BlockGraft.GraftTopLevel(pristineBytes, candidateBytes, maskBytes);
+        var graftBase = baseMode switch
+        {
+            XetGraftBaseMode.CurrentTarget => targetXet,
+            XetGraftBaseMode.PristineRestore => pristineBytes,
+            _ => throw new ArgumentOutOfRangeException(nameof(baseMode), baseMode, "Unknown XET graft base mode."),
+        };
+
+        var graft = UtageBc3BlockGraft.GraftTopLevel(graftBase, candidateBytes, maskBytes);
         if (!graft.Report.Ok)
             throw new InvalidOperationException("BC3 production graft failed: " + string.Join(" | ", graft.Report.Notes));
 
         var finalXet = targetXet.ToArray();
         var targetInfo = compatibility.Target;
-        var pristineInfo = compatibility.Pristine;
         var payloadLength = compatibility.TopLevelPayloadLength;
 
         graft.GraftedPayload.AsSpan().CopyTo(finalXet.AsSpan(targetInfo.TextureOffset, payloadLength));
@@ -96,9 +128,9 @@ public static class UtageSingleEntryXetGraft
         if (!finalXet.AsSpan(targetInfo.TextureOffset + payloadLength).SequenceEqual(targetXet.AsSpan(targetInfo.TextureOffset + payloadLength)))
             throw new InvalidDataException("Target XET bytes after the certified payload range changed during production graft.");
 
-        var finalDecode = UtageXetCodec.DecodeTopLevel(finalXet);
+        var finalDecode = UtageXetCodec.DecodeDisplayTopLevel(finalXet);
         if (graft.VerificationDecode is null || !finalDecode.Rgba.AsSpan().SequenceEqual(graft.VerificationDecode.Rgba))
-            throw new InvalidDataException("Target-shell final XET decode differs from the verified pristine-shell graft decode.");
+            throw new InvalidDataException("Target-shell final XET decode differs from the verified graft-base decode.");
         if (graft.Report.OutsideEffectiveBlockPixelDelta != 0)
             throw new InvalidDataException($"Final decoded output changed {graft.Report.OutsideEffectiveBlockPixelDelta} pixels outside the effective BC3 block mask.");
 
@@ -129,11 +161,14 @@ public static class UtageSingleEntryXetGraft
         var finalHash = Sha256(finalXet);
         var notes = new List<string>(graft.Report.Notes)
         {
-            "production artwork base = explicit pristine counterpart XET image payload",
+            $"graft artwork base mode = {baseMode}",
+            baseMode == XetGraftBaseMode.CurrentTarget
+                ? "incremental localisation preserves current target payload outside touched BC3 blocks"
+                : "explicit repair mode restores untouched BC3 blocks from pristine counterpart payload",
             "selected target XET owns output shell/header/container identity",
             $"certified top-level payload bytes copied = {payloadLength}",
             "target XET shell and non-payload bytes preserved exactly",
-            "target-shell final decode equals verified pristine-shell graft decode",
+            "target-shell final decode equals verified graft-base decode",
             "single ARC member replacement verified",
             "all non-target ARC stored payloads verified unchanged by UtageArcWriter",
             "source ARC retained as immutable input; output is build bytes",
@@ -154,7 +189,7 @@ public static class UtageSingleEntryXetGraft
             notes: notes);
 
         AssetApprovalGuard.EnsureCanTransition(AssetApprovalState.Review, AssetApprovalState.Approved, approvalEvidence);
-        notes.Add("domain approval guard accepted opaque proof bound to target/pristine/candidate/mask/final hashes");
+        notes.Add("domain approval guard accepted opaque software proof bound to target/pristine/candidate/mask/final hashes; final human encoded-output review is still required");
 
         var audit = new SingleEntryXetGraftAudit(
             Schema: AuditSchema,
@@ -178,7 +213,7 @@ public static class UtageSingleEntryXetGraft
             OutsideEffectiveBlockPixelDelta: graft.Report.OutsideEffectiveBlockPixelDelta,
             CompressionCollateralPixels: graft.Report.CompressionCollateralPixels,
             TargetShellPreserved: true,
-            UsedPristineOverride: true,
+            UsedPristineOverride: baseMode == XetGraftBaseMode.PristineRestore,
             GraftOk: graft.Report.Ok,
             ArcRoundTripVerified: roundTripVerified,
             ApprovedEligible: true,
@@ -206,8 +241,8 @@ public static class UtageSingleEntryXetGraft
                 $"Target={Describe(target)}; pristine={Describe(pristine)}.");
         }
 
-        UtageXetCodec.RequireEncodingCapability(pristine);
-        UtageXetCodec.RequireEncodingCapability(target);
+        RequireProductionEncodingCapability(pristine);
+        RequireProductionEncodingCapability(target);
 
         var payloadLength = pristine.TopLevelSizeBytes
             ?? throw new NotSupportedException("XET encoded top-level byte size is unknown.");
@@ -218,6 +253,14 @@ public static class UtageSingleEntryXetGraft
             throw new NotSupportedException("Target-shell graft v0.1 is single-level only and refuses trailing or multi-mip XET data.");
 
         return new XetCompatibility(target, pristine, payloadLength);
+    }
+
+    private static void RequireProductionEncodingCapability(UtageXetInfo info)
+    {
+        if (info.FormatCode == 0x2A)
+            UtageXetCodec.RequireYcbcrEncodingCapability(info);
+        else
+            UtageXetCodec.RequireEncodingCapability(info);
     }
 
     private static string Describe(UtageXetInfo info) =>

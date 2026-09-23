@@ -31,7 +31,7 @@ public sealed partial class MainWindow
                     "OFFICIAL DONOR");
                 SearchStatusText.Text =
                     "Replacement ready from official Samurai Heroes artwork. " +
-                    "The preview is now the working candidate; pristine Japanese pixels remain the production authority outside approved changes.";
+                    "The preview is now the working candidate; Current ENG remains the production preservation base outside approved changes, while pristine Japanese remains reference authority.";
                 return;
             }
 
@@ -72,7 +72,7 @@ public sealed partial class MainWindow
         EncodedResultPlaceholder.Visibility = Visibility.Visible;
         EncodedResultMeta.Text = "Round-trip required";
         EncodeRoundTripButton.IsEnabled = true;
-        ProtectedPixelsText.Text = "Comparing replacement against pristine Japanese artwork…";
+        ProtectedPixelsText.Text = "Comparing replacement against Current ENG for the production edit mask…";
         SendForApprovalButton.IsEnabled = false;
 
         await RefreshMaskProposalSafeAsync();

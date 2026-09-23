@@ -19,9 +19,10 @@ static int Usage()
     Console.Error.WriteLine("Usage:");
     Console.Error.WriteLine("  BasaraFoundry.Worker index --root <source-root> [--route eng|jpn|direct] --output <snapshot.json>");
     Console.Error.WriteLine("  BasaraFoundry.Worker preview-xet --root <source-root> --archive <relative.arc> --entry <index> --name <resource> --output <preview.json>");
-    Console.Error.WriteLine("  BasaraFoundry.Worker roundtrip-xet --root <source-root> --archive <relative.arc> --entry <index> --name <resource> --rgba <candidate.rgba> --output <preview.json>");
-    Console.Error.WriteLine("  BasaraFoundry.Worker graft-xet --root <eng-root> --archive <relative.arc> --entry <index> --name <resource> --pristine-root <jpn-root> --pristine-archive <relative.arc> --pristine-entry <index> --pristine-name <resource> --rgba <candidate.rgba> --mask <mask.bin> --output-arc <build.arc> --audit <audit.json>");
+    Console.Error.WriteLine("  BasaraFoundry.Worker roundtrip-xet --root <source-root> --archive <relative.arc> --entry <index> --name <resource> --rgba <display-candidate.rgba> --output <preview.json>");
+    Console.Error.WriteLine("  BasaraFoundry.Worker graft-xet --root <eng-root> --archive <relative.arc> --entry <index> --name <resource> --pristine-root <jpn-root> --pristine-archive <relative.arc> --pristine-entry <index> --pristine-name <resource> --rgba <display-candidate.rgba> --mask <mask.bin> --output-arc <build.arc> --audit <audit.json>");
     Console.Error.WriteLine(SharedOwnerWorkerCommand.UsageLine);
+    Console.Error.WriteLine("  Note: --rgba is artist/display RGBA. Foundry applies any certified XET colour shader (for example 0x2A YCbCr) internally.");
     return 64;
 }
 

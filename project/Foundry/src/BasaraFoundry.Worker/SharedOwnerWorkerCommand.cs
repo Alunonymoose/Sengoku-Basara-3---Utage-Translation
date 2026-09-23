@@ -11,7 +11,7 @@ internal static class SharedOwnerWorkerCommand
     public static string UsageLine =>
         "  BasaraFoundry.Worker graft-xet-set --root <eng-root> --archive <anchor.arc> --entry <index> --name <resource> " +
         "--pristine-root <jpn-root> --pristine-archive <relative.arc> --pristine-entry <index> --pristine-name <resource> " +
-        "--rgba <candidate.rgba> --mask <mask.bin> --output-dir <owner-set-build-dir>";
+        "--rgba <display-candidate.rgba> --mask <mask.bin> --output-dir <owner-set-build-dir>";
 
     public static async Task<int?> TryRunAsync(string[] args)
     {

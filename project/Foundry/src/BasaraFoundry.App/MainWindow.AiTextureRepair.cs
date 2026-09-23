@@ -42,6 +42,8 @@ public sealed partial class MainWindow
         var hasAiRepairInputs =
             current is not null &&
             pristine is not null &&
+            current.CanEncode &&
+            pristine.CanEncode &&
             current.Width == _activeWidth && current.Height == _activeHeight &&
             pristine.Width == _activeWidth && pristine.Height == _activeHeight;
 
@@ -108,7 +110,7 @@ public sealed partial class MainWindow
 
         SearchStatusText.Text =
             $"Generating polished English artwork in {repairMask.ChangedBlocks:N0} approved difference blocks; " +
-            "everything outside that region will be restored from pristine JP exactly…";
+            "everything outside that region will remain exactly as Current ENG…";
 
         var generatedPng = await RequestOpenAiTextureEditAsync(
             apiKey,
@@ -121,10 +123,10 @@ public sealed partial class MainWindow
 
         var generatedLarge = await DecodeExactRgbaAsync(generatedPng, generatedWidth, generatedHeight);
         var generatedSmall = DownsampleBox(generatedLarge, generatedWidth, generatedHeight, scale);
-        var lockedCandidate = CompositeOnlyMask(pristine.Rgba, generatedSmall, repairMask.Mask01);
+        var lockedCandidate = CompositeOnlyMask(current.Rgba, generatedSmall, repairMask.Mask01);
         await File.WriteAllBytesAsync(Path.Combine(aiDir, "05-locked-candidate.rgba"), lockedCandidate);
 
-        var outsideDelta = CountOutsideMaskDelta(pristine.Rgba, lockedCandidate, repairMask.Mask01);
+        var outsideDelta = CountOutsideMaskDelta(current.Rgba, lockedCandidate, repairMask.Mask01);
         if (outsideDelta != 0)
             throw new InvalidDataException($"AI repair isolation failed: {outsideDelta} protected pixels changed after hard compositing.");
 
@@ -469,11 +471,11 @@ public sealed partial class MainWindow
         return result;
     }
 
-    private static byte[] CompositeOnlyMask(byte[] pristine, byte[] generated, byte[] mask01)
+    private static byte[] CompositeOnlyMask(byte[] preservationBase, byte[] generated, byte[] mask01)
     {
-        if (pristine.Length != generated.Length || pristine.Length != checked(mask01.Length * 4))
+        if (preservationBase.Length != generated.Length || preservationBase.Length != checked(mask01.Length * 4))
             throw new ArgumentException("Composite inputs do not have matching dimensions.");
-        var result = (byte[])pristine.Clone();
+        var result = (byte[])preservationBase.Clone();
         for (var i = 0; i < mask01.Length; i++)
         {
             if (mask01[i] == 0)
@@ -483,7 +485,7 @@ public sealed partial class MainWindow
         return result;
     }
 
-    private static int CountOutsideMaskDelta(byte[] pristine, byte[] candidate, byte[] mask01)
+    private static int CountOutsideMaskDelta(byte[] preservationBase, byte[] candidate, byte[] mask01)
     {
         var changed = 0;
         for (var i = 0; i < mask01.Length; i++)
@@ -491,8 +493,8 @@ public sealed partial class MainWindow
             if (mask01[i] != 0)
                 continue;
             var p = i * 4;
-            if (pristine[p] != candidate[p] || pristine[p + 1] != candidate[p + 1] ||
-                pristine[p + 2] != candidate[p + 2] || pristine[p + 3] != candidate[p + 3])
+            if (preservationBase[p] != candidate[p] || preservationBase[p + 1] != candidate[p + 1] ||
+                preservationBase[p + 2] != candidate[p + 2] || preservationBase[p + 3] != candidate[p + 3])
                 changed++;
         }
         return changed;

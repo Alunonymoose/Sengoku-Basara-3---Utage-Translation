@@ -82,7 +82,7 @@ public sealed partial class MainWindow
             var finalHash = Sha256(finalResource);
             if (!finalHash.Equals(group.FinalResourceSha256, StringComparison.Ordinal))
                 throw new InvalidDataException("Active owner final XET does not match the synchronized build-set final-resource hash.");
-            var decoded = UtageXetCodec.DecodeTopLevel(finalResource);
+            var decoded = UtageXetCodec.DecodeDisplayTopLevel(finalResource);
 
             var ownerList = string.Join("\n", group.Owners.Select(owner => $"• {owner.ArchivePath} [{owner.MemberIndex}] · {owner.OutputArcSha256[..12]}…"));
             var stack = new StackPanel { Spacing = 10, MaxWidth = 960 };

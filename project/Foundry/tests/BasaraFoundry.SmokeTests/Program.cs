@@ -225,7 +225,7 @@ internal static class Program
     {
         const int width = 8;
         const int height = 8;
-        var original = BuildSyntheticXet(width, height, 0x2A);
+        var original = BuildSyntheticXet(width, height, 0x17);
         var rgba = new byte[width * height * 4];
         for (var i = 0; i < width * height; i++)
         {
@@ -252,7 +252,7 @@ internal static class Program
             () => UtageXetCodec.ReplaceSingleLevel(BuildSyntheticXet(width, height, 0x14), rgba),
             "DXT1 writing remains blocked until certified");
 
-        var withTrailingData = BuildSyntheticXet(width, height, 0x2A).Concat(new byte[16]).ToArray();
+        var withTrailingData = BuildSyntheticXet(width, height, 0x17).Concat(new byte[16]).ToArray();
         Smoke.Throws<NotSupportedException>(
             () => UtageXetCodec.ReplaceSingleLevel(withTrailingData, rgba),
             "single-level writer refuses trailing mip data");
