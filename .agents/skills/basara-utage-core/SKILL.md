@@ -1,6 +1,6 @@
 > **2026-09-23 SUPERSESSION — READ FIRST**
 >
-> Current startup is: BASARA Foundry Master Index -> **00 RELEASE COMPLETION GATE — 100% ENGLISH + HIGH-QUALITY TEXTURES — 2026-09-23** -> **00 FRESH CHAT HANDOFF — 2026-09-23 21-00** -> current task evidence.
+> Current startup is: BASARA Foundry Master Index -> **00 RELEASE COMPLETION GATE — 100% ENGLISH + HIGH-QUALITY TEXTURES — 2026-09-23** -> **00 FRESH CHAT HANDOFF — 2026-09-23 LATE — READ THIS FIRST (SUPERSEDES 21-00)** -> current task evidence.
 >
 > Runtime ownership is now proven as load-family + exact typed/path resource identity under **first successful population claim wins**. Use the current **Resource Ownership Analyzer** instead of inferring provider precedence from filenames or filesystem order. Use **Utage Donor Matcher V5.1** before manual Samurai Heroes donor hunting. rom/jpn is **not reliably pristine Japanese** and cannot decide donor direction by hash equality. Current live E: bytes remain production authority.
 >
