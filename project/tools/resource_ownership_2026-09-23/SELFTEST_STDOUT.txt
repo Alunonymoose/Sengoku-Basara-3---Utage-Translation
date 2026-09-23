@@ -1,0 +1,19 @@
+{
+  "format": "BASARA_FOUNDRY_RESOURCE_OWNERSHIP_V1",
+  "root": "/mnt/data/BASARA_RESOURCE_OWNERSHIP_ANALYZER_2026-09-23/_test_current_root",
+  "arc_count": 9,
+  "resource_count": 1038,
+  "exact_duplicate_class_count": 204,
+  "safe_identical_expanded": 187,
+  "safe_identical_raw": 0,
+  "divergent_exact_duplicate_classes": 12,
+  "unresolved_compression_classes": 5,
+  "locale_equivalence_class_count": 109,
+  "load_order_source": null,
+  "load_order_event_count": 0,
+  "parse_error_count": 0,
+  "precedence_model": "first successful payload population claim wins among co-resident exact typed/path duplicates",
+  "warning": "effective_provider is only emitted when load-order evidence matches a provider; static filesystem order is never treated as runtime precedence"
+}
+
+Outputs: /mnt/data/BASARA_RESOURCE_OWNERSHIP_ANALYZER_2026-09-23/_SELFTEST_OUTPUT
