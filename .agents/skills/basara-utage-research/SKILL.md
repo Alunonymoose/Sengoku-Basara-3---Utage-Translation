@@ -1,3 +1,8 @@
+> **2026-09-23 RESEARCH SUPERSESSION — READ FIRST**
+>
+> Two historical assumptions are now explicitly falsified: (1) 0x2A is not a bespoke raw-YCbCr surface; the old appearance came from decoding BC block data with half dimensions, and (2) rom/jpn is not reliably pristine Japanese; it contains English/shared assets, so hash equality is classification evidence only, never semantic proof. Research should start from the solved XET contract, Resource Ownership Analyzer, Donor Matcher V5.1 and the Release Completion Gate.
+>
+
 ---
 name: basara-utage-research
 description: Evidence-driven reverse-engineering and research workflow for Sengoku BASARA 3 Utage and BASARA Foundry. Use for unknown formats/fields, public-source comparison, forensic audits, cross-game evidence, hypothesis testing, external-agent handoffs, and canon updates.
