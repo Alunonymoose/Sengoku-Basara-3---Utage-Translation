@@ -1,0 +1,47 @@
+[
+  {
+    "arc": "basara.arc",
+    "returncode": 0,
+    "stdout": "# file: /mnt/data/basara.arc\n# size: 539789\n# sha256: be767ef04734dee42047ca3f7f4eafaabb38436b29ea737eb95a9445ec5981f4\n# entries: 87\n  [0] name='sound\\\\se\\\\basara3_00' type=0x0ECD7DF4 stored=6750 raw=22088 flags=2 off=6968 codec=zlib"
+  },
+  {
+    "arc": "init_ps3.arc",
+    "returncode": 0,
+    "stdout": "# file: /mnt/data/init_ps3.arc\n# size: 1775709\n# sha256: 98060b8e06fa3742abd148a14032bf3240494965922b6b783606affadd61f12f\n# entries: 14\n  [0] name='sound\\\\se\\\\system_common\\\\se_system_common' type=0x7E33A16C stored=1244160 raw=1244160 flags=2 off=1128 codec=raw"
+  },
+  {
+    "arc": "result.arc",
+    "returncode": 0,
+    "stdout": "# file: /mnt/data/result.arc\n# size: 3219337\n# sha256: a2c78dc8500f7e3bddc17d6dc1a845eda34b820c55d680d14e49236a16a9fb51\n# entries: 53\n  [0] name='actorParam\\\\plcommon\\\\plcommon' type=0x3CFBE7D5 stored=843 raw=2456 flags=2 off=4248 codec=zlib"
+  },
+  {
+    "arc": "result_id.arc",
+    "returncode": 0,
+    "stdout": "# file: /mnt/data/result_id.arc\n# size: 7004590\n# sha256: 7b8790e79d415e69c61f8df6e08adec14017f2d637a97ccd61315f6b4c86562b\n# entries: 245\n  [0] name='msg\\\\id_save_ps3\\\\jpn\\\\id_save_ps3' type=0x1D609FFB stored=693 raw=1504 flags=2 off=19608 codec=zlib"
+  },
+  {
+    "arc": "retry.arc",
+    "returncode": 0,
+    "stdout": "# file: /mnt/data/retry.arc\n# size: 932717\n# sha256: aba7ba2ebffd2022057e28b9dc7d39f103a6c5606a8438710cc1eaec44de64c7\n# entries: 34\n  [0] name='msg\\\\id_pause\\\\jpn\\\\id_pause' type=0x1D609FFB stored=693 raw=1504 flags=2 off=2728 codec=zlib"
+  },
+  {
+    "arc": "save.arc",
+    "returncode": 0,
+    "stdout": "# file: /mnt/data/save.arc\n# size: 962626\n# sha256: 4520caa4d216ef1c9f74a1b32bad872dfa2779151c006c9b3ef2189ca327e7e5\n# entries: 45\n  [0] name='actorParam\\\\plcommon\\\\plcommon' type=0x3CFBE7D5 stored=843 raw=2456 flags=2 off=3608 codec=zlib"
+  },
+  {
+    "arc": "startup.arc",
+    "returncode": 0,
+    "stdout": "# file: /mnt/data/startup.arc\n# size: 55339\n# sha256: ad32d0c13d7ad0c175adf211f8103f6c24fede91aa6a261b149bec68fe811bb0\n# entries: 21\n  [0] name='msg\\\\font' type=0x6005E229 stored=37 raw=80 flags=2 off=1688 codec=zlib"
+  },
+  {
+    "arc": "title.arc",
+    "returncode": 0,
+    "stdout": "# file: /mnt/data/title.arc\n# size: 23738568\n# sha256: 8fc296a76347c5802233663cf0f26c6441e48c2698663ae15e3e13bbe089cf75\n# entries: 357\n  [0] name='sound\\\\se\\\\system_common\\\\se_system_common' type=0x7E33A16C stored=1154934 raw=1244160 flags=2 off=32768 codec=zlib"
+  },
+  {
+    "arc": "title_id.arc",
+    "returncode": 0,
+    "stdout": "# file: /mnt/data/title_id.arc\n# size: 15545771\n# sha256: 604a443915dc63e2b420b8ce520ec4cea49cf858908a681ffa854f3f84ad48e1\n# entries: 182\n  [0] name='id\\\\texture\\\\jpn\\\\charasele_01\\\\charasele_01_000_ID_HQ' type=0x241F5DEB stored=249988 raw=1048596 flags=2 off=32768 codec=zlib"
+  }
+]
