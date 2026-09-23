@@ -1,0 +1,12 @@
+{
+  "package": "UTAGE_SOL6_2026-09-23_ROOT_READY.zip",
+  "xet_header_validated": 654,
+  "formats": {"0x2A": 652, "0x17": 2},
+  "sample_full_decodes": [
+    {"arc":"PS3_GAME/USRDIR/nativePS3/rom/eng/id/msg_m018_pl000.arc","name":"msg\\m018_00\\jpn\\m018_00_00_ID_HQ","width":512,"height":512,"format":"0x2A","rgba_sha256":"cf6ce5de0641fda35711e6a5548fb524c013b0132067f64992276cbc501e3e97"},
+    {"arc":"PS3_GAME/USRDIR/nativePS3/rom/eng/id/msg_m018_pl000.arc","name":"msg\\m018_00\\jpn\\m018_00_01_ID_HQ","width":512,"height":512,"format":"0x2A","rgba_sha256":"82b23dbda28fed385c2631fc65a4f2bc7b7d9d77cd6878eba31905089b5b4136"},
+    {"arc":"PS3_GAME/USRDIR/nativePS3/rom/eng/id/msg_m018_pl000.arc","name":"msg\\m018_00\\jpn\\m018_00_02_ID_HQ","width":512,"height":512,"format":"0x2A","rgba_sha256":"82b23dbda28fed385c2631fc65a4f2bc7b7d9d77cd6878eba31905089b5b4136"},
+    {"arc":"PS3_GAME/USRDIR/nativePS3/rom/eng/id/msg_m018_pl000.arc","name":"msg\\m018_00\\jpn\\m018_00_03_ID_HQ","width":512,"height":512,"format":"0x2A","rgba_sha256":"82b23dbda28fed385c2631fc65a4f2bc7b7d9d77cd6878eba31905089b5b4136"}
+  ],
+  "errors": []
+}
