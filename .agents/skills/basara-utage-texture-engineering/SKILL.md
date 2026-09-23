@@ -1,3 +1,12 @@
+> **2026-09-23 XET SUPERSESSION — READ FIRST**
+>
+> The older format-specific sections below are retained as history but MUST NOT override the solved 2026-09-23 XET contract. The prior bespoke 0x2A raw-YCbCr / half-dimension / Morton interpretation is **DISPROVEN**: the resource is standard MT Framework block-compressed texture data whose payload was previously misread using half dimensions.
+>
+> Current solved corpus contract: standard texFlags width/height; 0x2A/0x17/0x15 decode as BC3/DXT5, 0x19 as BC1, 0x27 as A8R8G8B8; PS3 BC colour endpoints are big-endian u16, while alpha/index byte arrays retain normal bit packing. Current fixture geometry: PSL +0x74..+0x80 destination rect, +0x84..+0x90 source min/max, with shipped _ID_HQ textures mapping at 2x SD coordinates.
+>
+> rom/jpn is NOT a guaranteed Japanese donor. Render/read candidates and prefer compatible official SH evidence. Production still preserves the CURRENT LIVE TARGET outside intended touched blocks. Use Donor Matcher V5.1 + Resource Ownership Analyzer before donor/provider decisions. The exact original xetenc.py is not yet durably persisted; custom writes remain gated on a recovered/revalidated current encoder path.
+>
+
 ---
 name: basara-utage-texture-engineering
 description: Production engineering workflow for Sengoku BASARA 3 Utage PS3 ARC/TEX/XET texture work, BC3 block grafting, RBxG format 0x2B, atlas edits, shared-owner rebuilds, and layout-aware verification. Use whenever editing or rebuilding game textures or their owning ARCs.
