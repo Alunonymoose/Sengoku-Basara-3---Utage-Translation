@@ -1,0 +1,193 @@
+{
+  "schema": "BASARA_FOUNDRY_TERMINOLOGY_V1",
+  "promoted": "2026-09-24",
+  "authority_order": [
+    "official English retail Samurai Heroes wording for equivalent context",
+    "current runtime-verified project wording where Utage intentionally differs",
+    "other official BASARA English localisation evidence when context/identity is proven",
+    "evidence-backed Utage-exclusive translation",
+    "provisional translation requiring editorial review"
+  ],
+  "statuses": [
+    "OFFICIAL_SH_EXACT",
+    "PROJECT_RUNTIME_VERIFIED",
+    "UTAGE_EXCLUSIVE_APPROVED",
+    "ABBREVIATION_APPROVED",
+    "INTENTIONAL_VARIANT",
+    "NEEDS_SOURCE",
+    "NEEDS_CONTEXT",
+    "CONFLICT",
+    "SUPERSEDED"
+  ],
+  "rules": {
+    "official_sh_wins_when_context_equivalent": true,
+    "layout_failure_does_not_authorize_retranslation": true,
+    "texture_and_dynamic_text_share_canonical_term": true,
+    "custom_art_must_validate_wording_before_approval": true,
+    "unknown_preferred_to_guess": true,
+    "locked_unknown_marker": "???"
+  },
+  "entries": [
+    {
+      "id": "title_sengoku",
+      "canonical_english": "Sengoku",
+      "category": "OTHER",
+      "context": "title branding",
+      "status": "PROJECT_RUNTIME_VERIFIED",
+      "allowed_short_form": null,
+      "forbidden_or_superseded_variants": [
+        "Sengok"
+      ],
+      "notes": "Full word must remain legible in title artwork."
+    },
+    {
+      "id": "gallery_sengoku_history",
+      "canonical_english": "Sengoku History",
+      "category": "GALLERY",
+      "context": "gallery history header",
+      "status": "PROJECT_RUNTIME_VERIFIED",
+      "allowed_short_form": null,
+      "forbidden_or_superseded_variants": [
+        "BATTLE HISTORY"
+      ],
+      "notes": "Applies only to the proven gallery history context."
+    },
+    {
+      "id": "mode_versus",
+      "canonical_english": "VERSUS",
+      "category": "MODE",
+      "context": "versus mode UI",
+      "status": "OFFICIAL_SH_EXACT",
+      "allowed_short_form": null,
+      "forbidden_or_superseded_variants": [],
+      "notes": "Preserve official capitalisation."
+    },
+    {
+      "id": "mode_unification",
+      "canonical_english": "UNIFICATION",
+      "category": "MODE",
+      "context": "unification mode UI",
+      "status": "OFFICIAL_SH_EXACT",
+      "allowed_short_form": null,
+      "forbidden_or_superseded_variants": [],
+      "notes": "Preserve official capitalisation."
+    },
+    {
+      "id": "versus_serious_battle",
+      "canonical_english": "SERIOUS BATTLE",
+      "category": "MODE",
+      "context": "versus rule/card",
+      "status": "OFFICIAL_SH_EXACT",
+      "allowed_short_form": null,
+      "forbidden_or_superseded_variants": [],
+      "notes": "Current style/fit reference for related Versus card labels."
+    },
+    {
+      "id": "versus_chaos_battle",
+      "canonical_english": "CHAOS BATTLE",
+      "category": "MODE",
+      "context": "versus rule/card",
+      "status": "OFFICIAL_SH_EXACT",
+      "allowed_short_form": null,
+      "forbidden_or_superseded_variants": [],
+      "notes": "Clipping is a geometry/layout defect, not permission to rename."
+    },
+    {
+      "id": "versus_individual",
+      "canonical_english": "INDIVIDUAL",
+      "category": "MODE",
+      "context": "versus mode card",
+      "status": "OFFICIAL_SH_EXACT",
+      "allowed_short_form": null,
+      "forbidden_or_superseded_variants": [],
+      "notes": "Keep identical across duplicate/card states."
+    },
+    {
+      "id": "versus_team_battle",
+      "canonical_english": "TEAM BATTLE",
+      "category": "MODE",
+      "context": "versus mode card",
+      "status": "OFFICIAL_SH_EXACT",
+      "allowed_short_form": null,
+      "forbidden_or_superseded_variants": [],
+      "notes": "Keep identical across duplicate/card states."
+    },
+    {
+      "id": "versus_elimination",
+      "canonical_english": "ELIMINATION",
+      "category": "MODE",
+      "context": "versus mode card",
+      "status": "OFFICIAL_SH_EXACT",
+      "allowed_short_form": null,
+      "forbidden_or_superseded_variants": [],
+      "notes": "Keep identical across duplicate/card states."
+    },
+    {
+      "id": "locked_unknown",
+      "canonical_english": "???",
+      "category": "LOCKED_UNKNOWN",
+      "context": "locked/unknown shop and UI marker",
+      "status": "PROJECT_RUNTIME_VERIFIED",
+      "allowed_short_form": null,
+      "forbidden_or_superseded_variants": [
+        ":::",
+        "..."
+      ],
+      "notes": "Visible output must be three question marks."
+    },
+    {
+      "id": "mission_open_immovable_gate",
+      "canonical_english": "Open the immovable gate!",
+      "category": "MISSION",
+      "context": "m018 mission/tutorial title",
+      "status": "OFFICIAL_SH_EXACT",
+      "allowed_short_form": null,
+      "forbidden_or_superseded_variants": [],
+      "notes": "Do not shorten merely to solve overflow; fix reflow/layout."
+    },
+    {
+      "id": "item_idaten_scroll",
+      "canonical_english": "Idaten Scroll",
+      "category": "ACCESSORY",
+      "context": "item/accessory",
+      "status": "PROJECT_RUNTIME_VERIFIED",
+      "allowed_short_form": null,
+      "forbidden_or_superseded_variants": [
+        "Idat"
+      ],
+      "notes": "Historical Idat display was a FIM reveal-budget defect."
+    },
+    {
+      "id": "weapon_nameless_blade_sweep",
+      "canonical_english": "Nameless Blade: Sweep",
+      "category": "WEAPON",
+      "context": "weapon naming",
+      "status": "NEEDS_CONTEXT",
+      "allowed_short_form": "Nameless Sweep",
+      "forbidden_or_superseded_variants": [],
+      "notes": "Short form has been used as a fit candidate; do not globalise until current runtime evidence and editorial approval."
+    },
+    {
+      "id": "entity_faizlie_fairy_muto",
+      "canonical_english": null,
+      "category": "OFFICER",
+      "context": "exact resource/context still to be pinned",
+      "status": "CONFLICT",
+      "allowed_short_form": null,
+      "current_variants": [
+        "Faizlie Muto",
+        "Fairy Muto"
+      ],
+      "forbidden_or_superseded_variants": [],
+      "required_closure": [
+        "identify exact Japanese source/key and all current resources using either spelling",
+        "check official Samurai Heroes wording if entity/context exists",
+        "check other authoritative official English context if SH does not settle it",
+        "select one canonical form",
+        "update dynamic text, texture art and duplicate providers",
+        "mark losing variant SUPERSEDED"
+      ]
+    }
+  ],
+  "release_stop_rule": "No release-critical visible term may remain CONFLICT, NEEDS_SOURCE or NEEDS_CONTEXT."
+}
