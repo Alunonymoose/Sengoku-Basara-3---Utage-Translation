@@ -1,0 +1,39 @@
+name: Foundry Orchestration CI
+
+on:
+  push:
+    branches: [ foundry-v0.2-orchestration, foundry-v0.1 ]
+    paths:
+      - 'project/orchestration/**'
+      - 'project/foundry.ps1'
+      - 'project/tools/donor_matcher_v5_1_2026-09-23/safe_arc.py'
+      - 'project/tools/resource_ownership_2026-09-23/basara_resource_ownership.py'
+      - '.github/workflows/foundry-orchestration-ci.yml'
+  pull_request:
+    paths:
+      - 'project/orchestration/**'
+      - 'project/foundry.ps1'
+      - 'project/tools/donor_matcher_v5_1_2026-09-23/safe_arc.py'
+      - 'project/tools/resource_ownership_2026-09-23/basara_resource_ownership.py'
+      - '.github/workflows/foundry-orchestration-ci.yml'
+
+concurrency:
+  group: foundry-orchestration-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ['3.11', '3.12']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile orchestration
+        run: python -m py_compile project/orchestration/*.py project/orchestration/tests/test_foundry_orchestration.py
+      - name: Run orchestration tests
+        run: python -m unittest discover -s project/orchestration/tests -p 'test_*.py' -v
