@@ -4,7 +4,7 @@ BASARA Foundry texture visual-review exporter.
 Read-only: extracts/decodes current live rTextures and writes deduplicated PNG
 previews + HTML/JSON review index outside the game root.
 
-0x15 is metadata-only/quarantined and never decoded here.
+0x15 is decoded read-only as fixture-proven DXT3/BC2. No writer claim is made here.
 """
 from __future__ import annotations
 
@@ -22,7 +22,7 @@ from typing import Any
 
 R_TEXTURE = 0x241F5DEB
 EXPECTED_SAFE_ARC_SHA256 = "f25c53e4ad78e18d5785b8aee197725377130ed9f562a9caa1000a1964bde91d"
-EXPECTED_XET_DECODER_SHA256 = "d0ffe59abd91fa18bd5ec76bdf8d73fbe7595597b4f7ab3339a5d5de7fc58255"
+EXPECTED_XET_DECODER_SHA256 = "d82376add94be9f0c132590d150936d91fd6241d76b04723d88ec3ae4ced4738"
 
 HERE = Path(__file__).resolve().parent
 TOOLS_DIR = HERE.parent
@@ -160,14 +160,6 @@ def main() -> int:
                     "mips": info.mip_count,
                     "format": f"0x{info.format_id:02X}",
                 })
-                if info.format_id == 0x15:
-                    quarantined.append({
-                        **owner,
-                        "status": "FORMAT_QUARANTINED_0X15",
-                        "reason": "BC2/DXT3 fixture evidence conflicts with recovered decoder BC3 mapping; preview intentionally withheld.",
-                    })
-                    continue
-
                 xet.validate(raw)
                 rgba = xet.decode_rgba(raw, 0)
                 decoded_hash = hashlib.sha256(rgba).hexdigest()
@@ -211,6 +203,7 @@ def main() -> int:
         "providers_selected": providers_selected,
         "unique_decoded_images": len(ordered),
         "quarantined_0x15": quarantined,
+        "xet_0x15_read_policy": "fixture-proven DXT3/BC2 preview; production writing remains fail-closed",
         "errors": errors,
         "groups": ordered,
     }
