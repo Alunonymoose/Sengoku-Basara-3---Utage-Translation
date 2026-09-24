@@ -1,3 +1,7 @@
+> **2026-09-24 TEXTURE SAFETY HOTFIX**
+>
+> Do not extend ARC/XET container endianness to compressed BC payload internals. XET header/table fields are big-endian on the verified PS3 path, but BC endpoint byte order is format/fixture-defined. The verified current `title_004` 0x2A fixture requires standard DXT5/BC3 endpoint byte order; the temporary synthetic endpoint-swap rule was disproved by real fixture + runtime evidence. Real live fixture reproduction is now a mandatory pre-write gate.
+>
 > **2026-09-23 SUPERSESSION — READ FIRST**
 >
 > Current startup is: BASARA Foundry Master Index -> **00 RELEASE COMPLETION GATE — 100% ENGLISH + HIGH-QUALITY TEXTURES — 2026-09-23** -> **00 FRESH CHAT HANDOFF — 2026-09-23 LATE — READ THIS FIRST (SUPERSEDES 21-00)** -> current task evidence.
@@ -125,7 +129,7 @@ Never promote a generic table over contradictory real Utage evidence without res
 ## Standing proven/safety rules
 
 - ARC v8 PS3 table entries are 80 bytes in the current certified reader/writer path.
-- PS3 ARC/XET structures are big-endian in the certified Utage path.
+- PS3 ARC tables and XET header/table fields are big-endian in the certified Utage path. **This does not imply byte-swapped BC payload endpoints.** Compressed texture payload packing must be proven per format/fixture.
 - XET swizzle must not be guessed. `swizzle != 0` is fail-closed unless a fixture-specific writer exists.
 - Multi-mip or unexplained trailing XET data is fail-closed unless a certified writer handles the full resource.
 - BC-compressed edits operate on legal 4x4 blocks; untouched certified blocks should remain byte-identical where the graft path guarantees this.
