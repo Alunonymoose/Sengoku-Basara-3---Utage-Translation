@@ -104,10 +104,10 @@ class OrchestrationTests(unittest.TestCase):
                 "--encoder", "fixture", "--out", str(recipe),
             )
             self.assertEqual(0, code)
-            obj = json.loads(recipe.read_text(encoding="utf-8"))
             digest = hashlib.sha256(candidate.read_bytes()).hexdigest()
-            obj["approval"] = {"status": "APPROVED", "approved_candidate_sha256": digest, "evidence": ["unit-test"]}
-            recipe.write_text(json.dumps(obj, indent=2), encoding="utf-8")
+            code, text = self.run_cli("recipe-approve", str(recipe), "--evidence", "unit-test user approval")
+            self.assertEqual(0, code)
+            self.assertEqual(digest, json.loads(text)["approved_candidate_sha256"])
 
             code, text = self.run_cli("recipe-validate", str(recipe), "--snapshot", str(root), "--require-candidate")
             self.assertEqual(0, code)
