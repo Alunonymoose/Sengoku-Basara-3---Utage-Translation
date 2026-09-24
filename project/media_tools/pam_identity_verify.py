@@ -188,7 +188,7 @@ def ffprobe(path: Path) -> dict[str, Any] | None:
     if not exe:
         return None
     proc = subprocess.run([
-        exe, "-v", "error",
+        exe, "-f", "mpeg", "-v", "error",
         "-show_entries",
         "format=format_name,start_time,duration,size,bit_rate:"
         "stream=index,codec_name,profile,level,width,height,r_frame_rate,avg_frame_rate,start_time,duration,channels,sample_rate",
@@ -325,7 +325,7 @@ def main() -> int:
         "runtime_pass_required": True,
         "whole_pam_hash_equal": original["sha256"] == remuxed["sha256"],
         "whole_pam_hash_note": (
-            "Whole-PAM equality is not required: PAMFtool regenerates PS/header scheduling metadata."
+            "Whole-PAM equality is not required: PAMFtool may repack identical elementary streams into a different number of 2048-byte sectors while preserving the decoder/timing contract."
         ),
         "original": original,
         "remuxed": remuxed,
