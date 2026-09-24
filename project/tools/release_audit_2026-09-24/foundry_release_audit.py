@@ -51,6 +51,7 @@ SAFE_ARC_PATH = TOOLS_DIR / "donor_matcher_v5_1_2026-09-23" / "safe_arc.py"
 OWNERSHIP_TOOL_PATH = TOOLS_DIR / "resource_ownership_2026-09-23" / "basara_resource_ownership.py"
 XET_DECODER_PATH = TOOLS_DIR.parent / "texture_tools" / "xet_recovery_2026-09-23" / "foundry_xet_decoder_20260923.py"
 MESSAGE_CENSUS_TOOL_PATH = HERE / "message_census.py"
+DONOR_MATCHER_PATH = TOOLS_DIR / "donor_matcher_v5_1_2026-09-23" / "utage_donor_matcher_v5.py"
 
 MANDATORY_PLACEHOLDER_OUTPUTS = (
     "TEXTURE_CENSUS.json",
@@ -450,6 +451,106 @@ def run_message_census(root: Path, outdir: Path) -> tuple[dict[str, Any] | None,
     return report, unresolved
 
 
+
+def run_inventory_only(root: Path, stage: Path) -> tuple[Path | None, list[dict[str, Any]]]:
+    unresolved: list[dict[str, Any]] = []
+    stage.mkdir(parents=True, exist_ok=True)
+    proc = subprocess.run(
+        [sys.executable, str(OWNERSHIP_TOOL_PATH), str(root), "--out", str(stage)],
+        capture_output=True, text=True
+    )
+    resources_csv = stage / "resources.csv"
+    if proc.returncode != 0 or not resources_csv.is_file():
+        unresolved.append({
+            "category": "REFERENCE_INVENTORY",
+            "owner_path": str(root),
+            "reason": f"ownership inventory failed exit={proc.returncode}; stderr={proc.stderr[-4000:]}",
+            "required_next_evidence": "Restore reference-root inventory before donor matching.",
+            "recommended_tool": "basara_resource_ownership.py",
+            "release_severity": "BLOCKED",
+        })
+        return None, unresolved
+    return resources_csv, unresolved
+
+
+def run_donor_matcher(live_root: Path, sh_root: Path | None, outdir: Path) -> tuple[dict[str, Any] | None, list[dict[str, Any]]]:
+    unresolved: list[dict[str, Any]] = []
+    if sh_root is None or not sh_root.is_dir():
+        unresolved.append({
+            "category": "DONOR_REFERENCE_ROOT",
+            "owner_path": str(sh_root) if sh_root else None,
+            "reason": "Samurai Heroes root not supplied or not readable.",
+            "required_next_evidence": "Run audit with --sh-root pointing to the exact official English Samurai Heroes tree.",
+            "recommended_tool": "Utage Donor Matcher V5.1",
+            "release_severity": "BLOCKED",
+        })
+        return None, unresolved
+
+    utage_inventory = outdir / "_ownership_stage" / "resources.csv"
+    if not utage_inventory.is_file():
+        unresolved.append({
+            "category": "DONOR_TARGET_INVENTORY",
+            "owner_path": str(utage_inventory),
+            "reason": "Current-live ownership resources.csv is missing.",
+            "required_next_evidence": "Complete ownership analyzer stage first.",
+            "recommended_tool": "basara_resource_ownership.py",
+            "release_severity": "BLOCKED",
+        })
+        return None, unresolved
+
+    sh_inventory, inv_unresolved = run_inventory_only(sh_root, outdir / "_sh_ownership_stage")
+    unresolved.extend(inv_unresolved)
+    if sh_inventory is None:
+        return None, unresolved
+
+    report = outdir / "DONOR_CANDIDATES.json"
+    harness = outdir / "DONOR_HARNESS_PLAN.json"
+    graft = outdir / "DONOR_GRAFT_CANDIDATES.json"
+    cmd = [
+        sys.executable, str(DONOR_MATCHER_PATH),
+        "--utage", str(utage_inventory),
+        "--sh-en", str(sh_inventory),
+        "--report", str(report),
+        "--harness-plan", str(harness),
+        "--graft-plan", str(graft),
+        "--utage-root", str(live_root),
+        "--sh-root", str(sh_root),
+        "--duplicate-policy", "REPORT_ONLY",
+        "--input-format", "foundry",
+    ]
+    proc = subprocess.run(cmd, capture_output=True, text=True)
+    if proc.returncode != 0 or not report.is_file():
+        unresolved.append({
+            "category": "DONOR_MATCHER_TOOL",
+            "owner_path": str(DONOR_MATCHER_PATH),
+            "reason": f"exit={proc.returncode}; stderr={proc.stderr[-4000:]}",
+            "required_next_evidence": "Fix matcher/inventory compatibility; do not manually infer donor safety from similar filenames.",
+            "recommended_tool": "Utage Donor Matcher V5.1",
+            "release_severity": "BLOCKED",
+        })
+        return None, unresolved
+
+    payload = json.loads(report.read_text(encoding="utf-8"))
+    records = payload.get("records", [])
+    by_decision: dict[str, int] = {}
+    by_provider_status: dict[str, int] = {}
+    for rec in records:
+        d = rec.get("decision") or "UNKNOWN"
+        by_decision[d] = by_decision.get(d, 0) + 1
+        p = rec.get("provider_status") or "NONE"
+        by_provider_status[p] = by_provider_status.get(p, 0) + 1
+
+    summary = {
+        "target_records": len(records),
+        "by_decision": by_decision,
+        "by_provider_status": by_provider_status,
+        "harness_plan_file": harness.name if harness.is_file() else None,
+        "graft_plan_file": graft.name if graft.is_file() else None,
+        "policy": "REPORT_ONLY; candidate discovery never auto-patches game files",
+    }
+    return summary, unresolved
+
+
 def placeholder_output(outdir: Path, filename: str, reason: str) -> None:
     atomic_write_json(outdir / filename, {
         "schema": SCHEMA,
@@ -494,6 +595,7 @@ def main() -> int:
         "ownership_analyzer": dependency_record(OWNERSHIP_TOOL_PATH),
         "xet_decoder": dependency_record(XET_DECODER_PATH, EXPECTED_XET_DECODER_SHA256),
         "message_census": dependency_record(MESSAGE_CENSUS_TOOL_PATH),
+        "donor_matcher": dependency_record(DONOR_MATCHER_PATH),
         "orchestrator": dependency_record(Path(__file__).resolve()),
     }
 
@@ -569,12 +671,15 @@ def main() -> int:
     message_report, message_unresolved = run_message_census(live_root, outdir)
     unresolved.extend(message_unresolved)
 
+    sh_root = args.sh_root.resolve() if args.sh_root else None
+    donor_summary, donor_unresolved = run_donor_matcher(live_root, sh_root, outdir)
+    unresolved.extend(donor_unresolved)
+
     # Deliberate fail-closed placeholders. They make incompleteness explicit and
     # keep the output contract stable while the proven domain parsers are wired.
     placeholder_reasons = {
         "MEDIA_CENSUS.json": "PAM/media inventory/probe layer not yet integrated.",
         "LOOSE_UI_AND_METADATA_CENSUS.json": "PARAM.SFO/TROPDIR/XMB/loose semantic audit not yet integrated.",
-        "DONOR_CANDIDATES.json": "Donor Matcher V5.1 orchestration not yet integrated.",
     }
     for filename, reason in placeholder_reasons.items():
         placeholder_output(outdir, filename, reason)
@@ -620,6 +725,7 @@ def main() -> int:
         "texture_provider_count": len(textures),
         "message_resource_count": (message_report or {}).get("summary", {}).get("message_resources"),
         "message_record_count": (message_report or {}).get("summary", {}).get("message_records"),
+        "donor_summary": donor_summary,
         "unresolved_count": len(unresolved),
         "eboot_candidates": eboot_candidates,
         "ownership_summary": ownership_report.get("summary") if ownership_report else None,
@@ -645,6 +751,7 @@ def main() -> int:
         "- Existing Resource Ownership Analyzer orchestration",
         "- Recovered XET metadata/decode census for supported formats, with 0x15 intercepted and quarantined",
         "- Recovered GSM/FIM grammar census + exact FIM contract verification",
+        "- Donor Matcher V5.1 report-only sweep using current Utage + official SH ownership inventories",
         "- Divergent-provider extraction",
         "- Explicit unresolved queue",
         "- Dependency/tool hash binding",
@@ -655,7 +762,6 @@ def main() -> int:
         "- pixel-width/layout validation on top of the GSM/FIM census",
         "- PAM/media census",
         "- loose/XMB/trophy/platform semantic census",
-        "- Donor Matcher V5.1 sweep",
         "- final runtime acceptance merge",
         "",
         "This bootstrap deliberately returns exit code 1 after a successful run. "
@@ -673,6 +779,7 @@ def main() -> int:
         "texture_provider_count": len(textures),
         "message_resource_count": (message_report or {}).get("summary", {}).get("message_resources"),
         "message_record_count": (message_report or {}).get("summary", {}).get("message_records"),
+        "donor_summary": donor_summary,
         "unresolved_count": len(unresolved),
         "out": str(outdir),
     }, indent=2))
