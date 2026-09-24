@@ -9,20 +9,22 @@ internal static class Program
 {
     private static int Main()
     {
-        // Independent PS3 BC3 fixture: RGB565 colour endpoints are stored
-        // big-endian while alpha/index fields keep standard BC3 packing.
-        var ps3RedFixture = BuildPs3Bc3SolidRedXet();
+        // Independent PS3 0x2A fixture: the BC3 payload stores YCbCr shader
+        // channels, and RGB565 colour endpoints are big-endian. This block's
+        // raw storage pixel is approximately (Cr=247, coverage=255, Cb=82, Y=76),
+        // which must render as opaque red.
+        var ps3RedFixture = BuildPs3Bc3StoredForDisplayRedXet();
         var ps3RedDecoded = UtageXetCodec.DecodeTopLevel(ps3RedFixture).Rgba;
         for (var i = 0; i < ps3RedDecoded.Length; i += 4)
         {
-            True(ps3RedDecoded[i] >= 248, "PS3 BE-endpoint fixture decodes red channel");
-            True(ps3RedDecoded[i + 1] <= 8, "PS3 BE-endpoint fixture decodes green channel");
-            True(ps3RedDecoded[i + 2] <= 8, "PS3 BE-endpoint fixture decodes blue channel");
-            Equal((byte)255, ps3RedDecoded[i + 3], "PS3 BE-endpoint fixture decodes alpha");
+            True(ps3RedDecoded[i] >= 240, "0x2A stored YCbCr fixture renders red channel");
+            True(ps3RedDecoded[i + 1] <= 16, "0x2A stored YCbCr fixture renders green channel");
+            True(ps3RedDecoded[i + 2] <= 16, "0x2A stored YCbCr fixture renders blue channel");
+            Equal((byte)255, ps3RedDecoded[i + 3], "0x2A stored G becomes display alpha");
         }
 
-        // Writer proof independent of Foundry's decoder: inspect the first
-        // encoded BC3 pixel using a tiny local PS3 block decoder.
+        // Writer proof independent of Foundry's display decoder: inspect the
+        // first encoded BC3 storage pixel using a tiny local PS3 block decoder.
         var solidRed = new byte[4 * 4 * 4];
         for (var i = 0; i < solidRed.Length; i += 4)
         {
@@ -32,8 +34,17 @@ internal static class Program
         var redShell = BuildEmptyXet(4, 4, 0x2A);
         var encodedRed = UtageXetCodec.ReplaceSingleLevel(redShell, solidRed).XetBytes;
         var first = DecodeFirstPs3Bc3Pixel(encodedRed.AsSpan(20, 16));
-        True(first.R >= 240 && first.G <= 16 && first.B <= 16 && first.A >= 240,
-            "writer emits PS3-endian BC3 colour endpoints");
+        True(first.R >= 235 && first.G >= 235 && first.B >= 55 && first.B <= 105 &&
+             first.A >= 55 && first.A <= 95,
+            "0x2A writer emits PS3-endian stored (Cr, alpha, Cb, Y) channels");
+        var displayCheck = UtageXetCodec.DecodeTopLevel(encodedRed).Rgba;
+        True(displayCheck[0] >= 235 && displayCheck[1] <= 20 && displayCheck[2] <= 20 && displayCheck[3] >= 235,
+            "0x2A encoded storage round-trips to visible red");
+
+        var generic2B = BuildEmptyXet(4, 4, 0x2B);
+        Throws<NotSupportedException>(
+            () => UtageXetCodec.DecodeTopLevel(generic2B),
+            "0x2B generic one-plane RGBA preview remains fail-closed");
 
         var ps3Bc2Fixture = BuildPs3Bc2SolidRedXet(alphaNibble: 8);
         var ps3Bc2Decoded = UtageXetCodec.DecodeTopLevel(ps3Bc2Fixture).Rgba;
@@ -104,16 +115,22 @@ internal static class Program
         }
     }
 
-    private static byte[] BuildPs3Bc3SolidRedXet()
+    private static byte[] BuildPs3Bc3StoredForDisplayRedXet()
     {
         var raw = BuildEmptyXet(4, 4, 0x2A);
         var block = raw.AsSpan(20, 16);
-        block[0] = 255; // alpha endpoint 0
-        block[1] = 0;   // alpha endpoint 1
-        // alpha indices 0 -> endpoint 255
-        block[8] = 0xF8; block[9] = 0x00; // RGB565 red, PS3 big-endian
-        block[10] = 0x07; block[11] = 0xE0; // RGB565 green, PS3 big-endian
-        // colour indices 0 -> endpoint red
+
+        // BC3 alpha channel is stored Y for the 0x2A colour shader.
+        block[0] = 76;
+        block[1] = 0;
+        // alpha indices 0 -> Y=76
+
+        // RGB565 endpoint 0 ~= (Cr=247, coverage=255, Cb=82), PS3 BE.
+        block[8] = 0xF7;
+        block[9] = 0xEA;
+        block[10] = 0x07;
+        block[11] = 0xE0;
+        // colour indices 0 -> endpoint 0 for every pixel.
         return raw;
     }
 
