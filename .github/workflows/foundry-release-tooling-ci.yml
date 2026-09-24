@@ -133,19 +133,33 @@ jobs:
             echo "Expected engineering-incomplete exit 1; got $code"
             exit 1
           fi
-          test -f /tmp/basara-audit/00_RUN_METADATA.json
-          test -f /tmp/basara-audit/FILE_TREE_HASHES.json
-          test -f /tmp/basara-audit/ARC_MEMBERS.json
-          test -f /tmp/basara-audit/RESOURCE_OWNERSHIP.json
-          test -f /tmp/basara-audit/TEXTURE_CENSUS.json
-          test -f /tmp/basara-audit/MESSAGE_CENSUS.json
-          test -f /tmp/basara-audit/MEDIA_CENSUS.json
-          test -f /tmp/basara-audit/LOOSE_UI_AND_METADATA_CENSUS.json
-          test -f /tmp/basara-audit/DONOR_CANDIDATES.json
-          test -f /tmp/basara-audit/TERMINOLOGY_STATUS.json
-          test -f /tmp/basara-audit/RUNTIME_ACCEPTANCE_MATRIX.json
-          test -f /tmp/basara-audit/UNRESOLVED.json
-          test -f /tmp/basara-audit/SHA256SUMS.json
+          required=(
+            00_RUN_METADATA.json
+            FILE_TREE_HASHES.json
+            ARC_MEMBERS.json
+            RESOURCE_OWNERSHIP.json
+            TEXTURE_CENSUS.json
+            MESSAGE_CENSUS.json
+            MEDIA_CENSUS.json
+            LOOSE_UI_AND_METADATA_CENSUS.json
+            DONOR_CANDIDATES.json
+            TERMINOLOGY_STATUS.json
+            FONT_CONTRACT_CENSUS.json
+            RUNTIME_ACCEPTANCE_MATRIX.json
+            RUNTIME_ACCEPTANCE_STATUS.json
+            UNRESOLVED.json
+            SHA256SUMS.json
+          )
+          for name in "${required[@]}"; do
+            if [ ! -f "/tmp/basara-audit/$name" ]; then
+              echo "MISSING REQUIRED AUDIT OUTPUT: $name"
+              echo "--- directory listing ---"
+              find /tmp/basara-audit -maxdepth 2 -type f -printf '%P\n' | sort
+              echo "--- unresolved ---"
+              cat /tmp/basara-audit/UNRESOLVED.json || true
+              exit 1
+            fi
+          done
           python - <<'PY'
           import json
           from pathlib import Path
