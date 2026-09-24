@@ -78,7 +78,7 @@ class OrchestrationTests(unittest.TestCase):
             report = json.loads((exported / "resource_ownership.json").read_text(encoding="utf-8"))
             self.assertEqual(1, report["summary"]["divergent_exact_duplicate_classes"])
             self.assertTrue((exported / "resources.csv").is_file())
-            self.assertEqual("PS3_GAME/USRDIR/nativePS3/rom/eng/b.arc", report["exact_duplicate_classes"][0]["effective_provider"])
+            self.assertEqual("USRDIR/nativePS3/rom/eng/b.arc", report["exact_duplicate_classes"][0]["effective_provider"])
 
             (live / "a.arc").write_bytes(make_arc(key, b"CCCC"))
             code, text = self.run_cli("verify", str(root))
