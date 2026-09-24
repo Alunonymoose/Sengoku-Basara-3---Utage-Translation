@@ -24,8 +24,9 @@ public sealed record XetSingleLevelBuildResult(
 /// and encode calls therefore pass through the endpoint-endian bridge below.
 ///
 /// Write support is intentionally narrower: v0.1 only re-encodes the DXT5
-/// codes already proven in the Utage project. DXT1 and quarantined 0x15 remain
-/// non-writable until real-game fixtures certify those paths.
+/// codes already proven in the Utage project. DXT1 and fixture-proven 0x15
+/// DXT3/BC2 remain read-only until real-game write/runtime fixtures certify
+/// those paths.
 /// </summary>
 public static class UtageXetCodec
 {
@@ -137,6 +138,7 @@ public static class UtageXetCodec
         var (blockBytes, colourOffset) = format switch
         {
             CompressionFormat.Bc1 => (8, 0),
+            CompressionFormat.Bc2 => (16, 8),
             CompressionFormat.Bc3 => (16, 8),
             _ => throw new NotSupportedException($"PS3 endpoint-endian bridge does not support {format}.")
         };
@@ -166,6 +168,7 @@ public static class UtageXetCodec
     private static CompressionFormat ToCompressionFormat(UtageXetInfo info) => info.BlockFormat switch
     {
         "DXT1" => CompressionFormat.Bc1,
+        "DXT3" => CompressionFormat.Bc2,
         "DXT5" => CompressionFormat.Bc3,
         _ => throw new NotSupportedException(
             $"No BCn decoder mapping exists for XET format 0x{info.FormatCode:X2}.")
