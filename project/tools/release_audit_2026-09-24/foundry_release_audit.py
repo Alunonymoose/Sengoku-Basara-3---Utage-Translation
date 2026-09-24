@@ -42,11 +42,14 @@ from typing import Any, Iterable
 
 SCHEMA = "BASARA_FOUNDRY_RELEASE_AUDIT_V0_1"
 EXPECTED_SAFE_ARC_SHA256 = "f25c53e4ad78e18d5785b8aee197725377130ed9f562a9caa1000a1964bde91d"
+EXPECTED_XET_DECODER_SHA256 = "d0ffe59abd91fa18bd5ec76bdf8d73fbe7595597b4f7ab3339a5d5de7fc58255"
+R_TEXTURE = 0x241F5DEB
 
 HERE = Path(__file__).resolve().parent
 TOOLS_DIR = HERE.parent
 SAFE_ARC_PATH = TOOLS_DIR / "donor_matcher_v5_1_2026-09-23" / "safe_arc.py"
 OWNERSHIP_TOOL_PATH = TOOLS_DIR / "resource_ownership_2026-09-23" / "basara_resource_ownership.py"
+XET_DECODER_PATH = TOOLS_DIR.parent / "texture_tools" / "xet_recovery_2026-09-23" / "foundry_xet_decoder_20260923.py"
 
 MANDATORY_PLACEHOLDER_OUTPUTS = (
     "TEXTURE_CENSUS.json",
@@ -221,6 +224,99 @@ def arc_member_rows(root: Path, safe_arc) -> tuple[list[dict[str, Any]], list[di
     return rows, unresolved
 
 
+
+def texture_census(root: Path, safe_arc, xet_decoder) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    rows: list[dict[str, Any]] = []
+    unresolved: list[dict[str, Any]] = []
+    review_count = 0
+
+    for arc_path in sorted(root.rglob("*.arc")):
+        rel = stable_rel(arc_path, root)
+        try:
+            data = arc_path.read_bytes()
+            arc_sha = sha256_bytes(data)
+            entries = safe_arc.parse_arc(data)
+        except Exception:
+            # ARC-level parse failure is already emitted by arc_member_rows.
+            continue
+
+        for e in entries:
+            if e["type_hash"] != R_TEXTURE:
+                continue
+            raw = e["raw"]
+            base = {
+                "arc_relative_path": rel,
+                "arc_sha256": arc_sha,
+                "member_index": e["index"],
+                "internal_path": e["name"],
+                "raw_sha256": sha256_bytes(raw),
+                "width": None,
+                "height": None,
+                "mip_count": None,
+                "format_id": None,
+                "version_flags": None,
+                "tex_flags": None,
+                "flags": None,
+                "mip_offsets": None,
+                "decoded_rgba_sha256": None,
+                "decoder_status": None,
+                "semantic_classification": "UNKNOWN_REVIEW",
+            }
+            try:
+                info = xet_decoder.xet_info(raw)
+                base.update({
+                    "width": info.width,
+                    "height": info.height,
+                    "mip_count": info.mip_count,
+                    "format_id": f"0x{info.format_id:02X}",
+                    "version_flags": f"0x{info.version_flags:08X}",
+                    "tex_flags": f"0x{info.tex_flags:08X}",
+                    "flags": f"0x{info.flags:08X}",
+                    "mip_offsets": list(info.mip_offsets),
+                })
+
+                if info.format_id == 0x15:
+                    base["decoder_status"] = "FORMAT_QUARANTINED_0X15"
+                    unresolved.append({
+                        "category": "XET_0X15_FORMAT_QUARANTINE",
+                        "owner_path": f"{rel}::{e['index']}::{e['name']}",
+                        "reason": "0x15 metadata parsed, but image decode intentionally withheld because BC2/DXT3 fixture evidence conflicts with the recovered decoder's BC3 mapping.",
+                        "required_next_evidence": "Revalidate exact 0x15 Utage fixture and distinguish BC2-vs-BC3 alpha coding.",
+                        "recommended_tool": "current XET recovery path + XET_0x15_DXT3_UTAGE_FIXTURE_2026-09-22",
+                        "release_severity": "BLOCKED",
+                    })
+                else:
+                    validated = xet_decoder.validate(raw)
+                    rgba = xet_decoder.decode_rgba(raw, 0)
+                    base["decoded_rgba_sha256"] = sha256_bytes(rgba)
+                    base["decoder_status"] = "DECODED_LEVEL0"
+                    base["validated_levels"] = validated.get("levels")
+            except Exception as exc:
+                base["decoder_status"] = "UNSUPPORTED_OR_PARSE_ERROR"
+                unresolved.append({
+                    "category": "TEXTURE_PARSE",
+                    "owner_path": f"{rel}::{e['index']}::{e['name']}",
+                    "reason": repr(exc),
+                    "required_next_evidence": "Classify format/layout with current XET forensic workflow; do not guess.",
+                    "recommended_tool": "foundry_xet_decoder_20260923.py / texture research gate",
+                    "release_severity": "BLOCKED",
+                })
+
+            rows.append(base)
+            review_count += 1
+
+    if review_count:
+        unresolved.append({
+            "category": "TEXTURE_SEMANTIC_REVIEW_PENDING",
+            "owner_path": "TEXTURE_CENSUS.json",
+            "reason": f"{review_count} rTexture providers inventoried; semantic English/Japanese/mixed classification is not automated and remains UNKNOWN_REVIEW until visual/context review.",
+            "required_next_evidence": "Generate review previews/contact sheets and disposition every user-visible texture identity using ownership + SH/context evidence.",
+            "recommended_tool": "release auditor + Donor Matcher V5.1 + visual review",
+            "release_severity": "NEEDS_REVIEW",
+        })
+    return rows, unresolved
+
+
 def run_ownership(root: Path, outdir: Path, logs: list[Path]) -> tuple[dict[str, Any] | None, list[dict[str, Any]]]:
     unresolved: list[dict[str, Any]] = []
     target = outdir / "_ownership_stage"
@@ -328,20 +424,23 @@ def main() -> int:
     dependencies = {
         "safe_arc": dependency_record(SAFE_ARC_PATH, EXPECTED_SAFE_ARC_SHA256),
         "ownership_analyzer": dependency_record(OWNERSHIP_TOOL_PATH),
+        "xet_decoder": dependency_record(XET_DECODER_PATH, EXPECTED_XET_DECODER_SHA256),
         "orchestrator": dependency_record(Path(__file__).resolve()),
     }
 
     safe_ok = dependencies["safe_arc"]["exists"] and dependencies["safe_arc"]["hash_ok"]
-    if not safe_ok and not args.allow_tool_drift:
+    xet_ok = dependencies["xet_decoder"]["exists"] and dependencies["xet_decoder"]["hash_ok"]
+    if (not safe_ok or not xet_ok) and not args.allow_tool_drift:
         atomic_write_json(outdir / "00_RUN_METADATA.json", {
             "schema": SCHEMA,
             "status": "DEPENDENCY_FAILURE",
             "dependencies": dependencies,
         })
-        print("ERROR: canonical safe_arc.py missing or hash drifted; refusing audit.", file=sys.stderr)
+        print("ERROR: canonical safe_arc.py or recovered XET decoder missing/hash-drifted; refusing audit.", file=sys.stderr)
         return 2
 
     safe_arc = load_module_from_path("basara_foundry_safe_arc", SAFE_ARC_PATH)
+    xet_decoder = load_module_from_path("basara_foundry_xet_decoder", XET_DECODER_PATH)
 
     started = datetime.now(timezone.utc)
     started_local = datetime.now().astimezone()
@@ -383,10 +482,24 @@ def main() -> int:
     ownership_report, ownership_unresolved = run_ownership(live_root, outdir, logs)
     unresolved.extend(ownership_unresolved)
 
+    textures, texture_unresolved = texture_census(live_root, safe_arc, xet_decoder)
+    unresolved.extend(texture_unresolved)
+    atomic_write_json(outdir / "TEXTURE_CENSUS.json", {
+        "schema": SCHEMA,
+        "semantic_policy": "Do not infer English/Japanese from eng-vs-jpn path or hash equality. UNKNOWN_REVIEW requires visual/context disposition.",
+        "xet_0x15_policy": "metadata-only quarantine; no image decode until fixture conflict is resolved",
+        "textures": textures,
+    })
+    write_csv(outdir / "TEXTURE_CENSUS.csv", textures, [
+        "arc_relative_path", "arc_sha256", "member_index", "internal_path",
+        "raw_sha256", "width", "height", "mip_count", "format_id",
+        "version_flags", "tex_flags", "flags", "mip_offsets",
+        "decoded_rgba_sha256", "decoder_status", "semantic_classification",
+    ])
+
     # Deliberate fail-closed placeholders. They make incompleteness explicit and
     # keep the output contract stable while the proven domain parsers are wired.
     placeholder_reasons = {
-        "TEXTURE_CENSUS.json": "Canonical solved-XET reader + semantic review pipeline not yet integrated into orchestrator. 0x15 remains quarantined.",
         "MESSAGE_CENSUS.json": "Recovered GSM/FIM production grammar not yet integrated into orchestrator.",
         "MEDIA_CENSUS.json": "PAM/media inventory/probe layer not yet integrated.",
         "LOOSE_UI_AND_METADATA_CENSUS.json": "PARAM.SFO/TROPDIR/XMB/loose semantic audit not yet integrated.",
@@ -402,17 +515,6 @@ def main() -> int:
             "recommended_tool": "See 2026-09-24 Release Audit Orchestrator implementation contract.",
             "release_severity": "BLOCKED",
         })
-
-    # Explicit 0x15 release blocker until fixture revalidation closes the
-    # BC2-vs-BC3 conflict.
-    unresolved.append({
-        "category": "XET_0X15_FORMAT_QUARANTINE",
-        "owner_path": None,
-        "reason": "Fixture-backed 2026-09-22 BC2/DXT3 evidence conflicts with later BC3 summary prose.",
-        "required_next_evidence": "Revalidate current decoder against exact 0x15 Utage fixture and distinguish BC2 vs BC3 alpha coding.",
-        "recommended_tool": "current solved-XET recovery path + XET_0x15_DXT3_UTAGE_FIXTURE_2026-09-22",
-        "release_severity": "BLOCKED",
-    })
 
     atomic_write_json(outdir / "UNRESOLVED.json", {
         "schema": SCHEMA,
@@ -444,6 +546,7 @@ def main() -> int:
         "tool_drift_override": bool(args.allow_tool_drift),
         "file_count": len(files),
         "arc_member_count": len(members),
+        "texture_provider_count": len(textures),
         "unresolved_count": len(unresolved),
         "eboot_candidates": eboot_candidates,
         "ownership_summary": ownership_report.get("summary") if ownership_report else None,
@@ -457,6 +560,7 @@ def main() -> int:
         f"- Release pass: **NO**",
         f"- Files hashed: **{len(files)}**",
         f"- ARC members inventoried through canonical safe_arc: **{len(members)}**",
+        f"- rTexture providers inventoried: **{len(textures)}**",
         f"- Unresolved/blocking rows: **{len(unresolved)}**",
         "",
         "## Implemented",
@@ -464,13 +568,14 @@ def main() -> int:
         "- Current-live file hash census",
         "- ARC member inventory using pinned safe_arc.py",
         "- Existing Resource Ownership Analyzer orchestration",
+        "- Recovered XET metadata/decode census for supported formats, with 0x15 intercepted and quarantined",
         "- Divergent-provider extraction",
         "- Explicit unresolved queue",
         "- Dependency/tool hash binding",
         "",
         "## Still required before this auditor can ever exit 0",
         "",
-        "- canonical XET texture census + 0x15 fixture resolution",
+        "- texture semantic visual classification + 0x15 fixture resolution",
         "- control-aware GSM/FIM message census",
         "- PAM/media census",
         "- loose/XMB/trophy/platform semantic census",
@@ -489,6 +594,7 @@ def main() -> int:
         "status": metadata["status"],
         "file_count": len(files),
         "arc_member_count": len(members),
+        "texture_provider_count": len(textures),
         "unresolved_count": len(unresolved),
         "out": str(outdir),
     }, indent=2))
