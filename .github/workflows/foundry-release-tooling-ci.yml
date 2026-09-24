@@ -1,0 +1,90 @@
+name: Foundry Release Tooling CI
+
+on:
+  push:
+    branches: [ foundry-v0.1 ]
+    paths:
+      - 'project/tools/release_audit_2026-09-24/**'
+      - 'project/tools/donor_matcher_v5_1_2026-09-23/**'
+      - 'project/tools/resource_ownership_2026-09-23/**'
+      - 'project/texture_tools/xet_recovery_2026-09-23/**'
+      - 'project/dialogue_tools/fim_contract_recovery_2026-09-20/**'
+      - 'project/terminology/**'
+      - 'project/runtime/**'
+      - '.github/workflows/foundry-release-tooling-ci.yml'
+  pull_request:
+    paths:
+      - 'project/tools/release_audit_2026-09-24/**'
+      - 'project/tools/donor_matcher_v5_1_2026-09-23/**'
+      - 'project/tools/resource_ownership_2026-09-23/**'
+      - 'project/texture_tools/xet_recovery_2026-09-23/**'
+      - 'project/dialogue_tools/fim_contract_recovery_2026-09-20/**'
+      - 'project/terminology/**'
+      - 'project/runtime/**'
+      - '.github/workflows/foundry-release-tooling-ci.yml'
+
+concurrency:
+  group: foundry-release-tooling-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  release-tooling-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Compile release tooling
+        shell: bash
+        run: |
+          python -m py_compile \
+            project/tools/release_audit_2026-09-24/foundry_release_audit.py \
+            project/tools/release_audit_2026-09-24/message_census.py \
+            project/tools/release_audit_2026-09-24/media_census.py \
+            project/tools/release_audit_2026-09-24/platform_census.py \
+            project/tools/release_audit_2026-09-24/test_release_audit.py \
+            project/terminology/validate_terminology.py \
+            project/runtime/validate_runtime_matrix.py \
+            project/tools/donor_matcher_v5_1_2026-09-23/utage_donor_matcher_v5.py \
+            project/tools/donor_matcher_v5_1_2026-09-23/safe_arc.py \
+            project/tools/resource_ownership_2026-09-23/basara_resource_ownership.py \
+            project/texture_tools/xet_recovery_2026-09-23/foundry_xet_decoder_20260923.py \
+            project/dialogue_tools/fim_contract_recovery_2026-09-20/FIM_CONTRACT_REPAIR.py
+
+      - name: Run release-audit unit tests
+        run: python -m unittest project/tools/release_audit_2026-09-24/test_release_audit.py -v
+
+      - name: Validate terminology ledger structure
+        run: |
+          python project/terminology/validate_terminology.py \
+            project/terminology/canonical_english_terminology_2026-09-24.json
+
+      - name: Prove terminology release gate is still fail-closed
+        shell: bash
+        run: |
+          set +e
+          python project/terminology/validate_terminology.py \
+            project/terminology/canonical_english_terminology_2026-09-24.json \
+            --release-gate
+          code=$?
+          set -e
+          if [ "$code" -ne 1 ]; then
+            echo "Expected terminology release gate exit 1 while editorial blockers remain; got $code"
+            exit 1
+          fi
+
+      - name: Prove runtime template cannot pass without final-build binding
+        shell: bash
+        run: |
+          set +e
+          python project/runtime/validate_runtime_matrix.py \
+            project/runtime/runtime_acceptance_matrix_2026-09-24.json
+          code=$?
+          set -e
+          if [ "$code" -ne 2 ]; then
+            echo "Expected runtime template validation exit 2 before candidate hashes/evidence are bound; got $code"
+            exit 1
+          fi
