@@ -1111,6 +1111,9 @@ def main() -> int:
         "duration_seconds": round(time.time() - t0, 3),
         "live_root_hint": str(live_root),
         "live_tree_sha256": live_tree_sha256,
+        "snapshot_id": snapshot_id,
+        "snapshot_db": str(snapshot_db) if snapshot_db else None,
+        "snapshot_verification": snapshot_verify,
         "samurai_heroes_root_hint": str(args.sh_root.resolve()) if args.sh_root else None,
         "rpcs3_logs": [
             {"path": str(p), "sha256": sha256_file(p) if p.is_file() else None}
