@@ -1,0 +1,87 @@
+name: Build Utage PAMFtool
+
+on:
+  push:
+    branches:
+      - foundry-v0.1
+    paths:
+      - 'project/media_tools/pamftool_utage_patch.py'
+      - '.github/workflows/build-utage-pamftool.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout BASARA Foundry
+        uses: actions/checkout@v4
+        with:
+          path: basara
+
+      - name: Checkout pinned PAMFtool upstream
+        uses: actions/checkout@v4
+        with:
+          repository: ravenDS/PAMFtool
+          ref: 1559f643c660bfd1c14910354826c8f78b2000ec
+          path: pamftool
+
+      - name: Set up .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Apply fail-closed Utage patch
+        run: |
+          python basara/project/media_tools/pamftool_utage_patch.py pamftool
+          git -C pamftool diff --check
+          git -C pamftool diff > PAMFTOOL_UTAGE_APPLIED.diff
+
+      - name: Build Linux x64
+        run: |
+          dotnet publish pamftool/PAMFtool/PAMFtool.vbproj \
+            -c Release -r linux-x64 --self-contained true \
+            -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true \
+            -o out/linux-x64
+          mv out/linux-x64/PAMFtool out/PAMFtool-Utage-linux-x64
+          chmod +x out/PAMFtool-Utage-linux-x64
+          out/PAMFtool-Utage-linux-x64 -h | tee PAMFTOOL_UTAGE_HELP.txt
+          grep -q -- '-m2v-pstd' PAMFTOOL_UTAGE_HELP.txt
+          grep -q -- '-header-start-pts' PAMFTOOL_UTAGE_HELP.txt
+
+      - name: Build Windows x64
+        run: |
+          dotnet publish pamftool/PAMFtool/PAMFtool.vbproj \
+            -c Release -r win-x64 --self-contained true \
+            -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true \
+            -o out/win-x64
+          mv out/win-x64/PAMFtool.exe out/PAMFtool-Utage-win-x64.exe
+
+      - name: Freeze provenance
+        shell: bash
+        run: |
+          {
+            echo "BASARA repo: $GITHUB_REPOSITORY"
+            echo "BASARA commit: $GITHUB_SHA"
+            echo "PAMFtool upstream: ravenDS/PAMFtool"
+            echo "PAMFtool upstream commit: 1559f643c660bfd1c14910354826c8f78b2000ec"
+            echo "Patch: project/media_tools/pamftool_utage_patch.py"
+            echo
+            sha256sum out/PAMFtool-Utage-linux-x64
+            sha256sum out/PAMFtool-Utage-win-x64.exe
+          } | tee PAMFTOOL_UTAGE_BUILD_INFO.txt
+
+      - name: Upload reproducible binaries
+        uses: actions/upload-artifact@v4
+        with:
+          name: PAMFtool-Utage-identity-preserving
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            out/PAMFtool-Utage-linux-x64
+            out/PAMFtool-Utage-win-x64.exe
+            PAMFTOOL_UTAGE_HELP.txt
+            PAMFTOOL_UTAGE_BUILD_INFO.txt
+            PAMFTOOL_UTAGE_APPLIED.diff
