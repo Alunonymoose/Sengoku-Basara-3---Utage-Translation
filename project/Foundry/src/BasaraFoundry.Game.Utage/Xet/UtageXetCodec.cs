@@ -30,7 +30,7 @@ public sealed record XetSingleLevelBuildResult(
 /// </summary>
 public static class UtageXetCodec
 {
-    private static readonly HashSet<int> WritableDxt5Codes = [0x17, 0x18, 0x2A, 0x2B];
+    private static readonly HashSet<int> WritableDxt5Codes = [0x17, 0x18, 0x2A];
 
     public static XetDecodedImage DecodeTopLevel(ReadOnlySpan<byte> raw)
     {
@@ -62,7 +62,8 @@ public static class UtageXetCodec
             rgba[offset + 3] = p.a;
         }
 
-        return new XetDecodedImage(info.Width, info.Height, rgba, info);
+        var displayRgba = StorageToDisplayRgba(info, rgba);
+        return new XetDecodedImage(info.Width, info.Height, displayRgba, info);
     }
 
     public static bool CanEncode(UtageXetInfo info) =>
@@ -98,7 +99,7 @@ public static class UtageXetCodec
                 "Foundry will not replace only the top level.");
         }
 
-        var encoded = EncodeBc3PayloadForPs3(rgba, info.Width, info.Height);
+        var encoded = EncodeTopLevelPayloadForPs3(info, rgba);
         if (encoded.Length != topLevelBytes)
         {
             throw new InvalidDataException(
@@ -113,18 +114,29 @@ public static class UtageXetCodec
         return new XetSingleLevelBuildResult(output, encoded, verification);
     }
 
-    internal static byte[] EncodeBc3PayloadForPs3(ReadOnlySpan<byte> rgba, int width, int height)
+    internal static byte[] EncodeTopLevelPayloadForPs3(
+        UtageXetInfo info,
+        ReadOnlySpan<byte> displayRgba)
+    {
+        ArgumentNullException.ThrowIfNull(info);
+        RequireEncodingCapability(info);
+
+        var storageRgba = DisplayToStorageRgba(info, displayRgba);
+        return EncodeBc3StoragePayloadForPs3(storageRgba, info.Width, info.Height);
+    }
+
+    private static byte[] EncodeBc3StoragePayloadForPs3(ReadOnlySpan<byte> storageRgba, int width, int height)
     {
         var expectedRgba = checked(width * height * 4);
-        if (rgba.Length != expectedRgba)
-            throw new ArgumentException($"RGBA contains {rgba.Length} bytes; {width}x{height} requires {expectedRgba}.", nameof(rgba));
+        if (storageRgba.Length != expectedRgba)
+            throw new ArgumentException($"RGBA contains {storageRgba.Length} bytes; {width}x{height} requires {expectedRgba}.", nameof(storageRgba));
 
         var encoder = new BcEncoder();
         encoder.OutputOptions.Format = CompressionFormat.Bc3;
         encoder.OutputOptions.Quality = CompressionQuality.BestQuality;
         encoder.OutputOptions.GenerateMipMaps = false;
 
-        var levels = encoder.EncodeToRawBytes(rgba.ToArray(), width, height, PixelFormat.Rgba32);
+        var levels = encoder.EncodeToRawBytes(storageRgba.ToArray(), width, height, PixelFormat.Rgba32);
         if (levels.Length != 1)
             throw new InvalidDataException($"BCn encoder returned {levels.Length} levels for a single-level request.");
 
@@ -132,6 +144,64 @@ public static class UtageXetCodec
         SwapColourEndpointEndianInPlace(encoded, CompressionFormat.Bc3);
         return encoded;
     }
+
+    private static byte[] StorageToDisplayRgba(UtageXetInfo info, ReadOnlySpan<byte> storageRgba)
+    {
+        if (info.FormatCode != 0x2A)
+            return storageRgba.ToArray();
+
+        var output = new byte[storageRgba.Length];
+        for (var i = 0; i < storageRgba.Length; i += 4)
+        {
+            var storedR = storageRgba[i];
+            var storedG = storageRgba[i + 1];
+            var storedB = storageRgba[i + 2];
+            var storedA = storageRgba[i + 3];
+
+            var y = storedA;
+            var cb = storedB - 123;
+            var cr = storedR - 123;
+
+            output[i] = ClampByte(y + 1.402 * cr);
+            output[i + 1] = ClampByte(y - 0.344136 * cb - 0.714136 * cr);
+            output[i + 2] = ClampByte(y + 1.772 * cb);
+            output[i + 3] = storedG;
+        }
+        return output;
+    }
+
+    private static byte[] DisplayToStorageRgba(UtageXetInfo info, ReadOnlySpan<byte> displayRgba)
+    {
+        var expected = checked(info.Width * info.Height * 4);
+        if (displayRgba.Length != expected)
+            throw new ArgumentException($"RGBA contains {displayRgba.Length} bytes; {info.Width}x{info.Height} requires {expected}.", nameof(displayRgba));
+
+        if (info.FormatCode != 0x2A)
+            return displayRgba.ToArray();
+
+        var output = new byte[displayRgba.Length];
+        for (var i = 0; i < displayRgba.Length; i += 4)
+        {
+            var r = displayRgba[i];
+            var g = displayRgba[i + 1];
+            var b = displayRgba[i + 2];
+            var a = displayRgba[i + 3];
+
+            var y = 0.299 * r + 0.587 * g + 0.114 * b;
+            var cb = 123 - 0.168736 * r - 0.331264 * g + 0.5 * b;
+            var cr = 123 + 0.5 * r - 0.418688 * g - 0.081312 * b;
+
+            // Kuriimu2 PS3 0x2A Write() stores RGBA = (Cr, input alpha, Cb, Y).
+            output[i] = ClampByte(cr);
+            output[i + 1] = a;
+            output[i + 2] = ClampByte(cb);
+            output[i + 3] = ClampByte(y);
+        }
+        return output;
+    }
+
+    private static byte ClampByte(double value) =>
+        (byte)Math.Clamp((int)value, 0, 255);
 
     internal static void SwapColourEndpointEndianInPlace(Span<byte> payload, CompressionFormat format)
     {
