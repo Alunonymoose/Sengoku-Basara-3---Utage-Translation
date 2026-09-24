@@ -5,6 +5,7 @@ from pathlib import Path
 HERE=Path(__file__).resolve().parent
 if str(HERE) not in sys.path: sys.path.insert(0,str(HERE))
 from diff_cmd import diff_command
+from export_cmd import export_ownership_command
 from query_cmd import bind_log_command,hazards_command,query_command,status_command,verify_command
 from recipe_cmd import recipe_new_command,recipe_validate_command
 from snapshot_cmd import snapshot_command
@@ -18,6 +19,7 @@ def build_parser():
     hz=sub.add_parser("hazards",help="List divergent duplicate-provider identities"); hz.add_argument("snapshot"); hz.add_argument("--limit",type=int); hz.set_defaults(func=hazards_command)
     d=sub.add_parser("diff",help="Compare two snapshots"); d.add_argument("a"); d.add_argument("b"); d.set_defaults(func=diff_command)
     st=sub.add_parser("status",help="Summarize a snapshot"); st.add_argument("snapshot"); st.set_defaults(func=status_command)
+    ex=sub.add_parser("export-ownership",help="Export snapshot DB in existing ownership/donor-matcher formats"); ex.add_argument("snapshot"); ex.add_argument("--out",required=True); ex.add_argument("--repo-root"); ex.set_defaults(func=export_ownership_command)
     rn=sub.add_parser("recipe-new",help="Create hash-bound patch recipe"); rn.add_argument("snapshot"); rn.add_argument("resource"); rn.add_argument("--type-hash",required=True); rn.add_argument("--recipe-id",required=True); rn.add_argument("--candidate"); rn.add_argument("--encoder"); rn.add_argument("--out",required=True); rn.set_defaults(func=recipe_new_command)
     rv=sub.add_parser("recipe-validate",help="Validate recipe approval/snapshot binding"); rv.add_argument("recipe"); rv.add_argument("--snapshot"); rv.add_argument("--require-candidate",action="store_true"); rv.set_defaults(func=recipe_validate_command)
     return ap
