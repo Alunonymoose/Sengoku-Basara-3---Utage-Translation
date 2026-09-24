@@ -172,20 +172,26 @@
       "canonical_english": null,
       "category": "OFFICER",
       "context": "exact resource/context still to be pinned",
-      "status": "CONFLICT",
+      "status": "NEEDS_SOURCE",
       "allowed_short_form": null,
       "current_variants": [
         "Faizlie Muto",
-        "Fairy Muto"
+        "Fairy Muto",
+        "Fairlie Muto"
       ],
       "forbidden_or_superseded_variants": [],
       "required_closure": [
-        "identify exact Japanese source/key and all current resources using either spelling",
-        "check official Samurai Heroes wording if entity/context exists",
-        "check other authoritative official English context if SH does not settle it",
-        "select one canonical form",
-        "update dynamic text, texture art and duplicate providers",
-        "mark losing variant SUPERSEDED"
+        "scan exact official Samurai Heroes resource corpus for Fairlie/Faizlie/Fairy/Muto",
+        "pin the resource/key and in-game ordering",
+        "promote exact official spelling to OFFICIAL_SH_EXACT",
+        "update every Utage dynamic-text/texture provider using losing variants"
+      ],
+      "preferred_candidate": "Fairlie Muto",
+      "notes": "Public Samurai Heroes-era English guides consistently use Fairlie Muto; one contemporary GameFAQs list explicitly states it uses the English release names. Treat Fairlie Muto as the preferred verification candidate, not OFFICIAL_SH_EXACT, until exact Samurai Heroes resource bytes are confirmed.",
+      "external_corroboration": [
+        "GameFAQs Samurai Heroes bodyguard list: fairlie muto; author says names are from the English game release",
+        "PlayStationTrophies Samurai Heroes guide: Fairlie Muto (Hetsugigawa: Memories)",
+        "Sengoku BASARA Wiki ally list: Muto Fairlie"
       ]
     }
   ],
