@@ -1,3 +1,19 @@
+> **2026-09-24 TEXTURE CODEC HARDENING SUPERSESSION — READ FIRST**
+>
+> The durable Foundry C# texture path has now been corrected to the current PS3 contract and supersedes older operational warnings that no current writer exists.
+>
+> - PS3 BC1/BC2/BC3 RGB565 colour endpoints are big-endian u16; index/alpha packing remains standard. Foundry now bridges endpoint endian explicitly around BCnEncoder.Net.
+> - `0x2A` is BC3 storage **plus** the Kuriimu2 PS3 YCbCr colour shader. Artist-facing preview/candidate APIs use normal display RGBA; codec storage is `(Cr, alpha, Cb, Y)`.
+> - `0x15` is fixture-proven DXT3/BC2 for read/preview. Production writing remains blocked pending a real edit/rebuild/runtime fixture.
+> - `0x2B` must not use generic one-plane RGBA; its dedicated RBxG/base+mask representation remains required and writing remains fail-closed.
+> - Multi-mip, non-zero-swizzle, BC1-write, BC2-write and unsupported-format production remain fail-closed.
+> - Foundry CI for the independent endpoint/shader fixture suite is green. This is software/fixture proof, not blanket runtime certification for newly built assets.
+>
+> Durable detail: `project/texture_tools/TEXTURE_CODEC_HARDENING_2026-09-24.md`.
+> Current Python human-review decode uses the same visible `0x2A` shader semantics.
+>
+> Do not regress to either extreme: the old “raw YUV texture structure” theory is disproven, but treating 0x2A BC-decoded storage channels as ordinary artist RGBA is also wrong.
+
 > **2026-09-23 XET SUPERSESSION — READ FIRST**
 >
 > The older format-specific sections below are retained as history but MUST NOT override the solved 2026-09-23 XET contract. The prior bespoke 0x2A raw-YCbCr / half-dimension / Morton interpretation is **DISPROVEN**: the resource is standard MT Framework block-compressed texture data whose payload was previously misread using half dimensions.
