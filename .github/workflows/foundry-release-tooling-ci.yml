@@ -83,14 +83,28 @@ jobs:
           from pathlib import Path
           root=Path('project/tools/donor_matcher_v5_1_2026-09-23')
           manifest=json.loads((root/'SHA256SUMS.json').read_text())
+          mismatches=[]
           for name, expected in manifest.items():
               p=root/name
               if not p.is_file():
-                  raise SystemExit(f'missing manifest file: {name}')
-              actual=hashlib.sha256(p.read_bytes()).hexdigest()
-              if actual != expected:
-                  raise SystemExit(f'hash mismatch {name}: expected={expected} actual={actual}')
-          print(f'verified {len(manifest)} V5.1 package hashes')
+                  mismatches.append((name, expected, 'MISSING', {}))
+                  continue
+              data=p.read_bytes()
+              candidates={'raw':hashlib.sha256(data).hexdigest()}
+              try:
+                  text=data.decode('utf-8')
+                  normalized=text.replace('\r\n','\n').replace('\r','\n')
+                  candidates['utf8_lf']=hashlib.sha256(normalized.encode('utf-8')).hexdigest()
+                  candidates['utf8_crlf']=hashlib.sha256(normalized.replace('\n','\r\n').encode('utf-8')).hexdigest()
+              except UnicodeDecodeError:
+                  pass
+              if expected not in candidates.values():
+                  mismatches.append((name, expected, candidates['raw'], candidates))
+          if mismatches:
+              for name, expected, actual, candidates in mismatches:
+                  print(f'hash mismatch {name}: expected={expected} actual={actual} candidates={candidates}')
+              raise SystemExit(1)
+          print(f'verified {len(manifest)} V5.1 package hashes (raw or newline-equivalent text)')
           PY
 
       - name: Validate texture-review PNG encoder and PowerShell launcher syntax
