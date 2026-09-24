@@ -40,7 +40,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
-SCHEMA = "BASARA_FOUNDRY_RELEASE_AUDIT_V0_2"
+SCHEMA = "BASARA_FOUNDRY_RELEASE_AUDIT_V0_3"
 EXPECTED_SAFE_ARC_SHA256 = "7beb24a5e11c0e154ca2517447389518c09386e32104392bff8e3328cfbff6f3"
 EXPECTED_XET_DECODER_SHA256 = "ec8746755dc1c60fc03c19811a96a90faa70821a3970d781f167f00376051b0c"
 R_TEXTURE = 0x241F5DEB
@@ -625,6 +625,15 @@ def run_simple_census(tool: Path, root: Path, outdir: Path, stage_name: str,
             "recommended_tool": tool.name,
             "release_severity": "BLOCKED",
         })
+    for item in report.get("unresolved", []):
+        unresolved.append({
+            "category": item.get("category", f"{stage_name.upper()}_CENSUS_FINDING"),
+            "owner_path": item.get("owner_path"),
+            "reason": item.get("reason"),
+            "required_next_evidence": item.get("required_next_evidence") or "Review with the current canonical domain workflow.",
+            "recommended_tool": item.get("recommended_tool") or tool.name,
+            "release_severity": item.get("release_severity", "NEEDS_REVIEW"),
+        })
     return report, unresolved
 
 
@@ -908,12 +917,6 @@ def main() -> int:
             "release_severity": "BLOCKED",
         })
 
-    atomic_write_json(outdir / "UNRESOLVED.json", {
-        "schema": SCHEMA,
-        "count": len(unresolved),
-        "items": unresolved,
-    })
-
     eboot_candidates = [
         r for r in files
         if Path(r["relative_path"]).name.upper() in {"EBOOT.BIN", "EBOOT.ELF"}
@@ -923,6 +926,12 @@ def main() -> int:
     runtime_status, runtime_unresolved = prepare_runtime_matrix(
         outdir, live_tree_sha256, eboot_candidates, candidate_id)
     unresolved.extend(runtime_unresolved)
+
+    atomic_write_json(outdir / "UNRESOLVED.json", {
+        "schema": SCHEMA,
+        "count": len(unresolved),
+        "items": unresolved,
+    })
 
     metadata = {
         "schema": SCHEMA,
@@ -958,7 +967,7 @@ def main() -> int:
     atomic_write_json(outdir / "00_RUN_METADATA.json", metadata)
 
     summary_lines = [
-        "# BASARA Foundry Release Audit — Bootstrap v0.1",
+        "# BASARA Foundry Release Audit — v0.3",
         "",
         f"- Status: **{metadata['status']}**",
         f"- Release pass: **NO**",
