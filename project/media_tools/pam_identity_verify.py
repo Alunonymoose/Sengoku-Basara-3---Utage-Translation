@@ -263,6 +263,12 @@ def compare_headers(a: dict[str, Any], b: dict[str, Any], duration_tolerance_tic
     add("magic_version", a["magic_version"], b["magic_version"])
     add("num_streams", a["num_streams"], b["num_streams"])
     add("total_stream_num", a["total_stream_num"], b["total_stream_num"])
+    add("header_sectors", a["header_sectors"], b["header_sectors"])
+    add("stream_offset", a["stream_offset"], b["stream_offset"])
+    add("start_pts90", a["start_pts90"], b["start_pts90"])
+    add("gp_start_pts90", a["gp_start_pts90"], b["gp_start_pts90"])
+    add("end_pts90", a["end_pts90"], b["end_pts90"], True, duration_tolerance_ticks)
+    add("gp_end_pts90", a["gp_end_pts90"], b["gp_end_pts90"], True, duration_tolerance_ticks)
     add("duration_ticks90", a["duration_ticks90"], b["duration_ticks90"], True, duration_tolerance_ticks)
     add("mux_rate_bound", a["mux_rate_bound"], b["mux_rate_bound"])
     add("std_delay_bound", a["std_delay_bound"], b["std_delay_bound"])
@@ -331,7 +337,7 @@ def main() -> int:
         },
         "structural_pass_requirements": [
             "same stream set and exact re-demuxed elementary/AT3 hashes",
-            "PAMF magic/version and stream-table identity",
+            "PAMF magic/version, header start PTS and stream-table identity",
             "decoder-relevant P-STD parity",
             "mux_rate/std_delay/initial SCR parity",
             "header duration within configured tolerance",
