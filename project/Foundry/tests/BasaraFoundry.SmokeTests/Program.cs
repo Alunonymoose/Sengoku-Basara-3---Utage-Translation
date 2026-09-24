@@ -24,6 +24,7 @@ internal static class Program
         TestXetMetadata();
         TestXetCodec();
         TestLayoutInventory();
+        TestPslRectGeometry();
         TestAssetIndexer();
 
         Console.WriteLine($"\nSmoke tests passed: {Smoke.Passed}");
@@ -271,6 +272,24 @@ internal static class Program
         Smoke.Equal("backing plate", users[1].Role, "PSL second node role is preserved");
     }
 
+    private static void TestPslRectGeometry()
+    {
+        var raw = BuildSyntheticPslV21();
+        var psl = UtagePslReader.Read(raw);
+        Smoke.Equal((ushort)1, psl.RecordCount, "PSL v0x21 record count");
+        var node = psl.Records[0];
+        Smoke.Equal(10f, node.DestinationRect.X0, "PSL destination x0");
+        Smoke.Equal(20f, node.DestinationRect.Y0, "PSL destination y0");
+        Smoke.Equal(210f, node.DestinationRect.X1, "PSL destination x1");
+        Smoke.Equal(70f, node.DestinationRect.Y1, "PSL destination y1");
+        Smoke.Equal(200f, node.DestinationRect.Width, "PSL destination width");
+        Smoke.Equal(50f, node.DestinationRect.Height, "PSL destination height");
+        Smoke.Equal(4f, node.SourceRect.X0, "PSL source x0");
+        Smoke.Equal(8f, node.SourceRect.Y0, "PSL source y0");
+        Smoke.Equal(104f, node.SourceRect.X1, "PSL source x1");
+        Smoke.Equal(40f, node.SourceRect.Y1, "PSL source y1");
+    }
+
     private static void TestAssetIndexer()
     {
         var root = Path.Combine(Path.GetTempPath(), $"basara-foundry-index-{Guid.NewGuid():N}");
@@ -301,6 +320,41 @@ internal static class Program
                 Directory.Delete(root, recursive: true);
         }
     }
+
+    private static byte[] BuildSyntheticPslV21()
+    {
+        const int header = 0x10;
+        const int recordSize = 0xB0;
+        var raw = new byte[header + recordSize];
+        raw[0] = 0;
+        raw[1] = (byte)'P';
+        raw[2] = (byte)'S';
+        raw[3] = (byte)'L';
+        BinaryPrimitives.WriteUInt32BigEndian(raw.AsSpan(4, 4), 0x21);
+        BinaryPrimitives.WriteUInt16BigEndian(raw.AsSpan(12, 2), 1);
+        BinaryPrimitives.WriteUInt16BigEndian(raw.AsSpan(14, 2), 0);
+
+        var rec = raw.AsSpan(header, recordSize);
+        WriteF32Be(rec, 0x00, 1.25f);
+        WriteF32Be(rec, 0x04, 2.5f);
+        BinaryPrimitives.WriteUInt32BigEndian(rec.Slice(0x38, 4), uint.MaxValue);
+        BinaryPrimitives.WriteUInt32BigEndian(rec.Slice(0x50, 4), 7);
+
+        WriteF32Be(rec, 0x74, 10f);
+        WriteF32Be(rec, 0x78, 20f);
+        WriteF32Be(rec, 0x7C, 210f);
+        WriteF32Be(rec, 0x80, 70f);
+        WriteF32Be(rec, 0x84, 4f);
+        WriteF32Be(rec, 0x88, 8f);
+        WriteF32Be(rec, 0x8C, 104f);
+        WriteF32Be(rec, 0x90, 40f);
+        return raw;
+    }
+
+    private static void WriteF32Be(Span<byte> destination, int offset, float value) =>
+        BinaryPrimitives.WriteInt32BigEndian(
+            destination.Slice(offset, 4),
+            BitConverter.SingleToInt32Bits(value));
 
     private static byte[] BuildSyntheticArc(bool corruptSecondOffset = false)
     {
