@@ -44,6 +44,34 @@ Example:
 
 The output directory must be outside the live game root.
 
+
+## Windows live-E launcher
+
+Use:
+
+`project/tools/release_audit_2026-09-24/run_release_audit.ps1`
+
+Default roots:
+
+- `E:\\Utage Patching New`
+- `E:\\SAMURAI HEROES`
+- audit output root `E:\\BASARA_AUDITS`
+
+The launcher now also:
+
+- records the exact Git repo HEAD in `LAUNCH_CONTEXT.json` when available;
+- finds the newest previous audit under the audit root;
+- runs `compare_audits.py` automatically against that prior snapshot;
+- emits a full audit-artifact SHA-256 map;
+- keeps the audit directory outside the game tree;
+- returns the auditor's fail-closed status rather than converting engineering blockers into success.
+
+Use `-NoPreviousDiff` only when an isolated baseline run is desired.
+
+This makes the normal production loop:
+
+`current E: -> audit -> patch -> audit -> automatic delta -> runtime evidence`.
+
 ## Exit codes
 
 - `0` — reserved for a future complete release audit with no release blockers/unknowns.
