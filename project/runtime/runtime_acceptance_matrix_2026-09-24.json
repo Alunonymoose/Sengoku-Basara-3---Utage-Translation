@@ -1,0 +1,360 @@
+{
+  "schema": "BASARA_FOUNDRY_RUNTIME_ACCEPTANCE_V1",
+  "promoted": "2026-09-24",
+  "candidate": {
+    "id": null,
+    "live_root_sha256": null,
+    "eboot_sha256": null,
+    "created_utc": null
+  },
+  "status_values": [
+    "PASS",
+    "FAIL",
+    "NOT_TESTED",
+    "BLOCKED"
+  ],
+  "release_rule": "Every release-critical row must PASS on the exact final candidate. Historical or structural evidence is context only.",
+  "rows": [
+    {
+      "id": "boot_cold_start",
+      "family": "BOOT",
+      "test_route": "Cold boot from RPCS3 to title/Press Start",
+      "historical_status": "RUNTIME_OBSERVED_PARTIAL",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "title_screen",
+      "family": "BOOT",
+      "test_route": "Title screen including Sengoku clean-edge/logo/Press Start",
+      "historical_status": "RUNTIME_VERIFIED_HISTORICAL",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "eng_routing",
+      "family": "BOOT",
+      "test_route": "Cold boot proves final EBOOT routes intended English resources",
+      "historical_status": "RUNTIME_OBSERVED_PARTIAL",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "character_select",
+      "family": "CHARACTER_SELECT",
+      "test_route": "Story character-select full roster/nameplates/states",
+      "historical_status": "STRUCTURAL_PARTIAL",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "battle_nameplates",
+      "family": "BATTLE",
+      "test_route": "Representative battle NPC/player/army nameplates",
+      "historical_status": "RUNTIME_OBSERVED_PARTIAL",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "dialogue_regression",
+      "family": "DIALOGUE",
+      "test_route": "Representative voiced dialogue; no looping/runaway/truncation",
+      "historical_status": "RUNTIME_VERIFIED_HISTORICAL",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "stage_hud",
+      "family": "BATTLE",
+      "test_route": "Representative mission HUD/dialogue/backup/common prompts",
+      "historical_status": "STRUCTURAL_PARTIAL",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "mission_m018",
+      "family": "BRIEFING",
+      "test_route": "Open the immovable gate mission briefing body/title",
+      "historical_status": "STRUCTURALLY_VERIFIED",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "shop_unknown",
+      "family": "SHOP",
+      "test_route": "Locked/unknown field visibly renders ???",
+      "historical_status": "STRUCTURALLY_SUPPORTED",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "shop_fit",
+      "family": "SHOP",
+      "test_route": "Weapon/accessory/Super Art/Local Goods/price-column fit",
+      "historical_status": "OPEN",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "shop_green_icon",
+      "family": "SHOP",
+      "test_route": "Small green icon is correctly localised and active",
+      "historical_status": "OPEN",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "versus_rules",
+      "family": "VERSUS",
+      "test_route": "VERSUS rules subtitle and CHAOS BATTLE fit",
+      "historical_status": "STRUCTURALLY_VERIFIED",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "versus_cards",
+      "family": "VERSUS",
+      "test_route": "INDIVIDUAL / TEAM BATTLE / ELIMINATION cards and lower labels",
+      "historical_status": "STRUCTURALLY_VERIFIED",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "unification",
+      "family": "UNIFICATION",
+      "test_route": "UNIFICATION subtitle + large choice cards",
+      "historical_status": "STRUCTURALLY_VERIFIED",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "sengoku_history",
+      "family": "GALLERY",
+      "test_route": "Sengoku History current cumulative build",
+      "historical_status": "PARTIAL_HISTORICAL",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "gallery_characters",
+      "family": "GALLERY",
+      "test_route": "Character bios/list spacing/baseline/content",
+      "historical_status": "OPEN",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "gallery_media",
+      "family": "GALLERY",
+      "test_route": "Movies/Music/Titles/History labels and navigation",
+      "historical_status": "PARTIAL_HISTORICAL",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "waza2",
+      "family": "SUPER_ART",
+      "test_route": "All Super Art/move plates English and visually correct",
+      "historical_status": "OPEN",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "tenka_022",
+      "family": "TENKA",
+      "test_route": "運UP replacement renders approved English art",
+      "historical_status": "OPEN",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "chapter_badge",
+      "family": "UI_TEXTURE",
+      "test_route": "Chapter/brush/gold badge target",
+      "historical_status": "OPEN",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "kojuro_strip",
+      "family": "UI_TEXTURE",
+      "test_route": "Kojuro Katakura purple strip/crop/geometry",
+      "historical_status": "OPEN",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "result_family",
+      "family": "RESULT",
+      "test_route": "Result/result_id cumulative screens and duplicate providers",
+      "historical_status": "PARTIAL",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "options_pause_retry_save",
+      "family": "SYSTEM_UI",
+      "test_route": "Options, pause, retry, save/load and confirmation/error states",
+      "historical_status": "NOT_TESTED",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "quest_friend_dream",
+      "family": "ROUTES",
+      "test_route": "Quest/friend/dream/locked-unlocked/P2 join unusual states",
+      "historical_status": "PARTIAL",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "fmv_pilot",
+      "family": "MEDIA",
+      "test_route": "Runtime-proven identity/remux and one translated subtitle/hardsub PAM",
+      "historical_status": "OPEN",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "fmv_required_set",
+      "family": "MEDIA",
+      "test_route": "Every required story/ending FMV translated/subtitled",
+      "historical_status": "OPEN",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "credits_staff_endings",
+      "family": "MEDIA",
+      "test_route": "Credits/staff/endings across FMV/in-engine paths",
+      "historical_status": "NOT_TESTED",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "param_sfo_xmb",
+      "family": "PLATFORM",
+      "test_route": "PARAM.SFO/XMB title/art surfaces",
+      "historical_status": "NOT_TESTED",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "trophies",
+      "family": "PLATFORM",
+      "test_route": "Trophy names/descriptions/assets if present",
+      "historical_status": "NOT_TESTED",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "loose_resources",
+      "family": "PLATFORM",
+      "test_route": "Loose startup/save/system/user-visible resources",
+      "historical_status": "NOT_TESTED",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    },
+    {
+      "id": "custom_texture_families",
+      "family": "TEXTURES",
+      "test_route": "Representative/final runtime proof for every custom-art family",
+      "historical_status": "NOT_TESTED",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": null
+    }
+  ]
+}
