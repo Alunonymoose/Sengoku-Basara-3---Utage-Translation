@@ -132,6 +132,28 @@ class OrchestrationTests(unittest.TestCase):
             self.assertEqual(0,code); self.assertTrue(result["pass"]); self.assertEqual("a"*64,result["snapshot_id"])
             self.assertTrue((root/"pass"/"visual_diff.png").is_file())
 
+    def test_runtime_matrix_is_snapshot_and_evidence_hash_bound(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td)
+            usr=root/"PS3_GAME"/"USRDIR"; usr.mkdir(parents=True)
+            (usr/"EBOOT.BIN").write_bytes(b"exact-eboot")
+            self.assertEqual(0,self.run_cli("snapshot",str(root))[0])
+            matrix=root/"runtime.json"
+            template=REPO/"project/runtime/runtime_acceptance_matrix_2026-09-24.json"
+            code,text=self.run_cli("runtime-init",str(root),"--template",str(template),"--out",str(matrix))
+            self.assertEqual(0,code)
+            init=json.loads(text)
+            self.assertEqual(hashlib.sha256(b"exact-eboot").hexdigest(),init["candidate"]["eboot_sha256"])
+            evidence=root/"screen.png"; Image.new("RGB",(4,4),(1,2,3)).save(evidence)
+            code,text=self.run_cli("runtime-record",str(matrix),"waza2","--status","PASS","--evidence",str(evidence))
+            self.assertEqual(0,code)
+            row=json.loads(text); self.assertEqual("PASS",row["final_status"]); self.assertEqual(1,len(row["evidence_hashes"]))
+            code,text=self.run_cli("runtime-verify-evidence",str(matrix))
+            self.assertEqual(0,code); self.assertTrue(json.loads(text)["valid"])
+            evidence.write_bytes(b"changed-after-test")
+            code,text=self.run_cli("runtime-verify-evidence",str(matrix))
+            self.assertEqual(6,code); self.assertFalse(json.loads(text)["valid"])
+
 
 if __name__ == "__main__":
     unittest.main()
