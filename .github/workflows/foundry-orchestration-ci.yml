@@ -34,7 +34,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install test dependencies
-        run: python -m pip install hypothesis
+        run: python -m pip install hypothesis pillow
       - name: Compile orchestration
         run: python -m compileall -q project/orchestration
       - name: Run orchestration tests
