@@ -58,6 +58,7 @@ TERMINOLOGY_JSON_PATH = TOOLS_DIR.parent / "terminology" / "canonical_english_te
 TERMINOLOGY_VALIDATOR_PATH = TOOLS_DIR.parent / "terminology" / "validate_terminology.py"
 RUNTIME_MATRIX_TEMPLATE_PATH = TOOLS_DIR.parent / "runtime" / "runtime_acceptance_matrix_2026-09-24.json"
 RUNTIME_MATRIX_VALIDATOR_PATH = TOOLS_DIR.parent / "runtime" / "validate_runtime_matrix.py"
+FONT_CENSUS_TOOL_PATH = HERE / "font_contract_census.py"
 
 MANDATORY_PLACEHOLDER_OUTPUTS = (
     "TEXTURE_CENSUS.json",
@@ -775,6 +776,7 @@ def main() -> int:
         "terminology_validator": dependency_record(TERMINOLOGY_VALIDATOR_PATH),
         "runtime_matrix_template": dependency_record(RUNTIME_MATRIX_TEMPLATE_PATH),
         "runtime_matrix_validator": dependency_record(RUNTIME_MATRIX_VALIDATOR_PATH),
+        "font_contract_census": dependency_record(FONT_CENSUS_TOOL_PATH),
         "orchestrator": dependency_record(Path(__file__).resolve()),
     }
 
@@ -873,6 +875,20 @@ def main() -> int:
     terminology_report, terminology_unresolved = run_terminology_gate(outdir)
     unresolved.extend(terminology_unresolved)
 
+    font_report, font_unresolved = run_simple_census(
+        FONT_CENSUS_TOOL_PATH, live_root, outdir, "font_contract",
+        "FONT_CONTRACT_CENSUS.json", "FONT_CONTRACT_CENSUS.csv")
+    unresolved.extend(font_unresolved)
+    if font_report is not None:
+        unresolved.append({
+            "category": "WIDGET_CAPACITY_VALIDATION_PENDING",
+            "owner_path": "FONT_CONTRACT_CENSUS.json",
+            "reason": "Font advances are now measurable, but active PSL/LSP widget bounds, margins, scale and route ownership are not yet joined to each message surface.",
+            "required_next_evidence": "Join exact active message/font contract to proven layout node geometry before declaring overflow/fit.",
+            "recommended_tool": "font_contract_census.py + proven PSL reader/runtime ownership evidence",
+            "release_severity": "NEEDS_REVIEW",
+        })
+
     # Runtime matrix is prepared after EBOOT discovery below; its rows remain
     # NOT_TESTED until evidence is attached for this exact candidate.
 
@@ -932,6 +948,7 @@ def main() -> int:
         "media_summary": (media_report or {}).get("summary"),
         "platform_summary": (platform_report or {}).get("summary"),
         "terminology_summary": terminology_report,
+        "font_contract_summary": (font_report or {}).get("summary"),
         "runtime_acceptance_summary": runtime_status,
         "unresolved_count": len(unresolved),
         "eboot_candidates": eboot_candidates,
@@ -962,6 +979,7 @@ def main() -> int:
         "- PAM/media inventory with hashes/container headers and explicit subtitle/runtime review states",
         "- PARAM.SFO/XMB/trophy/system-font/loose-resource inventory with read-only SFO parsing",
         "- machine-readable terminology release gate",
+        "- read-only TNF/CSA font-contract census with real ASCII advance classification",
         "- final-candidate runtime acceptance matrix bound to the audited tree hash",
         "- Divergent-provider extraction",
         "- Explicit unresolved queue",
