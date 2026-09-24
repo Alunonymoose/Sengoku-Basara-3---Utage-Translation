@@ -1,6 +1,3 @@
-using BCnEncoder.Encoder;
-using BCnEncoder.Shared;
-
 namespace BasaraFoundry.Game.Utage.Xet;
 
 public sealed record Bc3GraftReport(
@@ -176,17 +173,8 @@ public static class UtageBc3BlockGraft
         return a[o] != b[o] || a[o + 1] != b[o + 1] || a[o + 2] != b[o + 2] || a[o + 3] != b[o + 3];
     }
 
-    private static byte[] EncodeFullBc3(ReadOnlySpan<byte> rgba, int width, int height)
-    {
-        var encoder = new BcEncoder();
-        encoder.OutputOptions.Format = CompressionFormat.Bc3;
-        encoder.OutputOptions.Quality = CompressionQuality.BestQuality;
-        encoder.OutputOptions.GenerateMipMaps = false;
-        var levels = encoder.EncodeToRawBytes(rgba.ToArray(), width, height, PixelFormat.Rgba32);
-        if (levels.Length != 1)
-            throw new InvalidDataException($"BCn encoder returned {levels.Length} levels for a single-level request.");
-        return levels[0];
-    }
+    private static byte[] EncodeFullBc3(ReadOnlySpan<byte> rgba, int width, int height) =>
+        UtageXetCodec.EncodeBc3PayloadForPs3(rgba, width, height);
 
     private static int BlockCount(int width, int height) => Math.Max(1, (width + 3) / 4) * Math.Max(1, (height + 3) / 4);
     private static int CountMask(ReadOnlySpan<byte> mask01) { var n = 0; foreach (var b in mask01) if (b != 0) n++; return n; }
