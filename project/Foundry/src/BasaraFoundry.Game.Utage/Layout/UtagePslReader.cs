@@ -3,6 +3,16 @@ using System.Text;
 
 namespace BasaraFoundry.Game.Utage.Layout;
 
+public sealed record UtagePslRect(
+    float X0,
+    float Y0,
+    float X1,
+    float Y1)
+{
+    public float Width => X1 - X0;
+    public float Height => Y1 - Y0;
+}
+
 public sealed record UtagePslNodeRecord(
     int Index,
     int Offset,
@@ -10,6 +20,8 @@ public sealed record UtagePslNodeRecord(
     float Y,
     int? ParentRecordIndex,
     uint NodeBindingId,
+    UtagePslRect DestinationRect,
+    UtagePslRect SourceRect,
     IReadOnlyList<uint> Words70To90,
     IReadOnlyList<uint> Words94ToA0,
     byte[] RawRecord);
@@ -40,6 +52,10 @@ public sealed record UtagePslInfo(
 ///   added to the record count;
 /// - record +0x38 is the parent record index, with 0xFFFFFFFF marking the
 ///   single scene-graph root;
+/// - current real Utage/SH fixture work pins record +0x74..+0x80 as a
+///   destination rectangle and +0x84..+0x90 as source-rectangle min/max
+///   coordinates. These fields are exposed read-only; this parser does NOT
+///   infer which text/message row a node consumes;
 /// - a variable middle section may follow the record array;
 /// - many, but not all, fixtures carry a trailing hierarchy/string table
 ///   beginning with a u32 entry count and a u32 length-prefixed "SysRoot\0"
@@ -94,6 +110,16 @@ public static class UtagePslReader
                 F32(record, 0x04),
                 ParentIndex(record, recordCount),
                 U32(record, 0x50),
+                new UtagePslRect(
+                    F32(record, 0x74),
+                    F32(record, 0x78),
+                    F32(record, 0x7C),
+                    F32(record, 0x80)),
+                new UtagePslRect(
+                    F32(record, 0x84),
+                    F32(record, 0x88),
+                    F32(record, 0x8C),
+                    F32(record, 0x90)),
                 words70To90,
                 words94ToA0,
                 record.ToArray()));
