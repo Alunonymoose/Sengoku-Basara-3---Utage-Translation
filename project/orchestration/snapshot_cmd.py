@@ -36,8 +36,8 @@ def snapshot_command(args) -> int:
             cur=conn.execute("INSERT INTO arcs(file_id,parse_status,version,member_count,alignment,error) VALUES(?,'OK',8,?,?,NULL)",(fid,len(entries),alignment)); aid=int(cur.lastrowid)
             for e in entries:
                 internal=e["name"]; canonical=canonical_internal_path(internal)
-                conn.execute("""INSERT INTO resources(arc_id,member_index,internal_path,canonical_path,type_hash,type_hex,flags,codec,compressed_size,declared_raw_size,actual_raw_size,stored_sha256,raw_sha256,warning) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
-                  (aid,e["index"],internal,canonical,e["type_hash"],f"0x{e['type_hash']:08X}",e["flags"],e["codec"],e["compressed_size"],e["raw_size"],len(e["raw"]),sha256_bytes(e["stored"]),sha256_bytes(e["raw"]),e["warning"]))
+                conn.execute("""INSERT INTO resources(arc_id,member_index,internal_path,canonical_path,type_hash,type_hex,flags,codec,compressed_size,declared_raw_size,actual_raw_size,data_offset,stored_sha256,raw_sha256,warning) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                  (aid,e["index"],internal,canonical,e["type_hash"],f"0x{e['type_hash']:08X}",e["flags"],e["codec"],e["compressed_size"],e["raw_size"],len(e["raw"]),e["payload_offset"],sha256_bytes(e["stored"]),sha256_bytes(e["raw"]),e["warning"]))
                 resource_count+=1
                 if e["warning"]: warnings.append({"arc":rel,"member_index":e["index"],"internal_path":internal,"warning":e["warning"]})
         except Exception as exc:
