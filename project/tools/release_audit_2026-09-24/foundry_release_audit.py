@@ -40,7 +40,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
-SCHEMA = "BASARA_FOUNDRY_RELEASE_AUDIT_V0_1"
+SCHEMA = "BASARA_FOUNDRY_RELEASE_AUDIT_V0_2"
 EXPECTED_SAFE_ARC_SHA256 = "f25c53e4ad78e18d5785b8aee197725377130ed9f562a9caa1000a1964bde91d"
 EXPECTED_XET_DECODER_SHA256 = "d0ffe59abd91fa18bd5ec76bdf8d73fbe7595597b4f7ab3339a5d5de7fc58255"
 R_TEXTURE = 0x241F5DEB
@@ -50,6 +50,7 @@ TOOLS_DIR = HERE.parent
 SAFE_ARC_PATH = TOOLS_DIR / "donor_matcher_v5_1_2026-09-23" / "safe_arc.py"
 OWNERSHIP_TOOL_PATH = TOOLS_DIR / "resource_ownership_2026-09-23" / "basara_resource_ownership.py"
 XET_DECODER_PATH = TOOLS_DIR.parent / "texture_tools" / "xet_recovery_2026-09-23" / "foundry_xet_decoder_20260923.py"
+MESSAGE_CENSUS_TOOL_PATH = HERE / "message_census.py"
 
 MANDATORY_PLACEHOLDER_OUTPUTS = (
     "TEXTURE_CENSUS.json",
@@ -382,6 +383,73 @@ def run_ownership(root: Path, outdir: Path, logs: list[Path]) -> tuple[dict[str,
     return report, unresolved
 
 
+
+def run_message_census(root: Path, outdir: Path) -> tuple[dict[str, Any] | None, list[dict[str, Any]]]:
+    unresolved: list[dict[str, Any]] = []
+    stage = outdir / "_message_stage"
+    stage.mkdir(parents=True, exist_ok=True)
+    proc = subprocess.run(
+        [sys.executable, str(MESSAGE_CENSUS_TOOL_PATH), str(root), "--out", str(stage)],
+        capture_output=True, text=True
+    )
+    if proc.returncode not in (0, 1):
+        unresolved.append({
+            "category": "MESSAGE_CENSUS_TOOL",
+            "owner_path": str(MESSAGE_CENSUS_TOOL_PATH),
+            "reason": f"exit={proc.returncode}; stderr={proc.stderr[-4000:]}",
+            "required_next_evidence": "Fix census dependency/infrastructure failure; do not fall back to naive Unicode grep.",
+            "recommended_tool": "message_census.py + recovered GSM/FIM toolchain",
+            "release_severity": "BLOCKED",
+        })
+        return None, unresolved
+
+    jp = stage / "MESSAGE_CENSUS.json"
+    cp = stage / "MESSAGE_CENSUS.csv"
+    if not jp.is_file() or not cp.is_file():
+        unresolved.append({
+            "category": "MESSAGE_CENSUS_TOOL",
+            "owner_path": str(stage),
+            "reason": "message census completed without mandatory outputs",
+            "required_next_evidence": "Restore stable output contract.",
+            "recommended_tool": "message_census.py",
+            "release_severity": "BLOCKED",
+        })
+        return None, unresolved
+
+    atomic_write_text(outdir / "MESSAGE_CENSUS.json", jp.read_text(encoding="utf-8"))
+    atomic_write_text(outdir / "MESSAGE_CENSUS.csv", cp.read_text(encoding="utf-8"))
+    report = json.loads(jp.read_text(encoding="utf-8"))
+
+    for item in report.get("findings", []):
+        unresolved.append({
+            "category": item.get("category", "MESSAGE_FINDING"),
+            "owner_path": item.get("owner_path"),
+            "reason": item.get("reason") or f"count={item.get('count')}",
+            "required_next_evidence": item.get("note") or "Review with current GSM/FIM + layout/terminology evidence.",
+            "recommended_tool": "message_census.py / current message production workflow",
+            "release_severity": item.get("release_severity", "NEEDS_REVIEW"),
+        })
+    for err in report.get("arc_errors", []):
+        unresolved.append({
+            "category": "MESSAGE_ARC_PARSE",
+            "owner_path": err.get("arc"),
+            "reason": err.get("error"),
+            "required_next_evidence": "Resolve exact ARC/parser blocker; no silent skip.",
+            "recommended_tool": "safe_arc.py + message census",
+            "release_severity": "BLOCKED",
+        })
+
+    unresolved.append({
+        "category": "MESSAGE_WIDTH_LAYOUT_VALIDATION_PENDING",
+        "owner_path": "MESSAGE_CENSUS.json",
+        "reason": "Grammar/FIM census does not yet prove pixel-width fit against active TNF/CSA/widget geometry.",
+        "required_next_evidence": "Integrate a reusable TNF/CSA + widget width validator; disposition every over-budget/at-risk row.",
+        "recommended_tool": "future layout-width validator",
+        "release_severity": "NEEDS_REVIEW",
+    })
+    return report, unresolved
+
+
 def placeholder_output(outdir: Path, filename: str, reason: str) -> None:
     atomic_write_json(outdir / filename, {
         "schema": SCHEMA,
@@ -425,6 +493,7 @@ def main() -> int:
         "safe_arc": dependency_record(SAFE_ARC_PATH, EXPECTED_SAFE_ARC_SHA256),
         "ownership_analyzer": dependency_record(OWNERSHIP_TOOL_PATH),
         "xet_decoder": dependency_record(XET_DECODER_PATH, EXPECTED_XET_DECODER_SHA256),
+        "message_census": dependency_record(MESSAGE_CENSUS_TOOL_PATH),
         "orchestrator": dependency_record(Path(__file__).resolve()),
     }
 
@@ -497,10 +566,12 @@ def main() -> int:
         "decoded_rgba_sha256", "decoder_status", "semantic_classification",
     ])
 
+    message_report, message_unresolved = run_message_census(live_root, outdir)
+    unresolved.extend(message_unresolved)
+
     # Deliberate fail-closed placeholders. They make incompleteness explicit and
     # keep the output contract stable while the proven domain parsers are wired.
     placeholder_reasons = {
-        "MESSAGE_CENSUS.json": "Recovered GSM/FIM production grammar not yet integrated into orchestrator.",
         "MEDIA_CENSUS.json": "PAM/media inventory/probe layer not yet integrated.",
         "LOOSE_UI_AND_METADATA_CENSUS.json": "PARAM.SFO/TROPDIR/XMB/loose semantic audit not yet integrated.",
         "DONOR_CANDIDATES.json": "Donor Matcher V5.1 orchestration not yet integrated.",
@@ -547,6 +618,8 @@ def main() -> int:
         "file_count": len(files),
         "arc_member_count": len(members),
         "texture_provider_count": len(textures),
+        "message_resource_count": (message_report or {}).get("summary", {}).get("message_resources"),
+        "message_record_count": (message_report or {}).get("summary", {}).get("message_records"),
         "unresolved_count": len(unresolved),
         "eboot_candidates": eboot_candidates,
         "ownership_summary": ownership_report.get("summary") if ownership_report else None,
@@ -561,6 +634,8 @@ def main() -> int:
         f"- Files hashed: **{len(files)}**",
         f"- ARC members inventoried through canonical safe_arc: **{len(members)}**",
         f"- rTexture providers inventoried: **{len(textures)}**",
+        f"- Message resources inventoried: **{(message_report or {}).get('summary', {}).get('message_resources', 'FAILED')}**",
+        f"- Message records inventoried: **{(message_report or {}).get('summary', {}).get('message_records', 'FAILED')}**",
         f"- Unresolved/blocking rows: **{len(unresolved)}**",
         "",
         "## Implemented",
@@ -569,6 +644,7 @@ def main() -> int:
         "- ARC member inventory using pinned safe_arc.py",
         "- Existing Resource Ownership Analyzer orchestration",
         "- Recovered XET metadata/decode census for supported formats, with 0x15 intercepted and quarantined",
+        "- Recovered GSM/FIM grammar census + exact FIM contract verification",
         "- Divergent-provider extraction",
         "- Explicit unresolved queue",
         "- Dependency/tool hash binding",
@@ -576,7 +652,7 @@ def main() -> int:
         "## Still required before this auditor can ever exit 0",
         "",
         "- texture semantic visual classification + 0x15 fixture resolution",
-        "- control-aware GSM/FIM message census",
+        "- pixel-width/layout validation on top of the GSM/FIM census",
         "- PAM/media census",
         "- loose/XMB/trophy/platform semantic census",
         "- Donor Matcher V5.1 sweep",
@@ -595,6 +671,8 @@ def main() -> int:
         "file_count": len(files),
         "arc_member_count": len(members),
         "texture_provider_count": len(textures),
+        "message_resource_count": (message_report or {}).get("summary", {}).get("message_resources"),
+        "message_record_count": (message_report or {}).get("summary", {}).get("message_records"),
         "unresolved_count": len(unresolved),
         "out": str(outdir),
     }, indent=2))
