@@ -974,7 +974,7 @@ def main() -> int:
     else:
         files = scan_files(live_root)
     file_error_rows = [r for r in files if r["status"] != "OK"]
-    live_tree_sha256 = tree_digest(files)
+    live_tree_sha256 = snapshot_id if snapshot_db else tree_digest(files)
 
     atomic_write_json(outdir / "FILE_TREE_HASHES.json", {
         "schema": SCHEMA,
