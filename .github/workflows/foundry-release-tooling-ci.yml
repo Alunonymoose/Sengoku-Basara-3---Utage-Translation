@@ -45,6 +45,8 @@ jobs:
             project/tools/release_audit_2026-09-24/message_census.py \
             project/tools/release_audit_2026-09-24/media_census.py \
             project/tools/release_audit_2026-09-24/platform_census.py \
+            project/tools/release_audit_2026-09-24/texture_review_export.py \
+            project/tools/release_audit_2026-09-24/compare_audits.py \
             project/tools/release_audit_2026-09-24/test_release_audit.py \
             project/terminology/validate_terminology.py \
             project/runtime/validate_runtime_matrix.py \
@@ -56,6 +58,13 @@ jobs:
 
       - name: Run release-audit unit tests
         run: python -m unittest project/tools/release_audit_2026-09-24/test_release_audit.py -v
+
+      - name: Validate texture-review PNG encoder and PowerShell launcher syntax
+        shell: pwsh
+        run: |
+          $script = Get-Content 'project/tools/release_audit_2026-09-24/run_release_audit.ps1' -Raw
+          [scriptblock]::Create($script) | Out-Null
+          python -c "import importlib.util, pathlib, struct, zlib; p=pathlib.Path('project/tools/release_audit_2026-09-24/texture_review_export.py'); s=importlib.util.spec_from_file_location('trev',p); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); b=m.rgba_png(1,1,bytes([1,2,3,4])); assert b[:8]==b'\x89PNG\r\n\x1a\n'; assert b'IEND' in b"
 
       - name: Execute fail-closed auditor end-to-end on synthetic roots
         shell: bash
