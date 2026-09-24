@@ -41,8 +41,8 @@ from pathlib import Path
 from typing import Any, Iterable
 
 SCHEMA = "BASARA_FOUNDRY_RELEASE_AUDIT_V0_2"
-EXPECTED_SAFE_ARC_SHA256 = "f25c53e4ad78e18d5785b8aee197725377130ed9f562a9caa1000a1964bde91d"
-EXPECTED_XET_DECODER_SHA256 = "d0ffe59abd91fa18bd5ec76bdf8d73fbe7595597b4f7ab3339a5d5de7fc58255"
+EXPECTED_SAFE_ARC_SHA256 = "7beb24a5e11c0e154ca2517447389518c09386e32104392bff8e3328cfbff6f3"
+EXPECTED_XET_DECODER_SHA256 = "d82376add94be9f0c132590d150936d91fd6241d76b04723d88ec3ae4ced4738"
 R_TEXTURE = 0x241F5DEB
 
 HERE = Path(__file__).resolve().parent
@@ -320,22 +320,13 @@ def texture_census(root: Path, safe_arc, xet_decoder) -> tuple[list[dict[str, An
                     "mip_offsets": list(info.mip_offsets),
                 })
 
+                validated = xet_decoder.validate(raw)
+                rgba = xet_decoder.decode_rgba(raw, 0)
+                base["decoded_rgba_sha256"] = sha256_bytes(rgba)
+                base["decoder_status"] = "DECODED_LEVEL0"
+                base["validated_levels"] = validated.get("levels")
                 if info.format_id == 0x15:
-                    base["decoder_status"] = "FORMAT_QUARANTINED_0X15"
-                    unresolved.append({
-                        "category": "XET_0X15_FORMAT_QUARANTINE",
-                        "owner_path": f"{rel}::{e['index']}::{e['name']}",
-                        "reason": "0x15 metadata parsed, but image decode intentionally withheld because BC2/DXT3 fixture evidence conflicts with the recovered decoder's BC3 mapping.",
-                        "required_next_evidence": "Revalidate exact 0x15 Utage fixture and distinguish BC2-vs-BC3 alpha coding.",
-                        "recommended_tool": "current XET recovery path + XET_0x15_DXT3_UTAGE_FIXTURE_2026-09-22",
-                        "release_severity": "BLOCKED",
-                    })
-                else:
-                    validated = xet_decoder.validate(raw)
-                    rgba = xet_decoder.decode_rgba(raw, 0)
-                    base["decoded_rgba_sha256"] = sha256_bytes(rgba)
-                    base["decoder_status"] = "DECODED_LEVEL0"
-                    base["validated_levels"] = validated.get("levels")
+                    base["read_contract"] = "DXT3_BC2_FIXTURE_VERIFIED_READ_ONLY"
             except Exception as exc:
                 base["decoder_status"] = "UNSUPPORTED_OR_PARSE_ERROR"
                 unresolved.append({
@@ -847,7 +838,7 @@ def main() -> int:
     atomic_write_json(outdir / "TEXTURE_CENSUS.json", {
         "schema": SCHEMA,
         "semantic_policy": "Do not infer English/Japanese from eng-vs-jpn path or hash equality. UNKNOWN_REVIEW requires visual/context disposition.",
-        "xet_0x15_policy": "metadata-only quarantine; no image decode until fixture conflict is resolved",
+        "xet_0x15_policy": "decode/preview as fixture-proven DXT3/BC2; production writing remains fail-closed until runtime-certified",
         "textures": textures,
     })
     write_csv(outdir / "TEXTURE_CENSUS.csv", textures, [
@@ -960,7 +951,7 @@ def main() -> int:
         "- Current-live file hash census",
         "- ARC member inventory using pinned safe_arc.py",
         "- Existing Resource Ownership Analyzer orchestration",
-        "- Recovered XET metadata/decode census for supported formats, with 0x15 intercepted and quarantined",
+        "- Recovered XET metadata/decode census for supported formats, including fixture-proven 0x15 DXT3/BC2 read support",
         "- Recovered GSM/FIM grammar census + exact FIM contract verification",
         "- Donor Matcher V5.1 report-only sweep using current Utage + official SH ownership inventories",
         "- PAM/media inventory with hashes/container headers and explicit subtitle/runtime review states",
@@ -973,7 +964,7 @@ def main() -> int:
         "",
         "## Still required before this auditor can ever exit 0",
         "",
-        "- texture semantic visual classification + 0x15 fixture resolution",
+        "- texture semantic visual classification + production certification for currently read-only write formats such as 0x15 BC2",
         "- pixel-width/layout validation on top of the GSM/FIM census",
         "- PAM identity-remux + translated hardsub runtime certification",
         "- semantic/visual disposition of XMB/trophy/loose-platform census rows",
