@@ -45,6 +45,7 @@ jobs:
             project/tools/release_audit_2026-09-24/message_census.py \
             project/tools/release_audit_2026-09-24/media_census.py \
             project/tools/release_audit_2026-09-24/platform_census.py \
+            project/tools/release_audit_2026-09-24/font_contract_census.py \
             project/tools/release_audit_2026-09-24/texture_review_export.py \
             project/tools/release_audit_2026-09-24/compare_audits.py \
             project/tools/release_audit_2026-09-24/test_release_audit.py \
