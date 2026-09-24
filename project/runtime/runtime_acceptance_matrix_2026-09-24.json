@@ -123,7 +123,7 @@
       "build_root_sha256": null,
       "screenshot_or_video_evidence": [],
       "rpcs3_log_evidence": [],
-      "notes": null
+      "notes": "Current-live shigen_000..004 were reclassified 2026-09-24 as language-neutral Local Goods item/icon atlases; do not treat JPN/ENG byte identity alone as untranslated evidence."
     },
     {
       "id": "shop_green_icon",
@@ -205,24 +205,24 @@
     {
       "id": "waza2",
       "family": "SUPER_ART",
-      "test_route": "All Super Art/move plates English and visually correct",
-      "historical_status": "OPEN",
+      "test_route": "Representative Super Art/move selection surfaces across SH-roster and Utage-exclusive characters",
+      "historical_status": "STRUCTURALLY_VERIFIED_CURRENT_LIVE",
       "final_status": "NOT_TESTED",
       "build_root_sha256": null,
       "screenshot_or_video_evidence": [],
       "rpcs3_log_evidence": [],
-      "notes": null
+      "notes": "2026-09-24 current-live ENG select decode: waza2_000..029 visibly English; c_versus _001/_029 shadow copies synchronized; waza2_que deliberate ???. Runtime acceptance still required."
     },
     {
       "id": "tenka_022",
       "family": "TENKA",
-      "test_route": "運UP replacement renders approved English art",
-      "historical_status": "OPEN",
+      "test_route": "If 運UP is still visible at runtime, capture the exact BASARA Lottery/shop state and RPCS3 evidence to retrace the actual owner",
+      "historical_status": "OLD_ATTRIBUTION_DISPROVEN",
       "final_status": "NOT_TESTED",
       "build_root_sha256": null,
       "screenshot_or_video_evidence": [],
       "rpcs3_log_evidence": [],
-      "notes": null
+      "notes": "2026-09-24 exact current-live tenka_022 decode is decorative frame/material only with no Japanese text. Do not patch tenka_022 from the stale 運UP note."
     },
     {
       "id": "chapter_badge",
@@ -355,6 +355,28 @@
       "screenshot_or_video_evidence": [],
       "rpcs3_log_evidence": [],
       "notes": null
+    },
+    {
+      "id": "tenka_waza_name",
+      "family": "SUPER_ART",
+      "test_route": "Representative tenka/waza_name_pl016..029 fixed-art screens; verify established English names, neutral weapon art and deliberate ??? locked state",
+      "historical_status": "STRUCTURALLY_VERIFIED_CURRENT_LIVE",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": "2026-09-24 current-live tenka snapshot decoded all waza_016..029 sheets as already-localized English."
+    },
+    {
+      "id": "basara_lottery_art",
+      "family": "SHOP",
+      "test_route": "BASARA Mart -> BASARA Lottery; exercise reachable fortune/result/reward/discount states and verify English fixed art with no atlas bleed",
+      "historical_status": "OPEN_CUSTOM_ART_NOT_APPROVED",
+      "final_status": "NOT_TESTED",
+      "build_root_sha256": null,
+      "screenshot_or_video_evidence": [],
+      "rpcs3_log_evidence": [],
+      "notes": "Current-live equip.arc + smith.arc contain Japanese tenka_023/024 lottery/result art. No exact SH same-key donor. Prior English candidate was explicitly rejected; no patch is approved."
     }
   ]
 }
