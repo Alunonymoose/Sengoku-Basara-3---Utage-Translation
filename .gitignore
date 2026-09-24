@@ -57,3 +57,7 @@ Thumbs.db
 # Editors
 .vscode/
 .idea/
+
+# Foundry local machine state / agent handoffs
+.foundry/
+AGENT_TASK.local.json
