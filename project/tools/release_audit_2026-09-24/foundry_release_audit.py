@@ -56,6 +56,8 @@ MEDIA_CENSUS_TOOL_PATH = HERE / "media_census.py"
 PLATFORM_CENSUS_TOOL_PATH = HERE / "platform_census.py"
 TERMINOLOGY_JSON_PATH = TOOLS_DIR.parent / "terminology" / "canonical_english_terminology_2026-09-24.json"
 TERMINOLOGY_VALIDATOR_PATH = TOOLS_DIR.parent / "terminology" / "validate_terminology.py"
+RUNTIME_MATRIX_TEMPLATE_PATH = TOOLS_DIR.parent / "runtime" / "runtime_acceptance_matrix_2026-09-24.json"
+RUNTIME_MATRIX_VALIDATOR_PATH = TOOLS_DIR.parent / "runtime" / "validate_runtime_matrix.py"
 
 MANDATORY_PLACEHOLDER_OUTPUTS = (
     "TEXTURE_CENSUS.json",
@@ -152,6 +154,16 @@ def write_csv(path: Path, rows: list[dict[str, Any]], fields: list[str]) -> None
         w.writeheader()
         w.writerows(rows)
     os.replace(tmp, path)
+
+
+def tree_digest(files: list[dict[str, Any]]) -> str | None:
+    if any(r.get("status") != "OK" or not r.get("sha256") for r in files):
+        return None
+    h = hashlib.sha256()
+    for r in sorted(files, key=lambda x: x["relative_path"]):
+        line = f"{r['relative_path']}\0{r['size']}\0{r['sha256']}\n".encode("utf-8")
+        h.update(line)
+    return h.hexdigest()
 
 
 def scan_files(root: Path) -> list[dict[str, Any]]:
@@ -632,6 +644,63 @@ def run_terminology_gate(outdir: Path) -> tuple[dict[str, Any] | None, list[dict
     return report, unresolved
 
 
+
+def prepare_runtime_matrix(outdir: Path, root_hash: str | None,
+                           eboot_candidates: list[dict[str, Any]],
+                           candidate_id: str) -> tuple[dict[str, Any] | None, list[dict[str, Any]]]:
+    unresolved: list[dict[str, Any]] = []
+    try:
+        matrix = json.loads(RUNTIME_MATRIX_TEMPLATE_PATH.read_text(encoding="utf-8"))
+        matrix["candidate"]["id"] = candidate_id
+        matrix["candidate"]["live_root_sha256"] = root_hash
+        matrix["candidate"]["created_utc"] = datetime.now(timezone.utc).isoformat()
+        if len(eboot_candidates) == 1:
+            matrix["candidate"]["eboot_sha256"] = eboot_candidates[0]["sha256"]
+        else:
+            matrix["candidate"]["eboot_sha256"] = None
+        out_path = outdir / "RUNTIME_ACCEPTANCE_MATRIX.json"
+        atomic_write_json(out_path, matrix)
+        proc = subprocess.run(
+            [sys.executable, str(RUNTIME_MATRIX_VALIDATOR_PATH), str(out_path)],
+            capture_output=True, text=True
+        )
+        try:
+            status = json.loads(proc.stdout)
+        except Exception as exc:
+            status = {"errors":[f"validator JSON failure: {exc!r}"],"blockers":[],"release_ready":False}
+        atomic_write_json(outdir / "RUNTIME_ACCEPTANCE_STATUS.json", status)
+        if status.get("errors"):
+            unresolved.append({
+                "category":"RUNTIME_MATRIX_BINDING",
+                "owner_path":"RUNTIME_ACCEPTANCE_MATRIX.json",
+                "reason":"; ".join(status["errors"]),
+                "required_next_evidence":"Bind matrix to one complete current tree/EBOOT and repair validation errors.",
+                "recommended_tool":"validate_runtime_matrix.py",
+                "release_severity":"BLOCKED",
+            })
+        blockers=status.get("blockers",[])
+        if blockers:
+            unresolved.append({
+                "category":"RUNTIME_ACCEPTANCE_INCOMPLETE",
+                "owner_path":"RUNTIME_ACCEPTANCE_MATRIX.json",
+                "reason":f"{len(blockers)} final-candidate runtime rows are not PASS.",
+                "required_next_evidence":"Run exact routes on this candidate, attach screenshot/video/log evidence, and set PASS only when validator requirements are met.",
+                "recommended_tool":"runtime_acceptance_matrix_2026-09-24.json",
+                "release_severity":"BLOCKED",
+            })
+        return status, unresolved
+    except Exception as exc:
+        unresolved.append({
+            "category":"RUNTIME_MATRIX_TOOL",
+            "owner_path":str(RUNTIME_MATRIX_TEMPLATE_PATH),
+            "reason":repr(exc),
+            "required_next_evidence":"Restore runtime matrix template/validator.",
+            "recommended_tool":"runtime acceptance tooling",
+            "release_severity":"BLOCKED",
+        })
+        return None, unresolved
+
+
 def placeholder_output(outdir: Path, filename: str, reason: str) -> None:
     atomic_write_json(outdir / filename, {
         "schema": SCHEMA,
@@ -681,6 +750,8 @@ def main() -> int:
         "platform_census": dependency_record(PLATFORM_CENSUS_TOOL_PATH),
         "terminology_json": dependency_record(TERMINOLOGY_JSON_PATH),
         "terminology_validator": dependency_record(TERMINOLOGY_VALIDATOR_PATH),
+        "runtime_matrix_template": dependency_record(RUNTIME_MATRIX_TEMPLATE_PATH),
+        "runtime_matrix_validator": dependency_record(RUNTIME_MATRIX_VALIDATOR_PATH),
         "orchestrator": dependency_record(Path(__file__).resolve()),
     }
 
@@ -704,10 +775,12 @@ def main() -> int:
 
     files = scan_files(live_root)
     file_error_rows = [r for r in files if r["status"] != "OK"]
+    live_tree_sha256 = tree_digest(files)
 
     atomic_write_json(outdir / "FILE_TREE_HASHES.json", {
         "schema": SCHEMA,
         "live_root_hint": str(live_root),
+        "live_tree_sha256": live_tree_sha256,
         "files": files,
     })
     write_csv(outdir / "FILE_TREE_HASHES.csv", files,
@@ -773,6 +846,9 @@ def main() -> int:
     terminology_report, terminology_unresolved = run_terminology_gate(outdir)
     unresolved.extend(terminology_unresolved)
 
+    # Runtime matrix is prepared after EBOOT discovery below; its rows remain
+    # NOT_TESTED until evidence is attached for this exact candidate.
+
     # Deliberate fail-closed placeholders. They make incompleteness explicit and
     # keep the output contract stable while the proven domain parsers are wired.
     placeholder_reasons = {
@@ -799,6 +875,10 @@ def main() -> int:
         if Path(r["relative_path"]).name.upper() in {"EBOOT.BIN", "EBOOT.ELF"}
         and r["sha256"]
     ]
+    candidate_id = "AUDIT_" + started_local.strftime("%Y%m%d_%H%M%S")
+    runtime_status, runtime_unresolved = prepare_runtime_matrix(
+        outdir, live_tree_sha256, eboot_candidates, candidate_id)
+    unresolved.extend(runtime_unresolved)
 
     metadata = {
         "schema": SCHEMA,
@@ -825,6 +905,7 @@ def main() -> int:
         "media_summary": (media_report or {}).get("summary"),
         "platform_summary": (platform_report or {}).get("summary"),
         "terminology_summary": terminology_report,
+        "runtime_acceptance_summary": runtime_status,
         "unresolved_count": len(unresolved),
         "eboot_candidates": eboot_candidates,
         "ownership_summary": ownership_report.get("summary") if ownership_report else None,
@@ -854,6 +935,7 @@ def main() -> int:
         "- PAM/media inventory with hashes/container headers and explicit subtitle/runtime review states",
         "- PARAM.SFO/XMB/trophy/system-font/loose-resource inventory with read-only SFO parsing",
         "- machine-readable terminology release gate",
+        "- final-candidate runtime acceptance matrix bound to the audited tree hash",
         "- Divergent-provider extraction",
         "- Explicit unresolved queue",
         "- Dependency/tool hash binding",
@@ -864,7 +946,7 @@ def main() -> int:
         "- pixel-width/layout validation on top of the GSM/FIM census",
         "- PAM identity-remux + translated hardsub runtime certification",
         "- semantic/visual disposition of XMB/trophy/loose-platform census rows",
-        "- final runtime acceptance merge",
+        "- completion of every generated runtime-acceptance row with exact-build evidence",
         "",
         "This bootstrap deliberately returns exit code 1 after a successful run. "
         "Unknown/not-yet-integrated stages are release blockers, never implicit PASS.",
@@ -885,6 +967,8 @@ def main() -> int:
         "media_summary": (media_report or {}).get("summary"),
         "platform_summary": (platform_report or {}).get("summary"),
         "terminology_summary": terminology_report,
+        "runtime_acceptance_summary": runtime_status,
+        "live_tree_sha256": live_tree_sha256,
         "unresolved_count": len(unresolved),
         "out": str(outdir),
     }, indent=2))
