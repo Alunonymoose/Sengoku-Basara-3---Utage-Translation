@@ -9,6 +9,7 @@ from export_cmd import export_ownership_command
 from query_cmd import bind_log_command,hazards_command,query_command,status_command,verify_command
 from recipe_cmd import recipe_approve_command,recipe_new_command,recipe_reject_command,recipe_validate_command
 from snapshot_cmd import snapshot_command
+from runtime_cmd import runtime_init_command,runtime_record_command,runtime_verify_evidence_command
 from visual_cmd import visual_compare_command
 
 def build_parser():
@@ -25,6 +26,9 @@ def build_parser():
     rv=sub.add_parser("recipe-validate",help="Validate recipe approval/snapshot binding"); rv.add_argument("recipe"); rv.add_argument("--snapshot"); rv.add_argument("--require-candidate",action="store_true"); rv.set_defaults(func=recipe_validate_command)
     ra=sub.add_parser("recipe-approve",help="Record human approval for the exact current candidate hash"); ra.add_argument("recipe"); ra.add_argument("--evidence"); ra.set_defaults(func=recipe_approve_command)
     rr=sub.add_parser("recipe-reject",help="Record rejection and invalidate candidate approval"); rr.add_argument("recipe"); rr.add_argument("--reason",required=True); rr.add_argument("--evidence"); rr.set_defaults(func=recipe_reject_command)
+    ri=sub.add_parser("runtime-init",help="Bind runtime acceptance matrix to exact snapshot/EBOOT"); ri.add_argument("snapshot"); ri.add_argument("--template",required=True); ri.add_argument("--out",required=True); ri.add_argument("--candidate-id"); ri.set_defaults(func=runtime_init_command)
+    rrn=sub.add_parser("runtime-record",help="Record a runtime row with hashed evidence"); rrn.add_argument("matrix"); rrn.add_argument("row"); rrn.add_argument("--status",required=True,choices=["PASS","FAIL","BLOCKED","NOT_TESTED"]); rrn.add_argument("--evidence",action="append"); rrn.add_argument("--log",action="append"); rrn.add_argument("--notes"); rrn.set_defaults(func=runtime_record_command)
+    rve=sub.add_parser("runtime-verify-evidence",help="Re-hash runtime evidence and candidate bindings"); rve.add_argument("matrix"); rve.set_defaults(func=runtime_verify_evidence_command)
     vc=sub.add_parser("visual-compare",help="Compare runtime screenshot against a golden baseline"); vc.add_argument("baseline"); vc.add_argument("candidate"); vc.add_argument("--mask"); vc.add_argument("--out-dir",required=True); vc.add_argument("--snapshot-id"); vc.add_argument("--pixel-threshold",type=int,default=8); vc.add_argument("--max-changed-ratio",type=float,default=0.0); vc.set_defaults(func=visual_compare_command)
     return ap
 
