@@ -1,8 +1,20 @@
+> **2026-09-24 TITLE_004 BC-ENDIAN HOTFIX — READ FIRST**
+>
+> A real current `title_004_ID_HQ` fixture plus the user's runtime screenshot disproved the 2026-09-24 synthetic assumption that Utage PS3 BC payload RGB565 endpoint words must be byte-swapped around BCnEncoder.Net. That swap produces the exact failure signature seen in game: a green rectangle with magenta/pink Sengoku artwork.
+>
+> For the verified Utage PS3 `0x2A` title path, the XET header/table fields remain big-endian, but the DXT5/BC3 payload uses **standard BC3 endpoint byte order**. Kuriimu2 registers PS3 `0x2A` as ordinary `ImageFormats.Dxt5()` plus `MtTex_YCbCrColorShader`; there is no separate PS3 RGB565 endpoint swap in that path.
+>
+> **Production rule:** never infer BC endpoint byte order from the XET/ARC container endianness. Decode the exact current live fixture with the intended production codec before any write. For `title_004`, that preflight must reproduce the known blue/transparent Sengoku baseline; a green/magenta decode is an automatic STOP and proves the codec path is wrong.
+>
+> **Base rule reaffirmed:** normal incremental localisation uses the **current live target payload** as the untouched-block base. Pristine/JPN is reference/compatibility evidence unless the transaction is explicitly marked restore/repair.
+>
+> Synthetic self-roundtrips cannot override contradictory real Utage fixture or runtime evidence.
+>
 > **2026-09-24 TEXTURE CODEC HARDENING SUPERSESSION — READ FIRST**
 >
 > The durable Foundry C# texture path has now been corrected to the current PS3 contract and supersedes older operational warnings that no current writer exists.
 >
-> - PS3 BC1/BC2/BC3 RGB565 colour endpoints are big-endian u16; index/alpha packing remains standard. Foundry now bridges endpoint endian explicitly around BCnEncoder.Net.
+> - **SUPERSEDED by the hotfix above:** the temporary RGB565 endpoint byte-swap bridge was wrong for the verified Utage 0x2A/title_004 path. Standard BC3 payload byte order is required there.
 > - `0x2A` is BC3 storage **plus** the Kuriimu2 PS3 YCbCr colour shader. Artist-facing preview/candidate APIs use normal display RGBA; codec storage is `(Cr, alpha, Cb, Y)`.
 > - `0x15` is fixture-proven DXT3/BC2 for read/preview. Production writing remains blocked pending a real edit/rebuild/runtime fixture.
 > - `0x2B` must not use generic one-plane RGBA; its dedicated RBxG/base+mask representation remains required and writing remains fail-closed.
@@ -18,7 +30,7 @@
 >
 > The older format-specific sections below are retained as history but MUST NOT override the solved 2026-09-23 XET contract. The prior bespoke 0x2A raw-YCbCr / half-dimension / Morton interpretation is **DISPROVEN**: the resource is standard MT Framework block-compressed texture data whose payload was previously misread using half dimensions.
 >
-> Current solved corpus contract: standard texFlags width/height; 0x2A/0x17/0x15 decode as BC3/DXT5, 0x19 as BC1, 0x27 as A8R8G8B8; PS3 BC colour endpoints are big-endian u16, while alpha/index byte arrays retain normal bit packing. Current fixture geometry: PSL +0x74..+0x80 destination rect, +0x84..+0x90 source min/max, with shipped _ID_HQ textures mapping at 2x SD coordinates.
+> Current solved corpus contract: standard texFlags width/height; 0x2A/0x17/0x15 decode as BC-compressed formats per current fixtures and Kuriimu2 mappings, 0x19 as BC1, 0x27 as A8R8G8B8. **Do not infer BC endpoint byte order from PS3 container endianness.** The verified 0x2A/title_004 path uses standard DXT5/BC3 endpoint byte order. Current fixture geometry: PSL +0x74..+0x80 destination rect, +0x84..+0x90 source min/max, with shipped _ID_HQ textures mapping at 2x SD coordinates.
 >
 > rom/jpn is NOT a guaranteed Japanese donor. Render/read candidates and prefer compatible official SH evidence. Production still preserves the CURRENT LIVE TARGET outside intended touched blocks. Use Donor Matcher V5.1 + Resource Ownership Analyzer before donor/provider decisions. The exact original xetenc.py is not yet durably persisted; custom writes remain gated on a recovered/revalidated current encoder path.
 >
@@ -71,6 +83,10 @@ Preserve target header/shell/non-payload bytes unless a separately certified wri
 A pristine counterpart may supply reference imagery or, in explicit restore mode, artwork payload blocks. Never transplant the pristine whole XET shell into the live English target.
 
 ## XET safety gate
+
+Before writing, **first decode the exact current live target with the same codec path that will be used for the write and compare it with known runtime/reference appearance.** This is a mandatory semantic preflight, not an optional preview. A codec that cannot reproduce the current live fixture is forbidden from producing a replacement.
+
+For `title_004_ID_HQ`, the semantic preflight is specifically locked: the current live texture must decode as a blue Sengoku logo with transparent background/coverage. A green rectangle, magenta/pink logo, missing transparency, or other material-channel corruption is an automatic fail-closed signal.
 
 Before writing, verify at minimum:
 
