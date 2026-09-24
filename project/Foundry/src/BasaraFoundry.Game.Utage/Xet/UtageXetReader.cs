@@ -124,6 +124,9 @@ public static class UtageXetReader
         if (info.Swizzle != 0)
             throw new NotSupportedException(
                 $"XET declares swizzle {info.Swizzle}; Foundry will not guess a de-swizzle path.");
+        if (info.FormatCode == 0x2B)
+            throw new NotSupportedException(
+                "XET format 0x2B uses the project's RBxG representation and is not valid as generic one-plane RGBA. Use a dedicated base+mask path.");
         if (!info.HasKnownBlockFormat)
             throw new NotSupportedException(
                 $"XET format 0x{info.FormatCode:X2} has no certified Utage decoder yet.");
