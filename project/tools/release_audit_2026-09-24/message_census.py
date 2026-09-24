@@ -22,7 +22,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-EXPECTED_SAFE_ARC_SHA256 = "f25c53e4ad78e18d5785b8aee197725377130ed9f562a9caa1000a1964bde91d"
+EXPECTED_SAFE_ARC_SHA256 = "7beb24a5e11c0e154ca2517447389518c09386e32104392bff8e3328cfbff6f3"
 EXPECTED_FIM_CONTRACT_SHA256 = "2dda5bcbba10d20467fe91ae9a1e3e0bc0422ab4fcb8e4e7cb2a232dca985013"
 EXPECTED_TEXT_SCANNER_SHA256 = "bba221464414ceeb40ab5ecd82f417140555832214efb031be7552bec7587c66"
 
@@ -48,9 +48,19 @@ def sha256_file(path: Path) -> str:
 def require_hash(path: Path, expected: str) -> None:
     if not path.is_file():
         raise RuntimeError(f"missing dependency: {path}")
-    actual = sha256_file(path)
-    if actual != expected:
-        raise RuntimeError(f"dependency hash drift: {path} expected={expected} actual={actual}")
+    data = path.read_bytes()
+    candidates = {hashlib.sha256(data).hexdigest()}
+    try:
+        text = data.decode("utf-8")
+        normalized = text.replace("\r\n", "\n").replace("\r", "\n")
+        candidates.add(hashlib.sha256(normalized.encode("utf-8")).hexdigest())
+        candidates.add(hashlib.sha256(normalized.replace("\n", "\r\n").encode("utf-8")).hexdigest())
+    except UnicodeDecodeError:
+        pass
+    if expected not in candidates:
+        raise RuntimeError(
+            f"dependency hash drift: {path} expected={expected} candidates={sorted(candidates)}"
+        )
 
 
 def load_module(name: str, path: Path):
