@@ -59,6 +59,7 @@ TERMINOLOGY_VALIDATOR_PATH = TOOLS_DIR.parent / "terminology" / "validate_termin
 RUNTIME_MATRIX_TEMPLATE_PATH = TOOLS_DIR.parent / "runtime" / "runtime_acceptance_matrix_2026-09-24.json"
 RUNTIME_MATRIX_VALIDATOR_PATH = TOOLS_DIR.parent / "runtime" / "validate_runtime_matrix.py"
 FONT_CENSUS_TOOL_PATH = HERE / "font_contract_census.py"
+LAYOUT_CENSUS_TOOL_PATH = HERE / "layout_census.py"
 
 MANDATORY_PLACEHOLDER_OUTPUTS = (
     "TEXTURE_CENSUS.json",
@@ -787,6 +788,7 @@ def main() -> int:
         "runtime_matrix_template": dependency_record(RUNTIME_MATRIX_TEMPLATE_PATH),
         "runtime_matrix_validator": dependency_record(RUNTIME_MATRIX_VALIDATOR_PATH),
         "font_contract_census": dependency_record(FONT_CENSUS_TOOL_PATH),
+        "layout_census": dependency_record(LAYOUT_CENSUS_TOOL_PATH),
         "orchestrator": dependency_record(Path(__file__).resolve()),
     }
 
@@ -889,6 +891,11 @@ def main() -> int:
         FONT_CENSUS_TOOL_PATH, live_root, outdir, "font_contract",
         "FONT_CONTRACT_CENSUS.json", "FONT_CONTRACT_CENSUS.csv")
     unresolved.extend(font_unresolved)
+
+    layout_report, layout_unresolved = run_simple_census(
+        LAYOUT_CENSUS_TOOL_PATH, live_root, outdir, "layout",
+        "LAYOUT_CENSUS.json", "LAYOUT_NODES.csv")
+    unresolved.extend(layout_unresolved)
     if font_report is not None:
         unresolved.append({
             "category": "WIDGET_CAPACITY_VALIDATION_PENDING",
@@ -959,6 +966,7 @@ def main() -> int:
         "platform_summary": (platform_report or {}).get("summary"),
         "terminology_summary": terminology_report,
         "font_contract_summary": (font_report or {}).get("summary"),
+        "layout_summary": (layout_report or {}).get("summary"),
         "runtime_acceptance_summary": runtime_status,
         "unresolved_count": len(unresolved),
         "eboot_candidates": eboot_candidates,
@@ -990,6 +998,7 @@ def main() -> int:
         "- PARAM.SFO/XMB/trophy/system-font/loose-resource inventory with read-only SFO parsing",
         "- machine-readable terminology release gate",
         "- read-only TNF/CSA font-contract census with real ASCII advance classification",
+        "- read-only PSL geometry census with fixture-proven destination/source rectangles",
         "- final-candidate runtime acceptance matrix bound to the audited tree hash",
         "- Divergent-provider extraction",
         "- Explicit unresolved queue",
