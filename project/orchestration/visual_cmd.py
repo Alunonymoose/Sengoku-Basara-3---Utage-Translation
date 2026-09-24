@@ -1,12 +1,14 @@
 from __future__ import annotations
 import json
 from pathlib import Path
-from PIL import Image, ImageChops
-
 from core import atomic_json, sha256_file, utc_now
 
 
 def visual_compare_command(args)->int:
+    try:
+        from PIL import Image
+    except ImportError as exc:
+        raise SystemExit("visual-compare requires Pillow: python -m pip install pillow") from exc
     baseline=Path(args.baseline).resolve(); candidate=Path(args.candidate).resolve(); out=Path(args.out_dir).resolve(); out.mkdir(parents=True,exist_ok=True)
     a=Image.open(baseline).convert("RGBA"); b=Image.open(candidate).convert("RGBA")
     if a.size!=b.size:
