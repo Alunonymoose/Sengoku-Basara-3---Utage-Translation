@@ -369,6 +369,46 @@ def patch_ps_muxer(root: Path) -> None:
 """,
     )
 
+    # Preserve Sony MPEG-2 GOP/random-access boundaries. Upstream can swallow a
+    # small RAP AU into the preceding PES via whole-AU or partial-next packing,
+    # which drops that GOP's explicit PTS/system_header/private_stream_2 boundary.
+    replace_once(
+        p,
+        """                    If Ps2FramesPerBlock > 0 AndAlso s.IsVideo AndAlso s.Codec <> PamfStreamType.MPEG2Video Then
+                        If nextAuIdx Mod Ps2FramesPerBlock = 0 Then Exit While
+                    End If
+                    extras.Add(n)
+""",
+        """                    If Ps2FramesPerBlock > 0 AndAlso s.IsVideo AndAlso s.Codec <> PamfStreamType.MPEG2Video Then
+                        If nextAuIdx Mod Ps2FramesPerBlock = 0 Then Exit While
+                    End If
+                    If s.Codec = PamfStreamType.MPEG2Video AndAlso n.IsRandomAccessPoint Then
+                        Exit While
+                    End If
+                    extras.Add(n)
+""",
+    )
+
+    replace_once(
+        p,
+        """                        Dim swallowsBlockStart As Boolean =
+                            (Ps2FramesPerBlock > 0 AndAlso s.IsVideo AndAlso
+                             s.Codec <> PamfStreamType.MPEG2Video AndAlso
+                             (nextAuIdxAfterExtras Mod Ps2FramesPerBlock) = 0)
+                        If Not swallowsBlockStart Then
+                            partialNext = n
+""",
+        """                        Dim swallowsBlockStart As Boolean =
+                            (Ps2FramesPerBlock > 0 AndAlso s.IsVideo AndAlso
+                             s.Codec <> PamfStreamType.MPEG2Video AndAlso
+                             (nextAuIdxAfterExtras Mod Ps2FramesPerBlock) = 0)
+                        Dim swallowsM2vRap As Boolean =
+                            (s.Codec = PamfStreamType.MPEG2Video AndAlso n.IsRandomAccessPoint)
+                        If Not swallowsBlockStart AndAlso Not swallowsM2vRap Then
+                            partialNext = n
+""",
+    )
+
 
 def main() -> int:
     ap = argparse.ArgumentParser()
