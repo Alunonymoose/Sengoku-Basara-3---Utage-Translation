@@ -19,9 +19,12 @@ public sealed record Bc3GraftResult(
 
 /// <summary>
 /// Production BC3 writer for Utage XET.
-/// Starts from pristine compressed artwork, requires candidate equality outside
-/// the exact edit mask, expands only to intersecting 4x4 BC3 blocks, preserves
-/// all untouched compressed blocks byte-for-byte, then verifies the final decode.
+/// Starts from an explicit preservation-base XET, requires candidate equality
+/// outside the exact edit mask, expands only to intersecting 4x4 BC3 blocks,
+/// preserves all untouched compressed blocks byte-for-byte, then verifies the
+/// final decode. For normal incremental localisation the caller MUST pass the
+/// current live target as this base. Pristine/reference bytes are only valid
+/// here for an explicit restore transaction.
 /// </summary>
 public static class UtageBc3BlockGraft
 {
@@ -58,9 +61,9 @@ public static class UtageBc3BlockGraft
         return delta;
     }
 
-    public static Bc3GraftResult GraftTopLevel(ReadOnlySpan<byte> pristineXet, ReadOnlySpan<byte> candidateRgba, ReadOnlySpan<byte> editMask01)
+    public static Bc3GraftResult GraftTopLevel(ReadOnlySpan<byte> baseXet, ReadOnlySpan<byte> candidateRgba, ReadOnlySpan<byte> editMask01)
     {
-        var info = UtageXetReader.ReadInfo(pristineXet);
+        var info = UtageXetReader.ReadInfo(baseXet);
         UtageXetCodec.RequireEncodingCapability(info);
 
         var expectedRgba = checked(info.Width * info.Height * 4);
@@ -71,18 +74,18 @@ public static class UtageBc3BlockGraft
 
         var topLevelBytes = info.TopLevelSizeBytes ?? throw new NotSupportedException("XET encoded byte size is unknown.");
         var expectedEnd = checked(info.TextureOffset + topLevelBytes);
-        if (info.MipCount > 1 || pristineXet.Length != expectedEnd)
+        if (info.MipCount > 1 || baseXet.Length != expectedEnd)
             throw new NotSupportedException("Block-graft v0.1 is single-level only. Refuse multi-mip or trailing payload XETs.");
 
         var notes = new List<string>();
-        var baseDecode = UtageXetCodec.DecodeTopLevel(pristineXet);
+        var baseDecode = UtageXetCodec.DecodeTopLevel(baseXet);
         var outsideDelta = CountOutsideMaskDeltas(baseDecode.Rgba, candidateRgba, editMask01, info.Width, info.Height);
         if (outsideDelta != 0)
         {
-            notes.Add($"REJECT: {outsideDelta} pixels outside edit mask differ from pristine decode.");
+            notes.Add($"REJECT: {outsideDelta} pixels outside edit mask differ from preservation-base decode.");
             return Failure(info, CountMask(editMask01), outsideDelta, Array.Empty<(int, int)>(), notes);
         }
-        notes.Add("candidate pixel-identical to pristine decode outside exact edit mask");
+        notes.Add("candidate pixel-identical to preservation-base decode outside exact edit mask");
 
         var blocks = MaskToBlockSet(editMask01, info.Width, info.Height);
         if (blocks.Count == 0)
@@ -95,8 +98,8 @@ public static class UtageBc3BlockGraft
         if (fullEncoded.Length != topLevelBytes)
             throw new InvalidDataException($"BC3 encoder returned {fullEncoded.Length} bytes; XET requires {topLevelBytes}.");
 
-        var pristinePayload = pristineXet.Slice(info.TextureOffset, topLevelBytes).ToArray();
-        var grafted = (byte[])pristinePayload.Clone();
+        var basePayload = baseXet.Slice(info.TextureOffset, topLevelBytes).ToArray();
+        var grafted = (byte[])basePayload.Clone();
         var bw = Math.Max(1, (info.Width + 3) / 4);
 
         foreach (var (bx, by) in blocks)
@@ -111,16 +114,16 @@ public static class UtageBc3BlockGraft
         {
             if (touched.Contains(i)) continue;
             var start = i * BlockBytes;
-            if (!pristinePayload.AsSpan(start, BlockBytes).SequenceEqual(grafted.AsSpan(start, BlockBytes)))
+            if (!basePayload.AsSpan(start, BlockBytes).SequenceEqual(grafted.AsSpan(start, BlockBytes)))
             {
                 notes.Add($"REJECT: untouched block {i} changed — graft bug");
                 return new Bc3GraftResult(Array.Empty<byte>(), grafted,
                     new Bc3GraftReport(totalBlocks, blocks.Count, CountMask(editMask01), 0, 0, 0, blocks, false, notes), null);
             }
         }
-        notes.Add("all untouched BC3 blocks byte-identical to pristine payload");
+        notes.Add("all untouched BC3 blocks byte-identical to preservation-base payload");
 
-        var output = pristineXet.ToArray();
+        var output = baseXet.ToArray();
         grafted.CopyTo(output.AsSpan(info.TextureOffset, topLevelBytes));
         var verification = UtageXetCodec.DecodeTopLevel(output);
 
