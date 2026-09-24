@@ -9,6 +9,7 @@ import struct
 import tempfile
 import unittest
 from pathlib import Path
+from PIL import Image
 
 HERE = Path(__file__).resolve()
 FOUNDRY = HERE.parent.parent / "foundry.py"
@@ -116,6 +117,20 @@ class OrchestrationTests(unittest.TestCase):
             code, text = self.run_cli("recipe-validate", str(recipe), "--snapshot", str(root), "--require-candidate")
             self.assertEqual(4, code)
             self.assertFalse(json.loads(text)["valid"])
+
+    def test_visual_regression_mask_and_hash_evidence(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td)
+            baseline=root/"baseline.png"; candidate=root/"candidate.png"; mask=root/"mask.png"
+            Image.new("RGBA",(8,8),(10,20,30,255)).save(baseline)
+            changed=Image.new("RGBA",(8,8),(10,20,30,255)); changed.putpixel((3,4),(255,20,30,255)); changed.save(candidate)
+            code,text=self.run_cli("visual-compare",str(baseline),str(candidate),"--out-dir",str(root/"fail"))
+            self.assertEqual(5,code); self.assertFalse(json.loads(text)["pass"])
+            m=Image.new("L",(8,8),0); m.putpixel((3,4),255); m.save(mask)
+            code,text=self.run_cli("visual-compare",str(baseline),str(candidate),"--mask",str(mask),"--out-dir",str(root/"pass"),"--snapshot-id","a"*64)
+            result=json.loads(text)
+            self.assertEqual(0,code); self.assertTrue(result["pass"]); self.assertEqual("a"*64,result["snapshot_id"])
+            self.assertTrue((root/"pass"/"visual_diff.png").is_file())
 
 
 if __name__ == "__main__":
