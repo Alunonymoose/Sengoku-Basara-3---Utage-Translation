@@ -1,0 +1,93 @@
+{
+  "schema": "BASARA_FOUNDRY_PAM_FIXTURE_V1",
+  "fixture_id": "utage_op029_00_drive_pilot_f815aa4f",
+  "role": "Exact known-good source fixture for identity-remux engineering. Not authority over a newer current E: file unless its SHA-256 matches.",
+  "logical_path": "PS3_GAME/USRDIR/nativePS3/movie/op029_00.pam",
+  "drive_file_id": "1NdEG-tRf0uG1xIfTUB5VkG2vhKM_gNpX",
+  "source_size": 120393728,
+  "source_sha256": "f815aa4ffcf157af7c25690804eae73d243d199f68a4ecdc21fab21ce67fb364",
+  "pamf": {
+    "magic_version": "PAMF0041",
+    "stream_offset": 2048,
+    "start_pts90": 89310,
+    "end_pts90": 4735710,
+    "duration_ticks90": 4646400,
+    "duration_seconds": 51.626666666666665,
+    "mux_rate_bound": 120000,
+    "std_delay_bound": 90000,
+    "first_pack_scr_base90": 30,
+    "first_pack_scr_extension27mhz": 216,
+    "stream_count": 2,
+    "streams": [
+      {
+        "index": 0,
+        "type_code": "0x02",
+        "type": "MPEG-2 Video",
+        "pes_stream_id": "0xE0",
+        "pstd_raw": "0x24D2",
+        "pstd_scale": 1,
+        "pstd_kb": 1234,
+        "codec_info_hex": "4400c401000000000050002d050002d000000000a00606060000000000000000",
+        "profile_level": "0x44 Main Profile @ High Level",
+        "progressive_sequence": 1,
+        "frame_rate_code": 4,
+        "width": 1280,
+        "height": 720,
+        "colour_primaries": 6,
+        "transfer_characteristics": 6,
+        "matrix_coefficients": 6
+      },
+      {
+        "index": 1,
+        "type_code": "0xDC",
+        "type": "ATRAC3plus",
+        "pes_stream_id": "0xBD",
+        "sub_stream_id": "0x00",
+        "pstd_raw": "0x2014",
+        "pstd_scale": 1,
+        "pstd_kb": 20,
+        "codec_info_hex": "0000060100000000000000000000000000000000000000000000000000000000",
+        "channels": 6,
+        "sample_rate_code": 1,
+        "sample_rate_hz": 48000
+      }
+    ]
+  },
+  "observed_ffprobe": {
+    "video_codec": "mpeg2video",
+    "video_frame_rate": "30000/1001",
+    "video_start_time_seconds": 1,
+    "video_duration_seconds": 51.084367,
+    "video_frames": 1546
+  },
+  "pinned_muxer": {
+    "upstream_repo": "ravenDS/PAMFtool",
+    "upstream_commit": "1559f643c660bfd1c14910354826c8f78b2000ec",
+    "foundry_patcher": "project/media_tools/pamftool_utage_patch.py",
+    "required_identity_args": [
+      "-m2v-pstd",
+      "1234",
+      "-initial-scr",
+      "30",
+      "-header-start-pts",
+      "89310",
+      "-muxrate",
+      "48000",
+      "-std-delay",
+      "90000"
+    ],
+    "notes": [
+      "Upstream v1.2 defaults MPEG-2 P-STD to 546 KB, which does not match this Utage source.",
+      "Upstream v1.2 parses/assigns -initial-scr but WritePackedStream hardcodes scr27=9216; the Foundry patch makes the option effective while retaining base 30/ext 216 for this fixture.",
+      "Upstream header template uses start PTS 90000; this Utage source uses 89310 for sequence and grouping start.",
+      "Whole-PAM byte equality is not required after remux. Re-demuxed elementary stream hashes plus decoder/timing contract and runtime playback are the gates."
+    ]
+  },
+  "runtime_gate": [
+    "Do not overwrite a current E: file whose SHA-256 differs from source_sha256 without a new source profile.",
+    "Identity remux must pass project/media_tools/pam_identity_verify.py.",
+    "Cold-boot RPCS3 and play op029_00 start-to-finish.",
+    "Confirm video, 5.1 audio synchronization, normal scene completion/return, and no decoder errors.",
+    "Bind runtime evidence to the candidate PAM SHA-256."
+  ]
+}
