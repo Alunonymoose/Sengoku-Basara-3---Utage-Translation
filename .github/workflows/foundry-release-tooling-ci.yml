@@ -67,6 +67,32 @@ jobs:
       - name: Run release-audit unit tests
         run: python -m unittest project/tools/release_audit_2026-09-24/test_release_audit.py -v
 
+      - name: Re-certify Donor Matcher V5.1 against the real committed safe_arc
+        shell: bash
+        run: |
+          PYTHONPATH=project/tools/donor_matcher_v5_1_2026-09-23 \
+            python -m pytest \
+            project/tools/donor_matcher_v5_1_2026-09-23/test_utage_donor_matcher_v5.py \
+            -q
+
+      - name: Verify Donor Matcher package hash manifest
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          root=Path('project/tools/donor_matcher_v5_1_2026-09-23')
+          manifest=json.loads((root/'SHA256SUMS.json').read_text())
+          for name, expected in manifest.items():
+              p=root/name
+              if not p.is_file():
+                  raise SystemExit(f'missing manifest file: {name}')
+              actual=hashlib.sha256(p.read_bytes()).hexdigest()
+              if actual != expected:
+                  raise SystemExit(f'hash mismatch {name}: expected={expected} actual={actual}')
+          print(f'verified {len(manifest)} V5.1 package hashes')
+          PY
+
       - name: Validate texture-review PNG encoder and PowerShell launcher syntax
         shell: pwsh
         run: |
