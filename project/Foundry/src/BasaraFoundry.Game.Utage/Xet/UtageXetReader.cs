@@ -35,7 +35,10 @@ public static class UtageXetReader
         {
             [0x13] = "DXT1",
             [0x14] = "DXT1",
-            [0x15] = "DXT5", // Utage samples are BC2/BC3-ambiguous; donor swap is byte-compatible.
+            // 0x15 deliberately omitted: 2026-09-22 fixture evidence supports
+            // BC2/DXT3 while later summary prose incorrectly grouped it with
+            // BC3. Keep metadata readable but decode/write fail-closed until
+            // the exact fixture is revalidated.
             [0x17] = "DXT5",
             [0x18] = "DXT5",
             [0x19] = "DXT1", // Verified against real Utage PS3 samples; generic MT tables say BC4.
@@ -123,6 +126,9 @@ public static class UtageXetReader
         if (info.Swizzle != 0)
             throw new NotSupportedException(
                 $"XET declares swizzle {info.Swizzle}; Foundry will not guess a de-swizzle path.");
+        if (info.FormatCode == 0x15)
+            throw new NotSupportedException(
+                "XET format 0x15 is quarantined: current fixture evidence conflicts between BC2/DXT3 and BC3/DXT5. Foundry will not decode or write it until revalidated.");
         if (!info.HasKnownBlockFormat)
             throw new NotSupportedException(
                 $"XET format 0x{info.FormatCode:X2} has no certified Utage decoder yet.");
