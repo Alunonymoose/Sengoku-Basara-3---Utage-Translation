@@ -57,6 +57,51 @@ jobs:
       - name: Run release-audit unit tests
         run: python -m unittest project/tools/release_audit_2026-09-24/test_release_audit.py -v
 
+      - name: Execute fail-closed auditor end-to-end on synthetic roots
+        shell: bash
+        run: |
+          set -e
+          mkdir -p /tmp/utage-live/PS3_GAME/USRDIR
+          mkdir -p /tmp/samurai-heroes/PS3_GAME/USRDIR
+          printf 'synthetic-eboot' > /tmp/utage-live/PS3_GAME/USRDIR/EBOOT.BIN
+          set +e
+          python project/tools/release_audit_2026-09-24/foundry_release_audit.py \
+            /tmp/utage-live \
+            --sh-root /tmp/samurai-heroes \
+            --out /tmp/basara-audit
+          code=$?
+          set -e
+          if [ "$code" -ne 1 ]; then
+            echo "Expected engineering-incomplete exit 1; got $code"
+            exit 1
+          fi
+          test -f /tmp/basara-audit/00_RUN_METADATA.json
+          test -f /tmp/basara-audit/FILE_TREE_HASHES.json
+          test -f /tmp/basara-audit/ARC_MEMBERS.json
+          test -f /tmp/basara-audit/RESOURCE_OWNERSHIP.json
+          test -f /tmp/basara-audit/TEXTURE_CENSUS.json
+          test -f /tmp/basara-audit/MESSAGE_CENSUS.json
+          test -f /tmp/basara-audit/MEDIA_CENSUS.json
+          test -f /tmp/basara-audit/LOOSE_UI_AND_METADATA_CENSUS.json
+          test -f /tmp/basara-audit/DONOR_CANDIDATES.json
+          test -f /tmp/basara-audit/TERMINOLOGY_STATUS.json
+          test -f /tmp/basara-audit/RUNTIME_ACCEPTANCE_MATRIX.json
+          test -f /tmp/basara-audit/UNRESOLVED.json
+          test -f /tmp/basara-audit/SHA256SUMS.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('/tmp/basara-audit')
+          meta=json.loads((p/'00_RUN_METADATA.json').read_text())
+          assert meta['release_pass'] is False
+          assert meta['status']=='ENGINEERING_INCOMPLETE'
+          assert meta['live_tree_sha256']
+          unresolved=json.loads((p/'UNRESOLVED.json').read_text())
+          assert unresolved['count'] > 0
+          runtime=json.loads((p/'RUNTIME_ACCEPTANCE_STATUS.json').read_text())
+          assert runtime['release_ready'] is False
+          PY
+
       - name: Validate terminology ledger structure
         run: |
           python project/terminology/validate_terminology.py \
