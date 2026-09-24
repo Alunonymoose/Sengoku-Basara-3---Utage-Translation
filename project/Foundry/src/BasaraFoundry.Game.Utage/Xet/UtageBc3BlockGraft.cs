@@ -91,7 +91,7 @@ public static class UtageBc3BlockGraft
             return Failure(info, 0, 0, blocks, notes);
         }
 
-        var fullEncoded = EncodeFullBc3(candidateRgba, info.Width, info.Height);
+        var fullEncoded = UtageXetCodec.EncodeTopLevelPayloadForPs3(info, candidateRgba);
         if (fullEncoded.Length != topLevelBytes)
             throw new InvalidDataException($"BC3 encoder returned {fullEncoded.Length} bytes; XET requires {topLevelBytes}.");
 
@@ -172,9 +172,6 @@ public static class UtageBc3BlockGraft
         var o = pixelIndex * 4;
         return a[o] != b[o] || a[o + 1] != b[o + 1] || a[o + 2] != b[o + 2] || a[o + 3] != b[o + 3];
     }
-
-    private static byte[] EncodeFullBc3(ReadOnlySpan<byte> rgba, int width, int height) =>
-        UtageXetCodec.EncodeBc3PayloadForPs3(rgba, width, height);
 
     private static int BlockCount(int width, int height) => Math.Max(1, (width + 3) / 4) * Math.Max(1, (height + 3) / 4);
     private static int CountMask(ReadOnlySpan<byte> mask01) { var n = 0; foreach (var b in mask01) if (b != 0) n++; return n; }
