@@ -12,6 +12,7 @@ from pathlib import Path
 from PIL import Image
 
 HERE = Path(__file__).resolve()
+REPO = HERE.parents[3]
 FOUNDRY = HERE.parent.parent / "foundry.py"
 spec = importlib.util.spec_from_file_location("foundry_orchestration", FOUNDRY)
 mod = importlib.util.module_from_spec(spec)
