@@ -434,6 +434,7 @@ def run_message_census(root: Path, outdir: Path) -> tuple[dict[str, Any] | None,
         capture_output=True, text=True
     )
     if proc.returncode not in (0, 1):
+        print(f"MESSAGE_CENSUS_TOOL failure: exit={proc.returncode}; stderr={proc.stderr[-4000:]}", file=sys.stderr)
         unresolved.append({
             "category": "MESSAGE_CENSUS_TOOL",
             "owner_path": str(MESSAGE_CENSUS_TOOL_PATH),
