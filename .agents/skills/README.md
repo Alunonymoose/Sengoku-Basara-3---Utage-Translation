@@ -63,9 +63,13 @@ Code/history:
 
 `Alunonymoose/Sengoku-Basara-3---Utage-Translation`
 
-Primary engineering branch:
+Primary production engineering branch:
 
 `foundry-v0.1`
+
+Current orchestration integration branch (until reviewed/merged):
+
+`foundry-v0.2-orchestration`
 
 Canonical project memory:
 
@@ -105,3 +109,7 @@ When a discovery changes engineering behavior:
 4. record what old rule was superseded
 
 Do not allow Skills, Drive canon, and Foundry code to silently drift apart.
+
+## Foundry v0.2 machine-truth rule — 2026-09-24
+
+For current-live byte/ownership claims, the latest verified v0.2 snapshot outranks prose handoffs. Exact resource identity is type hash + ASCII-lowercased internal path. Runtime rendering/precedence claims remain evidence-bound. Patch approvals are candidate-SHA-bound and become stale if the live snapshot/provider hashes change.
