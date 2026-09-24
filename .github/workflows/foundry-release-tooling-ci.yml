@@ -56,6 +56,14 @@ jobs:
             project/texture_tools/xet_recovery_2026-09-23/foundry_xet_decoder_20260923.py \
             project/dialogue_tools/fim_contract_recovery_2026-09-20/FIM_CONTRACT_REPAIR.py
 
+      - name: Install Python test dependency
+        run: python -m pip install pytest
+
+      - name: Run Donor Matcher V5.1 suite against real safe_arc
+        env:
+          PYTHONPATH: project/tools/donor_matcher_v5_1_2026-09-23
+        run: python -m pytest project/tools/donor_matcher_v5_1_2026-09-23/test_utage_donor_matcher_v5.py -q
+
       - name: Run release-audit unit tests
         run: python -m unittest project/tools/release_audit_2026-09-24/test_release_audit.py -v
 
