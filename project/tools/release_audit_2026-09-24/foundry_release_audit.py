@@ -953,6 +953,8 @@ def main() -> int:
     t0 = time.time()
 
     snapshot_db = resolve_snapshot_db(args.snapshot) if args.snapshot else None
+    if snapshot_db and (live_root / "PS3_GAME").is_dir():
+        live_root = (live_root / "PS3_GAME").resolve()
     snapshot_id = None
     snapshot_verify = None
     if snapshot_db:
