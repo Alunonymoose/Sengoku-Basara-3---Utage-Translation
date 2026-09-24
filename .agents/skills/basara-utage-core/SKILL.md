@@ -1,3 +1,7 @@
+> **2026-09-24 FOUNDRY v0.2 ORCHESTRATION SUPERSESSION — READ FIRST**
+>
+> For claims about the **current live build**, a BASARA Foundry v0.2 snapshot ID is the machine authority. Drive handoffs and prose are context/history and must not override contradictory current-live snapshot or runtime evidence. Before mutation, run/obtain `project/foundry.ps1 snapshot <live-root>`, query the exact typed/path identity, and bind production work to that snapshot. If the live tree changes, the old recipe is stale and must fail closed.
+>
 > **2026-09-23 SUPERSESSION — READ FIRST**
 >
 > Current startup is: BASARA Foundry Master Index -> **00 RELEASE COMPLETION GATE — 100% ENGLISH + HIGH-QUALITY TEXTURES — 2026-09-23** -> **00 FRESH CHAT HANDOFF — 2026-09-23 LATE — READ THIS FIRST (SUPERSEDES 21-00)** -> current task evidence.
@@ -21,12 +25,12 @@ The user's explicit instructions take precedence over this skill. Do not use thi
 Before substantial Utage engineering:
 
 1. Recover the current project state instead of starting from generic MT Framework knowledge.
-2. Treat Google Drive `BASARA Foundry` as the canonical engineering memory and the GitHub repository as the canonical code history.
+2. Treat Google Drive `BASARA Foundry` as canonical engineering memory, GitHub as canonical code history, and the latest verified Foundry v0.2 live snapshot as canonical machine truth for the current game bytes.
 3. Read, in order when available:
    - `00 READ ME FIRST — BASARA FOUNDRY / UTAGE MASTER SOURCE OF TRUTH`
    - `01 UTAGE TECHNICAL CANON — FORMATS, ROUTING, WORKFLOW, PROVEN FAILURES`
    - the most relevant current checkpoint/handover for the task
-4. Verify the latest source/master before mutating an ARC or project file. Never silently patch an older copy when a newer live baseline exists.
+4. Verify the latest source/master before mutating an ARC or project file. For game-byte mutation, bind the task to an exact snapshot ID and exact provider ARC/resource hashes. Never silently patch an older copy when a newer live baseline exists.
 5. Reuse existing manifests, fixture results, audits, and Foundry code before rescanning or rediscovering the project.
 
 ## Project identity
@@ -38,6 +42,18 @@ Before substantial Utage engineering:
 - Archive family: PS3 big-endian ARC v8 (`\0CRA` on disk)
 - Texture family: PS3 MT Framework TEX/XET (`\0XET` on disk), including v0x97 fixtures
 - Layout family: PSL/LSP; treat field semantics as fixture-specific until proven
+
+## Snapshot / query gate
+
+For current-build ownership or content questions, prefer deterministic commands over memory:
+
+- `project/foundry.ps1 snapshot <live-root>`
+- `project/foundry.ps1 query <live-root-or-snapshot> <internal-path> --type-hash <hash> --exact`
+- `project/foundry.ps1 hazards <live-root-or-snapshot>`
+- `project/foundry.ps1 bind-log <snapshot> <RPCS3.log>` when precedence evidence exists
+- `project/foundry.ps1 verify <snapshot>` before promotion/install
+
+A handoff saying an asset is open/closed is not sufficient if the snapshot says otherwise. Runtime rendering claims still require runtime evidence; a snapshot proves bytes/ownership structure, not what the player sees.
 
 ## Transaction discipline
 
@@ -148,4 +164,4 @@ Do not:
 
 ## Current code-state caveat
 
-The authoritative implementation may be ahead of this skill document. Before a production change, inspect the current `foundry-v0.1` branch and any open hardening PR/checkpoint. If code and this skill disagree, preserve safety, investigate the newer evidence, and update the skill/canon rather than silently following stale text.
+The authoritative implementation may be ahead of this skill document. Before a production change, inspect `foundry-v0.1` plus the `foundry-v0.2-orchestration` integration branch/PR while v0.2 is under review. If code and this skill disagree, preserve safety, investigate the newer evidence, and update the skill/canon rather than silently following stale text.
