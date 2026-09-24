@@ -1,3 +1,21 @@
+# 2026-09-24 RUNTIME HOTFIX SUPERSESSION — TITLE_004 BC ENDPOINT ORDER
+
+The earlier endpoint-endian conclusion in this document is **superseded**.
+
+A current live `title_004_ID_HQ` fixture (SHA-256 `87446f8847e56da3c660637f71709e6cea0bc4e74e204ccd1be8127fbe05a375`) plus an actual game runtime screenshot disproved the synthetic PS3 RGB565 byte-swap bridge. With the byte swap, the title renders a green rectangle with magenta/pink Sengoku artwork. The same live fixture decodes correctly as the known blue/transparent Sengoku artwork when its DXT5/BC3 RGB565 endpoint words are handled in standard BC3 byte order.
+
+Kuriimu2's PS3 path registers `0x2A` as `ImageFormats.Dxt5()` and separately applies `MtTex_YCbCrColorShader`; it does not add an endpoint byte-swap layer. Therefore:
+
+- XET header/table fields remain big-endian.
+- Verified `0x2A/title_004` BC3 payload endpoint words use standard DXT5/BC3 byte order.
+- The Foundry endpoint-swap bridge is invalid for this verified path and must be removed.
+- Normal incremental edits preserve CURRENT LIVE TARGET compressed blocks outside the approved mask; pristine/JPN is not the default payload base.
+- A production writer must first reproduce the exact current live fixture semantically. A synthetic self-roundtrip is insufficient evidence.
+
+This supersession is backed by a real live fixture and runtime failure and therefore outranks the synthetic endpoint fixture that motivated the earlier bridge.
+
+---
+
 # BASARA Foundry — Texture Codec Hardening — 2026-09-24
 
 ## Status
@@ -14,7 +32,7 @@ The older C# `UtageXetCodec` / `UtageBc3BlockGraft` path predated the 2026-09-23
 
 It passed PS3 BC payload bytes directly to BCnEncoder.Net.
 
-That was wrong because PS3 Utage stores the two RGB565 colour endpoint words in each BC block as **big-endian u16**, while BC alpha/index and colour-index bit packing remain in their standard form.
+**SUPERSEDED:** that conclusion came from a synthetic fixture. The verified current 0x2A/title_004 payload uses standard BC3 endpoint byte order; do not byte-swap RGB565 endpoint words.
 
 The same old API also exposed raw BC-decoded storage channels as if they were always artist-facing RGBA.
 
@@ -75,7 +93,7 @@ This does NOT revive the disproven old claim that the XET payload is a bespoke r
 
 Real Utage fixture + historical Kuriimu2 mapping establish:
 - format 0x15 = DXT3 / BC2 for read/preview;
-- RGB565 endpoints use the same PS3 big-endian bridge;
+- **SUPERSEDED for verified 0x2A/title_004:** no RGB565 endpoint byte-swap bridge; use standard BC3 payload byte order.
 - explicit BC2 4-bit alpha is decoded normally.
 
 Production writing remains disabled pending a real current Utage:
@@ -114,8 +132,8 @@ Foundry CI run for commit:
 completed **SUCCESS**.
 
 The test set includes independent fixtures proving:
-- PS3 BC3 big-endian colour endpoints decode correctly;
-- writer output contains PS3-endian endpoints;
+- verified current 0x2A/title_004 standard-BC3 endpoint ordering decodes correctly;
+- writer output keeps standard BC3 endpoint byte order for the verified 0x2A/title_004 path;
 - 0x2A stored YCbCr channel semantics render expected visible colour;
 - visible RGBA is converted to expected stored-channel ranges before compression;
 - 0x15 is decoded as DXT3/BC2;
@@ -139,7 +157,7 @@ Current behavior:
 - `decode_rgba()` returns artist/game-visible RGBA;
 - 0x2A applies the YCbCr read shader;
 - 0x15 decodes as BC2;
-- PS3 endpoint endian is handled.
+- container/header endianness and BC payload endpoint ordering are handled as separate contracts; no inferred endpoint swap is allowed.
 
 Release-audit/visual-review tools must use `decode_rgba()` for human-facing previews.
 
