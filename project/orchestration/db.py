@@ -19,7 +19,7 @@ def init_db(conn: sqlite3.Connection) -> None:
       id INTEGER PRIMARY KEY,arc_id INTEGER NOT NULL REFERENCES arcs(id) ON DELETE CASCADE,
       member_index INTEGER NOT NULL,internal_path TEXT NOT NULL,canonical_path TEXT NOT NULL,
       type_hash INTEGER NOT NULL,type_hex TEXT NOT NULL,flags INTEGER NOT NULL,codec TEXT NOT NULL,
-      compressed_size INTEGER NOT NULL,declared_raw_size INTEGER NOT NULL,actual_raw_size INTEGER NOT NULL,
+      compressed_size INTEGER NOT NULL,declared_raw_size INTEGER NOT NULL,actual_raw_size INTEGER NOT NULL,data_offset INTEGER NOT NULL,
       stored_sha256 TEXT NOT NULL,raw_sha256 TEXT NOT NULL,warning TEXT,UNIQUE(arc_id,member_index));
     CREATE INDEX ix_resources_identity ON resources(type_hash,canonical_path);
     CREATE INDEX ix_resources_path ON resources(canonical_path);
