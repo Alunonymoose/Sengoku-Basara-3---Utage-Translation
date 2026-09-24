@@ -791,6 +791,10 @@ def main() -> int:
             "dependencies": dependencies,
         })
         print("ERROR: canonical safe_arc.py or recovered XET decoder missing/hash-drifted; refusing audit.", file=sys.stderr)
+        print(json.dumps({
+            "safe_arc": dependencies["safe_arc"],
+            "xet_decoder": dependencies["xet_decoder"],
+        }, indent=2), file=sys.stderr)
         return 2
 
     safe_arc = load_module_from_path("basara_foundry_safe_arc", SAFE_ARC_PATH)
