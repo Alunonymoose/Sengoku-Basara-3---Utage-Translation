@@ -126,14 +126,41 @@ def dependency_record(path: Path, expected_sha256: str | None = None) -> dict[st
             "sha256": None,
             "expected_sha256": expected_sha256,
             "hash_ok": False if expected_sha256 else None,
+            "hash_match_form": None,
         }
-    actual = sha256_file(path)
+
+    data = path.read_bytes()
+    actual = sha256_bytes(data)
+    candidates = {"raw": actual}
+
+    # Historical Foundry source hashes were sometimes recorded from Windows
+    # CRLF working copies, while GitHub Actions checks out LF. For UTF-8 text
+    # dependencies, accept only byte streams that differ solely by newline
+    # normalization. Any other content drift still fails closed.
+    try:
+        text = data.decode("utf-8")
+        lf = text.replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")
+        crlf = text.replace("\r\n", "\n").replace("\r", "\n").replace("\n", "\r\n").encode("utf-8")
+        candidates["utf8_lf"] = sha256_bytes(lf)
+        candidates["utf8_crlf"] = sha256_bytes(crlf)
+    except UnicodeDecodeError:
+        pass
+
+    match_form = None
+    if expected_sha256:
+        for form, digest in candidates.items():
+            if digest == expected_sha256:
+                match_form = form
+                break
+
     return {
         "path": str(path),
         "exists": True,
         "sha256": actual,
         "expected_sha256": expected_sha256,
-        "hash_ok": actual == expected_sha256 if expected_sha256 else None,
+        "hash_ok": match_form is not None if expected_sha256 else None,
+        "hash_match_form": match_form,
+        "equivalent_text_hashes": candidates if expected_sha256 else None,
     }
 
 
