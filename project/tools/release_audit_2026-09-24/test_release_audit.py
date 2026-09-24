@@ -40,6 +40,16 @@ class ReleaseAuditBootstrapTests(unittest.TestCase):
             self.assertTrue(rec["exists"])
             self.assertTrue(rec["hash_ok"])
 
+    def test_dependency_record_accepts_newline_only_text_equivalence(self):
+        with tempfile.TemporaryDirectory() as td:
+            p = Path(td) / "tool.py"
+            p.write_bytes(b"print('x')\nprint('y')\n")
+            crlf = b"print('x')\r\nprint('y')\r\n"
+            expected = audit.sha256_bytes(crlf)
+            rec = audit.dependency_record(p, expected)
+            self.assertTrue(rec["hash_ok"])
+            self.assertEqual(rec["hash_match_form"], "utf8_crlf")
+
     def test_scan_files_emits_errors_instead_of_silent_skip(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td)
