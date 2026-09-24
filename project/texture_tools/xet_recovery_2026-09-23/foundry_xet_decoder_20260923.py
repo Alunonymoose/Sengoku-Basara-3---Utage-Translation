@@ -1,7 +1,11 @@
 """Recovered standalone XET decoder/validator for Sengoku BASARA 3 Utage PS3.
 
-Evidence source: BASARA Foundry, 2026-09-23 solved XET contract.
+Evidence source: BASARA Foundry solved XET contract + Kuriimu2 PS3 MT Framework shader semantics.
 Read-only tool. No production encoding claims.
+
+decode_storage_rgba() returns the block-decoded stored channels.
+decode_rgba() returns artist/game-visible RGBA and applies the PS3 0x2A
+YCbCr colour shader (stored RGBA = Cr, coverage, Cb, Y).
 
 Supported observed formats under the current fixture-backed corpus contract:
   0x15 -> BC2/DXT3 (real Utage fixture + Kuriimu2 table, 2026-09-22)
@@ -137,7 +141,7 @@ def validate(raw:bytes)->dict:
     return {'width':info.width,'height':info.height,'mip_count':info.mip_count,
             'format_id':info.format_id,'levels':levels,'resource_bytes':len(raw)}
 
-def decode_rgba(raw:bytes,level:int=0)->bytes:
+def decode_storage_rgba(raw:bytes,level:int=0)->bytes:
     info=xet_info(raw)
     if not (0<=level<info.mip_count): raise ValueError('bad mip level')
     w=max(1,info.width>>level); h=max(1,info.height>>level); off=info.mip_offsets[level]
@@ -167,6 +171,30 @@ def decode_rgba(raw:bytes,level:int=0)->bytes:
                     if x>=w: continue
                     out[(y*w+x)*4:(y*w+x+1)*4]=bytes(px[iy*4+ix])
     return bytes(out)
+
+def _clamp8(n:float)->int:
+    return max(0,min(int(n),255))
+
+def _storage_to_display_0x2a(storage:bytes)->bytes:
+    if len(storage)%4: raise ValueError('RGBA byte count')
+    out=bytearray(len(storage))
+    for i in range(0,len(storage),4):
+        sr,sg,sb,sa=storage[i:i+4]
+        y=sa
+        cb=sb-123
+        cr=sr-123
+        out[i]=_clamp8(y+1.402*cr)
+        out[i+1]=_clamp8(y-0.344136*cb-0.714136*cr)
+        out[i+2]=_clamp8(y+1.772*cb)
+        out[i+3]=sg
+    return bytes(out)
+
+def decode_rgba(raw:bytes,level:int=0)->bytes:
+    info=xet_info(raw)
+    storage=decode_storage_rgba(raw,level)
+    if info.format_id==0x2A:
+        return _storage_to_display_0x2a(storage)
+    return storage
 
 if __name__=='__main__':
     import argparse, pathlib, json
