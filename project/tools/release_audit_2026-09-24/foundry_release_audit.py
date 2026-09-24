@@ -52,6 +52,10 @@ OWNERSHIP_TOOL_PATH = TOOLS_DIR / "resource_ownership_2026-09-23" / "basara_reso
 XET_DECODER_PATH = TOOLS_DIR.parent / "texture_tools" / "xet_recovery_2026-09-23" / "foundry_xet_decoder_20260923.py"
 MESSAGE_CENSUS_TOOL_PATH = HERE / "message_census.py"
 DONOR_MATCHER_PATH = TOOLS_DIR / "donor_matcher_v5_1_2026-09-23" / "utage_donor_matcher_v5.py"
+MEDIA_CENSUS_TOOL_PATH = HERE / "media_census.py"
+PLATFORM_CENSUS_TOOL_PATH = HERE / "platform_census.py"
+TERMINOLOGY_JSON_PATH = TOOLS_DIR.parent / "terminology" / "canonical_english_terminology_2026-09-24.json"
+TERMINOLOGY_VALIDATOR_PATH = TOOLS_DIR.parent / "terminology" / "validate_terminology.py"
 
 MANDATORY_PLACEHOLDER_OUTPUTS = (
     "TEXTURE_CENSUS.json",
@@ -551,6 +555,83 @@ def run_donor_matcher(live_root: Path, sh_root: Path | None, outdir: Path) -> tu
     return summary, unresolved
 
 
+
+def run_simple_census(tool: Path, root: Path, outdir: Path, stage_name: str,
+                      json_name: str, csv_name: str) -> tuple[dict[str, Any] | None, list[dict[str, Any]]]:
+    unresolved: list[dict[str, Any]] = []
+    stage = outdir / f"_{stage_name}_stage"
+    stage.mkdir(parents=True, exist_ok=True)
+    proc = subprocess.run(
+        [sys.executable, str(tool), str(root), "--out", str(stage)],
+        capture_output=True, text=True
+    )
+    jp, cp = stage / json_name, stage / csv_name
+    if proc.returncode not in (0, 1) or not jp.is_file() or not cp.is_file():
+        unresolved.append({
+            "category": f"{stage_name.upper()}_CENSUS_TOOL",
+            "owner_path": str(tool),
+            "reason": f"exit={proc.returncode}; stderr={proc.stderr[-4000:]}",
+            "required_next_evidence": "Fix read-only census tool/output contract; no silent omission.",
+            "recommended_tool": tool.name,
+            "release_severity": "BLOCKED",
+        })
+        return None, unresolved
+    atomic_write_text(outdir / json_name, jp.read_text(encoding="utf-8"))
+    atomic_write_text(outdir / csv_name, cp.read_text(encoding="utf-8"))
+    report = json.loads(jp.read_text(encoding="utf-8"))
+    for err in report.get("errors", []):
+        unresolved.append({
+            "category": f"{stage_name.upper()}_CENSUS_ERROR",
+            "owner_path": err.get("path"),
+            "reason": err.get("error"),
+            "required_next_evidence": "Resolve exact current-live read/parse failure.",
+            "recommended_tool": tool.name,
+            "release_severity": "BLOCKED",
+        })
+    return report, unresolved
+
+
+def run_terminology_gate(outdir: Path) -> tuple[dict[str, Any] | None, list[dict[str, Any]]]:
+    unresolved: list[dict[str, Any]] = []
+    proc = subprocess.run(
+        [sys.executable, str(TERMINOLOGY_VALIDATOR_PATH), str(TERMINOLOGY_JSON_PATH), "--release-gate"],
+        capture_output=True, text=True
+    )
+    if proc.returncode not in (0, 1):
+        unresolved.append({
+            "category": "TERMINOLOGY_TOOL",
+            "owner_path": str(TERMINOLOGY_JSON_PATH),
+            "reason": f"exit={proc.returncode}; stderr={proc.stderr[-4000:]}",
+            "required_next_evidence": "Repair machine-readable terminology ledger/validator before release QA.",
+            "recommended_tool": "validate_terminology.py",
+            "release_severity": "BLOCKED",
+        })
+        return None, unresolved
+    try:
+        report = json.loads(proc.stdout)
+    except Exception as exc:
+        unresolved.append({
+            "category": "TERMINOLOGY_TOOL",
+            "owner_path": str(TERMINOLOGY_VALIDATOR_PATH),
+            "reason": f"invalid JSON output: {exc!r}",
+            "required_next_evidence": "Restore stable validator output.",
+            "recommended_tool": "validate_terminology.py",
+            "release_severity": "BLOCKED",
+        })
+        return None, unresolved
+    atomic_write_json(outdir / "TERMINOLOGY_STATUS.json", report)
+    for b in report.get("release_blockers", []):
+        unresolved.append({
+            "category": "TERMINOLOGY_BLOCKER",
+            "owner_path": b.get("id"),
+            "reason": f"status={b.get('status')} variants={b.get('variants')}",
+            "required_next_evidence": "Resolve from official SH/context/current source, then update canonical terminology JSON.",
+            "recommended_tool": "canonical_english_terminology_2026-09-24.json",
+            "release_severity": "BLOCKED",
+        })
+    return report, unresolved
+
+
 def placeholder_output(outdir: Path, filename: str, reason: str) -> None:
     atomic_write_json(outdir / filename, {
         "schema": SCHEMA,
@@ -596,6 +677,10 @@ def main() -> int:
         "xet_decoder": dependency_record(XET_DECODER_PATH, EXPECTED_XET_DECODER_SHA256),
         "message_census": dependency_record(MESSAGE_CENSUS_TOOL_PATH),
         "donor_matcher": dependency_record(DONOR_MATCHER_PATH),
+        "media_census": dependency_record(MEDIA_CENSUS_TOOL_PATH),
+        "platform_census": dependency_record(PLATFORM_CENSUS_TOOL_PATH),
+        "terminology_json": dependency_record(TERMINOLOGY_JSON_PATH),
+        "terminology_validator": dependency_record(TERMINOLOGY_VALIDATOR_PATH),
         "orchestrator": dependency_record(Path(__file__).resolve()),
     }
 
@@ -675,11 +760,22 @@ def main() -> int:
     donor_summary, donor_unresolved = run_donor_matcher(live_root, sh_root, outdir)
     unresolved.extend(donor_unresolved)
 
+    media_report, media_unresolved = run_simple_census(
+        MEDIA_CENSUS_TOOL_PATH, live_root, outdir, "media",
+        "MEDIA_CENSUS.json", "MEDIA_CENSUS.csv")
+    unresolved.extend(media_unresolved)
+
+    platform_report, platform_unresolved = run_simple_census(
+        PLATFORM_CENSUS_TOOL_PATH, live_root, outdir, "platform",
+        "LOOSE_UI_AND_METADATA_CENSUS.json", "LOOSE_UI_AND_METADATA_CENSUS.csv")
+    unresolved.extend(platform_unresolved)
+
+    terminology_report, terminology_unresolved = run_terminology_gate(outdir)
+    unresolved.extend(terminology_unresolved)
+
     # Deliberate fail-closed placeholders. They make incompleteness explicit and
     # keep the output contract stable while the proven domain parsers are wired.
     placeholder_reasons = {
-        "MEDIA_CENSUS.json": "PAM/media inventory/probe layer not yet integrated.",
-        "LOOSE_UI_AND_METADATA_CENSUS.json": "PARAM.SFO/TROPDIR/XMB/loose semantic audit not yet integrated.",
     }
     for filename, reason in placeholder_reasons.items():
         placeholder_output(outdir, filename, reason)
@@ -726,6 +822,9 @@ def main() -> int:
         "message_resource_count": (message_report or {}).get("summary", {}).get("message_resources"),
         "message_record_count": (message_report or {}).get("summary", {}).get("message_records"),
         "donor_summary": donor_summary,
+        "media_summary": (media_report or {}).get("summary"),
+        "platform_summary": (platform_report or {}).get("summary"),
+        "terminology_summary": terminology_report,
         "unresolved_count": len(unresolved),
         "eboot_candidates": eboot_candidates,
         "ownership_summary": ownership_report.get("summary") if ownership_report else None,
@@ -752,6 +851,9 @@ def main() -> int:
         "- Recovered XET metadata/decode census for supported formats, with 0x15 intercepted and quarantined",
         "- Recovered GSM/FIM grammar census + exact FIM contract verification",
         "- Donor Matcher V5.1 report-only sweep using current Utage + official SH ownership inventories",
+        "- PAM/media inventory with hashes/container headers and explicit subtitle/runtime review states",
+        "- PARAM.SFO/XMB/trophy/system-font/loose-resource inventory with read-only SFO parsing",
+        "- machine-readable terminology release gate",
         "- Divergent-provider extraction",
         "- Explicit unresolved queue",
         "- Dependency/tool hash binding",
@@ -760,8 +862,8 @@ def main() -> int:
         "",
         "- texture semantic visual classification + 0x15 fixture resolution",
         "- pixel-width/layout validation on top of the GSM/FIM census",
-        "- PAM/media census",
-        "- loose/XMB/trophy/platform semantic census",
+        "- PAM identity-remux + translated hardsub runtime certification",
+        "- semantic/visual disposition of XMB/trophy/loose-platform census rows",
         "- final runtime acceptance merge",
         "",
         "This bootstrap deliberately returns exit code 1 after a successful run. "
@@ -780,6 +882,9 @@ def main() -> int:
         "message_resource_count": (message_report or {}).get("summary", {}).get("message_resources"),
         "message_record_count": (message_report or {}).get("summary", {}).get("message_records"),
         "donor_summary": donor_summary,
+        "media_summary": (media_report or {}).get("summary"),
+        "platform_summary": (platform_report or {}).get("summary"),
+        "terminology_summary": terminology_report,
         "unresolved_count": len(unresolved),
         "out": str(outdir),
     }, indent=2))
