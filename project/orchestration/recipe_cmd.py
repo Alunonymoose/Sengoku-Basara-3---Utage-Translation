@@ -38,3 +38,27 @@ def recipe_validate_command(args)->int:
             elif row[0]!=provider["arc_sha256"]: errors.append(f"provider hash changed in snapshot: {provider['arc_path']}")
         conn.close()
     print(json.dumps({"recipe":str(rp),"valid":not errors,"errors":errors},indent=2)); return 0 if not errors else 4
+
+
+def recipe_approve_command(args)->int:
+    rp=Path(args.recipe).resolve(); recipe=json.loads(rp.read_text(encoding="utf-8"))
+    if recipe.get("schema")!=RECIPE_SCHEMA: raise SystemExit("Not a BASARA Foundry patch recipe")
+    cpath=recipe.get("candidate",{}).get("path")
+    if not cpath: raise SystemExit("Recipe has no candidate path")
+    p=Path(cpath) if Path(cpath).is_absolute() else (rp.parent/cpath).resolve()
+    if not p.is_file(): raise SystemExit(f"Candidate missing: {p}")
+    digest=sha256_file(p)
+    recorded=recipe.get("candidate",{}).get("sha256")
+    if recorded and recorded!=digest: raise SystemExit(f"Candidate differs from recipe: recorded={recorded} actual={digest}")
+    recipe["candidate"]["sha256"]=digest
+    recipe["approval"]={"status":"APPROVED","approved_candidate_sha256":digest,"approved_utc":utc_now(),
+                        "evidence":[args.evidence] if args.evidence else []}
+    atomic_json(rp,recipe); print(json.dumps(recipe["approval"],indent=2)); return 0
+
+
+def recipe_reject_command(args)->int:
+    rp=Path(args.recipe).resolve(); recipe=json.loads(rp.read_text(encoding="utf-8"))
+    if recipe.get("schema")!=RECIPE_SCHEMA: raise SystemExit("Not a BASARA Foundry patch recipe")
+    recipe["approval"]={"status":"REJECTED","approved_candidate_sha256":None,"rejected_utc":utc_now(),
+                        "reason":args.reason,"evidence":[args.evidence] if args.evidence else []}
+    atomic_json(rp,recipe); print(json.dumps(recipe["approval"],indent=2)); return 0
