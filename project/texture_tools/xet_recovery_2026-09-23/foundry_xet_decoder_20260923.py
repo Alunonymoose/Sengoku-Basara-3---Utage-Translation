@@ -3,8 +3,9 @@
 Evidence source: BASARA Foundry, 2026-09-23 solved XET contract.
 Read-only tool. No production encoding claims.
 
-Supported observed formats under the 2026-09-23 corpus contract:
-  0x2A / 0x17 / 0x15 -> BC3/DXT5
+Supported observed formats under the current fixture-backed corpus contract:
+  0x15 -> BC2/DXT3 (real Utage fixture + Kuriimu2 table, 2026-09-22)
+  0x2A / 0x17 / 0x18 -> BC3/DXT5
   0x19 -> BC1/DXT1
   0x27 -> A8R8G8B8
 
@@ -17,7 +18,8 @@ from dataclasses import dataclass
 from typing import List
 
 MAGIC=b"\x00XET"
-BC3_FORMATS={0x2A,0x17,0x15}
+BC2_FORMATS={0x15}
+BC3_FORMATS={0x2A,0x17,0x18}
 BC1_FORMATS={0x19}
 ARGB_FORMATS={0x27}
 
@@ -79,6 +81,16 @@ def _decode_bc1_block(block:bytes, force_four:bool=False):
         out.append((*pal[p],alpha[p]))
     return out
 
+def _decode_bc2_block(block:bytes):
+    if len(block)!=16: raise ValueError('BC2 block size')
+    alpha_bits=int.from_bytes(block[:8],'little')
+    colors=_decode_bc1_block(block[8:16], force_four=True)
+    out=[]
+    for t,(r,g,b,_) in enumerate(colors):
+        a=((alpha_bits>>(4*t))&0xF)*17
+        out.append((r,g,b,a))
+    return out
+
 def _alpha_palette(a0:int,a1:int):
     if a0>a1:
         return [a0,a1,
@@ -100,7 +112,7 @@ def _decode_bc3_block(block:bytes):
     return out
 
 def _surface_extent(fmt:int,w:int,h:int)->int:
-    if fmt in BC3_FORMATS:
+    if fmt in BC2_FORMATS or fmt in BC3_FORMATS:
         return ((w+3)//4)*((h+3)//4)*16
     if fmt in BC1_FORMATS:
         return ((w+3)//4)*((h+3)//4)*8
@@ -137,8 +149,12 @@ def decode_rgba(raw:bytes,level:int=0)->bytes:
             a,r,g,b=src[i*4:i*4+4]
             out[i*4:i*4+4]=bytes((r,g,b,a))
         return bytes(out)
-    bs=16 if info.format_id in BC3_FORMATS else 8
-    dec=_decode_bc3_block if info.format_id in BC3_FORMATS else _decode_bc1_block
+    if info.format_id in BC2_FORMATS:
+        bs=16; dec=_decode_bc2_block
+    elif info.format_id in BC3_FORMATS:
+        bs=16; dec=_decode_bc3_block
+    else:
+        bs=8; dec=_decode_bc1_block
     p=0
     for by in range((h+3)//4):
         for bx in range((w+3)//4):
