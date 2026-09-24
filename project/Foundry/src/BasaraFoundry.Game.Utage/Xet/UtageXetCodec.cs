@@ -18,10 +18,11 @@ public sealed record XetSingleLevelBuildResult(
 /// <summary>
 /// Certified top-level BCn codec boundary for Utage PS3 XET resources.
 ///
-/// Read support follows the XET metadata capability table. PS3 BC payloads
-/// store RGB565 colour endpoints as big-endian u16 even though BC index bytes
-/// retain the standard bit packing expected by BCnEncoder.Net. All BCn decode
-/// and encode calls therefore pass through the endpoint-endian bridge below.
+/// Read support follows the XET metadata capability table. XET header/table
+/// fields are big-endian on PS3, but verified Utage BC payloads use the normal
+/// BCn byte layout expected by BCnEncoder.Net. Do not infer or apply a colour
+/// endpoint byte swap from container endianness. The 2026-09-24 title_004
+/// runtime failure explicitly disproved that synthetic assumption.
 ///
 /// Write support is intentionally narrower: v0.1 only re-encodes the DXT5
 /// codes already proven in the Utage project. DXT1 and fixture-proven 0x15
@@ -41,10 +42,9 @@ public static class UtageXetCodec
             ?? throw new NotSupportedException("XET top-level byte size is unknown for this format.");
         var payload = raw.Slice(info.TextureOffset, payloadLength).ToArray();
 
-        // BCnEncoder.Net expects standard little-endian RGB565 endpoint words.
-        // Utage PS3 stores only those colour endpoint words big-endian; alpha
-        // endpoints and all index byte arrays keep their standard packing.
-        SwapColourEndpointEndianInPlace(payload, format);
+        // Verified Utage 0x2A/title_004 uses standard BCn payload byte order.
+        // XET container fields are big-endian, but the BC payload is not
+        // endpoint-byte-swapped.
 
         var decoder = new BcDecoder();
         var pixels = decoder.DecodeRaw(payload, info.Width, info.Height, format);
@@ -133,16 +133,15 @@ public static class UtageXetCodec
 
         var encoder = new BcEncoder();
         encoder.OutputOptions.Format = CompressionFormat.Bc3;
-        encoder.OutputOptions.Quality = CompressionQuality.BestQuality;
+        // Kuriimu2/Kanvas parity: BCnEncoder.Net 2.2.1 Balanced, no mipmaps.
+        encoder.OutputOptions.Quality = CompressionQuality.Balanced;
         encoder.OutputOptions.GenerateMipMaps = false;
 
         var levels = encoder.EncodeToRawBytes(storageRgba.ToArray(), width, height, PixelFormat.Rgba32);
         if (levels.Length != 1)
             throw new InvalidDataException($"BCn encoder returned {levels.Length} levels for a single-level request.");
 
-        var encoded = levels[0];
-        SwapColourEndpointEndianInPlace(encoded, CompressionFormat.Bc3);
-        return encoded;
+        return levels[0];
     }
 
     private static byte[] StorageToDisplayRgba(UtageXetInfo info, ReadOnlySpan<byte> storageRgba)
@@ -202,27 +201,6 @@ public static class UtageXetCodec
 
     private static byte ClampByte(double value) =>
         (byte)Math.Clamp((int)value, 0, 255);
-
-    internal static void SwapColourEndpointEndianInPlace(Span<byte> payload, CompressionFormat format)
-    {
-        var (blockBytes, colourOffset) = format switch
-        {
-            CompressionFormat.Bc1 => (8, 0),
-            CompressionFormat.Bc2 => (16, 8),
-            CompressionFormat.Bc3 => (16, 8),
-            _ => throw new NotSupportedException($"PS3 endpoint-endian bridge does not support {format}.")
-        };
-
-        if (payload.Length % blockBytes != 0)
-            throw new InvalidDataException($"BC payload length {payload.Length} is not a whole number of {blockBytes}-byte {format} blocks.");
-
-        for (var block = 0; block < payload.Length; block += blockBytes)
-        {
-            var o = block + colourOffset;
-            (payload[o], payload[o + 1]) = (payload[o + 1], payload[o]);
-            (payload[o + 2], payload[o + 3]) = (payload[o + 3], payload[o + 2]);
-        }
-    }
 
     public static void RequireEncodingCapability(UtageXetInfo info)
     {
