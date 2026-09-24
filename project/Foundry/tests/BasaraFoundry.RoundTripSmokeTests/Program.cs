@@ -35,10 +35,21 @@ internal static class Program
         True(first.R >= 240 && first.G <= 16 && first.B <= 16 && first.A >= 240,
             "writer emits PS3-endian BC3 colour endpoints");
 
-        var quarantined15 = BuildEmptyXet(4, 4, 0x15);
+        var ps3Bc2Fixture = BuildPs3Bc2SolidRedXet(alphaNibble: 8);
+        var ps3Bc2Decoded = UtageXetCodec.DecodeTopLevel(ps3Bc2Fixture).Rgba;
+        for (var i = 0; i < ps3Bc2Decoded.Length; i += 4)
+        {
+            True(ps3Bc2Decoded[i] >= 248, "0x15 BC2 fixture decodes red channel");
+            True(ps3Bc2Decoded[i + 1] <= 8, "0x15 BC2 fixture decodes green channel");
+            True(ps3Bc2Decoded[i + 2] <= 8, "0x15 BC2 fixture decodes blue channel");
+            Equal((byte)136, ps3Bc2Decoded[i + 3], "0x15 BC2 fixture decodes explicit 4-bit alpha");
+        }
+        var ps3Bc2Info = UtageXetReader.ReadInfo(ps3Bc2Fixture);
+        Equal("DXT3", ps3Bc2Info.BlockFormat!, "0x15 maps to DXT3/BC2 for read");
+        True(!UtageXetCodec.CanEncode(ps3Bc2Info), "0x15 BC2 remains non-writable");
         Throws<NotSupportedException>(
-            () => UtageXetCodec.DecodeTopLevel(quarantined15),
-            "0x15 decode is fail-closed pending BC2/BC3 fixture revalidation");
+            () => UtageXetCodec.ReplaceSingleLevel(ps3Bc2Fixture, ps3Bc2Decoded),
+            "0x15 BC2 production write remains fail-closed");
 
         var root = Path.Combine(Path.GetTempPath(), $"basara-foundry-roundtrip-{Guid.NewGuid():N}");
         Directory.CreateDirectory(root);
@@ -103,6 +114,22 @@ internal static class Program
         block[8] = 0xF8; block[9] = 0x00; // RGB565 red, PS3 big-endian
         block[10] = 0x07; block[11] = 0xE0; // RGB565 green, PS3 big-endian
         // colour indices 0 -> endpoint red
+        return raw;
+    }
+
+    private static byte[] BuildPs3Bc2SolidRedXet(byte alphaNibble)
+    {
+        if (alphaNibble > 0x0F)
+            throw new ArgumentOutOfRangeException(nameof(alphaNibble));
+
+        var raw = BuildEmptyXet(4, 4, 0x15);
+        var block = raw.AsSpan(20, 16);
+        var packedAlpha = (byte)(alphaNibble | (alphaNibble << 4));
+        for (var i = 0; i < 8; i++)
+            block[i] = packedAlpha;
+        block[8] = 0xF8; block[9] = 0x00; // RGB565 red, PS3 big-endian
+        block[10] = 0x07; block[11] = 0xE0; // RGB565 green, PS3 big-endian
+        // colour index 0 for every pixel -> red endpoint.
         return raw;
     }
 
