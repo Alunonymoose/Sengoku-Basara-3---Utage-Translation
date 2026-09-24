@@ -16,6 +16,9 @@ Implemented now:
 - parses every ARC through `safe_arc.py`;
 - emits a complete ARC-member inventory;
 - invokes the existing Resource Ownership Analyzer rather than reimplementing ownership logic;
+- inventories every rTexture through the recovered solved-XET reader;
+- decodes/hash-fingerprints supported level-0 texture RGBA;
+- intercepts 0x15 before image decode and emits it as quarantined;
 - extracts divergent/unresolved provider classes;
 - emits one `UNRESOLVED.json` queue;
 - records tool hashes and run metadata;
@@ -23,7 +26,7 @@ Implemented now:
 
 Not yet integrated:
 
-- solved-XET texture census and preview generation;
+- semantic visual classification/contact-sheet review on top of the structural texture census;
 - 0x15 BC2-vs-BC3 fixture revalidation;
 - recovered GSM/FIM message census;
 - PAM/media census;
@@ -88,6 +91,8 @@ Implemented:
 - `ARC_MEMBERS.csv`
 - `RESOURCE_OWNERSHIP.json`
 - `DIVERGENT_PROVIDERS.json`
+- `TEXTURE_CENSUS.json`
+- `TEXTURE_CENSUS.csv`
 - `UNRESOLVED.json`
 - `AUDIT_SUMMARY.md`
 - `SHA256SUMS.json`
@@ -97,7 +102,7 @@ Explicit fail-closed placeholders are also emitted for not-yet-wired stages so d
 ## Development order
 
 1. add tests for bootstrap hashing, safe-ARC pinning, output-location refusal and ARC parse failure;
-2. wire the recovered solved-XET read path;
+2. generate visual review/contact sheets and semantic texture dispositions;
 3. revalidate/quarantine 0x15 correctly;
 4. wire recovered GSM/FIM grammar;
 5. wire media and loose/platform censuses;
