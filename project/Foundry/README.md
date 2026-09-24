@@ -1,5 +1,15 @@
 # BASARA Foundry
 
+## v0.2 orchestration integration
+
+The WinUI/core solution remains the durable application layer. Current-live authority and production transaction identity now come from the repository-level orchestration front door:
+
+`project/foundry.ps1` -> `project/orchestration/foundry.py`
+
+Use it to snapshot/query/verify the exact current PS3_GAME tree, bind RPCS3 ownership evidence, create SHA-bound patch recipes, record candidate approval/rejection, compare golden runtime screenshots, and bind runtime evidence.
+
+The GUI must consume these contracts rather than creating a separate notion of "current project state". See `project/orchestration/ARCHITECTURE_V0_2.md`.
+
 BASARA Foundry is a fresh, Utage-first translation workstation. It is intentionally **not** an Alrummi GUI rewrite.
 
 ## v0.1 vertical slice
