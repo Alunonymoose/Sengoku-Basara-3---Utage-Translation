@@ -33,16 +33,19 @@ Observed:
 - Its PS3 writer may store a member raw when compression is not worthwhile.
 - Its reader explicitly accepts PS3 members where `compressedSize == uncompressedSize` as raw bytes.
 
-Status: **PROVEN EXTERNALLY; NOT YET PROMOTED TO UTAGE FORMAT CANON**.
-Why this matters:
-- BASARA Foundry currently documents ARC v8 and preservation rules, but does not document the external window-14/raw-member support tuple.
-- This may explain valid raw members and may matter to byte-faithful rebuilds.
+Status: **EXTERNAL GENERIC CLAIM TESTED AND REJECTED AS AN UTAGE GENERALIZATION.**
 
-Required validation:
-1. census fresh Utage ARC members for compressed-size == uncompressed-size cases;
-2. inspect zlib CMF/FLG on compressed members and derive actual window declaration;
-3. compare current Foundry writer output with the source member's zlib header/window behaviour;
-4. only then decide whether window-14 should become a certified Utage writer rule.
+Live corpus validation on 2026-09-25:
+- ENG: 4,645 ARC v8 archives, 68,325 members, 68,177 zlib members, 148 raw members, 0 unsupported storage cases.
+- JPN: 4,076 ARC v8 archives, 61,252 members, 61,112 zlib members, 140 raw members, 0 unsupported storage cases.
+- Every compressed member in both corpora uses zlib CMF `0x78`, which declares a 15-bit/32 KiB window.
+- Zero valid compressed members have compressed size equal to declared raw size.
+- Raw and compressed entries both use packed low flag value `2` in this corpus; the low bits are not a compression discriminator here.
+
+Conclusion:
+- `allowRaw=true` is compatible with real Utage.
+- REvilLib's generic PS3 `windowSize=14` must **not** be copied into an Utage writer. Actual Utage corpus evidence is window 15.
+- The current Foundry Python/.NET default-zlib writers therefore match the observed window declaration better than the external generic PS3 profile.
 
 ## 3. Format 0x2B: independent PS3 RBxG corroboration vs REvilLib naming
 
@@ -92,3 +95,22 @@ The helper formula may reflect that tool's internal interpretation or an older r
 2. Perform a real 0x2B three-model semantics test.
 3. Import REvilLib SB3/SBSH class-extension taxonomy as an external cross-check table, clearly labelled external.
 4. Continue source-delta hunting only after those tests, because these have concrete falsifiable outcomes.
+
+
+## 5. ARCS / SCRA child-archive serialization cracked
+
+External clue:
+- REvilLib's binary detector explicitly recognizes `CompileFourCC("ARCS")` but does not parse it.
+- UMVC3 tooling identifies `0x73850D05` as `rArchive`.
+
+Live Utage proof:
+- all 117 `rArchive` members per route are raw ARCS/SCRA records;
+- binary layout is `magic + u16 version + u16 count + count*(u32 classHash,u32 pathHash)`;
+- path hash is the full 32-bit complement CRC32 of the lowercased internal path;
+- 507/507 references per route resolve uniquely inside the containing parent;
+- 117/117 manifests per route exactly reproduce the ordered table identities of their standalone child ARC;
+- shared resources are deduplicated in the parent and may be referenced by multiple child manifests.
+
+This is the clearest structural proof so far for the parent/child archive relationship behind `title_id`, `pl_all`, `quest_id`, and `friend`.
+
+Status: **STRUCTURALLY VERIFIED**.
