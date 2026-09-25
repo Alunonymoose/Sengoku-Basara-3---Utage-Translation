@@ -56,3 +56,27 @@ This CLI is read-only with respect to game files. It does not install, rebuild, 
 5. Add golden screenshot records bound to snapshot ID and runtime-matrix row.
 6. Add optional content-addressed private storage for large historical artifacts; Git remains source/spec/manifest authority.
 7. Add formal binary specifications as independent verification fixtures without replacing production writers until parity tests pass.
+
+## Hazard triage
+
+`hazards` is the raw divergent-provider inventory. It is intentionally exhaustive and therefore noisy.
+
+Use `triage` for engineering work:
+
+    .\project\foundry.ps1 triage 'E:\Utage Patching New' --actionable --limit 50
+
+The triage layer separates:
+
+- `SAME_FAMILY_DIVERGENCE` — strongest structural hazard; different payloads inside the same route/load family.
+- `SAME_ROUTE_CROSS_FAMILY_DIVERGENCE` — different payloads in ENG (or JPN) across different load families; often intentional but worth ownership analysis.
+- `EXPECTED_ENG_JPN_DIVERGENCE` — one internally-consistent ENG payload versus one internally-consistent JPN payload; usually expected localisation and suppressed by `--actionable`.
+- `CROSS_ROUTE_OR_CONTEXT_DIVERGENCE` — mixed cases needing context.
+- `BACKUP_OR_DERIVATIVE` providers — likely live-tree contamination such as `- Copy.arc`, `*_backup.arc`, or same-directory derivative siblings.
+
+A backup/derivative flag is a hygiene warning, not proof that RPCS3 loads that ARC. Never delete/move it solely from the flag; runtime/load evidence or reference checks must confirm it is not required.
+
+## Special ARC containers
+
+The production `safe_arc.parse_arc()` remains fail-closed on non-zero inter-payload gaps and trailers.
+
+The snapshot index uses `safe_arc.inspect_arc()`, which keeps header/range/codec/overlap validation strict but records non-zero gap/trailer bytes as container anomalies. This allows special stock/live containers to be searchable without weakening mutation safety. Production rebuilds of those ARCs remain blocked until their extra bytes are understood and explicitly supported.
