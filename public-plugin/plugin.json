@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "basara-utage-foundry-core",
+  "version": "0.1.0",
+  "description": "Public portable BASARA Foundry Core for Sengoku BASARA 3 Utage reverse engineering and localisation. Encodes evidence discipline, live-file authority, safe ARC/TEX/XET production, candidate-first texture engineering, and reproducible research without retail game assets.",
+  "author": {"name": "BASARA Foundry contributors"},
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "BASARA Foundry Core",
+        "shortDescription": "Reusable Utage reverse-engineering and localisation methods",
+        "longDescription": "Public portable engineering skills for Sengoku BASARA 3 Utage. Use the researcher's own legally obtained game files as live production input. Recover current public canon before generic MT Framework assumptions; decode live textures before creative generation; preserve approval identity and protected bytes; validate the final rebuilt artifact.",
+        "developerName": "BASARA Foundry contributors",
+        "category": "Developer Tools",
+        "capabilities": ["Interactive"],
+        "defaultPrompt": [
+          "Read the bundled BASARA Foundry Core references and production contract, then inspect my fresh Utage files directly before making production changes.",
+          "Use the public Foundry methodology to diagnose this Utage ARC/TEX/XET issue without rediscovering solved format rules.",
+          "Audit this Utage resource/build using evidence-backed findings and preserve any new reusable public-safe discovery."
+        ]
+      }
+    }
+  }
+}
