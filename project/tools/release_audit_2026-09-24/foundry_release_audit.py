@@ -33,6 +33,7 @@ import hashlib
 import importlib.util
 import json
 import os
+import sqlite3
 import subprocess
 import sys
 import time
@@ -60,6 +61,7 @@ RUNTIME_MATRIX_TEMPLATE_PATH = TOOLS_DIR.parent / "runtime" / "runtime_acceptanc
 RUNTIME_MATRIX_VALIDATOR_PATH = TOOLS_DIR.parent / "runtime" / "validate_runtime_matrix.py"
 FONT_CENSUS_TOOL_PATH = HERE / "font_contract_census.py"
 LAYOUT_CENSUS_TOOL_PATH = HERE / "layout_census.py"
+ORCHESTRATION_CLI_PATH = TOOLS_DIR.parent / "orchestration" / "foundry.py"
 
 MANDATORY_PLACEHOLDER_OUTPUTS = (
     "TEXTURE_CENSUS.json",
@@ -198,6 +200,140 @@ def tree_digest(files: list[dict[str, Any]]) -> str | None:
         line = f"{r['relative_path']}\0{r['size']}\0{r['sha256']}\n".encode("utf-8")
         h.update(line)
     return h.hexdigest()
+
+
+def resolve_snapshot_db(path: Path) -> Path:
+    p = path.resolve()
+    if p.is_file() and p.name == "index.sqlite3":
+        return p
+    if p.is_dir() and (p / "index.sqlite3").is_file():
+        return p / "index.sqlite3"
+    if p.is_dir() and (p / ".foundry" / "CURRENT_SNAPSHOT").is_file():
+        sid = (p / ".foundry" / "CURRENT_SNAPSHOT").read_text(encoding="ascii").strip()
+        return p / ".foundry" / "snapshots" / sid / "index.sqlite3"
+    if p.is_dir() and (p / "CURRENT_SNAPSHOT").is_file():
+        sid = (p / "CURRENT_SNAPSHOT").read_text(encoding="ascii").strip()
+        return p / "snapshots" / sid / "index.sqlite3"
+    raise ValueError(f"cannot resolve Foundry snapshot database from {p}")
+
+
+def verify_snapshot_binding(snapshot_db: Path, live_root: Path) -> tuple[dict[str, Any] | None, str | None]:
+    proc = subprocess.run(
+        [sys.executable, str(ORCHESTRATION_CLI_PATH), "verify", str(snapshot_db), "--root", str(live_root)],
+        capture_output=True, text=True
+    )
+    try:
+        report = json.loads(proc.stdout)
+    except Exception as exc:
+        return None, f"snapshot verifier did not return JSON: {exc!r}; stderr={proc.stderr[-2000:]}"
+    if proc.returncode != 0 or not report.get("match"):
+        return report, "current live tree no longer matches supplied snapshot"
+    return report, None
+
+
+def snapshot_file_rows(snapshot_db: Path, root: Path) -> tuple[list[dict[str, Any]], str]:
+    conn = sqlite3.connect(snapshot_db)
+    conn.row_factory = sqlite3.Row
+    meta_row = conn.execute("SELECT value FROM metadata WHERE key='snapshot_id'").fetchone()
+    snapshot_id = json.loads(meta_row["value"]) if meta_row else ""
+    rows = []
+    for r in conn.execute("SELECT path,size,sha256 FROM files ORDER BY path"):
+        p = root / r["path"]
+        rows.append({
+            "relative_path": r["path"],
+            "size": r["size"],
+            "sha256": r["sha256"],
+            "class": classify_file(p),
+            "status": "OK",
+            "error": None,
+        })
+    conn.close()
+    return rows, snapshot_id
+
+
+def snapshot_arc_member_rows(snapshot_db: Path) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    conn = sqlite3.connect(snapshot_db)
+    conn.row_factory = sqlite3.Row
+    rows = []
+    unresolved = []
+    for r in conn.execute("""
+        SELECT f.path arc_relative_path,f.sha256 arc_sha256,r.member_index,r.internal_path,
+               r.type_hex,r.flags,r.compressed_size,r.stored_sha256,
+               r.declared_raw_size,r.actual_raw_size,r.raw_sha256,r.codec,r.warning
+        FROM resources r JOIN arcs a ON a.id=r.arc_id JOIN files f ON f.id=a.file_id
+        ORDER BY f.path,r.member_index
+    """):
+        d = dict(r)
+        rows.append({
+            "arc_relative_path": d["arc_relative_path"],
+            "arc_sha256": d["arc_sha256"],
+            "member_index": d["member_index"],
+            "internal_path": d["internal_path"],
+            "type_hash": d["type_hex"],
+            "flags": d["flags"],
+            "stored_size": d["compressed_size"],
+            "stored_sha256": d["stored_sha256"],
+            "expanded_declared_size": d["declared_raw_size"],
+            "expanded_actual_size": d["actual_raw_size"],
+            "expanded_sha256": d["raw_sha256"],
+            "codec": d["codec"],
+            "warning": d["warning"],
+        })
+        if d["warning"]:
+            unresolved.append({
+                "category": "ARC_WARNING",
+                "owner_path": f"{d['arc_relative_path']}::{d['member_index']}::{d['internal_path']}",
+                "reason": d["warning"],
+                "required_next_evidence": "Retain warning; production writes must preserve current decoded-size contract.",
+                "recommended_tool": "safe_arc.py",
+                "release_severity": "NEEDS_REVIEW",
+            })
+    for r in conn.execute("SELECT f.path,a.error FROM arcs a JOIN files f ON f.id=a.file_id WHERE a.parse_status!='OK' ORDER BY f.path"):
+        unresolved.append({
+            "category": "ARC_PARSE",
+            "owner_path": r["path"],
+            "reason": r["error"],
+            "required_next_evidence": "Inspect exact current ARC structure; do not repair during audit.",
+            "recommended_tool": "safe_arc.py / current ARC forensic workflow",
+            "release_severity": "BLOCKED",
+        })
+    conn.close()
+    return rows, unresolved
+
+
+def run_snapshot_ownership(snapshot_db: Path, outdir: Path) -> tuple[dict[str, Any] | None, list[dict[str, Any]]]:
+    unresolved: list[dict[str, Any]] = []
+    target = outdir / "_ownership_stage"
+    target.mkdir(parents=True, exist_ok=True)
+    proc = subprocess.run(
+        [sys.executable, str(ORCHESTRATION_CLI_PATH), "export-ownership", str(snapshot_db), "--out", str(target)],
+        capture_output=True, text=True
+    )
+    report_path = target / "resource_ownership.json"
+    if proc.returncode != 0 or not report_path.is_file():
+        unresolved.append({
+            "category": "OWNERSHIP_SNAPSHOT_EXPORT",
+            "owner_path": str(snapshot_db),
+            "reason": f"exit={proc.returncode}; stderr={proc.stderr[-4000:]}",
+            "required_next_evidence": "Repair snapshot ownership export; never fall back silently to filesystem-order inference.",
+            "recommended_tool": "project/orchestration/foundry.py export-ownership",
+            "release_severity": "BLOCKED",
+        })
+        return None, unresolved
+    report = json.loads(report_path.read_text(encoding="utf-8"))
+    atomic_write_json(outdir / "RESOURCE_OWNERSHIP.json", report)
+    divergent = [g for g in report.get("exact_duplicate_classes", []) if g.get("classification") in {"DIVERGENT", "UNRESOLVED_COMPRESSION"}]
+    atomic_write_json(outdir / "DIVERGENT_PROVIDERS.json", divergent)
+    for g in divergent:
+        unresolved.append({
+            "category": "DIVERGENT_PROVIDER",
+            "owner_path": g.get("exact_path"),
+            "reason": g.get("risk") or g.get("classification"),
+            "required_next_evidence": "Disposition intentional variant vs equivalence sync; runtime/load-family evidence required for precedence claims.",
+            "recommended_tool": "Foundry snapshot ownership + RPCS3 evidence",
+            "release_severity": "NEEDS_REVIEW",
+        })
+    return report, unresolved
 
 
 def scan_files(root: Path) -> list[dict[str, Any]]:
@@ -758,6 +894,8 @@ def main() -> int:
     ap.add_argument("--sh-root", type=Path, default=None)
     ap.add_argument("--rpcs3-log", type=Path, action="append", default=[])
     ap.add_argument("--out", type=Path, required=True)
+    ap.add_argument("--snapshot", type=Path, default=None,
+                    help="Optional Foundry v0.2 snapshot/index. When supplied, exact file/member/ownership truth is reused after live-tree verification.")
     ap.add_argument("--allow-tool-drift", action="store_true",
                     help="Engineering-only override; recorded in metadata and never a release PASS.")
     args = ap.parse_args()
@@ -814,20 +952,43 @@ def main() -> int:
     started_local = datetime.now().astimezone()
     t0 = time.time()
 
-    files = scan_files(live_root)
+    snapshot_db = resolve_snapshot_db(args.snapshot) if args.snapshot else None
+    if snapshot_db and (live_root / "PS3_GAME").is_dir():
+        live_root = (live_root / "PS3_GAME").resolve()
+    snapshot_id = None
+    snapshot_verify = None
+    if snapshot_db:
+        snapshot_verify, snapshot_error = verify_snapshot_binding(snapshot_db, live_root)
+        if snapshot_error:
+            atomic_write_json(outdir / "00_RUN_METADATA.json", {
+                "schema": SCHEMA,
+                "status": "SNAPSHOT_BINDING_FAILURE",
+                "release_pass": False,
+                "snapshot_db": str(snapshot_db),
+                "snapshot_verification": snapshot_verify,
+                "reason": snapshot_error,
+            })
+            print(f"ERROR: {snapshot_error}", file=sys.stderr)
+            return 2
+        files, snapshot_id = snapshot_file_rows(snapshot_db, live_root)
+    else:
+        files = scan_files(live_root)
     file_error_rows = [r for r in files if r["status"] != "OK"]
-    live_tree_sha256 = tree_digest(files)
+    live_tree_sha256 = snapshot_id if snapshot_db else tree_digest(files)
 
     atomic_write_json(outdir / "FILE_TREE_HASHES.json", {
         "schema": SCHEMA,
         "live_root_hint": str(live_root),
         "live_tree_sha256": live_tree_sha256,
+        "snapshot_id": snapshot_id,
+        "snapshot_db": str(snapshot_db) if snapshot_db else None,
+        "snapshot_verification": snapshot_verify,
         "files": files,
     })
     write_csv(outdir / "FILE_TREE_HASHES.csv", files,
               ["relative_path", "size", "sha256", "class", "status", "error"])
 
-    members, unresolved = arc_member_rows(live_root, safe_arc)
+    members, unresolved = snapshot_arc_member_rows(snapshot_db) if snapshot_db else arc_member_rows(live_root, safe_arc)
     atomic_write_json(outdir / "ARC_MEMBERS.json", {
         "schema": SCHEMA,
         "members": members,
@@ -849,7 +1010,7 @@ def main() -> int:
             "release_severity": "BLOCKED",
         })
 
-    ownership_report, ownership_unresolved = run_ownership(live_root, outdir, logs)
+    ownership_report, ownership_unresolved = (run_snapshot_ownership(snapshot_db, outdir) if snapshot_db else run_ownership(live_root, outdir, logs))
     unresolved.extend(ownership_unresolved)
 
     textures, texture_unresolved = texture_census(live_root, safe_arc, xet_decoder)
@@ -950,6 +1111,9 @@ def main() -> int:
         "duration_seconds": round(time.time() - t0, 3),
         "live_root_hint": str(live_root),
         "live_tree_sha256": live_tree_sha256,
+        "snapshot_id": snapshot_id,
+        "snapshot_db": str(snapshot_db) if snapshot_db else None,
+        "snapshot_verification": snapshot_verify,
         "samurai_heroes_root_hint": str(args.sh_root.resolve()) if args.sh_root else None,
         "rpcs3_logs": [
             {"path": str(p), "sha256": sha256_file(p) if p.is_file() else None}

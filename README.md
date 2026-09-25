@@ -48,3 +48,9 @@ BLJM60389
 
 Sengoku BASARA: Samurai Heroes is used as an English localisation and
 technical reference where appropriate.
+
+## Current engineering front door
+
+Development of the reproducible project-state layer is on `foundry-v0.2-orchestration` pending review. The command-line front door is `project/foundry.ps1`; it snapshots the exact live `PS3_GAME` tree into a content-addressed SQLite index and binds ownership, patch recipes, approvals, runtime evidence, and visual regression to that snapshot.
+
+Historical handoffs and dated work directories are context only; they do not outrank a verified current-live snapshot or runtime evidence.

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://basara-foundry.local/schema/live-snapshot-v1.schema.json",
+  "title": "BASARA Foundry Live Snapshot V1",
+  "type": "object",
+  "required": ["schema", "schema_version", "snapshot_id", "live_tree_sha256", "created_utc", "file_count", "arc_file_count", "resource_count"],
+  "properties": {
+    "schema": {"const": "BASARA_FOUNDRY_LIVE_SNAPSHOT_V1"},
+    "schema_version": {"const": 1},
+    "snapshot_id": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "live_tree_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "created_utc": {"type": "string"},
+    "scan_root": {"type": "string"},
+    "source_git_commit": {"type": ["string", "null"]},
+    "file_count": {"type": "integer", "minimum": 0},
+    "arc_file_count": {"type": "integer", "minimum": 0},
+    "resource_count": {"type": "integer", "minimum": 0},
+    "duplicate_provider_groups": {"type": "integer", "minimum": 0},
+    "divergent_provider_groups": {"type": "integer", "minimum": 0},
+    "parse_error_count": {"type": "integer", "minimum": 0},
+    "warning_count": {"type": "integer", "minimum": 0}
+  },
+  "additionalProperties": true
+}

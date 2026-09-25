@@ -1,3 +1,7 @@
+> **2026-09-24 APPROVAL HASH SUPERSESSION**
+>
+> On Foundry v0.2 work, human artwork approval applies to **one exact candidate SHA-256** recorded in a patch recipe. Regenerating, editing, resizing, recompressing, or otherwise changing the candidate invalidates that approval. The source snapshot and all provider ARC/resource hashes are also part of the transaction identity.
+>
 > **2026-09-24 TEXTURE CODEC HARDENING SUPERSESSION — READ FIRST**
 >
 > The durable Foundry C# texture path has now been corrected to the current PS3 contract and supersedes older operational warnings that no current writer exists.
@@ -269,7 +273,7 @@ Before production encode:
 2. Preserve unrelated artwork/alpha/coordinates.
 3. Show the candidate to the user.
 4. Prefer an in-layout mockup using the actual owner/controller.
-5. After approval, freeze candidate and mask hashes and perform the production transaction.
+5. After approval, record the exact candidate SHA-256 as `approved_candidate_sha256` in a snapshot-bound patch recipe, freeze candidate/mask hashes, and perform the production transaction. Any candidate byte change requires new approval.
 
 If the user asks to alter artwork again, produce a new candidate and re-approve before rebuilding the final ARC.
 
