@@ -54,3 +54,14 @@ That format lets another human or model audit the finding rather than simply tru
 ## Current public-core milestone
 
 On 2026-09-25 the project formally adopted the rule that BASARA Foundry Core is a public reusable research layer, separate from the private/live patch. The production-contract skill was added so the hard-won safety rules are portable across fresh AI accounts and models.
+
+
+## Open licensing
+
+BASARA Foundry Core is intentionally open for reuse.
+
+- project-authored code/tools: **MIT**
+- project-authored research/docs/agent skills: **CC BY 4.0**
+- Capcom/third-party assets: **not licensed by this project**
+
+A portable plugin source package lives in `public-plugin/`.
