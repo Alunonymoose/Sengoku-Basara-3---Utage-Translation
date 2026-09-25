@@ -75,6 +75,19 @@ This preserves hidden R/B information. Generic one-PNG RGBA writes remain unsafe
 
 Current project evidence supports BC2/DXT3 read/preview for known fixtures. Production writing requires a real edit/rebuild/runtime fixture before promotion.
 
+
+### PS3 block-compressed colour-order transform
+
+The historically proven Kuriimu2 revision used by this project applies `BcSwizzle` to PS3 block-compressed textures before BC encoding/after BC decoding.
+
+That transform is generated from bit coordinates:
+
+`[(1,0), (2,0), (0,1), (0,2)]`
+
+which defines a **4x4 Morton/Z-order colour microtile**. It is applied to the decoded colour stream used to form 4x4 BC blocks, not as a generic post-encode "8x4 BC block" shuffle.
+
+Therefore the old broad rule that PS3 BC texture safety can be described as an 8x4-block tile is superseded. For certified production, use the exact proven Kuriimu transform or fixture-derived equivalent rather than a guessed RSX tile size.
+
 ## Atlas/layout discipline
 
 - The historical 2x logical-to-atlas relationship is useful for known fixtures, not a universal LSP/PSL parser rule.
