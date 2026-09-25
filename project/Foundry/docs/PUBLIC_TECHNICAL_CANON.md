@@ -64,6 +64,25 @@ Therefore, for this live Utage corpus:
 
 An external REvilLib generic PS3 ARC setting of `windowSize=14` does **not** describe the actual zlib window declared by these Utage members and must not be promoted as an Utage writer rule.
 
+
+### Live ENG ARC corpus census
+
+Read-only census of the current live ENG tree on 2026-09-25:
+
+- 4,645 ARC files
+- 68,325 members
+- every ARC was version 8
+- every member used low 3-bit size-field flag value `2`
+- 68,177 members were compressed
+- 148 members were stored raw (`compressed_size == decompressed_size`)
+- no zero-size members in this live ENG corpus
+- 48 distinct resource-class hashes were present
+- all 48 hashes resolve from the combined public REvilLib SB3/Samurai Heroes class inventories using the MT Framework V2 hash algorithm
+
+A sampled payload-header pass over 12,427 compressed members saw only standard zlib headers `0x789C` and `0x78DA`, both declaring `CINFO=7` / 32 KiB zlib window. Test decompression with `wbits=15` succeeded while `wbits=14` failed with "invalid window size" on sampled streams.
+
+Therefore REvilLib's SB3 profile value `windowSize=14` must not be interpreted as evidence that Utage ARC members themselves use a 16 KiB zlib header/window.
+
 ## TEX/XET
 
 - PS3 texture resources use the MT Framework `\0XET` family; the historical Exient/XGS interpretation was wrong.
