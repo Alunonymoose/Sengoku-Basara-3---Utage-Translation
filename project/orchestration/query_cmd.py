@@ -165,7 +165,7 @@ def triage_command(args)->int:
             # disagrees with itself and >=80% of that same family agrees on one
             # payload. Cross-family consensus is intentionally not enough:
             # result/select/tenka/etc may legitimately carry contextual variants.
-            if family.startswith("eng/") and summary["variant_count"]>1 and summary["dominant_fraction"]>=0.80:
+            if (family=="eng" or family.startswith("eng/")) and summary["variant_count"]>1 and summary["dominant_fraction"]>=0.80:
                 for p in outliers:
                     family_consensus_outliers.append({
                         "family":family,
