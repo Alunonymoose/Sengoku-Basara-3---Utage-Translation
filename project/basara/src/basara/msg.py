@@ -74,10 +74,15 @@ class Gsm:
             raise MsgError(f"GSM size check failed: {16 + count * 8 + pool_units * 2} != {len(blob)}")
         recs = tuple(struct.unpack_from(">II", blob, 16 + i * 8) for i in range(count))
         pool = struct.unpack_from(f">{pool_units}H", blob, 16 + count * 8)
-        for i, (o, n) in enumerate(recs):
-            if o + n > pool_units:
-                raise MsgError(f"record {i} exceeds pool")
+        # Shipped tables (official SH basara.arc/startup.arc too) end with records
+        # that point AT or PAST the pool end (e.g. offset=pool len=1, offset=pool+1
+        # len=0). They are preserved verbatim and can never be edited.
         return cls(hw, recs, pool)
+
+    @property
+    def dangling(self) -> tuple[int, ...]:
+        """Records whose span reaches past the pool (shipped quirk)."""
+        return tuple(i for i, (o, n) in enumerate(self.records) if o + n > len(self.pool))
 
     def __len__(self) -> int:
         return len(self.records)
@@ -97,9 +102,12 @@ class Gsm:
         """Replace record word runs. Same-length edits are written in place
         (byte-minimal); otherwise the pool is repacked in record order and
         trailing padding words are preserved."""
+        dangling = set(self.dangling)
         for i in changes:
             if not 0 <= i < len(self.records):
                 raise MsgError(f"unknown record {i}")
+            if i in dangling:
+                raise MsgError(f"record {i} points past the pool (shipped quirk); refusing to edit it")
         changes = {i: tuple(w) for i, w in changes.items() if tuple(w) != self.words(i)}
         if not changes:
             return self
@@ -109,15 +117,21 @@ class Gsm:
                 o, n = self.records[i]
                 pool[o:o + n] = w
             return replace(self, pool=tuple(pool))
-        used_end = max((o + n for o, n in self.records), default=0)
+        used_end = max((o + n for i, (o, n) in enumerate(self.records) if i not in dangling), default=0)
         padding = self.pool[used_end:]
         pool: list[int] = []
-        recs = []
+        recs: list = []
         for i in range(len(self.records)):
+            if i in dangling:
+                recs.append(None)
+                continue
             w = changes.get(i, self.words(i))
             recs.append((len(pool), len(w)))
             pool.extend(w)
         pool.extend(padding)
+        delta = len(pool) - len(self.pool)   # dangling records keep their distance from the pool end
+        recs = [self.records[i] if r is None else r for i, r in enumerate(recs)]
+        recs = [(o + delta, n) if i in dangling else (o, n) for i, (o, n) in enumerate(recs)]
         return Gsm(self.header_word, tuple(recs), tuple(pool))
 
     def _shared(self, changes: Mapping[int, Sequence[int]]) -> bool:

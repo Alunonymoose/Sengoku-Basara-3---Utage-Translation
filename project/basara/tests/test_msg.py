@@ -168,3 +168,21 @@ def test_message_table_builds_only_the_members_it_changed():
     assert t2.text(0) == "Sacred Tree Bow:{br}First Frost{end}"
     assert all(t2.text(r) == TEXTS[r] for r in range(1, len(TEXTS)))
     assert check(t2.gsm, t2.fim).ok
+
+
+def test_shipped_dangling_records_are_preserved_and_locked():
+    """Real shape from official SH/Utage basara.arc + startup.arc: the last two
+    records point at/past the pool end (offset=pool len=1, offset=pool+1 len=0)."""
+    g, _ = table_blobs(["Hi{end}", "Yo{end}"], CSA, padding=0)
+    gsm = Gsm.parse(g)
+    pool = len(gsm.pool)
+    shipped = Gsm(gsm.header_word, gsm.records + ((pool, 1), (pool + 1, 0)), gsm.pool)
+    blob = shipped.to_bytes()
+    back = Gsm.parse(blob)
+    assert back.to_bytes() == blob and back.dangling == (2, 3)
+    with pytest.raises(MsgError, match="past the pool"):
+        back.with_records({2: [1]})
+    grown = back.with_records({0: encode("Hello there{end}", CSA)})
+    newpool = len(grown.pool)
+    assert grown.records[2:] == ((newpool, 1), (newpool + 1, 0))
+    assert grown.words(1) == back.words(1)
