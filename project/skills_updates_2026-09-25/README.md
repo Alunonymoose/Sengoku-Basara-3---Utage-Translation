@@ -12,3 +12,13 @@ matching skill (Settings → Skills, or ask Cowork/Claude Code to save them):
 `utage-session-start` and `utage-text-pipeline` need no texture change
 (session-start's tool-routing row "Textures / text → the pipeline skills"
 now resolves to the corrected texture skill).
+
+## 2026-09-26 addendum — `basara` core toolchain
+
+Add this line to the tool-routing table of **utage-session-start** and to §2
+of **utage-text-pipeline** (it supersedes `gsm_tools.py`/`arc_tools.py` for new work):
+
+> **All byte-level work goes through `basara`** (`project/basara`, `pip install -e project/basara[test]`):
+> `basara msg tables|show|census`, `basara catalog export|lint|import`, `basara tex …`,
+> `basara build|install|rollback`. Patchsets replace per-job scripts and ZIPs; `install`
+> implements the backup-before-write rule. See `.agents/skills/basara-core/SKILL.md`.

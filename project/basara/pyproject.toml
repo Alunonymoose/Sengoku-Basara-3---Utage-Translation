@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "basara"
+version = "0.1.0"
+description = "Core library + CLI for the Sengoku BASARA 3 Utage English patch: ARC, XET, GSM/FIM, TNF/CSA, PSL, patchsets, catalogs"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.24", "pillow>=10"]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "hypothesis>=6"]
+
+[project.scripts]
+basara = "basara.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "tests"]
+testpaths = ["tests"]

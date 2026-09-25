@@ -1,0 +1,44 @@
+name: basara core CI
+
+on:
+  push:
+    paths:
+      - 'project/basara/**'
+      - 'project/texture_tools/utage_xet/**'
+      - 'project/tools/donor_matcher_v5_1_2026-09-23/safe_arc.py'
+      - '.github/workflows/basara-core-ci.yml'
+  pull_request:
+    paths:
+      - 'project/basara/**'
+      - 'project/texture_tools/utage_xet/**'
+      - 'project/tools/donor_matcher_v5_1_2026-09-23/safe_arc.py'
+      - '.github/workflows/basara-core-ci.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: basara-core-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.11', '3.12']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install basara (editable) + test deps
+        run: python -m pip install -e "project/basara[test]" ruff
+      - name: Lint
+        run: ruff check project/basara/src project/basara/tests --select E,F,W,B --ignore E501,E731,E701,E702,B023
+      - name: Core suite (differential vs safe_arc, contract property tests, patch/install/rollback)
+        run: python -m pytest project/basara -q
+      - name: Texture suite through the compatibility shims
+        run: python -m pytest project/texture_tools/utage_xet -q
+      - name: CLI entry point
+        run: basara --version
