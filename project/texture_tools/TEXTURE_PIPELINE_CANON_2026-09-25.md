@@ -40,7 +40,7 @@ ordinary block layout; they are not an extra transform.)
 | 2026-09-23 | xet3/xetenc session declares endpoints big-endian; decodes 0x2A without the shader | swapped + no-shader output *looks* legible, so the error went unnoticed |
 | 2026-09-24 | Foundry C# adds a PS3 endpoint swap (commit series before e6ad054) | title_004 runtime failure: green rectangle, magenta logo |
 | 2026-09-24 | hotfix branch `hotfix-title004-bc-endian-20260924` removes the swap | never merged into `foundry-v0.1` (orphan history); swap remained on the primary branch |
-| 2026-09-25 | menu.arc member 58 written with xetenc (swapped + no shader) | in-game navy plate (8,63,140); model predicts (0,56,132) for that writer. Standard order decodes the JPN original with chroma exactly on 123. v3 rebuilt with standard order + YCbCr and installed (live `menu.arc` `ee9b0da1…`, backup `_MENU58_LABELS_V3_BACKUP_2026-09-25\`) |
+| 2026-09-25 | menu.arc member 58 written with xetenc (swapped + no shader) | in-game navy plate (8,63,140); model predicts (0,56,132) for that writer. Standard order decodes the JPN original with chroma exactly on 123. v3 rebuilt with standard order + YCbCr and installed (live `menu.arc` `ee9b0da1…`, backup `_MENU58_LABELS_V3_BACKUP_2026-09-25\`). Cowork-reported; v3 cold-boot result not yet separately recorded |
 | 2026-09-25 | this branch | swap removed from C# (hotfix ported), Python review decoder corrected, canonical `utage_xet` codec with in-game colour regression tests |
 
 Why it survived: an identity patch never calls the encoder, and a writer
