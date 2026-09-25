@@ -261,5 +261,21 @@ class OrchestrationTests(unittest.TestCase):
             self.assertEqual([],report["groups"][0]["contaminating_providers"])
 
 
+    def test_nested_arc_directories_are_distinct_families(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td)
+            brief=root/"PS3_GAME"/"USRDIR"/"nativePS3"/"rom"/"eng"/"brief"; brief.mkdir(parents=True)
+            og=brief/"og"; og.mkdir()
+            key=r"id\\fixture\\brief_context"
+            (brief/"mode_quest.arc").write_bytes(make_arc(key,b"NORMAL"))
+            (og/"mode_quest.arc").write_bytes(make_arc(key,b"OGMODE"))
+            self.assertEqual(0,self.run_cli("snapshot",str(root),"--force")[0])
+            code,text=self.run_cli("triage",str(root),"--actionable","--limit","10")
+            self.assertEqual(0,code)
+            g=json.loads(text)["groups"][0]
+            self.assertEqual("SAME_ROUTE_CROSS_FAMILY_DIVERGENCE",g["classification"])
+            self.assertEqual([],g["same_family_conflicts"])
+
+
 if __name__ == "__main__":
     unittest.main()
