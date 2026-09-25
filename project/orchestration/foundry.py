@@ -6,7 +6,7 @@ HERE=Path(__file__).resolve().parent
 if str(HERE) not in sys.path: sys.path.insert(0,str(HERE))
 from diff_cmd import diff_command
 from export_cmd import export_ownership_command
-from query_cmd import bind_log_command,hazards_command,query_command,status_command,verify_command
+from query_cmd import bind_log_command,hazards_command,query_command,status_command,triage_command,verify_command
 from recipe_cmd import recipe_approve_command,recipe_new_command,recipe_reject_command,recipe_validate_command
 from snapshot_cmd import snapshot_command
 from runtime_cmd import runtime_init_command,runtime_record_command,runtime_verify_evidence_command
@@ -18,7 +18,8 @@ def build_parser():
     q=sub.add_parser("query",help="Query exact resource ownership/providers"); q.add_argument("snapshot"); q.add_argument("resource"); q.add_argument("--type-hash"); q.add_argument("--exact",action="store_true"); q.add_argument("--json",action="store_true"); q.set_defaults(func=query_command)
     v=sub.add_parser("verify",help="Verify live files still match a snapshot"); v.add_argument("snapshot"); v.add_argument("--root"); v.set_defaults(func=verify_command)
     bl=sub.add_parser("bind-log",help="Bind observed RPCS3 ARC load order"); bl.add_argument("snapshot"); bl.add_argument("rpcs3_log"); bl.add_argument("--repo-root"); bl.set_defaults(func=bind_log_command)
-    hz=sub.add_parser("hazards",help="List divergent duplicate-provider identities"); hz.add_argument("snapshot"); hz.add_argument("--limit",type=int); hz.set_defaults(func=hazards_command)
+    hz=sub.add_parser("hazards",help="List raw divergent duplicate-provider identities"); hz.add_argument("snapshot"); hz.add_argument("--limit",type=int); hz.set_defaults(func=hazards_command)
+    tr=sub.add_parser("triage",help="Prioritize divergent providers by route/family and tree contamination"); tr.add_argument("snapshot"); tr.add_argument("--limit",type=int); tr.add_argument("--actionable",action="store_true"); tr.set_defaults(func=triage_command)
     d=sub.add_parser("diff",help="Compare two snapshots"); d.add_argument("a"); d.add_argument("b"); d.set_defaults(func=diff_command)
     st=sub.add_parser("status",help="Summarize a snapshot"); st.add_argument("snapshot"); st.set_defaults(func=status_command)
     ex=sub.add_parser("export-ownership",help="Export snapshot DB in existing ownership/donor-matcher formats"); ex.add_argument("snapshot"); ex.add_argument("--out",required=True); ex.add_argument("--repo-root"); ex.set_defaults(func=export_ownership_command)
