@@ -136,6 +136,42 @@ Therefore the old broad rule that PS3 BC texture safety can be described as an 8
 - Preserve exact source dimensions, slot coordinates, padding/material fields, alpha/channel semantics and untouched pixels/blocks.
 - A generated whole-screen concept is not a production atlas.
 
+
+### SCRA child-archive manifests
+
+Live Utage corpus validation on 2026-09-25 established that some `rArchive` members are not nested ARC payloads. They are compact **SCRA manifests** describing the exact membership of another child ARC.
+
+Observed structure:
+
+```text
+offset  size  meaning
+0x00    4     ASCII "SCRA"
+0x04    2     big-endian version (observed 8)
+0x06    2     big-endian member count
+0x08    ...   repeated member records:
+              u32 resource-class hash
+              u32 full 32-bit lowercase-path hash
+```
+
+The second hash is the full complemented CRC32 of the lowercase internal resource path:
+
+`path_hash = (~CRC32(lowercase_internal_path)) & 0xFFFFFFFF`
+
+Unlike the ARC resource-class hash, this path hash keeps the high bit.
+
+Live validation:
+- 117 SCRA descriptors found in the live ENG ARC tree.
+- 117/117 referenced a real child ARC.
+- 117/117 matched the child ARC member list exactly: same count, same order, same resource-class hashes, same lowercase-path hashes.
+- Parent hosts observed:
+  - `title_id.arc`: 31 child manifests for `rom\eng\common\pl_face\pl000..pl030`
+  - `quest\quest_id.arc`: 31 child manifests for `rom\eng\quest\q000_id..q030_id`
+  - `tenka\friend.arc`: 55 child manifests for `rom\jpn\pause\friend_*`
+
+This is direct byte-level evidence of a parent/child archive relationship in Utage.
+
+The parent archives also contain resources identified by those manifest pairs. In the tested live build, all 507 manifested child resources were present in the corresponding parent; 422 were payload-identical to the child copy and 85 differed, all of the divergences being `rTexture` nameplate resources (`cp_name_pl` / `cp_name_nak`). Therefore an SCRA manifest proves membership linkage, not payload identity.
+
 ## Runtime ownership
 
 Containment is not authority.
