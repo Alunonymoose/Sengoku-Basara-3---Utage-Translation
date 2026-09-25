@@ -171,3 +171,31 @@ The current Kuriimu2 master inspected on 2026-09-25 differs materially from the 
 Status: **SOURCE-CODE OBSERVATION**.
 
 Impact: do not replace the project's proven Kuriimu path merely because upstream master is newer.
+
+
+## 8. Live Utage disproves 14-bit zlib-window promotion
+
+A complete live ENG ARC census inspected all 68,325 members.
+
+Results:
+- 68,177 compressed members;
+- every compressed member is valid zlib;
+- only `78 9C` and `78 DA` headers occur;
+- both declare `CINFO=7` / 32 KiB window;
+- 148 equal-size members are raw and none are zlib.
+
+A direct decompression probe also showed `wbits=15` succeeds while `wbits=14` rejects these streams as an invalid window size.
+
+Conclusion: REvilLib's generic PS3 `windowSize=14` setting is not an Utage live-file property and must not be used as an Utage writer requirement.
+
+## 9. SCRA / rArchive child manifests discovered in live Utage
+
+Live `rArchive` members (`0x73850D05`) reveal an unhandled `SCRA` manifest structure.
+
+117/117 manifests exactly reproduce referenced child ARC membership using pairs of:
+- MT resource-class hash;
+- full complemented CRC32 of lowercase internal resource path.
+
+All 507 manifested identities are present in their parent resident pools.
+
+This structure is not currently parsed by the public MT Framework tools inspected in this research pass.
