@@ -23,6 +23,24 @@ Independent public implementations now strongly corroborate the PS3/big-endian A
 
 The **structural packing is strongly corroborated**. The semantic meaning of individual low-bit values is not yet proven for Utage, so those bits are protected metadata: preserve the original low 3 bits for existing entries unless a controlled test proves a required change.
 
+
+### MT Framework V2 resource-class hashes
+
+For the SB3 / Samurai Heroes ARC family, the newer resource-class hash used in ARC entries is externally corroborated as an MT Framework V2 CRC32B-derived hash:
+
+`hash = (~CRC32(class_name_bytes)) & 0x7FFFFFFF`
+
+Known vectors:
+
+- `rTexture -> 0x241F5DEB`
+- `rMessage -> 0x10C460E6`
+- `rLayoutSpr -> 0x60DD1B16`
+- `rArchive -> 0x73850D05`
+
+This permits candidate class names to be tested programmatically instead of treating every unknown ARC type hash as opaque. It does **not** reverse a hash to a unique class name; candidate naming still requires evidence.
+
+Public helper: `project/Foundry/tools/mt_hash.py`.
+
 ## TEX/XET
 
 - PS3 texture resources use the MT Framework `\0XET` family; the historical Exient/XGS interpretation was wrong.
