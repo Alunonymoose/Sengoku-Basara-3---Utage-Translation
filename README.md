@@ -66,3 +66,16 @@ BLJM60389
 
 Sengoku BASARA: Samurai Heroes is used as an English localisation and
 technical reference where appropriate.
+
+
+## Licence and reuse
+
+The project is intentionally open for reuse:
+
+- project-authored software/tools: **MIT License**
+- project-authored documentation/research/agent skills: **CC BY 4.0**
+- Capcom/third-party game assets: **not included and not licensed by this repository**
+
+See `LICENSE`, `LICENSE-DOCS.md`, and `NOTICE.md`.
+
+Portable public AI/plugin source: `public-plugin/`.
