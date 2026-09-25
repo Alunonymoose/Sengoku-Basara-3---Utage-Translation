@@ -99,3 +99,48 @@ No public SCRA parser was found in REvilLib/Kuriimu2/MT-Framework-Tool/umvc3-too
 - 117/117 child-manifest equivalence: **STRUCTURALLY VERIFIED**
 - parent contains 507/507 manifested identities: **STRUCTURALLY VERIFIED**
 - preload/runtime precedence interpretation: **SUPPORTED**, pending controlled runtime test where required
+
+
+## Reference graph and deduplication
+
+The SCRA relation is a graph, not necessarily a contiguous block delimiter.
+
+Observed parent statistics:
+
+| Parent | SCRA manifests | Pair references | Unique referenced resources | Reused references | Parent-only resources |
+|---|---:|---:|---:|---:|---:|
+| `title_id.arc` | 31 | 123 | 112 | 11 | 39 |
+| `quest_id.arc` | 31 | 274 | 172 | 102 | 2 |
+| `tenka/friend.arc` | 55 | 110 | 110 | 0 | 0 |
+
+`friend.arc` happens to store each child group's resources contiguously before its SCRA descriptor (55/55).
+
+That is **not** a general rule:
+- `title_id.arc`: 20/31 manifests matched the immediately preceding N entries;
+- `quest_id.arc`: 7/31 did.
+
+The reason is resource reuse/deduplication and parent-only resident resources. A parser must resolve SCRA pairs by identity, not by positional adjacency.
+
+Notable shared resources in `quest_id.arc` are `nakama_*` and `cp_name_nak_*` textures referenced by up to four child manifests.
+
+## Cross-route dependency proof
+
+`rom/eng/tenka/friend.arc` contains 55 SCRA manifests whose child paths are explicitly under:
+
+`rom/jpn/pause/friend_*`
+
+and every referenced JPN child ARC exists and matches its manifest.
+
+This is structural proof that an ENG-route parent can intentionally depend on resources located under `rom/jpn`. Folder language labels therefore cannot be treated as a simple live/dead routing boundary.
+
+## Practical ownership rule
+
+For an SCRA-backed family, model:
+
+`parent resident pool <-> SCRA child membership graph <-> physical child ARC(s)`
+
+rather than assuming either:
+- the child ARC is the only owner, or
+- the parent is merely a duplicate cache.
+
+Static SCRA evidence proves membership and resident duplication. Runtime precedence between parent and child still requires runtime/load evidence for the specific family.
