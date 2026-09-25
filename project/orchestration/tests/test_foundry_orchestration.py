@@ -155,6 +155,39 @@ class OrchestrationTests(unittest.TestCase):
             code,text=self.run_cli("runtime-verify-evidence",str(matrix))
             self.assertEqual(6,code); self.assertFalse(json.loads(text)["valid"])
 
+    def test_snapshot_salvages_nonzero_container_trailer_but_strict_writer_remains_closed(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td)
+            live=root/"PS3_GAME"/"USRDIR"/"nativePS3"/"rom"/"eng"; live.mkdir(parents=True)
+            key=r"id\\fixture\\special"
+            arc=make_arc(key,b"DATA")+b"NONZERO_SPECIAL_TRAILER"
+            (live/"special.arc").write_bytes(arc)
+            code,text=self.run_cli("snapshot",str(root),"--force")
+            self.assertEqual(0,code)
+            snap=json.loads(text)
+            self.assertEqual(0,snap["parse_error_count"])
+            self.assertEqual(1,snap["container_warning_count"])
+            code,text=self.run_cli("query",str(root),key,"--type-hash","0x241F5DEB","--exact","--json")
+            self.assertEqual(0,code)
+            self.assertEqual(1,json.loads(text)[0]["provider_count"])
+
+    def test_triage_separates_backup_contamination_from_active_providers(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td)
+            live=root/"PS3_GAME"/"USRDIR"/"nativePS3"/"rom"/"eng"/"tenka"; live.mkdir(parents=True)
+            key=r"id\\fixture\\dup"
+            (live/"owner.arc").write_bytes(make_arc(key,b"LIVE"))
+            (live/"owner_PRE_TEST_backup.arc").write_bytes(make_arc(key,b"OLD!"))
+            code,_=self.run_cli("snapshot",str(root),"--force")
+            self.assertEqual(0,code)
+            code,text=self.run_cli("triage",str(root),"--actionable","--limit","10")
+            self.assertEqual(0,code)
+            report=json.loads(text)
+            self.assertEqual(1,report["count"])
+            g=report["groups"][0]
+            self.assertIn("owner_PRE_TEST_backup.arc",g["contaminating_providers"][0])
+            self.assertEqual(1,g["active_payload_variants"])
+
 
 if __name__ == "__main__":
     unittest.main()
