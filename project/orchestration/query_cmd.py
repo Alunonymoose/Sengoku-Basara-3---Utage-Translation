@@ -66,17 +66,16 @@ def _route_family(path: str) -> tuple[str,str]:
     marker="/rom/"
     i=p.find(marker)
     tail=p[i+len(marker):] if i>=0 else p
-    parts=tail.split("/")
+    parts=[x for x in tail.split("/") if x]
     if parts and parts[0] in {"eng","jpn"}:
         route=parts[0]
-        if len(parts)==2:
-            family=f"{route}/{parts[1]}"
-        elif len(parts)>=3:
-            family=f"{route}/{parts[1]}"
-        else:
-            family=route
+        # Family means the ARC's real parent directory, not merely the first
+        # routing bucket. This keeps contexts such as eng/brief and
+        # eng/brief/og distinct while retaining eng/msg and eng/tenka groups.
+        family="/".join(parts[:-1]) if len(parts)>1 else route
     else:
-        route="other"; family=parts[0] if parts else "other"
+        route="other"
+        family="/".join(parts[:-1]) if len(parts)>1 else "root"
     return route,family
 
 
