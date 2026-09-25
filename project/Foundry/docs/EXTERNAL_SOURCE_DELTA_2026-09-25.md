@@ -199,3 +199,75 @@ Live `rArchive` members (`0x73850D05`) reveal an unhandled `SCRA` manifest struc
 All 507 manifested identities are present in their parent resident pools.
 
 This structure is not currently parsed by the public MT Framework tools inspected in this research pass.
+
+
+## 8. Live Utage SCRA manifests prove parent-child ARC membership
+
+Live E: validation discovered 117 raw `rArchive` members containing `SCRA` records.
+
+Format observed:
+- magic `SCRA`
+- big-endian version `8`
+- big-endian child-member count
+- repeated `(resource-class hash, lowercase-path hash)` pairs
+
+The path hash is `(~CRC32(lowercase_internal_path)) & 0xFFFFFFFF`.
+
+Validation result: 117/117 SCRA records exactly matched their referenced child ARC member lists in count, order, class hash and path hash.
+
+Hosts:
+- `title_id.arc`: 31 `pl_face` child manifests
+- `quest_id.arc`: 31 quest child manifests
+- `tenka/friend.arc`: 55 friend/pause child manifests
+
+Status: **STRUCTURALLY PROVEN ON LIVE UTAGE**.
+
+## 9. Parent containers duplicate all manifested child resources, but live payloads can diverge
+
+Across the 117 manifests there were 507 child-resource pairs.
+
+All 507 corresponding resources were present in the parent containers.
+
+Payload comparison:
+- 422 exact decompressed-payload matches
+- 85 divergences
+- all 85 divergences were `rTexture`
+- 66 were `id\texture\jpn\cp_name_pl`
+- 19 were `id\texture\jpn\cp_name_nak`
+
+Breakdown:
+- `title_id.arc`: 123/123 payload-identical
+- `quest_id.arc`: 244 identical, 30 divergent
+- `tenka/friend.arc`: 55 identical, 55 divergent
+
+Status: **STRUCTURALLY PROVEN ON CURRENT LIVE BUILD**.
+
+Implication: SCRA proves parent-child membership identity, but not byte identity. Parent and child copies can drift independently, so synchronization policy must remain evidence-driven.
+
+## 10. Live ENG ARC corpus resolves all type hashes
+
+Current live ENG tree contains 48 distinct ARC resource-class hashes. Every one resolves against the combined REvilLib SB3/Samurai Heroes class lists using:
+
+`(~CRC32(class_name)) & 0x7FFFFFFF`
+
+No unknown type hashes remain in this live corpus under that combined taxonomy.
+
+Notable correction:
+- `0x619CF7E7 = rPalette`
+- `0x5E0EF076 = rAscii`
+
+The tiny raw `msg\ascii\...\ascii_*_ID_HQ` resources observed in `basara.arc` / `startup.arc` are therefore typed as `rPalette`, not `rAscii`.
+
+## 11. REvilLib window-size 14 does not describe observed Utage zlib headers
+
+A live sample of 12,427 compressed ARC members yielded only:
+- `0x789C`
+- `0x78DA`
+
+Both encode `CINFO=7`, i.e. a 32 KiB zlib window.
+
+Sampled members decompressed with `wbits=15`; `wbits=14` returned "invalid window size".
+
+Status: **LIVE UTAGE EVIDENCE CONTRADICTS THE SIMPLE INTERPRETATION** of REvilLib's `windowSize=14` title-profile field.
+
+Do not promote `windowSize=14` as an Utage ARC stream requirement.
