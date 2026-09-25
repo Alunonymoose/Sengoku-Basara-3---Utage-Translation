@@ -139,3 +139,70 @@ REvilLib and UMVC3 tooling independently identify `0x73850D05` as `rArchive`. Th
 - `rArchive`
 
 No checked public implementation currently exposes an SCRA parser, making the SCRA layout and live parent-child mapping a BASARA Foundry result.
+
+
+## Samurai Heroes control experiment
+
+Official Samurai Heroes provides an independent localized control for the shared friend/pause family.
+
+Read-only validation of SH `rom\eng\tenka\friend.arc` established:
+
+- 51 raw `rArchive` / SCRA manifests;
+- all 51 use SCRA version 8;
+- all 51 point to `rom\eng\pause\friend_*` children;
+- every manifest contains 6 member identities;
+- 51/51 manifest tables exactly match the referenced child ARC tables;
+- 306/306 manifested identities are present in the SH parent pool;
+- 306/306 parent decompressed payloads are byte-identical to the corresponding English child payload;
+- zero parent/child divergences.
+
+This is important because it demonstrates that Capcom's official English localisation preserved SCRA parent/child payload identity rather than intentionally giving the same logical resource identity different localized artwork in parent and child.
+
+### Bundle-shape boundary
+
+The SH and Utage child archives are not interchangeable as whole containers.
+
+Example `friend_000.arc`:
+
+Utage JPN child:
+- `rTexture` cp_name_pl
+- `rTexture` cp_face_msg
+
+Samurai Heroes ENG child:
+- English `rTexture` cp_name_pl
+- shared/JPN `rTexture` cp_face_msg
+- `rMessage` GSM
+- `rMessageInfo` FIM
+- second `rMessage` GSM (_r)
+- second `rMessageInfo` FIM (_r)
+
+Therefore a compatible SH texture may be a valid donor while the whole SH child ARC is **not** a structurally equivalent donor.
+
+## Localized ENG divergence diagnosis
+
+The 85 current Utage ENG parent/child divergences are patch-introduced, not present in pristine/current JPN and not mirrored by official SH localization behaviour.
+
+Representative decoded examples:
+
+- `quest_id.arc` parent `cp_name_pl_022`: custom illustrated English "SASUKE SARUTOBI" plate.
+- manifested `q000_id.arc` child: simple English "Sasuke Sarutobi" lettering.
+- official SH homolog: simple English "Sasuke Sarutobi" lettering.
+- `tenka\friend.arc` parent `cp_name_pl_000`: custom illustrated English "Masamune Date" plate.
+- manifested Utage JPN child: Japanese nameplate.
+- official SH homolog: clean English text.
+- `tenka\friend.arc` parent `cp_name_nak_009`: English text with the known magenta/green corruption appearance.
+- manifested child/pristine JPN: clean Japanese.
+- official SH homolog: clean English names.
+
+For the 85 divergent identities:
+- 76 have exact-name SH English homologs;
+- 9 do not have an exact SH path (Utage-exclusive nameplate identities);
+- none of the 76 current Utage parent or child payloads is byte-identical to the SH payload, so these are not simple untouched SH donor copies.
+
+### Engineering consequence
+
+Treat a localized payload divergence inside an SCRA family as a **synchronization QA finding** until proven intentional by runtime/controller evidence.
+
+Do not mass-copy the child, the parent, or a whole SH ARC. Resolve the intended visible design and runtime provider, then synchronize the compatible logical resource family at the member level.
+
+For base-game nameplate identities, SH supplies an official English visual/reference donor candidate. Utage-exclusive identities still require Utage-specific/custom production.
