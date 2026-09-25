@@ -26,3 +26,9 @@ BASARA Foundry preserves failed approaches because they are often more valuable 
 ## Why this document exists
 
 Future contributors and AI agents should not have to repeat these dead ends. When a new experiment disproves an assumption, add it here with the replacement rule and evidence scope.
+
+
+| Failed assumption / workflow | What the project learned | Guardrail |
+|---|---|---|
+| Generic PS3 zlib window 14 can be copied from REvilLib into Utage | Live ENG+JPN census found every compressed Utage member uses CMF 0x78 / window 15 | Prefer game-corpus evidence over a generic platform profile |
+| `rArchive` entry necessarily contains an embedded ARC binary | Utage's 117-per-route `rArchive` entries are raw ARCS/SCRA child manifests that point at flattened parent resources by class/path hash | Inspect payload magic and resolve ARCS/SCRA before treating an `.arc`-typed resource as a nested container |
