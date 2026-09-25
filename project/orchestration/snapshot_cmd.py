@@ -1,5 +1,6 @@
 from __future__ import annotations
 import json
+import subprocess
 from pathlib import Path
 from core import SCHEMA_VERSION,SNAPSHOT_SCHEMA,atomic_json,canonical_internal_path,canonical_scan_root,find_repo_root,iter_files,load_ownership_module,load_safe_arc,sha256_bytes,sha256_file,tree_hash,utc_now
 from db import connect_db,init_db
@@ -23,17 +24,31 @@ def snapshot_command(args) -> int:
         print(str(snapdir/"snapshot.json")); return 0
     if dbpath.exists(): dbpath.unlink()
     conn=connect_db(dbpath); init_db(conn)
-    meta={"schema":SNAPSHOT_SCHEMA,"schema_version":SCHEMA_VERSION,"snapshot_id":sid,"live_tree_sha256":sid,"created_utc":utc_now(),"scan_root":str(scan_root),"anchor_root":str(anchor_root),"source_git_commit":args.git_commit,"safe_arc_source_commit":getattr(safe_arc,"SOURCE_COMMIT",None)}
+    source_git_commit=args.git_commit
+    if not source_git_commit:
+        try:
+            source_git_commit=subprocess.check_output(["git","-C",str(repo_root),"rev-parse","HEAD"],text=True,stderr=subprocess.DEVNULL).strip()
+        except Exception:
+            source_git_commit=None
+    meta={"schema":SNAPSHOT_SCHEMA,"schema_version":SCHEMA_VERSION,"snapshot_id":sid,"live_tree_sha256":sid,"created_utc":utc_now(),"scan_root":str(scan_root),"anchor_root":str(anchor_root),"source_git_commit":source_git_commit,"safe_arc_source_commit":getattr(safe_arc,"SOURCE_COMMIT",None)}
     conn.executemany("INSERT INTO metadata(key,value) VALUES(?,?)",[(k,json.dumps(v)) for k,v in meta.items()])
     file_ids={}
     for rec in records:
         cur=conn.execute("INSERT INTO files(path,size,mtime_ns,sha256,kind) VALUES(?,?,?,?,?)",(rec["path"],rec["size"],rec["mtime_ns"],rec["sha256"],rec["kind"])); file_ids[rec["path"]]=int(cur.lastrowid)
-    errors=[]; warnings=[]; resource_count=0
+    errors=[]; warnings=[]; container_warnings=[]; resource_count=0
     for path in arc_paths:
         rel=path.relative_to(scan_root).as_posix(); fid=file_ids[rel]
         try:
-            entries=safe_arc.parse_arc(path.read_bytes()); alignment=safe_arc.detect_alignment(entries)
-            cur=conn.execute("INSERT INTO arcs(file_id,parse_status,version,member_count,alignment,error) VALUES(?,'OK',8,?,?,NULL)",(fid,len(entries),alignment)); aid=int(cur.lastrowid)
+            arc_bytes=path.read_bytes()
+            if hasattr(safe_arc,"inspect_arc"):
+                entries, anomalies=safe_arc.inspect_arc(arc_bytes)
+            else:
+                entries=safe_arc.parse_arc(arc_bytes); anomalies=[]
+            alignment=safe_arc.detect_alignment(entries)
+            container_warning=json.dumps(anomalies,sort_keys=True) if anomalies else None
+            cur=conn.execute("INSERT INTO arcs(file_id,parse_status,version,member_count,alignment,error,container_warning) VALUES(?,'OK',8,?,?,NULL,?)",(fid,len(entries),alignment,container_warning)); aid=int(cur.lastrowid)
+            if anomalies:
+                container_warnings.append({"arc":rel,"anomalies":anomalies})
             for e in entries:
                 internal=e["name"]; canonical=canonical_internal_path(internal)
                 conn.execute("""INSERT INTO resources(arc_id,member_index,internal_path,canonical_path,type_hash,type_hex,flags,codec,compressed_size,declared_raw_size,actual_raw_size,data_offset,stored_sha256,raw_sha256,warning) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
@@ -41,7 +56,7 @@ def snapshot_command(args) -> int:
                 resource_count+=1
                 if e["warning"]: warnings.append({"arc":rel,"member_index":e["index"],"internal_path":internal,"warning":e["warning"]})
         except Exception as exc:
-            conn.execute("INSERT INTO arcs(file_id,parse_status,error) VALUES(?,'ERROR',?)",(fid,repr(exc))); errors.append({"arc":rel,"error":repr(exc)})
+            conn.execute("INSERT INTO arcs(file_id,parse_status,error,container_warning) VALUES(?,'ERROR',?,NULL)",(fid,repr(exc))); errors.append({"arc":rel,"error":repr(exc)})
     if args.rpcs3_log:
         log=Path(args.rpcs3_log).resolve(); events=ownership.load_order_from_log(log)
         for row in conn.execute("SELECT a.id,f.path FROM arcs a JOIN files f ON f.id=a.file_id WHERE a.parse_status='OK'"):
@@ -53,7 +68,7 @@ def snapshot_command(args) -> int:
     dup=conn.execute("SELECT COUNT(*) FROM provider_groups WHERE provider_count>1").fetchone()[0]
     div=conn.execute("SELECT COUNT(*) FROM provider_groups WHERE provider_count>1 AND payload_variants>1").fetchone()[0]
     ranked=conn.execute("SELECT COUNT(*) FROM arc_runtime_order").fetchone()[0]; conn.close()
-    manifest={**meta,"file_count":len(records),"arc_file_count":len(arc_paths),"resource_count":resource_count,"duplicate_provider_groups":dup,"divergent_provider_groups":div,"parse_error_count":len(errors),"warning_count":len(warnings),"runtime_ranked_arcs":ranked,"database":"index.sqlite3","manifest":"files.json"}
-    atomic_json(snapdir/"snapshot.json",manifest); atomic_json(snapdir/"files.json",records); atomic_json(snapdir/"parse_errors.json",errors); atomic_json(snapdir/"arc_warnings.json",warnings)
+    manifest={**meta,"file_count":len(records),"arc_file_count":len(arc_paths),"resource_count":resource_count,"duplicate_provider_groups":dup,"divergent_provider_groups":div,"parse_error_count":len(errors),"warning_count":len(warnings)+len(container_warnings),"member_warning_count":len(warnings),"container_warning_count":len(container_warnings),"runtime_ranked_arcs":ranked,"database":"index.sqlite3","manifest":"files.json"}
+    atomic_json(snapdir/"snapshot.json",manifest); atomic_json(snapdir/"files.json",records); atomic_json(snapdir/"parse_errors.json",errors); atomic_json(snapdir/"arc_warnings.json",{"member_warnings":warnings,"container_warnings":container_warnings})
     (state_root/"CURRENT_SNAPSHOT").write_text(sid+"\n",encoding="ascii"); print(json.dumps(manifest,indent=2))
     return 1 if errors and args.fail_on_parse_error else 0
