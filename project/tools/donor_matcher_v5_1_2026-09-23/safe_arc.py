@@ -54,16 +54,13 @@ def _decode(stored: bytes, declared: int, index: int) -> tuple[bytes, str, str |
                      f"({len(stored)} stored, {declared} declared)")
 
 
-def inspect_arc(data: bytes) -> tuple[list[dict], list[dict]]:
-    """Parse ARC members while reporting non-zero container padding/trailers.
+def parse_arc(data: bytes) -> list[dict]:
+    """Validate a complete ARC and return entries in logical table order.
 
-    This is intended for read-only corpus indexing/forensics. It keeps all
-    header, range, codec and overlap validation strict, but reports non-zero
-    bytes between otherwise valid payload regions (or after the final payload)
-    as container anomalies instead of discarding the entire archive.
-
-    Production mutation must continue to use parse_arc(), which rejects these
-    anomalies fail-closed.
+    Each entry contains index/name/type_hash/compressed_size/raw_size/flags/
+    packed_size/payload_offset/record/stored/raw/codec/warning. ``raw_size`` is
+    the declaration, ``len(raw)`` is actual decoded size. Byte values are not
+    JSON serializable; use verify_rebuild() for compact hash evidence.
     """
     if not isinstance(data, bytes):
         raise TypeError("ARC input must be immutable bytes")
@@ -90,32 +87,16 @@ def inspect_arc(data: bytes) -> tuple[list[dict], list[dict]]:
                             flags=packed & 7, packed_size=packed,
                             payload_offset=offset, record=record, stored=stored,
                             raw=raw, codec=codec, warning=warning))
-    anomalies = []
     cursor = table_end
     for entry in sorted(entries, key=lambda e: (e["payload_offset"], e["index"])):
         offset = entry["payload_offset"]
         if offset < cursor:
             raise ValueError(f"member {entry['index']}: overlapping payloads")
-        gap = data[cursor:offset]
-        if any(gap):
-            anomalies.append(dict(kind="nonzero_gap", start=cursor, end=offset,
-                                  size=len(gap), sha256=sha256(gap)))
+        if any(data[cursor:offset]):
+            raise ValueError(f"nonzero ARC gap: {cursor:#x}..{offset:#x}")
         cursor = offset + entry["compressed_size"]
-    trailer = data[cursor:]
-    if any(trailer):
-        anomalies.append(dict(kind="nonzero_trailer", start=cursor, end=len(data),
-                              size=len(trailer), sha256=sha256(trailer)))
-    return entries, anomalies
-
-
-def parse_arc(data: bytes) -> list[dict]:
-    """Validate a complete mutation-safe ARC and return logical entries."""
-    entries, anomalies = inspect_arc(data)
-    if anomalies:
-        first = anomalies[0]
-        if first["kind"] == "nonzero_gap":
-            raise ValueError(f"nonzero ARC gap: {first['start']:#x}..{first['end']:#x}")
-        raise ValueError(f"nonzero ARC trailer at {first['start']:#x}")
+    if any(data[cursor:]):
+        raise ValueError(f"nonzero ARC trailer at {cursor:#x}")
     return entries
 
 
