@@ -41,6 +41,29 @@ This permits candidate class names to be tested programmatically instead of trea
 
 Public helper: `project/Foundry/tools/mt_hash.py`.
 
+
+### Live Utage ARC compression census (2026-09-25)
+
+A read-only census of the current live ENG tree (`4,645` ARC files, `68,325` members) established:
+
+- all 4,645 archives are PS3 big-endian ARC **v8**;
+- all 68,325 member size/flag words have low 3-bit flag value **2**;
+- 68,177 members are zlib-compressed;
+- 148 members are stored raw where `compressed_size == decompressed_size`;
+- all 68,177 compressed members have valid zlib headers;
+- compressed header distribution:
+  - `78 9C`: 24,116
+  - `78 DA`: 44,061
+- both headers use `CINFO=7`, declaring a **32 KiB** zlib window;
+- no compressed member used a different zlib window/header family;
+- no raw member looked like a valid zlib stream.
+
+Therefore, for this live Utage corpus:
+
+`compressed_size == decompressed_size` is a reliable raw-member discriminator, and compressed ARC members use ordinary zlib streams declaring a 32 KiB window.
+
+An external REvilLib generic PS3 ARC setting of `windowSize=14` does **not** describe the actual zlib window declared by these Utage members and must not be promoted as an Utage writer rule.
+
 ## TEX/XET
 
 - PS3 texture resources use the MT Framework `\0XET` family; the historical Exient/XGS interpretation was wrong.
