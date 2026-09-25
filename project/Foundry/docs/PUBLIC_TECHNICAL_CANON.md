@@ -11,6 +11,18 @@ This document contains concise public-safe facts that currently have enough proj
 - Preserve member names/order/type hashes/flags and untouched stored payloads where the transaction supports byte identity.
 - Unknown/non-certified compression, unexplained non-zero structural bytes, or unsupported archive features must fail closed rather than be guessed.
 
+
+### ARC entry size/flag packing
+
+Independent public implementations now strongly corroborate the PS3/big-endian ARC member word at entry offset `0x48` as **29 bits of decompressed size plus 3 low flag bits**.
+
+- REvilLib models this as `ARCFileSize = Size(29) + Flags(3)`.
+- Kuriimu2 big-endian ARC handling reads decompressed size as `DecompSize >> 3` and writes it as `(oldLow3Bits) | (size << 3)`.
+- An older PS3 MT Framework repacker independently reads `size = word >> 3` and writes `(size << 3) | 0x2`.
+- REvilLib initializes new entries with flag value `2`.
+
+The **structural packing is strongly corroborated**. The semantic meaning of individual low-bit values is not yet proven for Utage, so those bits are protected metadata: preserve the original low 3 bits for existing entries unless a controlled test proves a required change.
+
 ## TEX/XET
 
 - PS3 texture resources use the MT Framework `\0XET` family; the historical Exient/XGS interpretation was wrong.
