@@ -141,3 +141,33 @@ The current JPN route contains 48 unique ARC type hashes. Every one resolves aga
 - 0 remain unknown after SB3 cross-resolution.
 
 This gives BASARA Foundry an external name/extension authority for the complete observed Utage resource-class set, while live bytes remain the production authority.
+
+
+## 5. ARC member size word is a 29+3 bit field
+
+Cross-source agreement:
+- REvilLib: `ARCFileSize` defines 29 size bits + 3 flag bits and defaults flags to 2.
+- Kuriimu2: big-endian `GetDecompressedSize = DecompSize >> 3`; writer preserves `DecompSize & 7` and stores `size << 3`.
+- MT-Framework-Tool PS3 repacker: reads `sizetmp >> 3`; writes `(len(zdata) << 3) | 0x2`.
+
+Status: **STRONGLY CORROBORATED STRUCTURAL FACT**.
+
+The individual flag-bit meanings remain unresolved. Preserve the low 3 bits on live entries.
+
+## 6. Proven Kuriimu PS3 BC transform is 4x4 Morton colour ordering
+
+Historical Kuriimu2 revision `6babcdc3562975f445f258f0b7f1d9bd8e5e2a83` applies `BcSwizzle` to PS3 block-compressed textures.
+
+`BcSwizzle` uses bit coordinates `[(1,0),(2,0),(0,1),(0,2)]`, creating a 4x4 Morton/Z-order microtile over the colour stream consumed by the BC encoder/decoder.
+
+Status: **PROVEN SOURCE BEHAVIOUR** for that revision.
+
+Impact: supersedes the project's old vague 8x4-BC-block swizzle rule. Do not generalize beyond the proven transform without fixture evidence.
+
+## 7. Kuriimu source revision must be pinned
+
+The current Kuriimu2 master inspected on 2026-09-25 differs materially from the older proven revision. Its current PS3 loader begins mip iteration at `m=1` and then constructs the image from `mipData[0]`, which is inconsistent for a one-mip texture and differs from the proven revision's `m=0` loop.
+
+Status: **SOURCE-CODE OBSERVATION**.
+
+Impact: do not replace the project's proven Kuriimu path merely because upstream master is newer.
