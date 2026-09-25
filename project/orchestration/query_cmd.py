@@ -1,5 +1,6 @@
 from __future__ import annotations
 import json
+import re
 from pathlib import Path
 from core import canonical_internal_path,find_repo_root,load_ownership_module,sha256_file
 from db import connect_db
@@ -58,3 +59,93 @@ def verify_command(args)->int:
 
 def status_command(args)->int:
     conn=connect_db(resolve_snapshot(args.snapshot)); meta={r["key"]:json.loads(r["value"]) for r in conn.execute("SELECT key,value FROM metadata")}; counts={"files":conn.execute("SELECT COUNT(*) FROM files").fetchone()[0],"arcs_ok":conn.execute("SELECT COUNT(*) FROM arcs WHERE parse_status='OK'").fetchone()[0],"arcs_error":conn.execute("SELECT COUNT(*) FROM arcs WHERE parse_status!='OK'").fetchone()[0],"resources":conn.execute("SELECT COUNT(*) FROM resources").fetchone()[0],"duplicate_groups":conn.execute("SELECT COUNT(*) FROM provider_groups WHERE provider_count>1").fetchone()[0],"divergent_groups":conn.execute("SELECT COUNT(*) FROM provider_groups WHERE provider_count>1 AND payload_variants>1").fetchone()[0],"runtime_ranked_arcs":conn.execute("SELECT COUNT(*) FROM arc_runtime_order").fetchone()[0]}; conn.close(); print(json.dumps({"metadata":meta,"counts":counts},indent=2)); return 0
+
+
+def _route_family(path: str) -> tuple[str,str]:
+    p=path.replace("\\","/").lower()
+    marker="/rom/"
+    i=p.find(marker)
+    tail=p[i+len(marker):] if i>=0 else p
+    parts=tail.split("/")
+    if parts and parts[0] in {"eng","jpn"}:
+        route=parts[0]
+        if len(parts)==2:
+            family=f"{route}/{parts[1]}"
+        elif len(parts)>=3:
+            family=f"{route}/{parts[1]}"
+        else:
+            family=route
+    else:
+        route="other"; family=parts[0] if parts else "other"
+    return route,family
+
+
+def _obvious_backup_name(path: str) -> bool:
+    name=Path(path.replace("\\","/")).stem.lower()
+    pats=[r"(^|[ _\-])copy($|[ _\-])",r"backup",r"(^|_)bak($|_)",r"pre[_\- ]",r"old($|[_\- ])",r"\(\d+\)$"]
+    return any(re.search(p,name) for p in pats)
+
+
+def _derivative_provider_flags(paths: list[str]) -> set[str]:
+    flagged={p for p in paths if _obvious_backup_name(p)}
+    by_dir={}
+    for p in paths:
+        pp=p.replace("\\","/")
+        d,n=pp.rsplit("/",1) if "/" in pp else ("",pp)
+        stem=Path(n).stem.lower()
+        by_dir.setdefault(d,[]).append((p,stem))
+    for items in by_dir.values():
+        for p,stem in items:
+            for q,qstem in items:
+                if p==q: continue
+                if len(stem)>len(qstem) and (stem.startswith(qstem+"_") or stem.startswith(qstem+" -") or stem.startswith(qstem+" ")):
+                    flagged.add(p)
+    return flagged
+
+
+def triage_command(args)->int:
+    conn=connect_db(resolve_snapshot(args.snapshot)); groups=[]
+    for g in conn.execute("SELECT * FROM provider_groups WHERE provider_count>1 AND payload_variants>1"):
+        ps=[dict(r) for r in conn.execute("""SELECT f.path arc_path,r.member_index,r.raw_sha256,r.stored_sha256,aro.runtime_rank
+            FROM resources r JOIN arcs a ON a.id=r.arc_id JOIN files f ON f.id=a.file_id
+            LEFT JOIN arc_runtime_order aro ON aro.arc_id=a.id
+            WHERE r.type_hash=? AND r.canonical_path=? ORDER BY f.path,r.member_index""",(g["type_hash"],g["canonical_path"]))]
+        paths=[p["arc_path"] for p in ps]; contamination=_derivative_provider_flags(paths)
+        active=[p for p in ps if p["arc_path"] not in contamination]
+        by_route={}; by_family={}
+        for p in active:
+            route,family=_route_family(p["arc_path"])
+            by_route.setdefault(route,set()).add(p["raw_sha256"])
+            by_family.setdefault(family,set()).add(p["raw_sha256"])
+            p["route"]=route; p["family"]=family; p["tree_role"]="ACTIVE_CANDIDATE"
+        for p in ps:
+            if p["arc_path"] in contamination:
+                route,family=_route_family(p["arc_path"]); p["route"]=route; p["family"]=family; p["tree_role"]="BACKUP_OR_DERIVATIVE"
+        ranked=[p for p in active if p["runtime_rank"] is not None]
+        effective=min(ranked,key=lambda p:p["runtime_rank"])["arc_path"] if ranked else None
+        same_family=[fam for fam,vals in by_family.items() if len(vals)>1]
+        same_route=[route for route,vals in by_route.items() if len(vals)>1]
+        active_variants=len({p["raw_sha256"] for p in active})
+        if same_family:
+            cls="SAME_FAMILY_DIVERGENCE"; score=100
+        elif same_route:
+            cls="SAME_ROUTE_CROSS_FAMILY_DIVERGENCE"; score=80
+        elif set(by_route)=={"eng","jpn"} and all(len(v)==1 for v in by_route.values()):
+            cls="EXPECTED_ENG_JPN_DIVERGENCE"; score=10
+        else:
+            cls="CROSS_ROUTE_OR_CONTEXT_DIVERGENCE"; score=50
+        if contamination: score+=15
+        if effective: score+=20
+        groups.append({"priority":score,"classification":cls,"type_hex":g["type_hex"],
+            "canonical_path":g["canonical_path"],"provider_count":g["provider_count"],
+            "payload_variants":g["payload_variants"],"active_payload_variants":active_variants,
+            "same_family_conflicts":same_family,"same_route_conflicts":same_route,
+            "contaminating_providers":sorted(contamination),"observed_effective_provider":effective,
+            "providers":ps})
+    conn.close()
+    if args.actionable:
+        groups=[g for g in groups if g["classification"]!="EXPECTED_ENG_JPN_DIVERGENCE" or g["contaminating_providers"]]
+    groups.sort(key=lambda g:(-g["priority"],g["canonical_path"],g["type_hex"]))
+    total=len(groups)
+    if args.limit is not None: groups=groups[:args.limit]
+    print(json.dumps({"count":len(groups),"total_matching":total,"groups":groups},indent=2)); return 0
