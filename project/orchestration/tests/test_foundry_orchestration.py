@@ -188,6 +188,28 @@ class OrchestrationTests(unittest.TestCase):
             self.assertIn("owner_PRE_TEST_backup.arc",g["contaminating_providers"][0])
             self.assertEqual(1,g["active_payload_variants"])
 
+    def test_triage_surfaces_eng_consensus_outliers_without_dumping_every_provider(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td)
+            live=root/"PS3_GAME"/"USRDIR"/"nativePS3"/"rom"/"eng"/"msg"; live.mkdir(parents=True)
+            key=r"id\\fixture\\consensus"
+            for i in range(8):
+                (live/f"m{i:03d}.arc").write_bytes(make_arc(key,b"GOOD"))
+            (live/"m100.arc").write_bytes(make_arc(key,b"OLD1"))
+            (live/"m101.arc").write_bytes(make_arc(key,b"OLD2"))
+            self.assertEqual(0,self.run_cli("snapshot",str(root),"--force")[0])
+            code,text=self.run_cli("triage",str(root),"--actionable","--limit","10")
+            self.assertEqual(0,code)
+            g=json.loads(text)["groups"][0]
+            self.assertEqual("ENG_CONSENSUS_OUTLIER",g["classification"])
+            self.assertEqual(8,g["route_summary"]["eng"]["dominant_count"])
+            self.assertEqual(2,g["route_summary"]["eng"]["outlier_count"])
+            self.assertEqual(2,len(g["consensus_outlier_providers"]))
+            self.assertNotIn("providers",g)
+            code,text=self.run_cli("triage",str(root),"--actionable","--limit","10","--verbose")
+            self.assertEqual(0,code)
+            self.assertEqual(10,len(json.loads(text)["groups"][0]["providers"]))
+
 
 if __name__ == "__main__":
     unittest.main()
