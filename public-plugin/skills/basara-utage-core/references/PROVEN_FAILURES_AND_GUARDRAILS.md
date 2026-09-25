@@ -21,8 +21,15 @@ BASARA Foundry preserves failed approaches because they are often more valuable 
 | Calling a rebuilt file “root-ready” | Rebuilt does not imply correct install path or clean payload set | Package actual final files at game-root paths with manifest |
 | Treating historical Drive/checkpoint bytes as live | Regresses later fixes | Fresh uploaded/current live bytes win for mutation |
 | Broad speculative testing | Can consume time without discriminating hypotheses | One claim, one smallest reversible test, explicit expected outcomes |
+| Using latest Kuriimu2 source without pinning | Current master has materially different PS3 TEX code from the historical revision proven by this project; the current PS3 loader path observed on 2026-09-25 starts mip iteration at 1 and then consumes `mipData[0]`, so source freshness is not equivalent to proven compatibility | Pin the exact proven Kuriimu2 revision/build for production and review upstream changes before adopting them |
 | Synthetic roundtrip = Capcom format proof | Internal consistency does not prove retail semantics | Promote only with real fixture/runtime evidence appropriate to the claim |
 
 ## Why this document exists
 
 Future contributors and AI agents should not have to repeat these dead ends. When a new experiment disproves an assumption, add it here with the replacement rule and evidence scope.
+
+
+| Failed assumption / workflow | What the project learned | Guardrail |
+|---|---|---|
+| Generic PS3 zlib window 14 can be copied from REvilLib into Utage | Live ENG+JPN census found every compressed Utage member uses CMF 0x78 / window 15 | Prefer game-corpus evidence over a generic platform profile |
+| `rArchive` entry necessarily contains an embedded ARC binary | Utage's 117-per-route `rArchive` entries are raw ARCS/SCRA child manifests that point at flattened parent resources by class/path hash | Inspect payload magic and resolve ARCS/SCRA before treating an `.arc`-typed resource as a nested container |
