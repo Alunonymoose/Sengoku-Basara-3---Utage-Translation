@@ -1,0 +1,9 @@
+# Hash-pinned tools (safe_arc.py, the release-audit decoder, SHA256SUMS files)
+# must check out byte-identical on Windows and Linux. Without this, Git for
+# Windows rewrites them to CRLF and every pin check fails.
+*.py    text eol=lf
+*.json  text eol=lf
+*.toml  text eol=lf
+*.tsv   text eol=lf
+*.txt   text eol=lf
+*.md    text eol=lf
