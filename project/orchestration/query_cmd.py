@@ -81,30 +81,56 @@ def _route_family(path: str) -> tuple[str,str]:
 
 
 def _obvious_backup_name(path: str) -> bool:
-    name=Path(path.replace("\\","/")).stem.lower()
-    pats=[r"(^|[ _\-])copy($|[ _\-])",r"backup",r"(^|_)bak($|_)",r"pre[_\- ]",r"old($|[_\- ])",r"\(\d+\)$"]
-    return any(re.search(p,name) for p in pats)
+    """Conservative tree-contamination detector.
+
+    Only flag names/path components that explicitly look like backups, copies,
+    hand-made scratch variants, or known editor leftovers. Do not infer that a
+    legitimate gameplay suffix such as _2p is a derivative merely because a
+    shorter sibling exists.
+    """
+    norm=path.replace("\\","/").lower()
+    parts=[p for p in norm.split("/") if p]
+    stem=Path(parts[-1]).stem if parts else ""
+    explicit=[
+        r"(^|[ _\-])copy($|[ _\-])",
+        r"backup",
+        r"(^|[ _\-])bak($|[ _\-])",
+        r"(^|[ _\-])pre([ _\-]|$)",
+        r"(^|[ _\-])old($|[ _\-])",
+        r"alrummi\d*",
+        r"\(\d+\)$",
+    ]
+    return any(any(re.search(pat,part) for pat in explicit) for part in parts) or any(re.search(pat,stem) for pat in explicit)
 
 
 def _derivative_provider_flags(paths: list[str]) -> set[str]:
-    flagged={p for p in paths if _obvious_backup_name(p)}
-    by_dir={}
-    for p in paths:
-        pp=p.replace("\\","/")
-        d,n=pp.rsplit("/",1) if "/" in pp else ("",pp)
-        stem=Path(n).stem.lower()
-        by_dir.setdefault(d,[]).append((p,stem))
-    for items in by_dir.values():
-        for p,stem in items:
-            for q,qstem in items:
-                if p==q: continue
-                if len(stem)>len(qstem) and (stem.startswith(qstem+"_") or stem.startswith(qstem+" -") or stem.startswith(qstem+" ")):
-                    flagged.add(p)
-    return flagged
+    # Fail conservative: only explicit backup/scratch naming is contamination.
+    # Generic "_suffix" inference produced false positives for real assets such
+    # as *_2p.arc and is intentionally not used.
+    return {p for p in paths if _obvious_backup_name(p)}
 
 
 def triage_command(args)->int:
     conn=connect_db(resolve_snapshot(args.snapshot)); groups=[]
+
+    def summarize(members):
+        counts={}
+        for p in members:
+            counts[p["raw_sha256"]]=counts.get(p["raw_sha256"],0)+1
+        if not counts:
+            return None, []
+        dominant_hash,dominant_count=max(counts.items(),key=lambda kv:(kv[1],kv[0]))
+        total=len(members); fraction=dominant_count/total
+        outliers=[p for p in members if p["raw_sha256"]!=dominant_hash]
+        return {
+            "provider_count":total,
+            "variant_count":len(counts),
+            "dominant_raw_sha256":dominant_hash,
+            "dominant_count":dominant_count,
+            "dominant_fraction":round(fraction,6),
+            "outlier_count":len(outliers),
+        }, outliers
+
     for g in conn.execute("SELECT * FROM provider_groups WHERE provider_count>1 AND payload_variants>1"):
         ps=[dict(r) for r in conn.execute("""SELECT f.path arc_path,r.member_index,r.raw_sha256,r.stored_sha256,aro.runtime_rank
             FROM resources r JOIN arcs a ON a.id=r.arc_id JOIN files f ON f.id=a.file_id
@@ -112,41 +138,42 @@ def triage_command(args)->int:
             WHERE r.type_hash=? AND r.canonical_path=? ORDER BY f.path,r.member_index""",(g["type_hash"],g["canonical_path"]))]
         paths=[p["arc_path"] for p in ps]; contamination=_derivative_provider_flags(paths)
         active=[p for p in ps if p["arc_path"] not in contamination]
-        by_route={}; by_family={}; route_members={}
+
+        by_route={}; by_family={}; route_members={}; family_members={}
         for p in active:
             route,family=_route_family(p["arc_path"])
             by_route.setdefault(route,set()).add(p["raw_sha256"])
             by_family.setdefault(family,set()).add(p["raw_sha256"])
             route_members.setdefault(route,[]).append(p)
+            family_members.setdefault(family,[]).append(p)
             p["route"]=route; p["family"]=family; p["tree_role"]="ACTIVE_CANDIDATE"
         for p in ps:
             if p["arc_path"] in contamination:
                 route,family=_route_family(p["arc_path"]); p["route"]=route; p["family"]=family; p["tree_role"]="BACKUP_OR_DERIVATIVE"
 
-        route_summary={}; consensus_outliers=[]
+        route_summary={}
         for route,members in sorted(route_members.items()):
-            counts={}
-            for p in members:
-                counts[p["raw_sha256"]]=counts.get(p["raw_sha256"],0)+1
-            dominant_hash,dominant_count=max(counts.items(),key=lambda kv:(kv[1],kv[0]))
-            total=len(members); fraction=dominant_count/total if total else 0.0
-            outliers=[p for p in members if p["raw_sha256"]!=dominant_hash]
-            route_summary[route]={
-                "provider_count":total,
-                "variant_count":len(counts),
-                "dominant_raw_sha256":dominant_hash,
-                "dominant_count":dominant_count,
-                "dominant_fraction":round(fraction,6),
-                "outlier_count":len(outliers),
-            }
-            if len(counts)>1 and fraction>=0.80:
+            summary,_=summarize(members)
+            route_summary[route]=summary
+
+        conflicting_family_summary={}
+        family_consensus_outliers=[]
+        for family,members in sorted(family_members.items()):
+            summary,outliers=summarize(members)
+            if summary["variant_count"]>1:
+                conflicting_family_summary[family]=summary
+            # High-confidence synchronisation candidate only when an ENG family
+            # disagrees with itself and >=80% of that same family agrees on one
+            # payload. Cross-family consensus is intentionally not enough:
+            # result/select/tenka/etc may legitimately carry contextual variants.
+            if family.startswith("eng/") and summary["variant_count"]>1 and summary["dominant_fraction"]>=0.80:
                 for p in outliers:
-                    consensus_outliers.append({
-                        "route":route,
+                    family_consensus_outliers.append({
+                        "family":family,
                         "arc_path":p["arc_path"],
                         "member_index":p["member_index"],
                         "raw_sha256":p["raw_sha256"],
-                        "dominant_raw_sha256":dominant_hash,
+                        "dominant_raw_sha256":summary["dominant_raw_sha256"],
                         "runtime_rank":p["runtime_rank"],
                     })
 
@@ -156,20 +183,18 @@ def triage_command(args)->int:
         same_route=[route for route,vals in by_route.items() if len(vals)>1]
         active_variants=len({p["raw_sha256"] for p in active})
 
-        eng_summary=route_summary.get("eng")
-        eng_consensus=(eng_summary is not None and eng_summary["variant_count"]>1 and
-                       eng_summary["dominant_fraction"]>=0.80 and eng_summary["outlier_count"]>0)
-        if eng_consensus:
-            cls="ENG_CONSENSUS_OUTLIER"; score=140
+        if active_variants<=1 and contamination:
+            cls="BACKUP_CONTAMINATION_ONLY"; score=20
+        elif family_consensus_outliers:
+            cls="ENG_FAMILY_CONSENSUS_OUTLIER"; score=140
         elif same_family:
             cls="SAME_FAMILY_DIVERGENCE"; score=100
         elif same_route:
-            cls="SAME_ROUTE_CROSS_FAMILY_DIVERGENCE"; score=80
+            cls="SAME_ROUTE_CROSS_FAMILY_DIVERGENCE"; score=60
         elif set(by_route)=={"eng","jpn"} and all(len(v)==1 for v in by_route.values()):
             cls="EXPECTED_ENG_JPN_DIVERGENCE"; score=10
         else:
             cls="CROSS_ROUTE_OR_CONTEXT_DIVERGENCE"; score=50
-        if contamination: score+=15
         if effective: score+=20
 
         record={"priority":score,"classification":cls,"type_hex":g["type_hex"],
@@ -177,14 +202,15 @@ def triage_command(args)->int:
             "payload_variants":g["payload_variants"],"active_payload_variants":active_variants,
             "same_family_conflicts":same_family,"same_route_conflicts":same_route,
             "route_summary":route_summary,
-            "consensus_outlier_providers":consensus_outliers,
+            "conflicting_family_summary":conflicting_family_summary,
+            "consensus_outlier_providers":family_consensus_outliers,
             "contaminating_providers":sorted(contamination),"observed_effective_provider":effective}
         if args.verbose:
             record["providers"]=ps
         groups.append(record)
     conn.close()
     if args.actionable:
-        groups=[g for g in groups if g["classification"]!="EXPECTED_ENG_JPN_DIVERGENCE" or g["contaminating_providers"]]
+        groups=[g for g in groups if g["classification"] not in {"EXPECTED_ENG_JPN_DIVERGENCE","BACKUP_CONTAMINATION_ONLY"}]
     groups.sort(key=lambda g:(-g["priority"],g["canonical_path"],g["type_hex"]))
     total=len(groups)
     if args.limit is not None: groups=groups[:args.limit]
