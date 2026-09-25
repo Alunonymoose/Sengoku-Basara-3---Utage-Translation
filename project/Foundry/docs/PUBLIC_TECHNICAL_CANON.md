@@ -115,3 +115,54 @@ Use:
 - **RUNTIME PROVEN**
 
 Keep static correctness separate from runtime ownership or visual acceptance.
+
+
+## ARCS / SCRA child-archive manifests
+
+**Evidence level: STRUCTURALLY VERIFIED on the current Utage ENG and JPN ARC corpora (2026-09-25).**
+
+MT Framework `rArchive` resources (class hash `0x73850D05`) inside three Utage parent families are not embedded ARC containers. Their raw payloads use the PS3 on-disk bytes `SCRA`; REvilLib independently recognizes the corresponding FourCC as `ARCS`.
+
+Observed binary layout:
+
+```text
+offset  size  meaning
+0x00    4     magic: SCRA on PS3 disk / ARCS logical FourCC
+0x04    2     big-endian ARC version (0x0008 in Utage)
+0x06    2     child member count N
+0x08    N*8   repeated:
+                 u32 BE resource class/type hash
+                 u32 BE full lowercase-path hash
+```
+
+For the second field of each pair:
+
+```text
+path_hash = (~crc32(lowercase(internal_resource_path))) & 0xffffffff
+```
+
+This deliberately differs from the common MT Framework V2 class hash helper, which masks the high bit to `0x7fffffff`.
+
+Current live corpus:
+
+- ENG: 117 `rArchive` entries; all 117 raw; all 117 decode as ARCS/SCRA.
+- JPN: 117 `rArchive` entries; all 117 raw; all 117 decode as ARCS/SCRA.
+- Families per route: 31 pl-face child manifests, 31 quest child manifests, 55 friend/pause child manifests.
+- Each route contains 507 child-member references.
+- 507/507 references resolve uniquely to a flattened resource in the containing parent ARC.
+- 117/117 manifest tables exactly match the ordered member identity table of the corresponding standalone child ARC.
+
+Therefore the supported structural model is:
+
+```text
+parent ARC
+  = flattened child resource payloads
+  + ARCS/SCRA virtual child-archive records
+  + optional parent-only resources
+```
+
+The parent may deduplicate resources shared by multiple child manifests. A manifest references resources by class + lowercase-path hash, not by adjacency or payload offset.
+
+Payload identity is independent of manifest identity. In pristine/current JPN parent families, the flattened payloads match standalone child payloads exactly. In the current localized ENG tree, some parent flattened resources intentionally/temporally diverge from standalone child ARC payloads while the ARCS/SCRA manifest remains identical. Do not infer payload equality from matching manifest identity.
+
+This proves the serialization/topology contract, not by itself runtime precedence. Runtime ownership still requires load/registration/runtime evidence.
