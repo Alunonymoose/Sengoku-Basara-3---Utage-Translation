@@ -280,3 +280,43 @@ The current JPN route contains 48 distinct ARC type hashes. All **48/48** resolv
 - `0x1ACCC2DD` rEvtParam / etp
 
 Use the type hash/class mapping as stronger format identity evidence than a suggestive directory name.
+
+
+## Typed message/font resource set
+
+**Evidence level: STRUCTURALLY VERIFIED on current Utage ARC fixtures (2026-09-25).**
+
+Path names such as `msg\ascii` are not sufficient to identify the binary resource class. The live class hashes and magics resolve the text/font resource set as:
+
+- `rFontCode` / `0x1D609FFB` / on-disk `\0TNF`
+- `rMessage` / `0x10C460E6` / on-disk `\0GSM`
+- `rMessageInfo` / `0x2EA515BF` / on-disk `\0FIM`
+- `rAscii` / `0x5E0EF076` / on-disk `\0CSA`
+- `rTexture` / `0x241F5DEB` / on-disk `\0XET`
+- `rPalette` / `0x619CF7E7` / on-disk `\0TLP`
+
+In particular, tiny resources named like `msg\ascii\...\ascii_00_ID_HQ` are `rPalette/TLP`, not `rAscii/CSA`.
+
+### rAscii / CSA
+
+All 2,037 rAscii instances in the current on-disk ENG corpus decode to 264 bytes:
+
+```text
+0x00  char[4]  "\0CSA"
+0x04  u32 BE   unknown field; observed value 100
+0x08  u16 BE   map[128]
+```
+
+The 128 entries form a 7-bit codepoint-slot -> local glyph-index map. `0xFFFF` means unmapped. The dominant general table occurs 2,003 times and has 95 mapped slots; controls `0x00..0x1F` are unmapped, ordinary printable ASCII is densely mapped except `&` (0x26), and slot 0x7F maps to glyph 94.
+
+The deliberate `&` gap is a parser/control **hypothesis clue**, not yet a proven control-code semantic.
+
+Detailed public note/tool:
+- `project/Foundry/docs/ASCII_CSA_RESOURCE_FORMAT_2026-09-25.md`
+- `project/Foundry/tools/ascii_csa.py`
+
+### SCRA official-localisation control
+
+Samurai Heroes `tenka\friend.arc` independently uses the same SCRA/rArchive mechanism. Its 51 English friend manifests match their English child tables 51/51 and their parent payloads match the child payloads 306/306.
+
+This external control strongly supports treating unexplained parent/child payload divergence inside a current localized Utage SCRA family as a synchronization QA finding rather than normal localization architecture. Runtime precedence still requires runtime/load evidence.
