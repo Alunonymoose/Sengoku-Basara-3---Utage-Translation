@@ -6,6 +6,17 @@ These files are intended to stop future agents from rediscovering the same forma
 
 ## Skills
 
+### `basara-utage-production-contract`
+
+Use for **every production task**, including fresh-account/model handoffs. It carries the universal live-input, no-proxy, candidate-first, approval-identity, mutation-budget and final-validation rules.
+
+Primary role: model-agnostic production safety contract.
+
+Path:
+
+`.agents/skills/basara-utage-production-contract/SKILL.md`
+
+
 ### `basara-utage-core`
 
 Use for any substantial Utage work, project continuation, source-of-truth recovery, ownership/routing, handoff, or when deciding which specialist skill applies.
@@ -105,3 +116,12 @@ When a discovery changes engineering behavior:
 4. record what old rule was superseded
 
 Do not allow Skills, Drive canon, and Foundry code to silently drift apart.
+
+
+## Public portability
+
+The skills in this directory are deliberately stored in the public repository so another researcher or AI account can recover the project methodology without access to the maintainer's private chats, memory, Drive or private ChatGPT plugin.
+
+For the public front door see `project/Foundry/docs/PUBLIC_CORE.md`.
+
+Private tooling may be more current moment-to-moment, but any durable rule that changes future engineering behaviour should be promoted back into these public skills.

@@ -1,3 +1,8 @@
+
+> **2026-09-25 PUBLIC PRODUCTION-CONTRACT GATE**
+>
+> Before production work, also apply `.agents/skills/basara-utage-production-contract/SKILL.md`. It is the model-agnostic safety contract for live-input authority, candidate-first texture work, immutable approval, mutation budgets and final-artifact validation. If routing fails to load a specialist skill, the contract still applies.
+>
 > **2026-09-23 SUPERSESSION — READ FIRST**
 >
 > Current startup is: BASARA Foundry Master Index -> **00 RELEASE COMPLETION GATE — 100% ENGLISH + HIGH-QUALITY TEXTURES — 2026-09-23** -> **00 FRESH CHAT HANDOFF — 2026-09-23 LATE — READ THIS FIRST (SUPERSEDES 21-00)** -> current task evidence.

@@ -1,4 +1,4 @@
-﻿# Sengoku BASARA 3 Utage â€” English Translation Project
+﻿# Sengoku BASARA 3 Utage — English Translation Project
 
 English translation and reverse-engineering project for
 **Sengoku BASARA 3 Utage** on PlayStation 3.
@@ -17,6 +17,24 @@ This repository preserves project-created material including:
 - test results
 - technical handover documentation
 - reproducibility information
+
+
+## BASARA Foundry Core — public reusable research
+
+This repository is also the public home of **BASARA Foundry Core**: the reusable reverse-engineering knowledge, engineering rules, tests, tools and AI-agent instructions produced while building the Utage English patch.
+
+The goal is that another researcher should **not need to rediscover the same ARC, XET/TEX, ownership, texture, layout and runtime lessons from scratch**.
+
+Start here:
+
+- [Public Core overview](project/Foundry/docs/PUBLIC_CORE.md)
+- [Public technical canon](project/Foundry/docs/PUBLIC_TECHNICAL_CANON.md)
+- [Proven failures and guardrails](project/Foundry/docs/PROVEN_FAILURES_AND_GUARDRAILS.md)
+- [AI portability / fresh-account bootstrap](project/Foundry/docs/AI_PORTABILITY.md)
+- [Research contribution rules](project/Foundry/docs/CONTRIBUTING_RESEARCH.md)
+- [Reusable agent skills](.agents/skills/README.md)
+
+The public core intentionally contains **research, code, schemas, algorithms, hashes, tests and documentation — not Capcom retail game payloads**. Researchers must supply their own legally obtained game files.
 
 ## Copyrighted game data
 

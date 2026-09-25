@@ -1,3 +1,8 @@
+
+> **2026-09-25 CANDIDATE-FIRST ROUTING HARDENING**
+>
+> For any live ARC/TEX/XET/atlas request, decode/extract the actual production resource **before generic image generation**. Prove the editable rectangle/mask/orientation/material semantics, freeze untouched pixels/blocks, create only isolated replacement art, composite it into the exact live decoded sheet, and make any mockup from that exact candidate. Reject objectively bad generated candidates before user review. Approved candidate pixels are immutable during encoding.
+>
 > **2026-09-24 TEXTURE CODEC HARDENING SUPERSESSION — READ FIRST**
 >
 > The durable Foundry C# texture path has now been corrected to the current PS3 contract and supersedes older operational warnings that no current writer exists.
