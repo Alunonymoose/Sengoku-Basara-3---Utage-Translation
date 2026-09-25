@@ -14,7 +14,7 @@ def init_db(conn: sqlite3.Connection) -> None:
     conn.executescript("""
     CREATE TABLE metadata(key TEXT PRIMARY KEY, value TEXT NOT NULL);
     CREATE TABLE files(id INTEGER PRIMARY KEY,path TEXT NOT NULL UNIQUE,size INTEGER NOT NULL,mtime_ns INTEGER NOT NULL,sha256 TEXT NOT NULL,kind TEXT NOT NULL);
-    CREATE TABLE arcs(id INTEGER PRIMARY KEY,file_id INTEGER NOT NULL UNIQUE REFERENCES files(id) ON DELETE CASCADE,parse_status TEXT NOT NULL,version INTEGER,member_count INTEGER,alignment INTEGER,error TEXT);
+    CREATE TABLE arcs(id INTEGER PRIMARY KEY,file_id INTEGER NOT NULL UNIQUE REFERENCES files(id) ON DELETE CASCADE,parse_status TEXT NOT NULL,version INTEGER,member_count INTEGER,alignment INTEGER,error TEXT,container_warning TEXT);
     CREATE TABLE resources(
       id INTEGER PRIMARY KEY,arc_id INTEGER NOT NULL REFERENCES arcs(id) ON DELETE CASCADE,
       member_index INTEGER NOT NULL,internal_path TEXT NOT NULL,canonical_path TEXT NOT NULL,
