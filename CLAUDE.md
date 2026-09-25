@@ -22,6 +22,12 @@ For any ARC/TEX/XET/atlas/UI/texture request, read and apply:
 For QA/audit work also use:
 - `.claude/skills/basara-qa/SKILL.md`
 
+Byte-level work (ARC, XET, GSM/FIM/TNF/CSA, PSL) goes through `project/basara` (`pip install -e project/basara`; `basara arc|msg|tex|build|install`). Do not write new parsers, encoders or rebuild scripts.
+
+Texture codec (runtime-proven 2026-09-25): standard BC byte order, 0x2A = BC3 + YCbCr; `xetenc.py`/`xet3.py` are quarantined. Canon: `project/texture_tools/TEXTURE_PIPELINE_CANON_2026-09-25.md`.
+
+Remaining-work priority (2026-09-26): texture + dialogue corpus pass, not new architecture — `project/skills_updates_2026-09-25/utage-corpus-archaeology/SKILL.md`.
+
 Do not treat this project as generic image generation or generic MT Framework modding.
 
 ## Production states
@@ -68,7 +74,7 @@ After approval, approved candidate pixels are immutable: no restyling, regenerat
 
 After rebuilding an ARC, reparse it, re-extract the changed member, decode the final stored resource, and compare protected members to the live baseline.
 
-Default final delivery is one ROOT-READY ZIP with correct game-root paths unless the user explicitly asks for loose files.
+**USER HARD RULE (2026-09-25): no ROOT-READY ZIPs.** Install directly on live E: only after a hash-verified backup of every ARC being changed (`basara install <build> --root <rom/eng> --backup-root <dir>`: verified backup, hash-guarded atomic write, read-back, INSTALL_RECORD.json; `basara rollback` never erases later edits).
 
 ## Behaviour
 
