@@ -183,8 +183,11 @@ class OrchestrationTests(unittest.TestCase):
             code,text=self.run_cli("triage",str(root),"--actionable","--limit","10")
             self.assertEqual(0,code)
             report=json.loads(text)
-            self.assertEqual(1,report["count"])
-            g=report["groups"][0]
+            self.assertEqual(0,report["count"])
+            code,text=self.run_cli("triage",str(root),"--limit","10")
+            self.assertEqual(0,code)
+            report=json.loads(text)
+            g=next(g for g in report["groups"] if g["classification"]=="BACKUP_CONTAMINATION_ONLY")
             self.assertIn("owner_PRE_TEST_backup.arc",g["contaminating_providers"][0])
             self.assertEqual(1,g["active_payload_variants"])
 
@@ -201,7 +204,7 @@ class OrchestrationTests(unittest.TestCase):
             code,text=self.run_cli("triage",str(root),"--actionable","--limit","10")
             self.assertEqual(0,code)
             g=json.loads(text)["groups"][0]
-            self.assertEqual("ENG_CONSENSUS_OUTLIER",g["classification"])
+            self.assertEqual("ENG_FAMILY_CONSENSUS_OUTLIER",g["classification"])
             self.assertEqual(8,g["route_summary"]["eng"]["dominant_count"])
             self.assertEqual(2,g["route_summary"]["eng"]["outlier_count"])
             self.assertEqual(2,len(g["consensus_outlier_providers"]))
@@ -209,6 +212,31 @@ class OrchestrationTests(unittest.TestCase):
             code,text=self.run_cli("triage",str(root),"--actionable","--limit","10","--verbose")
             self.assertEqual(0,code)
             self.assertEqual(10,len(json.loads(text)["groups"][0]["providers"]))
+
+
+    def test_triage_does_not_promote_cross_family_context_variant_to_consensus_outlier(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td)
+            msg=root/"PS3_GAME"/"USRDIR"/"nativePS3"/"rom"/"eng"/"msg"; msg.mkdir(parents=True)
+            result=root/"PS3_GAME"/"USRDIR"/"nativePS3"/"rom"/"eng"/"result"; result.mkdir(parents=True)
+            key=r"id\\texture\\jpn\\army\\army_000_ID_HQ"
+            for i in range(8):
+                (msg/f"m{i:03d}.arc").write_bytes(make_arc(key,b"GENERAL"))
+            for i in range(2):
+                (result/f"pl{i:03d}.arc").write_bytes(make_arc(key,b"RESULT!"))
+            self.assertEqual(0,self.run_cli("snapshot",str(root),"--force")[0])
+            code,text=self.run_cli("triage",str(root),"--actionable","--limit","10")
+            self.assertEqual(0,code)
+            g=json.loads(text)["groups"][0]
+            self.assertEqual("SAME_ROUTE_CROSS_FAMILY_DIVERGENCE",g["classification"])
+            self.assertEqual([],g["consensus_outlier_providers"])
+            self.assertEqual([],g["same_family_conflicts"])
+
+    def test_backup_directory_is_contamination_but_legitimate_2p_suffix_is_not(self):
+        self.assertTrue(mod._obvious_backup_name("USRDIR/nativePS3/rom/eng/id_msg_BACKUP_pre_desync_fix/msg_m016_pl000.arc"))
+        self.assertTrue(mod._obvious_backup_name("USRDIR/nativePS3/rom/eng/id/cockpit1P_alrummi3.arc"))
+        self.assertFalse(mod._obvious_backup_name("USRDIR/nativePS3/rom/player/pl019/pl019_2p.arc"))
+        self.assertFalse(mod._obvious_backup_name("USRDIR/nativePS3/rom/player/pl019/pl019_def_2p.arc"))
 
 
 if __name__ == "__main__":
