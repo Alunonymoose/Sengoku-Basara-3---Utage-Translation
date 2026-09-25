@@ -112,21 +112,56 @@ def triage_command(args)->int:
             WHERE r.type_hash=? AND r.canonical_path=? ORDER BY f.path,r.member_index""",(g["type_hash"],g["canonical_path"]))]
         paths=[p["arc_path"] for p in ps]; contamination=_derivative_provider_flags(paths)
         active=[p for p in ps if p["arc_path"] not in contamination]
-        by_route={}; by_family={}
+        by_route={}; by_family={}; route_members={}
         for p in active:
             route,family=_route_family(p["arc_path"])
             by_route.setdefault(route,set()).add(p["raw_sha256"])
             by_family.setdefault(family,set()).add(p["raw_sha256"])
+            route_members.setdefault(route,[]).append(p)
             p["route"]=route; p["family"]=family; p["tree_role"]="ACTIVE_CANDIDATE"
         for p in ps:
             if p["arc_path"] in contamination:
                 route,family=_route_family(p["arc_path"]); p["route"]=route; p["family"]=family; p["tree_role"]="BACKUP_OR_DERIVATIVE"
+
+        route_summary={}; consensus_outliers=[]
+        for route,members in sorted(route_members.items()):
+            counts={}
+            for p in members:
+                counts[p["raw_sha256"]]=counts.get(p["raw_sha256"],0)+1
+            dominant_hash,dominant_count=max(counts.items(),key=lambda kv:(kv[1],kv[0]))
+            total=len(members); fraction=dominant_count/total if total else 0.0
+            outliers=[p for p in members if p["raw_sha256"]!=dominant_hash]
+            route_summary[route]={
+                "provider_count":total,
+                "variant_count":len(counts),
+                "dominant_raw_sha256":dominant_hash,
+                "dominant_count":dominant_count,
+                "dominant_fraction":round(fraction,6),
+                "outlier_count":len(outliers),
+            }
+            if len(counts)>1 and fraction>=0.80:
+                for p in outliers:
+                    consensus_outliers.append({
+                        "route":route,
+                        "arc_path":p["arc_path"],
+                        "member_index":p["member_index"],
+                        "raw_sha256":p["raw_sha256"],
+                        "dominant_raw_sha256":dominant_hash,
+                        "runtime_rank":p["runtime_rank"],
+                    })
+
         ranked=[p for p in active if p["runtime_rank"] is not None]
         effective=min(ranked,key=lambda p:p["runtime_rank"])["arc_path"] if ranked else None
         same_family=[fam for fam,vals in by_family.items() if len(vals)>1]
         same_route=[route for route,vals in by_route.items() if len(vals)>1]
         active_variants=len({p["raw_sha256"] for p in active})
-        if same_family:
+
+        eng_summary=route_summary.get("eng")
+        eng_consensus=(eng_summary is not None and eng_summary["variant_count"]>1 and
+                       eng_summary["dominant_fraction"]>=0.80 and eng_summary["outlier_count"]>0)
+        if eng_consensus:
+            cls="ENG_CONSENSUS_OUTLIER"; score=140
+        elif same_family:
             cls="SAME_FAMILY_DIVERGENCE"; score=100
         elif same_route:
             cls="SAME_ROUTE_CROSS_FAMILY_DIVERGENCE"; score=80
@@ -136,12 +171,17 @@ def triage_command(args)->int:
             cls="CROSS_ROUTE_OR_CONTEXT_DIVERGENCE"; score=50
         if contamination: score+=15
         if effective: score+=20
-        groups.append({"priority":score,"classification":cls,"type_hex":g["type_hex"],
+
+        record={"priority":score,"classification":cls,"type_hex":g["type_hex"],
             "canonical_path":g["canonical_path"],"provider_count":g["provider_count"],
             "payload_variants":g["payload_variants"],"active_payload_variants":active_variants,
             "same_family_conflicts":same_family,"same_route_conflicts":same_route,
-            "contaminating_providers":sorted(contamination),"observed_effective_provider":effective,
-            "providers":ps})
+            "route_summary":route_summary,
+            "consensus_outlier_providers":consensus_outliers,
+            "contaminating_providers":sorted(contamination),"observed_effective_provider":effective}
+        if args.verbose:
+            record["providers"]=ps
+        groups.append(record)
     conn.close()
     if args.actionable:
         groups=[g for g in groups if g["classification"]!="EXPECTED_ENG_JPN_DIVERGENCE" or g["contaminating_providers"]]
