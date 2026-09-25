@@ -2,6 +2,7 @@ from __future__ import annotations
 import json
 import subprocess
 from pathlib import Path
+from arc_inspect import inspect_arc
 from core import SCHEMA_VERSION,SNAPSHOT_SCHEMA,atomic_json,canonical_internal_path,canonical_scan_root,find_repo_root,iter_files,load_ownership_module,load_safe_arc,sha256_bytes,sha256_file,tree_hash,utc_now
 from db import connect_db,init_db
 
@@ -40,10 +41,7 @@ def snapshot_command(args) -> int:
         rel=path.relative_to(scan_root).as_posix(); fid=file_ids[rel]
         try:
             arc_bytes=path.read_bytes()
-            if hasattr(safe_arc,"inspect_arc"):
-                entries, anomalies=safe_arc.inspect_arc(arc_bytes)
-            else:
-                entries=safe_arc.parse_arc(arc_bytes); anomalies=[]
+            entries, anomalies=inspect_arc(arc_bytes,safe_arc)
             alignment=safe_arc.detect_alignment(entries)
             container_warning=json.dumps(anomalies,sort_keys=True) if anomalies else None
             cur=conn.execute("INSERT INTO arcs(file_id,parse_status,version,member_count,alignment,error,container_warning) VALUES(?,'OK',8,?,?,NULL,?)",(fid,len(entries),alignment,container_warning)); aid=int(cur.lastrowid)
