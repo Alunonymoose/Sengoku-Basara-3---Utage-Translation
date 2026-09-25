@@ -42,17 +42,17 @@ Every 0x2A texture is BC3 (standard order) **plus** the Kuriimu2 PS3 YCbCr shade
 - Read: `alpha=G`, `Y=A`, `Cb=B-123`, `Cr=R-123`, `R=Y+1.402Cr`, `G=Y-.344136Cb-.714136Cr`, `B=Y+1.772Cb`.
 - Proof: title_004 (2026-09-18) and menu.arc member 58 (2026-09-25: the xetenc build showed navy (8,63,140), predicted (0,56,132); standard order puts the JPN original's chroma exactly on 123).
 - Why "plain looked right": xet3/xetenc read endpoints **swapped** and skipped the shader. That combination happens to look like a legible picture. It is not what the game renders.
-- Candidates, previews and boards are always **display RGBA** from `utage_xet.decode_display()`. Only the codec touches stored channels.
+- Candidates, previews and boards are always **display RGBA** from `basara tex decode` / `basara.xet.decode_display()`. Only the codec touches stored channels.
 - A magenta/green/cyan cast on new lettering = wrong writer. STOP. (The user's approved `cp_name_pl` art is the exception: leave it alone.)
-- title_004's transparent-texel prefill colour is artwork-specific; `utage_xet` defaults to `--prefill dilate`.
+- title_004's transparent-texel prefill colour is artwork-specific; `basara.xet` defaults to `--prefill dilate`.
 
-**Legacy damage.** Anything written with `xetenc.py` (since 2026-09-23: waza2/result_id labels 2026-09-24, menu.arc member 58 v1/v2) is probably mis-coloured in game. Find it with `xetcli.py census <rom/eng> --ref <rom/jpn>`; repair by recovering the art with `utage_xet._legacy_view` and re-grafting with the certified writer (backup/approval/cold-boot gates apply).
+**Legacy damage.** Anything written with `xetenc.py` (since 2026-09-23: waza2/result_id labels 2026-09-24, menu.arc member 58 v1/v2) is probably mis-coloured in game. Find it with `basara tex census <rom/eng> --ref <rom/jpn>`; repair by recovering the art with `basara.xet._legacy_view` and re-grafting with the certified writer (backup/approval/cold-boot gates apply).
 
 ## 3. Tools
 
 | Role | Location / API |
 |---|---|
-| **Canonical read/write (Python)** | GitHub `project/texture_tools/utage_xet/utage_xet.py` (`xet_info`, `decode_display`, `decode_storage`, `graft`, `byte_order_evidence`, `scan_against_reference`) + `xetcli.py` (`info`, `decode`, `graft`, `arc-list`, `arc-graft`, `scan`, `census`). 22 tests incl. display-space colour regression. `graft` compares against the live **display** decode, re-encodes only changed 4×4 blocks, refuses swapped/legacy targets, uncertified formats, multi-mip and swizzle. `arc-graft` rebuilds through pinned safe_arc, re-extracts, writes `*.final_display.png` + `*.record.json`. |
+| **Canonical read/write (Python)** | GitHub `project/basara` → `basara.xet` (`xet_info`, `decode_display`, `decode_storage`, `graft`, `byte_order_evidence`, `scan_against_reference`) + `basara tex` (`info`, `decode`, `graft`, `arc-list`, `arc-graft`, `scan`, `census`). Install: `pip install -e project/basara`. (`utage_xet.py`/`xetcli.py` remain as shims.) 22 tests incl. display-space colour regression. `graft` compares against the live **display** decode, re-encodes only changed 4×4 blocks, refuses swapped/legacy targets, uncertified formats, multi-mip and swizzle. `arc-graft` rebuilds through pinned safe_arc, re-extracts, writes `*.final_display.png` + `*.record.json`. |
 | Release-audit decoder | `project/texture_tools/xet_recovery_2026-09-23/foundry_xet_decoder_20260923.py` (corrected to standard order 2026-09-25; parity-tested with utage_xet) |
 | Canonical C# writer | Foundry `UtageXetCodec` / `UtageBc3BlockGraft` / `UtageSingleEntryXetGraft` (swap removed 2026-09-25; default base = current live target; `--base-mode restore` for explicit pristine restores). Needs CI build via PR before production use. |
 | **QUARANTINED — never write with** | `xetenc.py`, `xet3.py`, `validate_xetenc.py` (E: `_codex_tenka_v6\xetenc_RECOVERED_2026-09-24\`, Drive). SOL6 `xet_bc3_patch.py`/`xet_solved_read.py` (E: only): endpoint order and 0x2A handling unverified — do not use for 0x2A until checked against `utage_xet`. |
@@ -88,7 +88,7 @@ Requirements: Python 3.11, numpy, Pillow. Fonts on the laptop are in `C:\Windows
 
 ## 5. After approval (pixels frozen)
 
-1. Encode with `xetcli.py arc-graft` (or the corrected Foundry C#). Graft only the touched blocks; the target XET shell and untouched blocks stay byte-identical.
+1. Encode with `basara tex arc-graft` or a patchset texture op (or the corrected Foundry C#). Graft only the touched blocks; the target XET shell and untouched blocks stay byte-identical.
 2. Rebuild only the budgeted members, applying the same final XET to every lockstep provider.
 3. Reparse the finished ARC, re-extract, and decode the stored member.
 4. Compare against the approved PNG, reporting collateral inside touched blocks.

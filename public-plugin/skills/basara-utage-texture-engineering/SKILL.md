@@ -1,4 +1,4 @@
-> **2026-09-25 TEXTURE PIPELINE CANON — READ FIRST.** BC payloads use standard DXT byte order (no PS3 endpoint swap; runtime-disproven). 0x2A = BC3 + Kuriimu2 YCbCr, written only through the YCbCr writer and judged in display space. Canon: `project/texture_tools/TEXTURE_PIPELINE_CANON_2026-09-25.md`; codec/CLI: `project/texture_tools/utage_xet/`. Legacy `xetenc.py`/`xet3.py` are quarantined.
+> **2026-09-25 TEXTURE PIPELINE CANON — READ FIRST.** BC payloads use standard DXT byte order (no PS3 endpoint swap; runtime-disproven). 0x2A = BC3 + Kuriimu2 YCbCr, written only through the YCbCr writer and judged in display space. Canon: `project/texture_tools/TEXTURE_PIPELINE_CANON_2026-09-25.md`; codec/CLI: `basara.xet` / `basara tex` in `project/basara`. Legacy `xetenc.py`/`xet3.py` are quarantined.
 
 
 > **2026-09-25 CANDIDATE-FIRST ROUTING HARDENING**

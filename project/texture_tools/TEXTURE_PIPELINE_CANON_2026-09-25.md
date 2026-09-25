@@ -1,4 +1,4 @@
-# Utage texture pipeline — canon (2026-09-25)
+# Utage texture pipeline — canon (2026-09-25; tool paths updated 2026-09-26)
 
 **This document supersedes every earlier statement about XET BC endpoint byte
 order, `xetenc.py`/`xet3.py`, and "0x2A is BC3" wording.** Older notes stay
@@ -13,7 +13,7 @@ additionally stores the Kuriimu2 PS3 YCbCr representation inside BC3:
 stored RGBA = `(Cr, alpha, Cb, Y)`, neutral chroma 123. Artists and tools work
 in **display RGBA**; only the codec touches stored channels.
 
-## 2. Format table (enforced by `utage_xet.FORMATS`)
+## 2. Format table (enforced by `basara.xet.FORMATS`)
 
 | XET id | Storage | Display semantics | Read | Write | Status |
 |---|---|---|---|---|---|
@@ -51,11 +51,11 @@ against the game's shader, or a cold boot, catches it.
 
 | Need | Tool |
 |---|---|
-| Read/decode/write XET (Python) | `project/texture_tools/utage_xet/utage_xet.py` (`decode_display`, `decode_storage`, `graft`, `byte_order_evidence`, `scan_against_reference`) |
-| CLI incl. ARC graft + re-extract | `project/texture_tools/utage_xet/xetcli.py` (`info`, `decode`, `graft`, `arc-list`, `arc-graft`, `scan`, `census`) |
+| Read/decode/write XET (Python) | `project/basara/src/basara/xet.py` (`utage_xet.py` is a compatibility shim) (`decode_display`, `decode_storage`, `graft`, `byte_order_evidence`, `scan_against_reference`) |
+| CLI incl. ARC graft + re-extract | `basara tex …` (`xetcli.py` is a compatibility shim) (`info`, `decode`, `graft`, `arc-list`, `arc-graft`, `scan`, `census`) |
 | C# production codec | `project/Foundry/src/BasaraFoundry.Game.Utage/Xet/UtageXetCodec.cs` (standard order, BCnEncoder.Net 2.2.1) |
 | Release-audit decoder (pinned) | `project/texture_tools/xet_recovery_2026-09-23/foundry_xet_decoder_20260923.py` (corrected; parity-tested against `utage_xet`) |
-| ARC parse/rebuild | `project/tools/donor_matcher_v5_1_2026-09-23/safe_arc.py` pin `7beb24a5…f6f3` (xetcli enforces the pin) |
+| ARC parse/rebuild | `project/tools/donor_matcher_v5_1_2026-09-23/safe_arc.py` pin `7beb24a5…f6f3` (kept as the differential-test oracle; `basara.arc` is proven byte-identical) |
 
 **Quarantined — do not use for writing:** `xetenc.py` and `xet3.py`
 (Drive `05 Tools & Automation / 2026-09-24 — xetenc.py RECOVERED and
@@ -66,11 +66,11 @@ See `project/texture_tools/legacy_quarantine/README.md`.
 ## 5. Production workflow (unchanged gates, corrected codec)
 
 1. Re-hash the live ARC; record `mtimeMs`.
-2. `xetcli.py arc-list` → confirm format, mips, swizzle, `byte_order_evidence.verdict == "standard"`.
+2. `basara tex arc-list` → confirm format, mips, swizzle, `byte_order_evidence.verdict == "standard"`.
    A `swapped` verdict means the member was written by the legacy tool: repair it first.
-3. `xetcli.py decode` → display PNG. Check it against the JPN decode/runtime screenshot. A magenta/green/cyan cast is a STOP.
+3. `basara tex decode` → display PNG. Check it against the JPN decode/runtime screenshot. A magenta/green/cyan cast is a STOP.
 4. Author the candidate on a copy of that display PNG (proven edit region only). Approval gate on the exact candidate.
-5. `xetcli.py arc-graft <arc> <member> <candidate.png> <out.arc> [--mask m.png] [--prefill dilate|colour --colour R,G,B]`
+5. `basara tex arc-graft <arc> <member> <candidate.png> <out.arc> [--mask m.png] [--prefill dilate|colour --colour R,G,B]`
    → only changed 4×4 blocks re-encoded; untouched blocks byte-identical; ARC rebuilt with safe_arc; member re-extracted and decoded (`*.final_display.png`); `*.record.json` written.
 6. Second approval on `final_display.png`. Patch co-resident duplicate providers in lockstep.
 7. Backup → install → read-back per the install protocol. RPCS3 cold boot is the final gate.
@@ -91,19 +91,19 @@ whether any of them applied the 0x2A shader before assuming their output is clea
 Run locally (read-only):
 
 ```bash
-python project/texture_tools/utage_xet/xetcli.py census "E:/Utage Patching New/PS3_GAME/USRDIR/nativePS3/rom/eng" \
+basara tex census "E:/Utage Patching New/PS3_GAME/USRDIR/nativePS3/rom/eng" \
   --ref "E:/Utage Patching New/PS3_GAME/USRDIR/nativePS3/rom/jpn" --out E:/BASARA_AUDITS/xet_census.json
 ```
 
 Each flagged member lists the changed blocks whose **legacy reading** fits
 the untouched art far better than the certified reading. Repair = decode the
 member the legacy way to recover the approved artwork
-(`utage_xet._legacy_view`), graft it back with the certified writer, then
+(`basara.xet._legacy_view`), graft it back with the certified writer, then
 the normal approval/backup/install/cold-boot gates.
 
 ## 7. Evidence levels
 
-`utage_xet` tests are SOFTWARE/FIXTURE proof (22 tests, CI). 0x2A standard
+`basara.xet` tests are SOFTWARE/FIXTURE proof (22 texture tests + 46 core tests, Windows+Linux CI). 0x2A standard
 order + YCbCr is RUNTIME PROVEN on two real fixtures. BC2 read, and BC1/0x17
 write, are not runtime-certified. The Python BC3 encoder is a
 PCA/least-squares fit, not bit-identical to BCnEncoder.Net; RGB565 expansion

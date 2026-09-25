@@ -73,8 +73,8 @@ Never generalize one title/title_id or other preload result to unrelated familie
 
 ## Delivery
 
-A requested final patch normally ends in one installation-ready ROOT-READY ZIP with correct game-root paths and a concise manifest.
+**USER HARD RULE (2026-09-25): no ROOT-READY ZIPs.** Install directly on live E: only after a hash-verified backup of every ARC being changed. `basara install <build> --root <rom/eng> --backup-root <dir>` does exactly this (verified backup, hash-guarded atomic write, read-back, INSTALL_RECORD.json); `basara rollback` never erases later edits.
 
-Loose ARC/TEX/XET/PNG files are not the default final deliverable unless explicitly requested.
+Byte-level work goes through `project/basara` (`basara arc|msg|tex|build`); do not write new ARC parsers or rebuild scripts.
 
 Never call an archive final merely because it rebuilt successfully; validate the stored result from the finished archive.

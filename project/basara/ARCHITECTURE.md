@@ -1,5 +1,13 @@
 # basara — architecture and engineering direction (2026-09-26)
 
+> **SCOPE CORRECTION — 2026-09-26 (user tasking: Drive `BASARA Foundry — Frontier AI Tasking for Remaining Texture & Dialogue Work — 2026-09-25`).**
+> The game principally needs **texture work and dialogue work**, not more architecture. `basara` is
+> **feature-frozen**: no TMS, orchestration layer, provenance platform or new subsystems. It exists to
+> serve the corpus pass — its decoders (`arc`, `msg`, `font`, `xet`), the censuses and the safe
+> `install` are the "small helpers" that pass needs. `patch`/`catalog` stay as they are and grow only
+> when a real texture or dialogue job needs it. The next session's job is the corpus archaeology
+> (`project/skills_updates_2026-09-25/utage-corpus-archaeology/SKILL.md`), not this codebase.
+
 ## 1. What was wrong (measured, not opinion)
 
 | Finding | Evidence in this repo on 2026-09-26 |

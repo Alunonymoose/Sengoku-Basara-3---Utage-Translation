@@ -37,7 +37,7 @@ Also list `.claude/skills/` in case new skills were added. Load any that apply.
 - Re-hash live ENG first. If the hash differs from the one in the job brief, the new bytes win. Update the baseline and say so.
 - Loose `kessen_*.tex/.lsp` files sitting next to `menu.arc` are evidence only. Prove what gets loaded before you trust any of them over the ARC member.
 - Tools to reuse (don't rewrite them from scratch):
-  - **Texture codec: GitHub `project/texture_tools/utage_xet/` (`utage_xet.py`, `xetcli.py`).** `xetenc.py`/`xet3.py` in `_codex_tenka_v6\xetenc_RECOVERED_2026-09-24\` are QUARANTINED: never write with them.
+  - **Texture codec: `basara tex …` / `basara.xet` (GitHub `project/basara`, `pip install -e project/basara`).** `xetenc.py`/`xet3.py` in `_codex_tenka_v6\xetenc_RECOVERED_2026-09-24\` are QUARANTINED: never write with them.
   - `_codex_tenka_v6\msg_tools_2026-09-24\arc_tools.py` (parse/rebuild)
   - `_codex_tenka_v6\UTAGE_PIPELINE_MANIFEST.json` (census of where each key lives)
 - Project facts to honour:
@@ -72,7 +72,7 @@ Then stop. Before approval:
 
 Reject weak candidates yourself before you show them.
 
-**After approval:** the approved pixels are frozen. Encode with `xetcli.py arc-graft` (utage_xet). Rebuild only the budgeted members. Reparse the finished ARC, re-extract, decode the stored texture and compare it to the approved PNG. Verify protected members are byte-identical. Show the final decode for a second approval.
+**After approval:** the approved pixels are frozen. Encode with `basara tex arc-graft`. Rebuild only the budgeted members. Reparse the finished ARC, re-extract, decode the stored texture and compare it to the approved PNG. Verify protected members are byte-identical. Show the final decode for a second approval.
 
 **USER HARD RULE:** no ROOT-READY ZIPs. Install directly on live E:, but only after a hash-verified dated backup of the ARC (`_<TOPIC>_BACKUP_<date>\`). Follow the full protocol in utage-session-start §6: backup, mtime-guarded write, re-stage, re-verify, `INSTALL_RECORD.json`.
 

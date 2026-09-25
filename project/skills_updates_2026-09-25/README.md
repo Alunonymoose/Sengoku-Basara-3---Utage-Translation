@@ -22,3 +22,9 @@ of **utage-text-pipeline** (it supersedes `gsm_tools.py`/`arc_tools.py` for new 
 > `basara msg tables|show|census`, `basara catalog export|lint|import`, `basara tex …`,
 > `basara build|install|rollback`. Patchsets replace per-job scripts and ZIPs; `install`
 > implements the backup-before-write rule. See `.agents/skills/basara-core/SKILL.md`.
+
+## 2026-09-26 — new skill to save: `utage-corpus-archaeology`
+
+`project/skills_updates_2026-09-25/utage-corpus-archaeology/SKILL.md` turns the Frontier AI Tasking
+work order into a reusable skill (texture + dialogue corpus pass, outputs, classes, rules), routed
+through the existing `basara` decoders so the pass never starts by writing parsers.

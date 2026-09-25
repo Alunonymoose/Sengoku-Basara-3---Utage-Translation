@@ -7,6 +7,8 @@ description: Mandatory workflow for BASARA/Utage ARC/TEX/XET texture sheets, atl
 
 Apply the BASARA production contract first.
 
+**Codec (2026-09-25, runtime-proven):** BC payloads use standard DXT byte order (no PS3 endpoint swap); 0x2A = BC3 + Kuriimu2 YCbCr. Decode for review with `basara tex decode` (display space); write only via `basara tex arc-graft` / patchset texture ops. `xetenc.py`/`xet3.py` are quarantined. Canon: `project/texture_tools/TEXTURE_PIPELINE_CANON_2026-09-25.md`.
+
 ## Entry lock: decode before generate
 
 If an ARC/TEX/XET is supplied or named, inspect/extract/decode the real live resource before custom generation.
