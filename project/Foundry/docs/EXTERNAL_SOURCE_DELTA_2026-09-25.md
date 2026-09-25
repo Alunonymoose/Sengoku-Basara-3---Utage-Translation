@@ -114,3 +114,30 @@ Live Utage proof:
 This is the clearest structural proof so far for the parent/child archive relationship behind `title_id`, `pl_all`, `quest_id`, and `friend`.
 
 Status: **STRUCTURALLY VERIFIED**.
+
+
+## 6. Whole-game texture census removes 0x2B from Utage scope
+
+A live route-wide census inspected 97,800 rTexture/XET entries across current ENG and JPN ARCs.
+
+Observed formats are only 0x2A, 0x17, 0x15, 0x19 and 0x27. Format 0x2B appears **zero times** in both routes.
+
+Conclusion:
+- the PS3 RBxG implementation is useful cross-game corroboration;
+- REvilLib's 0x2B naming remains interesting generic MT Framework evidence;
+- neither should consume Utage production effort unless a real Utage 0x2B fixture is discovered.
+
+Status: **STRUCTURALLY VERIFIED for the scanned current routes**.
+
+
+## 7. Utage's complete live class universe matches SB3 taxonomy
+
+The current JPN route contains 48 unique ARC type hashes. Every one resolves against REvilLib's `sb3.ini` PS3 resource-class map.
+
+- 48/48 resolved by SB3.
+- 39/48 also resolved by Samurai Heroes.
+- 9/48 are SB3-profile classes absent from REvilLib's Samurai Heroes profile.
+- 0 live Utage hashes require a Samurai Heroes-only class.
+- 0 remain unknown after SB3 cross-resolution.
+
+This gives BASARA Foundry an external name/extension authority for the complete observed Utage resource-class set, while live bytes remain the production authority.
