@@ -186,3 +186,17 @@ def test_shipped_dangling_records_are_preserved_and_locked():
     newpool = len(grown.pool)
     assert grown.records[2:] == ((newpool, 1), (newpool + 1, 0))
     assert grown.words(1) == back.words(1)
+
+
+def test_spare_unowned_fim_rows_are_preserved_not_errors():
+    gsm, fim, _, _ = _pair()
+    spare = (0x77,) * 11
+    f2 = Fim(fim.header[:12] + (len(fim.secondary) + 1).to_bytes(4, "big") + fim.header[16:],
+             fim.primary, fim.secondary + (spare,))
+    rep = check(gsm, f2)
+    assert rep.ok and rep.unowned_rows == 1
+    assert apply(gsm, f2).secondary[-1] == spare
+
+
+def test_fc11_takes_no_arguments():
+    assert tokenize([0xFC11, 0x41, 0xFFFF])[1].word == 0x41

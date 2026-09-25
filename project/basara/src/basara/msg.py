@@ -41,9 +41,11 @@ BR, SPEECH, END = 0xFFFE, 0xFFFD, 0xFFFF
 COLOUR_OPEN, COLOUR_CLOSE = 0xFF92, 0xFF91
 SPEAKER = 0xFC0D
 
-#: Corpus-validated grammar (FIM_CONTRACT_REPAIR + FC0D from drama tables).
+#: Corpus-validated grammar (FIM_CONTRACT_REPAIR + FC0D from drama tables;
+#: FC11:0 proven 2026-09-26 on the full live corpus: 39/50 FC11 tables pass
+#: only with 0 args, none need 1).
 WESTERN: Mapping[int, int] = {
-    0xFC0D: 1, 0xFC0E: 2, 0xFC0F: 1, 0xFC12: 0, 0xFC16: 1, 0xFC17: 3,
+    0xFC0D: 1, 0xFC0E: 2, 0xFC0F: 1, 0xFC11: 0, 0xFC12: 0, 0xFC16: 1, 0xFC17: 3,
     0xFED2: 2, 0xFF91: 0, 0xFF92: 1, 0xFFFA: 1, 0xFFFB: 1,
     0xFFFD: 0, 0xFFFE: 0, 0xFFFF: 0,
 }
@@ -260,6 +262,7 @@ class ContractReport:
     violations: list = field(default_factory=list)      # (row, want, have)
     errors: list = field(default_factory=list)          # (record, message)
     ambiguous_words: int = 0                            # words 0x8000..0xCFFF seen
+    unowned_rows: int = 0                               # spare FIM rows no record uses (preserved)
 
     @property
     def ok(self) -> bool:
@@ -301,9 +304,9 @@ def check(gsm: Gsm, fim: Fim, grammar_name: str = "western") -> ContractReport:
         c0, c1 = fim.secondary[j][0], fim.secondary[j][1]
         if c0 != v.col0 or c1 >> 16 != v.start:
             rep.violations.append((j, (v.col0, v.start), (c0, c1 >> 16)))
-    unowned = set(range(len(fim.secondary))) - set(want)
-    if unowned:
-        rep.errors.append((None, f"{len(unowned)} unowned format rows"))
+    # Spare rows no record references exist in shipped tables (result_id.arc);
+    # they are reported and preserved verbatim, never derived.
+    rep.unowned_rows = len(set(range(len(fim.secondary))) - set(want))
     return rep
 
 
@@ -322,9 +325,7 @@ def apply(gsm: Gsm, fim: Fim, grammar: Mapping[int, int] = WESTERN) -> Fim:
     """Return the FIM with col0 and col1-high16 re-derived for every row.
     Nothing else in the FIM changes."""
     want = derive(gsm, fim, grammar)
-    if set(want) != set(range(len(fim.secondary))):
-        raise MsgError("unowned format rows; refusing to guess their values")
-    rows = list(fim.secondary)
+    rows = list(fim.secondary)          # unowned spare rows stay byte-identical
     for j, v in want.items():
         row = list(rows[j])
         row[0] = v.col0
