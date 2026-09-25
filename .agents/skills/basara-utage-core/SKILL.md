@@ -154,3 +154,22 @@ Do not:
 ## Current code-state caveat
 
 The authoritative implementation may be ahead of this skill document. Before a production change, inspect the current `foundry-v0.1` branch and any open hardening PR/checkpoint. If code and this skill disagree, preserve safety, investigate the newer evidence, and update the skill/canon rather than silently following stale text.
+
+
+## SCRA-aware ownership
+
+When a live `rArchive` member contains an SCRA manifest, treat it as a proven structural parent/child relationship:
+
+`parent flattened pool -> SCRA logical child manifest -> standalone child ARC`
+
+Before mutating a manifested resource:
+- inspect the SCRA parent pool;
+- inspect the standalone child ARC;
+- inspect any proven aggregate sibling such as `pl_all.arc`;
+- compare payload identities;
+- do not assume matching manifest identity means matching payload;
+- do not assume the standalone child is the only production surface.
+
+Official Samurai Heroes preserves parent/child payload identity for its SCRA-localized friend family, so unexplained divergence in localized Utage is a synchronization QA finding. Runtime precedence is still a separate claim.
+
+Cross-game donor changes are member-level unless the whole child bundle shape is proven equivalent.
