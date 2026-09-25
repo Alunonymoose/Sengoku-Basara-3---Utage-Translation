@@ -233,10 +233,32 @@ class OrchestrationTests(unittest.TestCase):
             self.assertEqual([],g["same_family_conflicts"])
 
     def test_backup_directory_is_contamination_but_legitimate_2p_suffix_is_not(self):
-        self.assertTrue(mod._obvious_backup_name("USRDIR/nativePS3/rom/eng/id_msg_BACKUP_pre_desync_fix/msg_m016_pl000.arc"))
-        self.assertTrue(mod._obvious_backup_name("USRDIR/nativePS3/rom/eng/id/cockpit1P_alrummi3.arc"))
-        self.assertFalse(mod._obvious_backup_name("USRDIR/nativePS3/rom/player/pl019/pl019_2p.arc"))
-        self.assertFalse(mod._obvious_backup_name("USRDIR/nativePS3/rom/player/pl019/pl019_def_2p.arc"))
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td)
+            rom=root/"PS3_GAME"/"USRDIR"/"nativePS3"/"rom"
+            active=rom/"eng"/"msg"; active.mkdir(parents=True)
+            backup=rom/"eng"/"id_msg_BACKUP_pre_desync_fix"; backup.mkdir(parents=True)
+            key=r"id\\fixture\\backup_dir"
+            (active/"owner.arc").write_bytes(make_arc(key,b"LIVE"))
+            (backup/"owner.arc").write_bytes(make_arc(key,b"OLD!"))
+            self.assertEqual(0,self.run_cli("snapshot",str(root),"--force")[0])
+            code,text=self.run_cli("triage",str(root),"--actionable","--limit","10")
+            self.assertEqual(0,code)
+            self.assertEqual(0,json.loads(text)["count"])
+
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td)
+            live=root/"PS3_GAME"/"USRDIR"/"nativePS3"/"rom"/"player"/"pl019"; live.mkdir(parents=True)
+            key=r"id\\fixture\\two_player"
+            (live/"pl019.arc").write_bytes(make_arc(key,b"ONEP"))
+            (live/"pl019_2p.arc").write_bytes(make_arc(key,b"TWOP"))
+            self.assertEqual(0,self.run_cli("snapshot",str(root),"--force")[0])
+            code,text=self.run_cli("triage",str(root),"--actionable","--limit","10")
+            self.assertEqual(0,code)
+            report=json.loads(text)
+            self.assertEqual(1,report["count"])
+            self.assertEqual("SAME_FAMILY_DIVERGENCE",report["groups"][0]["classification"])
+            self.assertEqual([],report["groups"][0]["contaminating_providers"])
 
 
 if __name__ == "__main__":
