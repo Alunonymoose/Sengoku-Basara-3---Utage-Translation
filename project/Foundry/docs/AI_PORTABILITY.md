@@ -63,3 +63,10 @@ When a new researcher lacks a private checkpoint, recover context in this order:
 6. only then external/general MT Framework knowledge.
 
 Do not recreate months of architecture research if the repository already contains the proof.
+
+
+## Portable plugin source
+
+A clean public plugin source is maintained in `public-plugin/`. It mirrors the reusable public skills and canon without bundling retail game payloads.
+
+Another account can package that directory and import it where the platform supports private plugin creation. Even without plugin support, the same skills are plain Markdown and can be supplied directly to another model.
