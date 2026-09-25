@@ -84,8 +84,9 @@ per asset and record it.
 
 Suspects: everything written with `xetenc.py` since 2026-09-23 (e.g. waza2
 and result_id labels 2026-09-24) and any other path that swapped endpoints.
-Codex's SOL6/quest builders pack endpoints with `'<HHI'` (standard order);
-check whether they applied the 0x2A shader before assuming they are clean.
+Codex's quest builders in `project/_codex_select_menu/` pack endpoints with
+`'<HHI'` (standard order); SOL6's E:-only tools are unverified. Check
+whether any of them applied the 0x2A shader before assuming their output is clean.
 
 Run locally (read-only):
 
