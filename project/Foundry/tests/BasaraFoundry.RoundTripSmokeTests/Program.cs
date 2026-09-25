@@ -10,10 +10,11 @@ internal static class Program
     private static int Main()
     {
         // Independent PS3 0x2A fixture: the BC3 payload stores YCbCr shader
-        // channels, and RGB565 colour endpoints are big-endian. This block's
-        // raw storage pixel is approximately (Cr=247, coverage=255, Cb=82, Y=76),
-        // which must render as opaque red.
-        var ps3RedFixture = BuildPs3Bc3StoredForDisplayRedXet();
+        // channels using standard DXT5/BC3 byte ordering. XET container fields
+        // are big-endian, but the BC payload is not endpoint-byte-swapped.
+        // This block's raw storage pixel is approximately
+        // (Cr=247, coverage=255, Cb=82, Y=76), which must render as opaque red.
+        var ps3RedFixture = BuildStandardBc3StoredForDisplayRedXet();
         var ps3RedDecoded = UtageXetCodec.DecodeTopLevel(ps3RedFixture).Rgba;
         for (var i = 0; i < ps3RedDecoded.Length; i += 4)
         {
@@ -24,7 +25,7 @@ internal static class Program
         }
 
         // Writer proof independent of Foundry's display decoder: inspect the
-        // first encoded BC3 storage pixel using a tiny local PS3 block decoder.
+        // first encoded BC3 storage pixel using a tiny local standard-BC3 decoder.
         var solidRed = new byte[4 * 4 * 4];
         for (var i = 0; i < solidRed.Length; i += 4)
         {
@@ -33,10 +34,10 @@ internal static class Program
         }
         var redShell = BuildEmptyXet(4, 4, 0x2A);
         var encodedRed = UtageXetCodec.ReplaceSingleLevel(redShell, solidRed).XetBytes;
-        var first = DecodeFirstPs3Bc3Pixel(encodedRed.AsSpan(20, 16));
+        var first = DecodeFirstStandardBc3Pixel(encodedRed.AsSpan(20, 16));
         True(first.R >= 235 && first.G >= 235 && first.B >= 55 && first.B <= 105 &&
              first.A >= 55 && first.A <= 95,
-            "0x2A writer emits PS3-endian stored (Cr, alpha, Cb, Y) channels");
+            "0x2A writer emits standard-BC3 stored (Cr, alpha, Cb, Y) channels");
         var displayCheck = UtageXetCodec.DecodeTopLevel(encodedRed).Rgba;
         True(displayCheck[0] >= 235 && displayCheck[1] <= 20 && displayCheck[2] <= 20 && displayCheck[3] >= 235,
             "0x2A encoded storage round-trips to visible red");
@@ -115,7 +116,7 @@ internal static class Program
         }
     }
 
-    private static byte[] BuildPs3Bc3StoredForDisplayRedXet()
+    private static byte[] BuildStandardBc3StoredForDisplayRedXet()
     {
         var raw = BuildEmptyXet(4, 4, 0x2A);
         var block = raw.AsSpan(20, 16);
@@ -125,11 +126,11 @@ internal static class Program
         block[1] = 0;
         // alpha indices 0 -> Y=76
 
-        // RGB565 endpoint 0 ~= (Cr=247, coverage=255, Cb=82), PS3 BE.
-        block[8] = 0xF7;
-        block[9] = 0xEA;
-        block[10] = 0x07;
-        block[11] = 0xE0;
+        // RGB565 endpoint 0 ~= (Cr=247, coverage=255, Cb=82), standard BC3 LE.
+        block[8] = 0xEA;
+        block[9] = 0xF7;
+        block[10] = 0xE0;
+        block[11] = 0x07;
         // colour indices 0 -> endpoint 0 for every pixel.
         return raw;
     }
@@ -144,8 +145,8 @@ internal static class Program
         var packedAlpha = (byte)(alphaNibble | (alphaNibble << 4));
         for (var i = 0; i < 8; i++)
             block[i] = packedAlpha;
-        block[8] = 0xF8; block[9] = 0x00; // RGB565 red, PS3 big-endian
-        block[10] = 0x07; block[11] = 0xE0; // RGB565 green, PS3 big-endian
+        block[8] = 0x00; block[9] = 0xF8; // RGB565 red, standard BC2 LE
+        block[10] = 0xE0; block[11] = 0x07; // RGB565 green, standard BC2 LE
         // colour index 0 for every pixel -> red endpoint.
         return raw;
     }
@@ -167,7 +168,7 @@ internal static class Program
         return raw;
     }
 
-    private static (byte R, byte G, byte B, byte A) DecodeFirstPs3Bc3Pixel(ReadOnlySpan<byte> block)
+    private static (byte R, byte G, byte B, byte A) DecodeFirstStandardBc3Pixel(ReadOnlySpan<byte> block)
     {
         if (block.Length != 16)
             throw new ArgumentException("BC3 block must be 16 bytes.", nameof(block));
@@ -199,8 +200,8 @@ internal static class Program
             aidx |= (ulong)block[2 + i] << (8 * i);
         var a = alpha[(int)(aidx & 7)];
 
-        var c0 = BinaryPrimitives.ReadUInt16BigEndian(block.Slice(8, 2));
-        var c1 = BinaryPrimitives.ReadUInt16BigEndian(block.Slice(10, 2));
+        var c0 = BinaryPrimitives.ReadUInt16LittleEndian(block.Slice(8, 2));
+        var c1 = BinaryPrimitives.ReadUInt16LittleEndian(block.Slice(10, 2));
         var p0 = Rgb565(c0);
         var p1 = Rgb565(c1);
         var palette = new (byte R, byte G, byte B)[4];

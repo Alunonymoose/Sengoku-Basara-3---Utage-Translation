@@ -13,8 +13,12 @@ Supported observed formats under the current fixture-backed corpus contract:
   0x19 -> BC1/DXT1
   0x27 -> A8R8G8B8
 
-PS3 BC block quirk: RGB565 endpoints are big-endian u16; index byte arrays
-retain standard little-endian bit packing.
+BC payload byte order (CORRECTED 2026-09-25): RGB565 endpoints are STANDARD
+little-endian u16, exactly as on PC. Only the XET container header/table is
+big-endian. The former "PS3 big-endian endpoint" rule was disproven at
+runtime (title_004 2026-09-18/24, menu.arc member 58 2026-09-25). The
+canonical read/write codec is project/texture_tools/utage_xet/utage_xet.py;
+this module is kept only as the release audit's pinned read-only decoder.
 """
 from __future__ import annotations
 import struct
@@ -62,13 +66,15 @@ def xet_info(raw:bytes)->XetInfo:
     return XetInfo(vf,tf,flags,mip,width,height,fmt,offs)
 
 def _rgb565_be(buf:bytes,off:int):
-    v=struct.unpack_from('>H',buf,off)[0]
+    # Name kept for compatibility; payload endpoints are standard little-endian.
+    v=struct.unpack_from('<H',buf,off)[0]
     r=(v>>11)&31; g=(v>>5)&63; b=v&31
-    return ((r*255+15)//31,(g*255+31)//63,(b*255+15)//31)
+    # bit replication, identical to utage_xet._expand565
+    return ((r<<3)|(r>>2),(g<<2)|(g>>4),(b<<3)|(b>>2))
 
 def _decode_bc1_block(block:bytes, force_four:bool=False):
     if len(block)!=8: raise ValueError('BC1 block size')
-    v0=struct.unpack_from('>H',block,0)[0]; v1=struct.unpack_from('>H',block,2)[0]
+    v0=struct.unpack_from('<H',block,0)[0]; v1=struct.unpack_from('<H',block,2)[0]
     c0=_rgb565_be(block,0); c1=_rgb565_be(block,2)
     if force_four or v0>v1:
         pal=[c0,c1,

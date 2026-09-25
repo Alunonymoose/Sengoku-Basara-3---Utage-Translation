@@ -115,7 +115,7 @@ outG = clamp(Y - 0.344136*Cb - 0.714136*Cr)
 outB = clamp(Y + 1.772*Cb)
 ```
 
-PS3 BC1/BC2/BC3 RGB565 colour endpoints are big-endian u16 in the certified project path; index/alpha packing remains standard.
+**Corrected 2026-09-25:** the BC payload uses standard DXT byte order (RGB565 endpoints little-endian); only XET container fields are big-endian. The former "PS3 big-endian endpoint" rule was disproven at runtime (title_004, menu.arc member 58). See `project/texture_tools/TEXTURE_PIPELINE_CANON_2026-09-25.md`.
 
 ### Format 0x2B / RBxG
 
@@ -145,6 +145,8 @@ That transform is generated from bit coordinates:
 `[(1,0), (2,0), (0,1), (0,2)]`
 
 which defines a **4x4 Morton/Z-order colour microtile**. It is applied to the decoded colour stream used to form 4x4 BC blocks, not as a generic post-encode "8x4 BC block" shuffle.
+
+Those coordinates are the ordinary row-major texel order inside a 4x4 BC block (x = b0 + 2*b1, y = b2 + 2*b3), i.e. the standard block layout, not an additional transform.
 
 Therefore the old broad rule that PS3 BC texture safety can be described as an 8x4-block tile is superseded. For certified production, use the exact proven Kuriimu transform or fixture-derived equivalent rather than a guessed RSX tile size.
 

@@ -20,7 +20,7 @@ static int Usage()
     Console.Error.WriteLine("  BasaraFoundry.Worker index --root <source-root> [--route eng|jpn|direct] --output <snapshot.json>");
     Console.Error.WriteLine("  BasaraFoundry.Worker preview-xet --root <source-root> --archive <relative.arc> --entry <index> --name <resource> --output <preview.json>");
     Console.Error.WriteLine("  BasaraFoundry.Worker roundtrip-xet --root <source-root> --archive <relative.arc> --entry <index> --name <resource> --rgba <candidate.rgba> --output <preview.json>");
-    Console.Error.WriteLine("  BasaraFoundry.Worker graft-xet --root <eng-root> --archive <relative.arc> --entry <index> --name <resource> --pristine-root <jpn-root> --pristine-archive <relative.arc> --pristine-entry <index> --pristine-name <resource> --rgba <candidate.rgba> --mask <mask.bin> --output-arc <build.arc> --audit <audit.json>");
+    Console.Error.WriteLine("  BasaraFoundry.Worker graft-xet --root <eng-root> --archive <relative.arc> --entry <index> --name <resource> --pristine-root <jpn-root> --pristine-archive <relative.arc> --pristine-entry <index> --pristine-name <resource> --rgba <candidate.rgba> --mask <mask.bin> --output-arc <build.arc> --audit <audit.json> [--base-mode current|restore]");
     Console.Error.WriteLine(SharedOwnerWorkerCommand.UsageLine);
     return 64;
 }
@@ -274,6 +274,14 @@ try
         var auditPath = Option(args, "--audit") ?? "";
         var entryText = Option(args, "--entry");
         var pristineEntryText = Option(args, "--pristine-entry");
+        var baseModeText = Option(args, "--base-mode") ?? "current";
+        XetGraftBaseMode baseMode;
+        if (baseModeText.Equals("current", StringComparison.OrdinalIgnoreCase))
+            baseMode = XetGraftBaseMode.CurrentTarget;
+        else if (baseModeText.Equals("restore", StringComparison.OrdinalIgnoreCase))
+            baseMode = XetGraftBaseMode.PristineRestore;
+        else
+            return Usage();
         if (string.IsNullOrWhiteSpace(root) ||
             string.IsNullOrWhiteSpace(archive) ||
             string.IsNullOrWhiteSpace(name) ||
@@ -351,7 +359,8 @@ try
             entryIndex,
             pristineXet,
             candidate,
-            mask);
+            mask,
+            baseMode: baseMode);
 
         await WriteAtomicBytesAsync(outputArc, transaction.SiblingArcBytes);
         await WriteAtomicJsonAsync(auditPath, transaction.Audit);
@@ -360,6 +369,7 @@ try
         {
             ok = true,
             command = "graft-xet",
+            baseMode = baseMode.ToString(),
             sourceArc = sourceArcPath,
             pristineArc = pristineArcPath,
             siblingArc = outputArc,

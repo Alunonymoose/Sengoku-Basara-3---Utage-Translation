@@ -8,6 +8,10 @@ BASARA Foundry preserves failed approaches because they are often more valuable 
 | Speculative 16-byte ARC entries | Certified Utage ARC v8 uses 80-byte entries | Use the tested reader/writer; fail closed on unknown structure |
 | Blanket 8x4/Morton/PS3 swizzle theory | Linear UI fixtures contradicted the blanket rule | Never introduce swizzle without fixture evidence |
 | Treating 0x2A as bespoke raw YCbCr | The misleading appearance came from incorrect interpretation/dimensions; current path is BC3 + Kuriimu2 YCbCr shader transform | Use the exact certified transform |
+| Byte-swapping BC RGB565 endpoints because the PS3 container is big-endian (2026-09-23/24) | Runtime-disproven on title_004 (green/magenta) and menu.arc member 58 (navy plate); swapped+no-shader decode of 0x2A merely *looks* legible | Standard DXT payload order; judge 0x2A in display space through the shader; `utage_xet.byte_order_evidence` preflight refuses swapped targets |
+| Writing display RGBA straight into 0x2A (`xetenc.py`, 2026-09-24) | Valid BC3 bytes with the wrong channel meaning: untouched blocks look right, new lettering renders magenta/cyan/green | Only the YCbCr writer may touch 0x2A; `xetenc.py`/`xet3.py` quarantined |
+| Calling identity patches and encode→own-decode round trips "validation" | Identity never calls the encoder; a writer agrees with its own decoder | Colour-regression fixture judged through the game shader + final-ARC re-extract + cold boot |
+| Fixing a runtime bug on an unmerged hotfix branch | The title_004 endian hotfix sat on an orphan branch while the primary branch kept the bug | Port runtime fixes to the primary branch the same day and record the supersession in canon |
 | Treating 0x2B as normal RGBA or a simple G/A swap | Hidden R/B semantics matter | Preserve RBxG base+mask representation |
 | Assuming `rom/jpn` is pristine Japanese | It can contain English/shared content | Hash/name/location are classification evidence, not semantic proof |
 | Using a pristine Japanese texture as default incremental base | Can revert already-correct English art | Fresh live target is the preservation base |

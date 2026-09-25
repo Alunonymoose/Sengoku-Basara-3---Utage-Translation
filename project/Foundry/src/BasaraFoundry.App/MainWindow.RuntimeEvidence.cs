@@ -304,10 +304,16 @@ public sealed partial class MainWindow
 
     private void ValidateProductionAuditForResume(SingleEntryXetGraftAudit audit, string physicalOutputHash)
     {
-        if (audit.Schema != 4)
-            throw new NotSupportedException($"Unsupported production graft audit schema {audit.Schema}; target-shell production requires schema 4.");
+        // Schema 4 = legacy pristine-base transactions; schema 5 records the
+        // explicit preservation base (current live target by default).
+        if (audit.Schema is not (4 or 5))
+            throw new NotSupportedException($"Unsupported production graft audit schema {audit.Schema}; target-shell production requires schema 4 or 5.");
+        if (audit.Schema == 4 && !audit.UsedPristineOverride)
+            throw new InvalidDataException("Schema-4 production audit must record its pristine base.");
+        if (audit.Schema == 5 && string.IsNullOrWhiteSpace(audit.GraftBaseMode))
+            throw new InvalidDataException("Schema-5 production audit must record its graft base mode.");
         if (!audit.GraftOk || !audit.ArcRoundTripVerified || !audit.ApprovedEligible ||
-            !audit.UsedPristineOverride || !audit.TargetShellPreserved)
+            !audit.TargetShellPreserved)
             throw new InvalidDataException("Production audit is not eligible to restore a target-shell-preserving verified build.");
         if (audit.OutsideMaskPixelDelta != 0 || audit.OutsideEffectiveBlockPixelDelta != 0)
             throw new InvalidDataException("Production audit reports changed pixels outside the certified edit footprint.");

@@ -431,10 +431,11 @@ public sealed partial class MainWindow
             PropertyNameCaseInsensitive = true,
         }) ?? throw new InvalidDataException("Production audit JSON was empty.");
 
-        if (audit.Schema != 4 || !audit.GraftOk || !audit.ArcRoundTripVerified || !audit.ApprovedEligible ||
-            !audit.UsedPristineOverride || !audit.TargetShellPreserved || audit.OutsideMaskPixelDelta != 0)
+        if (audit.Schema != 5 || string.IsNullOrWhiteSpace(audit.GraftBaseMode) || !audit.GraftOk ||
+            !audit.ArcRoundTripVerified || !audit.ApprovedEligible ||
+            !audit.TargetShellPreserved || audit.OutsideMaskPixelDelta != 0)
         {
-            throw new InvalidDataException("Production audit does not represent a fully verified target-shell-preserving mandatory-pristine transaction.");
+            throw new InvalidDataException("Production audit does not represent a fully verified target-shell-preserving transaction with a recorded preservation base.");
         }
         if (audit.MemberIndex != target.EntryIndex || !audit.MemberName.Equals(target.ResourceName, StringComparison.Ordinal))
             throw new InvalidDataException("Production audit member identity does not match the active target.");

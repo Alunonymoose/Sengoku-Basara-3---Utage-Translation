@@ -99,16 +99,52 @@ internal static class Program
                 mask),
             "production transaction rejects missing pristine counterpart");
 
+        // Normal incremental localisation: the CURRENT LIVE TARGET is the
+        // preservation base. A candidate derived from pristine art differs from
+        // the live ENG decode outside the mask and must be refused, so earlier
+        // approved English work can never be silently reverted.
+        Throws<InvalidOperationException>(
+            () => UtageSingleEntryXetGraft.BuildSibling(
+                sourceArc,
+                memberIndex: 0,
+                pristineXet,
+                candidate,
+                mask),
+            "current-target graft refuses a pristine-derived candidate that would revert live art");
+
+        var engDecoded = UtageXetCodec.DecodeTopLevel(engMemberXet).Rgba;
+        var engCandidate = engDecoded.ToArray();
+        for (var i = 0; i < mask.Length; i++)
+        {
+            if (mask[i] != 0)
+                Array.Copy(candidate, i * 4, engCandidate, i * 4, 4);
+        }
+        var liveTx = UtageSingleEntryXetGraft.BuildSibling(
+            sourceArc,
+            memberIndex: 0,
+            pristineXet,
+            engCandidate,
+            mask,
+            new DateTimeOffset(2026, 9, 12, 0, 0, 0, TimeSpan.Zero));
+        True(!liveTx.Audit.UsedPristineOverride, "current-target audit records no pristine override");
+        Equal("CurrentTarget", liveTx.Audit.GraftBaseMode, "audit records current-target base mode");
+        Equal(tx0Hash(engMemberXet), liveTx.Audit.GraftBaseSha256, "graft base is the live ENG XET");
+        var liveFinal = UtageXetCodec.DecodeTopLevel(ReadOnlyMember(liveTx.SiblingArcBytes)).Rgba;
+        Equal(engDecoded[8 * 4], liveFinal[8 * 4], "untouched live block (2,0) preserved from ENG, not reverted to JPN");
+
+        // Explicit restore transaction: pristine payload is the base.
         var tx = UtageSingleEntryXetGraft.BuildSibling(
             sourceArc,
             memberIndex: 0,
             pristineXet,
             candidate,
             mask,
-            new DateTimeOffset(2026, 9, 12, 0, 0, 0, TimeSpan.Zero));
+            new DateTimeOffset(2026, 9, 12, 0, 0, 0, TimeSpan.Zero),
+            XetGraftBaseMode.PristineRestore);
 
         True(sourceArc.AsSpan().SequenceEqual(sourceArcSnapshot), "source ARC remains byte-identical");
-        True(tx.Audit.UsedPristineOverride, "audit records mandatory pristine base");
+        True(tx.Audit.UsedPristineOverride, "restore audit records explicit pristine base");
+        Equal("PristineRestore", tx.Audit.GraftBaseMode, "audit records restore base mode");
         True(!tx.Audit.TargetResourceSha256.Equals(tx.Audit.PristineBaseSha256, StringComparison.Ordinal), "audit proves ENG target and JPN base differ");
         True(tx.Audit.GraftOk && tx.Audit.ArcRoundTripVerified && tx.Audit.ApprovedEligible, "transaction fully verified");
         Equal(tx.Audit.SourceArcSha256, tx.ApprovalEvidence.SourceArcSha256, "evidence bound to source ARC hash");
@@ -190,6 +226,7 @@ internal static class Program
                     "--pristine-name", "roulette_000_ID_HQ",
                     "--rgba", candidatePath,
                     "--mask", maskPath,
+                    "--base-mode", "restore",
                     "--output-arc", workerOutput,
                     "--audit", workerAudit,
                 ],
@@ -301,6 +338,17 @@ internal static class Program
         BinaryPrimitives.WriteUInt32BigEndian(shell.AsSpan(16, 4), textureOffset);
         var built = UtageXetCodec.ReplaceSingleLevel(shell, rgba);
         return built.XetBytes;
+    }
+
+    private static string tx0Hash(byte[] bytes) =>
+        Convert.ToHexString(System.Security.Cryptography.SHA256.HashData(bytes)).ToLowerInvariant();
+
+    private static byte[] ReadOnlyMember(byte[] arcBytes)
+    {
+        using var stream = new MemoryStream(arcBytes, writable: false);
+        var archive = UtageArcReader.Read(stream, "<graft-smoke-output>");
+        stream.Position = 0;
+        return UtageArcReader.ReadDecompressedPayload(stream, archive.Entries[0]);
     }
 
     private static byte[] BuildSingleEntryArc(string name, byte[] rawPayload)

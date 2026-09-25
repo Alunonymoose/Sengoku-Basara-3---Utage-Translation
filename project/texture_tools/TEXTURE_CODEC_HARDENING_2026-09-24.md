@@ -1,3 +1,5 @@
+> **SUPERSEDED IN PART — 2026-09-25.** The "PS3 big-endian RGB565 endpoint" bridge described below was wrong and has been removed (runtime-disproven on title_004 and menu.arc member 58). BC payloads use standard DXT byte order. The 0x2A YCbCr, 0x15 BC2-read and fail-closed rules below still stand. Current canon: `TEXTURE_PIPELINE_CANON_2026-09-25.md`; canonical Python codec: `utage_xet/`.
+
 # BASARA Foundry — Texture Codec Hardening — 2026-09-24
 
 ## Status

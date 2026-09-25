@@ -1,3 +1,5 @@
+> **2026-09-25:** `foundry_xet_decoder_20260923.py` now decodes standard-order BC endpoints (the big-endian rule was disproven at runtime) and is parity-tested against the canonical codec `../utage_xet/utage_xet.py`. Use `utage_xet` for all new work; this decoder remains only as the release audit's pinned reader.
+
 # XET solved-tool recovery — 2026-09-23
 
 This folder preserves a reconstructed **read-only** implementation of the solved 2026-09-23 PS3 XET contract.
