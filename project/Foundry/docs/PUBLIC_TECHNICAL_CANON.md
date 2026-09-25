@@ -166,3 +166,51 @@ The parent may deduplicate resources shared by multiple child manifests. A manif
 Payload identity is independent of manifest identity. In pristine/current JPN parent families, the flattened payloads match standalone child payloads exactly. In the current localized ENG tree, some parent flattened resources intentionally/temporally diverge from standalone child ARC payloads while the ARCS/SCRA manifest remains identical. Do not infer payload equality from matching manifest identity.
 
 This proves the serialization/topology contract, not by itself runtime precedence. Runtime ownership still requires load/registration/runtime evidence.
+
+
+## Observed Utage TEX/XET format population
+
+**Evidence level: STRUCTURALLY VERIFIED by a live ARC-corpus census (2026-09-25).**
+
+Every `rTexture` entry in the current ENG/JPN routes was inspected far enough to parse its XET header.
+
+ENG corpus:
+- 50,342 texture entries / 50,342 valid XET headers
+- 0x2A: 49,793
+- 0x17: 419
+- 0x19: 75
+- 0x15: 36
+- 0x27: 19
+- 0x2B: **0**
+
+JPN corpus:
+- 47,458 texture entries / 47,458 valid XET headers
+- 0x2A: 47,037
+- 0x17: 320
+- 0x19: 50
+- 0x15: 36
+- 0x27: 15
+- 0x2B: **0**
+
+Across 97,800 current-route texture entries, no 0x2B fixture was found. RBxG/0x2B remains useful MT Framework cross-game knowledge, but it is not an observed Utage production format and should not drive Utage-specific engineering unless a real Utage fixture appears.
+
+
+## Utage resource-class universe
+
+**Evidence level: STRUCTURALLY VERIFIED against the current JPN ARC corpus and externally cross-resolved with REvilLib's SB3 PS3 class database (2026-09-25).**
+
+The current JPN route contains 48 distinct ARC type hashes. All **48/48** resolve to classes present in REvilLib's original Sengoku BASARA 3 PS3 profile. No live Utage class hash requires a Samurai Heroes-only class definition.
+
+39/48 are shared by SB3 and Samurai Heroes. Nine live classes are present in SB3 but absent from REvilLib's Samurai Heroes profile:
+
+- `0x7DC513BA` rQuestInfo / qif
+- `0x494CE020` rRewardDrop / rew
+- `0x23DBF8CE` rBasaraShop / bsh
+- `0x1DA0352D` rTenkaPlInfo / tpi
+- `0x5B99F299` rTenkaUnlock / tul
+- `0x4CD902BC` rVersusPlayerInfo / vpi
+- `0x314ACB2A` rVersus30Player / v30
+- `0x0C103FAA` rFieldInfo / fif
+- `0x1ACCC2DD` rEvtParam / etp
+
+Use the type hash/class mapping as stronger format identity evidence than a suggestive directory name.
