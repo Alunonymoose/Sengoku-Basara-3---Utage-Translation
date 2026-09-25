@@ -206,3 +206,12 @@ Treat a localized payload divergence inside an SCRA family as a **synchronizatio
 Do not mass-copy the child, the parent, or a whole SH ARC. Resolve the intended visible design and runtime provider, then synchronize the compatible logical resource family at the member level.
 
 For base-game nameplate identities, SH supplies an official English visual/reference donor candidate. Utage-exclusive identities still require Utage-specific/custom production.
+
+
+## Public validator
+
+A read-only validator now lives at:
+
+`project/Foundry/tools/scra_validate.py`
+
+It parses SCRA descriptors, resolves child ARC paths, validates exact child membership, and can optionally compare parent-vs-child decompressed payload identity.
