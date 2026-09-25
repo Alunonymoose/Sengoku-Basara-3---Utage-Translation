@@ -178,3 +178,24 @@ Keep these historical corrections easy to recover:
 Stop researching and return to engineering when the unresolved claim has enough evidence to support a deterministic fail-open or fail-closed implementation plus an appropriate regression.
 
 Do not keep expanding scope once the blocker is settled.
+
+
+## SCRA / rArchive research rule
+
+Utage SCRA manifests are a solved structural primitive, not an unknown nested-ARC format.
+
+A SCRA record identifies an ordered child resource list by:
+- resource-class hash;
+- full 32-bit complemented CRC32 of the lowercase internal path.
+
+When investigating parent/child duplication, compare:
+1. manifest identity;
+2. parent flattened-pool presence;
+3. standalone child table identity;
+4. decompressed payload equality;
+5. aggregate siblings;
+6. runtime load/registration evidence.
+
+Do not collapse structural membership into runtime precedence.
+
+Samurai Heroes provides a control case: its 51 ENG friend manifests and 306 member payloads are parent/child-identical. Use that as cross-game evidence when evaluating patch-introduced Utage divergences, while still respecting different child bundle shapes.
