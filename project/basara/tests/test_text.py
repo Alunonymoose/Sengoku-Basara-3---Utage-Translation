@@ -83,3 +83,30 @@ def test_psl_nodes_and_rects():
     p = Psl.parse(head + bytes(rec) + bytes(child))
     assert p.nodes[0].parent is None and p.children(0)[0].index == 1
     assert p.nodes[0].source.scaled(2).height == 64 and p.nodes[0].dest.width == 256
+
+
+
+def test_ycbcr_constants_match_capcom_shader():
+    """Constants recovered 2026-09-26 from the game's rShaderPackage
+    (nativePS3/sc/PS3/Basara/package.spkg, RSX halfword-swapped floats):
+    offset f6f9bef6=-0.482353 (-123/255), 0.34414, 0.71414, 1.772, 1.402."""
+    import numpy as np
+    from basara import xet
+    assert xet.NEUTRAL_CHROMA == 123
+    game = {"r_cr": 1.402, "g_cb": 0.34414, "g_cr": 0.71414, "b_cb": 1.772}
+    # our decode must agree with the game's float math to well under one level everywhere
+    st = np.array([[[r, 255, b, y] for r in range(0, 256, 17) for b in range(0, 256, 17) for y in range(0, 256, 51)]], np.uint8)
+    ours = xet.storage_to_display(st).astype(float)
+    Y = st[..., 3].astype(float); Cb = st[..., 2] - 123.0; Cr = st[..., 0] - 123.0
+    g = np.stack([Y + game["r_cr"] * Cr, Y - game["g_cb"] * Cb - game["g_cr"] * Cr, Y + game["b_cb"] * Cb], -1)
+    g = np.clip(g, 0, 255)
+    assert np.abs(ours[..., :3] - g).max() < 1.0
+
+
+def test_cube_map_xet_is_refused_with_a_clear_reason():
+    import struct
+    import pytest
+    from basara import xet
+    raw = b"\x00XET" + struct.pack(">III", 0x60000097, 0x2001007, 0x12306) + bytes(200)
+    with pytest.raises(xet.XetError, match="6 images"):
+        xet.xet_info(raw)

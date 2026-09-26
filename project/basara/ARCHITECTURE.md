@@ -52,7 +52,7 @@
 
 **D3 — CSA.** One description: u16 table at byte 8, indexed by codepoint (cp ≥ 12). The "offset 32, cp+12" wording is the same table (tested).
 
-**D4 — Textures.** Standard BC payload byte order; 0x2A = BC3 + Kuriimu2 YCbCr (runtime-proven). See `project/texture_tools/TEXTURE_PIPELINE_CANON_2026-09-25.md`.
+**D4 — Textures.** Standard BC payload byte order; 0x2A = BC3 + YCbCr, neutral chroma 123. The byte order is runtime-proven; the decode constants are confirmed in Capcom's own compiled shaders (`project/texture_tools/GAME_SHADER_GROUND_TRUTH_2026-09-26.md`). Multi-image XETs (cube maps) are refused. See `project/texture_tools/TEXTURE_PIPELINE_CANON_2026-09-25.md`.
 
 **D5 — Installs.** No ZIPs. `basara install` = verified backup → hash-guarded atomic replace → read-back → record. Rollback never erases later edits. This is the 2026-09-25 user hard rule, as code.
 

@@ -41,6 +41,8 @@ Every 0x2A texture is BC3 (standard order) **plus** the Kuriimu2 PS3 YCbCr shade
 - Write: `Y=.299R+.587G+.114B`, `Cb=123-.168736R-.331264G+.5B`, `Cr=123+.5R-.418688G-.081312B`, stored `(Cr, A_in, Cb, Y)` (truncate + clamp, like C# `(int)`).
 - Read: `alpha=G`, `Y=A`, `Cb=B-123`, `Cr=R-123`, `R=Y+1.402Cr`, `G=Y-.344136Cb-.714136Cr`, `B=Y+1.772Cb`.
 - Proof: title_004 (2026-09-18) and menu.arc member 58 (2026-09-25: the xetenc build showed navy (8,63,140), predicted (0,56,132); standard order puts the JPN original's chroma exactly on 123).
+- **Game code (2026-09-26):** Capcom's compiled shaders (`nativePS3/sc/PS3/Basara/package.spkg`, `rShaderPackage`) decode with offset −123/255 (stored `f6f9bef6`), 1.402, 0.34414, 0.71414, 1.772 in 16 + 1 programs, never 128. Neutral 123 is the game's value. Reproduce: `project/texture_tools/find_shader_ycbcr_constants.py`; details `project/texture_tools/GAME_SHADER_GROUND_TRUTH_2026-09-26.md`.
+- Multi-image XETs (cube maps, header +0x0C low byte ≠ 1) are refused by `xet_info`.
 - Why "plain looked right": xet3/xetenc read endpoints **swapped** and skipped the shader. That combination happens to look like a legible picture. It is not what the game renders.
 - Candidates, previews and boards are always **display RGBA** from `basara tex decode` / `basara.xet.decode_display()`. Only the codec touches stored channels.
 - A magenta/green/cyan cast on new lettering = wrong writer. STOP. (The user's approved `cp_name_pl` art is the exception: leave it alone.)

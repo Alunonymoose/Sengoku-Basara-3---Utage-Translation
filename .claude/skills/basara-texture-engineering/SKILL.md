@@ -7,7 +7,7 @@ description: Mandatory workflow for BASARA/Utage ARC/TEX/XET texture sheets, atl
 
 Apply the BASARA production contract first.
 
-**Codec (2026-09-25, runtime-proven):** BC payloads use standard DXT byte order (no PS3 endpoint swap); 0x2A = BC3 + Kuriimu2 YCbCr. Decode for review with `basara tex decode` (display space); write only via `basara tex arc-graft` / patchset texture ops. `xetenc.py`/`xet3.py` are quarantined. Canon: `project/texture_tools/TEXTURE_PIPELINE_CANON_2026-09-25.md`.
+**Codec (2026-09-25, runtime-proven; constants confirmed in Capcom's own shaders 2026-09-26):** BC payloads use standard DXT byte order (no PS3 endpoint swap); 0x2A = BC3 + YCbCr, neutral chroma 123 (the game's `rShaderPackage` decodes with −123/255, 1.402, 0.34414, 0.71414, 1.772 — `project/texture_tools/GAME_SHADER_GROUND_TRUTH_2026-09-26.md`). Decode for review with `basara tex decode` (display space); write only via `basara tex arc-graft` / patchset texture ops. `xetenc.py`/`xet3.py` are quarantined. Canon: `project/texture_tools/TEXTURE_PIPELINE_CANON_2026-09-25.md`.
 
 ## Entry lock: decode before generate
 

@@ -1,4 +1,4 @@
-# Utage texture pipeline — canon (2026-09-25; tool paths updated 2026-09-26)
+# Utage texture pipeline — canon (2026-09-25; tool paths + game-shader confirmation 2026-09-26)
 
 **This document supersedes every earlier statement about XET BC endpoint byte
 order, `xetenc.py`/`xet3.py`, and "0x2A is BC3" wording.** Older notes stay
@@ -13,6 +13,10 @@ additionally stores the Kuriimu2 PS3 YCbCr representation inside BC3:
 stored RGBA = `(Cr, alpha, Cb, Y)`, neutral chroma 123. Artists and tools work
 in **display RGBA**; only the codec touches stored channels.
 
+The decode constants are **Capcom's own**. The game's compiled shaders hold
+offset −123/255 with 1.402 / 0.34414 / 0.71414 / 1.772, in 17 programs and
+never with 128. See `GAME_SHADER_GROUND_TRUTH_2026-09-26.md`.
+
 ## 2. Format table (enforced by `basara.xet.FORMATS`)
 
 | XET id | Storage | Display semantics | Read | Write | Status |
@@ -21,11 +25,12 @@ in **display RGBA**; only the codec touches stored channels.
 | 0x15 | BC2 / DXT3 | ordinary | yes | **no** | real fixture (result_id member 60); write uncertified |
 | 0x17 / 0x18 | BC3 / DXT5 | ordinary RGBA | yes | yes | software/fixture; needs a runtime fixture |
 | 0x27 | A8R8G8B8 | ordinary | yes | **no** | read only |
-| **0x2A** | BC3 / DXT5 | **PS3 YCbCr shader** | yes | yes (YCbCr writer only) | **RUNTIME PROVEN** (title_004, menu.arc member 58) |
+| **0x2A** | BC3 / DXT5 | **PS3 YCbCr shader** | yes | yes (YCbCr writer only) | **RUNTIME PROVEN** (title_004, menu.arc member 58) + **constants confirmed in game shader** (2026-09-26) |
 | 0x2B | BC3 / DXT5 | YCbCr + RBxG base/mask | yes (preview) | **no** | write blocked |
 
 Always refused: unknown ids, swizzle ≠ 0, multi-mip writes, resources with
-trailing data after the top level.
+trailing data after the top level, multi-image XETs (cube maps/arrays: header
++0x0C low byte ≠ 1, e.g. `system/texture/DefaultCube_CM.tex` = 6).
 
 Texel order inside each 4×4 block is standard row-major. (The Kuriimu2
 `BcSwizzle` bit coordinates `[(1,0),(2,0),(0,1),(0,2)]` describe exactly that
@@ -42,6 +47,7 @@ ordinary block layout; they are not an extra transform.)
 | 2026-09-24 | hotfix branch `hotfix-title004-bc-endian-20260924` removes the swap | never merged into `foundry-v0.1` (orphan history); swap remained on the primary branch |
 | 2026-09-25 | menu.arc member 58 written with xetenc (swapped + no shader) | in-game navy plate (8,63,140); model predicts (0,56,132) for that writer. Standard order decodes the JPN original with chroma exactly on 123. v3 rebuilt with standard order + YCbCr and installed (live `menu.arc` `ee9b0da1…`, backup `_MENU58_LABELS_V3_BACKUP_2026-09-25\`). Cowork-reported; v3 cold-boot result not yet separately recorded |
 | 2026-09-25 | this branch | swap removed from C# (hotfix ported), Python review decoder corrected, canonical `utage_xet` codec with in-game colour regression tests |
+| 2026-09-26 | game binary (`nativePS3/sc/PS3/Basara/package.spkg`, `rShaderPackage`) | 16 + 1 compiled programs decode YCbCr with offset **−123/255** (stored `f6f9bef6`), 1.402, 0.34414, 0.71414, 1.772; zero with −128/255 or −0.5. **Neutral 123 is the game's value, not a Kuriimu2 convention.** `GAME_SHADER_GROUND_TRUTH_2026-09-26.md`; reproduce with `find_shader_ycbcr_constants.py` |
 
 Why it survived: an identity patch never calls the encoder, and a writer
 tested with its own decoder agrees with itself. Only a display-space test
@@ -103,8 +109,10 @@ the normal approval/backup/install/cold-boot gates.
 
 ## 7. Evidence levels
 
-`basara.xet` tests are SOFTWARE/FIXTURE proof (22 texture tests + 46 core tests, Windows+Linux CI). 0x2A standard
-order + YCbCr is RUNTIME PROVEN on two real fixtures. BC2 read, and BC1/0x17
+`basara` tests are SOFTWARE/FIXTURE proof (73 tests incl. the `utage_xet` shim suite, Windows+Linux CI). 0x2A standard
+order + YCbCr is RUNTIME PROVEN on two real fixtures, and its decode constants
+are CONFIRMED IN GAME CODE (Capcom's rShaderPackage, 2026-09-26; our decode matches
+the game's float math to < 1 level, `test_ycbcr_constants_match_capcom_shader`). BC2 read, and BC1/0x17
 write, are not runtime-certified. The Python BC3 encoder is a
 PCA/least-squares fit, not bit-identical to BCnEncoder.Net; RGB565 expansion
 uses bit replication (assumed to match BCnEncoder; C# parity not yet

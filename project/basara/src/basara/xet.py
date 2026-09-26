@@ -16,8 +16,10 @@ wording everywhere):
   runtime screenshot whose navy plate (8,63,140) matched the predicted
   (0,56,132) of the swapped+plain writer, while standard order decodes the
   JPN original with chroma exactly on the 123 neutral point.
-* Format 0x2A (and 0x2B for reading) stores the Kuriimu2 MT Framework PS3
-  YCbCr shader representation inside BC3: stored RGBA = (Cr, alpha, Cb, Y)
+* Format 0x2A (and 0x2B for reading) stores the MT Framework PS3 YCbCr
+  representation inside BC3 -- CONFIRMED FROM CAPCOM'S OWN SHADER
+  (nativePS3/sc/PS3/Basara/package.spkg, rShaderPackage, 16 programs + 1 in the
+  root package: offset -123/255, 1.402, 0.34414, 0.71414, 1.772; none use 128): stored RGBA = (Cr, alpha, Cb, Y)
   with neutral chroma 123. Artist-facing pixels are DISPLAY RGBA; the codec
   converts display <-> stored. Never BC3-encode display RGBA into 0x2A.
 * 0x15 is DXT3/BC2 (read only). 0x19/0x13/0x14 are BC1 (read only).
@@ -89,7 +91,11 @@ def xet_info(raw: bytes) -> XetInfo:
     raw = bytes(raw)
     if len(raw) < 20 or raw[:4] != MAGIC:
         raise XetError("not a PS3 XET resource")
-    b4, b8, _b12 = struct.unpack_from(">III", raw, 4)
+    b4, b8, b12 = struct.unpack_from(">III", raw, 4)
+    images = b12 & 0xFF
+    if images != 1:
+        # e.g. system/texture/DefaultCube_CM.tex: 6 faces + lighting data before the offsets
+        raise XetError(f"XET holds {images} images (cube map / array); only single-image textures are supported")
     mip = b8 & 0x3F
     width = (b8 >> 6) & 0x1FFF
     height = (b8 >> 19) & 0x1FFF
