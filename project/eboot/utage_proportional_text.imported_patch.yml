@@ -2,6 +2,8 @@ Version: 1.2
 
 # Sengoku BASARA 3 Utage (BLJM60389) - English patch: proportional Latin text in every window.
 # Evidence: project/eboot/EBOOT_PROPORTIONAL_TEXT_2026-09-26.md
+# OPTIONAL emulator-only alternative. Primary route = patched EBOOT.BIN (see the .md).
+# The PPU hash below was computed from the loose EBOOT.elf, NOT the live EBOOT.BIN; it will not match.
 # Verify the PPU hash against RPCS3's log line "PPU executable hash: PPU-..." before enabling.
 PPU-cccc7497edc2f0c81860f8e48f4fd05b652a4df3:
   "English: proportional text in all windows":

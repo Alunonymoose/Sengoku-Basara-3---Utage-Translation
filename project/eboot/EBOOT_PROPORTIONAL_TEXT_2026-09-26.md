@@ -61,3 +61,20 @@ Status: **CANDIDATE**, not runtime-tested. The acceptance test is a cold boot wi
 - the defeated / KO'd log.
 
 Check each for proportional spacing, and that Japanese-only screens are unchanged.
+
+## Real-PS3 delivery (primary route, 2026-09-26)
+
+The live `E:\Utage Patching New\PS3_GAME\USRDIR\EBOOT.BIN` (17,442,576 B, sha256 `7d1ba4963e005549…`) is already a fake-signed SELF (key revision 0x8000):
+- the ELF is stored plain at file offset 0x980;
+- there is no encrypted metadata;
+- the control digest is the constant make_fself value `627cb180…`, not a hash of the content.
+
+The embedded ELF differs from the uploaded `EBOOT.elf` in 17 bytes at 0xe774f4 (an earlier project string edit, `rom\eng\title_id`). The live BIN is the base to use; the loose `.elf` is not.
+
+Patched build:
+- `EBOOT.BIN` with exactly 4 bytes changed at file offset 0x4d8d20 (ELF 0x4d83a0, vaddr 0x4e83a0): `41 9e 05 0c` becomes `60 00 00 00`;
+- sha256 `e73b639778ce4f0140e89c2ec61f2e1b495b2ea3c30f72b6987cea83d396fd41`.
+
+This works on the same PS3 setup that already runs the current fake-signed EBOOT (CFW or HEN), and on RPCS3 with no patch.yml. The RPCS3 yml is kept only as an optional alternative; its PPU hash was computed from the loose `.elf`, so it will not match the live BIN.
+
+Install: hash-verified backup, then replace, then read back (PowerShell in the session log). Rollback: restore the backup.
