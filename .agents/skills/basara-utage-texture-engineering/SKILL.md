@@ -1,3 +1,7 @@
+> **2026-09-26 ENCODED-CANDIDATE APPROVAL LOCK — READ FIRST**
+>
+> For lossy BC custom art, user approval is of the **temporary encoded→decoded candidate** that will actually ship, not the raw artist PNG. Freeze raw candidate, edit mask/effective block set, encoded/touched-block bytes and decoded approval rendering. After approval, production reuses those exact encoded bytes/blocks; do not re-encode. Normal incremental work preserves the current live target shell/untouched blocks; pristine/JPN is only reference or explicit restore input. Donor search precedes creative art, and all proven synchronized owners are patched together.
+>
 > **2026-09-25 TEXTURE PIPELINE CANON — READ FIRST**
 >
 > Canon: `project/texture_tools/TEXTURE_PIPELINE_CANON_2026-09-25.md`. Canonical Python codec/CLI: `basara.xet` / `basara tex …` in `project/basara` (`utage_xet.py`/`xetcli.py` are compatibility shims). BC payloads use **standard DXT byte order**; only XET container fields are big-endian. 0x2A = BC3 + Kuriimu2 YCbCr, written only through the YCbCr writer. Runtime-proven on title_004 (2026-09-18) and menu.arc member 58 (2026-09-25). Decode constants confirmed in Capcom's own compiled shaders 2026-09-26 (offset −123/255, 1.402, 0.34414, 0.71414, 1.772 — `project/texture_tools/GAME_SHADER_GROUND_TRUTH_2026-09-26.md`). `xetenc.py` / `xet3.py` are QUARANTINED (see `project/texture_tools/legacy_quarantine/README.md`). Every write must pass `byte_order_evidence` preflight and be judged in DISPLAY space; identity patches and encoder→own-decoder round trips are not validation.
@@ -286,15 +290,17 @@ Do not claim a generic PSL/LSP writer exists unless current Foundry actually imp
 
 ## Approval-first art workflow
 
-Before production encode:
+Before any LIVE ARC mutation:
 
-1. Render or reconstruct the complete exact-size candidate atlas.
-2. Preserve unrelated artwork/alpha/coordinates.
-3. Show the candidate to the user.
-4. Prefer an in-layout mockup using the actual owner/controller.
-5. After approval, freeze candidate and mask hashes and perform the production transaction.
+1. Render/reconstruct the complete exact-size candidate on the current live decoded sheet.
+2. Preserve unrelated artwork/alpha/coordinates and prove the frozen edit mask.
+3. Temporarily encode/graft the candidate through the certified codec without mutating live E:.
+4. Decode that encoded resource back to display space and verify the stored result.
+5. Show the user the encoded→decoded candidate, preferably beside real JPN/current/reference panels and an in-layout preview derived from the candidate.
+6. Freeze raw candidate, mask/effective-block, encoded/touched-block and decoded-approval hashes.
+7. After approval, reuse those exact encoded bytes/blocks in the grouped live-owner transaction; do not re-encode.
 
-If the user asks to alter artwork again, produce a new candidate and re-approve before rebuilding the final ARC.
+If the user alters artwork again, produce a new encoded→decoded candidate and re-approve before rebuilding the final ARC.
 
 ## Production audit requirements
 

@@ -2,6 +2,18 @@
 
 You are operating inside the live Sengoku BASARA 3 Utage English-localisation workspace.
 
+## 2026-09-26 TEXTURE SAFETY SUPERSESSION
+
+For all ARC/TEX/XET/UI work, `.claude/skills/basara-texture-engineering/SKILL.md` controls the production sequence. In particular:
+- current live target = default preservation shell/base;
+- donor search happens before custom art;
+- verified 0x2A BC payloads use standard DXT byte order; no PS3 RGB565 endpoint swap;
+- approval is of the encoded→decoded stored candidate;
+- approved encoded bytes/touched blocks are reused exactly;
+- all proven synchronized owners are rebuilt together.
+
+Older project notes that mandate pristine-JPN-as-default production base or endpoint swapping are historical/superseded and must not be followed operationally.
+
 ## Authority order
 
 1. Files under `E:\Utage Patching New\PS3_GAME\USRDIR\nativePS3\rom\eng` are LIVE MASTER for mutation.
@@ -34,7 +46,7 @@ Do not treat this project as generic image generation or generic MT Framework mo
 
 Keep these states distinct:
 
-`LIVE_INPUT -> DECODED_SOURCE -> PROVEN_EDIT_REGION -> CANDIDATE -> APPROVED_CANDIDATE -> ENCODED_RESOURCE -> FINAL_ARC -> VALIDATED_ARTIFACT -> ROOT_READY -> RUNTIME_TESTED`
+`LIVE_INPUT -> DECODED_SOURCE -> PROVEN_EDIT_REGION -> CANDIDATE -> ENCODED_CANDIDATE -> APPROVED_CANDIDATE -> FINAL_ARC -> VALIDATED_ARTIFACT -> SAFE_INSTALL -> RUNTIME_TESTED`
 
 Never call a mockup a candidate, a candidate approved, or a static decode runtime proof.
 
@@ -54,7 +66,7 @@ It must never redraw a whole production atlas, recreate untouched pixels, fabric
 The exact candidate must be built deterministically on a copy of the real decoded live sheet.
 Any comparison board must be assembled deterministically from real current/reference/candidate images.
 
-For custom art, stop for user approval before encoding or ARC patching.
+For custom/lossy BC art, temporary encode/graft + decode is REQUIRED before user approval so the user sees the stored result. Stop before any LIVE ARC mutation; after approval reuse the exact approved encoded bytes/touched blocks.
 
 ## Preservation and validation
 

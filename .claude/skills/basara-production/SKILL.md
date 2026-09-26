@@ -5,6 +5,20 @@ description: Core production contract for Sengoku BASARA 3 Utage localisation. A
 
 # BASARA production contract
 
+## 2026-09-26 texture safety supersession — non-bypassable
+
+For texture/UI work the current hard order is:
+
+`live hash/decode -> donor search -> prove complete live owner set -> codec semantic preflight -> frozen edit mask -> isolated art only if genuinely needed -> deterministic candidate -> TEMPORARY ENCODE/GRAFT -> decode the encoded candidate -> user approval -> reuse those exact encoded bytes/blocks -> rebuild all proven owners -> re-extract/decode final ARCs`
+
+Additional hard rules:
+- Current live target is the default shell and untouched-block preservation base. Pristine/JPN is reference or explicit restore input only.
+- The verified Utage 0x2A path uses standard DXT/BC3 payload byte order. Do **not** byte-swap RGB565 endpoints because the XET container is big-endian.
+- Search official SH and already-clean Utage providers before creating new art. Creative art is last resort.
+- For lossy BC art, approval is based on the encoded→decoded candidate that will actually ship, not only a raw PNG.
+- Patch every proven synchronized live owner or fail closed.
+- Never transplant a donor/pristine whole XET shell into the current target.
+
 ## Source authority
 
 Fresh/current E: bytes are LIVE MASTER and win for mutation.
@@ -28,7 +42,7 @@ Do not replace engineering output with a mockup or explanation when the environm
 ## Immutable production states
 
 Keep these distinct:
-`LIVE_INPUT -> DECODED_SOURCE -> PROVEN_EDIT_REGION -> CANDIDATE -> APPROVED_CANDIDATE -> ENCODED_RESOURCE -> FINAL_ARC -> VALIDATED_ARTIFACT -> ROOT_READY -> RUNTIME_TESTED`
+`LIVE_INPUT -> DECODED_SOURCE -> PROVEN_EDIT_REGION -> CANDIDATE -> ENCODED_CANDIDATE -> APPROVED_CANDIDATE -> FINAL_ARC -> VALIDATED_ARTIFACT -> ROOT_READY/SAFE_INSTALL -> RUNTIME_TESTED`
 
 Never upgrade evidence status without proof.
 

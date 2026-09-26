@@ -7,6 +7,12 @@ description: Mandatory workflow for BASARA/Utage ARC/TEX/XET texture sheets, atl
 
 Apply the BASARA production contract first.
 
+## 2026-09-26 approval/production hardening
+
+The exact custom-art approval surface is now the **encoded→decoded production candidate**. Build the candidate on the exact current live decode, temporarily encode/graft it through the certified codec, decode those resulting bytes back to display space, and show that stored-result image on the approval board. Freeze the raw-candidate hash, edit-mask/effective-block hash, encoded/touched-block hash and decoded approval-image hash. After approval reuse those exact encoded bytes/blocks; do not re-encode.
+
+Normal incremental localisation uses the **current live target XET** as shell and untouched-block base. Pristine/JPN is reference or explicit restore input only. Search SH and already-clean Utage providers first; custom generation is last resort. A proven shared-owner family must be updated as a grouped transaction.
+
 **Before any new art (2026-09-26):** check whether the Japanese texture already has an English version in another archive. The full texture review (`project/corpus_pass/TEXTURE_REVIEW_2026-09-26.md`) found that 101 of 155 remaining Japanese textures are missed lockstep providers. `project/basara/tools/propagate_translated_textures.py` proves each copy by bytes (same JPN source, undamaged donor, one English version, layout kept) and emits a basara patchset.
 
 **Codec (2026-09-25, runtime-proven; constants confirmed in Capcom's own shaders 2026-09-26):** BC payloads use standard DXT byte order (no PS3 endpoint swap); 0x2A = BC3 + YCbCr, neutral chroma 123 (the game's `rShaderPackage` decodes with −123/255, 1.402, 0.34414, 0.71414, 1.772 — `project/texture_tools/GAME_SHADER_GROUND_TRUTH_2026-09-26.md`). Decode for review with `basara tex decode` (display space); write only via `basara tex arc-graft` / patchset texture ops. `xetenc.py`/`xet3.py` are quarantined. Canon: `project/texture_tools/TEXTURE_PIPELINE_CANON_2026-09-25.md`.

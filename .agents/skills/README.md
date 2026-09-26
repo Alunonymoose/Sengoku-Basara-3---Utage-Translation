@@ -87,6 +87,17 @@ Mandatory Drive startup documents when available:
 1. `00 READ ME FIRST — BASARA FOUNDRY / UTAGE MASTER SOURCE OF TRUTH`
 2. `01 UTAGE TECHNICAL CANON — FORMATS, ROUTING, WORKFLOW, PROVEN FAILURES`
 
+## Current texture hardening note — 2026-09-26
+
+Non-bypassable production rules now include:
+- current live target is the default shell/untouched-block preservation base;
+- pristine/JPN is reference or explicit restore input only;
+- donor search before custom art;
+- verified 0x2A BC payload uses standard DXT order, with no RGB565 endpoint byte-swap;
+- lossy BC approval uses the encoded→decoded stored candidate and freezes the encoded/touched blocks;
+- shared/equivalent owners are patched as one grouped transaction;
+- old docs that mandate pristine-JPN-as-default base or endpoint swapping are superseded.
+
 ## Current hardening note — 2026-09-17
 
 A separate texture-pipeline hardening change-set established/validated the following rules and should be considered when reconciling these skills with the live branch:

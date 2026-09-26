@@ -80,10 +80,11 @@ For shared resources, identify every runtime owner that must receive the synchro
 
 For texture/UI artwork changes:
 
-1. Show the generated/rebuilt candidate artwork first.
-2. Where possible show an in-layout/in-game mockup using the owning controller/layout.
-3. Let the user judge scale, placement, cropping, readability, and style.
-4. Only then perform the actual XET/TEX and ARC rebuild.
+1. Resolve live owner(s), search proven donors, decode the current live resource and freeze the edit mask.
+2. Build the source-compatible candidate and temporarily encode/graft it through the certified codec without mutating live E:.
+3. Decode the encoded candidate and show THAT stored-result image to the user, with an in-layout preview where possible.
+4. Let the user judge scale, placement, cropping, readability, style and compression result.
+5. Freeze the approved encoded bytes/touched blocks and reuse them exactly in the actual XET/TEX and ARC rebuild across every proven synchronized owner.
 
 A PNG is not completion of an ARC texture job.
 

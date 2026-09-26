@@ -5,6 +5,12 @@ description: Universal public BASARA Foundry production contract. Use for any Se
 
 # BASARA Foundry Production Contract
 
+## 2026-09-26 source-preserving texture hardening
+
+For texture work, the current live target is the normal preservation shell/untouched-block base. Pristine/JPN is reference or explicit restore input only. Search proven SH/clean-Utage donors before custom art. For lossy BC assets, approval must show the actual encoded→decoded candidate and bind its encoded/touched-block bytes; production reuses those exact bytes. Every proven synchronized owner must be rebuilt as one grouped transaction.
+
+Current verified 0x2A rule: XET/container integers are big-endian, but the BC3 payload uses standard DXT block byte order. The old RGB565 endpoint-swap rule is runtime-disproven and must not be revived.
+
 This skill is intentionally model-agnostic. A ChatGPT account, Codex session, Claude/Grok/DeepSeek handoff or human operator can use the same contract.
 
 ## Authority
@@ -29,7 +35,7 @@ Deliver the requested production object, not an easier proxy:
 
 Keep these states separate:
 
-`LIVE_INPUT -> DECODED_SOURCE -> PROVEN_EDIT_REGION -> CANDIDATE -> APPROVED_CANDIDATE -> ENCODED_RESOURCE -> FINAL_ARC -> VALIDATED_ARTIFACT -> ROOT_READY -> RUNTIME_TESTED`
+`LIVE_INPUT -> DECODED_SOURCE -> PROVEN_EDIT_REGION -> CANDIDATE -> ENCODED_CANDIDATE -> APPROVED_CANDIDATE -> FINAL_ARC -> VALIDATED_ARTIFACT -> ROOT_READY/SAFE_INSTALL -> RUNTIME_TESTED`
 
 Never treat a mockup as a candidate, a candidate as approved, an intermediate rebuild as final, or a static decode as runtime proof.
 
