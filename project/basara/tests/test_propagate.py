@@ -55,6 +55,8 @@ def _tree(tmp_path):
     kname = r"id\texture\jpn\waza\waza_004_ID_HQ"
     lname = r"id\texture\jpn\army\army_018_ID_HQ"
     M = _xet((200, 200, 200))
+    F = _xet((10, 10, 10))
+    fname = r"msg\\m000_03\\jpn\\m000_03_13_ID_HQ"
     mname = r"id\texture\jpn\waza2\waza2_001_ID_HQ"
     layout = {
         # path: (jpn members, eng members)
@@ -68,13 +70,15 @@ def _tree(tmp_path):
         "tenka/dream.arc": ([(lname, TH, L)], [(lname, TH, L)]),
         "select/c_common.arc": ([(mname, TH, M)], [(mname, TH, _swapped(_english(M)))]),
         "select/c_story.arc": ([(mname, TH, M)], [(mname, TH, M)]),
+        "id/msg_a.arc": ([(fname, TH, F)], [(fname, TH, _english(F))]),
+        "id/msg_b.arc": ([(fname, TH, F)], [(fname, TH, F)]),
     }
     eng, jpn = tmp_path / "rom" / "eng", tmp_path / "rom" / "jpn"
     for rel, (jm, em) in layout.items():
         for root, members in ((jpn, jm), (eng, em)):
             (root / rel).parent.mkdir(parents=True, exist_ok=True)
             (root / rel).write_bytes(arc.build(members))
-    return eng, jpn, dict(J=J, K=K, L=L, EJ=EJ)
+    return eng, jpn, dict(J=J, K=K, L=L, EJ=EJ, EK1=EK1, name=name, kname=kname, mname=mname)
 
 
 def test_only_byte_proven_missed_providers_are_copied(tmp_path):
@@ -85,7 +89,8 @@ def test_only_byte_proven_missed_providers_are_copied(tmp_path):
     assert verdicts == {"stage_001_ID_HQ": "SAFE",
                         "waza_004_ID_HQ": "REVIEW_CONFLICTING_ENGLISH_VERSIONS",
                         "army_018_ID_HQ": "REVIEW_LAYOUT_CHANGED_IN_DONOR",
-                        "waza2_001_ID_HQ": "REPAIR_DONOR_FIRST"}         # damage is never spread
+                        "waza2_001_ID_HQ": "REPAIR_DONOR_FIRST",         # damage is never spread
+                        "m000_03_13_ID_HQ": "REVIEW_FONT_PAGE"}          # glyph atlases stay with their TNF/CSA
     stage = next(g for g in groups if g.verdict == "SAFE")
     assert sorted(x["arc"] for x in stage.targets) == ["common/mission/m001.arc", "versus/menu.arc"]
     assert stage.english_sha == sha(t["EJ"])
@@ -106,3 +111,27 @@ def test_only_byte_proven_missed_providers_are_copied(tmp_path):
                 assert e.raw == live[e.index].raw             # nothing else touched
     plan = json.loads((out / "plan.json").read_text(encoding="utf-8"))
     assert {g["verdict"] for g in plan} == set(verdicts.values())
+
+
+def test_pairs_mode_re_proves_every_reviewed_copy(tmp_path):
+    eng, jpn, t = _tree(tmp_path)
+    member = lambda rel, i: arc.read((eng / rel).read_bytes())[i].raw
+    rows = [
+        (t["name"], "common/mission/m001.arc", 0, sha(t["J"]), "tenka/tenka_stage_m001.arc", 0, sha(t["EJ"])),   # ok
+        (t["kname"], "pause/waza_pl004.arc", 0, sha(t["K"]), "tenka/waza_a.arc", 0, sha(t["EK1"])),            # reviewed conflict choice
+        (t["name"], "versus/menu.arc", 0, "0" * 64, "tenka/tenka_stage_m001.arc", 0, sha(t["EJ"])),            # stale approval
+        (t["mname"], "select/c_story.arc", 0, sha(member("select/c_story.arc", 0)),
+         "select/c_common.arc", 0, sha(member("select/c_common.arc", 0))),                                    # damaged donor
+    ]
+    tsv = tmp_path / "approved.tsv"
+    tsv.write_text("member\ttarget_arc\ttarget_index\ttarget_sha256\tdonor_arc\tdonor_index\tdonor_sha256\n" +
+                   "".join("\t".join(map(str, r)) + "\n" for r in rows), encoding="utf-8")
+    out = tmp_path / "p2"
+    summary = prop.build_pairs(tsv, eng, jpn, out, log=lambda m: None)
+    assert summary == {"approved_rows": 4, "copies": 2, "archives": 2, "left_out": 2}
+    report = {r["target"]: r for r in json.loads((out / "pairs_report.json").read_text(encoding="utf-8"))}
+    assert report["versus/menu.arc#0"]["problems"] == ["target changed since approval"]
+    assert report["select/c_story.arc#0"]["problems"] == ["donor shows legacy-writer damage"]
+    rec = patch.build(out / "patchset.toml", eng, tmp_path / "b2")
+    assert sorted(a["path"] for a in rec["archives"]) == ["common/mission/m001.arc", "pause/waza_pl004.arc"]
+    assert arc.read((tmp_path / "b2" / "pause/waza_pl004.arc").read_bytes())[0].raw == t["EK1"]

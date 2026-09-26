@@ -32,6 +32,19 @@ Anything else is written to review.tsv instead of the patchset. Output:
     safe/patchset.toml        basara.patchset/1: one raw member copy per target
     safe/donors/<sha>.bin     the English donor members (bound by sha256)
 
+Pairs mode (no scan): build exactly a reviewed list of copies, e.g. the
+APPROVED_TEXTURE_COPIES_*.tsv produced from a plan + the visual texture review:
+
+    python propagate_translated_textures.py --eng ... --jpn ... --out C:\\propagate2 --pairs APPROVED.tsv
+
+Each row (member, target_arc, target_index, target_sha256, donor_arc, donor_index,
+donor_sha256) is re-proven against the live files before it is used: both
+members still have the approved bytes, both came from the SAME Japanese image,
+same shape, donor not legacy-damaged. A row that fails is reported and left out.
+
+Font pages (members under msg\\) are never copied automatically: they are glyph
+atlases coupled to their archive's own TNF/CSA font tables.
+
 Then (backup + hash-guarded install, never a ZIP):
 
     basara build   C:\\propagate\\safe\\patchset.toml --root "<rom\\eng>" --out C:\\propagate\\build
@@ -181,7 +194,9 @@ def decide(providers, psl_changed, eng: Path, jpn: Path) -> list[Group]:
             g.evidence[esha] = ev
             if ev.get("same_shape") and ev.get("byte_order") != "swapped" and not ev.get("legacy_damage") and "error" not in ev:
                 valid[esha] = ev
-        if len(valid) == 1:
+        if g.name.lower().startswith("msg\\"):
+            g.verdict = "REVIEW_FONT_PAGE"            # glyph atlas: coupled to the archive's TNF/CSA
+        elif len(valid) == 1:
             esha, ev = next(iter(valid.items()))
             g.english_sha = esha
             g.verdict = "SAFE" if ev["layout_kept"] else "REVIEW_LAYOUT_CHANGED_IN_DONOR"
@@ -204,31 +219,106 @@ def write_outputs(groups, eng: Path, out: Path) -> dict:
                 tg = ", ".join(f"{t['arc']}#{t['index']}" for t in g.targets)
                 vs = " | ".join(f"{k[:12]}: {v}" for k, v in g.evidence.items())
                 f.write(f"{g.verdict}\t{g.name}\t{tg}\t{vs}\n")
-    safe = [g for g in groups if g.verdict == "SAFE"]
-    per_arc: dict[str, list] = defaultdict(list)
-    donors_dir = out / "safe" / "donors"
-    donors_dir.mkdir(parents=True, exist_ok=True)
-    for g in safe:
-        ev = g.evidence[g.english_sha]
-        d_arc, d_idx = ev["donors"][0].rsplit("#", 1)
-        blob = _load_member(eng, d_arc, int(d_idx))
+    jobs = []
+    for g in groups:
+        if g.verdict != "SAFE":
+            continue
+        donor = g.evidence[g.english_sha]["donors"][0]
+        blob = _load_member(eng, donor.rsplit("#", 1)[0], int(donor.rsplit("#", 1)[1]))
         assert sha(blob) == g.english_sha
-        (donors_dir / f"{g.english_sha[:16]}.bin").write_bytes(blob)
-        for t in g.targets:
-            per_arc[t["arc"]].append((t["index"], t["name"], g.english_sha, ev["donors"][0]))
-    stamp = datetime.now(timezone.utc).strftime("%Y%m%d")
-    lines = ['schema = "basara.patchset/1"', f'id = "propagate-translated-textures-{stamp}"', ""]
-    for rel in sorted(per_arc):
-        lines += ["[[archive]]", f'path = "{rel}"', f'sha256 = "{sha((eng / rel).read_bytes())}"', ""]
-        for idx, name, esha, donor in sorted(per_arc[rel]):
-            lines += [f"  # {name}  <- {donor}", "  [[archive.member]]", f"  member = {idx}",
-                      f'  source = "donors/{esha[:16]}.bin"', f'  source_sha256 = "{esha}"', ""]
-    (out / "safe" / "patchset.toml").write_text("\n".join(lines), encoding="utf-8")
+        jobs += [(t["arc"], t["index"], t["name"], blob, donor) for t in g.targets]
+    per_arc = _write_patchset(jobs, eng, out / "safe")
     counts: dict[str, int] = defaultdict(int)
     for g in groups:
         counts[g.verdict] += 1
     return {"groups": dict(counts), "safe_targets": sum(len(v) for v in per_arc.values()),
             "safe_archives": len(per_arc)}
+
+
+def _write_patchset(jobs, eng: Path, out: Path) -> dict:
+    """jobs: (target_arc, target_index, name, donor_bytes, donor_label) -> patchset.toml + donors/."""
+    donors_dir = out / "donors"
+    donors_dir.mkdir(parents=True, exist_ok=True)
+    per_arc: dict[str, list] = defaultdict(list)
+    for arc, idx, name, blob, label in jobs:
+        h = sha(blob)
+        (donors_dir / f"{h[:16]}.bin").write_bytes(blob)
+        per_arc[arc].append((idx, name, h, label))
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%d")
+    lines = ['schema = "basara.patchset/1"', f'id = "propagate-translated-textures-{stamp}"', ""]
+    for rel in sorted(per_arc):
+        lines += ["[[archive]]", f'path = "{rel}"', f'sha256 = "{sha((eng / rel).read_bytes())}"', ""]
+        for idx, name, h, label in sorted(per_arc[rel]):
+            lines += [f"  # {name}  <- {label}", "  [[archive.member]]", f"  member = {idx}",
+                      f'  source = "donors/{h[:16]}.bin"', f'  source_sha256 = "{h}"', ""]
+    (out / "patchset.toml").write_text("\n".join(lines), encoding="utf-8")
+    return per_arc
+
+
+def build_pairs(pairs_tsv: Path, eng: Path, jpn: Path, out: Path, log=print) -> dict:
+    """Re-prove every approved (target, donor) row against the live files and emit a patchset."""
+    lines = [ln for ln in Path(pairs_tsv).read_text(encoding="utf-8").splitlines() if ln.strip()]
+    head = lines[0].split("\t")
+    rows = [dict(zip(head, ln.split("\t"), strict=True)) for ln in lines[1:]]
+    cache: dict[tuple, arcmod.Archive | None] = {}
+
+    def archive(root: Path, rel: str):
+        key = (str(root), rel)
+        if key not in cache:
+            p = root / rel
+            cache[key] = arcmod.inspect(p.read_bytes()) if p.exists() else None
+        return cache[key]
+
+    def member(root, rel, idx, name):
+        a = archive(root, rel)
+        if a is None or idx >= len(a.entries):
+            return None
+        e = a.entries[idx]
+        return e if e.name.lower() == name.lower() else None
+
+    def jpn_member(rel, idx, name):
+        """The JPN counterpart: same index and name, else a unique name (as in scan())."""
+        e = member(jpn, rel, idx, name)
+        if e is not None:
+            return e
+        a = archive(jpn, rel)
+        hits = [x for x in (a.entries if a else ()) if x.name.lower() == name.lower()]
+        return hits[0] if len(hits) == 1 else None
+
+    jobs, report = [], []
+    for row in rows:
+        name, t_arc, d_arc = row["member"], row["target_arc"], row["donor_arc"]
+        t_idx, d_idx = int(row["target_index"]), int(row["donor_index"])
+        label = f"{d_arc}#{d_idx}"
+        problems = []
+        te, de = member(eng, t_arc, t_idx, name), member(eng, d_arc, d_idx, name)
+        tj, dj = jpn_member(t_arc, t_idx, name), jpn_member(d_arc, d_idx, name)
+        if te is None or de is None:
+            problems.append("member missing or renamed in rom/eng")
+        elif sha(te.raw) != row["target_sha256"]:
+            problems.append("target changed since approval")
+        elif sha(de.raw) != row["donor_sha256"]:
+            problems.append("donor changed since approval")
+        if not problems:
+            if tj is None or dj is None or sha(tj.raw) != sha(dj.raw):
+                problems.append("target and donor do not come from the same Japanese image")
+            else:
+                a, b = xet.xet_info(te.raw), xet.xet_info(de.raw)
+                if (a.width, a.height, a.format_code, a.mip_count) != (b.width, b.height, b.format_code, b.mip_count):
+                    problems.append("shape differs")
+                if xet.byte_order_evidence(de.raw).get("verdict") == "swapped" or \
+                        xet.scan_against_reference(de.raw, dj.raw).get("suspect_legacy_encoding"):
+                    problems.append("donor shows legacy-writer damage")
+        report.append({"member": name, "target": f"{t_arc}#{t_idx}", "donor": label, "ok": not problems,
+                       "problems": problems})
+        if problems:
+            log(f"LEFT OUT {name} {t_arc}#{t_idx}: {'; '.join(problems)}")
+            continue
+        jobs.append((t_arc, t_idx, name, de.raw, label))
+    per_arc = _write_patchset(jobs, eng, out)
+    (out / "pairs_report.json").write_text(json.dumps(report, indent=1, ensure_ascii=False), encoding="utf-8")
+    return {"approved_rows": len(rows), "copies": len(jobs), "archives": len(per_arc),
+            "left_out": len(rows) - len(jobs)}
 
 
 def main() -> int:
@@ -238,11 +328,16 @@ def main() -> int:
     ap.add_argument("--out", required=True)
     ap.add_argument("--all-textures", action="store_true",
                     help="consider every XET, not only names with a \\jpn\\ or \\eng\\ folder")
+    ap.add_argument("--pairs", help="build exactly these reviewed copies (TSV) instead of scanning")
     a = ap.parse_args()
     eng, jpn, out = Path(a.eng), Path(a.jpn), Path(a.out)
     if out.resolve() == eng.resolve() or eng.resolve() in out.resolve().parents:
         print("--out must be outside the live rom/eng tree", file=sys.stderr)
         return 2
+    if a.pairs:
+        summary = build_pairs(Path(a.pairs), eng, jpn, out, log=lambda m: print(m, flush=True))
+        print(f"done: {summary}\n  patchset: {out / 'patchset.toml'}\n  report:   {out / 'pairs_report.json'}")
+        return 0
     providers, psl = scan(eng, jpn, a.all_textures, log=lambda m: print(m, flush=True))
     groups = decide(providers, psl, eng, jpn)
     summary = write_outputs(groups, eng, out)

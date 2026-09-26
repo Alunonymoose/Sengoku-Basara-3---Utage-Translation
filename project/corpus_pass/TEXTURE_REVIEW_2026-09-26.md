@@ -52,6 +52,35 @@ English counterparts are `brief/mode_quest.arc` / `brief/mode_tenka.arc`. `og` l
 of original copies. If the game never loads it, those 19 are invisible, and the visible copy win is
 **82**. Whether the game loads that folder has not been established.
 
+**First real run (2026-09-26, the user's `plan.json`).** The scan found 123 groups where a Japanese
+image had been translated in some archives and not others:
+
+| Verdict | Groups |
+|---|---|
+| SAFE | 86 |
+| conflicting English versions | 28 |
+| donor layout changed (`result_id.arc` PSL) | 6 |
+| donor flagged as legacy-damaged (`result_001`, `tenka_japmap_08`, `waza_004`) | 3 |
+
+Cross-checking against this review showed that bytes alone are not enough. Some SAFE groups are not
+translations at all:
+- 19 `cp_nakama` eye strips;
+- `cockpit_016`, `common_015`, `pause_003`;
+- a font page (`m000_03_13`, coupled to its archive's TNF/CSA);
+- `common_025`, whose English donor still shows 極.
+
+The approved list was therefore built from **plan ∩ visual review**:
+1. every target must show Japanese;
+2. every donor must be a reviewed, clean English image;
+3. conflicts are resolved to the same design family (the `tenka_stage` brush banners for
+   `common/mission`, and `brief/mode_*` for menu copies);
+4. partially translated providers of the same Japanese image (`mode_select_000` gallery copies,
+   `kakutoku_008` in `pause/option.arc`) get the fully English version.
+
+The result is **114 copies, 90 members, 79 archives** (22 of them in `brief/og/`). The tool's
+`--pairs` mode re-proves every row on the live files before building. Font pages are now never
+copied automatically.
+
 ## 3. English but damaged: exactly the canon's legacy-writer suspects
 
 | Member | Archive | Symptom |
