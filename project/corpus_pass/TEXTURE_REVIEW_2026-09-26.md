@@ -90,8 +90,14 @@ copied automatically.
 `--pairs` re-proved each row on the live files and refused 3 of the 114. Those targets store the
 same Japanese image under another name (`cockpit_005` = `result_011` in
 `tenka/tenka_finish_id.arc#63`; `cockpit_022` = `result_021` in `result_id.arc#86` and
-`tenka/tenka_finish_id.arc#77`). The tool now takes `target_member` / `donor_member` columns, and
-a 3-row follow-up list covers them.
+`tenka/tenka_finish_id.arc#77`). The tool now takes `target_member` / `donor_member` columns.
+
+**Part 2 installed 2026-09-26T01:05:57Z:**
+- 3 copies; `result_id.arc` → `a84ef2dc…`, `tenka/tenka_finish_id.arc` → `b8684957…`;
+- backups in `…_20260926T010557Z\`.
+
+**All 114 approved copies are live.** To undo everything, roll back part 2 first, then part 1.
+Rollback only restores where live equals that install's output.
 
 Live hashes that older notes quote are superseded. For example, `versus/menu.arc` is now
 `95d4c5bb…` (was `ee9b0da1…`, the menu58 v3 state). Only members 2 and 49 (the stage banners)

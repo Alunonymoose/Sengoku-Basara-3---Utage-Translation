@@ -144,3 +144,22 @@ def test_pairs_mode_re_proves_every_reviewed_copy(tmp_path):
                                                           "tenka/finish.arc"]
     assert arc.read((tmp_path / "b2" / "tenka/finish.arc").read_bytes())[0].raw == t["EJ"]
     assert arc.read((tmp_path / "b2" / "pause/waza_pl004.arc").read_bytes())[0].raw == t["EK1"]
+
+
+def test_pack_members_takes_eng_jpn_and_layouts(tmp_path):
+    import zipfile
+    spec2 = importlib.util.spec_from_file_location("pack_members", TOOL.parent / "pack_members.py")
+    pm = importlib.util.module_from_spec(spec2)
+    sys.modules["pack_members"] = pm
+    spec2.loader.exec_module(pm)
+    eng, jpn, t = _tree(tmp_path)
+    members, layouts = pm.parse_list("# repair inputs\ntenka/tenka_stage_m001.arc#0  # stage_001\n"
+                                     "common/mission/m001.arc#1\nlayout tenka/tenka_stage_m001.arc\n")
+    assert members == [("tenka/tenka_stage_m001.arc", 0), ("common/mission/m001.arc", 1)]
+    res = pm.pack(eng, jpn, members, layouts, tmp_path / "m.zip", log=lambda m: None)
+    assert res["members"] == 3
+    z = zipfile.ZipFile(tmp_path / "m.zip")
+    assert z.read("eng/tenka/tenka_stage_m001.arc/0000.tex") == t["EJ"]
+    assert z.read("jpn/tenka/tenka_stage_m001.arc/0000.tex") == t["J"]
+    man = json.loads(z.read("MANIFEST.json"))
+    assert [m["same_as_jpn"] for m in man["members"]] == [False, True, True]     # stage edited; K and the layout untouched
