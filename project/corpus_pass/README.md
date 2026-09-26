@@ -22,3 +22,9 @@ Game text is NOT stored here; only the analysis scripts that were actually used.
    untranslated dialogue/menu text was found. **The remaining Japanese is in textures, FMV and
    platform files**, so the next pass is visual: `project/basara/tools/texture_sheets.py`
    (contact sheets of every language-keyed texture, SAME_AS_JPN first) for AI/human review.
+6. **Texture review done (2026-09-26): `TEXTURE_REVIEW_2026-09-26.md`.** 1,890 unique
+   language-keyed textures (47,314 providers) inspected: 155 still show Japanese, 33 English ones
+   are legacy-damaged (waza2, result_id, title_005), 51 have QA issues. **101 of the 155 already
+   have an English version in another archive** (missed lockstep providers: mission stage
+   banners, pause move lists, Dream Chance army plates…). `project/basara/tools/propagate_translated_textures.py`
+   proves each copy by bytes and emits a basara patchset; 51 need new art.

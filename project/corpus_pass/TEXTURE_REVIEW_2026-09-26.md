@@ -1,0 +1,101 @@
+# Texture review: every language-keyed texture, classified (2026-09-26)
+
+**Input:** the user's `texture_sheets.py` run on live `rom/eng` vs `rom/jpn` (one upload part,
+63 contact sheets plus `texture_index.json`). That covers **47,314 language-keyed texture providers,
+de-duplicated to 1,890 unique images**. Every tile was inspected by eye. Ambiguous tiles were
+enlarged, and every call was cross-checked against the index hashes and owners.
+
+The full per-texture atlas is not stored here, because it transcribes game text. It is
+`TEXTURE_ATLAS_2026-09-26.tsv`, sent to the user and summarised in Drive. Each row carries:
+tile, class, action, member, size/format, owners (`arc#index`), English twin tiles, note and sha256.
+
+## 1. Result
+
+| Class | Unique textures | Meaning |
+|---|---|---|
+| English | 824 | done |
+| No text | 649 | art, faces, icons, frames, digits |
+| Font pages | 164 | glyph atlases used by the text renderer (not visible labels) |
+| Empty / crest / logo | 14 | blank sheets, the Ishida/恋/風 crests, the 宴 title kanji (design, keep) |
+| **Japanese still visible** | **155** (237 owner slots) | see §2 |
+| **English but damaged** | **33** | see §3 |
+| English, QA issue | 51 | see §4 |
+
+That is 155 of 1,890 unique images, about 8%. The live text tables are already 99.93% English,
+so **these textures are the main thing left between the game and 100% English.**
+
+## 2. The Japanese that is left: most of it already has an English version
+
+Grouping the 155 Japanese textures by member name against the English ones gives this:
+
+| Action | Unique | Examples |
+|---|---|---|
+| **COPY_EXISTING_ENGLISH** | **101** | `stage_001`–`045` banners in `common/mission/mNNN.arc` (English in `tenka/tenka_stage_mNNN.arc`); pause move lists `waza_004`–`006`, `016`–`029` in `pause/waza_plNNN.arc` (English in `tenka/waza_name_plNNN.arc`); Dream Chance army plates `army_018`–`021` in `tenka/dream.arc`; `tenka_japmap_02`–`10`, `yuugi_quest_001`–`004`, `result_001/002/005/006/009`, `cockpit_002/005/022/025`, `mode_select_000`, `kakutoku_008`, `gallery_12`, `shogo_000`, `tenka_007`, `tenka_tassei_007`, `cp_kessen_001`, `common_010`, `charasele_00_000` |
+| REPAIR_ENGLISH_DONOR_THEN_COPY | 3 | `result_000/023/026`: the only English versions (`result_id.arc`) are legacy-damaged (§3) |
+| **NEEDS_NEW_ENGLISH_ART** | **51** | `story_00_00`–`07` chapter titles; quest cards `qu_m_003/009/014/023/030`; Tenka/Lottery `tenka_008/009/018/020/021/023/024/027`, `tenka_tassei_002/006/009`; unlock banners `kakutoku_000/001/004`; versus menus `kessen_011/012`; result plates `result_018/024/027`, `shogo_007`; orb plates `wepball_007`–`010`; select screen `charasele_00_002` (chapter labels), `00_004`, `04_lock`, `05_005`; `cp_name_army_023_b`, `024_a`; `cp_kessen_002`; `gallery_07`; `common_013` (Partner), `common_025`; `option_000` chips; `mission_054` leftovers |
+
+**The copy group is the cheap win.** The English translators edited one provider of an image and
+missed the others. `project/basara/tools/propagate_translated_textures.py` finds every such case
+**by bytes**. It only copies when:
+- the donor was translated from the identical Japanese image;
+- the donor is undamaged;
+- all donors agree on one English version;
+- the donor's layout (PSL) is unchanged.
+
+It then emits a normal `basara.patchset/1` (raw member copies bound by sha256), which goes through
+`basara build` → `basara install` (verified backup, hash-guarded write). No new art is involved.
+Anything ambiguous goes to `review.tsv`. The visual count of 101 is the upper bound; the tool's
+byte proof decides the real number.
+
+Caveat: two Japanese copies live only in `brief/og/*.arc`. Whether the game loads that folder has
+not been established.
+
+## 3. English but damaged: exactly the canon's legacy-writer suspects
+
+| Member | Archive | Symptom |
+|---|---|---|
+| `waza2_001`–`029` (29) | `select/c_common.arc`, `select/c_versus.arc` | magenta/green fringing on every glyph |
+| `result_000`, `result_023`, `result_026` | `result_id.arc` | English on an opaque navy / magenta / dark-red block where the JPN original is transparent |
+| `title_005` | `title.arc` | the "Sengoku BASARA" sub-logo decodes with a heavy magenta/green cast |
+
+The waza2 and result_id labels are the 2026-09-24 xetenc writes named as suspects in
+`TEXTURE_PIPELINE_CANON_2026-09-25.md` §6. This review confirms them visually.
+
+The repair uses the canon's method:
+1. recover the approved art with the legacy view;
+2. re-graft it with the certified writer;
+3. approve it, install it, cold boot.
+
+The propagation tool refuses these as donors (`REPAIR_DONOR_FIRST`), so the damage cannot spread.
+
+## 4. QA findings on English textures (not coverage, but visible)
+
+- **Two English names for one character:** Josie / Joe C. Kuroda, Sunday Mouri / Mori,
+  Saica / Saika, Kanbe / Kanbei.
+- **Officer plates that disagree between variants:** Matabe / Matabei Goto, Fairlie / Fairy Muto,
+  Yasukatsu Owafuri / Ohori, Akiyasu / Mitsuyasu Shimura, and more.
+- **Typos:** "Picketpocket" (`cp_name_army_015_a`); "Kojiro Katakura" (lilac `name_023`).
+- **Missing spaces:** "MasamuneDate" (`teki_name_032`); `cp_name_army_021` names run together.
+- **Mismatched styles:**
+  - two English title sets per quest (`quest_000`–`030`, e.g. "Swordsman's Duel" vs "Gentleman's Duel");
+  - `army_026` in a serif font;
+  - `cp_name_pl_028` in a small plain font, family name first.
+- **Damaged renders:**
+  - logo variants of `cp_name_pl_005/011/013/016`, where the alias line is illegible;
+  - `cp_name_nak_025/026` squashed into a strip.
+- **Legibility and glyph issues:**
+  - thin white `stage_0xx` variants in `versus/menu.arc` are barely legible at review scale;
+  - `yuugi_quest_001` label is truncated to "IGE /";
+  - `id_title_05` font page draws Q–Z smaller and yellow-green.
+
+## 5. Next actions, in value order
+
+1. **Run `propagate_translated_textures.py`**, review `plan.json`, then build and install
+   `safe/patchset.toml` with backups and cold-boot the listed screens. This is up to about 100
+   textures of Japanese removed using art that has already shipped.
+2. **Repair the 33 damaged textures** (waza2, result_id, title_005) with the certified writer, then
+   run the propagation again (result_000/023/026 become copyable).
+3. **New art for 51 textures**, grouped by screen (story chapter titles, quest cards,
+   Tenka/Lottery, unlock banners, versus menus, orb plates). This follows the texture hard gate:
+   live decode → edit mask → candidate → approval → graft.
+4. The §4 QA fixes, together with the name-consistency pass (official SH names).
