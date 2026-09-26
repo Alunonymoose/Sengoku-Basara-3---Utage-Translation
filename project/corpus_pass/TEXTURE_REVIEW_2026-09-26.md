@@ -96,8 +96,31 @@ same Japanese image under another name (`cockpit_005` = `result_011` in
 - 3 copies; `result_id.arc` → `a84ef2dc…`, `tenka/tenka_finish_id.arc` → `b8684957…`;
 - backups in `…_20260926T010557Z\`.
 
-**All 114 approved copies are live.** To undo everything, roll back part 2 first, then part 1.
-Rollback only restores where live equals that install's output.
+**All 114 approved copies are live.**
+
+**Waza2 repair INSTALLED 2026-09-26T01:18:09Z.**
+- 31 replacements (`select/c_common.arc` members 1–29 and `select/c_versus.arc` 11/12), using
+  `replace_members.py`.
+- The user approved the before/after boards first.
+- `c_common` `97a8f35e…` → `856098f2…`; `c_versus` `e092c6c5…` → `0305049a…`.
+- Backups in `E:\BASARA_BACKUPS\waza2_repair-20260926_20260926T011809Z\`.
+
+**Part 3 copies INSTALLED 2026-09-26T01:18:26Z.**
+- 5 copies: `result_001/002/006/009` → `tenka/tenka_finish_id.arc` 61/69/56/62, and `waza_004`
+  → `pause/waza_pl004.arc`.
+- `tenka_finish_id` `b8684957…` → `b10652e8…`; `waza_pl004` `df8763ac…` → `a7c77103…`.
+- Backups in `…_20260926T011826Z\`.
+
+**State: INSTALLED, not RUNTIME_TESTED.** To undo everything, roll back in reverse order: part 3,
+the waza2 repair, part 2, then part 1. Rollback only restores where live equals that install's
+output.
+
+**Coverage after these installs:**
+- 98 of the 155 unique Japanese textures are fully replaced (18 of them only exist in `brief/og/`).
+- 57 remain:
+  - 51 need new art;
+  - `result_000/023/026` need re-laid English;
+  - `gallery_12` ×2 and `tenka_japmap_08` are still copyable once proven.
 
 Live hashes that older notes quote are superseded. For example, `versus/menu.arc` is now
 `95d4c5bb…` (was `ee9b0da1…`, the menu58 v3 state). Only members 2 and 49 (the stage banners)
