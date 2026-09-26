@@ -47,8 +47,10 @@ It then emits a normal `basara.patchset/1` (raw member copies bound by sha256), 
 Anything ambiguous goes to `review.tsv`. The visual count of 101 is the upper bound; the tool's
 byte proof decides the real number.
 
-Caveat: two Japanese copies live only in `brief/og/*.arc`. Whether the game loads that folder has
-not been established.
+Caveat: 19 of the 101 exist only in `brief/og/mode_quest.arc` / `brief/og/mode_tenka.arc`, whose
+English counterparts are `brief/mode_quest.arc` / `brief/mode_tenka.arc`. `og` looks like a folder
+of original copies. If the game never loads it, those 19 are invisible, and the visible copy win is
+**82**. Whether the game loads that folder has not been established.
 
 ## 3. English but damaged: exactly the canon's legacy-writer suspects
 
