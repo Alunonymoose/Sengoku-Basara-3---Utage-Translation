@@ -98,3 +98,20 @@ A batch installs only after approval, via `replace_members.py` (before/after sha
 - They come from the per-mission `_r` table records 0–12 (e.g. `id/msg_m000_pl000.arc#18`).
 - The records have no colour codes; the glyph pages are neutral and identical to SH.
 - So the glow colour is applied by the engine per unit type and is probably the original design. Check a JPN screenshot of the same tag before treating it as a defect.
+
+## Install record: NEWART_BATCH1 (2026-09-26T19:59:22Z), INSTALLED, not RUNTIME_TESTED
+
+- Patchset `newart_batch1-20260926`, build patchset sha256 `59d97ffc610a4029…`.
+- Backup: `C:\review\backups\newart_batch1-20260926_20260926T195922Z`.
+- 7 members in 5 archives:
+  - `result_id.arc#41,#51`;
+  - `tenka/equip.arc#36`;
+  - `tenka/smith.arc#40`;
+  - `tenka/tenka_finish_id.arc#74`;
+  - `tenka/tenka_id.arc#52,#66`.
+- Contents: tenka_009 (BASARA Mart: % OFF / FREE / SOLD / pg) and common_013 (Partner). The user approved the boards.
+- A second run, by accident, left out all 7 rows ("live member changed"). That is the hash guard working; the empty install wrote nothing.
+- EBOOTs found on E: for the spacing work:
+  - `E:\Utage Patching New\PS3_GAME\USRDIR\EBOOT.elf` (17,440,144 B, live);
+  - `E:\SAMURAI HEROES\PS3_GAME\USRDIR\EBOOT.elf` (15,603,808 B);
+  - `E:\UTAGE ARC CONTENTS\EBOOT.elf` (15,604,112 B, a different build: evidence only).
