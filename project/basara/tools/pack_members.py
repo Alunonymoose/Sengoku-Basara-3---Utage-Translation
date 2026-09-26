@@ -11,6 +11,8 @@ A line "layout arc" (e.g. "layout result_id.arc") adds every PSL layout member o
 --fonts (no --list needed): every TNF (glyph metrics), CSA (character map) and msg\\ font-page
 texture in rom/eng, each distinct payload stored once with all owners in FONTS_MANIFEST.json,
 split into fonts_partNN.zip files of at most --max-mb (for the universal letter-spacing fix).
+--layouts: the same for every distinct PSL/LSP layout (layouts_partNN.zip, LAYOUTS_MANIFEST.json),
+to compare a game's id\\lsp\\jpn masters with Samurai Heroes' id\\lsp\\abr ones.
 Members named *font* or msg\\* with an unknown magic are packed too (kind "other"), and
 CENSUS.json counts every (type_hash, magic) pair with example names and keeps up to 3 small
 samples (<= 256 KB) of each under census/, so a game whose fonts use another resource type
@@ -105,10 +107,11 @@ def pack(eng: Path, jpn: Path, members, layouts, out: Path, log=print) -> dict:
     return {"members": len(manifest["members"]), "zip": str(out), "mb": round(out.stat().st_size / 1e6, 2)}
 
 
-def pack_fonts(eng: Path, out_dir: Path, max_mb: float = 29.0, log=print) -> dict:
+def pack_fonts(eng: Path, out_dir: Path, max_mb: float = 29.0, log=print, layouts: bool = False) -> dict:
     import re
     skip = re.compile(r"backup|Copy|PRE_|alrummi3", re.I)
-    kinds = {b"\x00TNF": "tnf", b"\x00CSA": "csa"}
+    kinds = {PSL_MAGIC: "psl"} if layouts else {b"\x00TNF": "tnf", b"\x00CSA": "csa"}
+    prefix = "layouts" if layouts else "fonts"
     seen: dict[str, dict] = {}
     out_dir.mkdir(parents=True, exist_ok=True)
     limit, part, zf = int(max_mb * 1024 * 1024), 0, None
@@ -118,7 +121,7 @@ def pack_fonts(eng: Path, out_dir: Path, max_mb: float = 29.0, log=print) -> dic
         if zf:
             zf.close()
         part += 1
-        zf = zipfile.ZipFile(out_dir / f"fonts_part{part:02}.zip", "w", zipfile.ZIP_DEFLATED)
+        zf = zipfile.ZipFile(out_dir / f"{prefix}_part{part:02}.zip", "w", zipfile.ZIP_DEFLATED)
     new_part()
     n = 0
     census: dict[str, dict] = {}
@@ -145,9 +148,9 @@ def pack_fonts(eng: Path, out_dir: Path, max_mb: float = 29.0, log=print) -> dic
                 c["samples"].append({"path": sp, "part": part, "owner": f"{rel}#{e.index}", "name": e.name})
             kind = kinds.get(e.magic)
             low = e.name.lower()
-            if kind is None and e.magic == b"\x00XET" and low.startswith("msg\\"):
+            if kind is None and not layouts and e.magic == b"\x00XET" and low.startswith("msg\\"):
                 kind = "tex"
-            if kind is None and ("font" in low or (low.startswith("msg\\") and e.magic not in (b"\x00GSM", b"\x00FIM"))):
+            if kind is None and not layouts and ("font" in low or (low.startswith("msg\\") and e.magic not in (b"\x00GSM", b"\x00FIM"))):
                 kind = "other"
             if kind is None:
                 continue
@@ -156,7 +159,7 @@ def pack_fonts(eng: Path, out_dir: Path, max_mb: float = 29.0, log=print) -> dic
             rec = seen.get(h)
             if rec is None:
                 path = f"{kind}/{h[:16]}.{kind}"
-                if (out_dir / f"fonts_part{part:02}.zip").stat().st_size + len(raw) > limit - 65536:
+                if (out_dir / f"{prefix}_part{part:02}.zip").stat().st_size + len(raw) > limit - 65536:
                     new_part()
                 zf.writestr(path, raw)
                 rec = seen[h] = {"sha256": h, "kind": kind, "path": path, "part": part, "names": [], "owners": []}
@@ -165,7 +168,7 @@ def pack_fonts(eng: Path, out_dir: Path, max_mb: float = 29.0, log=print) -> dic
             rec["owners"].append(f"{rel}#{e.index}")
         if n % 1000 == 0:
             log(f"{n} archives, {len(seen)} distinct font resources")
-    zf.writestr("FONTS_MANIFEST.json", json.dumps(list(seen.values()), indent=1, ensure_ascii=False))
+    zf.writestr("LAYOUTS_MANIFEST.json" if layouts else "FONTS_MANIFEST.json", json.dumps(list(seen.values()), indent=1, ensure_ascii=False))
     zf.writestr("CENSUS.json", json.dumps(sorted(census.values(), key=lambda c: -c["count"]), indent=1, ensure_ascii=False))
     zf.close()
     counts: dict[str, int] = {}
@@ -181,16 +184,17 @@ def main() -> int:
     ap.add_argument("--list")
     ap.add_argument("--out", required=True, help="zip path, or a folder with --fonts")
     ap.add_argument("--fonts", action="store_true")
+    ap.add_argument("--layouts", action="store_true", help="every distinct PSL/LSP layout, like --fonts")
     ap.add_argument("--max-mb", type=float, default=29.0)
     a = ap.parse_args()
-    if a.fonts:
-        res = pack_fonts(Path(a.eng), Path(a.out), a.max_mb, log=lambda m: print(m, file=sys.stderr))
+    if a.fonts or a.layouts:
+        res = pack_fonts(Path(a.eng), Path(a.out), a.max_mb, log=lambda m: print(m, file=sys.stderr), layouts=a.layouts)
         print(f"done: {res}")
-        for p in sorted(Path(a.out).glob("fonts_part*.zip")):
+        for p in sorted(Path(a.out).glob(("layouts" if a.layouts else "fonts") + "_part*.zip")):
             print(f"  {p.name}  {p.stat().st_size / 1e6:.1f} MB")
         return 0
     if not a.list:
-        ap.error("--list is required unless --fonts")
+        ap.error("--list is required unless --fonts/--layouts")
     members, layouts = parse_list(Path(a.list).read_text(encoding="utf-8"))
     res = pack(Path(a.eng), Path(a.jpn), members, layouts, Path(a.out), log=lambda m: print(m, file=sys.stderr))
     print(f"done: {res}")

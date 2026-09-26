@@ -42,3 +42,23 @@ Tools added for this round (all read-only on the game until an approved install)
 - Output: a board of JPN | live | candidate, where the candidate panel is decoded from the encoded bytes.
 
 A batch installs only after approval, via `replace_members.py` (before/after sha re-proven), then `basara build` / `basara install`. Batch 1 is tenka_009 and common_013 (7 member rows); the specs stay off GitHub because they hold game text.
+
+## Round 2 evidence (2026-09-26: audit2 + Samurai Heroes fonts)
+
+**Letter spacing: the cause is not in the font data.**
+- SH's whole rom has exactly one font set, in `eng/basara.arc`. Its TNF, CSA and both atlas pages are byte-identical to Utage's (df843e0b / 9d5b4932 / bd9325a9 / 2563fb5f).
+- `msg\font` (rFontColor, `\0LCF`) is an identical 8-colour palette in both games.
+- `ascii_0N_ID_HQ` rPalette (`\0TLP`, v1) is also identical.
+- The dialogue window is proven proportional (HANDOVER 2026-08-31 §5: "Masamune" advances 17/12/12/12).
+- So the same font renders proportionally in one window and monospace in others. The per-window difference has to come from:
+  - the layout: `sBasaraLayout` picks `id\lsp\jpn` (Utage) or `id\lsp\abr` (SH's Western masters, identical in all 5 languages);
+  - or the EBOOT.
+- Next step, by bytes: `pack_members.py --layouts` on SH eng and Utage eng, then a node-by-node diff of the menu/shop/brief/pause LSPs by stable node id. This follows the V16/V18 method; do not copy `+0x38` links.
+
+**audit2: 48 MAGENTA_CAST + 19 MISSING_PREFILL = 67 distinct repairs, 78 REPAIR.tsv rows.**
+- All 33 boards were checked by eye:
+  - repairs are clean white/black on neutral;
+  - the remaining OFF_NEUTRAL are intended colour designs: `result/plNNN` gold brush names, the approved `cp_name_pl`, quest cards, maps.
+- The magenta `cp_name_nak` copies are only in `tenka/friend.arc` (#108–#162). The `id/friend_*`, `pause/friend_*` and `quest/*` copies were already neutral.
+- The magenta `name_NNN` copies are only in `tenka/tenka_plNNN.arc#0`.
+- Open: the in-battle "Defense Post Chief" tag is **not** among these. Every `cp_name_army_*` / `cp_name_han_*` texture is neutral. It is either a texture whose ENG and JPN copies are identical (the audit skips those, because the jpn tree was also patched) or an engine tint. It needs its archive and member identified from the mission it was seen in.

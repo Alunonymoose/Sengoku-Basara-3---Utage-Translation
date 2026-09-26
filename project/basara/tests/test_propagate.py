@@ -242,3 +242,18 @@ def test_label_candidate_only_changes_the_mask_and_records_hashes(tmp_path):
     blk = np.zeros_like(mask)                  # graft may touch whole 4x4 blocks that meet the mask
     blk[8:24, 8:40] = True
     assert (a[~blk] == b[~blk]).all() and not (a[mask] == b[mask]).all()
+
+
+def test_pack_layouts_collects_distinct_psl(tmp_path):
+    import zipfile
+    spec7 = importlib.util.spec_from_file_location("pack_members", TOOL.parent / "pack_members.py")
+    pm = importlib.util.module_from_spec(spec7)
+    sys.modules["pack_members"] = pm
+    spec7.loader.exec_module(pm)
+    eng, jpn, t = _tree(tmp_path)
+    psl = b"\x00PSL" + bytes(12)
+    (eng / "id" / "lay.arc").write_bytes(arc.build([("id\\lsp\\jpn\\a", PSL_TH, psl), ("id\\lsp\\jpn\\b", PSL_TH, psl)]))
+    res = pm.pack_fonts(eng, tmp_path / "L", log=lambda m: None, layouts=True)
+    man = json.loads(zipfile.ZipFile(tmp_path / "L" / "layouts_part01.zip").read("LAYOUTS_MANIFEST.json"))
+    assert res["distinct"].get("psl", 0) >= 1 and all(r["kind"] == "psl" for r in man)
+    assert any(len(r["names"]) == 2 for r in man)
