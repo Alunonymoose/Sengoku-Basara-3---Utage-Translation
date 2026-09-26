@@ -14,6 +14,10 @@ Every 0x2A texture whose ENG bytes differ from JPN (language-keyed names by defa
                      edges off 123 -> magenta/green fringes in game (the waza2 fault).
                      REPAIRED here: luma + alpha kept, chroma set to 123, re-encoded with the
                      certified writer (prefill=dilate). Needs approval of the board before install.
+  MAGENTA_CAST       JPN art is achromatic (>= 95% neutral) but the ENG chroma median sits
+                     20+ above 123 on both Cr and Cb: white/black art rendered magenta
+                     (cp_name_nak / name plate variants, title_005, the in-battle name tags).
+                     REPAIRED the same way (luma + alpha kept, chroma 123).
   OPAQUE_CANVAS      JPN is mostly transparent, ENG is a solid coloured block (text drawn on a
                      coloured canvas; result_id labels). Needs new art, not a codec repair.
   SWAPPED_ENDPOINTS  byte-order evidence says the legacy xetenc writer.
@@ -21,7 +25,7 @@ Every 0x2A texture whose ENG bytes differ from JPN (language-keyed names by defa
 
 Output (identical payloads handled once, every owner listed):
     audit.json                 every texture: owners, class, metrics, repair sha256
-    REPAIR.tsv                 rows for tools/replace_members.py (only MISSING_PREFILL repairs)
+    REPAIR.tsv                 rows for tools/replace_members.py (MISSING_PREFILL and MAGENTA_CAST repairs)
     files/<sha16>.tex          the repaired bytes REPAIR.tsv points at
     boards/*.jpg               before | after for repairs; JPN | ENG for the other flagged classes
     upload_partNN.zip          boards + audit.json + REPAIR.tsv (<= --max-mb each) to send for approval
@@ -50,6 +54,7 @@ from basara import xet
 SKIP = re.compile(r"backup|Copy|PRE_|alrummi3", re.I)
 LANG_KEY = re.compile(r"\\(jpn|eng)\\", re.I)
 N = 123
+REPAIRABLE = ("MISSING_PREFILL", "MAGENTA_CAST")
 
 
 def sha(b: bytes) -> str:
@@ -74,7 +79,8 @@ def metrics(raw: bytes) -> dict:
     return {"covered": round(float(cov.mean()), 4), "hidden": round(float(hidden.mean()), 4),
             "neutral_covered": share(neutral, cov), "neutral_solid": share(neutral, solid),
             "neutral_hidden": share(neutral, hidden),
-            "chroma_median_covered": [int(np.median(s[cov, 0])), int(np.median(s[cov, 2]))] if cov.any() else None}
+            "chroma_median_covered": [int(np.median(s[cov, 0])), int(np.median(s[cov, 2]))] if cov.any() else None,
+            "luma_median_covered": int(np.median(s[cov, 3])) if cov.any() else None}
 
 
 def classify(eng: bytes, jpn: bytes) -> tuple[str, dict]:
@@ -89,6 +95,12 @@ def classify(eng: bytes, jpn: bytes) -> tuple[str, dict]:
         return "OK", ev
     if ns is not None and ns >= 0.93 and nh is not None and nh < 0.5:
         return "MISSING_PREFILL", ev
+    cm = me["chroma_median_covered"]
+    if (mj["neutral_covered"] or 0) >= 0.95 and cm and cm[0] >= N + 20 and cm[1] >= N + 20 \
+            and (me["luma_median_covered"] or 0) >= 0.6 * (mj["luma_median_covered"] or 0):
+        # (luma guard: title_005 is magenta AND grey -- neutral chroma alone would not restore it)
+        # achromatic JPN art, ENG pushed to magenta (the in-game magenta name tags / title_005)
+        return "MAGENTA_CAST", ev
     return "OFF_NEUTRAL", ev
 
 
@@ -181,7 +193,7 @@ def run(eng: Path, jpn: Path, out: Path, all_textures: bool = False, max_mb: flo
     rows, rep_pairs, flag_pairs = [], [], []
     for h, rec in sorted(uniq.items(), key=lambda kv: kv[1]["name"]):
         short = rec["name"].split("\\")[-1]
-        if rec["class"] == "MISSING_PREFILL":
+        if rec["class"] in REPAIRABLE:
             try:
                 new, check = repair_neutral(rec["_raw"])
             except xet.XetError as exc:
@@ -190,7 +202,7 @@ def run(eng: Path, jpn: Path, out: Path, all_textures: bool = False, max_mb: flo
             nh = sha(new)
             (out / "files" / f"{nh[:16]}.tex").write_bytes(new)
             rec["repair"] = {"after_sha256": nh, **check}
-            rep_pairs.append((f"{short}  ({len(rec['owners'])} owner(s))", rec["_raw"], new))
+            rep_pairs.append((f"{rec['class']}  {short}  ({len(rec['owners'])} owner(s))", rec["_raw"], new))
             for o in rec["owners"]:
                 a, i = o.rsplit("#", 1)
                 rows.append((a, i, rec["name"], h, f"{nh[:16]}.tex", nh))

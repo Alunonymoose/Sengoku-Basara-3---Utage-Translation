@@ -215,3 +215,28 @@ def test_pack_fonts_and_chroma_audit_on_a_synthetic_tree(tmp_path):
     res = ca.run(eng, jpn, tmp_path / "audit", log=lambda m: None)
     assert res["edited_0x2A"] >= 3 and (tmp_path / "audit" / "upload_part01.zip").exists()
     assert good[:4] == b"\x00XET"
+
+
+def test_label_candidate_only_changes_the_mask_and_records_hashes(tmp_path):
+    spec6 = importlib.util.spec_from_file_location("label_candidates", TOOL.parent / "label_candidates.py")
+    lc = importlib.util.module_from_spec(spec6)
+    sys.modules["label_candidates"] = lc
+    spec6.loader.exec_module(lc)
+    src = _xet((180, 40, 40), w=64, h=32)
+    (tmp_path / "live.tex").write_bytes(src)
+    font = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+    if not Path(font).exists():
+        import pytest
+        pytest.skip("no DejaVu font")
+    rec = lc.build({"texture": str(tmp_path / "live.tex"), "name": "t", "allow_inconclusive_byte_order": True,
+                    "edits": [{"rect": [8, 8, 40, 24], "clear": "interp", "text": "OK", "font": font, "size": 14}]},
+                   tmp_path / "out")
+    assert rec["unchanged_outside_mask"] and rec["source_sha256"] == sha(src)
+    new = (tmp_path / "out" / "t.tex").read_bytes()
+    assert rec["after_sha256"] == sha(new) and len(new) == len(src)
+    a, b = xet.decode_display(src), xet.decode_display(new)
+    mask = np.zeros(a.shape[:2], bool)
+    mask[8:24, 8:40] = True
+    blk = np.zeros_like(mask)                  # graft may touch whole 4x4 blocks that meet the mask
+    blk[8:24, 8:40] = True
+    assert (a[~blk] == b[~blk]).all() and not (a[mask] == b[mask]).all()
