@@ -123,15 +123,24 @@ def test_pairs_mode_re_proves_every_reviewed_copy(tmp_path):
         (t["mname"], "select/c_story.arc", 0, sha(member("select/c_story.arc", 0)),
          "select/c_common.arc", 0, sha(member("select/c_common.arc", 0))),                                    # damaged donor
     ]
+    # the same Japanese image stored under another name (cockpit_005 == result_011 in the real game)
+    alias = r"id\texture\jpn\result\result_011_ID_HQ"
+    for root in (jpn, eng):
+        (root / "tenka" / "finish.arc").write_bytes(arc.build([(alias, TH, t["J"])]))
+    rows = [r + ("", "") for r in rows] + [
+        (t["name"], "tenka/finish.arc", 0, sha(t["J"]), "tenka/tenka_stage_m001.arc", 0, sha(t["EJ"]), alias, "")]
     tsv = tmp_path / "approved.tsv"
-    tsv.write_text("member\ttarget_arc\ttarget_index\ttarget_sha256\tdonor_arc\tdonor_index\tdonor_sha256\n" +
+    tsv.write_text("member\ttarget_arc\ttarget_index\ttarget_sha256\tdonor_arc\tdonor_index\tdonor_sha256"
+                   "\ttarget_member\tdonor_member\n" +
                    "".join("\t".join(map(str, r)) + "\n" for r in rows), encoding="utf-8")
     out = tmp_path / "p2"
     summary = prop.build_pairs(tsv, eng, jpn, out, log=lambda m: None)
-    assert summary == {"approved_rows": 4, "copies": 2, "archives": 2, "left_out": 2}
+    assert summary == {"approved_rows": 5, "copies": 3, "archives": 3, "left_out": 2}
     report = {r["target"]: r for r in json.loads((out / "pairs_report.json").read_text(encoding="utf-8"))}
     assert report["versus/menu.arc#0"]["problems"] == ["target changed since approval"]
     assert report["select/c_story.arc#0"]["problems"] == ["donor shows legacy-writer damage"]
     rec = patch.build(out / "patchset.toml", eng, tmp_path / "b2")
-    assert sorted(a["path"] for a in rec["archives"]) == ["common/mission/m001.arc", "pause/waza_pl004.arc"]
+    assert sorted(a["path"] for a in rec["archives"]) == ["common/mission/m001.arc", "pause/waza_pl004.arc",
+                                                          "tenka/finish.arc"]
+    assert arc.read((tmp_path / "b2" / "tenka/finish.arc").read_bytes())[0].raw == t["EJ"]
     assert arc.read((tmp_path / "b2" / "pause/waza_pl004.arc").read_bytes())[0].raw == t["EK1"]

@@ -81,6 +81,30 @@ The result is **114 copies, 90 members, 79 archives** (22 of them in `brief/og/`
 `--pairs` mode re-proves every row on the live files before building. Font pages are now never
 copied automatically.
 
+**INSTALLED on live E: (2026-09-26T01:02:19Z), state INSTALLED / not yet RUNTIME_TESTED.**
+- Patchset `propagate-translated-textures-20260926`, build patchset sha256 `dfe7059b…90d5`.
+- **111 copies into 79 archives** via `basara install`; every archive has a verified backup in
+  `E:\BASARA_BACKUPS\propagate-translated-textures-20260926_20260926T010219Z\`.
+- `basara rollback` on that INSTALL_RECORD restores it.
+
+`--pairs` re-proved each row on the live files and refused 3 of the 114. Those targets store the
+same Japanese image under another name (`cockpit_005` = `result_011` in
+`tenka/tenka_finish_id.arc#63`; `cockpit_022` = `result_021` in `result_id.arc#86` and
+`tenka/tenka_finish_id.arc#77`). The tool now takes `target_member` / `donor_member` columns, and
+a 3-row follow-up list covers them.
+
+Live hashes that older notes quote are superseded. For example, `versus/menu.arc` is now
+`95d4c5bb…` (was `ee9b0da1…`, the menu58 v3 state). Only members 2 and 49 (the stage banners)
+changed; member 58 is byte-identical.
+
+**Cold-boot checklist:**
+- a story/free mission start banner;
+- the pause move list for pl005/006/016–029;
+- a Dream Chance battle (army plates, cockpit_025);
+- a Tenka finish/result screen;
+- the gallery menus (Install row);
+- options/save menus (`kakutoku_008`).
+
 ## 3. English but damaged: exactly the canon's legacy-writer suspects
 
 | Member | Archive | Symptom |

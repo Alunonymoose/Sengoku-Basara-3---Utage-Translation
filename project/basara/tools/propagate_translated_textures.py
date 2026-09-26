@@ -38,7 +38,8 @@ APPROVED_TEXTURE_COPIES_*.tsv produced from a plan + the visual texture review:
     python propagate_translated_textures.py --eng ... --jpn ... --out C:\\propagate2 --pairs APPROVED.tsv
 
 Each row (member, target_arc, target_index, target_sha256, donor_arc, donor_index,
-donor_sha256) is re-proven against the live files before it is used: both
+donor_sha256; optional target_member / donor_member when the same Japanese image
+is stored under different names, e.g. cockpit_005 = result_011) is re-proven against the live files before it is used: both
 members still have the approved bytes, both came from the SAME Japanese image,
 same shape, donor not legacy-damaged. A row that fails is reported and left out.
 
@@ -287,12 +288,14 @@ def build_pairs(pairs_tsv: Path, eng: Path, jpn: Path, out: Path, log=print) -> 
 
     jobs, report = [], []
     for row in rows:
-        name, t_arc, d_arc = row["member"], row["target_arc"], row["donor_arc"]
+        t_arc, d_arc = row["target_arc"], row["donor_arc"]
+        name = row.get("target_member") or row["member"]
+        d_name = row.get("donor_member") or row["member"]
         t_idx, d_idx = int(row["target_index"]), int(row["donor_index"])
         label = f"{d_arc}#{d_idx}"
         problems = []
-        te, de = member(eng, t_arc, t_idx, name), member(eng, d_arc, d_idx, name)
-        tj, dj = jpn_member(t_arc, t_idx, name), jpn_member(d_arc, d_idx, name)
+        te, de = member(eng, t_arc, t_idx, name), member(eng, d_arc, d_idx, d_name)
+        tj, dj = jpn_member(t_arc, t_idx, name), jpn_member(d_arc, d_idx, d_name)
         if te is None or de is None:
             problems.append("member missing or renamed in rom/eng")
         elif sha(te.raw) != row["target_sha256"]:
