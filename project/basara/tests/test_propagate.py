@@ -189,3 +189,29 @@ def test_replace_members_only_takes_approved_bytes_over_the_computed_base(tmp_pa
     built = arc.read((tmp_path / "b" / "common/mission/m001.arc").read_bytes())
     assert built[0].raw == fixed and built[1].raw == live[1].raw
     assert [a["path"] for a in rec["archives"]] == ["common/mission/m001.arc"]
+
+
+def test_pack_fonts_and_chroma_audit_on_a_synthetic_tree(tmp_path):
+    import zipfile
+    spec4 = importlib.util.spec_from_file_location("pack_members", TOOL.parent / "pack_members.py")
+    pm = importlib.util.module_from_spec(spec4)
+    sys.modules["pack_members"] = pm
+    spec4.loader.exec_module(pm)
+    eng, jpn, t = _tree(tmp_path)
+    tnf = b"\x00TNF" + bytes(28)
+    for root in (eng, jpn):
+        (root / "id" / "msg_c.arc").write_bytes(arc.build([("msg\\a\\jpn\\a_tnf", 1, tnf), ("msg\\a\\jpn\\a_tnf2", 1, tnf)]))
+    res = pm.pack_fonts(eng, tmp_path / "f", log=lambda m: None)
+    man = json.loads(zipfile.ZipFile(tmp_path / "f" / "fonts_part01.zip").read("FONTS_MANIFEST.json"))
+    tn = [r for r in man if r["kind"] == "tnf"]
+    assert len(tn) == 1 and len(tn[0]["owners"]) == 2 and res["distinct"]["tex"] >= 1
+
+    spec5 = importlib.util.spec_from_file_location("chroma_audit", TOOL.parent / "chroma_audit.py")
+    ca = importlib.util.module_from_spec(spec5)
+    sys.modules["chroma_audit"] = ca
+    spec5.loader.exec_module(ca)
+    # a waza2-style fault: achromatic text, transparent texels stored (0,0,0,0)
+    good = _english(t["M"] if "M" in t else t["J"])
+    res = ca.run(eng, jpn, tmp_path / "audit", log=lambda m: None)
+    assert res["edited_0x2A"] >= 3 and (tmp_path / "audit" / "upload_part01.zip").exists()
+    assert good[:4] == b"\x00XET"
