@@ -11,6 +11,10 @@ A line "layout arc" (e.g. "layout result_id.arc") adds every PSL layout member o
 --fonts (no --list needed): every TNF (glyph metrics), CSA (character map) and msg\\ font-page
 texture in rom/eng, each distinct payload stored once with all owners in FONTS_MANIFEST.json,
 split into fonts_partNN.zip files of at most --max-mb (for the universal letter-spacing fix).
+Members named *font* or msg\\* with an unknown magic are packed too (kind "other"), and
+CENSUS.json counts every (type_hash, magic) pair with example names and keeps up to 3 small
+samples (<= 256 KB) of each under census/, so a game whose fonts use another resource type
+(e.g. Samurai Heroes) still shows what it has.
 
 For each member the zip holds eng/<arc>/<index>.<ext> and, when rom/jpn has the same member
 (same index and name, else a unique name), jpn/<arc>/<index>.<ext>. MANIFEST.json lists names,
@@ -117,6 +121,7 @@ def pack_fonts(eng: Path, out_dir: Path, max_mb: float = 29.0, log=print) -> dic
         zf = zipfile.ZipFile(out_dir / f"fonts_part{part:02}.zip", "w", zipfile.ZIP_DEFLATED)
     new_part()
     n = 0
+    census: dict[str, dict] = {}
     for p in sorted(eng.rglob("*.arc")):
         rel = p.relative_to(eng).as_posix()
         if skip.search(rel):
@@ -128,9 +133,22 @@ def pack_fonts(eng: Path, out_dir: Path, max_mb: float = 29.0, log=print) -> dic
             continue
         n += 1
         for e in a.entries:
+            key = f"{e.type_hash:08X}:{e.magic.hex()}"
+            c = census.setdefault(key, {"type_hash": f"{e.type_hash:08X}", "magic": e.magic.hex(),
+                                        "count": 0, "examples": [], "samples": []})
+            c["count"] += 1
+            if len(c["examples"]) < 8 and e.name not in c["examples"]:
+                c["examples"].append(e.name)
+            if len(c["samples"]) < 3 and e.raw_size <= 262144:
+                sp = f"census/{key.replace(':', '_')}_{len(c['samples'])}.bin"
+                zf.writestr(sp, e.raw)
+                c["samples"].append({"path": sp, "part": part, "owner": f"{rel}#{e.index}", "name": e.name})
             kind = kinds.get(e.magic)
-            if kind is None and e.magic == b"\x00XET" and e.name.lower().startswith("msg\\"):
+            low = e.name.lower()
+            if kind is None and e.magic == b"\x00XET" and low.startswith("msg\\"):
                 kind = "tex"
+            if kind is None and ("font" in low or (low.startswith("msg\\") and e.magic not in (b"\x00GSM", b"\x00FIM"))):
+                kind = "other"
             if kind is None:
                 continue
             raw = e.raw
@@ -148,6 +166,7 @@ def pack_fonts(eng: Path, out_dir: Path, max_mb: float = 29.0, log=print) -> dic
         if n % 1000 == 0:
             log(f"{n} archives, {len(seen)} distinct font resources")
     zf.writestr("FONTS_MANIFEST.json", json.dumps(list(seen.values()), indent=1, ensure_ascii=False))
+    zf.writestr("CENSUS.json", json.dumps(sorted(census.values(), key=lambda c: -c["count"]), indent=1, ensure_ascii=False))
     zf.close()
     counts: dict[str, int] = {}
     for r in seen.values():

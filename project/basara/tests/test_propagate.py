@@ -205,6 +205,8 @@ def test_pack_fonts_and_chroma_audit_on_a_synthetic_tree(tmp_path):
     man = json.loads(zipfile.ZipFile(tmp_path / "f" / "fonts_part01.zip").read("FONTS_MANIFEST.json"))
     tn = [r for r in man if r["kind"] == "tnf"]
     assert len(tn) == 1 and len(tn[0]["owners"]) == 2 and res["distinct"]["tex"] >= 1
+    census = json.loads(zipfile.ZipFile(tmp_path / "f" / "fonts_part01.zip").read("CENSUS.json"))
+    assert any(c["magic"] == b"\x00TNF".hex() and c["count"] >= 4 and c["samples"] for c in census)
 
     spec5 = importlib.util.spec_from_file_location("chroma_audit", TOOL.parent / "chroma_audit.py")
     ca = importlib.util.module_from_spec(spec5)
