@@ -15,3 +15,10 @@ Game text is NOT stored here; only the analysis scripts that were actually used.
    (battle dialogue 18.6%). Names diverge from official (e.g. "Ichi" vs "Oichi",
    "Iansuke Akiyake" vs "Iorinosuke Akiage"). SH EU has no Japanese and FIM col8 is NOT a global
    voice-clip key (retracted), so line alignment needs the Japanese font decode (next step).
+5. **Text is effectively 100% English (2026-09-26).** `english_coverage.py` over every live ENG
+   table: 1,052,409 / 1,053,144 text records (99.93%) decode as English with the ENG map. The
+   735 others are English in a second font (`title_id` "enjoy warring states…", extended
+   `pause/waza` move fonts), a `basara.arc` glyph test row, and the `???` placeholder — no
+   untranslated dialogue/menu text was found. **The remaining Japanese is in textures, FMV and
+   platform files**, so the next pass is visual: `project/basara/tools/texture_sheets.py`
+   (contact sheets of every language-keyed texture, SAME_AS_JPN first) for AI/human review.
