@@ -163,3 +163,29 @@ def test_pack_members_takes_eng_jpn_and_layouts(tmp_path):
     assert z.read("jpn/tenka/tenka_stage_m001.arc/0000.tex") == t["J"]
     man = json.loads(z.read("MANIFEST.json"))
     assert [m["same_as_jpn"] for m in man["members"]] == [False, True, True]     # stage edited; K and the layout untouched
+
+
+def test_replace_members_only_takes_approved_bytes_over_the_computed_base(tmp_path):
+    spec3 = importlib.util.spec_from_file_location("replace_members", TOOL.parent / "replace_members.py")
+    rm = importlib.util.module_from_spec(spec3)
+    sys.modules["replace_members"] = rm
+    spec3.loader.exec_module(rm)
+    eng, jpn, t = _tree(tmp_path)
+    live = arc.read((eng / "common/mission/m001.arc").read_bytes())
+    fixed = _english(t["J"])                                  # stands in for an approved repair
+    files = tmp_path / "files"
+    files.mkdir()
+    (files / "fix.tex").write_bytes(fixed)
+    (files / "bad.tex").write_bytes(fixed + b"x")
+    rows = [("common/mission/m001.arc", 0, t["name"], sha(live[0].raw), "fix.tex", sha(fixed)),          # ok
+            ("common/mission/m001.arc", 1, "x", "0" * 64, "fix.tex", sha(fixed)),                       # base moved on
+            ("versus/menu.arc", 0, t["name"], sha(t["J"]), "bad.tex", sha(fixed))]                      # not the approved bytes
+    lst = tmp_path / "repair.tsv"
+    lst.write_text("arc\tindex\tmember\tbefore_sha256\tfile\tafter_sha256\n" +
+                   "".join("\t".join(map(str, r)) + "\n" for r in rows), encoding="utf-8")
+    res = rm.build(lst, files, eng, tmp_path / "out", log=lambda m: None)
+    assert res == {"rows": 3, "replacements": 1, "archives": 1, "left_out": 2}
+    rec = patch.build(tmp_path / "out" / "patchset.toml", eng, tmp_path / "b")
+    built = arc.read((tmp_path / "b" / "common/mission/m001.arc").read_bytes())
+    assert built[0].raw == fixed and built[1].raw == live[1].raw
+    assert [a["path"] for a in rec["archives"]] == ["common/mission/m001.arc"]

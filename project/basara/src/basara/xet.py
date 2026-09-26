@@ -609,5 +609,12 @@ def scan_against_reference(eng: bytes, ref: bytes) -> dict:
                                           "legacy_fit": round(fl, 1)})
     res["suspect_share"] = round(len(res["suspect_blocks"]) / len(changed), 4)
     res["suspect_legacy_encoding"] = res["suspect_share"] >= 0.25
-    res["whole_texture_byte_order"] = byte_order_evidence(eng)
+    res["whole_texture_byte_order"] = bo = byte_order_evidence(eng)
+    if res["suspect_legacy_encoding"] and (bo.get("standard") or 0) >= 0.98:
+        # Chroma on 123 almost everywhere: only the YCbCr writer produces that. The legacy
+        # path stores display RGB straight, so its white/grey art never lands on neutral.
+        # (False positives seen 2026-09-26 on waza_004 / result_001: white text over a
+        # small, dark palette of unchanged blocks.)
+        res["suspect_legacy_encoding"] = False
+        res["cleared_by"] = "neutral chroma (byte_order standard share >= 0.98)"
     return res

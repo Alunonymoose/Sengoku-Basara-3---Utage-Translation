@@ -107,6 +107,16 @@ member the legacy way to recover the approved artwork
 (`basara.xet._legacy_view`), graft it back with the certified writer, then
 the normal approval/backup/install/cold-boot gates.
 
+### 6a. Not every damaged texture is the legacy swap (2026-09-26)
+
+Magenta/green edge fringes on white text in standard byte order mean **missing prefill**: fully
+transparent texels were stored as (0,0,0,0) instead of neutral (123,0,123,0), and BC3 block
+endpoints dragged the edge texels off 123 (waza2_001–029). Fix: keep Y and alpha, neutralise
+chroma, re-encode with `prefill=dilate`. Opaque coloured plates behind English text mean the art
+was drawn on a coloured canvas (result_id labels); that is a new-art job, not a codec repair.
+`scan_against_reference` no longer flags textures whose chroma is ≥98% neutral (the legacy path
+cannot produce that).
+
 ## 7. Evidence levels
 
 `basara` tests are SOFTWARE/FIXTURE proof (73 tests incl. the `utage_xet` shim suite, Windows+Linux CI). 0x2A standard

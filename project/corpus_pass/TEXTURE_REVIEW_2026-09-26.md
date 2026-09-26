@@ -129,6 +129,45 @@ The repair uses the canon's method:
 
 The propagation tool refuses these as donors (`REPAIR_DONOR_FIRST`), so the damage cannot spread.
 
+**Byte-level diagnosis (2026-09-26, the user's `pack_members.py` upload).** None of these is the
+xetenc endpoint-swap pattern: every one is standard order.
+
+- **waza2_001–029: missing prefill.**
+  - Covered texels have neutral chroma (median Cr/Cb 123), but fully transparent texels were
+    stored as (0,0,0,0) instead of (123,0,123,0).
+  - BC3 shares colour endpoints across each 4×4 block, so edge texels are pulled off neutral. That
+    is the magenta/green fringe; only 22–42% of covered texels are neutral (JPN: 100%).
+  - Repair (deterministic): keep the stored luma Y and alpha, set Cr=Cb=123 (the JPN waza2 art is
+    100% achromatic), re-encode with the certified writer and `prefill=dilate`.
+  - Result: 100% neutral; luma mean error 0.2 levels (max 4); alpha max 9. The header is untouched.
+  - Built as exact bytes with a before/after board for approval, then installed with
+    `tools/replace_members.py` (re-proves before/after sha256 on the live files). 31 targets,
+    including the `select/c_versus.arc` duplicates of 001/029.
+- **result_000 / 023 / 026: opaque coloured backgrounds.**
+  - The English text was drawn on solid navy / magenta / dark-red canvases (alpha ≈ 245
+    everywhere; the JPN originals are transparent).
+  - The English lines also do not sit on the Japanese rows, while every result layout (`result_00`,
+    `kakusyu`) is byte-identical to JPN.
+  - Keying out the background would not fix the placement, so these go to the new-art batch (text
+    laid into the JPN rows) after a runtime screenshot.
+- **title_005: needs a runtime screenshot first.** Its luma is grey (median 85 vs JPN 255) and its
+  chroma is off-neutral (148/145); the alpha channel carries the English logo shape. The intended
+  look cannot be proven from the bytes alone.
+- **tenka_japmap_08 (`brief/mode_tenka.arc`):** off-neutral (23%). It is only relevant to
+  `brief/og`, so it is left as is.
+
+**Held-back copies cleared:**
+- `result_id.arc`'s only layout change is one node scale in `top_00` (0.95/0.90 → 1.25,
+  6 bytes). `result_00` is identical in `result_id.arc`, `tenka_finish_id.arc` and JPN, so
+  `result_002/006/009` can be copied.
+- `result_001` and `waza_004` were legacy-scan false positives: their chroma is 100% neutral, which
+  the legacy path cannot produce. `scan_against_reference` now clears that case
+  (`cleared_by: neutral chroma`).
+- These 5 copies make up part 3.
+- QA: the English `result_006` rows do not map one-to-one onto the JPN rows. JPN row 8 is the
+  reward-voucher line, where the English says "Fame Leveled Up!", and JPN row 14 has no English
+  row. This is already the case in `result_id.arc`.
+
 ## 4. QA findings on English textures (not coverage, but visible)
 
 - **Two English names for one character:** Josie / Joe C. Kuroda, Sunday Mouri / Mori,
