@@ -74,3 +74,27 @@ A batch installs only after approval, via `replace_members.py` (before/after sha
 - `replace_members`: 78/78 rows re-proven, 0 left out.
 - Rollback order (newest first): this one, then part 3, waza2, part 2, part 1.
 - The first `--layouts` pack of SH `rom\eng` held only 50 PSL. SH's HUD masters (`id\lsp\abr\…`) sit in root-level archives such as `rom\battle.arc`, so the comparison needs `--eng <rom>` (the rom root) for both games.
+
+## Round 3 evidence (layouts + text corpus, 2026-09-26)
+
+**The layouts do not carry text pitch.**
+- The SH `abr` and Utage `jpn` LSP masters were diffed node by node (by name and occurrence) across 37 matched layouts: pause, option, soubi, tenka, top, result, gallery, cockpit and others.
+- The non-geometry fields that differ are:
+  - +0x48/+0x4C: texture size;
+  - +0x30 / +0x70: flags;
+  - +0x60: priority;
+  - +0x94..: vertex colours;
+  - +0x54: node type, on a few nodes.
+- None of them is a text-spacing parameter, and message-type nodes are byte-identical apart from +0x30.
+- Text is drawn by code at node positions.
+
+**GSM encoding is the same as SH.**
+- `id_tenka`, `id_pause` and `id_brief` in both games use the same control vocabulary (FFFF/FFFE/FF92/FF91/FC11), with no per-character codes.
+- The font bytes are identical (round 2).
+- So the fixed pitch in the shop, brief, pause and log windows is chosen by EBOOT code, most likely keyed on `mLanguage`. That is the same switch that picks `id\lsp\jpn` vs `id\lsp\abr` and `id\texture\jpn` vs `id\texture\eng`, and all of those paths are already in Utage's EBOOT (HANDOVER §3).
+- The universal fix is therefore an EBOOT patch (an RPCS3 patch.yml entry): either flip `mLanguage` to the Western value, or patch the pitch branch. The next input needed is the decrypted `EBOOT.elf`.
+
+**The in-battle name tags ("Satake Army", "Defense Post Chief") are font text, not textures.**
+- They come from the per-mission `_r` table records 0–12 (e.g. `id/msg_m000_pl000.arc#18`).
+- The records have no colour codes; the glyph pages are neutral and identical to SH.
+- So the glow colour is applied by the engine per unit type and is probably the original design. Check a JPN screenshot of the same tag before treating it as a defect.
