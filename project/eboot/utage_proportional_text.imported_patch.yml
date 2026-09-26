@@ -1,0 +1,15 @@
+Version: 1.2
+
+# Sengoku BASARA 3 Utage (BLJM60389) - English patch: proportional Latin text in every window.
+# Evidence: project/eboot/EBOOT_PROPORTIONAL_TEXT_2026-09-26.md
+# Verify the PPU hash against RPCS3's log line "PPU executable hash: PPU-..." before enabling.
+PPU-cccc7497edc2f0c81860f8e48f4fd05b652a4df3:
+  "English: proportional text in all windows":
+    Games:
+      "Sengoku BASARA 3 Utage":
+        BLJM60389: [ All ]
+    Author: "Utage English project"
+    Notes: "Glyph draw at 0x4e83a0 took the fixed-cell-width path whenever mLanguage == 0 (Japanese) and the glyph fell outside the message set's CSA range. This makes it always use the TNF advance, as Samurai Heroes does (mLanguage != 0). One instruction: beq cr7,0x4e88ac -> nop."
+    Patch Version: 1.0
+    Patch:
+      - [ be32, 0x004e83a0, 0x60000000 ]   # was 0x419e050c (beq cr7, 0x4e88ac)
