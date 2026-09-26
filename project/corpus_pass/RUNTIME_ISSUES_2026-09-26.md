@@ -62,3 +62,15 @@ A batch installs only after approval, via `replace_members.py` (before/after sha
 - The magenta `cp_name_nak` copies are only in `tenka/friend.arc` (#108–#162). The `id/friend_*`, `pause/friend_*` and `quest/*` copies were already neutral.
 - The magenta `name_NNN` copies are only in `tenka/tenka_plNNN.arc#0`.
 - Open: the in-battle "Defense Post Chief" tag is **not** among these. Every `cp_name_army_*` / `cp_name_han_*` texture is neutral. It is either a texture whose ENG and JPN copies are identical (the audit skips those, because the jpn tree was also patched) or an engine tint. It needs its archive and member identified from the mission it was seen in.
+
+## Install record: audit2 repairs (2026-09-26T19:42:41Z), INSTALLED, not RUNTIME_TESTED
+
+- `basara install`, patchset `repair-20260926`, build patchset sha256 `e4a4ef26c323b014…`.
+- Backup: `C:\review\backups\repair-20260926_20260926T194241Z`.
+- 78 members in 60 archives:
+  - `result/pl000–029.arc#6` (army MISSING_PREFILL);
+  - `tenka/friend.arc` (19 cp_name_nak);
+  - `tenka/tenka_pl000–027,029.arc#0` (name MAGENTA_CAST).
+- `replace_members`: 78/78 rows re-proven, 0 left out.
+- Rollback order (newest first): this one, then part 3, waza2, part 2, part 1.
+- The first `--layouts` pack of SH `rom\eng` held only 50 PSL. SH's HUD masters (`id\lsp\abr\…`) sit in root-level archives such as `rom\battle.arc`, so the comparison needs `--eng <rom>` (the rom root) for both games.
