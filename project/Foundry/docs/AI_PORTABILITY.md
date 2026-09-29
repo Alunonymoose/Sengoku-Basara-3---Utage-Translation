@@ -7,9 +7,10 @@ The project should remain useful even when the original ChatGPT memory, private 
 A new researcher can begin with:
 
 1. this public repository/branch;
-2. the documents in `project/Foundry/docs`;
-3. the reusable skills in `.agents/skills`;
-4. their own legally obtained Utage / Samurai Heroes files as required by the task.
+2. `project/Foundry/docs/PROJECT_CONTROL.md`;
+3. the relevant documents in `project/Foundry/docs`;
+4. the reusable skills in `.agents/skills`, especially `basara-project-state`;
+5. their own legally obtained Utage / Samurai Heroes files as required by the task.
 
 The model should be told to treat the repository as reusable technical canon and the researcher's fresh local files as production authority.
 
@@ -18,7 +19,7 @@ The model should be told to treat the repository as reusable technical canon and
 ```text
 You are continuing/reproducing BASARA Foundry work for Sengoku BASARA 3 Utage.
 
-Read the public Foundry Core documentation and .agents/skills in this repository before making technical assumptions.
+Read `project/Foundry/docs/PROJECT_CONTROL.md` and the `basara-project-state` skill first. If my workspace provides `.foundry/PROJECT_CURRENT.json`, read it before making current-state claims. Then read only the relevant current Foundry documentation and domain skill.
 Use current repository code/tests as implementation evidence.
 Use my fresh game files as the only production mutation source.
 Do not ask me to redistribute retail game assets into the repository.
@@ -55,12 +56,14 @@ Instead publish parsers, transforms, hashes, offsets, schemas, test methodology 
 
 When a new researcher lacks a private checkpoint, recover context in this order:
 
-1. public technical canon;
-2. public skills;
-3. current code/tests;
-4. public checkpoints/research notes relevant to the exact subsystem;
-5. fresh local game bytes;
-6. only then external/general MT Framework knowledge.
+1. `PROJECT_CONTROL.md` and, when present locally, `.foundry/PROJECT_CURRENT.json`;
+2. fresh exact target game bytes;
+3. the relevant public project-state/domain skills and technical canon;
+4. current code/tests;
+5. runtime evidence and public checkpoints relevant to the exact subsystem;
+6. only then historical notes or external/general MT Framework knowledge.
+
+A dirty snapshot is navigation, not current whole-tree authority. Broad historical search is escalation, not bootstrap.
 
 Do not recreate months of architecture research if the repository already contains the proof.
 
