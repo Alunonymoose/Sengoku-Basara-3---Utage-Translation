@@ -1,68 +1,79 @@
-"""Reading the game's own sprite inventory out of a `\\0PSL` layout.
+"""Parser for MT Framework Lite PSL / .lsp sprite layouts.
 
-The tool had been reverse-engineering sprite boundaries from pixels — Otsu
-thresholds, connected components, guessing which blob was a card and which was
-its frame. That was the wrong place to look. **The game already stores this.**
-Every `id\\lsp\\...` resource is a layout, and it names each node and the
-texture that node draws from:
-
-    SysRoot
-    ring_1    -> id\\texture\\jpn\\roulette\\roulette_001_ID_HQ
-    waku1     -> id\\texture\\jpn\\roulette\\roulette_000_ID_HQ   (waku = frame)
-    sitaji1   -> id\\texture\\jpn\\roulette\\roulette_000_ID_HQ   (sitaji = base)
-    waku2, sitaji2, waku3, sitaji3, ...
-
-So a sheet's contents can be listed exactly, by name, with no guessing: which
-sprites exist, what each is called, and which texture it comes from.
-
-**What is parsed here and what is not.** The header and the name table are
-read. The node records themselves — which carry the source rectangle and the
-placement — are *not* decoded: the project's own notes record that the node
-format was never cracked, and this does not crack it either. What it gives
-you is the inventory, which is enough to know what a sheet contains and what
-still needs translating.
+SB3/Utage PSL v0x21 uses a 16-byte header, a 176-byte big-endian node
+table, then an unaligned pair of counted strings (name, texture) per node.
+The texture string may be empty. Geometry/UV fields are logical units;
+Utage's texture-atlas coordinates map to physical XET pixels at 2x.
 """
-
 from __future__ import annotations
 
 import re
 import struct
 from dataclasses import dataclass, field
-from pathlib import Path
 
 PSL_MAGIC = b"\0PSL"
-_RUN = re.compile(rb"[ -~]{3,}")
-# Node names are identifiers: letters, digits and underscores. Anything else in
-# the ASCII sweep is float/int payload that happens to fall in printable range.
-_IDENT = re.compile(r"^[A-Za-z][A-Za-z0-9_]*$|^[0-9]+_[0-9]+$")
+HEADER_SIZE = 16
+NODE_SIZE = 176
+
+
+def _u32(data: bytes, off: int) -> int:
+    return struct.unpack_from(">I", data, off)[0]
+
+
+def _s32(data: bytes, off: int) -> int:
+    return struct.unpack_from(">i", data, off)[0]
+
+
+def _f32(data: bytes, off: int) -> float:
+    return struct.unpack_from(">f", data, off)[0]
+
+def _read_string(data: bytes, cursor: int) -> tuple[str, int]:
+    """Read an unaligned big-endian u32-length string."""
+    if cursor + 4 > len(data):
+        raise ValueError(f"truncated PSL string length at 0x{cursor:X}")
+    length = _u32(data, cursor)
+    cursor += 4
+    end = cursor + length
+    if length < 1 or end > len(data):
+        raise ValueError(f"bad PSL string at 0x{cursor - 4:X}: {length}")
+    value = data[cursor:end].rstrip(b"\0").decode("ascii", "replace")
+    return value, end
+
+
+def _name_table_offset(data: bytes, count: int) -> int:
+    minimum = HEADER_SIZE + count * NODE_SIZE
+    marker = b"\0\0\0\x08SysRoot\0"
+    offset = data.find(marker, minimum)
+    if offset < 0:
+        raise ValueError("PSL SysRoot name table not found")
+    return offset
 
 
 @dataclass
 class LayoutNode:
+    index: int
     name: str
     texture: str = ""
+    node_type: int = 0
+
+    parent: int = -1
+    position: tuple[float, float] = (0.0, 0.0)
+    scale: tuple[float, float] = (1.0, 1.0)
+    size: tuple[int, int] = (0, 0)
+    material: int = 0
+    geometry: tuple[int, int, int, int] = (0, 0, 0, 0)
+    uv: tuple[int, int, int, int] = (0, 0, 0, 0)
 
     @property
     def role(self) -> str:
-        """What the Japanese node names mean, where they are recognisable."""
-
         lowered = self.name.lower()
         for prefix, meaning in (
-            ("sysroot", "layout root"),
-            ("waku", "frame"),
-            ("sitaji", "backing plate"),
-            ("moji", "lettering"),
-            ("kage", "shadow"),
-            ("hanko", "stamp"),
-            ("ring", "ring"),
-            ("icon", "icon"),
-            ("base", "base"),
-            ("bg", "background"),
-            ("btn", "button"),
-            ("cursor", "cursor"),
-            ("line", "rule"),
-            ("num", "number"),
-            ("point", "pointer"),
+            ("sysroot", "layout root"), ("waku", "frame"),
+            ("sitaji", "backing plate"), ("moji", "lettering"),
+            ("kage", "shadow"), ("hanko", "stamp"), ("ring", "ring"),
+            ("icon", "icon"), ("base", "base"), ("bg", "background"),
+            ("btn", "button"), ("cursor", "cursor"), ("line", "rule"),
+            ("num", "number"), ("point", "pointer"), ("logo", "logo"),
         ):
             if lowered.startswith(prefix):
                 return meaning
@@ -70,26 +81,58 @@ class LayoutNode:
             return "group"
         return ""
 
+    def source_rect(self, atlas_scale: float = 2.0) -> tuple[int, int, int, int]:
+        return tuple(round(v * atlas_scale) for v in self.uv)
 
 @dataclass
 class Layout:
     name: str
     version: int
     node_count: int
-    texture_count: int
+    aux_count: int
     nodes: list[LayoutNode] = field(default_factory=list)
     textures: list[str] = field(default_factory=list)
+    name_table_offset: int = 0
+    name_table_end: int = 0
+
+    @property
+    def texture_count(self) -> int:
+        return self.aux_count
 
     @property
     def complete(self) -> bool:
-        """Did the sweep recover as many nodes as the header promises?"""
-
-        return len(self.nodes) >= self.node_count
+        return len(self.nodes) == self.node_count
 
     def nodes_using(self, texture_name: str) -> list[LayoutNode]:
         tail = texture_name.replace("/", "\\").lower().split("\\")[-1]
-        return [n for n in self.nodes
-                if n.texture and n.texture.replace("/", "\\").lower().endswith(tail)]
+        return [n for n in self.nodes if n.texture and
+                n.texture.replace("/", "\\").lower().endswith(tail)]
+
+    def world_transform(self, index: int) -> tuple[float, float, float, float]:
+        """Return world x/y and accumulated scale; rotation is not applied."""
+        visiting: set[int] = set()
+
+        def walk(i: int) -> tuple[float, float, float, float]:
+            if i < 0:
+                return 0.0, 0.0, 1.0, 1.0
+            if i in visiting or i >= len(self.nodes):
+
+                raise ValueError(f"invalid/cyclic PSL parent at node {i}")
+            visiting.add(i)
+            node = self.nodes[i]
+            px, py, psx, psy = walk(node.parent)
+            visiting.remove(i)
+            x = px + node.position[0] * psx
+            y = py + node.position[1] * psy
+            return x, y, psx * node.scale[0], psy * node.scale[1]
+
+        return walk(index)
+
+    def logical_bbox(self, index: int) -> tuple[float, float, float, float]:
+        node = self.nodes[index]
+        x, y, sx, sy = self.world_transform(index)
+        x0, y0, x1, y1 = node.geometry
+        return x + x0 * sx, y + y0 * sy, x + x1 * sx, y + y1 * sy
 
 
 def is_layout(raw: bytes) -> bool:
@@ -97,91 +140,89 @@ def is_layout(raw: bytes) -> bool:
 
 
 def parse_layout(raw: bytes, name: str = "") -> Layout:
-    """Header and name table. Node records are deliberately not interpreted."""
-
     if not is_layout(raw):
         raise ValueError("not a PSL layout")
-    version = struct.unpack_from(">I", raw, 4)[0]
-    node_count, texture_count = struct.unpack_from(">HH", raw, 12)
+    if len(raw) < HEADER_SIZE:
+        raise ValueError("truncated PSL header")
+
+    version = _u32(raw, 4)
+    node_count, aux_count = struct.unpack_from(">HH", raw, 12)
+
+    table_end = HEADER_SIZE + node_count * NODE_SIZE
+    if table_end > len(raw):
+        raise ValueError("PSL node table exceeds resource")
+
+    cursor = _name_table_offset(raw, node_count)
+    names: list[tuple[str, str]] = []
+    for _ in range(node_count):
+        node_name, cursor = _read_string(raw, cursor)
+        texture, cursor = _read_string(raw, cursor)
+        names.append((node_name, texture))
 
     nodes: list[LayoutNode] = []
     textures: list[str] = []
-    seen: set[tuple[str, str]] = set()
-    pending: str | None = None
+    for index, (node_name, texture) in enumerate(names):
+        off = HEADER_SIZE + index * NODE_SIZE
+        rec = raw[off:off + NODE_SIZE]
+        node = LayoutNode(
+            index=index, name=node_name, texture=texture,
+            node_type=_u32(rec, 0x54), parent=_s32(rec, 0x38),
+            position=(_f32(rec, 0x00), _f32(rec, 0x04)),
+            scale=(_f32(rec, 0x20), _f32(rec, 0x24)),
+            size=(_s32(rec, 0x48), _s32(rec, 0x4C)),
+            material=_s32(rec, 0x60),
+            geometry=tuple(_s32(rec, o) for o in (0x74, 0x78, 0x7C, 0x80)),
+            uv=tuple(_s32(rec, o) for o in (0x84, 0x88, 0x8C, 0x90)),
+        )
+        nodes.append(node)
 
-    def flush(texture: str = "") -> None:
-        nonlocal pending
-        if pending is None:
-            return
-        key = (pending, texture)
-        if key not in seen:
-            seen.add(key)
-            nodes.append(LayoutNode(name=pending, texture=texture))
-        pending = None
-
-    for match in _RUN.finditer(raw, 16):  # past the header, skipping the magic
-        text = match.group().decode("ascii", "replace")
-        reference = text.lstrip("+")
-        lowered = reference.lower()
-        if "\\texture\\" in lowered or "/texture/" in lowered:
-            if reference not in textures:
-                textures.append(reference)
-            flush(reference)
-            continue
-        if len(text) <= 40 and _IDENT.match(text):
-            flush()
-            pending = text
-    flush()
-
-    # A name that appears both with and without a texture is one node listed
-    # twice: once in the tree, once as an animation target. Keep the richer one.
-    with_texture = {n.name for n in nodes if n.texture}
-    nodes = [n for n in nodes if n.texture or n.name not in with_texture]
+        if texture and texture not in textures:
+            textures.append(texture)
 
     return Layout(
-        name=name,
-        version=version,
-        node_count=node_count,
-        texture_count=texture_count,
-        nodes=nodes,
-        textures=textures,
+        name=name, version=version, node_count=node_count,
+        aux_count=aux_count, nodes=nodes, textures=textures,
+        name_table_offset=_name_table_offset(raw, node_count),
+        name_table_end=cursor,
     )
 
 
 def layouts_in_archive(archive) -> list[Layout]:
-    """Every layout resource in an open archive."""
-
     from alrummi3_core import unpack_entry
-
     out: list[Layout] = []
     for entry in archive.entries:
         try:
             raw = unpack_entry(entry)
         except Exception:
             continue
-        if is_layout(raw):
-            try:
-                out.append(parse_layout(raw, entry.name))
-            except Exception:
-                continue
+        if not is_layout(raw):
+            continue
+        try:
+            out.append(parse_layout(raw, entry.name))
+        except Exception:
+            continue
     return out
 
 
 def describe_for_texture(archive, texture_name: str) -> list[str]:
-    """What the layouts say about the sprites drawn from one texture."""
-
     lines: list[str] = []
     total = 0
     for layout in layouts_in_archive(archive):
         using = layout.nodes_using(texture_name)
+
         if not using:
             continue
         total += len(using)
-        lines.append(f"{layout.name}  (PSL v0x{layout.version:X}, "
-                     f"{layout.node_count} nodes)")
+        lines.append(
+            f"{layout.name}  (PSL v0x{layout.version:X}, "
+            f"{layout.node_count} nodes)"
+        )
         for node in using:
             role = f"  — {node.role}" if node.role else ""
-            lines.append(f"    {node.name}{role}")
+            lines.append(
+                f"    {node.name}{role}  uv={node.uv} "
+                f"geom={node.geometry} pos={node.position}"
+            )
     if not lines:
         return ["No layout in this archive references this texture by name."]
     return [f"{total} sprite(s) draw from this texture, named by the game:", ""] + lines

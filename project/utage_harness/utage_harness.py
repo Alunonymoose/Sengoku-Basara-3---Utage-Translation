@@ -274,15 +274,122 @@ def cmd_rrc_match_arc(args):
     print(json.dumps({"capture": args.capture, "arc": args.arc,
                       "arc_sha256": arc.data_sha256, "matches": matches}, indent=2))
 
+def node_info(layout, node, atlas_scale=2.0):
+    return {
+        "index": node.index, "name": node.name, "role": node.role,
+        "type": node.node_type, "parent": node.parent, "texture": node.texture,
+        "position": list(node.position), "scale": list(node.scale),
+        "geometry": list(node.geometry), "uv_logical": list(node.uv),
+        "source_rect_physical": list(node.source_rect(atlas_scale)),
+        "world_transform": list(layout.world_transform(node.index)),
+        "dest_bbox_logical": list(layout.logical_bbox(node.index)),
+        "material": node.material,
+    }
+
 def cmd_layouts(args):
     arc = core.parse_arc(Path(args.arc))
     out = []
     for x in lsp.layouts_in_archive(arc):
         out.append({"member": x.name, "version": x.version, "declared_nodes": x.node_count,
                     "recovered_nodes": len(x.nodes), "textures": x.textures,
-                    "nodes": [{"name": n.name, "role": n.role, "texture": n.texture} for n in x.nodes]})
+                    "name_table_offset": x.name_table_offset, "name_table_end": x.name_table_end,
+                    "nodes": [node_info(x, n) for n in x.nodes]})
     print(json.dumps({"archive": args.arc, "sha256": arc.data_sha256, "layouts": out},
                      indent=2, ensure_ascii=False))
+
+def get_layout(arc, selector):
+    entries = []
+    for e in arc.entries:
+        try:
+            raw = core.unpack_entry(e)
+        except Exception:
+            continue
+        if lsp.is_layout(raw):
+            entries.append((e, raw))
+    if not entries:
+        raise KeyError("archive contains no PSL layouts")
+    if selector:
+        key = norm_name(selector)
+        hits = [(e, raw) for e, raw in entries
+                if norm_name(e.name) == key or norm_name(e.name).endswith("\\" + key)]
+        if len(hits) != 1:
+            raise KeyError(f"layout selector {selector!r} matched {len(hits)} entries")
+        e, raw = hits[0]
+    elif len(entries) == 1:
+        e, raw = entries[0]
+    else:
+        raise KeyError("archive has multiple layouts; pass --layout")
+    return e, lsp.parse_layout(raw, e.name)
+
+def cmd_layout_nodes(args):
+    arc = core.parse_arc(Path(args.arc))
+    entry, layout = get_layout(arc, args.layout)
+    nodes = layout.nodes
+    if args.match:
+        needle = args.match.casefold()
+        nodes = [n for n in nodes if needle in n.name.casefold()
+                 or needle in n.texture.casefold()]
+    print(json.dumps({
+        "archive": args.arc, "archive_sha256": arc.data_sha256,
+        "layout": entry.name, "version": layout.version,
+        "node_count": layout.node_count,
+        "nodes": [node_info(layout, n, args.atlas_scale) for n in nodes],
+    }, indent=2, ensure_ascii=False))
+
+def cmd_render_layout(args):
+    arc = core.parse_arc(Path(args.arc))
+    entry, layout = get_layout(arc, args.layout)
+    logical_w, logical_h = args.logical_size
+    out_w, out_h = args.output_size or args.logical_size
+    canvas = Image.new("RGBA", (out_w, out_h), tuple(args.background))
+    sx, sy = out_w / logical_w, out_h / logical_h
+    chosen = []
+    wanted = {int(v) for v in args.node} if args.node else None
+    needle = args.match.casefold() if args.match else None
+    for node in layout.nodes:
+        if node.node_type != 2 or not node.texture:
+            continue
+        if wanted is not None and node.index not in wanted:
+            continue
+        if needle and needle not in node.name.casefold() and needle not in node.texture.casefold():
+            continue
+        chosen.append(node)
+
+    rendered, skipped = [], []
+    for node in chosen:
+        try:
+            tex_entry = find_entry(arc, node.texture)
+            image, raw = decode_member(arc, tex_entry)
+            x0, y0, x1, y1 = node.source_rect(args.atlas_scale)
+            if not (0 <= x0 < x1 <= image.width and 0 <= y0 < y1 <= image.height):
+                raise ValueError(f"source rect {(x0, y0, x1, y1)} outside {image.size}")
+            tile = image.crop((x0, y0, x1, y1))
+            dx0, dy0, dx1, dy1 = layout.logical_bbox(node.index)
+            px0, py0 = round(dx0 * sx), round(dy0 * sy)
+            px1, py1 = round(dx1 * sx), round(dy1 * sy)
+            if px1 <= px0 or py1 <= py0:
+                raise ValueError(f"invalid destination box {(px0, py0, px1, py1)}")
+            tile = tile.resize((px1 - px0, py1 - py0), Image.Resampling.BICUBIC)
+            canvas.alpha_composite(tile, (px0, py0))
+            rendered.append({
+                **node_info(layout, node, args.atlas_scale),
+                "texture_member": tex_entry.name,
+                "texture_sha256": sha256(raw),
+                "dest_bbox_output": [px0, py0, px1, py1],
+            })
+        except Exception as exc:
+            skipped.append({"index": node.index, "name": node.name, "error": str(exc)})
+
+    out = Path(args.out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    canvas.save(out)
+    print(json.dumps({
+        "archive": args.arc, "archive_sha256": arc.data_sha256,
+        "layout": entry.name, "logical_size": list(args.logical_size),
+        "output_size": [out_w, out_h], "atlas_scale": args.atlas_scale,
+        "rendered": rendered, "skipped": skipped, "out": str(out),
+    }, indent=2, ensure_ascii=False))
+
 
 def build_cli():
     ap = argparse.ArgumentParser(description="BASARA 3 Utage offline verification / partial 2D runtime harness")
@@ -291,6 +398,16 @@ def build_cli():
     p = sp.add_parser("preview"); p.add_argument("arc"); p.add_argument("member"); p.add_argument("out"); p.set_defaults(func=cmd_preview)
     p = sp.add_parser("compare-arcs"); p.add_argument("a"); p.add_argument("b"); p.set_defaults(func=cmd_compare)
     p = sp.add_parser("layouts"); p.add_argument("arc"); p.set_defaults(func=cmd_layouts)
+    p = sp.add_parser("layout-nodes"); p.add_argument("arc"); p.add_argument("--layout")
+    p.add_argument("--match"); p.add_argument("--atlas-scale", type=float, default=2.0)
+    p.set_defaults(func=cmd_layout_nodes)
+    p = sp.add_parser("render-layout"); p.add_argument("arc"); p.add_argument("out")
+    p.add_argument("--layout"); p.add_argument("--match"); p.add_argument("--node", action="append")
+    p.add_argument("--atlas-scale", type=float, default=2.0)
+    p.add_argument("--logical-size", type=lambda s: tuple(map(int, s.lower().split("x"))), default=(640, 480))
+    p.add_argument("--output-size", type=lambda s: tuple(map(int, s.lower().split("x"))))
+    p.add_argument("--background", type=lambda s: tuple(map(int, s.split(","))), default=(0, 0, 0, 0))
+    p.set_defaults(func=cmd_render_layout)
     p = sp.add_parser("render-scene"); p.add_argument("scene"); p.add_argument("out"); p.set_defaults(func=cmd_render_scene)
     p = sp.add_parser("rrc-info"); p.add_argument("capture"); p.set_defaults(func=cmd_rrc_info)
     p = sp.add_parser("rrc-match-arc"); p.add_argument("capture"); p.add_argument("arc"); p.set_defaults(func=cmd_rrc_match_arc)
