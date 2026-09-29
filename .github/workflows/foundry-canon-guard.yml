@@ -1,0 +1,21 @@
+name: Foundry Operational Canon Guard
+
+on:
+  push:
+    branches: [ 'foundry-*', main ]
+  pull_request:
+
+concurrency:
+  group: foundry-canon-guard-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Reject stale operational canon
+        run: python project/tools/check_operational_canon.py

@@ -73,8 +73,6 @@ Never generalize one title/title_id or other preload result to unrelated familie
 
 ## Delivery
 
-A requested final patch normally ends in one installation-ready ROOT-READY ZIP with correct game-root paths and a concise manifest.
-
-Loose ARC/TEX/XET/PNG files are not the default final deliverable unless explicitly requested.
+A production patch normally ends in a verified backup followed by live in-place installation, then re-read/re-hash/reparse validation. ROOT-READY ZIPs are not the default delivery unless explicitly requested.
 
 Never call an archive final merely because it rebuilt successfully; validate the stored result from the finished archive.

@@ -153,7 +153,7 @@ Do not:
 
 ## Current code-state caveat
 
-The authoritative implementation may be ahead of this skill document. Before a production change, inspect the current `foundry-v0.1` branch and any open hardening PR/checkpoint. If code and this skill disagree, preserve safety, investigate the newer evidence, and update the skill/canon rather than silently following stale text.
+The authoritative implementation may be ahead of this skill document. Before a production change, inspect the current `foundry-v0.3-reliability` branch, the project-state gate, and any newer hardening checkpoint. If code and this skill disagree, preserve safety, investigate the newer evidence, and update the skill/canon rather than silently following stale text.
 
 
 ## SCRA-aware ownership

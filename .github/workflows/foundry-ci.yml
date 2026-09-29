@@ -2,7 +2,7 @@ name: Foundry CI
 
 on:
   push:
-    branches: [ foundry-v0.1 ]
+    branches: [ 'foundry-*' ]
     paths:
       - 'project/Foundry/**'
       - '.github/workflows/foundry-ci.yml'
@@ -69,7 +69,7 @@ jobs:
         run: |
           $manifest = @{
             name = 'BASARA Foundry'
-            channel = 'foundry-v0.1'
+            channel = '${{ github.ref_name }}'
             git_commit = '${{ github.sha }}'
             run_number = '${{ github.run_number }}'
             target = 'win-x64'

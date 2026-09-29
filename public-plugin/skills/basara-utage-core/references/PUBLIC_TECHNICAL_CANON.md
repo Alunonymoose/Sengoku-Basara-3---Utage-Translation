@@ -73,7 +73,7 @@ outG = clamp(Y - 0.344136*Cb - 0.714136*Cr)
 outB = clamp(Y + 1.772*Cb)
 ```
 
-PS3 BC1/BC2/BC3 RGB565 colour endpoints are big-endian u16 in the certified project path; index/alpha packing remains standard.
+PS3 BC1/BC2/BC3 RGB565 colour endpoints use standard DXT little-endian endpoint words; index/alpha packing remains standard.
 
 ### Format 0x2B / RBxG
 

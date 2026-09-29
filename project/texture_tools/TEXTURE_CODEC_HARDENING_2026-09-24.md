@@ -1,5 +1,7 @@
 # BASARA Foundry — Texture Codec Hardening — 2026-09-24
 
+> **HISTORICAL / SUPERSEDED 2026-09-25.** Do not use this note as current endpoint-order authority. Runtime proof on 2026-09-25 established standard DXT little-endian RGB565 endpoint words. Current operational authority is `project/texture_tools/xet_ps3_2026-09-25/README.md` plus the current public technical canon.
+
 ## Status
 
 This note supersedes the older operational claim that the project has no durable current XET writer.

@@ -21,6 +21,7 @@ import struct
 import sys
 from pathlib import Path
 from typing import Any
+from dependency_hash import require_hash
 
 EXPECTED_SAFE_ARC_SHA256 = "7beb24a5e11c0e154ca2517447389518c09386e32104392bff8e3328cfbff6f3"
 EXPECTED_FIM_CONTRACT_SHA256 = "2dda5bcbba10d20467fe91ae9a1e3e0bc0422ab4fcb8e4e7cb2a232dca985013"
@@ -35,32 +36,6 @@ FIM_CONTRACT_PATH = DIALOGUE_DIR / "FIM_CONTRACT_REPAIR.py"
 TEXT_SCANNER_PATH = DIALOGUE_DIR / "SCAN_TEXT_DEFECTS.py"
 
 SCHEMA = "BASARA_FOUNDRY_MESSAGE_CENSUS_V1"
-
-
-def sha256_file(path: Path) -> str:
-    h = hashlib.sha256()
-    with path.open("rb") as f:
-        for chunk in iter(lambda: f.read(1024 * 1024), b""):
-            h.update(chunk)
-    return h.hexdigest()
-
-
-def require_hash(path: Path, expected: str) -> None:
-    if not path.is_file():
-        raise RuntimeError(f"missing dependency: {path}")
-    data = path.read_bytes()
-    candidates = {hashlib.sha256(data).hexdigest()}
-    try:
-        text = data.decode("utf-8")
-        normalized = text.replace("\r\n", "\n").replace("\r", "\n")
-        candidates.add(hashlib.sha256(normalized.encode("utf-8")).hexdigest())
-        candidates.add(hashlib.sha256(normalized.replace("\n", "\r\n").encode("utf-8")).hexdigest())
-    except UnicodeDecodeError:
-        pass
-    if expected not in candidates:
-        raise RuntimeError(
-            f"dependency hash drift: {path} expected={expected} candidates={sorted(candidates)}"
-        )
 
 
 def load_module(name: str, path: Path):

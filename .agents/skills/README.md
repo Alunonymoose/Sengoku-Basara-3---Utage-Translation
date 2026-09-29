@@ -76,16 +76,11 @@ Code/history:
 
 Primary engineering branch:
 
-`foundry-v0.1`
+`foundry-v0.3-reliability`
 
-Canonical project memory:
+Durable engineering canon, tools and skills live in this GitHub branch.
 
-Google Drive `BASARA Foundry`
-
-Mandatory Drive startup documents when available:
-
-1. `00 READ ME FIRST — BASARA FOUNDRY / UTAGE MASTER SOURCE OF TRUTH`
-2. `01 UTAGE TECHNICAL CANON — FORMATS, ROUTING, WORKFLOW, PROVEN FAILURES`
+When live workspace access exists, current production state comes from `.foundry/PROJECT_CURRENT.json`, then the exact current live target bytes. Google Drive `BASARA Foundry` is research/reference/backup and must not override fresher live state.
 
 ## Current hardening note — 2026-09-17
 

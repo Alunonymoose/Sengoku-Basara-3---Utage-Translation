@@ -25,6 +25,7 @@ import struct
 import sys
 from pathlib import Path
 from typing import Any
+from dependency_hash import require_hash
 
 EXPECTED_SAFE_ARC_SHA256 = "7beb24a5e11c0e154ca2517447389518c09386e32104392bff8e3328cfbff6f3"
 HERE = Path(__file__).resolve().parent
@@ -53,11 +54,7 @@ def load_module(name: str, path: Path):
 
 
 def require_safe_arc():
-    if not SAFE_ARC_PATH.is_file():
-        raise RuntimeError(f"missing safe_arc.py: {SAFE_ARC_PATH}")
-    actual = hashlib.sha256(SAFE_ARC_PATH.read_bytes()).hexdigest()
-    if actual != EXPECTED_SAFE_ARC_SHA256:
-        raise RuntimeError(f"safe_arc hash drift expected={EXPECTED_SAFE_ARC_SHA256} actual={actual}")
+    require_hash(SAFE_ARC_PATH, EXPECTED_SAFE_ARC_SHA256)
     return load_module("basara_layout_safe_arc", SAFE_ARC_PATH)
 
 

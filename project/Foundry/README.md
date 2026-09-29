@@ -41,4 +41,4 @@ Exact PSL/LSP geometry is **not** claimed yet. Foundry may expose known controll
 - WinUI 3 / Windows App SDK stable channel
 - Authoritative project state in normal files; caches are disposable
 
-Current development branch: `foundry-v0.1`.
+Current reliability-hardened engineering branch: `foundry-v0.3-reliability`.

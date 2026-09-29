@@ -19,15 +19,16 @@ import sys
 import zlib
 from pathlib import Path
 from typing import Any
+from dependency_hash import require_hash
 
 R_TEXTURE = 0x241F5DEB
 EXPECTED_SAFE_ARC_SHA256 = "7beb24a5e11c0e154ca2517447389518c09386e32104392bff8e3328cfbff6f3"
-EXPECTED_XET_DECODER_SHA256 = "ec8746755dc1c60fc03c19811a96a90faa70821a3970d781f167f00376051b0c"
+EXPECTED_XET_DECODER_SHA256 = "4840efade14090061ed0dc87004aadec509bb1982af866cceb337bae5260debb"
 
 HERE = Path(__file__).resolve().parent
 TOOLS_DIR = HERE.parent
 SAFE_ARC_PATH = TOOLS_DIR / "donor_matcher_v5_1_2026-09-23" / "safe_arc.py"
-XET_DECODER_PATH = TOOLS_DIR.parent / "texture_tools" / "xet_recovery_2026-09-23" / "foundry_xet_decoder_20260923.py"
+XET_DECODER_PATH = TOOLS_DIR.parent / "texture_tools" / "xet_ps3_2026-09-25" / "xet_ps3.py"
 
 TEXT_HINTS = (
     "name", "title", "waza", "menu", "brief", "tenka", "roulette", "cockpit",
@@ -35,22 +36,6 @@ TEXT_HINTS = (
     "rule", "rank", "result", "select", "story", "mode", "history", "logo",
     "cp_", "teki_", "local", "goods", "weapon", "versus", "unification",
 )
-
-
-def sha256_file(path: Path) -> str:
-    h = hashlib.sha256()
-    with path.open("rb") as f:
-        for chunk in iter(lambda: f.read(1024 * 1024), b""):
-            h.update(chunk)
-    return h.hexdigest()
-
-
-def require_hash(path: Path, expected: str) -> None:
-    if not path.is_file():
-        raise RuntimeError(f"missing dependency: {path}")
-    actual = sha256_file(path)
-    if actual != expected:
-        raise RuntimeError(f"dependency hash drift: {path} expected={expected} actual={actual}")
 
 
 def load_module(name: str, path: Path):
@@ -158,28 +143,32 @@ def main() -> int:
                 "raw_sha256": hashlib.sha256(raw).hexdigest(),
             }
             try:
-                info = xet.xet_info(raw)
+                info = xet.info(raw)
+                width = int(info["width"])
+                height = int(info["height"])
+                mips = int(info["mips"])
+                fmt = int(info["format"])
                 owner.update({
-                    "width": info.width,
-                    "height": info.height,
-                    "mips": info.mip_count,
-                    "format": f"0x{info.format_id:02X}",
+                    "width": width,
+                    "height": height,
+                    "mips": mips,
+                    "format": f"0x{fmt:02X}",
                 })
-                xet.validate(raw)
-                rgba = xet.decode_rgba(raw, 0)
+                rgba_array = xet.decode_display(raw)
+                rgba = rgba_array.tobytes()
                 decoded_hash = hashlib.sha256(rgba).hexdigest()
-                png_name = f"{decoded_hash[:24]}_{info.width}x{info.height}.png"
+                png_name = f"{decoded_hash[:24]}_{width}x{height}.png"
                 png_path = img_dir / png_name
                 if not png_path.exists():
-                    png_path.write_bytes(rgba_png(info.width, info.height, rgba))
+                    png_path.write_bytes(rgba_png(width, height, rgba))
 
                 g = groups.setdefault(decoded_hash, {
                     "decoded_rgba_sha256": decoded_hash,
                     "png": f"images/{png_name}",
-                    "width": info.width,
-                    "height": info.height,
-                    "format": f"0x{info.format_id:02X}",
-                    "mips": info.mip_count,
+                    "width": width,
+                    "height": height,
+                    "format": f"0x{fmt:02X}",
+                    "mips": mips,
                     "likely_text": False,
                     "providers": [],
                     "review_state": "NEEDS_REVIEW",

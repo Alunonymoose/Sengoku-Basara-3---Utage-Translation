@@ -68,7 +68,7 @@ After approval, approved candidate pixels are immutable: no restyling, regenerat
 
 After rebuilding an ARC, reparse it, re-extract the changed member, decode the final stored resource, and compare protected members to the live baseline.
 
-Default final delivery is one ROOT-READY ZIP with correct game-root paths unless the user explicitly asks for loose files.
+Default final delivery is a verified backup followed by in-place installation on current live E:, then re-read/re-hash/reparse validation. Do not produce ROOT-READY ZIPs by default.
 
 ## Behaviour
 

@@ -42,14 +42,14 @@ from typing import Any, Iterable
 
 SCHEMA = "BASARA_FOUNDRY_RELEASE_AUDIT_V0_3"
 EXPECTED_SAFE_ARC_SHA256 = "7beb24a5e11c0e154ca2517447389518c09386e32104392bff8e3328cfbff6f3"
-EXPECTED_XET_DECODER_SHA256 = "ec8746755dc1c60fc03c19811a96a90faa70821a3970d781f167f00376051b0c"
+EXPECTED_XET_DECODER_SHA256 = "4840efade14090061ed0dc87004aadec509bb1982af866cceb337bae5260debb"
 R_TEXTURE = 0x241F5DEB
 
 HERE = Path(__file__).resolve().parent
 TOOLS_DIR = HERE.parent
 SAFE_ARC_PATH = TOOLS_DIR / "donor_matcher_v5_1_2026-09-23" / "safe_arc.py"
 OWNERSHIP_TOOL_PATH = TOOLS_DIR / "resource_ownership_2026-09-23" / "basara_resource_ownership.py"
-XET_DECODER_PATH = TOOLS_DIR.parent / "texture_tools" / "xet_recovery_2026-09-23" / "foundry_xet_decoder_20260923.py"
+XET_DECODER_PATH = TOOLS_DIR.parent / "texture_tools" / "xet_ps3_2026-09-25" / "xet_ps3.py"
 MESSAGE_CENSUS_TOOL_PATH = HERE / "message_census.py"
 DONOR_MATCHER_PATH = TOOLS_DIR / "donor_matcher_v5_1_2026-09-23" / "utage_donor_matcher_v5.py"
 MEDIA_CENSUS_TOOL_PATH = HERE / "media_census.py"
@@ -315,24 +315,30 @@ def texture_census(root: Path, safe_arc, xet_decoder) -> tuple[list[dict[str, An
                 "semantic_classification": "UNKNOWN_REVIEW",
             }
             try:
-                info = xet_decoder.xet_info(raw)
+                info = xet_decoder.info(raw)
+                width = int(info["width"])
+                height = int(info["height"])
+                mips = int(info["mips"])
+                fmt = int(info["format"])
+                version_flags = struct.unpack_from(">I", raw, 4)[0]
+                tex_flags = struct.unpack_from(">I", raw, 8)[0]
+                flags = struct.unpack_from(">I", raw, 12)[0]
                 base.update({
-                    "width": info.width,
-                    "height": info.height,
-                    "mip_count": info.mip_count,
-                    "format_id": f"0x{info.format_id:02X}",
-                    "version_flags": f"0x{info.version_flags:08X}",
-                    "tex_flags": f"0x{info.tex_flags:08X}",
-                    "flags": f"0x{info.flags:08X}",
-                    "mip_offsets": list(info.mip_offsets),
+                    "width": width,
+                    "height": height,
+                    "mip_count": mips,
+                    "format_id": f"0x{fmt:02X}",
+                    "version_flags": f"0x{version_flags:08X}",
+                    "tex_flags": f"0x{tex_flags:08X}",
+                    "flags": f"0x{flags:08X}",
+                    "mip_offsets": list(info["mip_offsets"]),
                 })
 
-                validated = xet_decoder.validate(raw)
-                rgba = xet_decoder.decode_rgba(raw, 0)
+                rgba = xet_decoder.decode_display(raw).tobytes()
                 base["decoded_rgba_sha256"] = sha256_bytes(rgba)
                 base["decoder_status"] = "DECODED_LEVEL0"
-                base["validated_levels"] = validated.get("levels")
-                if info.format_id == 0x15:
+                base["validated_levels"] = [0]
+                if fmt == 0x15:
                     base["read_contract"] = "DXT3_BC2_FIXTURE_VERIFIED_READ_ONLY"
             except Exception as exc:
                 base["decoder_status"] = "UNSUPPORTED_OR_PARSE_ERROR"
@@ -341,7 +347,7 @@ def texture_census(root: Path, safe_arc, xet_decoder) -> tuple[list[dict[str, An
                     "owner_path": f"{rel}::{e['index']}::{e['name']}",
                     "reason": repr(exc),
                     "required_next_evidence": "Classify format/layout with current XET forensic workflow; do not guess.",
-                    "recommended_tool": "foundry_xet_decoder_20260923.py / texture research gate",
+                    "recommended_tool": "xet_ps3_2026-09-25/xet_ps3.py / texture research gate",
                     "release_severity": "BLOCKED",
                 })
 
