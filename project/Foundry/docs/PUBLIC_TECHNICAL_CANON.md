@@ -1,5 +1,7 @@
 # Public Technical Canon
 
+> **2026-09-29 reliability supersession:** production XET work must use the current standard-DXT endpoint order. Earlier project text describing PS3 BC RGB565 endpoints as big-endian is disproven and must not be used operationally. Fresh live game bytes remain production authority; snapshots/history are navigation until freshness is proven.
+
 This document contains concise public-safe facts that currently have enough project evidence to guide engineering. Scope matters: a fact proven for one family/fixture must not be silently generalized to every MT Framework resource.
 
 ## Platform and container family
@@ -115,7 +117,7 @@ outG = clamp(Y - 0.344136*Cb - 0.714136*Cr)
 outB = clamp(Y + 1.772*Cb)
 ```
 
-PS3 BC1/BC2/BC3 RGB565 colour endpoints are big-endian u16 in the certified project path; index/alpha packing remains standard.
+PS3 BC1/BC2/BC3 RGB565 colour endpoints use standard DXT byte order (little-endian RGB565 endpoint words). Do not byte-swap the endpoint words. XET/container header fields remain big-endian where defined; index/alpha packing remains standard.
 
 ### Format 0x2B / RBxG
 
