@@ -41,6 +41,12 @@ Do not make broad searches over all five surfaces the default recovery method.
 
 Broad historical search is escalation, not bootstrap.
 
+## Multi-agent isolation
+
+Never share one writable Git working tree between GPT, Claude, Codex or another agent.
+
+When a workspace provides `.foundry/AGENT_WORKTREES.json`, obey it. Do not switch branches, reset, merge, stash, resolve conflicts or delete work in another agent's worktree. Use a dedicated agent worktree and integrate separately.
+
 ## Transaction rule
 
 Production mutation should follow:
