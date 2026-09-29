@@ -21,14 +21,16 @@ This repository preserves project-created material including:
 
 ## BASARA Foundry Core
 
-The reusable reverse-engineering knowledge, tools, agent skills, technical canon and proven-failure history are maintained publicly on the **`foundry-v0.1`** branch.
+**Current public bootstrap:** `foundry-v0.3-reliability` (state/authority hardening, 2026-09-29). Start with `project/Foundry/docs/PROJECT_CONTROL.md` before domain-specific canon. The older `foundry-v0.1` branch is retained for history and must not be treated as the current bootstrap.\n
+
+The reusable reverse-engineering knowledge, tools, agent skills, technical canon and proven-failure history are maintained publicly on the **`foundry-v0.3-reliability`** branch.
 
 Start with:
 
-- [BASARA Foundry Core](https://github.com/Alunonymoose/Sengoku-Basara-3---Utage-Translation/blob/foundry-v0.1/project/Foundry/docs/PUBLIC_CORE.md)
-- [Public technical canon](https://github.com/Alunonymoose/Sengoku-Basara-3---Utage-Translation/blob/foundry-v0.1/project/Foundry/docs/PUBLIC_TECHNICAL_CANON.md)
-- [AI portability / fresh-account bootstrap](https://github.com/Alunonymoose/Sengoku-Basara-3---Utage-Translation/blob/foundry-v0.1/project/Foundry/docs/AI_PORTABILITY.md)
-- [Reusable agent skills](https://github.com/Alunonymoose/Sengoku-Basara-3---Utage-Translation/tree/foundry-v0.1/.agents/skills)
+- [BASARA Foundry Core](https://github.com/Alunonymoose/Sengoku-Basara-3---Utage-Translation/blob/foundry-v0.3-reliability/project/Foundry/docs/PUBLIC_CORE.md)
+- [Public technical canon](https://github.com/Alunonymoose/Sengoku-Basara-3---Utage-Translation/blob/foundry-v0.3-reliability/project/Foundry/docs/PUBLIC_TECHNICAL_CANON.md)
+- [AI portability / fresh-account bootstrap](https://github.com/Alunonymoose/Sengoku-Basara-3---Utage-Translation/blob/foundry-v0.3-reliability/project/Foundry/docs/AI_PORTABILITY.md)
+- [Reusable agent skills](https://github.com/Alunonymoose/Sengoku-Basara-3---Utage-Translation/tree/foundry-v0.3-reliability/.agents/skills)
 
 The intent is that future researchers should not need access to the maintainer's private ChatGPT history, memory, Drive or plugin to reuse the project's solved engineering.
 
@@ -74,4 +76,4 @@ This project is intentionally open for reuse:
 
 See `LICENSE`, `LICENSE-DOCS.md`, and `NOTICE.md`.
 
-The reusable BASARA Foundry Core and portable AI/plugin source are maintained on the `foundry-v0.1` branch.
+The reusable BASARA Foundry Core and portable AI/plugin source are maintained on the `foundry-v0.3-reliability` branch.
