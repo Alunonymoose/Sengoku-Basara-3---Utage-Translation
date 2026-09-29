@@ -7,6 +7,12 @@ description: Universal public BASARA Foundry production contract. Use for any Se
 
 This skill is intentionally model-agnostic. A ChatGPT account, Codex session, Claude/Grok/DeepSeek handoff or human operator can use the same contract.
 
+## Project-state bootstrap
+
+Apply `basara-project-state` first. If `.foundry/PROJECT_CURRENT.json` exists, read it before current-state, owner, donor, QA or mutation conclusions. If its snapshot is `DIRTY`, snapshot-wide maps/censuses are navigation only; refresh the snapshot or verify the exact live target directly.
+
+Default retrieval order: `PROJECT_CURRENT -> exact live target -> current domain canon/skill -> exact runtime evidence -> historical research`.
+
 ## Authority
 
 1. Fresh user-supplied/current game bytes are **LIVE INPUT** and win for mutation.
@@ -19,7 +25,7 @@ This skill is intentionally model-agnostic. A ChatGPT account, Codex session, Cl
 
 Deliver the requested production object, not an easier proxy:
 
-- patch/fix/rebuild/root-ready -> actual mutated binary/archive and installation-ready package;
+- patch/fix/rebuild -> actual validated binary/archive; install live only after a verified backup when operating in the maintainer's live workspace;
 - texture/atlas repair -> exact source-compatible candidate, not a screen concept;
 - QA -> direct inspection and evidence-ranked findings;
 - location/owner query -> concrete path/provider evidence first;
@@ -29,7 +35,7 @@ Deliver the requested production object, not an easier proxy:
 
 Keep these states separate:
 
-`LIVE_INPUT -> DECODED_SOURCE -> PROVEN_EDIT_REGION -> CANDIDATE -> APPROVED_CANDIDATE -> ENCODED_RESOURCE -> FINAL_ARC -> VALIDATED_ARTIFACT -> ROOT_READY -> RUNTIME_TESTED`
+`LIVE_INPUT -> DECODED_SOURCE -> PROVEN_EDIT_REGION -> CANDIDATE -> APPROVED_CANDIDATE -> ENCODED_RESOURCE -> FINAL_ARC -> VALIDATED_ARTIFACT -> LIVE_INSTALLED -> RUNTIME_TESTED`
 
 Never treat a mockup as a candidate, a candidate as approved, an intermediate rebuild as final, or a static decode as runtime proof.
 
