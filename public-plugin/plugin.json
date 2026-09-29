@@ -1,22 +1,26 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "basara-utage-foundry-core",
-  "version": "0.1.0",
-  "description": "Public portable BASARA Foundry Core for Sengoku BASARA 3 Utage reverse engineering and localisation. Encodes evidence discipline, live-file authority, safe ARC/TEX/XET production, candidate-first texture engineering, and reproducible research without retail game assets.",
-  "author": {"name": "BASARA Foundry contributors"},
+  "version": "0.2.0",
+  "description": "Public portable BASARA Foundry Core with project-state freshness gating, live-file authority, safe ARC/TEX/XET production, candidate-first texture engineering, and reproducible research without retail game assets.",
+  "author": {
+    "name": "BASARA Foundry contributors"
+  },
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "BASARA Foundry Core",
         "shortDescription": "Reusable Utage reverse-engineering and localisation methods",
-        "longDescription": "Public portable engineering skills for Sengoku BASARA 3 Utage. Use the researcher's own legally obtained game files as live production input. Recover current public canon before generic MT Framework assumptions; decode live textures before creative generation; preserve approval identity and protected bytes; validate the final rebuilt artifact.",
+        "longDescription": "Public portable engineering skills for Sengoku BASARA 3 Utage. Start from project-state/snapshot freshness and the researcher's exact live target before historical maps or generic MT Framework assumptions. Use current standard-DXT endpoint order for verified 0x2A texture work, preserve approval identity and protected bytes, and validate the final rebuilt artifact.",
         "developerName": "BASARA Foundry contributors",
         "category": "Developer Tools",
-        "capabilities": ["Interactive"],
+        "capabilities": [
+          "Interactive"
+        ],
         "defaultPrompt": [
-          "Read the bundled BASARA Foundry Core references and production contract, then inspect my fresh Utage files directly before making production changes.",
-          "Use the public Foundry methodology to diagnose this Utage ARC/TEX/XET issue without rediscovering solved format rules.",
-          "Audit this Utage resource/build using evidence-backed findings and preserve any new reusable public-safe discovery."
+          "Read the bundled BASARA project-state skill and PROJECT_CONTROL.md first. If my workspace has .foundry/PROJECT_CURRENT.json and it is DIRTY, treat snapshot-wide maps as navigation until refreshed or the exact live target is verified.",
+          "Inspect my exact current Utage resource before making production changes; use current public canon and do not revive disproven texture endpoint-byte-swap rules.",
+          "Audit this Utage resource/build using evidence-backed findings, minimal mutation, final-artifact verification, and preserve new reusable public-safe discoveries."
         ]
       }
     }
