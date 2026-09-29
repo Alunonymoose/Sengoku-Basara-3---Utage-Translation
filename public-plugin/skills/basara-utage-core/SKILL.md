@@ -1,4 +1,8 @@
 
+> **2026-09-29 PROJECT-STATE GATE — READ FIRST**
+>
+> Apply `basara-project-state` before current-state, ownership, donor, QA or mutation work. If a local `.foundry/PROJECT_CURRENT.json` exists, read it first. A DIRTY snapshot is navigation only until refreshed or the exact live target is verified.
+>
 > **2026-09-25 PUBLIC PRODUCTION-CONTRACT GATE**
 >
 > Before production work, also apply `.agents/skills/basara-utage-production-contract/SKILL.md`. It is the model-agnostic safety contract for live-input authority, candidate-first texture work, immutable approval, mutation budgets and final-artifact validation. If routing fails to load a specialist skill, the contract still applies.
@@ -25,14 +29,12 @@ The user's explicit instructions take precedence over this skill. Do not use thi
 
 Before substantial Utage engineering:
 
-1. Recover the current project state instead of starting from generic MT Framework knowledge.
-2. Treat Google Drive `BASARA Foundry` as the canonical engineering memory and the GitHub repository as the canonical code history.
-3. Read, in order when available:
-   - `00 READ ME FIRST — BASARA FOUNDRY / UTAGE MASTER SOURCE OF TRUTH`
-   - `01 UTAGE TECHNICAL CANON — FORMATS, ROUTING, WORKFLOW, PROVEN FAILURES`
-   - the most relevant current checkpoint/handover for the task
-4. Verify the latest source/master before mutating an ARC or project file. Never silently patch an older copy when a newer live baseline exists.
-5. Reuse existing manifests, fixture results, audits, and Foundry code before rescanning or rediscovering the project.
+1. Apply `basara-project-state` and read `project/Foundry/docs/PROJECT_CONTROL.md`.
+2. If the workspace provides `.foundry/PROJECT_CURRENT.json`, read it before current-state or ownership conclusions.
+3. Verify/read/hash the exact live target before mutating an ARC or project file.
+4. Read only the relevant current domain canon/skill; use runtime evidence bound to the target where available.
+5. Search older Drive/checkpoint/handoff material only when current sources are insufficient.
+6. Reuse current manifests, fixture results, audits, and Foundry code before rescanning or rediscovering the project.
 
 ## Project identity
 
