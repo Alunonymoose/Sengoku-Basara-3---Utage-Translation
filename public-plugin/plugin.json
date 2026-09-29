@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "basara-utage-foundry-core",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Public portable BASARA Foundry Core with project-state freshness gating, live-file authority, safe ARC/TEX/XET production, candidate-first texture engineering, and reproducible research without retail game assets.",
   "author": {
     "name": "BASARA Foundry contributors"
@@ -18,7 +18,7 @@
           "Interactive"
         ],
         "defaultPrompt": [
-          "Read the bundled BASARA project-state skill and PROJECT_CONTROL.md first. If my workspace has .foundry/PROJECT_CURRENT.json and it is DIRTY, treat snapshot-wide maps as navigation until refreshed or the exact live target is verified.",
+          "Read the bundled BASARA project-state skill and PROJECT_CONTROL.md first. If my workspace has .foundry/PROJECT_CURRENT.json or .foundry/AGENT_WORKTREES.json, obey them: a DIRTY snapshot is navigation only and each AI must use its own writable Git worktree.",
           "Inspect my exact current Utage resource before making production changes; use current public canon and do not revive disproven texture endpoint-byte-swap rules.",
           "Audit this Utage resource/build using evidence-backed findings, minimal mutation, final-artifact verification, and preserve new reusable public-safe discoveries."
         ]
