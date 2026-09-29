@@ -9,13 +9,13 @@
       "Interactive"
     ],
     "defaultPrompt": [
-      "Read the bundled BASARA project-state skill and PROJECT_CONTROL.md first; a DIRTY snapshot is navigation only until refreshed or the exact live target is verified.",
+      "Read the bundled BASARA project-state skill and PROJECT_CONTROL.md first. If my workspace has .foundry/PROJECT_CURRENT.json or .foundry/AGENT_WORKTREES.json, obey them: a DIRTY snapshot is navigation only and each AI must use its own writable Git worktree.",
       "Inspect my exact current Utage resource before production changes and use current verified texture/ARC rules.",
       "Audit this build with minimal mutation, evidence-backed conclusions and final-artifact verification."
     ]
   },
   "name": "basara-utage-foundry-core",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Public portable BASARA Foundry Core with project-state freshness gating and current live-file authority.",
   "author": {
     "name": "BASARA Foundry contributors"
