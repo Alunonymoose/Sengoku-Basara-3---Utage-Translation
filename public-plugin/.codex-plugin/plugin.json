@@ -2,20 +2,31 @@
   "interface": {
     "displayName": "BASARA Foundry Core",
     "shortDescription": "Reusable Utage reverse-engineering and localisation methods",
-    "longDescription": "Public portable engineering skills for Sengoku BASARA 3 Utage. Use the researcher's own legally obtained game files as live production input. Recover current public canon before generic MT Framework assumptions; decode live textures before creative generation; preserve approval identity and protected bytes; validate the final rebuilt artifact.",
+    "longDescription": "Public portable engineering skills for Sengoku BASARA 3 Utage. Start from project-state/snapshot freshness and the exact live target before historical maps or generic MT Framework assumptions. Use current standard-DXT endpoint order for verified 0x2A texture work and validate final rebuilt artifacts.",
     "developerName": "BASARA Foundry contributors",
     "category": "Developer Tools",
-    "capabilities": ["Interactive"],
+    "capabilities": [
+      "Interactive"
+    ],
     "defaultPrompt": [
-      "Read the bundled BASARA Foundry Core references and production contract, then inspect my fresh Utage files directly before making production changes.",
-      "Use the public Foundry methodology to diagnose this Utage ARC/TEX/XET issue without rediscovering solved format rules.",
-      "Audit this Utage resource/build using evidence-backed findings and preserve any new reusable public-safe discovery."
+      "Read the bundled BASARA project-state skill and PROJECT_CONTROL.md first; a DIRTY snapshot is navigation only until refreshed or the exact live target is verified.",
+      "Inspect my exact current Utage resource before production changes and use current verified texture/ARC rules.",
+      "Audit this build with minimal mutation, evidence-backed conclusions and final-artifact verification."
     ]
   },
   "name": "basara-utage-foundry-core",
-  "version": "0.1.0",
-  "description": "Public portable BASARA Foundry Core for Sengoku BASARA 3 Utage reverse engineering and localisation.",
-  "author": {"name": "BASARA Foundry contributors"},
-  "keywords": ["sengoku-basara","utage","reverse-engineering","localisation","ps3","mt-framework"],
+  "version": "0.2.0",
+  "description": "Public portable BASARA Foundry Core with project-state freshness gating and current live-file authority.",
+  "author": {
+    "name": "BASARA Foundry contributors"
+  },
+  "keywords": [
+    "sengoku-basara",
+    "utage",
+    "reverse-engineering",
+    "localisation",
+    "ps3",
+    "mt-framework"
+  ],
   "skills": "./skills"
 }
