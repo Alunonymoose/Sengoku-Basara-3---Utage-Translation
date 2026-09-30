@@ -683,3 +683,34 @@ The single observed textured type-0 special case remains unsupported/fail-closed
 Across the current live corpus this adds roughly 486 previously omitted untextured
 type-0/type-1 geometry nodes to the renderer.
 \n\n## 2026-09-30 follow-up: baseline display state now enforced\n\nThe renderer now initializes each node's runtime visibility from serialized default_display (+0x30) instead of assuming every node begins visible.\n\nClip playback then explicitly activates every resolved sprite targeted by the selected animation subtree before applying keyed display-track values. This is necessary because the live corpus contains 2,522 keyed animation records targeting nodes whose resource baseline display flag is off; menu effects, cursors and highlights are designed to be activated by clip playback.\n\nRegression on title.arc -> mode_select:\n\n- static render: STORY_effect (node index 100, sprite ID 95, default_display=0) is correctly skipped for baseline visibility;\n- selecting animation record 57 STORY_effect activates that sprite and renders it;\n- any keyed display channel remains authoritative after the activation step.\n\nDiagnostic outputs:\nE:\\BASARA_WORK\\jobs\\utage_harness_anim\\default_display\\static.png\nE:\\BASARA_WORK\\jobs\\utage_harness_anim\\default_display\\story_effect.png\n\n\n## 2026-09-30 follow-up: link_40 uses sprite IDs and mask providers are not type-5 only\n\nA full live ENG link audit found 202 nodes with non-negative link_40 values.\nThe link value resolves as a serialized sprite ID, not an array index.\n\nMask-provider evidence:\n\n- 175 links resolve to type-5 nodes;\n- another 24 links resolve to non-type-5 nodes with serialized +0x64 = 1;\n- only 3 links resolve outside those two classes.\n\nThe +0x64 flag is therefore exposed conservatively as mask_provider without claiming\nan exact Capcom runtime field name. The renderer now accepts a link target as a mask\nprovider when target.type == 5 OR target.mask_provider is true.\n\nStrong non-type-5 examples:\n\n- versus kessen Image_0_0 -> Pbg_0 (type 2, +0x64=1);\n- kessen_sele Stsm_img -> Stsm_mask (type 2, +0x64=1);\n- charasele_kessen CharaXX -> containing Null group (type 4, +0x64=1);\n- tenka status art -> Waku_K frame nodes (type 3, +0x64=1).\n\nThe three remaining links are intentionally fail-closed:\n\n- charasele_story Rfrm_01 -> Icon_M_00;\n- charasele_story Lfrm_01 -> Icon_M_00;\n- kessen_rule 2play_img -> 2play_u.\n\nThese three targets are type 2 with +0x64=0 and are not treated as masks until\nruntime evidence identifies their relationship.\n\nPost-change full sweep: 4,075/4,075 ARCs, 87/87 layouts, zero failures,\n202 total mask/related links, 199 resolved mask links, 3 unresolved.\n
+
+## 2026-09-30 follow-up: interpolation code 5 has no embedded curve/tangent payload
+
+A full live ENG corpus scan found **643 keyframes using interpolation code 5**:
+
+- position: 581
+- scale: 40
+- rotation: 10
+- UV rect: 3
+- color 0: 7
+- color 2: 1
+- color 3: 1
+
+The six-word position/rotation/scale records do **not** hide per-key easing parameters in their spare vector components:
+
+- every one of the 581 code-5 position keys has spare Z/W = `0.0, 0.0`;
+- every one of the 40 code-5 scale keys has the ordinary vector constants Z/W = `1.0, 0.0`;
+- rotation uses its normal Z-angle component and W remains zero;
+- UV/color tracks contain only their actual value payload.
+
+Therefore interpolation code 5 is a **fixed interpolation mode**, not a mode carrying a per-key two-float `MtEaseCurve` or explicit tangent payload inside the PSL key.
+
+Public MT Framework reverse-engineering provides useful but non-identical context:
+
+- DMC4/MT Framework research defines `MtEaseCurve` as exactly two floats (`p1`, `p2`);
+- older MT Framework binaries expose `MtFCurve` and `MtFCurve::Key`;
+- modern Capcom clip research uses a related interpolation enum where raw type 5 is Hermite, but those Hermite frames consume four explicit tangent floats.
+
+Utage PSL code 5 **cannot be copied directly from that explicit-tangent Hermite implementation**, because the required tangent payload is absent. It may be an automatic/fixed Hermite-like mode, but that is not yet proven.
+
+Harness rule: retain the current code-5 interpolation as an explicitly labelled approximation until a Utage/MT Framework evaluator or runtime measurement proves the exact curve. Do not silently promote smoothstep, modern explicit-tangent Hermite, or `MtEaseCurve` to canonical behavior.
