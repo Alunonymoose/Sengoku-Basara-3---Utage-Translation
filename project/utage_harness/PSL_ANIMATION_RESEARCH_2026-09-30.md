@@ -174,3 +174,87 @@ Do not overwrite the current local uncommitted animation-decoder work in the GPT
 4. keeping divergent animation variants fail-closed rather than guessing;
 5. validating affine/mask rendering against runtime screenshots/RRC where possible.
 
+
+
+## 2026-09-30 follow-up: full animation-schema regression
+
+A corrected channel-width search was run against all currently targeted live layouts.
+
+The shared exact-end schema is:
+
+- channel 7: **6 words/key**, not 2;
+- channel 21: **3 words/key**, not 2;
+- channel 19: provisionally 2 words/key, but it was zero in all 16 regression layouts and therefore remains unproven.
+
+With channel 7 = 6 and channel 21 = 3, **16/16 tested live PSL animation/control tables land exactly on the SysRoot name-table boundary**:
+
+- title/title
+- title/color
+- title/mode_select
+- title/tenka_makura01
+- title/common_00
+- title/com/fade
+- result_id/title/kakusyu
+- result_id/common_00
+- result_id/tenka/top_00
+- result_id/tenka/soubi_00
+- result_id/result/result_00
+- result_id/tenka_makura01
+- result_id/com/fade
+- quest/yuugi_quest
+- versus/kessen_rule
+- versus/kessen_sele
+
+This supersedes the earlier “12 of 15” status above.
+
+### Channel 7 identification
+
+Channel 7 is an **animated geometry rectangle**:
+
+- key layout = time, interpolation, x0, y0, x1, y1;
+- rectangle values are signed integers.
+
+Examples:
+
+- title/color: `(-430,-287,430,0)`
+- soubi_00: `(0,-59,260,59)` → `(0,-59,344,59)` → `(0,-59,385,59)` → `(0,-59,398,59)`
+
+These are not floating-point values.
+
+### Channel 21 identification
+
+Channel 21 is a **visibility / enable toggle**:
+
+- key layout = time, interpolation, value;
+- observed interpolation is 0;
+- observed values are 0/1.
+
+Examples:
+
+- soubi_00 node `Suji`: frame 0 = 0, frame 23 = 1, frame 30 = 0
+- yuugi_quest node `Q_K`: frame 0 = 0, frame 18 = 1, frame 22 = 0
+- yuugi_quest node `Down_K`: frame 0 = 0, frame 15 = 1, frame 22 = 0
+
+## Node type 3: vertex-coloured textured quad
+
+Type-3 nodes should not be rendered as plain unmodulated texture quads.
+
+Across title/mode_select/common/versus layouts, type-3 nodes overwhelmingly carry four distinct packed colours at 0x94/0x98/0x9C/0xA0.
+
+Strong ordering evidence is **TL, TR, BL, BR**. Example `tenka_makura/shinki01`:
+
+- TL = white
+- TR = gray
+- BL = white
+- BR = gray
+
+This exactly describes a left-to-right fade.
+
+Packed colour is strongly consistent with AARRGGBB for type-3 vertex modulation. A prototype using bilinear four-corner A/R/G/B modulation turned previously incorrect white slabs into deliberate blue/cyan gradient UI layers.
+
+Important material distinction:
+
+- type 3: full four-corner RGBA vertex modulation is strongly supported;
+- type 2: applying RGB modulation globally is wrong for the title materials. Type-2 values such as `FF000000` do not mean “multiply the sprite black” in those materials; alpha/control behavior is more plausible. The prototype therefore preserves type-2 texture RGB and uses packed alpha separately.
+
+This is material-sensitive and should stay fail-closed where the material mapping is unknown.
