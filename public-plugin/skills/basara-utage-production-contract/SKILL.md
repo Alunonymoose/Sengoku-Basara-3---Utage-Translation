@@ -21,6 +21,14 @@ Default retrieval order: `PROJECT_CURRENT -> exact live target -> current domain
 4. Historical backups/checkpoints are evidence, not implicit production inputs.
 5. Never ask for a usable file already present in the active task.
 
+## Window role lock
+
+For Utage texture work, the explicit window prefix is authoritative and sticky until the user explicitly changes it:
+- \Engineer:\ = engineering-only. Image generation/creative generation is forbidden in this window. Own extraction, exact live-source decoding, ARC/TEX/XET analysis, deterministic compositing of already-approved art, graft/rebuild, backup, validation and live install. Never redirect an approved asset back to Artist.
+- \Artist:\ = art-only. Do not mutate/rebuild/install ARCs. Work from the exact extracted production texture/reference supplied by Engineer, preserve composition/identity/slot geometry, and return candidate art for approval/handoff.
+- If no prefix is present during an established Utage texture workflow, preserve the window's last explicit role. Do not silently switch roles.
+- A screenshot/reference crop is not a production source asset. Engineer must hand off the exact decoded texture/member when production compatibility matters.
+
 ## Task fidelity
 
 Deliver the requested production object, not an easier proxy:
