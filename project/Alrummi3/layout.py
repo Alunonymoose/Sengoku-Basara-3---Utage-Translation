@@ -56,6 +56,7 @@ class LayoutNode:
     name: str
     texture: str = ""
     node_type: int = 0
+    node_id: int = 0
 
     parent: int = -1
     link_3c: int = -1
@@ -204,6 +205,21 @@ class Layout:
         tail = texture_name.replace("/", "\\").lower().split("\\")[-1]
         return [n for n in self.nodes if n.texture and
                 n.texture.replace("/", "\\").lower().endswith(tail)]
+
+    def node_by_id(self, node_id: int) -> LayoutNode | None:
+        """Resolve the serialized PSL sprite ID, which is not the array index."""
+        hits = [n for n in self.nodes if n.node_id == node_id]
+        if len(hits) == 1:
+            return hits[0]
+        if not hits:
+            return None
+        raise ValueError(f"duplicate PSL node id {node_id}: {[n.index for n in hits]}")
+
+    def animation_target(self, animation: AnimationRecord) -> LayoutNode | None:
+        """Resolve an animation record's serialized target ID to its sprite node."""
+        if animation.target_node < 0:
+            return None
+        return self.node_by_id(animation.target_node)
 
     def mask_for(self, index: int) -> LayoutNode | None:
         """Resolve link_40 only when it targets a proven type-5 mask node."""
@@ -384,7 +400,8 @@ def parse_layout(raw: bytes, name: str = "") -> Layout:
         rec = raw[off:off + NODE_SIZE]
         node = LayoutNode(
             index=index, name=node_name, texture=texture,
-            node_type=_u32(rec, 0x54), parent=_s32(rec, 0x38),
+            node_type=_u32(rec, 0x54), node_id=_s32(rec, 0x50),
+            parent=_s32(rec, 0x38),
             link_3c=_s32(rec, 0x3C), link_40=_s32(rec, 0x40),
             link_44=_s32(rec, 0x44),
             position=(_f32(rec, 0x00), _f32(rec, 0x04)),
