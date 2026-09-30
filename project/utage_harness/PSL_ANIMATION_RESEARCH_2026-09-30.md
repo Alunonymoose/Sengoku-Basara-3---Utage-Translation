@@ -384,3 +384,37 @@ The same change leaves all tested Utage layouts unchanged and clean.
 
 Therefore the shared v0x21 schema is now:
 - channel 19: **3 words/key** (confirmed cross-game, superseding the earlier provisional 2-word assumption).
+
+## 2026-09-30 correction: channels 19 and 21 semantics
+
+Cross-game key data identifies the final two keyed channels:
+
+- channel 19 = **mAnimSprDisp / visibility**
+- channel 21 = **mAnimSprShake / shake enable**
+
+Evidence:
+- Samurai Heroes `chara_select/l_obi_null00` channel 19 keys:
+  - frame 0 = 1
+  - frame 40 = 0
+  - frame 160 = 0
+- Utage `yuugi_quest/Ghb_kakutoku` channel 21 keys:
+  - frame 0 = 0
+  - frame 15 = 1
+  - frame 22 = 0
+
+This supersedes the earlier provisional statement that channel 21 was visibility.
+
+The offline renderer now:
+- applies channel 19 to node visibility;
+- preserves channel 21 as an explicit `shake` state;
+- does not invent shake displacement until runtime amplitude/phase semantics are decoded.
+
+### Step-key timing correction
+
+Interpolation code 0 is a hold/step mode, but an exact key timestamp must select the new key immediately.
+
+The sampler previously returned the left key when `frame == next_key.time`, making discrete visibility/shake changes one frame late.
+
+Correct behavior now:
+- SH visibility becomes 0 exactly at frame 40;
+- Utage shake becomes 1 exactly at frame 15 and 0 exactly at frame 22.

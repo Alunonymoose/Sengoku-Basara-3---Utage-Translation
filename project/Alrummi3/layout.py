@@ -117,9 +117,9 @@ ANIMATION_CHANNELS = (
     ("control_16", None),
     ("color_3", 3),
     ("control_18", None),
-    ("track_19", 3),
-    ("control_20", None),
     ("visibility", 3),
+    ("control_20", None),
+    ("shake", 3),
 )
 
 

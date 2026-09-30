@@ -735,7 +735,9 @@ def _key_pair(channel, frame):
         return channel.keys[-1], channel.keys[-1], 0.0
     left = channel.keys[0]
     for right in channel.keys[1:]:
-        if frame <= right.time:
+        if frame == right.time:
+            return right, right, 0.0
+        if frame < right.time:
             span = max(1, right.time - left.time)
             t = (frame - left.time) / span
             if left.interpolation == 5:
@@ -808,7 +810,7 @@ def _animated_local_states(layout, root, frame):
             "position": list(n.position), "scale": list(n.scale),
             "geometry": list(n.geometry), "uv": list(n.uv), "colors": list(n.colors),
             "rotation": [0.0, 0.0, n.rotation, 0.0],
-            "visible": True,
+            "visible": True, "shake": False,
         }
         for n in layout.nodes
     }
@@ -842,6 +844,8 @@ def _animated_local_states(layout, root, frame):
                 state["uv"] = list(values[:4])
             elif channel.name == "visibility" and values:
                 state["visible"] = bool(values[0])
+            elif channel.name == "shake" and values:
+                state["shake"] = bool(values[0])
             elif channel.name.startswith("color_") and values:
                 ci = int(channel.name.rsplit("_", 1)[1])
                 state["colors"][ci] = values[0]
@@ -1114,6 +1118,7 @@ def cmd_render_layout(args):
                 "animated_scale": list(state["scale"]),
                 "animated_rotation": list(state["rotation"]),
                 "animated_visible": state["visible"],
+                "animated_shake": state["shake"],
                 "alpha": alpha,
                 "vertex_modulation": node.node_type == 3,
                 "mask_applied": mask_applied,
