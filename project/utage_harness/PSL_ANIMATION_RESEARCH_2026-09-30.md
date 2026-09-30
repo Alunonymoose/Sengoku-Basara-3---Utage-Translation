@@ -361,3 +361,122 @@ The same EBOOT contains the engine shader package parser strings and enum vocabu
 - `nDraw::SamplerState`
 
 This confirms that exact blend equations are represented explicitly in the engine. Mapping cLayoutSprite mBlendState enum values to those equations remains the next step.
+
+
+## 2026-09-30 follow-up: sprite IDs vs node indexes
+
+A later regression exposed an important distinction in serialized PSL references.
+
+### Node ID field
+
+Serialized node field 0x50 is the sprite/node ID used by animation targeting and
+some generic links. This ID is not guaranteed to equal the node's array index.
+
+Across the 16 regression layouts used above:
+
+- 888 animation/control records have a non-negative target value.
+- 886/888 resolve to exactly one node by serialized 0x50 ID.
+- only 136/888 happen to name-match when the raw target is treated as an array index.
+- the two unresolved targets are both tenka/top_00 records targeting raw ID 102
+  (8_0 and 4_0), suggesting one exceptional/virtual target rather than index semantics.
+
+Example from mode_select:
+
+- animation record STORY_effect has raw target 95;
+- node index 100 is named STORY_effect;
+- node index 100 has serialized node ID 95.
+
+Therefore animation records must resolve target values through node ID, not direct
+array indexing. The harness now exposes the raw value as target_id and resolves it
+through Layout.node_by_id().
+
+### Parent hierarchy stays index-based
+
+This rule does not apply to serialized parent field 0x38.
+
+Example from mode_select:
+
+- node index 100 STORY_effect has parent raw value 18;
+- node array index 18 is the actual STORY parent;
+- sprite ID 18 resolves to a different node.
+
+Therefore parent hierarchy traversal remains array-index based.
+
+### link_40 is ID-based
+
+link_40 also resolves through serialized node ID rather than array index.
+
+Strong examples:
+
+- mode_select/top_00: raw link 55.
+  - array index 55 = ordinary line_L_top_03 type-3 sprite;
+  - sprite ID 55 = node index 16 MASK_00, type 5.
+- result_00/Base node 223: raw link 598.
+  - 598 is outside the node-array range;
+  - sprite ID 598 = node index 591 Mask, type 5.
+- soubi_00/Wep_K: raw link 467.
+  - array index 467 is an unrelated type-2 sprite;
+  - sprite ID 467 = node index 65 mask, type 5.
+
+Across the tested layouts, 41/47 non-negative link_40 values resolve to a type-5 node
+by ID, versus 33/47 if misread as an array index. The remaining six ID targets are
+non-type-5 generic relationships, so link_40 should remain generically named and
+only receive mask semantics when its ID target is proven type 5.
+
+### Clip/container selection
+
+Animation records form both simultaneous subtrees and folders of alternative clips.
+
+Examples:
+
+- fade/Ani 0 contains alternative Ani 0_0 (fade out) and Ani 0_1 (fade in).
+- title/color/Ani 1 contains six alternative mode-colour clips.
+- the same root-folder -> child-clip pattern appears in common, equipment, result,
+  quest and versus layouts.
+
+The renderer therefore accepts any animation record as a selection. A targetless
+record with multiple targetless direct children is treated as a clip container and
+fails closed until one child clip is selected, rather than evaluating all alternatives
+at once.
+
+### Runtime blend-state caution
+
+RRC capture BLJM60389_20260925092042_capture.rrc.gz provided several unique
+texture-owner correlations:
+
+- logo_kamon (shader 6, mBlendState=1) -> blend disabled, ONE/ZERO, alpha test on.
+- logo_shadow_01 (shader 5, mBlendState=0) -> SRC_ALPHA / ONE_MINUS_SRC_ALPHA.
+- Utage (shader 1, mBlendState=5) -> SRC_ALPHA / ONE_MINUS_SRC_ALPHA.
+- Wind (shader 2, mBlendState=0) -> SRC_ALPHA / ONE_MINUS_SRC_ALPHA.
+
+Therefore mBlendState alone must not be treated as a one-to-one RSX blend-equation
+selector. Effective GPU state is at least shader/material-path dependent.
+
+
+### Full live ENG ID/link sweep
+
+The ID/index findings were then checked across the complete live ENG tree:
+
+- 4,075/4,075 ARCs parsed.
+- 87 PSL layouts.
+- 14,859 nodes.
+- 7,954 animation/control records.
+- 5,871 records have a non-negative target.
+- 5,863 target IDs resolve uniquely.
+- 4 target IDs exist but are duplicated inside their layout.
+- 4 target IDs are missing; all are the same top_00 raw ID 102 case duplicated across two owning ARCs.
+- only 453 target-bearing records name-match when the raw target is incorrectly treated as an array index.
+- 4,046 target-bearing records name-match directly through serialized node ID; many other valid animations target helper/group nodes whose names intentionally differ.
+- all 14,772 non-root parent values are valid node-array indexes, confirming parent hierarchy remains index-based.
+
+For link_40 across the same full tree:
+
+- 202 non-negative links.
+- 202/202 resolve to exactly one serialized node ID.
+- 175 resolve to type-5 mask nodes.
+- only 41 would land on a type-5 node if misread as an array index.
+
+Six layouts contain at least one duplicate node ID. Four animation records currently target one of those duplicate IDs and cannot be disambiguated from serialization alone. The harness therefore fails closed for ambiguous animation targets rather than guessing. Proven type-5 mask links are unaffected: every live link_40 ID is unique in this sweep.
+
+Machine-readable report:
+E:\BASARA_WORK\jobs\utage_harness_anim\FULL_ENG_ID_LINK_SWEEP_2026-09-30.json

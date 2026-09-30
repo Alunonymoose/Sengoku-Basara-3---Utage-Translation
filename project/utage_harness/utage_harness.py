@@ -499,8 +499,10 @@ def cmd_rrc_match_arc(args):
                       "arc_sha256": arc.data_sha256, "matches": matches}, indent=2))
 
 def node_info(layout, node, atlas_scale=2.0):
+    mask = layout.mask_for(node.index)
     return {
-        "index": node.index, "name": node.name, "role": node.role,
+        "index": node.index, "id": node.node_id,
+        "name": node.name, "role": node.role,
         "type": node.node_type, "parent": node.parent, "texture": node.texture,
         "position": list(node.position), "rotation_deg": node.rotation,
         "scale": list(node.scale),
@@ -511,7 +513,8 @@ def node_info(layout, node, atlas_scale=2.0):
         "colors": [f"0x{c:08x}" for c in node.colors],
         "shader_type": node.shader_type, "blend_state": node.blend_state,
         "links": {"3c": node.link_3c, "40": node.link_40, "44": node.link_44},
-        "mask_node": (layout.mask_for(node.index).index if layout.mask_for(node.index) else None),
+        "mask_node": mask.index if mask is not None else None,
+        "mask_id": mask.node_id if mask is not None else None,
     }
 
 def cmd_layouts(args):
@@ -523,8 +526,17 @@ def cmd_layouts(args):
                     "animation_count": len(x.animations),
                     "animation_parse_error": x.animation_parse_error,
                     "animation_roots": [
-                        {"index": a.index, "name": a.name, "type": a.record_type,
-                         "target_node": a.target_node, "duration": a.duration}
+                        {
+                            "index": a.index, "name": a.name, "type": a.record_type,
+                            "target_id": a.target_id,
+                            "target_node": (
+                                x.animation_target(a).index
+                                if x.animation_target(a) is not None else None),
+                            "target_name": (
+                                x.animation_target(a).name
+                                if x.animation_target(a) is not None else ""),
+                            "duration": a.duration,
+                        }
                         for a in x.animation_roots],
                     "name_table_offset": x.name_table_offset, "name_table_end": x.name_table_end,
                     "nodes": [node_info(x, n) for n in x.nodes]})
@@ -635,18 +647,22 @@ def cmd_layout_animations(args):
         return
     records = layout.animations
     if args.root is not None:
-        root = _resolve_animation_root(layout, args.root)
-        records = layout.animation_tree(root.index)
+        selected = _resolve_animation_record(layout, args.root)
+        records = layout.animation_tree(selected.index)
     if args.match:
         needle = args.match.casefold()
-        records = [a for a in records if needle in a.name.casefold()
-                   or (0 <= a.target_node < len(layout.nodes)
-                       and needle in layout.nodes[a.target_node].name.casefold())]
+        matched = []
+        for animation in records:
+            target = layout.animation_target(animation)
+            if (needle in animation.name.casefold()
+                    or (target is not None and needle in target.name.casefold())):
+                matched.append(animation)
+        records = matched
     out = []
     for animation in records:
-        target_name = (
-            layout.nodes[animation.target_node].name
-            if 0 <= animation.target_node < len(layout.nodes) else "")
+        target_candidates = layout.animation_targets(animation)
+        target = target_candidates[0] if len(target_candidates) == 1 else None
+        target_name = target.name if target is not None else ""
         channels = []
         for channel in animation.channels:
             if channel.stride_words is None:
@@ -663,8 +679,13 @@ def cmd_layout_animations(args):
         out.append({
             "index": animation.index, "name": animation.name,
             "type": animation.record_type,
-            "target_node": animation.target_node,
+            "target_id": animation.target_id,
+            "target_node": target.index if target is not None else None,
             "target_name": target_name,
+            "target_candidates": [
+                {"index": n.index, "name": n.name, "type": n.node_type}
+                for n in target_candidates
+            ] if target is None and animation.target_id >= 0 else [],
             "duration": animation.duration,
             "parent_animation": animation.parent_animation,
             "offset": animation.offset, "size": animation.size,
@@ -740,18 +761,38 @@ def _sample_channel(channel, frame):
         return (_lerp_argb(left.values[0], right.values[0], t),)
     return left.values
 
-def _resolve_animation_root(layout, selector):
+def _resolve_animation_record(layout, selector):
+    """Resolve any animation/control record by index or unique name fragment."""
     if selector is None:
         return None
     try:
         idx = int(selector)
-        roots = [a for a in layout.animation_roots if a.index == idx]
+        hits = [a for a in layout.animations if a.index == idx]
     except ValueError:
         needle = selector.casefold()
-        roots = [a for a in layout.animation_roots if needle in a.name.casefold()]
-    if len(roots) != 1:
-        raise KeyError(f"animation root {selector!r} matched {len(roots)} roots")
-    return roots[0]
+        exact = [a for a in layout.animations if a.name.casefold() == needle]
+        hits = exact if exact else [
+            a for a in layout.animations if needle in a.name.casefold()]
+    if len(hits) != 1:
+        raise KeyError(f"animation selector {selector!r} matched {len(hits)} records")
+    return hits[0]
+
+def _animation_children(layout, index):
+    return [a for a in layout.animations if a.parent_animation == index]
+
+def _validate_render_animation_selection(layout, selected):
+    """Reject targetless container records that hold alternative child clips."""
+    if selected is None or selected.target_id >= 0:
+        return
+    children = _animation_children(layout, selected.index)
+    group_children = [a for a in children if a.target_id < 0]
+    if len(children) > 1 and len(group_children) == len(children):
+        options = ", ".join(f"{a.index}:{a.name}" for a in group_children[:12])
+        if len(group_children) > 12:
+            options += ", ..."
+        raise ValueError(
+            f"animation {selected.index}:{selected.name} is a clip container; "
+            f"select one child clip instead ({options})")
 
 def _animated_local_states(layout, root, frame):
     states = {
@@ -767,10 +808,23 @@ def _animated_local_states(layout, root, frame):
         return states, []
     warnings = []
     for animation in layout.animation_tree(root.index):
-        if not 0 <= animation.target_node < len(layout.nodes):
+        target_candidates = layout.animation_targets(animation)
+        target = target_candidates[0] if len(target_candidates) == 1 else None
+        if target is None:
+            if animation.target_id >= 0:
+                if target_candidates:
+                    choices = ", ".join(
+                        f"{n.index}:{n.name}" for n in target_candidates)
+                    warnings.append(
+                        f"animation {animation.index}:{animation.name} has ambiguous "
+                        f"target id {animation.target_id} -> {choices}")
+                else:
+                    warnings.append(
+                        f"animation {animation.index}:{animation.name} has unresolved "
+                        f"target id {animation.target_id}")
             continue
         local_frame = 0 if animation.duration < 0 else min(max(frame, 0), animation.duration)
-        state = states[animation.target_node]
+        state = states[target.index]
         for channel in animation.channels:
             values = _sample_channel(channel, local_frame)
             if values is None:
@@ -946,16 +1000,20 @@ def cmd_render_layout(args):
         raise ValueError(
             "this layout's animation encoding is not fully decoded: "
             + (layout.animation_parse_error or "unknown variant"))
-    root = _resolve_animation_root(layout, args.animation_root)
+    root = _resolve_animation_record(layout, args.animation_root)
+    _validate_render_animation_selection(layout, root)
     states, animation_warnings = _animated_local_states(layout, root, args.frame)
 
     chosen = []
     wanted = {int(v) for v in args.node} if args.node else None
     needle = args.match.casefold() if args.match else None
-    animated_targets = (
-        {a.target_node for a in layout.animation_tree(root.index) if a.target_node >= 0}
-        if root else None
-    )
+    animated_targets = None
+    if root:
+        animated_targets = set()
+        for animation in layout.animation_tree(root.index):
+            target = layout.animation_target(animation)
+            if target is not None:
+                animated_targets.add(target.index)
     for node in layout.nodes:
         if node.node_type not in (2, 3) or not node.texture:
             continue
@@ -1076,7 +1134,9 @@ def build_cli():
     p.add_argument("--logical-size", type=lambda s: tuple(map(int, s.lower().split("x"))), default=(640, 480))
     p.add_argument("--output-size", type=lambda s: tuple(map(int, s.lower().split("x"))))
     p.add_argument("--background", type=lambda s: tuple(map(int, s.split(","))), default=(0, 0, 0, 0))
-    p.add_argument("--animation-root", help="root animation index or unique name fragment")
+    p.add_argument(
+        "--animation", "--animation-root", dest="animation_root",
+        help="animation/clip record index or unique name fragment")
     p.add_argument("--frame", type=int, default=0)
     p.add_argument("--respect-alpha", action="store_true")
     p.add_argument("--include-static", action="store_true",

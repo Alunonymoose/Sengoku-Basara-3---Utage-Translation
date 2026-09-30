@@ -147,12 +147,16 @@ class AnimationRecord:
     index: int
     name: str
     record_type: int
-    target_node: int
+    target_node: int  # legacy field name; serialized value is a sprite ID
     duration: int
     parent_animation: int
     channels: list[AnimationChannel] = field(default_factory=list)
     offset: int = 0
     size: int = 0
+
+    @property
+    def target_id(self) -> int:
+        return self.target_node
 
     def channel(self, name: str) -> AnimationChannel:
         for channel in self.channels:
@@ -206,26 +210,40 @@ class Layout:
         return [n for n in self.nodes if n.texture and
                 n.texture.replace("/", "\\").lower().endswith(tail)]
 
+    def nodes_by_id(self, node_id: int) -> list[LayoutNode]:
+        """Return every node carrying the serialized PSL sprite ID."""
+        return [n for n in self.nodes if n.node_id == node_id]
+
     def node_by_id(self, node_id: int) -> LayoutNode | None:
-        """Resolve the serialized PSL sprite ID, which is not the array index."""
-        hits = [n for n in self.nodes if n.node_id == node_id]
+        """Resolve a serialized PSL sprite ID only when it is unique."""
+        hits = self.nodes_by_id(node_id)
         if len(hits) == 1:
             return hits[0]
         if not hits:
             return None
         raise ValueError(f"duplicate PSL node id {node_id}: {[n.index for n in hits]}")
 
+    def animation_targets(self, animation: AnimationRecord) -> list[LayoutNode]:
+        if animation.target_id < 0:
+            return []
+        return self.nodes_by_id(animation.target_id)
+
     def animation_target(self, animation: AnimationRecord) -> LayoutNode | None:
-        """Resolve an animation record's serialized target ID to its sprite node."""
-        if animation.target_node < 0:
-            return None
-        return self.node_by_id(animation.target_node)
+        """Resolve an animation target only when its serialized sprite ID is unique."""
+        hits = self.animation_targets(animation)
+        return hits[0] if len(hits) == 1 else None
 
     def mask_for(self, index: int) -> LayoutNode | None:
-        """Resolve link_40 only when it targets a proven type-5 mask node."""
-        target = self.nodes[index].link_40
-        if 0 <= target < len(self.nodes) and self.nodes[target].node_type == 5:
-            return self.nodes[target]
+        """Resolve link_40 by sprite ID only when exactly one target is type-5."""
+        target_id = self.nodes[index].link_40
+        if target_id < 0:
+            return None
+        masks = [n for n in self.nodes_by_id(target_id) if n.node_type == 5]
+        if len(masks) == 1:
+            return masks[0]
+        if len(masks) > 1:
+            raise ValueError(
+                f"ambiguous PSL mask id {target_id}: {[n.index for n in masks]}")
         return None
 
     def world_matrix(self, index: int) -> tuple[float, float, float, float, float, float]:

@@ -15,13 +15,15 @@ It is a fast pre-runtime gate for the asset classes we repeatedly modify.
   and material IDs.
 - Decode the complete PSL v0x21 animation-record table and named animation trees,
   including position, rotation, scale, UV and four colour channels plus mode fields.
+- Resolve animation targets through serialized sprite IDs rather than node-array indexes;
+  targetless container records are kept distinct from their selectable child clips.
 - Convert LSP logical UVs to physical XET source rectangles with the proven 2x rule.
 - Compute hierarchical affine placement automatically and render selected animation
   roots at a requested frame.
 - Apply channel-21 visibility and channel-7 animated geometry during reconstruction.
 - Render type-3 textured quads with TL/TR/BL/BR AARRGGBB vertex modulation.
-- Resolve link_40 -> type-5 relationships as masks and rasterize those masks in
-  screen space before compositing the linked sprite.
+- Resolve link_40 as a serialized sprite ID; when it resolves to a type-5 node, rasterize
+  that node as a screen-space mask before compositing the linked sprite.
 - Compare two ARCs at decompressed-member level.
 - Render explicit multi-layer 2D scenes from ARC members.
 - Render selected PSL sprite nodes directly from an ARC with no hand-entered crop/placement.
@@ -44,7 +46,7 @@ python utage_harness.py compare-arcs before.arc after.arc
 python utage_harness.py layouts <arc>
 python utage_harness.py layout-nodes <arc> --layout <lsp-member> [--match text]
 python utage_harness.py layout-animations <arc> --layout <lsp-member> [--root name]
-python utage_harness.py render-layout <arc> out.png --layout <lsp-member> --animation-root <root> --frame N [--rrc capture.rrc.gz]
+python utage_harness.py render-layout <arc> out.png --layout <lsp-member> --animation <record-or-clip> --frame N [--rrc capture.rrc.gz]
 python utage_harness.py psl-sweep <arc-or-directory> [--json report.json]
 python utage_harness.py render-scene scene.json out.png
 python utage_harness.py rrc-info capture.rrc.gz
@@ -88,10 +90,11 @@ scale, UV changes and colour-alpha changes are used by the preview renderer, and
 captures provide the actual RSX surface/viewport size.
 
 The renderer is still an approximation of MT Framework execution: interpolation-code
-semantics beyond the observed cases, per-corner colour modulation, mask/material
-semantics, exact blend equations at each draw, animation scheduling, clipping and
-shader behaviour are not yet claimed exact. Final RPCS3/PS3 runtime proof remains
-authoritative.
+semantics beyond the observed cases, material/shader-specific colour handling, exact
+blend equations at each draw, animation scheduling and some generic link semantics are
+not yet claimed exact. Animation targets and proven type-5 mask links are resolved by
+serialized sprite ID, while parent hierarchy links remain node-array indexes. Final
+RPCS3/PS3 runtime proof remains authoritative.
 
 ## Authority
 
