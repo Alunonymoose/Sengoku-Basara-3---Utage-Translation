@@ -504,6 +504,8 @@ def node_info(layout, node, atlas_scale=2.0):
         "index": node.index, "id": node.node_id,
         "name": node.name, "role": node.role,
         "type": node.node_type, "parent": node.parent, "texture": node.texture,
+        "default_display": node.is_displayed, "default_shake": node.is_shake,
+        "render_pass": node.render_pass,
         "position": list(node.position), "rotation_deg": node.rotation,
         "scale": list(node.scale),
         "geometry": list(node.geometry), "uv_logical": list(node.uv),
@@ -800,7 +802,7 @@ def _animated_local_states(layout, root, frame):
             "position": list(n.position), "scale": list(n.scale),
             "geometry": list(n.geometry), "uv": list(n.uv), "colors": list(n.colors),
             "rotation": [0.0, 0.0, n.rotation, 0.0],
-            "visible": True,
+            "visible": n.is_displayed,
         }
         for n in layout.nodes
     }
@@ -825,6 +827,9 @@ def _animated_local_states(layout, root, frame):
             continue
         local_frame = 0 if animation.duration < 0 else min(max(frame, 0), animation.duration)
         state = states[target.index]
+        # Selecting a clip means its explicit target is active for preview.
+        # A visibility channel, when present, remains authoritative below.
+        state["visible"] = True
         for channel in animation.channels:
             values = _sample_channel(channel, local_frame)
             if values is None:

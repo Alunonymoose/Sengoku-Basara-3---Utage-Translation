@@ -62,6 +62,9 @@ class LayoutNode:
     link_3c: int = -1
     link_40: int = -1
     link_44: int = -1
+    is_displayed: bool = True
+    is_shake: bool = False
+    render_pass: int = 0
     position: tuple[float, float] = (0.0, 0.0)
     rotation: float = 0.0
     scale: tuple[float, float] = (1.0, 1.0)
@@ -93,6 +96,11 @@ class LayoutNode:
     def material(self) -> int:
         """Backward-compatible alias for the now identified mShaderType field."""
         return self.shader_type
+
+    @property
+    def mask_id(self) -> int:
+        """Serialized sprite ID referenced by field 0x40."""
+        return self.link_40
 
     def source_rect(self, atlas_scale: float = 2.0) -> tuple[int, int, int, int]:
         return tuple(round(v * atlas_scale) for v in self.uv)
@@ -422,6 +430,9 @@ def parse_layout(raw: bytes, name: str = "") -> Layout:
             parent=_s32(rec, 0x38),
             link_3c=_s32(rec, 0x3C), link_40=_s32(rec, 0x40),
             link_44=_s32(rec, 0x44),
+            is_displayed=bool(_s32(rec, 0x30)),
+            is_shake=bool(_s32(rec, 0x34)),
+            render_pass=_s32(rec, 0x5C),
             position=(_f32(rec, 0x00), _f32(rec, 0x04)),
             rotation=_f32(rec, 0x18),
             scale=(_f32(rec, 0x20), _f32(rec, 0x24)),
