@@ -418,3 +418,392 @@ The sampler previously returned the left key when `frame == next_key.time`, maki
 Correct behavior now:
 - SH visibility becomes 0 exactly at frame 40;
 - Utage shake becomes 1 exactly at frame 15 and 0 exactly at frame 22.
+
+## 2026-09-30 animation parent/trailer semantics
+
+The final signed word of each animation record is structural parent/group linkage, not a temporal offset.
+
+Evidence:
+- title groups often use the first sibling record as the parent of later siblings;
+- those animation-parent relationships do not match the target sprites' node-parent hierarchy;
+- tenka/top_00 child tracks under the same group contain deliberately staggered absolute clip-frame ranges:
+  - Shing 10..15
+  - Soubi 20..25
+  - Basara 30..35
+  - Guide 40..45
+  - Settei 50..55
+- subtracting or accumulating parent durations would destroy that intended cascade.
+
+Therefore:
+- animation_tree remains valid for scope/group traversal;
+- descendants are sampled using the same selected clip frame, clamped only to their own duration;
+- parent_animation must not be used as an implicit frame offset.
+
+This also matches the EBOOT runtime cSprAnim fields mParentID/mpParent: parentage is an object relationship, while key timestamps already provide timing.
+
+## 2026-09-30 interpolation fidelity rule
+
+Interpolation code 5 remains unproven.
+
+Observed facts:
+- it is used on position/scale tracks;
+- transform keys do not contain hidden tangent/control values in their spare vector components;
+- generic MT Framework binaries expose easecurve/hermitecurve data types, but no direct evidence yet ties PSL code 5 to either evaluator.
+
+The harness currently approximates code 5 with smoothstep for visualization only.
+
+Any selected animation subtree containing code-5 keys now emits an explicit animation warning:
+`interpolation code 5 is approximated as smoothstep; exact MT Framework curve is not yet proven`
+
+This prevents approximate renders from being mistaken for exact runtime reproduction.
+
+
+## 2026-09-30 follow-up: duplicate sprite IDs and inherited orphan target
+
+Full live ENG sweep after sprite-ID target correction:
+
+- 4,075 ARCs parsed;
+- 87 PSL layouts parsed;
+- 14,859 nodes;
+- 7,954 animation records;
+- **0 layout failures**.
+
+### Duplicate node IDs
+
+Serialized sprite IDs are normally unique, but a small number of layouts intentionally reuse an ID. The resolver must therefore not assume global uniqueness.
+
+Proven cases:
+
+- cockpit1P ID 326: `Nyusin` and group `0_0_9`. Animation `Kao1set` targets 326; its child tracks target descendants of `0_0_9`, disambiguating the group.
+- vs_cockpit ID 102: groups `2_0` and `3`. Sibling records `CPU_item_1P` and `CPU_item_2P` both target 102; two records/two duplicate instances preserve serialized order.
+- vs_cockpit ID 48: `Flag0_0` and unrelated group `1_2`. `Flag0_1` resolves to the same flag family.
+
+The current resolver therefore uses, in order:
+
+1. unique ID match;
+2. ordered repeated-record/repeated-node mapping when counts match;
+3. descendant-track ancestry for group animations;
+4. conservative family-name affinity;
+5. unresolved/fail-closed otherwise.
+
+### Utage top_00 target ID 102 is a benign inherited orphan
+
+Utage `id\\lsp\\jpn\\tenka\\top_00` contains two animation records targeting sprite ID 102:
+
+- `8_0`
+- `4_0`
+
+Utage has no sprite node ID 102.
+
+The corresponding Samurai Heroes layout
+`id\\lsp\\abr\\tenka\\top` **does** contain:
+
+- node index 79, ID 101, name `4`;
+- node index 80, ID 102, name `4_0`, type 4, position (0,389);
+- child sprites ID 103/104/105 named `Mess`.
+
+Samurai Heroes also carries the same target-102 tracks:
+
+- `8_0 -> 102`
+- `4_0 -> 102`
+
+Therefore Utage retained animation records for the old SH `4_0` message/menu group after removing that group from the Utage node table. These unresolved targets are inherited dead references, not parser corruption and must remain ignored/fail-closed rather than remapped to array index 102.
+
+
+## 2026-09-30 follow-up: baseline display state and interpolation ownership
+
+### Serialized baseline display/shake candidates
+
+A full 87-layout / 14,859-node sweep of the live ENG tree gives:
+
+- node +0x30: only 0 or 1
+  - 6,779 nodes = 1
+  - 8,080 nodes = 0
+- node +0x34: 0 on all 14,859 nodes
+
+Combined with the Utage EBOOT cLayoutSprite reflection fields `mIsDisp` and
+`mIsShake`, and with the semantic distribution of +0x30 (ordinary title/loading
+sprites enabled, large banks of optional/common/menu-state sprites disabled),
++0x30 is strongly supported as the serialized default-display flag.
+
++0x34 is exposed as `default_shake` for forensic completeness, but remains
+weaker evidence because the current live corpus never serializes a non-zero value.
+
+Important runtime distinction: default display is not permanent draw eligibility.
+2,522 animation records with keyed tracks target nodes whose serialized +0x30
+default is 0. Common examples include cursors, difficulty labels, menu highlights,
+2P prompts and Tenka menu entries. Higher-level UI/clip playback therefore activates
+initially-hidden sprites outside the ordinary keyed display channel. The renderer
+must not blindly suppress a deliberately selected animation target merely because
+its resource default is hidden.
+
+### Interpolation mode belongs to the left/outgoing key — strong structural evidence
+
+Across 10,510 keyed tracks:
+
+- code 3 is overwhelmingly dominant;
+- code 0 and code 5 occur on first, interior and final keys;
+- mixed two-key transform tracks provide the most useful direction evidence.
+
+Examples:
+
+- tenka_tassei `tekichu_2` scale 10.0 -> 1.6 over 10 frames has key codes 3 -> 0.
+  Interpreting the left key as segment owner produces an ordinary animated shrink;
+  right-key ownership would hold at 10 then jump to 1.6.
+- tenka_tassei `sensu_mask` position 9 -> 5 over 48 frames has codes 0 -> 3.
+  Left-key ownership naturally gives a held/step offset.
+- gallery/title entrance motions such as -50 -> 0 over 10 frames use 5 -> 3.
+- tenka_japmap `Map_Base` scale 2.5 -> about 1.0 over 13 frames uses 5 -> 3.
+
+This strongly supports the harness's existing left-key segment ownership:
+
+- code 0: hold/step behavior;
+- code 3: ordinary linear interpolation;
+- code 5: an ease-family interpolation.
+
+The exact code-5 ease evaluator is still unproven. The current smoothstep
+approximation must remain labelled approximate.
+
+Engine-side supporting context: the Utage EBOOT contains `Depth (Linear and Ease)`,
+`Ease`, and `mEaseCurve` strings, while public MT Framework reverse engineering
+shows `MtEaseCurve` as a two-float structure distinct from the much larger
+8-point `MtHermiteCurve`. This supports an ease interpretation but does not bind
+PSL code 5 to a specific mathematical curve.
+
+
+## 2026-09-30 follow-up: untextured type-0 / type-1 quad rendering
+
+A full node-type survey across all 14,859 live PSL nodes identified a large class
+of untextured geometry that the earlier renderer omitted entirely.
+
+### Type 1 — untextured per-vertex RGBA quad
+
+In the current live corpus, type-1 nodes are untextured geometry and strongly match
+four-corner AARRGGBB interpolation.
+
+Examples include:
+
+- loading-screen black -> transparent edge fades;
+- common/menu `Obi` and `Message` vertical gradients;
+- result-screen shadow strips;
+- quest white/green overlay gradients;
+- story background-colour panels;
+- title colour-wall quads.
+
+A direct renderer test on `loading/black_03_hidariue` used its corners
+
+- TL = FF000000
+- TR = 00000000
+- BL = FF000000
+- BR = 00000000
+
+and produced the expected continuous left-black -> right-transparent fade over a
+magenta diagnostic background. This validates the existing TL/TR/BL/BR bilinear
+corner order for this untextured type.
+
+### Type 0 — conservative solid-color0 subset
+
+Type-0 nodes are also untextured geometry in almost all cases, but their material
+semantics are not uniformly equivalent to type 1.
+
+The safest, strongly evidenced subset is:
+
+- all four serialized colours identical; or
+- color1/color2/color3 remain untouched FFFFFFFF defaults.
+
+For those nodes, color0 behaves as the whole-quad colour/alpha.
+
+Strong examples:
+
+- `com/fade/Black`
+- `com/wipe/Wipe`
+- Capcom/loading black backgrounds
+- cinematic black bars
+- translucent common/pause backdrops
+- thin UI rules/lines
+- title/kakusyu black overlay
+
+The harness now renders only this proven type-0 subset as a solid color0 quad.
+Type-0 nodes with meaningful non-default secondary corner colours remain fail-closed
+because their shader-specific gradient/filter semantics are not yet fully mapped.
+
+### Fade runtime-style regression
+
+`basara.arc -> id\\lsp\\com\\fade -> Ani 0_0` was rendered at frames 0/30/60
+over an opaque magenta diagnostic background:
+
+- frame 0: every sampled pixel = (0,0,0,255)
+- frame 30: every sampled pixel = (127,0,127,255), i.e. approximately 50% black
+- frame 60: every sampled pixel = magenta background; the zero-alpha Black quad is skipped
+
+The Black node is type 0, has no texture, and its color0 track is
+FF000000 -> 00000000 over 60 frames. This is direct evidence that the new
+untextured solid-quad path reproduces the intended fade behaviour.
+
+Diagnostic outputs:
+`E:\\BASARA_WORK\\jobs\\utage_harness_anim\\untextured\\fade_0.png`
+`E:\\BASARA_WORK\\jobs\\utage_harness_anim\\untextured\\fade_30.png`
+`E:\\BASARA_WORK\\jobs\\utage_harness_anim\\untextured\\fade_60.png`
+`E:\\BASARA_WORK\\jobs\\utage_harness_anim\\untextured\\loading_type1_19.png`
+
+
+### Stronger type-0 rule from repeated loading L/C/R triplets
+
+The earlier conservative type-0 subset can be generalized for **untextured type-0**
+nodes.
+
+The loading layout contains six repeated three-piece colour effects. Each family has:
+
+- left wing: type 1, transparent -> colour;
+- center: type 0;
+- right wing: type 1, colour -> transparent.
+
+Example `color_00`:
+
+- `color_00_L` type 1:
+  00FFFFFF, FFC89600, 00FFFFFF, FFC89600
+- `color_00_C` type 0:
+  FFC89600, FFFFFFFF, 00FFFFFF, FFFFFFFF
+- `color_00_R` type 1:
+  FFC89600, 00FFFFFF, FFC89600, 00FFFFFF
+
+The geometry/positions form one continuous effect, so the type-0 center must be the
+solid FFC89600 bridge between the two gradient wings. The same construction repeats
+with shader types 11 through 16 and six different colours.
+
+This demonstrates that the extra stored color1..3 words on untextured type-0 nodes
+are not four active vertex colours in the same sense as type 1. The draw model is:
+
+- untextured type 0 = solid color0 quad;
+- untextured type 1 = TL/TR/BL/BR vertex-RGBA quad.
+
+The harness now applies solid-color0 semantics to all untextured type-0 nodes.
+The single observed textured type-0 special case remains unsupported/fail-closed.
+
+Across the current live corpus this adds roughly 486 previously omitted untextured
+type-0/type-1 geometry nodes to the renderer.
+\n\n## 2026-09-30 follow-up: baseline display state now enforced\n\nThe renderer now initializes each node's runtime visibility from serialized default_display (+0x30) instead of assuming every node begins visible.\n\nClip playback then explicitly activates every resolved sprite targeted by the selected animation subtree before applying keyed display-track values. This is necessary because the live corpus contains 2,522 keyed animation records targeting nodes whose resource baseline display flag is off; menu effects, cursors and highlights are designed to be activated by clip playback.\n\nRegression on title.arc -> mode_select:\n\n- static render: STORY_effect (node index 100, sprite ID 95, default_display=0) is correctly skipped for baseline visibility;\n- selecting animation record 57 STORY_effect activates that sprite and renders it;\n- any keyed display channel remains authoritative after the activation step.\n\nDiagnostic outputs:\nE:\\BASARA_WORK\\jobs\\utage_harness_anim\\default_display\\static.png\nE:\\BASARA_WORK\\jobs\\utage_harness_anim\\default_display\\story_effect.png\n\n\n## 2026-09-30 follow-up: link_40 uses sprite IDs and mask providers are not type-5 only\n\nA full live ENG link audit found 202 nodes with non-negative link_40 values.\nThe link value resolves as a serialized sprite ID, not an array index.\n\nMask-provider evidence:\n\n- 175 links resolve to type-5 nodes;\n- another 24 links resolve to non-type-5 nodes with serialized +0x64 = 1;\n- only 3 links resolve outside those two classes.\n\nThe +0x64 flag is therefore exposed conservatively as mask_provider without claiming\nan exact Capcom runtime field name. The renderer now accepts a link target as a mask\nprovider when target.type == 5 OR target.mask_provider is true.\n\nStrong non-type-5 examples:\n\n- versus kessen Image_0_0 -> Pbg_0 (type 2, +0x64=1);\n- kessen_sele Stsm_img -> Stsm_mask (type 2, +0x64=1);\n- charasele_kessen CharaXX -> containing Null group (type 4, +0x64=1);\n- tenka status art -> Waku_K frame nodes (type 3, +0x64=1).\n\nThe three remaining links are intentionally fail-closed:\n\n- charasele_story Rfrm_01 -> Icon_M_00;\n- charasele_story Lfrm_01 -> Icon_M_00;\n- kessen_rule 2play_img -> 2play_u.\n\nThese three targets are type 2 with +0x64=0 and are not treated as masks until\nruntime evidence identifies their relationship.\n\nPost-change full sweep: 4,075/4,075 ARCs, 87/87 layouts, zero failures,\n202 total mask/related links, 199 resolved mask links, 3 unresolved.\n
+
+## 2026-09-30 follow-up: interpolation code 5 has no embedded curve/tangent payload
+
+A full live ENG corpus scan found **643 keyframes using interpolation code 5**:
+
+- position: 581
+- scale: 40
+- rotation: 10
+- UV rect: 3
+- color 0: 7
+- color 2: 1
+- color 3: 1
+
+The six-word position/rotation/scale records do **not** hide per-key easing parameters in their spare vector components:
+
+- every one of the 581 code-5 position keys has spare Z/W = `0.0, 0.0`;
+- every one of the 40 code-5 scale keys has the ordinary vector constants Z/W = `1.0, 0.0`;
+- rotation uses its normal Z-angle component and W remains zero;
+- UV/color tracks contain only their actual value payload.
+
+Therefore interpolation code 5 is a **fixed interpolation mode**, not a mode carrying a per-key two-float `MtEaseCurve` or explicit tangent payload inside the PSL key.
+
+Public MT Framework reverse-engineering provides useful but non-identical context:
+
+- DMC4/MT Framework research defines `MtEaseCurve` as exactly two floats (`p1`, `p2`);
+- older MT Framework binaries expose `MtFCurve` and `MtFCurve::Key`;
+- modern Capcom clip research uses a related interpolation enum where raw type 5 is Hermite, but those Hermite frames consume four explicit tangent floats.
+
+Utage PSL code 5 **cannot be copied directly from that explicit-tangent Hermite implementation**, because the required tangent payload is absent. It may be an automatic/fixed Hermite-like mode, but that is not yet proven.
+
+Harness rule: retain the current code-5 interpolation as an explicitly labelled approximation until a Utage/MT Framework evaluator or runtime measurement proves the exact curve. Do not silently promote smoothstep, modern explicit-tangent Hermite, or `MtEaseCurve` to canonical behavior.
+
+
+## 2026-09-30 follow-up: first clean RRC shader/blend correlations
+
+Capture `BLJM60389_20260925092042_capture.rrc.gz` was correlated against live `title.arc`.
+The correlation was deliberately restricted to XET payloads that map to exactly one sprite owner
+across the archive's parsed layouts and to a nearby following draw (<=64 replay commands).
+
+Only four pairs satisfy that conservative rule:
+
+| shader_type | mBlendState | Sprite | RSX blend | Alpha test |
+| ---: | ---: | --- | --- | --- |
+| 1 | 5 | `Utage` / `title_012_ID_HQ` | SrcAlpha + OneMinusSrcAlpha, ADD | off |
+| 2 | 0 | `Wind` / `title_017_ID_HQ` | SrcAlpha + OneMinusSrcAlpha, ADD | off |
+| 5 | 0 | `logo_shadow_01` / `title_006_ID_HQ` | SrcAlpha + OneMinusSrcAlpha, ADD | off |
+| 6 | 1 | `logo_kamon` / `title_002_ID_HQ` | blending disabled (ONE/ZERO, ADD) | on |
+
+This directly proves that serialized `mBlendState` is **not sufficient by itself** to derive the
+effective RSX blend path: state 0 appears with multiple shader types on ordinary alpha blending,
+while state 1 under shader type 6 is an alpha-test/cutout path. Shader/material selection must be
+part of any future exact compositor mapping.
+
+The correlation intentionally remains sparse. Do not extrapolate unseen
+`(shader_type, mBlendState)` combinations from these four rows.
+
+Diagnostic output:
+`E:\BASARA_WORK\jobs\utage_harness_anim\RRC_SHADER_BLEND_CORRELATION_2026-09-30.json`
+
+
+## 2026-09-30 follow-up: six-capture conservative blend batch
+
+All six available 2026-09-25 RRC captures were batch-correlated against four relevant live UI archives:
+`title.arc`, `versus/menu.arc`, `select/c_versus.arc`, and `result_id.arc`.
+
+The same conservative rules were retained: exact XET mip-0 payload match, exactly one sprite owner
+inside the candidate archive's parsed layouts, and a nearby following draw.
+
+Results:
+
+- `(shader 18, blend 0)` gained **six independent correlations** across three captures and two
+  archive copies, all using SrcAlpha / OneMinusSrcAlpha, ADD, alpha-test off.
+- `(shader 23, blend 0)` produced four ordinary-alpha correlations but one alpha-test/cutout
+  correlation. Therefore even the `(shader_type, mBlendState)` pair is not globally sufficient
+  to determine final RSX state; draw/material/input context still matters.
+- The previously proven title pairs remained unchanged.
+
+Do not collapse these observations into a global shader/blend lookup table. The correct future
+model should attach runtime-observed pipeline evidence to concrete draw/material contexts and only
+promote a rule when all relevant dimensions are identified.
+
+Batch diagnostic:
+`E:\BASARA_WORK\jobs\utage_harness_anim\RRC_SHADER_BLEND_CORRELATION_ALL_2026-09-30.json`
+
+
+## 2026-09-30 follow-up: the sole textured type-0 node is a one-off glow material
+
+A full live ENG scan confirms there is exactly **one** node with `node_type == 0` and a texture:
+
+- archive: `select/c_story.arc`
+- layout: `id\\lsp\\jpn\\charasele\\charasele_story`
+- node: `Hikari_00` (index 29, sprite ID 49)
+- texture: `charasele_05_000_ID_HQ`
+- shader type: 47
+- blend state: 5
+- geometry: `(-64,-64,64,64)`
+- logical UV: `(0,0,128,128)`
+- colors: `00FFFFFF, FFFFFFFF, FFFFFFFF, FFFFFFFF`
+- default display: on
+- no animation target and no mask link
+
+The texture is unique in the live layout corpus. Its decoded 256×256 image is a sparse warm-white
+glow: 6,172 pixels have nonzero alpha, only 9 are fully opaque, 139 alpha levels are present, and
+mean alpha is approximately 1.888/255. None of the available 2026-09-25/09-30 RRC captures contains
+its exact mip-0 payload.
+
+This combination strongly indicates a shader-driven light/glow special case rather than the proven
+untextured type-0 solid-color path. It remains intentionally unsupported/fail-closed until a runtime
+capture of this screen or shader-47 evidence proves the material semantics. Do not generalize
+textured type-0 rendering from this single node.
+
+
+## 2026-09-30 follow-up: channel 19 is unobserved across the full live corpus
+
+A full ENG sweep of all **87 parsed PSL layouts / 7,954 animation records** found:
+
+- channel 19 keyed records: **0**
+- channel 19 total keys: **0**
+- nonzero channel-19 scalar/control observations: **0**
+
+The current exact-end schema reserves the slot, but there is no live Utage example from which to infer
+its runtime meaning. Treat channel 19 as **structurally reserved / unobserved in the present corpus**,
+not as an active unknown that needs implementation. Any future semantic name must come from another
+game/resource sample or direct runtime-class evidence.

@@ -1,3 +1,17 @@
+> **2026-09-30 TEXTURE DISPLAY HANDOFF — HARD RULE**
+>
+> When the user asks to **show, display, pull up, browse, list, inspect, or "show me" textures** from an ARC, treat that as a read-only display task and use the current ARC Texture Gallery / `foundry show` path.
+>
+> Default user-visible handoff:
+> 1. resolve the exact current live ARC;
+> 2. decode every XET/TEX through the proven game-display path;
+> 3. build readable numbered pages (normally about 16 textures per page);
+> 4. combine the complete book into **one scrollable PDF**;
+> 5. materialize that PDF into the current chat/conversation as a clickable attachment when the environment supports it;
+> 6. keep numbered full-resolution PNGs available for follow-ups such as "open #143".
+>
+> Do **not** claim textures were shown merely because a remote-desktop preview was visible to the agent. HTML, Drive-only files, remote-preview-only output, and asking the user to browse Kuriimu are not the default primary handoff when the user asked to see the textures.
+>
 > **2026-09-29 RELIABILITY GATE**\n>\n> Before current-state, owner, donor, or mutation work: inspect the exact live target and, when available, the workspace machine-state file `.foundry/PROJECT_CURRENT.json`. If its snapshot is DIRTY, do not treat snapshot-wide ownership/census results as current without refresh or exact-target verification. Historical workspaces, backups and old handoffs are evidence only.\n>\n
 > **2026-09-25 CANDIDATE-FIRST ROUTING HARDENING**
 >

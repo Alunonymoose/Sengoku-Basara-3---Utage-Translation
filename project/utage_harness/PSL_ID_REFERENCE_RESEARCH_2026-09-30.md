@@ -60,3 +60,78 @@ Current branch commits:
 
 Regression artifact:
 E:\BASARA_WORK\jobs\utage_harness_anim\PSL_ID_REFERENCE_REGRESSION_2026-09-30.json
+
+## Full-tree regression — 2026-09-30
+
+### Samurai Heroes ENG
+Root: `E:\SAMURAI HEROES\PS3_GAME\USRDIR\nativePS3\rom\eng`
+
+- 2,118 ARCs parsed
+- 79 PSL layouts
+- 6,687 nodes
+- 3,194 animation records
+- **0 layout parse failures**
+- 2 unresolved animation targets, both in `tenka_narration01` (IDs 201/202)
+- 0 duplicate node IDs
+- 24 nonnegative link_40 values
+- 16 proven type-5 mask links
+
+### Utage live ENG
+Root: `E:\Utage Patching New\PS3_GAME\USRDIR\nativePS3\rom\eng`
+
+- 4,075 ARCs parsed
+- 87 PSL layouts
+- 14,859 nodes
+- 7,954 animation records
+- **0 layout parse failures**
+- 8 unresolved animation targets
+- 10 duplicate node IDs
+- 202 nonnegative link_40 values
+- 175 proven type-5 mask links
+
+The parser therefore closes successfully across all 166 discovered layouts in the two English trees.
+
+Duplicate sprite IDs are real data, not parser corruption. ID resolution must be fail-closed unless exactly one node owns the ID.
+
+The remaining Utage unresolved animation targets split into:
+- repeated virtual/missing target ID 102 in tenka/top_00;
+- targets whose IDs are duplicated in cockpit layouts.
+
+No scalar/control field in the examined ambiguous animation records supplied a proven parent/scope ID, so duplicate targets must not be guessed by first-match, last-match, name similarity, or array index.
+
+Regression JSON:
+- `E:\BASARA_WORK\jobs\utage_harness_anim\SH_ENG_FULL_PSL_SWEEP_2026-09-30.json`
+- `E:\BASARA_WORK\jobs\utage_harness_anim\UTAGE_ENG_FULL_PSL_SWEEP_2026-09-30.json`
+
+## Resolution provenance refinement
+
+The sweep now distinguishes exact unique-ID resolution from heuristic duplicate-ID resolution.
+
+Current full-tree totals:
+
+### Utage ENG
+- 4,075 ARCs
+- 87 PSL layouts
+- 14,859 nodes
+- 7,954 animation records
+- 0 layout parse failures
+- **4 unresolved animation targets**: all `missing_id` cases from the repeated tenka/top_00 ID-102 pair
+- **4 heuristic animation targets**
+  - 1 `duplicate_descendant_scope`: cockpit1P `Kao1set` -> node `0_0_9`; all six descendant tracks live beneath that candidate
+  - 2 `duplicate_order_pair`: vs_cockpit `CPU_item_1P/2P`; exactly two records target the duplicated ID and exactly two nodes own it, paired in serialized order
+  - 1 `duplicate_name_affinity`: vs_cockpit `Flag0_1` -> `Flag0_0`; useful but weaker evidence and must remain labelled heuristic
+- 10 duplicate node-ID occurrences
+- 202 nonnegative link_40 references
+- 175 proven type-5 mask links
+
+### Samurai Heroes ENG
+- 2,118 ARCs
+- 79 PSL layouts
+- 6,687 nodes
+- 3,194 animation records
+- 0 layout parse failures
+- **2 unresolved animation targets**, both `missing_id` in `tenka_narration01` (IDs 201/202)
+- **0 heuristic animation targets**
+- 0 duplicate node IDs
+
+The audit deliberately keeps heuristic resolutions visible even when they produce a usable target. A zero unresolved count must not be interpreted as equivalent to unique-ID proof.
