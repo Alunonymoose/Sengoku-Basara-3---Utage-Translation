@@ -119,6 +119,9 @@ def main() -> int:
     d = sub.add_parser("doctor", help="run the whole-project health gate")
     d.add_argument("--strict", action="store_true")
 
+    orc = sub.add_parser("oracles", help="validate pinned external oracles and optionally check upstream drift")
+    orc.add_argument("--online", action="store_true")
+
     nx = sub.add_parser("next", help="rank the next highest-value unsigned project folders")
     nx.add_argument("--limit", type=int, default=15)
     nx.add_argument("--mode", choices=["closeout", "risk", "smallest"], default="closeout")
@@ -178,6 +181,12 @@ def main() -> int:
         cmd = [sys.executable, str(tool), "--live-root", str(live_root)]
         if args.strict:
             cmd.append("--strict")
+        return subprocess.run(cmd).returncode
+    if args.cmd == "oracles":
+        tool = HERE / "oracle_audit.py"
+        cmd = [sys.executable, str(tool)]
+        if args.online:
+            cmd.append("--online")
         return subprocess.run(cmd).returncode
     if args.cmd == "next":
         tool = HERE / "next_work.py"
