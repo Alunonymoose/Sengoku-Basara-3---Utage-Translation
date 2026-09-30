@@ -817,7 +817,16 @@ def _animated_local_states(layout, root, frame):
     if root is None:
         return states, []
     warnings = []
-    for animation in layout.animation_tree(root.index):
+    selected_tree = layout.animation_tree(root.index)
+    if any(
+        key.interpolation == 5
+        for animation in selected_tree
+        for channel in animation.channels
+        for key in channel.keys
+    ):
+        warnings.append(
+            "interpolation code 5 is approximated as smoothstep; exact MT Framework curve is not yet proven")
+    for animation in selected_tree:
         target = layout.animation_target(animation)
         if target is None:
             if animation.target_node >= 0:

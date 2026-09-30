@@ -418,3 +418,41 @@ The sampler previously returned the left key when `frame == next_key.time`, maki
 Correct behavior now:
 - SH visibility becomes 0 exactly at frame 40;
 - Utage shake becomes 1 exactly at frame 15 and 0 exactly at frame 22.
+
+## 2026-09-30 animation parent/trailer semantics
+
+The final signed word of each animation record is structural parent/group linkage, not a temporal offset.
+
+Evidence:
+- title groups often use the first sibling record as the parent of later siblings;
+- those animation-parent relationships do not match the target sprites' node-parent hierarchy;
+- tenka/top_00 child tracks under the same group contain deliberately staggered absolute clip-frame ranges:
+  - Shing 10..15
+  - Soubi 20..25
+  - Basara 30..35
+  - Guide 40..45
+  - Settei 50..55
+- subtracting or accumulating parent durations would destroy that intended cascade.
+
+Therefore:
+- animation_tree remains valid for scope/group traversal;
+- descendants are sampled using the same selected clip frame, clamped only to their own duration;
+- parent_animation must not be used as an implicit frame offset.
+
+This also matches the EBOOT runtime cSprAnim fields mParentID/mpParent: parentage is an object relationship, while key timestamps already provide timing.
+
+## 2026-09-30 interpolation fidelity rule
+
+Interpolation code 5 remains unproven.
+
+Observed facts:
+- it is used on position/scale tracks;
+- transform keys do not contain hidden tangent/control values in their spare vector components;
+- generic MT Framework binaries expose easecurve/hermitecurve data types, but no direct evidence yet ties PSL code 5 to either evaluator.
+
+The harness currently approximates code 5 with smoothstep for visualization only.
+
+Any selected animation subtree containing code-5 keys now emits an explicit animation warning:
+`interpolation code 5 is approximated as smoothstep; exact MT Framework curve is not yet proven`
+
+This prevents approximate renders from being mistaken for exact runtime reproduction.
