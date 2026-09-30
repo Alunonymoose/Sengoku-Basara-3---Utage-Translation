@@ -10,7 +10,7 @@ import argparse, gzip, hashlib, json, math, struct, sys
 from collections import Counter
 from pathlib import Path
 from typing import Iterable
-from PIL import Image
+from PIL import Image, ImageChops
 
 HERE = Path(__file__).resolve().parent
 PROJECT = HERE.parent
@@ -865,6 +865,66 @@ def _invert_affine(m):
 def _node_alpha(colors):
     return sum((c >> 24) & 0xFF for c in colors) / (4.0 * 255.0)
 
+def _argb_to_rgba(value):
+    return ((value >> 16) & 0xFF, (value >> 8) & 0xFF,
+            value & 0xFF, (value >> 24) & 0xFF)
+
+def _vertex_modulation(size, colors):
+    """Bilinear TL/TR/BL/BR AARRGGBB modulation image."""
+    w, h = size
+    if w <= 0 or h <= 0:
+        raise ValueError(f"invalid modulation size {size}")
+    tl, tr, bl, br = [_argb_to_rgba(v) for v in colors]
+    xvals = [round(255 * i / max(1, w - 1)) for i in range(w)]
+    yvals = [round(255 * i / max(1, h - 1)) for i in range(h)]
+    xmask = Image.new("L", (w, 1)); xmask.putdata(xvals); xmask = xmask.resize((w, h))
+    ymask = Image.new("L", (1, h)); ymask.putdata(yvals); ymask = ymask.resize((w, h))
+    top = Image.composite(Image.new("RGBA", size, tr), Image.new("RGBA", size, tl), xmask)
+    bottom = Image.composite(Image.new("RGBA", size, br), Image.new("RGBA", size, bl), xmask)
+    return Image.composite(bottom, top, ymask)
+
+def _warp_tile(tile, geometry, world_matrix, viewport_scale, output_size):
+    out_w, out_h = output_size
+    sx, sy = viewport_scale
+    gx = (geometry[2] - geometry[0]) / max(1, tile.width)
+    gy = (geometry[3] - geometry[1]) / max(1, tile.height)
+    source_to_local = (gx, 0.0, geometry[0], 0.0, gy, geometry[1])
+    world_to_output = (sx, 0.0, 0.0, 0.0, sy, 0.0)
+    source_to_output = _mat_mul(
+        world_to_output, _mat_mul(world_matrix, source_to_local))
+    inverse = _invert_affine(source_to_output)
+    return tile.transform(
+        (out_w, out_h), Image.Transform.AFFINE, inverse,
+        resample=Image.Resampling.BICUBIC, fillcolor=(0, 0, 0, 0))
+
+def _mask_canvas(arc, layout, states, mask_node, atlas_scale, viewport_scale, output_size):
+    """Rasterize a linked type-5 mask; geometry is authoritative fallback."""
+    state = states[mask_node.index]
+    if not state["visible"]:
+        return Image.new("L", output_size, 0)
+    geometry = state["geometry"]
+    tile = None
+    if mask_node.texture:
+        try:
+            tex_entry = find_entry(arc, mask_node.texture)
+            image, _raw = decode_member(arc, tex_entry)
+            ux0, uy0, ux1, uy1 = state["uv"]
+            rect = tuple(round(v * atlas_scale) for v in (ux0, uy0, ux1, uy1))
+            if (0 <= rect[0] < rect[2] <= image.width
+                    and 0 <= rect[1] < rect[3] <= image.height):
+                tile = image.crop(rect)
+        except Exception:
+            tile = None
+    if tile is None:
+        # Some proven type-5 masks use a tiny white resource but derive shape
+        # from mAnimSprRect / geometry. A solid local quad is the conservative fallback.
+        gw = max(1, abs(geometry[2] - geometry[0]))
+        gh = max(1, abs(geometry[3] - geometry[1]))
+        tile = Image.new("RGBA", (gw, gh), (255, 255, 255, 255))
+    world = _animated_world_matrix(layout, states, mask_node.index)
+    warped = _warp_tile(tile, geometry, world, viewport_scale, output_size)
+    return warped.getchannel("A")
+
 def cmd_render_layout(args):
     arc = core.parse_arc(Path(args.arc))
     entry, layout = get_layout(arc, args.layout)
@@ -897,7 +957,7 @@ def cmd_render_layout(args):
         if root else None
     )
     for node in layout.nodes:
-        if node.node_type != 2 or not node.texture:
+        if node.node_type not in (2, 3) or not node.texture:
             continue
         if root and not args.include_static and node.index not in animated_targets:
             continue
@@ -916,7 +976,11 @@ def cmd_render_layout(args):
                     "index": node.index, "name": node.name,
                     "error": "visibility=0 at selected animation state"})
                 continue
-            alpha = _node_alpha(state["colors"]) if (root or args.respect_alpha) else 1.0
+            alpha = (
+                _node_alpha(state["colors"])
+                if node.node_type == 2 and (root or args.respect_alpha)
+                else 1.0
+            )
             if alpha <= 0.0:
                 skipped.append({
                     "index": node.index, "name": node.name,
@@ -936,23 +1000,25 @@ def cmd_render_layout(args):
             px1, py1 = round(dx1 * sx), round(dy1 * sy)
             if px1 <= px0 or py1 <= py0:
                 raise ValueError(f"invalid destination box {(px0, py0, px1, py1)}")
-            if alpha < 0.999:
+            if node.node_type == 3:
+                tile = ImageChops.multiply(tile, _vertex_modulation(tile.size, state["colors"]))
+            elif alpha < 0.999:
                 tile.putalpha(tile.getchannel("A").point(
                     lambda v: max(0, min(255, round(v * alpha)))))
 
-            # Source pixels -> local geometry -> hierarchical PSL transform -> output viewport.
-            gx = (node.geometry[2] - node.geometry[0]) / max(1, tile.width)
-            gy = (node.geometry[3] - node.geometry[1]) / max(1, tile.height)
-            source_to_local = (gx, 0.0, node.geometry[0],
-                               0.0, gy, node.geometry[1])
             local_to_world = _animated_world_matrix(layout, states, node.index)
-            world_to_output = (sx, 0.0, 0.0, 0.0, sy, 0.0)
-            source_to_output = _mat_mul(
-                world_to_output, _mat_mul(local_to_world, source_to_local))
-            inverse = _invert_affine(source_to_output)
-            warped = tile.transform(
-                (out_w, out_h), Image.Transform.AFFINE, inverse,
-                resample=Image.Resampling.BICUBIC, fillcolor=(0, 0, 0, 0))
+            warped = _warp_tile(
+                tile, state["geometry"], local_to_world, (sx, sy), (out_w, out_h))
+
+            mask_node = layout.mask_for(node.index)
+            mask_applied = None
+            if mask_node is not None:
+                mask = _mask_canvas(
+                    arc, layout, states, mask_node, args.atlas_scale,
+                    (sx, sy), (out_w, out_h))
+                warped.putalpha(ImageChops.multiply(warped.getchannel("A"), mask))
+                mask_applied = mask_node.index
+
             canvas.alpha_composite(warped)
             rendered.append({
                 **node_info(layout, node, args.atlas_scale),
@@ -963,6 +1029,8 @@ def cmd_render_layout(args):
                 "animated_rotation": list(state["rotation"]),
                 "animated_visible": state["visible"],
                 "alpha": alpha,
+                "vertex_modulation": node.node_type == 3,
+                "mask_applied": mask_applied,
                 "texture_member": tex_entry.name,
                 "texture_sha256": sha256(raw),
                 "dest_bbox_logical_animated": [dx0, dy0, dx1, dy1],

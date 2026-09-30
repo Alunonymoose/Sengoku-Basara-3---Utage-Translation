@@ -7,6 +7,7 @@ Utage's texture-atlas coordinates map to physical XET pixels at 2x.
 """
 from __future__ import annotations
 
+import math
 import re
 import struct
 from dataclasses import dataclass, field
@@ -204,31 +205,73 @@ class Layout:
         return [n for n in self.nodes if n.texture and
                 n.texture.replace("/", "\\").lower().endswith(tail)]
 
-    def world_transform(self, index: int) -> tuple[float, float, float, float]:
-        """Return world x/y and accumulated scale; rotation is not applied."""
+    def mask_for(self, index: int) -> LayoutNode | None:
+        """Resolve link_40 only when it targets a proven type-5 mask node."""
+        target = self.nodes[index].link_40
+        if 0 <= target < len(self.nodes) and self.nodes[target].node_type == 5:
+            return self.nodes[target]
+        return None
+
+    def world_matrix(self, index: int) -> tuple[float, float, float, float, float, float]:
+        """Return the hierarchical 2D affine matrix in logical screen coordinates."""
         visiting: set[int] = set()
+        cache: dict[int, tuple[float, float, float, float, float, float]] = {}
 
-        def walk(i: int) -> tuple[float, float, float, float]:
+        def mul(a, b):
+            aa, ac, atx, ab, ad, aty = a
+            ba, bc, btx, bb, bd, bty = b
+            return (
+                aa * ba + ac * bb,
+                aa * bc + ac * bd,
+                aa * btx + ac * bty + atx,
+                ab * ba + ad * bb,
+                ab * bc + ad * bd,
+                ab * btx + ad * bty + aty,
+            )
+
+        def walk(i: int):
             if i < 0:
-                return 0.0, 0.0, 1.0, 1.0
+                return (1.0, 0.0, 0.0, 0.0, 1.0, 0.0)
+            if i in cache:
+                return cache[i]
             if i in visiting or i >= len(self.nodes):
-
                 raise ValueError(f"invalid/cyclic PSL parent at node {i}")
             visiting.add(i)
             node = self.nodes[i]
-            px, py, psx, psy = walk(node.parent)
+            parent = walk(node.parent)
             visiting.remove(i)
-            x = px + node.position[0] * psx
-            y = py + node.position[1] * psy
-            return x, y, psx * node.scale[0], psy * node.scale[1]
+            r = math.radians(node.rotation)
+            co, sn = math.cos(r), math.sin(r)
+            sx, sy = node.scale
+            local = (
+                co * sx, -sn * sy, node.position[0],
+                sn * sx,  co * sy, node.position[1],
+            )
+            value = mul(parent, local)
+            cache[i] = value
+            return value
 
         return walk(index)
 
-    def logical_bbox(self, index: int) -> tuple[float, float, float, float]:
+    def world_transform(self, index: int) -> tuple[float, float, float, float]:
+        """Compatibility pose: world origin plus affine axis magnitudes."""
+        a, c, tx, b, d, ty = self.world_matrix(index)
+        return tx, ty, math.hypot(a, b), math.hypot(c, d)
+
+    def transformed_corners(self, index: int) -> list[tuple[float, float]]:
         node = self.nodes[index]
-        x, y, sx, sy = self.world_transform(index)
+        a, c, tx, b, d, ty = self.world_matrix(index)
         x0, y0, x1, y1 = node.geometry
-        return x + x0 * sx, y + y0 * sy, x + x1 * sx, y + y1 * sy
+        return [
+            (a * x + c * y + tx, b * x + d * y + ty)
+            for x, y in ((x0, y0), (x1, y0), (x1, y1), (x0, y1))
+        ]
+
+    def logical_bbox(self, index: int) -> tuple[float, float, float, float]:
+        points = self.transformed_corners(index)
+        xs = [p[0] for p in points]
+        ys = [p[1] for p in points]
+        return min(xs), min(ys), max(xs), max(ys)
 
 
 def is_layout(raw: bytes) -> bool:
