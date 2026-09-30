@@ -502,13 +502,16 @@ def node_info(layout, node, atlas_scale=2.0):
     return {
         "index": node.index, "name": node.name, "role": node.role,
         "type": node.node_type, "parent": node.parent, "texture": node.texture,
-        "position": list(node.position), "scale": list(node.scale),
+        "position": list(node.position), "rotation_deg": node.rotation,
+        "scale": list(node.scale),
         "geometry": list(node.geometry), "uv_logical": list(node.uv),
         "source_rect_physical": list(node.source_rect(atlas_scale)),
         "world_transform": list(layout.world_transform(node.index)),
         "dest_bbox_logical": list(layout.logical_bbox(node.index)),
         "colors": [f"0x{c:08x}" for c in node.colors],
-        "material": node.material,
+        "shader_type": node.shader_type, "blend_state": node.blend_state,
+        "links": {"3c": node.link_3c, "40": node.link_40, "44": node.link_44},
+        "mask_node": (layout.mask_for(node.index).index if layout.mask_for(node.index) else None),
     }
 
 def cmd_layouts(args):
@@ -722,11 +725,15 @@ def _sample_channel(channel, frame):
             return a
         b = right.float_values()
         return tuple(a[i] + (b[i] - a[i]) * t for i in range(min(len(a), len(b))))
-    if channel.name == "uv_rect":
+    if channel.name in ("geometry_rect", "uv_rect"):
+        def signed(v):
+            return v - 0x100000000 if v & 0x80000000 else v
+        a = tuple(signed(v) for v in left.values) if channel.name == "geometry_rect" else left.values
         if left is right or t <= 0.0:
-            return left.values
-        return tuple(round(left.values[i] + (right.values[i] - left.values[i]) * t)
-                     for i in range(min(len(left.values), len(right.values))))
+            return a
+        b = tuple(signed(v) for v in right.values) if channel.name == "geometry_rect" else right.values
+        return tuple(round(a[i] + (b[i] - a[i]) * t)
+                     for i in range(min(len(a), len(b))))
     if channel.name.startswith("color_") and left.values:
         if left is right or t <= 0.0 or not right.values:
             return (left.values[0],)
@@ -750,8 +757,9 @@ def _animated_local_states(layout, root, frame):
     states = {
         n.index: {
             "position": list(n.position), "scale": list(n.scale),
-            "uv": list(n.uv), "colors": list(n.colors),
+            "geometry": list(n.geometry), "uv": list(n.uv), "colors": list(n.colors),
             "rotation": [0.0, 0.0, n.rotation, 0.0],
+            "visible": True,
         }
         for n in layout.nodes
     }
@@ -775,8 +783,12 @@ def _animated_local_states(layout, root, frame):
                     state["scale"] = values[:2]
                 elif channel.name == "rotation":
                     state["rotation"] = values
+            elif channel.name == "geometry_rect" and len(values) >= 4:
+                state["geometry"] = list(values[:4])
             elif channel.name == "uv_rect" and len(values) >= 4:
                 state["uv"] = list(values[:4])
+            elif channel.name == "visibility" and values:
+                state["visible"] = bool(values[0])
             elif channel.name.startswith("color_") and values:
                 ci = int(channel.name.rsplit("_", 1)[1])
                 state["colors"][ci] = values[0]
@@ -834,7 +846,7 @@ def _animated_world_transform(layout, states, index):
 def _animated_bbox(layout, states, index):
     node = layout.nodes[index]
     m = _animated_world_matrix(layout, states, index)
-    x0, y0, x1, y1 = node.geometry
+    x0, y0, x1, y1 = states[index]["geometry"]
     pts = [_transform_point(m, x, y) for x, y in
            ((x0, y0), (x1, y0), (x1, y1), (x0, y1))]
     return (min(p[0] for p in pts), min(p[1] for p in pts),
@@ -899,6 +911,11 @@ def cmd_render_layout(args):
     for node in chosen:
         try:
             state = states[node.index]
+            if not state["visible"]:
+                skipped.append({
+                    "index": node.index, "name": node.name,
+                    "error": "visibility=0 at selected animation state"})
+                continue
             alpha = _node_alpha(state["colors"]) if (root or args.respect_alpha) else 1.0
             if alpha <= 0.0:
                 skipped.append({
@@ -939,10 +956,12 @@ def cmd_render_layout(args):
             canvas.alpha_composite(warped)
             rendered.append({
                 **node_info(layout, node, args.atlas_scale),
+                "animated_geometry": list(state["geometry"]),
                 "animated_uv_logical": list(state["uv"]),
                 "animated_position": list(state["position"]),
                 "animated_scale": list(state["scale"]),
                 "animated_rotation": list(state["rotation"]),
+                "animated_visible": state["visible"],
                 "alpha": alpha,
                 "texture_member": tex_entry.name,
                 "texture_sha256": sha256(raw),

@@ -1,4 +1,4 @@
-﻿"""Parser for MT Framework Lite PSL / .lsp sprite layouts.
+"""Parser for MT Framework Lite PSL / .lsp sprite layouts.
 
 SB3/Utage PSL v0x21 uses a 16-byte header, a 176-byte big-endian node
 table, then an unaligned pair of counted strings (name, texture) per node.
@@ -57,11 +57,15 @@ class LayoutNode:
     node_type: int = 0
 
     parent: int = -1
+    link_3c: int = -1
+    link_40: int = -1
+    link_44: int = -1
     position: tuple[float, float] = (0.0, 0.0)
     rotation: float = 0.0
     scale: tuple[float, float] = (1.0, 1.0)
     size: tuple[int, int] = (0, 0)
-    material: int = 0
+    shader_type: int = 0
+    blend_state: int = 0
     geometry: tuple[int, int, int, int] = (0, 0, 0, 0)
     uv: tuple[int, int, int, int] = (0, 0, 0, 0)
     colors: tuple[int, int, int, int] = (0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF)
@@ -83,32 +87,37 @@ class LayoutNode:
             return "group"
         return ""
 
+    @property
+    def material(self) -> int:
+        """Backward-compatible alias for the now identified mShaderType field."""
+        return self.shader_type
+
     def source_rect(self, atlas_scale: float = 2.0) -> tuple[int, int, int, int]:
         return tuple(round(v * atlas_scale) for v in self.uv)
 
 ANIMATION_CHANNELS = (
-    ("unknown_0", None),
+    ("control_0", None),
     ("position", 6),
-    ("unknown_2", None),
+    ("control_2", None),
     ("rotation", 6),
-    ("unknown_4", None),
+    ("control_4", None),
     ("scale", 6),
-    ("unknown_6", None),
-    ("unknown_7", 6),
-    ("uv_mode", None),
+    ("control_6", None),
+    ("geometry_rect", 6),
+    ("control_8", None),
     ("uv_rect", 6),
-    ("unknown_10", None),
+    ("control_10", None),
     ("color_0", 3),
-    ("unknown_12", None),
+    ("control_12", None),
     ("color_1", 3),
-    ("unknown_14", None),
+    ("control_14", None),
     ("color_2", 3),
-    ("unknown_16", None),
+    ("control_16", None),
     ("color_3", 3),
-    ("unknown_18", None),
-    ("unknown_19", 2),
-    ("unknown_20", 2),
-    ("unknown_21", 3),
+    ("control_18", None),
+    ("track_19", 2),
+    ("control_20", None),
+    ("visibility", 3),
 )
 
 
@@ -163,6 +172,7 @@ class Layout:
     name_table_offset: int = 0
     name_table_end: int = 0
     animation_parse_error: str = ""
+    aux_names: list[str] = field(default_factory=list)
 
     @property
     def texture_count(self) -> int:
@@ -332,11 +342,14 @@ def parse_layout(raw: bytes, name: str = "") -> Layout:
         node = LayoutNode(
             index=index, name=node_name, texture=texture,
             node_type=_u32(rec, 0x54), parent=_s32(rec, 0x38),
+            link_3c=_s32(rec, 0x3C), link_40=_s32(rec, 0x40),
+            link_44=_s32(rec, 0x44),
             position=(_f32(rec, 0x00), _f32(rec, 0x04)),
             rotation=_f32(rec, 0x18),
             scale=(_f32(rec, 0x20), _f32(rec, 0x24)),
             size=(_s32(rec, 0x48), _s32(rec, 0x4C)),
-            material=_s32(rec, 0x60),
+            shader_type=_s32(rec, 0x60),
+            blend_state=_s32(rec, 0x68),
             geometry=tuple(_s32(rec, o) for o in (0x74, 0x78, 0x7C, 0x80)),
             uv=tuple(_s32(rec, o) for o in (0x84, 0x88, 0x8C, 0x90)),
             colors=tuple(_u32(rec, o) for o in (0x94, 0x98, 0x9C, 0xA0)),
@@ -353,6 +366,7 @@ def parse_layout(raw: bytes, name: str = "") -> Layout:
         name_table_offset=name_table_offset,
         name_table_end=cursor,
         animation_parse_error=animation_parse_error,
+        aux_names=animation_names,
     )
 
 
