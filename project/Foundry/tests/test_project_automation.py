@@ -72,6 +72,26 @@ class ProjectAutomationTests(unittest.TestCase):
             self.assertFalse(result["reproducible"])
             self.assertEqual(result["only_left"], ["a.bin"])
 
+    def test_doctor_detects_live_graph_staleness(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            live = root / "live"
+            eng = live / "PS3_GAME" / "USRDIR" / "nativePS3" / "rom" / "eng"
+            eng.mkdir(parents=True)
+            target = eng / "a.bin"
+            target.write_bytes(b"a")
+            fg = doctor.fg.FoundryGraph(root / "graph.sqlite", live)
+            try:
+                fg.scan_root(doctor.fg.RootSpec("ENG", eng), None, None)
+                fresh = doctor.live_role_freshness(fg, "ENG", eng)
+                self.assertTrue(fresh["fresh"])
+                target.write_bytes(b"changed")
+                stale = doctor.live_role_freshness(fg, "ENG", eng)
+                self.assertFalse(stale["fresh"])
+                self.assertEqual(stale["changed_count"], 1)
+            finally:
+                fg.close()
+
 
 if __name__ == "__main__":
     unittest.main()
