@@ -223,9 +223,12 @@ class Layout:
 
     def mask_for(self, index: int) -> LayoutNode | None:
         """Resolve link_40 only when it targets a proven type-5 mask node."""
-        target = self.nodes[index].link_40
-        if 0 <= target < len(self.nodes) and self.nodes[target].node_type == 5:
-            return self.nodes[target]
+        target_id = self.nodes[index].link_40
+        if target_id < 0:
+            return None
+        target = self.node_by_id(target_id)
+        if target is not None and target.node_type == 5:
+            return target
         return None
 
     def world_matrix(self, index: int) -> tuple[float, float, float, float, float, float]:
