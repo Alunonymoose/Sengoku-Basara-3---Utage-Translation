@@ -56,6 +56,52 @@ def derive_overall(checks: list[dict[str, Any]]) -> str:
     return "PASS"
 
 
+def validate_terminology_ledger(data: dict[str, Any] | None) -> tuple[str, str, dict[str, Any]]:
+    if not data:
+        return "WARN", "terminology ledger is missing or unreadable", {}
+    entries = data.get("entries", [])
+    errors = []
+    ids = set()
+    blockers = []
+    blocking = {"CONFLICT", "NEEDS_SOURCE", "NEEDS_CONTEXT"}
+    for i, entry in enumerate(entries):
+        eid = entry.get("id")
+        if not eid:
+            errors.append(f"entry {i}: missing id")
+            continue
+        if eid in ids:
+            errors.append(f"duplicate id: {eid}")
+        ids.add(eid)
+        status = entry.get("status")
+        canonical = entry.get("canonical_english")
+        if not status:
+            errors.append(f"{eid}: missing status")
+        if status not in blocking and not canonical:
+            errors.append(f"{eid}: non-blocking status requires canonical_english")
+        forbidden = entry.get("forbidden_or_superseded_variants", [])
+        if canonical and canonical in forbidden:
+            errors.append(f"{eid}: canonical wording is also marked forbidden")
+        if status in blocking:
+            blockers.append({
+                "id": eid,
+                "status": status,
+                "canonical_english": canonical,
+                "preferred_candidate": entry.get("preferred_candidate"),
+                "current_variants": entry.get("current_variants", []),
+            })
+    if errors:
+        return "FAIL", f"terminology ledger has {len(errors)} validation error(s)", {
+            "errors": errors, "blockers": blockers, "entry_count": len(entries)
+        }
+    if blockers:
+        return "WARN", f"terminology ledger has {len(blockers)} unresolved release blocker(s)", {
+            "blockers": blockers, "entry_count": len(entries)
+        }
+    return "PASS", f"{len(entries)} terminology entries are release-ready", {
+        "blockers": [], "entry_count": len(entries)
+    }
+
+
 def validate_oracle_lock(data: dict[str, Any] | None) -> tuple[str, str, dict[str, Any]]:
     if not data:
         return "FAIL", "external-oracle lock is missing or unreadable", {}
@@ -288,6 +334,10 @@ def run_doctor(live_root: Path = DEFAULT_LIVE) -> dict[str, Any]:
     oracle_path = FOUNDRY_ROOT / "third_party" / "ORACLES.lock.json"
     ostate, osummary, odetails = validate_oracle_lock(load_json(oracle_path))
     checks.append(make_check("external-oracles", ostate, osummary, odetails))
+
+    terminology_path = PROJECT_ROOT / "terminology" / "canonical_english_terminology_2026-09-24.json"
+    tstate, tsummary, tdetails = validate_terminology_ledger(load_json(terminology_path))
+    checks.append(make_check("terminology", tstate, tsummary, tdetails))
 
     runtime_path = foundry_dir / "runtime" / "RUNTIME_ACCEPTANCE_CURRENT.json"
     runtime = load_json(runtime_path)
