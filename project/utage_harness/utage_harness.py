@@ -6,7 +6,7 @@ parsers/codecs, renders known 2D composition contracts, and correlates RPCS3
 RRC v6 active memory with exact live ARC members.
 """
 from __future__ import annotations
-import argparse, gzip, hashlib, json, struct, sys
+import argparse, gzip, hashlib, json, math, struct, sys
 from collections import Counter
 from pathlib import Path
 from typing import Iterable
@@ -203,6 +203,67 @@ class R:
             shift += 7
             if shift >= 35: raise ValueError("bad RRC VLE")
 
+RRC_VP_WORDS = 544 * 4
+RRC_REGISTER_WORDS = 0x10000 // 4
+RRC_STATE_BYTES = (RRC_VP_WORDS + RRC_REGISTER_WORDS) * 4
+
+def _f32le_word(value: int) -> float:
+    return struct.unpack("<f", struct.pack("<I", value))[0]
+
+def _packed_origin_size(value: int) -> dict:
+    return {"origin": value & 0xFFFF, "size": (value >> 16) & 0xFFFF,
+            "raw": f"0x{value:08x}"}
+
+def decode_rrc_register_state(raw: bytes, offset: int) -> dict:
+    """Decode the initial rsx_state serialized at the end of RPCS3 RRC v6.
+
+    Current RPCS3 frame capture serializes 544*4 transform-program u32s
+    followed directly by the 0x10000-byte RSX method-register array.
+    """
+    tail = raw[offset:]
+    if len(tail) != RRC_STATE_BYTES:
+        raise ValueError(
+            f"unexpected RRC rsx_state size {len(tail)}; expected {RRC_STATE_BYTES}")
+    vp_bytes = RRC_VP_WORDS * 4
+    registers = struct.unpack(
+        f"<{RRC_REGISTER_WORDS}I", tail[vp_bytes:vp_bytes + 0x10000])
+
+    def reg(byte_address: int) -> int:
+        return registers[byte_address >> 2]
+
+    def f4(byte_address: int) -> list[float]:
+        return [_f32le_word(reg(byte_address + i * 4)) for i in range(4)]
+
+    surface_x = _packed_origin_size(reg(0x0200))
+    surface_y = _packed_origin_size(reg(0x0204))
+    scissor_x = _packed_origin_size(reg(0x08C0))
+    scissor_y = _packed_origin_size(reg(0x08C4))
+    viewport_x = _packed_origin_size(reg(0x0A00))
+    viewport_y = _packed_origin_size(reg(0x0A04))
+    return {
+        "serialized_bytes": len(tail),
+        "transform_program_bytes": vp_bytes,
+        "register_bytes": 0x10000,
+        "tail_sha256": sha256(tail),
+        "surface_clip": {
+            "x": surface_x["origin"], "y": surface_y["origin"],
+            "width": surface_x["size"], "height": surface_y["size"],
+            "raw_horizontal": surface_x["raw"], "raw_vertical": surface_y["raw"],
+        },
+        "scissor": {
+            "x": scissor_x["origin"], "y": scissor_y["origin"],
+            "width": scissor_x["size"], "height": scissor_y["size"],
+            "raw_horizontal": scissor_x["raw"], "raw_vertical": scissor_y["raw"],
+        },
+        "viewport_rect": {
+            "x": viewport_x["origin"], "y": viewport_y["origin"],
+            "width": viewport_x["size"], "height": viewport_y["size"],
+            "raw_horizontal": viewport_x["raw"], "raw_vertical": viewport_y["raw"],
+        },
+        "viewport_offset": f4(0x0A20),
+        "viewport_scale": f4(0x0A30),
+    }
+
 def parse_rrc(path: Path):
     raw = path.read_bytes()
     if raw[:2] == b"\x1f\x8b" or path.suffix.lower() == ".gz":
@@ -219,16 +280,49 @@ def parse_rrc(path: Path):
     payloads = {}
     for _ in range(r.vle()):
         blob = r.raw(r.vle()); payloads[r.u64()] = blob
-    for _ in range(r.vle()): r.raw(132); r.u64()
-    active = set(); commands = r.vle()
-    for _ in range(commands):
-        r.u32(); r.u32()
-        for _ in range(r.vle()): active.add(r.u64())
-        r.u64(); r.u64()
+    display_states = {}
+    for _ in range(r.vle()):
+        blob = r.raw(132)
+        state_hash = r.u64()
+        words = struct.unpack("<33I", blob)
+        count = min(words[32], 8)
+        display_states[state_hash] = {
+            "count": count,
+            "buffers": [
+                {"width": words[i * 4], "height": words[i * 4 + 1],
+                 "pitch": words[i * 4 + 2], "offset": words[i * 4 + 3]}
+                for i in range(count)
+            ],
+        }
+
+    active = set(); active_display = set(); command_rows = []
+    commands = r.vle()
+    for command_index in range(commands):
+        first, value = r.u32(), r.u32()
+        memory_refs = [r.u64() for _ in range(r.vle())]
+        active.update(memory_refs)
+        tile_state = r.u64()
+        display_state = r.u64()
+        if display_state:
+            active_display.add(display_state)
+        command_rows.append({
+            "index": command_index, "first": first, "value": value,
+            "memory_refs": memory_refs, "tile_state": tile_state,
+            "display_state": display_state,
+        })
     states = {blocks[h][2] for h in active if h in blocks}
-    return {"version": version, "commands": commands, "blocks": blocks,
-            "payloads": payloads, "active_blocks": active, "active_states": states,
-            "decompressed_size": len(raw), "reg_state_offset": r.p}
+    rsx_state = decode_rrc_register_state(raw, r.p)
+    register_blob = raw[
+        r.p + RRC_VP_WORDS * 4:
+        r.p + RRC_VP_WORDS * 4 + 0x10000]
+    initial_registers = struct.unpack(f"<{RRC_REGISTER_WORDS}I", register_blob)
+    return {"version": version, "commands": commands, "command_rows": command_rows,
+            "initial_registers": initial_registers,
+            "blocks": blocks, "payloads": payloads,
+            "display_states": display_states, "active_display_states": active_display,
+            "active_blocks": active, "active_states": states,
+            "decompressed_size": len(raw), "reg_state_offset": r.p,
+            "rsx_state": rsx_state}
 
 def cmd_rrc_info(args):
     p = parse_rrc(Path(args.capture))
@@ -237,8 +331,138 @@ def cmd_rrc_info(args):
            "memory_blocks": len(p["blocks"]), "payloads_total": len(p["payloads"]),
            "active_blocks": len(p["active_blocks"]), "active_unique_payloads": len(p["active_states"]),
            "active_payload_bytes": active_bytes, "reg_state_offset": p["reg_state_offset"],
-           "opaque_tail_bytes": p["decompressed_size"] - p["reg_state_offset"]}
+           "rsx_state_bytes": p["rsx_state"]["serialized_bytes"],
+           "surface_clip": p["rsx_state"]["surface_clip"],
+           "viewport_rect": p["rsx_state"]["viewport_rect"],
+           "viewport_offset": p["rsx_state"]["viewport_offset"],
+           "viewport_scale": p["rsx_state"]["viewport_scale"]}
     print(json.dumps(out, indent=2))
+
+RSX_METHOD_NAMES = {
+    0x0200: "surface_clip_horizontal",
+    0x0204: "surface_clip_vertical",
+    0x0304: "alpha_test_enable",
+    0x0308: "alpha_func",
+    0x030C: "alpha_ref",
+    0x0310: "blend_enable",
+    0x0314: "blend_src_factor",
+    0x0318: "blend_dst_factor",
+    0x031C: "blend_color",
+    0x0320: "blend_equation",
+    0x08C0: "scissor_horizontal",
+    0x08C4: "scissor_vertical",
+    0x0A00: "viewport_horizontal",
+    0x0A04: "viewport_vertical",
+    0x0A20: "viewport_offset_x",
+    0x0A24: "viewport_offset_y",
+    0x0A28: "viewport_offset_z",
+    0x0A2C: "viewport_offset_w",
+    0x0A30: "viewport_scale_x",
+    0x0A34: "viewport_scale_y",
+    0x0A38: "viewport_scale_z",
+    0x0A3C: "viewport_scale_w",
+    0x1808: "begin_end",
+}
+
+BLEND_FACTOR_NAMES = {
+    0x0000: "zero", 0x0001: "one",
+    0x0300: "src_color", 0x0301: "one_minus_src_color",
+    0x0302: "src_alpha", 0x0303: "one_minus_src_alpha",
+    0x0304: "dst_alpha", 0x0305: "one_minus_dst_alpha",
+    0x0306: "dst_color", 0x0307: "one_minus_dst_color",
+    0x0308: "src_alpha_saturate",
+    0x8001: "constant_color", 0x8002: "one_minus_constant_color",
+    0x8003: "constant_alpha", 0x8004: "one_minus_constant_alpha",
+}
+BLEND_EQUATION_NAMES = {
+    0x8006: "add", 0x8007: "min", 0x8008: "max",
+    0x800A: "subtract", 0x800B: "reverse_subtract",
+}
+
+def _method_address(first):
+    return first & 0x3FFFF
+
+def _pipeline_snapshot(registers):
+    def reg(addr): return registers[addr >> 2]
+    def packed_pair(value, names):
+        lo, hi = value & 0xFFFF, (value >> 16) & 0xFFFF
+        return {
+            "rgb_raw": f"0x{lo:04x}", "alpha_raw": f"0x{hi:04x}",
+            "rgb": names.get(lo, "unknown"), "alpha": names.get(hi, "unknown"),
+        }
+    sx, sy = _packed_origin_size(reg(0x0200)), _packed_origin_size(reg(0x0204))
+    vx, vy = _packed_origin_size(reg(0x0A00)), _packed_origin_size(reg(0x0A04))
+    return {
+        "surface_clip": [sx["origin"], sy["origin"], sx["size"], sy["size"]],
+        "viewport_rect": [vx["origin"], vy["origin"], vx["size"], vy["size"]],
+        "viewport_offset": [_f32le_word(reg(0x0A20 + i * 4)) for i in range(4)],
+        "viewport_scale": [_f32le_word(reg(0x0A30 + i * 4)) for i in range(4)],
+        "blend_enable": bool(reg(0x0310)),
+        "blend_src": packed_pair(reg(0x0314), BLEND_FACTOR_NAMES),
+        "blend_dst": packed_pair(reg(0x0318), BLEND_FACTOR_NAMES),
+        "blend_equation": packed_pair(reg(0x0320), BLEND_EQUATION_NAMES),
+        "alpha_test_enable": bool(reg(0x0304)),
+        "alpha_func_raw": f"0x{reg(0x0308):08x}",
+        "alpha_ref_raw": f"0x{reg(0x030C):08x}",
+    }
+
+def _rrc_draw_snapshots(parsed):
+    registers = list(parsed["initial_registers"])
+    draws = []
+    interesting_writes = []
+    for row in parsed["command_rows"]:
+        method = _method_address(row["first"])
+        if method < 0x10000:
+            registers[method >> 2] = row["value"]
+        if method in RSX_METHOD_NAMES:
+            interesting_writes.append({
+                "command": row["index"], "method": RSX_METHOD_NAMES[method],
+                "address": f"0x{method:04x}", "value": f"0x{row['value']:08x}"})
+        if method == 0x1808 and row["value"] != 0:
+            display = parsed["display_states"].get(row["display_state"])
+            draws.append({
+                "command": row["index"], "primitive_raw": row["value"],
+                "display_state": (
+                    f"0x{row['display_state']:016x}" if row["display_state"] else None),
+                "display_buffers": display,
+                "memory_ref_count": len(row["memory_refs"]),
+                "pipeline": _pipeline_snapshot(registers),
+            })
+    return draws, interesting_writes
+
+def cmd_rrc_state(args):
+    p = parse_rrc(Path(args.capture))
+    draws, writes = _rrc_draw_snapshots(p)
+    active_displays = [
+        {"hash": f"0x{h:016x}", **p["display_states"][h]}
+        for h in sorted(p["active_display_states"])
+        if h in p["display_states"]
+    ]
+    print(json.dumps({
+        "capture": args.capture, **p["rsx_state"],
+        "initial_pipeline": _pipeline_snapshot(p["initial_registers"]),
+        "active_display_states": active_displays,
+        "draw_call_count": len(draws),
+        "interesting_method_write_count": len(writes),
+    }, indent=2))
+
+def cmd_rrc_draws(args):
+    p = parse_rrc(Path(args.capture))
+    draws, writes = _rrc_draw_snapshots(p)
+    if args.unique:
+        seen = set(); unique = []
+        for draw in draws:
+            key = json.dumps(draw["pipeline"], sort_keys=True)
+            if key not in seen:
+                seen.add(key); unique.append(draw)
+        draws = unique
+    if args.limit is not None:
+        draws = draws[:args.limit]
+    print(json.dumps({
+        "capture": args.capture, "draw_count_total": len(_rrc_draw_snapshots(p)[0]),
+        "returned": len(draws), "draws": draws,
+        "interesting_writes": writes if args.writes else None,
+    }, indent=2))
 
 def variants_for_member(raw: bytes) -> Iterable[tuple[str, bytes]]:
     yield "whole", raw
@@ -283,6 +507,7 @@ def node_info(layout, node, atlas_scale=2.0):
         "source_rect_physical": list(node.source_rect(atlas_scale)),
         "world_transform": list(layout.world_transform(node.index)),
         "dest_bbox_logical": list(layout.logical_bbox(node.index)),
+        "colors": [f"0x{c:08x}" for c in node.colors],
         "material": node.material,
     }
 
@@ -292,6 +517,12 @@ def cmd_layouts(args):
     for x in lsp.layouts_in_archive(arc):
         out.append({"member": x.name, "version": x.version, "declared_nodes": x.node_count,
                     "recovered_nodes": len(x.nodes), "textures": x.textures,
+                    "animation_count": len(x.animations),
+                    "animation_parse_error": x.animation_parse_error,
+                    "animation_roots": [
+                        {"index": a.index, "name": a.name, "type": a.record_type,
+                         "target_node": a.target_node, "duration": a.duration}
+                        for a in x.animation_roots],
                     "name_table_offset": x.name_table_offset, "name_table_end": x.name_table_end,
                     "nodes": [node_info(x, n) for n in x.nodes]})
     print(json.dumps({"archive": args.arc, "sha256": arc.data_sha256, "layouts": out},
@@ -336,18 +567,327 @@ def cmd_layout_nodes(args):
         "nodes": [node_info(layout, n, args.atlas_scale) for n in nodes],
     }, indent=2, ensure_ascii=False))
 
+def cmd_psl_sweep(args):
+    root = Path(args.root)
+    arcs = [root] if root.is_file() else list(root.rglob("*.arc"))
+    arc_ok = arc_fail = layout_count = layout_fail = node_count = animation_count = 0
+    failures = []
+    for path in arcs:
+        try:
+            arc = core.parse_arc(path)
+            arc_ok += 1
+        except Exception as exc:
+            arc_fail += 1
+            failures.append({"arc": str(path), "stage": "arc", "error": str(exc)})
+            continue
+        for entry in arc.entries:
+            if entry.type_hash != 0x60DD1B16 and not entry.name.lower().endswith(".lsp"):
+                continue
+            try:
+                raw = core.unpack_entry(entry)
+                if not lsp.is_layout(raw):
+                    continue
+                layout = lsp.parse_layout(raw, entry.name)
+                layout_count += 1
+                node_count += len(layout.nodes)
+                animation_count += len(layout.animations)
+                if (not layout.complete or len(layout.animations) != layout.aux_count
+                        or layout.animation_parse_error):
+                    layout_fail += 1
+                    failures.append({
+                        "arc": str(path), "member": entry.name,
+                        "nodes": [len(layout.nodes), layout.node_count],
+                        "animations": [len(layout.animations), layout.aux_count],
+                        "error": layout.animation_parse_error,
+                    })
+            except Exception as exc:
+                layout_fail += 1
+                failures.append({
+                    "arc": str(path), "member": entry.name,
+                    "stage": "layout", "error": str(exc),
+                })
+    report = {
+        "root": str(root), "arcs": len(arcs), "arc_ok": arc_ok,
+        "arc_fail": arc_fail, "layouts": layout_count,
+        "layout_fail": layout_fail, "nodes": node_count,
+        "animations": animation_count, "failures": failures,
+    }
+    text = json.dumps(report, indent=2, ensure_ascii=False)
+    print(text)
+    if args.json:
+        Path(args.json).write_text(text, encoding="utf-8")
+    if arc_fail or layout_fail:
+        raise RuntimeError(
+            f"PSL sweep failed: {arc_fail} ARC failure(s), {layout_fail} layout failure(s)")
+
+def cmd_layout_animations(args):
+    arc = core.parse_arc(Path(args.arc))
+    entry, layout = get_layout(arc, args.layout)
+    if not layout.animations:
+        print(json.dumps({
+            "archive": args.arc, "layout": entry.name,
+            "animation_count": 0,
+            "animation_parse_error": layout.animation_parse_error,
+        }, indent=2))
+        return
+    records = layout.animations
+    if args.root is not None:
+        root = _resolve_animation_root(layout, args.root)
+        records = layout.animation_tree(root.index)
+    if args.match:
+        needle = args.match.casefold()
+        records = [a for a in records if needle in a.name.casefold()
+                   or (0 <= a.target_node < len(layout.nodes)
+                       and needle in layout.nodes[a.target_node].name.casefold())]
+    out = []
+    for animation in records:
+        target_name = (
+            layout.nodes[animation.target_node].name
+            if 0 <= animation.target_node < len(layout.nodes) else "")
+        channels = []
+        for channel in animation.channels:
+            if channel.stride_words is None:
+                if channel.scalar:
+                    channels.append({
+                        "index": channel.index, "name": channel.name,
+                        "scalar": channel.scalar})
+            elif channel.keys:
+                channels.append({
+                    "index": channel.index, "name": channel.name,
+                    "key_count": len(channel.keys),
+                    "first_time": channel.keys[0].time,
+                    "last_time": channel.keys[-1].time})
+        out.append({
+            "index": animation.index, "name": animation.name,
+            "type": animation.record_type,
+            "target_node": animation.target_node,
+            "target_name": target_name,
+            "duration": animation.duration,
+            "parent_animation": animation.parent_animation,
+            "offset": animation.offset, "size": animation.size,
+            "channels": channels,
+        })
+    print(json.dumps({
+        "archive": args.arc, "archive_sha256": arc.data_sha256,
+        "layout": entry.name, "animation_count": len(layout.animations),
+        "roots": [{"index": a.index, "name": a.name} for a in layout.animation_roots],
+        "records": out,
+    }, indent=2, ensure_ascii=False))
+
+
+def _sample_animation_key(channel, frame):
+    if not channel.keys:
+        return None
+    selected = channel.keys[0]
+    for key in channel.keys:
+        if key.time > frame:
+            break
+        selected = key
+    return selected
+
+def _key_pair(channel, frame):
+    if not channel.keys:
+        return None, None, 0.0
+    if frame <= channel.keys[0].time:
+        return channel.keys[0], channel.keys[0], 0.0
+    if frame >= channel.keys[-1].time:
+        return channel.keys[-1], channel.keys[-1], 0.0
+    left = channel.keys[0]
+    for right in channel.keys[1:]:
+        if frame <= right.time:
+            span = max(1, right.time - left.time)
+            t = (frame - left.time) / span
+            if left.interpolation == 5:
+                t = t * t * (3.0 - 2.0 * t)
+            elif left.interpolation not in (3, 5):
+                t = 0.0
+            return left, right, t
+        left = right
+    return left, left, 0.0
+
+def _lerp_argb(a, b, t):
+    out = 0
+    for shift in (24, 16, 8, 0):
+        av, bv = (a >> shift) & 0xFF, (b >> shift) & 0xFF
+        out |= max(0, min(255, round(av + (bv - av) * t))) << shift
+    return out
+
+def _sample_channel(channel, frame):
+    left, right, t = _key_pair(channel, frame)
+    if left is None:
+        return None
+    if channel.name in ("position", "rotation", "scale"):
+        a = left.float_values()
+        if left is right or t <= 0.0:
+            return a
+        b = right.float_values()
+        return tuple(a[i] + (b[i] - a[i]) * t for i in range(min(len(a), len(b))))
+    if channel.name == "uv_rect":
+        if left is right or t <= 0.0:
+            return left.values
+        return tuple(round(left.values[i] + (right.values[i] - left.values[i]) * t)
+                     for i in range(min(len(left.values), len(right.values))))
+    if channel.name.startswith("color_") and left.values:
+        if left is right or t <= 0.0 or not right.values:
+            return (left.values[0],)
+        return (_lerp_argb(left.values[0], right.values[0], t),)
+    return left.values
+
+def _resolve_animation_root(layout, selector):
+    if selector is None:
+        return None
+    try:
+        idx = int(selector)
+        roots = [a for a in layout.animation_roots if a.index == idx]
+    except ValueError:
+        needle = selector.casefold()
+        roots = [a for a in layout.animation_roots if needle in a.name.casefold()]
+    if len(roots) != 1:
+        raise KeyError(f"animation root {selector!r} matched {len(roots)} roots")
+    return roots[0]
+
+def _animated_local_states(layout, root, frame):
+    states = {
+        n.index: {
+            "position": list(n.position), "scale": list(n.scale),
+            "uv": list(n.uv), "colors": list(n.colors),
+            "rotation": [0.0, 0.0, n.rotation, 0.0],
+        }
+        for n in layout.nodes
+    }
+    if root is None:
+        return states, []
+    warnings = []
+    for animation in layout.animation_tree(root.index):
+        if not 0 <= animation.target_node < len(layout.nodes):
+            continue
+        local_frame = 0 if animation.duration < 0 else min(max(frame, 0), animation.duration)
+        state = states[animation.target_node]
+        for channel in animation.channels:
+            values = _sample_channel(channel, local_frame)
+            if values is None:
+                continue
+            if channel.name in ("position", "rotation", "scale"):
+                values = list(values)
+                if channel.name == "position" and len(values) >= 2:
+                    state["position"] = values[:2]
+                elif channel.name == "scale" and len(values) >= 2:
+                    state["scale"] = values[:2]
+                elif channel.name == "rotation":
+                    state["rotation"] = values
+            elif channel.name == "uv_rect" and len(values) >= 4:
+                state["uv"] = list(values[:4])
+            elif channel.name.startswith("color_") and values:
+                ci = int(channel.name.rsplit("_", 1)[1])
+                state["colors"][ci] = values[0]
+    return states, sorted(set(warnings))
+
+def _mat_mul(a, b):
+    aa, ac, atx, ab, ad, aty = a
+    ba, bc, btx, bb, bd, bty = b
+    return (
+        aa * ba + ac * bb,
+        aa * bc + ac * bd,
+        aa * btx + ac * bty + atx,
+        ab * ba + ad * bb,
+        ab * bc + ad * bd,
+        ab * btx + ad * bty + aty,
+    )
+
+def _local_matrix(state):
+    x, y = state["position"][:2]
+    sx, sy = state["scale"][:2]
+    rot = state["rotation"][2] if len(state["rotation"]) >= 3 else 0.0
+    r = math.radians(rot)
+    c, sn = math.cos(r), math.sin(r)
+    return (c * sx, -sn * sy, x, sn * sx, c * sy, y)
+
+def _animated_world_matrix(layout, states, index):
+    visiting = set()
+    cache = {}
+    def walk(i):
+        if i < 0:
+            return (1.0, 0.0, 0.0, 0.0, 1.0, 0.0)
+        if i in cache:
+            return cache[i]
+        if i in visiting or i >= len(layout.nodes):
+            raise ValueError(f"invalid/cyclic PSL parent at node {i}")
+        visiting.add(i)
+        parent = walk(layout.nodes[i].parent)
+        visiting.remove(i)
+        value = _mat_mul(parent, _local_matrix(states[i]))
+        cache[i] = value
+        return value
+    return walk(index)
+
+def _transform_point(m, x, y):
+    a, c, tx, b, d, ty = m
+    return a * x + c * y + tx, b * x + d * y + ty
+
+def _animated_world_transform(layout, states, index):
+    m = _animated_world_matrix(layout, states, index)
+    x, y = _transform_point(m, 0.0, 0.0)
+    sx = math.hypot(m[0], m[3])
+    sy = math.hypot(m[1], m[4])
+    return x, y, sx, sy
+
+def _animated_bbox(layout, states, index):
+    node = layout.nodes[index]
+    m = _animated_world_matrix(layout, states, index)
+    x0, y0, x1, y1 = node.geometry
+    pts = [_transform_point(m, x, y) for x, y in
+           ((x0, y0), (x1, y0), (x1, y1), (x0, y1))]
+    return (min(p[0] for p in pts), min(p[1] for p in pts),
+            max(p[0] for p in pts), max(p[1] for p in pts))
+
+def _invert_affine(m):
+    a, c, tx, b, d, ty = m
+    det = a * d - b * c
+    if abs(det) < 1e-12:
+        raise ValueError("singular sprite transform")
+    return (
+        d / det, -c / det, (c * ty - d * tx) / det,
+        -b / det, a / det, (b * tx - a * ty) / det,
+    )
+
+def _node_alpha(colors):
+    return sum((c >> 24) & 0xFF for c in colors) / (4.0 * 255.0)
+
 def cmd_render_layout(args):
     arc = core.parse_arc(Path(args.arc))
     entry, layout = get_layout(arc, args.layout)
     logical_w, logical_h = args.logical_size
-    out_w, out_h = args.output_size or args.logical_size
+    rsx_surface = None
+    if args.rrc:
+        rsx_surface = parse_rrc(Path(args.rrc))["rsx_state"]["surface_clip"]
+    inferred_output = (
+        (rsx_surface["width"], rsx_surface["height"])
+        if rsx_surface else args.logical_size
+    )
+    out_w, out_h = args.output_size or inferred_output
     canvas = Image.new("RGBA", (out_w, out_h), tuple(args.background))
     sx, sy = out_w / logical_w, out_h / logical_h
+
+    if args.animation_root is not None and (
+        not layout.animations or layout.animation_parse_error
+    ):
+        raise ValueError(
+            "this layout's animation encoding is not fully decoded: "
+            + (layout.animation_parse_error or "unknown variant"))
+    root = _resolve_animation_root(layout, args.animation_root)
+    states, animation_warnings = _animated_local_states(layout, root, args.frame)
+
     chosen = []
     wanted = {int(v) for v in args.node} if args.node else None
     needle = args.match.casefold() if args.match else None
+    animated_targets = (
+        {a.target_node for a in layout.animation_tree(root.index) if a.target_node >= 0}
+        if root else None
+    )
     for node in layout.nodes:
         if node.node_type != 2 or not node.texture:
+            continue
+        if root and not args.include_static and node.index not in animated_targets:
             continue
         if wanted is not None and node.index not in wanted:
             continue
@@ -358,23 +898,55 @@ def cmd_render_layout(args):
     rendered, skipped = [], []
     for node in chosen:
         try:
+            state = states[node.index]
+            alpha = _node_alpha(state["colors"]) if (root or args.respect_alpha) else 1.0
+            if alpha <= 0.0:
+                skipped.append({
+                    "index": node.index, "name": node.name,
+                    "error": "alpha=0 at selected animation/static state"})
+                continue
+
             tex_entry = find_entry(arc, node.texture)
             image, raw = decode_member(arc, tex_entry)
-            x0, y0, x1, y1 = node.source_rect(args.atlas_scale)
+            ux0, uy0, ux1, uy1 = state["uv"]
+            x0, y0, x1, y1 = [
+                round(v * args.atlas_scale) for v in (ux0, uy0, ux1, uy1)]
             if not (0 <= x0 < x1 <= image.width and 0 <= y0 < y1 <= image.height):
                 raise ValueError(f"source rect {(x0, y0, x1, y1)} outside {image.size}")
             tile = image.crop((x0, y0, x1, y1))
-            dx0, dy0, dx1, dy1 = layout.logical_bbox(node.index)
+            dx0, dy0, dx1, dy1 = _animated_bbox(layout, states, node.index)
             px0, py0 = round(dx0 * sx), round(dy0 * sy)
             px1, py1 = round(dx1 * sx), round(dy1 * sy)
             if px1 <= px0 or py1 <= py0:
                 raise ValueError(f"invalid destination box {(px0, py0, px1, py1)}")
-            tile = tile.resize((px1 - px0, py1 - py0), Image.Resampling.BICUBIC)
-            canvas.alpha_composite(tile, (px0, py0))
+            if alpha < 0.999:
+                tile.putalpha(tile.getchannel("A").point(
+                    lambda v: max(0, min(255, round(v * alpha)))))
+
+            # Source pixels -> local geometry -> hierarchical PSL transform -> output viewport.
+            gx = (node.geometry[2] - node.geometry[0]) / max(1, tile.width)
+            gy = (node.geometry[3] - node.geometry[1]) / max(1, tile.height)
+            source_to_local = (gx, 0.0, node.geometry[0],
+                               0.0, gy, node.geometry[1])
+            local_to_world = _animated_world_matrix(layout, states, node.index)
+            world_to_output = (sx, 0.0, 0.0, 0.0, sy, 0.0)
+            source_to_output = _mat_mul(
+                world_to_output, _mat_mul(local_to_world, source_to_local))
+            inverse = _invert_affine(source_to_output)
+            warped = tile.transform(
+                (out_w, out_h), Image.Transform.AFFINE, inverse,
+                resample=Image.Resampling.BICUBIC, fillcolor=(0, 0, 0, 0))
+            canvas.alpha_composite(warped)
             rendered.append({
                 **node_info(layout, node, args.atlas_scale),
+                "animated_uv_logical": list(state["uv"]),
+                "animated_position": list(state["position"]),
+                "animated_scale": list(state["scale"]),
+                "animated_rotation": list(state["rotation"]),
+                "alpha": alpha,
                 "texture_member": tex_entry.name,
                 "texture_sha256": sha256(raw),
+                "dest_bbox_logical_animated": [dx0, dy0, dx1, dy1],
                 "dest_bbox_output": [px0, py0, px1, py1],
             })
         except Exception as exc:
@@ -387,6 +959,11 @@ def cmd_render_layout(args):
         "archive": args.arc, "archive_sha256": arc.data_sha256,
         "layout": entry.name, "logical_size": list(args.logical_size),
         "output_size": [out_w, out_h], "atlas_scale": args.atlas_scale,
+        "rsx_surface": rsx_surface,
+        "animation_root": (
+            {"index": root.index, "name": root.name, "frame": args.frame}
+            if root else None),
+        "animation_warnings": animation_warnings,
         "rendered": rendered, "skipped": skipped, "out": str(out),
     }, indent=2, ensure_ascii=False))
 
@@ -401,15 +978,30 @@ def build_cli():
     p = sp.add_parser("layout-nodes"); p.add_argument("arc"); p.add_argument("--layout")
     p.add_argument("--match"); p.add_argument("--atlas-scale", type=float, default=2.0)
     p.set_defaults(func=cmd_layout_nodes)
+    p = sp.add_parser("psl-sweep"); p.add_argument("root"); p.add_argument("--json")
+    p.set_defaults(func=cmd_psl_sweep)
+    p = sp.add_parser("layout-animations"); p.add_argument("arc"); p.add_argument("--layout")
+    p.add_argument("--root"); p.add_argument("--match")
+    p.set_defaults(func=cmd_layout_animations)
     p = sp.add_parser("render-layout"); p.add_argument("arc"); p.add_argument("out")
     p.add_argument("--layout"); p.add_argument("--match"); p.add_argument("--node", action="append")
     p.add_argument("--atlas-scale", type=float, default=2.0)
     p.add_argument("--logical-size", type=lambda s: tuple(map(int, s.lower().split("x"))), default=(640, 480))
     p.add_argument("--output-size", type=lambda s: tuple(map(int, s.lower().split("x"))))
     p.add_argument("--background", type=lambda s: tuple(map(int, s.split(","))), default=(0, 0, 0, 0))
+    p.add_argument("--animation-root", help="root animation index or unique name fragment")
+    p.add_argument("--frame", type=int, default=0)
+    p.add_argument("--respect-alpha", action="store_true")
+    p.add_argument("--include-static", action="store_true",
+                   help="with --animation-root, also draw textured nodes outside that animation tree")
+    p.add_argument("--rrc", help="use an RRC capture's RSX surface size for output")
     p.set_defaults(func=cmd_render_layout)
     p = sp.add_parser("render-scene"); p.add_argument("scene"); p.add_argument("out"); p.set_defaults(func=cmd_render_scene)
     p = sp.add_parser("rrc-info"); p.add_argument("capture"); p.set_defaults(func=cmd_rrc_info)
+    p = sp.add_parser("rrc-state"); p.add_argument("capture"); p.set_defaults(func=cmd_rrc_state)
+    p = sp.add_parser("rrc-draws"); p.add_argument("capture")
+    p.add_argument("--unique", action="store_true"); p.add_argument("--writes", action="store_true")
+    p.add_argument("--limit", type=int); p.set_defaults(func=cmd_rrc_draws)
     p = sp.add_parser("rrc-match-arc"); p.add_argument("capture"); p.add_argument("arc"); p.set_defaults(func=cmd_rrc_match_arc)
     return ap
 
