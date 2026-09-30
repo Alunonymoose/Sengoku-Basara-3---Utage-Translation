@@ -1048,6 +1048,28 @@ def _vertex_modulation(size, colors):
     bottom = Image.composite(Image.new("RGBA", size, br), Image.new("RGBA", size, bl), xmask)
     return Image.composite(bottom, top, ymask)
 
+def _untextured_quad_mode(node):
+    """Return the proven untextured draw model, or None for shader-sensitive cases."""
+    if node.node_type == 1 and not node.texture:
+        return "vertex_rgba"
+    if node.node_type == 0 and not node.texture:
+        # Type-0 fade/wipe/backdrop resources commonly use color0 as the whole
+        # quad colour while color1..3 remain untouched FFFFFFFF defaults.
+        if len(set(node.colors)) == 1 or node.colors[1:] == (
+                0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF):
+            return "solid_color0"
+    return None
+
+def _untextured_quad_tile(node, state):
+    mode = _untextured_quad_mode(node)
+    if mode is None:
+        raise ValueError("unproven untextured node material")
+    x0, y0, x1, y1 = state["geometry"]
+    size = (max(1, abs(x1 - x0)), max(1, abs(y1 - y0)))
+    if mode == "vertex_rgba":
+        return _vertex_modulation(size, state["colors"]), mode
+    return Image.new("RGBA", size, _argb_to_rgba(state["colors"][0])), mode
+
 def _warp_tile(tile, geometry, world_matrix, viewport_scale, output_size):
     out_w, out_h = output_size
     sx, sy = viewport_scale
@@ -1155,7 +1177,9 @@ def cmd_render_layout(args):
         if root else None
     )
     for node in layout.nodes:
-        if node.node_type not in (2, 3) or not node.texture:
+        textured_sprite = node.node_type in (2, 3) and bool(node.texture)
+        untextured_quad = _untextured_quad_mode(node) is not None
+        if not textured_sprite and not untextured_quad:
             continue
         if root and not args.include_static and node.index not in animated_targets:
             continue
@@ -1174,25 +1198,37 @@ def cmd_render_layout(args):
                     "index": node.index, "name": node.name,
                     "error": "visibility=0 at selected animation state"})
                 continue
-            alpha = (
-                _node_alpha(state["colors"])
-                if node.node_type == 2 and (root or args.respect_alpha)
-                else 1.0
-            )
+            quad_mode = _untextured_quad_mode(node)
+            if quad_mode == "solid_color0":
+                alpha = ((state["colors"][0] >> 24) & 0xFF) / 255.0
+            elif quad_mode == "vertex_rgba":
+                alpha = _node_alpha(state["colors"])
+            else:
+                alpha = (
+                    _node_alpha(state["colors"])
+                    if node.node_type == 2 and (root or args.respect_alpha)
+                    else 1.0
+                )
             if alpha <= 0.0:
                 skipped.append({
                     "index": node.index, "name": node.name,
                     "error": "alpha=0 at selected animation/static state"})
                 continue
 
-            tex_entry = find_entry(arc, node.texture)
-            image, raw = decode_member(arc, tex_entry)
-            ux0, uy0, ux1, uy1 = state["uv"]
-            x0, y0, x1, y1 = [
-                round(v * args.atlas_scale) for v in (ux0, uy0, ux1, uy1)]
-            if not (0 <= x0 < x1 <= image.width and 0 <= y0 < y1 <= image.height):
-                raise ValueError(f"source rect {(x0, y0, x1, y1)} outside {image.size}")
-            tile = image.crop((x0, y0, x1, y1))
+            tex_entry = None
+            raw = None
+            if quad_mode is not None:
+                tile, quad_mode = _untextured_quad_tile(node, state)
+            else:
+                tex_entry = find_entry(arc, node.texture)
+                image, raw = decode_member(arc, tex_entry)
+                ux0, uy0, ux1, uy1 = state["uv"]
+                x0, y0, x1, y1 = [
+                    round(v * args.atlas_scale) for v in (ux0, uy0, ux1, uy1)]
+                if not (0 <= x0 < x1 <= image.width and 0 <= y0 < y1 <= image.height):
+                    raise ValueError(f"source rect {(x0, y0, x1, y1)} outside {image.size}")
+                tile = image.crop((x0, y0, x1, y1))
+
             dx0, dy0, dx1, dy1 = _animated_bbox(layout, states, node.index)
             px0, py0 = round(dx0 * sx), round(dy0 * sy)
             px1, py1 = round(dx1 * sx), round(dy1 * sy)
@@ -1200,7 +1236,7 @@ def cmd_render_layout(args):
                 raise ValueError(f"invalid destination box {(px0, py0, px1, py1)}")
             if node.node_type == 3:
                 tile = ImageChops.multiply(tile, _vertex_modulation(tile.size, state["colors"]))
-            elif alpha < 0.999:
+            elif quad_mode is None and alpha < 0.999:
                 tile.putalpha(tile.getchannel("A").point(
                     lambda v: max(0, min(255, round(v * alpha)))))
 
@@ -1228,10 +1264,11 @@ def cmd_render_layout(args):
                 "animated_visible": state["visible"],
                 "animated_shake": state["shake"],
                 "alpha": alpha,
-                "vertex_modulation": node.node_type == 3,
+                "vertex_modulation": node.node_type == 3 or quad_mode == "vertex_rgba",
+                "untextured_quad_mode": quad_mode,
                 "mask_applied": mask_applied,
-                "texture_member": tex_entry.name,
-                "texture_sha256": sha256(raw),
+                "texture_member": tex_entry.name if tex_entry is not None else None,
+                "texture_sha256": sha256(raw) if raw is not None else None,
                 "dest_bbox_logical_animated": [dx0, dy0, dx1, dy1],
                 "dest_bbox_output": [px0, py0, px1, py1],
             })

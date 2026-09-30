@@ -569,3 +569,79 @@ Engine-side supporting context: the Utage EBOOT contains `Depth (Linear and Ease
 shows `MtEaseCurve` as a two-float structure distinct from the much larger
 8-point `MtHermiteCurve`. This supports an ease interpretation but does not bind
 PSL code 5 to a specific mathematical curve.
+
+
+## 2026-09-30 follow-up: untextured type-0 / type-1 quad rendering
+
+A full node-type survey across all 14,859 live PSL nodes identified a large class
+of untextured geometry that the earlier renderer omitted entirely.
+
+### Type 1 — untextured per-vertex RGBA quad
+
+In the current live corpus, type-1 nodes are untextured geometry and strongly match
+four-corner AARRGGBB interpolation.
+
+Examples include:
+
+- loading-screen black -> transparent edge fades;
+- common/menu `Obi` and `Message` vertical gradients;
+- result-screen shadow strips;
+- quest white/green overlay gradients;
+- story background-colour panels;
+- title colour-wall quads.
+
+A direct renderer test on `loading/black_03_hidariue` used its corners
+
+- TL = FF000000
+- TR = 00000000
+- BL = FF000000
+- BR = 00000000
+
+and produced the expected continuous left-black -> right-transparent fade over a
+magenta diagnostic background. This validates the existing TL/TR/BL/BR bilinear
+corner order for this untextured type.
+
+### Type 0 — conservative solid-color0 subset
+
+Type-0 nodes are also untextured geometry in almost all cases, but their material
+semantics are not uniformly equivalent to type 1.
+
+The safest, strongly evidenced subset is:
+
+- all four serialized colours identical; or
+- color1/color2/color3 remain untouched FFFFFFFF defaults.
+
+For those nodes, color0 behaves as the whole-quad colour/alpha.
+
+Strong examples:
+
+- `com/fade/Black`
+- `com/wipe/Wipe`
+- Capcom/loading black backgrounds
+- cinematic black bars
+- translucent common/pause backdrops
+- thin UI rules/lines
+- title/kakusyu black overlay
+
+The harness now renders only this proven type-0 subset as a solid color0 quad.
+Type-0 nodes with meaningful non-default secondary corner colours remain fail-closed
+because their shader-specific gradient/filter semantics are not yet fully mapped.
+
+### Fade runtime-style regression
+
+`basara.arc -> id\\lsp\\com\\fade -> Ani 0_0` was rendered at frames 0/30/60
+over an opaque magenta diagnostic background:
+
+- frame 0: every sampled pixel = (0,0,0,255)
+- frame 30: every sampled pixel = (127,0,127,255), i.e. approximately 50% black
+- frame 60: every sampled pixel = magenta background; the zero-alpha Black quad is skipped
+
+The Black node is type 0, has no texture, and its color0 track is
+FF000000 -> 00000000 over 60 frames. This is direct evidence that the new
+untextured solid-quad path reproduces the intended fade behaviour.
+
+Diagnostic outputs:
+`E:\\BASARA_WORK\\jobs\\utage_harness_anim\\untextured\\fade_0.png`
+`E:\\BASARA_WORK\\jobs\\utage_harness_anim\\untextured\\fade_30.png`
+`E:\\BASARA_WORK\\jobs\\utage_harness_anim\\untextured\\fade_60.png`
+`E:\\BASARA_WORK\\jobs\\utage_harness_anim\\untextured\\loading_type1_19.png`
