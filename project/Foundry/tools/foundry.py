@@ -121,6 +121,7 @@ def main() -> int:
 
     nx = sub.add_parser("next", help="rank the next highest-value unsigned project folders")
     nx.add_argument("--limit", type=int, default=15)
+    nx.add_argument("--mode", choices=["closeout", "risk", "smallest"], default="closeout")
 
     imp = sub.add_parser("impact", help="show sign-off and duplicate-owner impact before mutating files")
     imp.add_argument("targets", nargs="+")
@@ -184,6 +185,7 @@ def main() -> int:
             sys.executable, str(tool),
             "--db", str(fg.default_db(live_root)),
             "--limit", str(args.limit),
+            "--mode", args.mode,
         ]).returncode
     if args.cmd == "impact":
         tool = HERE / "change_impact.py"
