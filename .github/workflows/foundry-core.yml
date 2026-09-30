@@ -25,6 +25,7 @@ jobs:
           python -m py_compile project/Foundry/tools/texture_triage.py
           python -m py_compile project/Foundry/tools/texture_ocr_triage.py
           python -m py_compile project/Foundry/tools/runtime_bind.py
+          python -m py_compile project/Foundry/tools/runtime_record.py
           python -m py_compile project/Foundry/tools/doctor.py
           python -m py_compile project/Foundry/tools/next_work.py
           python -m py_compile project/Foundry/tools/change_impact.py
