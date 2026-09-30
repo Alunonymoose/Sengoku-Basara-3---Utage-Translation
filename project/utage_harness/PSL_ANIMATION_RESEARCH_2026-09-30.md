@@ -258,3 +258,106 @@ Important material distinction:
 - type 2: applying RGB modulation globally is wrong for the title materials. Type-2 values such as `FF000000` do not mean “multiply the sprite black” in those materials; alpha/control behavior is more plausible. The prototype therefore preserves type-2 texture RGB and uses packed alpha separately.
 
 This is material-sensitive and should stay fail-closed where the material mapping is unknown.
+
+
+## 2026-09-30 follow-up: direct Utage EBOOT runtime-class evidence
+
+A read-only string/structure probe of the current Utage EBOOT found the game’s own layout runtime class names.
+
+### Resource and unit classes
+
+At the rLayoutSpr reflection/string area:
+
+- `mLayoutSpr`
+- `rLayoutSpr`
+
+At the uLayoutSpr area:
+
+- `mPause`
+- `mStop`
+- `mFrame`
+- `mSpeed`
+- `mpResource`
+- `resource`
+- `mLayoutSpr`
+- `uLayoutSpr`
+
+This directly supports the harness model of a layout resource plus runtime frame/speed playback state.
+
+### cLayoutSprite runtime fields
+
+The EBOOT contains a reflected/runtime `cLayoutSprite` class with these nearby field names in declaration/reflection order:
+
+- `mID`
+- `mIsActive`
+- `mIsUpdate`
+- `mInheritance`
+- `mParentRelate`
+- `mType`
+- `mCenter`
+- `mIsDisp`
+- `mIsShake`
+- `mPos`
+- `mRot`
+- `mScale`
+- `mSprRect`
+- `mImageRect`
+- `mColor0`
+- `mColor1`
+- `mColor2`
+- `mColor3`
+- `mBlendState`
+- `mShaderType`
+- `mprTexture`
+- `resource`
+- `mPass`
+- `mMaskID`
+- `mIsMaskEx`
+- `mpMaskSpr`
+- `mFreeUse`
+- `mIsLocalize`
+- `mPri`
+- `mWPri`
+- `mSubPri`
+- `mTexSize`
+- `mTexSizeWii`
+- `mTexPath`
+
+The same area also names the animation-side fields:
+
+- `mAnimPos`
+- `mAnimRot`
+- `mAnimScale`
+- `mAnimSprRect`
+- `mAnimImageRect`
+- `mAnimColor0..3`
+- `mAnimSprDisp`
+- `mAnimSprShake`
+
+These names directly validate the decoded position/rotation/scale/geometry/UV/color/visibility channels. In particular, channel 7 corresponds to `mAnimSprRect`, channel 9 to `mAnimImageRect`, and channel 21’s visibility behavior matches `mAnimSprDisp`.
+
+### Serialized node field naming
+
+Combining runtime names with the serialized value domains gives strong field identifications:
+
+- serialized `0x60` = **mShaderType** (large family selector; values observed well beyond the small blend enum range);
+- serialized `0x68` = **mBlendState** (small selector; observed 0/1/2/5 and strongly correlated with render behavior).
+
+This supersedes the earlier provisional labels “material” for 0x60 and “candidate blend/sampler” for 0x68.
+
+Other integer/control fields should remain generically named until their exact serialized mapping is proven.
+
+### EBOOT shader/blend infrastructure
+
+The same EBOOT contains the engine shader package parser strings and enum vocabulary:
+
+- `BlendEnable`
+- `SrcBlend`
+- `DestBlend`
+- `BlendOp`
+- alpha equivalents
+- `BLEND_ZERO`, `BLEND_ONE`, `BLEND_SRC_ALPHA`, `BLEND_INV_SRC_ALPHA`, etc.
+- `nDraw::BlendState`
+- `nDraw::SamplerState`
+
+This confirms that exact blend equations are represented explicitly in the engine. Mapping cLayoutSprite mBlendState enum values to those equations remains the next step.
