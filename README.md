@@ -1,7 +1,43 @@
-﻿# Sengoku BASARA 3 Utage — English Translation Project
+# Sengoku BASARA 3 Utage English Translation Patch (PS3 / BLJM60389)
 
-English translation and reverse-engineering project for
-**Sengoku BASARA 3 Utage** on PlayStation 3.
+**English translation patch for Sengoku BASARA 3 Utage on PlayStation 3 (BLJM60389).**  
+This project is building a playable English version of **Sengoku BASARA 3 Utage**, including translated menus, UI, textures, dialogue, subtitles, and supporting reverse-engineering/tooling for the PS3 release.
+
+If you searched for **Sengoku BASARA 3 Utage English patch**, **Utage English translation**, **Sengoku Basara 3 Utage PS3 translation**, **BLJM60389 English patch**, or **RPCS3 Utage English patch**, this is the project repository.
+
+## Download / install
+
+The public patch is intended for people who already own and have their own extracted/dumped copy of **Sengoku BASARA 3 Utage (BLJM60389)**.
+
+- [Installation guide](INSTALL.md)
+- [v0.1 patch packaging](release/v0.1/README.md)
+- GitHub Releases will contain public patch builds when available.
+
+**The repository does not distribute the game, ISO/disc image, or complete retail game files.**
+
+## Project status
+
+This is an active fan-translation and reverse-engineering project. The first public release is being prepared as a **v0.1 preview/test build**.
+
+Current work includes:
+
+- English menu and UI localisation
+- translated and rebuilt PS3 textures
+- dialogue translation and repair
+- cutscene subtitle support
+- English resource routing under `nativePS3/rom/eng`
+- ARC v8 archive tooling and validation
+- MT Framework Lite / TEX/XET reverse engineering
+- PS3 and RPCS3 runtime testing
+- reproducible patch/install tooling
+
+## Target game
+
+- **Game:** Sengoku BASARA 3 Utage
+- **Platform:** PlayStation 3
+- **Title ID:** BLJM60389
+- **Engine:** MT Framework Lite
+- **Reference localisation:** Sengoku BASARA: Samurai Heroes
 
 ## Repository purpose
 
@@ -18,10 +54,9 @@ This repository preserves project-created material including:
 - technical handover documentation
 - reproducibility information
 
-
 ## BASARA Foundry Core
 
-**Current public bootstrap:** `foundry-v0.3-reliability` (state/authority hardening, 2026-09-29). Start with `project/Foundry/docs/PROJECT_CONTROL.md` before domain-specific canon. The older `foundry-v0.1` branch is retained for history and must not be treated as the current bootstrap.\n
+**Current public bootstrap:** `foundry-v0.3-reliability` (state/authority hardening, 2026-09-29). Start with `project/Foundry/docs/PROJECT_CONTROL.md` before domain-specific canon. The older `foundry-v0.1` branch is retained for history and must not be treated as the current bootstrap.
 
 The reusable reverse-engineering knowledge, tools, agent skills, technical canon and proven-failure history are maintained publicly on the **`foundry-v0.3-reliability`** branch.
 
@@ -51,20 +86,7 @@ This includes:
 - complete Utage assets
 - disc images
 
-The repository is intended to preserve the project's original research,
-tooling and documentation rather than redistribute Capcom game content.
-
-## Target game
-
-Sengoku BASARA 3 Utage  
-PlayStation 3  
-BLJM60389
-
-## Localisation reference
-
-Sengoku BASARA: Samurai Heroes is used as an English localisation and
-technical reference where appropriate.
-
+The repository is intended to preserve the project's original research, tooling and documentation rather than redistribute Capcom game content.
 
 ## Licence and reuse
 
