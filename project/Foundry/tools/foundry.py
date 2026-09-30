@@ -110,6 +110,12 @@ def main() -> int:
     sub.add_parser("runtime-bind", help="bind runtime acceptance matrix to exact current graph fingerprint")
     sub.add_parser("runtime-status", help="validate the current runtime acceptance matrix")
 
+    rr = sub.add_parser("runtime-record", help="record hash-bound runtime evidence for one acceptance row")
+    rr.add_argument("row_id")
+    rr.add_argument("status", choices=["PASS", "FAIL", "BLOCKED", "NOT_TESTED"])
+    rr.add_argument("evidence", nargs="*")
+    rr.add_argument("--note")
+
     d = sub.add_parser("doctor", help="run the whole-project health gate")
     d.add_argument("--strict", action="store_true")
 
@@ -155,6 +161,16 @@ def main() -> int:
         matrix = live_root / ".foundry" / "runtime" / "RUNTIME_ACCEPTANCE_CURRENT.json"
         validator = PROJECT / "runtime" / "validate_runtime_matrix.py"
         return subprocess.run([sys.executable, str(validator), str(matrix)]).returncode
+    if args.cmd == "runtime-record":
+        tool = HERE / "runtime_record.py"
+        cmd = [
+            sys.executable, str(tool),
+            args.row_id, args.status, *args.evidence,
+            "--live-root", str(live_root),
+        ]
+        if args.note:
+            cmd.extend(["--note", args.note])
+        return subprocess.run(cmd).returncode
     if args.cmd == "doctor":
         tool = HERE / "doctor.py"
         cmd = [sys.executable, str(tool), "--live-root", str(live_root)]
