@@ -500,7 +500,7 @@ def cmd_rrc_match_arc(args):
 
 def node_info(layout, node, atlas_scale=2.0):
     return {
-        "index": node.index, "name": node.name, "role": node.role,
+        "index": node.index, "node_id": node.node_id, "name": node.name, "role": node.role,
         "type": node.node_type, "parent": node.parent, "texture": node.texture,
         "position": list(node.position), "rotation_deg": node.rotation,
         "scale": list(node.scale),
@@ -512,6 +512,7 @@ def node_info(layout, node, atlas_scale=2.0):
         "shader_type": node.shader_type, "blend_state": node.blend_state,
         "links": {"3c": node.link_3c, "40": node.link_40, "44": node.link_44},
         "mask_node": (layout.mask_for(node.index).index if layout.mask_for(node.index) else None),
+        "mask_node_id": (layout.mask_for(node.index).node_id if layout.mask_for(node.index) else None),
     }
 
 def cmd_layouts(args):
@@ -574,7 +575,9 @@ def cmd_psl_sweep(args):
     root = Path(args.root)
     arcs = [root] if root.is_file() else list(root.rglob("*.arc"))
     arc_ok = arc_fail = layout_count = layout_fail = node_count = animation_count = 0
+    unresolved_target_count = duplicate_node_id_count = mask_link_count = resolved_mask_count = 0
     failures = []
+    reference_warnings = []
     for path in arcs:
         try:
             arc = core.parse_arc(path)
@@ -594,6 +597,35 @@ def cmd_psl_sweep(args):
                 layout_count += 1
                 node_count += len(layout.nodes)
                 animation_count += len(layout.animations)
+
+                id_groups = {}
+                for node in layout.nodes:
+                    id_groups.setdefault(node.node_id, []).append(node.index)
+                    if node.link_40 >= 0:
+                        mask_link_count += 1
+                        if layout.mask_for(node.index) is not None:
+                            resolved_mask_count += 1
+                duplicate_ids = {
+                    node_id: indexes for node_id, indexes in id_groups.items()
+                    if len(indexes) > 1
+                }
+                duplicate_node_id_count += len(duplicate_ids)
+
+                unresolved_targets = [
+                    {"animation": animation.index, "name": animation.name,
+                     "target_id": animation.target_node}
+                    for animation in layout.animations
+                    if animation.target_node >= 0
+                    and layout.animation_target(animation) is None
+                ]
+                unresolved_target_count += len(unresolved_targets)
+                if duplicate_ids or unresolved_targets:
+                    reference_warnings.append({
+                        "arc": str(path), "member": entry.name,
+                        "duplicate_node_ids": duplicate_ids,
+                        "unresolved_animation_targets": unresolved_targets,
+                    })
+
                 if (not layout.complete or len(layout.animations) != layout.aux_count
                         or layout.animation_parse_error):
                     layout_fail += 1
@@ -613,7 +645,13 @@ def cmd_psl_sweep(args):
         "root": str(root), "arcs": len(arcs), "arc_ok": arc_ok,
         "arc_fail": arc_fail, "layouts": layout_count,
         "layout_fail": layout_fail, "nodes": node_count,
-        "animations": animation_count, "failures": failures,
+        "animations": animation_count,
+        "unresolved_animation_targets": unresolved_target_count,
+        "duplicate_node_ids": duplicate_node_id_count,
+        "mask_links": mask_link_count,
+        "resolved_type5_masks": resolved_mask_count,
+        "reference_warnings": reference_warnings,
+        "failures": failures,
     }
     text = json.dumps(report, indent=2, ensure_ascii=False)
     print(text)
