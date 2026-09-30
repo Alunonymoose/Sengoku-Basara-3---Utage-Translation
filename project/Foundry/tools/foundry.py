@@ -110,6 +110,20 @@ def main() -> int:
     sub.add_parser("runtime-bind", help="bind runtime acceptance matrix to exact current graph fingerprint")
     sub.add_parser("runtime-status", help="validate the current runtime acceptance matrix")
 
+    d = sub.add_parser("doctor", help="run the whole-project health gate")
+    d.add_argument("--strict", action="store_true")
+
+    nx = sub.add_parser("next", help="rank the next highest-value unsigned project folders")
+    nx.add_argument("--limit", type=int, default=15)
+
+    imp = sub.add_parser("impact", help="show sign-off and duplicate-owner impact before mutating files")
+    imp.add_argument("targets", nargs="+")
+
+    dtree = sub.add_parser("compare-trees", help="byte-compare two build/output trees for reproducibility")
+    dtree.add_argument("left")
+    dtree.add_argument("right")
+    dtree.add_argument("--ignore", action="append", default=[])
+
     sh = sub.add_parser("show", help="generate the numbered texture-book PDF for an ARC")
     sh.add_argument("arc")
 
@@ -138,6 +152,33 @@ def main() -> int:
         matrix = live_root / ".foundry" / "runtime" / "RUNTIME_ACCEPTANCE_CURRENT.json"
         validator = PROJECT / "runtime" / "validate_runtime_matrix.py"
         return subprocess.run([sys.executable, str(validator), str(matrix)]).returncode
+    if args.cmd == "doctor":
+        tool = HERE / "doctor.py"
+        cmd = [sys.executable, str(tool), "--live-root", str(live_root)]
+        if args.strict:
+            cmd.append("--strict")
+        return subprocess.run(cmd).returncode
+    if args.cmd == "next":
+        tool = HERE / "next_work.py"
+        return subprocess.run([
+            sys.executable, str(tool),
+            "--db", str(fg.default_db(live_root)),
+            "--limit", str(args.limit),
+        ]).returncode
+    if args.cmd == "impact":
+        tool = HERE / "change_impact.py"
+        return subprocess.run([
+            sys.executable, str(tool),
+            *args.targets,
+            "--live-root", str(live_root),
+            "--db", str(fg.default_db(live_root)),
+        ]).returncode
+    if args.cmd == "compare-trees":
+        tool = HERE / "determinism_guard.py"
+        cmd = [sys.executable, str(tool), args.left, args.right]
+        for value in args.ignore:
+            cmd.extend(["--ignore", value])
+        return subprocess.run(cmd).returncode
 
     graph = graph_for(live_root)
     try:
