@@ -16,6 +16,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+
       - name: Compile public-safe Foundry tools
         shell: pwsh
         run: |
@@ -24,14 +25,14 @@ jobs:
           python -m py_compile project/Foundry/tools/texture_triage.py
           python -m py_compile project/Foundry/tools/texture_ocr_triage.py
           python -m py_compile project/Foundry/tools/runtime_bind.py
+          python -m py_compile project/Foundry/tools/doctor.py
+          python -m py_compile project/Foundry/tools/next_work.py
+          python -m py_compile project/Foundry/tools/change_impact.py
+          python -m py_compile project/Foundry/tools/determinism_guard.py
           python -m py_compile project/tools/arc_texture_gallery.py
-      - name: Foundry Graph regression tests
-        run: python project/Foundry/tests/test_foundry_graph.py
-      - name: Public format helper tests
+
+      - name: Public Foundry regression tests
         shell: pwsh
         run: |
           $env:PYTHONPATH = "project/Foundry/tools"
-          python project/Foundry/tests/test_mt_hash.py
-          python project/Foundry/tests/test_ascii_csa.py
-          python project/Foundry/tests/test_scra_manifest.py
-          python project/Foundry/tests/test_scra_validate.py
+          python -m unittest discover -s project/Foundry/tests -p "test_*.py" -v
