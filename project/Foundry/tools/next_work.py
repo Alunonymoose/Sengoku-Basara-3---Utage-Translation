@@ -7,6 +7,7 @@ import sqlite3
 from pathlib import Path
 
 DEFAULT_DB = Path(r"E:\Utage Patching New\.foundry\cache\foundry_graph.sqlite")
+MODES = {"closeout", "risk", "smallest"}
 
 
 def valid_scopes(db: sqlite3.Connection) -> list[str]:
@@ -25,7 +26,10 @@ def signed_folder(folder: str, scopes: list[str]) -> bool:
     return any(f == s or f.startswith(s + "/") or s.startswith(f + "/") for s in scopes)
 
 
-def rank_work(db_path: Path, limit: int = 15) -> dict:
+def rank_work(db_path: Path, limit: int = 15, mode: str = "closeout") -> dict:
+    if mode not in MODES:
+        raise ValueError(f"unsupported mode {mode!r}")
+
     db = sqlite3.connect(db_path)
     db.row_factory = sqlite3.Row
     scopes = valid_scopes(db)
@@ -38,9 +42,16 @@ def rank_work(db_path: Path, limit: int = 15) -> dict:
         rel = str(row["rel_path"]).replace("\\", "/")
         folder = rel.split("/", 1)[0] if "/" in rel else "_ROOT"
         x = folders.setdefault(folder, {
-            "folder": folder, "bytes": 0, "files": 0, "arcs": 0,
-            "textures": 0, "messages": 0, "custom_textures": 0,
-            "jpn_exact_no_sh": 0, "runtime_arcs": 0, "runtime_open_count": 0,
+            "folder": folder,
+            "bytes": 0,
+            "files": 0,
+            "arcs": 0,
+            "textures": 0,
+            "messages": 0,
+            "custom_textures": 0,
+            "jpn_exact_no_sh": 0,
+            "runtime_arcs": 0,
+            "runtime_open_count": 0,
             "risk_score": 0,
         })
         x["bytes"] += int(row["size"])
@@ -94,13 +105,23 @@ def rank_work(db_path: Path, limit: int = 15) -> dict:
     for x in folders.values():
         if signed_folder(x["folder"], scopes):
             continue
+
         mib = x["bytes"] / (1024 * 1024)
-        # High-risk, runtime-seen, small folders float upward.
         runtime_bonus = min(50.0, math.log2(1 + x["runtime_open_count"]) * 6.0)
-        effort = 1.0 + math.sqrt(max(1, x["arcs"])) + math.log2(1.0 + max(0.0, mib))
-        score = (max(0, x["risk_score"]) + runtime_bonus + 10.0) / effort
+        positive_risk = max(0.0, float(x["risk_score"]))
+        raw_value = positive_risk + runtime_bonus + 10.0
+
+        # "closeout" intentionally rewards finishing a useful, bounded folder.
+        # It prevents enormous families such as id/msg from always dominating.
+        closeout_effort = 1.0 + (1.5 * max(1, x["arcs"])) + (0.60 * mib)
+        closeout_priority = raw_value / closeout_effort
+
+        # "risk" ignores boundedness and surfaces the largest absolute remaining risk.
+        risk_priority = raw_value
+
         x["mib"] = round(mib, 3)
-        x["priority"] = round(score, 3)
+        x["closeout_priority"] = round(closeout_priority, 3)
+        x["risk_priority"] = round(risk_priority, 3)
         x["reason"] = (
             f"{x['jpn_exact_no_sh']} JPN-identical/no-SH textures; "
             f"{x['custom_textures']} custom/Utage textures; "
@@ -108,15 +129,33 @@ def rank_work(db_path: Path, limit: int = 15) -> dict:
         )
         ranked.append(x)
 
-    ranked.sort(
-        key=lambda r: (
-            -r["priority"], -r["jpn_exact_no_sh"], -r["custom_textures"],
-            r["bytes"], r["folder"]
+    if mode == "closeout":
+        ranked.sort(
+            key=lambda r: (
+                -r["closeout_priority"],
+                -r["runtime_arcs"],
+                r["arcs"],
+                r["bytes"],
+                r["folder"],
+            )
         )
-    )
+    elif mode == "risk":
+        ranked.sort(
+            key=lambda r: (
+                -r["risk_priority"],
+                -r["jpn_exact_no_sh"],
+                -r["custom_textures"],
+                r["bytes"],
+                r["folder"],
+            )
+        )
+    else:
+        ranked.sort(key=lambda r: (r["bytes"], r["arcs"], -r["risk_priority"], r["folder"]))
+
     db.close()
     return {
         "db": str(db_path),
+        "mode": mode,
         "valid_signoff_scopes_excluded": scopes,
         "candidate_folders": len(ranked),
         "next": ranked[:limit],
@@ -127,8 +166,9 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="Rank the next highest-value unsigned Foundry work")
     ap.add_argument("--db", default=str(DEFAULT_DB))
     ap.add_argument("--limit", type=int, default=15)
+    ap.add_argument("--mode", choices=sorted(MODES), default="closeout")
     args = ap.parse_args()
-    print(json.dumps(rank_work(Path(args.db), args.limit), indent=2))
+    print(json.dumps(rank_work(Path(args.db), args.limit, args.mode), indent=2))
     return 0
 
 
