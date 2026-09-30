@@ -766,3 +766,30 @@ promote a rule when all relevant dimensions are identified.
 
 Batch diagnostic:
 `E:\BASARA_WORK\jobs\utage_harness_anim\RRC_SHADER_BLEND_CORRELATION_ALL_2026-09-30.json`
+
+
+## 2026-09-30 follow-up: the sole textured type-0 node is a one-off glow material
+
+A full live ENG scan confirms there is exactly **one** node with `node_type == 0` and a texture:
+
+- archive: `select/c_story.arc`
+- layout: `id\\lsp\\jpn\\charasele\\charasele_story`
+- node: `Hikari_00` (index 29, sprite ID 49)
+- texture: `charasele_05_000_ID_HQ`
+- shader type: 47
+- blend state: 5
+- geometry: `(-64,-64,64,64)`
+- logical UV: `(0,0,128,128)`
+- colors: `00FFFFFF, FFFFFFFF, FFFFFFFF, FFFFFFFF`
+- default display: on
+- no animation target and no mask link
+
+The texture is unique in the live layout corpus. Its decoded 256×256 image is a sparse warm-white
+glow: 6,172 pixels have nonzero alpha, only 9 are fully opaque, 139 alpha levels are present, and
+mean alpha is approximately 1.888/255. None of the available 2026-09-25/09-30 RRC captures contains
+its exact mip-0 payload.
+
+This combination strongly indicates a shader-driven light/glow special case rather than the proven
+untextured type-0 solid-color path. It remains intentionally unsupported/fail-closed until a runtime
+capture of this screen or shader-47 evidence proves the material semantics. Do not generalize
+textured type-0 rendering from this single node.
