@@ -361,3 +361,26 @@ The same EBOOT contains the engine shader package parser strings and enum vocabu
 - `nDraw::SamplerState`
 
 This confirms that exact blend equations are represented explicitly in the engine. Mapping cLayoutSprite mBlendState enum values to those equations remains the next step.
+
+## 2026-09-30 cross-game confirmation: channel 19 width
+
+Samurai Heroes `title_id.arc` exposed the first tested nonzero channel-19 tracks.
+
+Layout:
+- `id\lsp\abr\chara_select\chara_select`
+- PSL v0x21
+- 111 nodes
+- 68 animation records
+
+With channel 19 treated as 2 words/key, parsing desynchronized after the first nonzero track and eventually failed on a false `0xFFFFFFFF` UV key count.
+
+Changing channel 19 to **3 words/key** makes the whole archive parse exactly:
+- 6/6 SH title_id layouts clean;
+- 262/262 animation records parsed;
+- zero unresolved animation targets;
+- zero duplicate sprite IDs.
+
+The same change leaves all tested Utage layouts unchanged and clean.
+
+Therefore the shared v0x21 schema is now:
+- channel 19: **3 words/key** (confirmed cross-game, superseding the earlier provisional 2-word assumption).
