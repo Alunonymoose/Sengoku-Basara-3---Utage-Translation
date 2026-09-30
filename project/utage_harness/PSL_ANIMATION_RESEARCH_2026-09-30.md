@@ -645,3 +645,40 @@ Diagnostic outputs:
 `E:\\BASARA_WORK\\jobs\\utage_harness_anim\\untextured\\fade_30.png`
 `E:\\BASARA_WORK\\jobs\\utage_harness_anim\\untextured\\fade_60.png`
 `E:\\BASARA_WORK\\jobs\\utage_harness_anim\\untextured\\loading_type1_19.png`
+
+
+### Stronger type-0 rule from repeated loading L/C/R triplets
+
+The earlier conservative type-0 subset can be generalized for **untextured type-0**
+nodes.
+
+The loading layout contains six repeated three-piece colour effects. Each family has:
+
+- left wing: type 1, transparent -> colour;
+- center: type 0;
+- right wing: type 1, colour -> transparent.
+
+Example `color_00`:
+
+- `color_00_L` type 1:
+  00FFFFFF, FFC89600, 00FFFFFF, FFC89600
+- `color_00_C` type 0:
+  FFC89600, FFFFFFFF, 00FFFFFF, FFFFFFFF
+- `color_00_R` type 1:
+  FFC89600, 00FFFFFF, FFC89600, 00FFFFFF
+
+The geometry/positions form one continuous effect, so the type-0 center must be the
+solid FFC89600 bridge between the two gradient wings. The same construction repeats
+with shader types 11 through 16 and six different colours.
+
+This demonstrates that the extra stored color1..3 words on untextured type-0 nodes
+are not four active vertex colours in the same sense as type 1. The draw model is:
+
+- untextured type 0 = solid color0 quad;
+- untextured type 1 = TL/TR/BL/BR vertex-RGBA quad.
+
+The harness now applies solid-color0 semantics to all untextured type-0 nodes.
+The single observed textured type-0 special case remains unsupported/fail-closed.
+
+Across the current live corpus this adds roughly 486 previously omitted untextured
+type-0/type-1 geometry nodes to the renderer.

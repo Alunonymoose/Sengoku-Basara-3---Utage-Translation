@@ -1049,15 +1049,13 @@ def _vertex_modulation(size, colors):
     return Image.composite(bottom, top, ymask)
 
 def _untextured_quad_mode(node):
-    """Return the proven untextured draw model, or None for shader-sensitive cases."""
+    """Return the proven untextured draw model, or None for unsupported node types."""
     if node.node_type == 1 and not node.texture:
         return "vertex_rgba"
     if node.node_type == 0 and not node.texture:
-        # Type-0 fade/wipe/backdrop resources commonly use color0 as the whole
-        # quad colour while color1..3 remain untouched FFFFFFFF defaults.
-        if len(set(node.colors)) == 1 or node.colors[1:] == (
-                0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF):
-            return "solid_color0"
+        # Repeated loading-screen L/C/R triplets prove type 0 is the solid
+        # center colour while type-1 siblings form the gradient wings.
+        return "solid_color0"
     return None
 
 def _untextured_quad_tile(node, state):
