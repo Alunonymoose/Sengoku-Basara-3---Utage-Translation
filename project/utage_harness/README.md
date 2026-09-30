@@ -21,6 +21,7 @@ It is a fast pre-runtime gate for the asset classes we repeatedly modify.
 - Compute hierarchical affine placement automatically and render selected animation
   roots at a requested frame.
 - Apply channel-21 visibility and channel-7 animated geometry during reconstruction.
+- Honor the engine-proven serialized default display flag (node `+0x30` / `mIsDisp`) for static composition; selected animation targets can activate hidden-at-rest nodes while explicit `mAnimSprDisp` keys remain authoritative.
 - Render type-3 textured quads with TL/TR/BL/BR AARRGGBB vertex modulation.
 - Resolve link_40 as a serialized sprite ID; when it resolves to a type-5 node, rasterize
   that node as a screen-space mask before compositing the linked sprite.
