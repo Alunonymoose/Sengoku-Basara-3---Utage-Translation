@@ -69,6 +69,7 @@ class LayoutNode:
     default_shake: bool = False
     size: tuple[int, int] = (0, 0)
     shader_type: int = 0
+    mask_provider: bool = False
     blend_state: int = 0
     geometry: tuple[int, int, int, int] = (0, 0, 0, 0)
     uv: tuple[int, int, int, int] = (0, 0, 0, 0)
@@ -274,12 +275,12 @@ class Layout:
         return winners[0] if len(winners) == 1 else None
 
     def mask_for(self, index: int) -> LayoutNode | None:
-        """Resolve link_40 only when it targets a proven type-5 mask node."""
+        """Resolve link_40 to a strongly supported mask-provider sprite."""
         target_id = self.nodes[index].link_40
         if target_id < 0:
             return None
         target = self.node_by_id(target_id)
-        if target is not None and target.node_type == 5:
+        if target is not None and (target.node_type == 5 or target.mask_provider):
             return target
         return None
 
@@ -466,6 +467,7 @@ def parse_layout(raw: bytes, name: str = "") -> Layout:
             default_shake=bool(_s32(rec, 0x34)),
             size=(_s32(rec, 0x48), _s32(rec, 0x4C)),
             shader_type=_s32(rec, 0x60),
+            mask_provider=bool(_s32(rec, 0x64)),
             blend_state=_s32(rec, 0x68),
             geometry=tuple(_s32(rec, o) for o in (0x74, 0x78, 0x7C, 0x80)),
             uv=tuple(_s32(rec, o) for o in (0x84, 0x88, 0x8C, 0x90)),
