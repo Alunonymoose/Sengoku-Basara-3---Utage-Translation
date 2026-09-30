@@ -31,6 +31,7 @@ jobs:
           python -m py_compile project/Foundry/tools/change_impact.py
           python -m py_compile project/Foundry/tools/determinism_guard.py
           python -m py_compile project/Foundry/tools/translation_memory.py
+          python -m py_compile project/Foundry/tools/oracle_audit.py
           python -m py_compile project/tools/arc_texture_gallery.py
 
       - name: Public Foundry regression tests
