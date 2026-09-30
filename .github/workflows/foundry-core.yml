@@ -1,0 +1,37 @@
+name: Foundry Core
+
+on:
+  push:
+    branches:
+      - "foundry-*"
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  python-core:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile public-safe Foundry tools
+        shell: pwsh
+        run: |
+          python -m py_compile project/Foundry/tools/foundry_graph.py
+          python -m py_compile project/Foundry/tools/foundry.py
+          python -m py_compile project/Foundry/tools/texture_triage.py
+          python -m py_compile project/Foundry/tools/texture_ocr_triage.py
+          python -m py_compile project/Foundry/tools/runtime_bind.py
+          python -m py_compile project/tools/arc_texture_gallery.py
+      - name: Foundry Graph regression tests
+        run: python project/Foundry/tests/test_foundry_graph.py
+      - name: Public format helper tests
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "project/Foundry/tools"
+          python project/Foundry/tests/test_mt_hash.py
+          python project/Foundry/tests/test_ascii_csa.py
+          python project/Foundry/tests/test_scra_manifest.py
+          python project/Foundry/tests/test_scra_validate.py
