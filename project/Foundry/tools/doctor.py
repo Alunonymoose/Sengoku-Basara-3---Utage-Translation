@@ -95,6 +95,46 @@ def git_state(repo: Path) -> dict[str, Any]:
     }
 
 
+def live_role_freshness(graph: fg.FoundryGraph, role: str, root: Path, detail_limit: int = 20) -> dict[str, Any]:
+    rows = graph.db.execute(
+        "SELECT rel_path,abs_path,size,mtime_ns FROM files WHERE role=? ORDER BY rel_path",
+        (role,),
+    ).fetchall()
+    indexed = {str(r["rel_path"]): r for r in rows}
+    current = {}
+    if root.exists():
+        for p in root.rglob("*"):
+            if p.is_file():
+                try:
+                    rel = p.resolve().relative_to(root.resolve()).as_posix()
+                    current[rel] = p
+                except Exception:
+                    continue
+
+    missing = sorted(set(indexed) - set(current))
+    new = sorted(set(current) - set(indexed))
+    changed = []
+    for rel in sorted(set(indexed) & set(current)):
+        row = indexed[rel]
+        st = current[rel].stat()
+        if int(row["size"]) != st.st_size or int(row["mtime_ns"]) != st.st_mtime_ns:
+            changed.append(rel)
+
+    return {
+        "role": role,
+        "root": str(root),
+        "indexed_files": len(indexed),
+        "current_files": len(current),
+        "fresh": not missing and not new and not changed,
+        "missing_count": len(missing),
+        "new_count": len(new),
+        "changed_count": len(changed),
+        "missing_examples": missing[:detail_limit],
+        "new_examples": new[:detail_limit],
+        "changed_examples": changed[:detail_limit],
+    }
+
+
 def run_doctor(live_root: Path = DEFAULT_LIVE) -> dict[str, Any]:
     foundry_dir = live_root / ".foundry"
     checks: list[dict[str, Any]] = []
@@ -135,6 +175,21 @@ def run_doctor(live_root: Path = DEFAULT_LIVE) -> dict[str, Any]:
                 ))
         except Exception as exc:
             checks.append(make_check("foundry-graph", "FAIL", f"graph could not be opened: {exc!r}"))
+
+    if graph is not None:
+        eng_root = live_root / "PS3_GAME" / "USRDIR" / "nativePS3" / "rom" / "eng"
+        fresh = live_role_freshness(graph, "ENG", eng_root)
+        checks.append(make_check(
+            "graph-live-freshness",
+            "PASS" if fresh["fresh"] else "FAIL",
+            (
+                "ENG graph matches current live file set/size/mtime"
+                if fresh["fresh"]
+                else f"ENG graph is stale: {fresh['changed_count']} changed, "
+                     f"{fresh['new_count']} new, {fresh['missing_count']} missing"
+            ),
+            fresh,
+        ))
 
     if graph is not None:
         try:
@@ -203,6 +258,32 @@ def run_doctor(live_root: Path = DEFAULT_LIVE) -> dict[str, Any]:
         ))
     else:
         checks.append(make_check("canon-worktree", "WARN", "canonical Git worktree unavailable"))
+
+    registry = load_json(foundry_dir / "AGENT_WORKTREES.json")
+    if registry and isinstance(registry.get("worktrees"), dict):
+        gpt = registry["worktrees"].get("gpt", {})
+        registered_path = Path(str(gpt.get("path", "")))
+        actual = git_state(registered_path) if registered_path.exists() else {"available": False}
+        mismatches = []
+        if actual.get("available"):
+            if gpt.get("branch") and gpt.get("branch") != actual.get("branch"):
+                mismatches.append("branch")
+            if gpt.get("head") and gpt.get("head") != actual.get("head"):
+                mismatches.append("head")
+        else:
+            mismatches.append("path")
+        checks.append(make_check(
+            "agent-worktree-registry",
+            "WARN" if mismatches else "PASS",
+            (
+                "GPT worktree registry matches the actual worktree"
+                if not mismatches
+                else "GPT worktree registry is stale: " + ", ".join(mismatches)
+            ),
+            {"registered": gpt, "actual": actual, "mismatches": mismatches},
+        ))
+    else:
+        checks.append(make_check("agent-worktree-registry", "WARN", "AGENT_WORKTREES.json missing or unreadable"))
 
     oracle_path = FOUNDRY_ROOT / "third_party" / "ORACLES.lock.json"
     ostate, osummary, odetails = validate_oracle_lock(load_json(oracle_path))
