@@ -124,6 +124,7 @@ def main() -> int:
 
     imp = sub.add_parser("impact", help="show sign-off and duplicate-owner impact before mutating files")
     imp.add_argument("targets", nargs="+")
+    imp.add_argument("--detail-limit", type=int, default=12)
 
     dtree = sub.add_parser("compare-trees", help="byte-compare two build/output trees for reproducibility")
     dtree.add_argument("left")
@@ -191,6 +192,7 @@ def main() -> int:
             *args.targets,
             "--live-root", str(live_root),
             "--db", str(fg.default_db(live_root)),
+            "--detail-limit", str(args.detail_limit),
         ]).returncode
     if args.cmd == "compare-trees":
         tool = HERE / "determinism_guard.py"
