@@ -119,6 +119,10 @@ def main() -> int:
     d = sub.add_parser("doctor", help="run the whole-project health gate")
     d.add_argument("--strict", action="store_true")
 
+    dash = sub.add_parser("dashboard", help="build the one-screen live project dashboard")
+    dash.add_argument("--refresh", action="store_true")
+    dash.add_argument("--top", type=int, default=12)
+
     orc = sub.add_parser("oracles", help="validate pinned external oracles and optionally check upstream drift")
     orc.add_argument("--online", action="store_true")
 
@@ -181,6 +185,16 @@ def main() -> int:
         cmd = [sys.executable, str(tool), "--live-root", str(live_root)]
         if args.strict:
             cmd.append("--strict")
+        return subprocess.run(cmd).returncode
+    if args.cmd == "dashboard":
+        tool = HERE / "dashboard.py"
+        cmd = [
+            sys.executable, str(tool),
+            "--live-root", str(live_root),
+            "--top", str(args.top),
+        ]
+        if args.refresh:
+            cmd.append("--refresh")
         return subprocess.run(cmd).returncode
     if args.cmd == "oracles":
         tool = HERE / "oracle_audit.py"
