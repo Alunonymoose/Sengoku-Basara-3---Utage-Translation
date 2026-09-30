@@ -124,6 +124,9 @@ def main() -> int:
     dtree.add_argument("right")
     dtree.add_argument("--ignore", action="append", default=[])
 
+    tm = sub.add_parser("tm", help="provenance-aware translation memory (add/find/audit/import/export)")
+    tm.add_argument("tm_args", nargs=argparse.REMAINDER)
+
     sh = sub.add_parser("show", help="generate the numbered texture-book PDF for an ARC")
     sh.add_argument("arc")
 
@@ -179,6 +182,12 @@ def main() -> int:
         for value in args.ignore:
             cmd.extend(["--ignore", value])
         return subprocess.run(cmd).returncode
+    if args.cmd == "tm":
+        tool = HERE / "translation_memory.py"
+        db = live_root / ".foundry" / "cache" / "translation_memory.sqlite"
+        return subprocess.run([
+            sys.executable, str(tool), "--db", str(db), *args.tm_args
+        ]).returncode
 
     graph = graph_for(live_root)
     try:
