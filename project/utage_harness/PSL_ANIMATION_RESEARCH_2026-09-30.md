@@ -456,3 +456,55 @@ Any selected animation subtree containing code-5 keys now emits an explicit anim
 `interpolation code 5 is approximated as smoothstep; exact MT Framework curve is not yet proven`
 
 This prevents approximate renders from being mistaken for exact runtime reproduction.
+
+
+## 2026-09-30 follow-up: duplicate sprite IDs and inherited orphan target
+
+Full live ENG sweep after sprite-ID target correction:
+
+- 4,075 ARCs parsed;
+- 87 PSL layouts parsed;
+- 14,859 nodes;
+- 7,954 animation records;
+- **0 layout failures**.
+
+### Duplicate node IDs
+
+Serialized sprite IDs are normally unique, but a small number of layouts intentionally reuse an ID. The resolver must therefore not assume global uniqueness.
+
+Proven cases:
+
+- cockpit1P ID 326: `Nyusin` and group `0_0_9`. Animation `Kao1set` targets 326; its child tracks target descendants of `0_0_9`, disambiguating the group.
+- vs_cockpit ID 102: groups `2_0` and `3`. Sibling records `CPU_item_1P` and `CPU_item_2P` both target 102; two records/two duplicate instances preserve serialized order.
+- vs_cockpit ID 48: `Flag0_0` and unrelated group `1_2`. `Flag0_1` resolves to the same flag family.
+
+The current resolver therefore uses, in order:
+
+1. unique ID match;
+2. ordered repeated-record/repeated-node mapping when counts match;
+3. descendant-track ancestry for group animations;
+4. conservative family-name affinity;
+5. unresolved/fail-closed otherwise.
+
+### Utage top_00 target ID 102 is a benign inherited orphan
+
+Utage `id\\lsp\\jpn\\tenka\\top_00` contains two animation records targeting sprite ID 102:
+
+- `8_0`
+- `4_0`
+
+Utage has no sprite node ID 102.
+
+The corresponding Samurai Heroes layout
+`id\\lsp\\abr\\tenka\\top` **does** contain:
+
+- node index 79, ID 101, name `4`;
+- node index 80, ID 102, name `4_0`, type 4, position (0,389);
+- child sprites ID 103/104/105 named `Mess`.
+
+Samurai Heroes also carries the same target-102 tracks:
+
+- `8_0 -> 102`
+- `4_0 -> 102`
+
+Therefore Utage retained animation records for the old SH `4_0` message/menu group after removing that group from the Utage node table. These unresolved targets are inherited dead references, not parser corruption and must remain ignored/fail-closed rather than remapped to array index 102.
