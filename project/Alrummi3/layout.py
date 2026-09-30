@@ -57,7 +57,11 @@ class LayoutNode:
     node_type: int = 0
 
     parent: int = -1
+    link_3c: int = -1
+    link_40: int = -1
+    link_44: int = -1
     position: tuple[float, float] = (0.0, 0.0)
+    rotation_deg: float = 0.0
     scale: tuple[float, float] = (1.0, 1.0)
     size: tuple[int, int] = (0, 0)
     material: int = 0
@@ -94,6 +98,7 @@ class Layout:
     textures: list[str] = field(default_factory=list)
     name_table_offset: int = 0
     name_table_end: int = 0
+    aux_names: list[str] = field(default_factory=list)
 
     @property
     def texture_count(self) -> int:
@@ -108,31 +113,52 @@ class Layout:
         return [n for n in self.nodes if n.texture and
                 n.texture.replace("/", "\\").lower().endswith(tail)]
 
-    def world_transform(self, index: int) -> tuple[float, float, float, float]:
-        """Return world x/y and accumulated scale; rotation is not applied."""
+    def world_matrix(self, index: int) -> tuple[float, float, float, float, float, float]:
+        """Return 2D affine matrix (a,b,c,d,e,f) in logical screen coordinates."""
         visiting: set[int] = set()
 
-        def walk(i: int) -> tuple[float, float, float, float]:
-            if i < 0:
-                return 0.0, 0.0, 1.0, 1.0
-            if i in visiting or i >= len(self.nodes):
+        def mul(p, q):
+            pa,pb,pc,pd,pe,pf = p
+            qa,qb,qc,qd,qe,qf = q
+            return (
+                pa*qa + pb*qd, pa*qb + pb*qe, pa*qc + pb*qf + pc,
+                pd*qa + pe*qd, pd*qb + pe*qe, pd*qc + pe*qf + pf,
+            )
 
+        def walk(i: int):
+            if i < 0:
+                return (1.0, 0.0, 0.0, 0.0, 1.0, 0.0)
+            if i in visiting or i >= len(self.nodes):
                 raise ValueError(f"invalid/cyclic PSL parent at node {i}")
             visiting.add(i)
-            node = self.nodes[i]
-            px, py, psx, psy = walk(node.parent)
+            n = self.nodes[i]
+            parent = walk(n.parent)
             visiting.remove(i)
-            x = px + node.position[0] * psx
-            y = py + node.position[1] * psy
-            return x, y, psx * node.scale[0], psy * node.scale[1]
+            r = math.radians(n.rotation_deg)
+            co, si = math.cos(r), math.sin(r)
+            sx, sy = n.scale
+            local = (co*sx, -si*sy, n.position[0],
+                     si*sx,  co*sy, n.position[1])
+            return mul(parent, local)
 
         return walk(index)
 
+    def world_transform(self, index: int) -> tuple[float, float, float, float]:
+        """Compatibility pose: world origin plus axis magnitudes after rotation."""
+        a,b,c,d,e,f = self.world_matrix(index)
+        return c, f, math.hypot(a, d), math.hypot(b, e)
+
+    def transformed_corners(self, index: int) -> list[tuple[float, float]]:
+        n = self.nodes[index]
+        a,b,c,d,e,f = self.world_matrix(index)
+        x0,y0,x1,y1 = n.geometry
+        return [(a*x+b*y+c, d*x+e*y+f)
+                for x,y in ((x0,y0),(x1,y0),(x1,y1),(x0,y1))]
+
     def logical_bbox(self, index: int) -> tuple[float, float, float, float]:
-        node = self.nodes[index]
-        x, y, sx, sy = self.world_transform(index)
-        x0, y0, x1, y1 = node.geometry
-        return x + x0 * sx, y + y0 * sy, x + x1 * sx, y + y1 * sy
+        pts = self.transformed_corners(index)
+        xs = [p[0] for p in pts]; ys = [p[1] for p in pts]
+        return min(xs), min(ys), max(xs), max(ys)
 
 
 def is_layout(raw: bytes) -> bool:
@@ -167,7 +193,10 @@ def parse_layout(raw: bytes, name: str = "") -> Layout:
         node = LayoutNode(
             index=index, name=node_name, texture=texture,
             node_type=_u32(rec, 0x54), parent=_s32(rec, 0x38),
+            link_3c=_s32(rec, 0x3C), link_40=_s32(rec, 0x40),
+            link_44=_s32(rec, 0x44),
             position=(_f32(rec, 0x00), _f32(rec, 0x04)),
+            rotation_deg=_f32(rec, 0x18),
             scale=(_f32(rec, 0x20), _f32(rec, 0x24)),
             size=(_s32(rec, 0x48), _s32(rec, 0x4C)),
             material=_s32(rec, 0x60),
@@ -179,11 +208,21 @@ def parse_layout(raw: bytes, name: str = "") -> Layout:
         if texture and texture not in textures:
             textures.append(texture)
 
+    name_table_end = cursor
+    aux_names: list[str] = []
+    aux_cursor = cursor
+    for _ in range(aux_count):
+        try:
+            value, aux_cursor = _read_string(raw, aux_cursor)
+        except ValueError:
+            break
+        aux_names.append(value)
+
     return Layout(
         name=name, version=version, node_count=node_count,
         aux_count=aux_count, nodes=nodes, textures=textures,
         name_table_offset=_name_table_offset(raw, node_count),
-        name_table_end=cursor,
+        name_table_end=name_table_end, aux_names=aux_names,
     )
 
 
