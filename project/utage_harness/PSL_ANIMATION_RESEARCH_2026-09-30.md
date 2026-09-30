@@ -480,3 +480,79 @@ Six layouts contain at least one duplicate node ID. Four animation records curre
 
 Machine-readable report:
 E:\BASARA_WORK\jobs\utage_harness_anim\FULL_ENG_ID_LINK_SWEEP_2026-09-30.json
+
+
+## 2026-09-30 follow-up: direct rLayoutSpr 0xB0 node deserializer proof
+
+The Utage EBOOT's `rLayoutSpr` callback table resolves to LSP-specific load/save code around `0x1426E4` and `0x143ED0`.
+
+The loader uses an explicit `0xB0` byte node-record size at `0x1429AC`, `0x142A14`, and `0x142A28`: it zeros a `0xB0` temporary record, reads exactly `0xB0` bytes from the resource stream, then expands that record into a `cLayoutSprite` runtime object. The save path uses the same `0xB0` size at `0x143FEC`, `0x14401C`, and `0x14416C` and performs the inverse mapping. This independently proves the 176-byte fixed node record used by the parser.
+
+### Direct serialized -> runtime mapping
+
+The deserializer establishes these mappings without inference:
+
+| PSL node offset | cLayoutSprite runtime destination | Supported meaning |
+| --- | --- | --- |
+| `0x00..0x0F` | current `+0x90..0x9F` | `mPos` |
+| `0x10..0x1F` | current `+0xA0..0xAF` | `mRot` |
+| `0x20..0x2F` | current `+0xB0..0xBF` | `mScale` |
+| `0x30` | current byte `+0xF4` | `mIsDisp` |
+| `0x34` | current byte `+0xF5` | `mIsShake` |
+| `0x38` | `+0x114`, later resolved to pointer `+0x100` | parent node reference |
+| `0x3C` | boolean byte `+0x0C` | runtime control flag; exact public field name not promoted |
+| `0x40` | `+0x1FC`, later resolved to pointer `+0x110` | ID-based generic link; type-5 targets are masks |
+| `0x44` | signed byte `+0xF7` | control field; exact public name not promoted |
+| `0x48` | `+0x1F4` | texture-size metadata |
+| `0x4C` | `+0x1F8` | texture-size metadata |
+| `0x50` | `+0x04` | `mID` |
+| `0x54` | `+0x10` | `mType` |
+| `0x58` | `+0x14` | centre/control field; exact public name not promoted |
+| `0x5C` | `+0x18` | `mPass` |
+| `0x60` | `+0x1C` | `mShaderType` |
+| `0x64` | boolean byte `+0xF6` | mask-related control; exact public name not promoted |
+| `0x68` | `+0x20` | `mBlendState` |
+| `0x6C` | `+0x24` | control field; exact public name not promoted |
+| `0x70` | boolean byte `+0x1EB` | control flag; exact public name not promoted |
+| `0x74..0x80` | current `+0xC0..0xCC` | `mSprRect` |
+| `0x84..0x90` | current `+0xD0..0xDC` | `mImageRect` |
+| `0x94..0xA0` | current `+0xE0/+0xE4/+0xE8/+0xEC` | `mColor0..mColor3` |
+
+The final `0xA4/0xA8/0xAC` words are not consumed by this expansion path and remain reserved/unknown rather than receiving invented semantics.
+
+### Base/current runtime state
+
+Reflection accessors expose separate base and current/animated state:
+
+- `mIsDisp`: base byte `+0x09`, current byte `+0xF4`.
+- `mIsShake`: base byte `+0x0E`, current byte `+0xF5`.
+- `mPos`: base `+0x60`, current `+0x90`.
+- `mRot`: base `+0x70`, current `+0xA0`.
+- `mScale`: base `+0x80`, current `+0xB0`.
+- `mSprRect`: base `+0x30`, current `+0xC0`.
+- `mImageRect`: base `+0x40`, current `+0xD0`.
+- `mColor0..3`: base `+0x50/+0x54/+0x58/+0x5C`, current `+0xE0/+0xE4/+0xE8/+0xEC`.
+- `mPass` getter/setter uses runtime `+0x18`.
+
+Immediately after each `0xB0` record is expanded, helper `0x83EDA0` copies those current values into their corresponding base fields, including current `mIsDisp -> +0x09` and current `mIsShake -> +0x0E`.
+
+This gives an end-to-end engine-backed path:
+
+`serialized node record -> current cLayoutSprite state -> base cLayoutSprite state`.
+
+### Renderer consequence
+
+Static layout reconstruction can now honor serialized node `+0x30` as default display without name heuristics or alpha guesses.
+
+For an explicit animation preview, the harness activates the selected animation target before applying its channels because legitimate effect sprites can be hidden at rest and externally activated when their clip plays. An explicit `mAnimSprDisp`/visibility key remains authoritative.
+
+Regression after integrating default display:
+
+- 4,075/4,075 live ENG ARCs parsed.
+- 87/87 PSL layouts parsed.
+- 14,859 nodes.
+- 7,954 animation/control records.
+- zero ARC or layout failures.
+- mode-select static reconstruction: 63 rendered, 22 hidden/skipped.
+- selected `STORY_effect`: node 100 renders even though its resting `mIsDisp` is false.
+- title `logo_scale` frame 96 remains coherent.
