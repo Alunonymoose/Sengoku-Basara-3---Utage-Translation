@@ -43,6 +43,23 @@ class ProjectAutomationTests(unittest.TestCase):
         self.assertTrue(details["bad"])
         self.assertTrue(details["missing"])
 
+    def test_terminology_blocker_validation(self):
+        good = {"entries": [
+            {"id": "mode", "status": "OFFICIAL_SH_EXACT", "canonical_english": "VERSUS",
+             "forbidden_or_superseded_variants": []}
+        ]}
+        state, _, details = doctor.validate_terminology_ledger(good)
+        self.assertEqual(state, "PASS")
+        self.assertEqual(details["entry_count"], 1)
+
+        unresolved = {"entries": [
+            {"id": "officer", "status": "NEEDS_SOURCE", "canonical_english": None,
+             "current_variants": ["A", "B"], "forbidden_or_superseded_variants": []}
+        ]}
+        state, _, details = doctor.validate_terminology_ledger(unresolved)
+        self.assertEqual(state, "WARN")
+        self.assertEqual(len(details["blockers"]), 1)
+
     def test_determinism_guard_detects_change(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td)
