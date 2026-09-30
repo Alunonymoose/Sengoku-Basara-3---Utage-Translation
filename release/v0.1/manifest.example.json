@@ -1,0 +1,14 @@
+{
+  "patch_version": "v0.1-preview",
+  "title": "Sengoku BASARA 3 Utage English Translation",
+  "title_id": "BLJM60389",
+  "files": [
+    {
+      "path": "USRDIR/example.bin",
+      "type": "xdelta3",
+      "patch": "patches/example.bin.xdelta",
+      "base_sha256": "REPLACE_WITH_SHA256_OF_SUPPORTED_ORIGINAL",
+      "result_sha256": "REPLACE_WITH_SHA256_OF_V01_RESULT"
+    }
+  ]
+}
