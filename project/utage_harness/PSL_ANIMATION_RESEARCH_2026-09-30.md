@@ -714,3 +714,30 @@ Public MT Framework reverse-engineering provides useful but non-identical contex
 Utage PSL code 5 **cannot be copied directly from that explicit-tangent Hermite implementation**, because the required tangent payload is absent. It may be an automatic/fixed Hermite-like mode, but that is not yet proven.
 
 Harness rule: retain the current code-5 interpolation as an explicitly labelled approximation until a Utage/MT Framework evaluator or runtime measurement proves the exact curve. Do not silently promote smoothstep, modern explicit-tangent Hermite, or `MtEaseCurve` to canonical behavior.
+
+
+## 2026-09-30 follow-up: first clean RRC shader/blend correlations
+
+Capture `BLJM60389_20260925092042_capture.rrc.gz` was correlated against live `title.arc`.
+The correlation was deliberately restricted to XET payloads that map to exactly one sprite owner
+across the archive's parsed layouts and to a nearby following draw (<=64 replay commands).
+
+Only four pairs satisfy that conservative rule:
+
+| shader_type | mBlendState | Sprite | RSX blend | Alpha test |
+| ---: | ---: | --- | --- | --- |
+| 1 | 5 | `Utage` / `title_012_ID_HQ` | SrcAlpha + OneMinusSrcAlpha, ADD | off |
+| 2 | 0 | `Wind` / `title_017_ID_HQ` | SrcAlpha + OneMinusSrcAlpha, ADD | off |
+| 5 | 0 | `logo_shadow_01` / `title_006_ID_HQ` | SrcAlpha + OneMinusSrcAlpha, ADD | off |
+| 6 | 1 | `logo_kamon` / `title_002_ID_HQ` | blending disabled (ONE/ZERO, ADD) | on |
+
+This directly proves that serialized `mBlendState` is **not sufficient by itself** to derive the
+effective RSX blend path: state 0 appears with multiple shader types on ordinary alpha blending,
+while state 1 under shader type 6 is an alpha-test/cutout path. Shader/material selection must be
+part of any future exact compositor mapping.
+
+The correlation intentionally remains sparse. Do not extrapolate unseen
+`(shader_type, mBlendState)` combinations from these four rows.
+
+Diagnostic output:
+`E:\BASARA_WORK\jobs\utage_harness_anim\RRC_SHADER_BLEND_CORRELATION_2026-09-30.json`
