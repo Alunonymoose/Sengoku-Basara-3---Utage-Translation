@@ -7,7 +7,6 @@ from pathlib import Path
 from typing import Any
 
 DEFAULT_LIVE = Path(r"E:\Utage Patching New")
-DEFAULT_DB = DEFAULT_LIVE / ".foundry" / "cache" / "foundry_graph.sqlite"
 ENG_PREFIX = "PS3_GAME/USRDIR/nativePS3/rom/eng/"
 
 
@@ -23,7 +22,6 @@ def normalize_live_rel(target: str, live_root: Path) -> str:
         return ENG_PREFIX + raw[len("rom/eng/"):]
     if raw.lower().startswith(ENG_PREFIX.lower()):
         return raw
-    # Treat an ENG-relative ARC path as such.
     return ENG_PREFIX + raw.lstrip("/")
 
 
@@ -34,7 +32,12 @@ def eng_arc_rel(live_rel: str) -> str | None:
     return None
 
 
-def impact(db_path: Path, live_root: Path, targets: list[str]) -> dict[str, Any]:
+def impact(
+    db_path: Path,
+    live_root: Path,
+    targets: list[str],
+    detail_limit: int = 12,
+) -> dict[str, Any]:
     db = sqlite3.connect(db_path)
     db.row_factory = sqlite3.Row
 
@@ -58,6 +61,9 @@ def impact(db_path: Path, live_root: Path, targets: list[str]) -> dict[str, Any]
         resources = []
         shared_payloads = []
         same_name_owners = []
+        shared_payload_count = 0
+        same_name_owner_count = 0
+
         if arc_rel is not None:
             file_row = db.execute(
                 "SELECT id,rel_path,size,sha256,is_arc FROM files WHERE role='ENG' AND lower(rel_path)=lower(?)",
@@ -87,16 +93,18 @@ def impact(db_path: Path, live_root: Path, targets: list[str]) -> dict[str, Any]
                             FROM v_resources
                             WHERE raw_sha256=? AND NOT (role='ENG' AND lower(arc_path)=lower(?))
                             ORDER BY role,arc_path,member_index
-                            LIMIT 100
+                            LIMIT 20
                             """,
                             (sha, arc_rel),
                         ).fetchall()
                         if owners:
-                            shared_payloads.append({
-                                "raw_sha256": sha,
-                                "source_member": {"index": r["member_index"], "name": r["name"]},
-                                "other_owners": [dict(x) for x in owners],
-                            })
+                            shared_payload_count += 1
+                            if len(shared_payloads) < detail_limit:
+                                shared_payloads.append({
+                                    "raw_sha256": sha,
+                                    "source_member": {"index": r["member_index"], "name": r["name"]},
+                                    "other_owners": [dict(x) for x in owners],
+                                })
                         seen_payloads.add(sha)
 
                     name_key = str(r["name"]).lower()
@@ -107,16 +115,18 @@ def impact(db_path: Path, live_root: Path, targets: list[str]) -> dict[str, Any]
                             FROM v_resources
                             WHERE name_lower=? AND NOT (role='ENG' AND lower(arc_path)=lower(?))
                             ORDER BY role,arc_path,member_index
-                            LIMIT 100
+                            LIMIT 20
                             """,
                             (name_key, arc_rel),
                         ).fetchall()
                         if owners:
-                            same_name_owners.append({
-                                "name": r["name"],
-                                "source_member": r["member_index"],
-                                "other_owners": [dict(x) for x in owners],
-                            })
+                            same_name_owner_count += 1
+                            if len(same_name_owners) < detail_limit:
+                                same_name_owners.append({
+                                    "name": r["name"],
+                                    "source_member": r["member_index"],
+                                    "other_owners": [dict(x) for x in owners],
+                                })
                         seen_names.add(name_key)
 
         results.append({
@@ -126,12 +136,17 @@ def impact(db_path: Path, live_root: Path, targets: list[str]) -> dict[str, Any]
             "indexed_file": dict(file_row) if file_row else None,
             "resource_count": len(resources),
             "signoffs_that_would_become_stale": [dict(x) for x in signoff_rows],
-            "shared_payload_groups": shared_payloads,
-            "same_name_owner_groups": same_name_owners,
             "risk_summary": {
                 "certified_file": bool(signoff_rows),
-                "shared_payload_count": len(shared_payloads),
-                "same_name_owner_count": len(same_name_owners),
+                "shared_payload_count": shared_payload_count,
+                "same_name_owner_count": same_name_owner_count,
+                "detail_limit": detail_limit,
+            },
+            "shared_payload_examples": shared_payloads,
+            "same_name_owner_examples": same_name_owners,
+            "details_truncated": {
+                "shared_payloads": shared_payload_count > len(shared_payloads),
+                "same_name_owners": same_name_owner_count > len(same_name_owners),
             },
         })
 
@@ -151,10 +166,14 @@ def main() -> int:
     ap.add_argument("targets", nargs="+")
     ap.add_argument("--live-root", default=str(DEFAULT_LIVE))
     ap.add_argument("--db")
+    ap.add_argument("--detail-limit", type=int, default=12)
     args = ap.parse_args()
     live = Path(args.live_root)
     db = Path(args.db) if args.db else live / ".foundry" / "cache" / "foundry_graph.sqlite"
-    print(json.dumps(impact(db, live, args.targets), indent=2, ensure_ascii=False))
+    print(json.dumps(
+        impact(db, live, args.targets, max(0, args.detail_limit)),
+        indent=2, ensure_ascii=False
+    ))
     return 0
 
 
