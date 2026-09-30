@@ -21,14 +21,14 @@ TRACK_STRIDE_WORDS = {
     1: 6,   # position
     3: 6,   # rotation
     5: 6,   # scale
-    7: 6,   # secondary vector/rect-like track; exact-end proven
+    7: 6,   # geometry rect: time/interp + four signed coordinates
     9: 6,   # UV rect
     11: 3,  # color 0
     13: 3,  # color 1
     15: 3,  # color 2
     17: 3,  # color 3
     19: 2,  # unknown; width not independently exercised yet
-    21: 3,  # unknown packed-value track; exact-end proven
+    21: 3,  # visibility: time/interp + 0/1 value
 }
 
 CHANNEL_NAMES = {
@@ -39,7 +39,7 @@ CHANNEL_NAMES = {
     4: "control_4",
     5: "scale",
     6: "control_6",
-    7: "vector_7",
+    7: "geometry_rect",
     8: "control_8",
     9: "uv_rect",
     10: "control_10",
@@ -53,7 +53,7 @@ CHANNEL_NAMES = {
     18: "control_18",
     19: "track_19",
     20: "control_20",
-    21: "track_21",
+    21: "visibility",
 }
 
 
@@ -83,6 +83,12 @@ class Key:
     def float_values(self) -> tuple[float, ...]:
         return tuple(
             struct.unpack(">f", struct.pack(">I", value))[0]
+            for value in self.values
+        )
+
+    def signed_values(self) -> tuple[int, ...]:
+        return tuple(
+            struct.unpack(">i", struct.pack(">I", value))[0]
             for value in self.values
         )
 
