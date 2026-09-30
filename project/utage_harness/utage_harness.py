@@ -640,13 +640,12 @@ def cmd_layout_animations(args):
     if args.match:
         needle = args.match.casefold()
         records = [a for a in records if needle in a.name.casefold()
-                   or (0 <= a.target_node < len(layout.nodes)
-                       and needle in layout.nodes[a.target_node].name.casefold())]
+                   or ((target := layout.animation_target(a)) is not None
+                       and needle in target.name.casefold())]
     out = []
     for animation in records:
-        target_name = (
-            layout.nodes[animation.target_node].name
-            if 0 <= animation.target_node < len(layout.nodes) else "")
+        target = layout.animation_target(animation)
+        target_name = target.name if target is not None else ""
         channels = []
         for channel in animation.channels:
             if channel.stride_words is None:
@@ -663,7 +662,8 @@ def cmd_layout_animations(args):
         out.append({
             "index": animation.index, "name": animation.name,
             "type": animation.record_type,
-            "target_node": animation.target_node,
+            "target_id": animation.target_node,
+            "target_index": target.index if target is not None else None,
             "target_name": target_name,
             "duration": animation.duration,
             "parent_animation": animation.parent_animation,
@@ -741,17 +741,28 @@ def _sample_channel(channel, frame):
     return left.values
 
 def _resolve_animation_root(layout, selector):
+    """Resolve any animation/control record; retain the legacy helper name for CLI compatibility."""
     if selector is None:
         return None
     try:
         idx = int(selector)
-        roots = [a for a in layout.animation_roots if a.index == idx]
+        matches = [a for a in layout.animations if a.index == idx]
     except ValueError:
         needle = selector.casefold()
-        roots = [a for a in layout.animation_roots if needle in a.name.casefold()]
-    if len(roots) != 1:
-        raise KeyError(f"animation root {selector!r} matched {len(roots)} roots")
-    return roots[0]
+        exact = [a for a in layout.animations if a.name.casefold() == needle]
+        matches = exact if exact else [
+            a for a in layout.animations if needle in a.name.casefold()]
+    if len(matches) != 1:
+        raise KeyError(f"animation selector {selector!r} matched {len(matches)} records")
+    selected = matches[0]
+    direct = [a for a in layout.animations if a.parent_animation == selected.index]
+    child_groups = [a for a in direct if a.target_node < 0]
+    if selected.target_node < 0 and len(child_groups) > 1:
+        labels = ", ".join(f"{a.index}:{a.name}" for a in child_groups)
+        raise ValueError(
+            f"animation {selected.index}:{selected.name} is a container with multiple clips; "
+            f"select one child clip explicitly ({labels})")
+    return selected
 
 def _animated_local_states(layout, root, frame):
     states = {
@@ -767,10 +778,14 @@ def _animated_local_states(layout, root, frame):
         return states, []
     warnings = []
     for animation in layout.animation_tree(root.index):
-        if not 0 <= animation.target_node < len(layout.nodes):
+        target = layout.animation_target(animation)
+        if target is None:
+            if animation.target_node >= 0:
+                warnings.append(
+                    f"animation {animation.index} target id {animation.target_node} has no unique node")
             continue
         local_frame = 0 if animation.duration < 0 else min(max(frame, 0), animation.duration)
-        state = states[animation.target_node]
+        state = states[target.index]
         for channel in animation.channels:
             values = _sample_channel(channel, local_frame)
             if values is None:
@@ -925,13 +940,45 @@ def _mask_canvas(arc, layout, states, mask_node, atlas_scale, viewport_scale, ou
     warped = _warp_tile(tile, geometry, world, viewport_scale, output_size)
     return warped.getchannel("A")
 
+def _select_rrc_surface(parsed, selector):
+    final = parsed["rsx_state"]["surface_clip"]
+    if selector == "final":
+        return dict(final), {"mode": "final", "draw_count": None}
+    if selector == "dominant":
+        draws, _writes = _rrc_draw_snapshots(parsed)
+        counts = {}
+        first = {}
+        for draw in draws:
+            clip = draw["pipeline"]["surface_clip"]
+            key = (clip[0], clip[1], clip[2], clip[3])
+            counts[key] = counts.get(key, 0) + 1
+            first.setdefault(key, clip)
+        if not counts:
+            return dict(final), {"mode": "final-fallback", "draw_count": None}
+        key = max(counts, key=lambda k: counts[k])
+        clip = first[key]
+        return {
+            "x": clip[0], "y": clip[1], "width": clip[2], "height": clip[3],
+        }, {"mode": "dominant", "draw_count": counts[key]}
+    try:
+        width, height = map(int, selector.lower().split("x"))
+    except Exception as exc:
+        raise ValueError("--rrc-surface must be dominant, final, or WxH") from exc
+    if width <= 0 or height <= 0:
+        raise ValueError("--rrc-surface dimensions must be positive")
+    return {"x": 0, "y": 0, "width": width, "height": height}, {
+        "mode": "explicit", "draw_count": None}
+
 def cmd_render_layout(args):
     arc = core.parse_arc(Path(args.arc))
     entry, layout = get_layout(arc, args.layout)
     logical_w, logical_h = args.logical_size
     rsx_surface = None
+    rsx_surface_selection = None
     if args.rrc:
-        rsx_surface = parse_rrc(Path(args.rrc))["rsx_state"]["surface_clip"]
+        parsed_rrc = parse_rrc(Path(args.rrc))
+        rsx_surface, rsx_surface_selection = _select_rrc_surface(
+            parsed_rrc, args.rrc_surface)
     inferred_output = (
         (rsx_surface["width"], rsx_surface["height"])
         if rsx_surface else args.logical_size
@@ -953,7 +1000,8 @@ def cmd_render_layout(args):
     wanted = {int(v) for v in args.node} if args.node else None
     needle = args.match.casefold() if args.match else None
     animated_targets = (
-        {a.target_node for a in layout.animation_tree(root.index) if a.target_node >= 0}
+        {target.index for a in layout.animation_tree(root.index)
+         if (target := layout.animation_target(a)) is not None}
         if root else None
     )
     for node in layout.nodes:
@@ -1047,6 +1095,7 @@ def cmd_render_layout(args):
         "layout": entry.name, "logical_size": list(args.logical_size),
         "output_size": [out_w, out_h], "atlas_scale": args.atlas_scale,
         "rsx_surface": rsx_surface,
+        "rsx_surface_selection": rsx_surface_selection,
         "animation_root": (
             {"index": root.index, "name": root.name, "frame": args.frame}
             if root else None),
@@ -1076,12 +1125,14 @@ def build_cli():
     p.add_argument("--logical-size", type=lambda s: tuple(map(int, s.lower().split("x"))), default=(640, 480))
     p.add_argument("--output-size", type=lambda s: tuple(map(int, s.lower().split("x"))))
     p.add_argument("--background", type=lambda s: tuple(map(int, s.split(","))), default=(0, 0, 0, 0))
-    p.add_argument("--animation-root", help="root animation index or unique name fragment")
+    p.add_argument("--animation-root", help="animation record index or unique name fragment; ambiguous container roots fail closed")
     p.add_argument("--frame", type=int, default=0)
     p.add_argument("--respect-alpha", action="store_true")
     p.add_argument("--include-static", action="store_true",
                    help="with --animation-root, also draw textured nodes outside that animation tree")
-    p.add_argument("--rrc", help="use an RRC capture's RSX surface size for output")
+    p.add_argument("--rrc", help="use an RRC capture to select an RSX output surface")
+    p.add_argument("--rrc-surface", default="dominant",
+                   help="RRC surface selection: dominant (default), final, or WxH")
     p.set_defaults(func=cmd_render_layout)
     p = sp.add_parser("render-scene"); p.add_argument("scene"); p.add_argument("out"); p.set_defaults(func=cmd_render_scene)
     p = sp.add_parser("rrc-info"); p.add_argument("capture"); p.set_defaults(func=cmd_rrc_info)
