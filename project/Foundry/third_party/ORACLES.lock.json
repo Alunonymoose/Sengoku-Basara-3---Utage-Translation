@@ -1,0 +1,110 @@
+{
+  "schema": "BASARA_FOUNDRY_EXTERNAL_ORACLES_V1",
+  "generated": "2026-09-30",
+  "policy": [
+    "These commits are external behavioral/research oracles, not automatic production authority.",
+    "Fresh Utage fixtures and runtime evidence outrank generic upstream behavior.",
+    "Do not silently update an oracle: review delta, rerun regression tests, then change this lock.",
+    "Preserve each upstream project's licence and attribution; do not copy incompatible code into project-authored MIT code."
+  ],
+  "oracles": [
+    {
+      "name": "RPCS3",
+      "repo": "RPCS3/rpcs3",
+      "commit": "f0d2485981c3e738ff53a2695c120502a153e3ba",
+      "role": [
+        "runtime",
+        "GDB",
+        "RSX behavior"
+      ]
+    },
+    {
+      "name": "REvilLib",
+      "repo": "PredatorCZ/RevilLib",
+      "commit": "e17f9718ea571f040a7e1f331c28a4d45a6066b5",
+      "role": [
+        "MT Framework format oracle",
+        "class database"
+      ],
+      "adoption": "reference-only unless licensing is deliberately accepted"
+    },
+    {
+      "name": "Kuriimu2",
+      "repo": "FanTranslatorsInternational/Kuriimu2",
+      "commit": "6babcdc3562975f445f258f0b7f1d9bd8e5e2a83",
+      "role": [
+        "format comparison",
+        "historical behavior oracle"
+      ],
+      "adoption": "do not replace project-certified XET path without fixture review"
+    },
+    {
+      "name": "DirectXTex",
+      "repo": "microsoft/DirectXTex",
+      "commit": "4c5123d8db27be9625403908eba06a81d7b82a5e",
+      "role": [
+        "BC encoder oracle",
+        "texture diff lab"
+      ]
+    },
+    {
+      "name": "Compressonator",
+      "repo": "GPUOpen-Tools/compressonator",
+      "commit": "f4b53d79ec5abbb50924f58aebb7bf2793200b94",
+      "role": [
+        "BC encoder oracle",
+        "texture quality lab"
+      ]
+    },
+    {
+      "name": "bcdec",
+      "repo": "iOrange/bcdec",
+      "commit": "80859ed3b7afb1c527a2a99d70c61457bea72d0c",
+      "role": [
+        "independent BC decoder oracle"
+      ]
+    },
+    {
+      "name": "vgmstream",
+      "repo": "vgmstream/vgmstream",
+      "commit": "7dc938fa2f210943b37c7b6511852b516ef432ab",
+      "role": [
+        "audio decode/inventory oracle"
+      ]
+    },
+    {
+      "name": "Ps3GhidraScripts",
+      "repo": "clienthax/Ps3GhidraScripts",
+      "commit": "d7cb6fd33da40e6547a23fa471292a58df54b89b",
+      "role": [
+        "PS3 ELF/Ghidra metadata oracle"
+      ]
+    },
+    {
+      "name": "PS3-recomp",
+      "repo": "FBobDev/PS3-recomp",
+      "commit": "0625101c1702e1855a16fc84ccea1f9c99286061",
+      "role": [
+        "PPU ELF/function/OPD/import structural oracle"
+      ]
+    },
+    {
+      "name": "PaddleOCR",
+      "repo": "PaddlePaddle/PaddleOCR",
+      "commit": "dab3fe35379033fdcb2d0e9572fac0b36c9a9ebf",
+      "role": [
+        "optional Japanese-text smoke detector"
+      ],
+      "adoption": "triage only; never auto-patch from OCR"
+    },
+    {
+      "name": "WhisperX",
+      "repo": "m-bain/whisperX",
+      "commit": "771b4a14a9486f8fd5aef18ef49e35d639523dd3",
+      "role": [
+        "optional subtitle timing/alignment assistant"
+      ],
+      "adoption": "timing aid only; not translation authority"
+    }
+  ]
+}
