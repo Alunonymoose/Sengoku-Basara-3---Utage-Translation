@@ -793,3 +793,17 @@ This combination strongly indicates a shader-driven light/glow special case rath
 untextured type-0 solid-color path. It remains intentionally unsupported/fail-closed until a runtime
 capture of this screen or shader-47 evidence proves the material semantics. Do not generalize
 textured type-0 rendering from this single node.
+
+
+## 2026-09-30 follow-up: channel 19 is unobserved across the full live corpus
+
+A full ENG sweep of all **87 parsed PSL layouts / 7,954 animation records** found:
+
+- channel 19 keyed records: **0**
+- channel 19 total keys: **0**
+- nonzero channel-19 scalar/control observations: **0**
+
+The current exact-end schema reserves the slot, but there is no live Utage example from which to infer
+its runtime meaning. Treat channel 19 as **structurally reserved / unobserved in the present corpus**,
+not as an active unknown that needs implementation. Any future semantic name must come from another
+game/resource sample or direct runtime-class evidence.
