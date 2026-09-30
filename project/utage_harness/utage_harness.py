@@ -909,7 +909,7 @@ def _animated_local_states(layout, root, frame):
             "position": list(n.position), "scale": list(n.scale),
             "geometry": list(n.geometry), "uv": list(n.uv), "colors": list(n.colors),
             "rotation": [0.0, 0.0, n.rotation, 0.0],
-            "visible": True, "shake": False,
+            "visible": bool(n.default_display), "shake": bool(n.default_shake),
         }
         for n in layout.nodes
     }
@@ -917,6 +917,14 @@ def _animated_local_states(layout, root, frame):
         return states, []
     warnings = []
     selected_tree = layout.animation_tree(root.index)
+
+    # Clip playback activates its target sprites even when the resource baseline
+    # default display flag is off. A keyed display channel below remains
+    # authoritative at the requested frame.
+    for animation in selected_tree:
+        target = layout.animation_target(animation)
+        if target is not None:
+            states[target.index]["visible"] = True
     if any(
         key.interpolation == 5
         for animation in selected_tree
