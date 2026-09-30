@@ -508,3 +508,64 @@ Samurai Heroes also carries the same target-102 tracks:
 - `4_0 -> 102`
 
 Therefore Utage retained animation records for the old SH `4_0` message/menu group after removing that group from the Utage node table. These unresolved targets are inherited dead references, not parser corruption and must remain ignored/fail-closed rather than remapped to array index 102.
+
+
+## 2026-09-30 follow-up: baseline display state and interpolation ownership
+
+### Serialized baseline display/shake candidates
+
+A full 87-layout / 14,859-node sweep of the live ENG tree gives:
+
+- node +0x30: only 0 or 1
+  - 6,779 nodes = 1
+  - 8,080 nodes = 0
+- node +0x34: 0 on all 14,859 nodes
+
+Combined with the Utage EBOOT cLayoutSprite reflection fields `mIsDisp` and
+`mIsShake`, and with the semantic distribution of +0x30 (ordinary title/loading
+sprites enabled, large banks of optional/common/menu-state sprites disabled),
++0x30 is strongly supported as the serialized default-display flag.
+
++0x34 is exposed as `default_shake` for forensic completeness, but remains
+weaker evidence because the current live corpus never serializes a non-zero value.
+
+Important runtime distinction: default display is not permanent draw eligibility.
+2,522 animation records with keyed tracks target nodes whose serialized +0x30
+default is 0. Common examples include cursors, difficulty labels, menu highlights,
+2P prompts and Tenka menu entries. Higher-level UI/clip playback therefore activates
+initially-hidden sprites outside the ordinary keyed display channel. The renderer
+must not blindly suppress a deliberately selected animation target merely because
+its resource default is hidden.
+
+### Interpolation mode belongs to the left/outgoing key — strong structural evidence
+
+Across 10,510 keyed tracks:
+
+- code 3 is overwhelmingly dominant;
+- code 0 and code 5 occur on first, interior and final keys;
+- mixed two-key transform tracks provide the most useful direction evidence.
+
+Examples:
+
+- tenka_tassei `tekichu_2` scale 10.0 -> 1.6 over 10 frames has key codes 3 -> 0.
+  Interpreting the left key as segment owner produces an ordinary animated shrink;
+  right-key ownership would hold at 10 then jump to 1.6.
+- tenka_tassei `sensu_mask` position 9 -> 5 over 48 frames has codes 0 -> 3.
+  Left-key ownership naturally gives a held/step offset.
+- gallery/title entrance motions such as -50 -> 0 over 10 frames use 5 -> 3.
+- tenka_japmap `Map_Base` scale 2.5 -> about 1.0 over 13 frames uses 5 -> 3.
+
+This strongly supports the harness's existing left-key segment ownership:
+
+- code 0: hold/step behavior;
+- code 3: ordinary linear interpolation;
+- code 5: an ease-family interpolation.
+
+The exact code-5 ease evaluator is still unproven. The current smoothstep
+approximation must remain labelled approximate.
+
+Engine-side supporting context: the Utage EBOOT contains `Depth (Linear and Ease)`,
+`Ease`, and `mEaseCurve` strings, while public MT Framework reverse engineering
+shows `MtEaseCurve` as a two-float structure distinct from the much larger
+8-point `MtHermiteCurve`. This supports an ease interpretation but does not bind
+PSL code 5 to a specific mathematical curve.

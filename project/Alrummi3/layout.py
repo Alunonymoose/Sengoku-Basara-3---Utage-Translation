@@ -65,6 +65,8 @@ class LayoutNode:
     position: tuple[float, float] = (0.0, 0.0)
     rotation: float = 0.0
     scale: tuple[float, float] = (1.0, 1.0)
+    default_display: bool = True
+    default_shake: bool = False
     size: tuple[int, int] = (0, 0)
     shader_type: int = 0
     blend_state: int = 0
@@ -460,6 +462,8 @@ def parse_layout(raw: bytes, name: str = "") -> Layout:
             position=(_f32(rec, 0x00), _f32(rec, 0x04)),
             rotation=_f32(rec, 0x18),
             scale=(_f32(rec, 0x20), _f32(rec, 0x24)),
+            default_display=bool(_s32(rec, 0x30)),
+            default_shake=bool(_s32(rec, 0x34)),
             size=(_s32(rec, 0x48), _s32(rec, 0x4C)),
             shader_type=_s32(rec, 0x60),
             blend_state=_s32(rec, 0x68),

@@ -574,6 +574,8 @@ def node_info(layout, node, atlas_scale=2.0):
         "type": node.node_type, "parent": node.parent, "texture": node.texture,
         "position": list(node.position), "rotation_deg": node.rotation,
         "scale": list(node.scale),
+        "default_display": node.default_display,
+        "default_shake": node.default_shake,
         "geometry": list(node.geometry), "uv_logical": list(node.uv),
         "source_rect_physical": list(node.source_rect(atlas_scale)),
         "world_transform": list(layout.world_transform(node.index)),
@@ -647,6 +649,7 @@ def cmd_psl_sweep(args):
     arc_ok = arc_fail = layout_count = layout_fail = node_count = animation_count = 0
     unresolved_target_count = duplicate_node_id_count = mask_link_count = resolved_mask_count = 0
     heuristic_target_count = 0
+    default_display_on = default_display_off = default_shake_on = 0
     failures = []
     reference_warnings = []
     for path in arcs:
@@ -672,6 +675,12 @@ def cmd_psl_sweep(args):
                 id_groups = {}
                 for node in layout.nodes:
                     id_groups.setdefault(node.node_id, []).append(node.index)
+                    if node.default_display:
+                        default_display_on += 1
+                    else:
+                        default_display_off += 1
+                    if node.default_shake:
+                        default_shake_on += 1
                     if node.link_40 >= 0:
                         mask_link_count += 1
                         if layout.mask_for(node.index) is not None:
@@ -734,6 +743,9 @@ def cmd_psl_sweep(args):
         "unresolved_animation_targets": unresolved_target_count,
         "heuristic_animation_targets": heuristic_target_count,
         "duplicate_node_ids": duplicate_node_id_count,
+        "default_display_on": default_display_on,
+        "default_display_off": default_display_off,
+        "default_shake_on": default_shake_on,
         "mask_links": mask_link_count,
         "resolved_type5_masks": resolved_mask_count,
         "reference_warnings": reference_warnings,
