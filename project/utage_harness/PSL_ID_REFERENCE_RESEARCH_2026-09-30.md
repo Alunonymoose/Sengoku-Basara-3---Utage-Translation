@@ -60,3 +60,45 @@ Current branch commits:
 
 Regression artifact:
 E:\BASARA_WORK\jobs\utage_harness_anim\PSL_ID_REFERENCE_REGRESSION_2026-09-30.json
+
+## Full-tree regression — 2026-09-30
+
+### Samurai Heroes ENG
+Root: `E:\SAMURAI HEROES\PS3_GAME\USRDIR\nativePS3\rom\eng`
+
+- 2,118 ARCs parsed
+- 79 PSL layouts
+- 6,687 nodes
+- 3,194 animation records
+- **0 layout parse failures**
+- 2 unresolved animation targets, both in `tenka_narration01` (IDs 201/202)
+- 0 duplicate node IDs
+- 24 nonnegative link_40 values
+- 16 proven type-5 mask links
+
+### Utage live ENG
+Root: `E:\Utage Patching New\PS3_GAME\USRDIR\nativePS3\rom\eng`
+
+- 4,075 ARCs parsed
+- 87 PSL layouts
+- 14,859 nodes
+- 7,954 animation records
+- **0 layout parse failures**
+- 8 unresolved animation targets
+- 10 duplicate node IDs
+- 202 nonnegative link_40 values
+- 175 proven type-5 mask links
+
+The parser therefore closes successfully across all 166 discovered layouts in the two English trees.
+
+Duplicate sprite IDs are real data, not parser corruption. ID resolution must be fail-closed unless exactly one node owns the ID.
+
+The remaining Utage unresolved animation targets split into:
+- repeated virtual/missing target ID 102 in tenka/top_00;
+- targets whose IDs are duplicated in cockpit layouts.
+
+No scalar/control field in the examined ambiguous animation records supplied a proven parent/scope ID, so duplicate targets must not be guessed by first-match, last-match, name similarity, or array index.
+
+Regression JSON:
+- `E:\BASARA_WORK\jobs\utage_harness_anim\SH_ENG_FULL_PSL_SWEEP_2026-09-30.json`
+- `E:\BASARA_WORK\jobs\utage_harness_anim\UTAGE_ENG_FULL_PSL_SWEEP_2026-09-30.json`
