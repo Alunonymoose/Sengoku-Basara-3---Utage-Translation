@@ -741,3 +741,28 @@ The correlation intentionally remains sparse. Do not extrapolate unseen
 
 Diagnostic output:
 `E:\BASARA_WORK\jobs\utage_harness_anim\RRC_SHADER_BLEND_CORRELATION_2026-09-30.json`
+
+
+## 2026-09-30 follow-up: six-capture conservative blend batch
+
+All six available 2026-09-25 RRC captures were batch-correlated against four relevant live UI archives:
+`title.arc`, `versus/menu.arc`, `select/c_versus.arc`, and `result_id.arc`.
+
+The same conservative rules were retained: exact XET mip-0 payload match, exactly one sprite owner
+inside the candidate archive's parsed layouts, and a nearby following draw.
+
+Results:
+
+- `(shader 18, blend 0)` gained **six independent correlations** across three captures and two
+  archive copies, all using SrcAlpha / OneMinusSrcAlpha, ADD, alpha-test off.
+- `(shader 23, blend 0)` produced four ordinary-alpha correlations but one alpha-test/cutout
+  correlation. Therefore even the `(shader_type, mBlendState)` pair is not globally sufficient
+  to determine final RSX state; draw/material/input context still matters.
+- The previously proven title pairs remained unchanged.
+
+Do not collapse these observations into a global shader/blend lookup table. The correct future
+model should attach runtime-observed pipeline evidence to concrete draw/material contexts and only
+promote a rule when all relevant dimensions are identified.
+
+Batch diagnostic:
+`E:\BASARA_WORK\jobs\utage_harness_anim\RRC_SHADER_BLEND_CORRELATION_ALL_2026-09-30.json`
