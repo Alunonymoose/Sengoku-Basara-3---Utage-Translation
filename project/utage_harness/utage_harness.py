@@ -498,6 +498,76 @@ def cmd_rrc_match_arc(args):
     print(json.dumps({"capture": args.capture, "arc": args.arc,
                       "arc_sha256": arc.data_sha256, "matches": matches}, indent=2))
 
+def _animation_target_resolution(layout, animation):
+    """Return (node, evidence) without hiding duplicate-ID heuristics."""
+    if animation.target_node < 0:
+        return None, "no_target"
+    hits = [n for n in layout.nodes if n.node_id == animation.target_node]
+    if len(hits) == 1:
+        return hits[0], "unique_id"
+    if not hits:
+        return None, "missing_id"
+
+    chosen = layout.animation_target(animation)
+    if chosen is None:
+        return None, "ambiguous_duplicate_id"
+
+    refs = [a for a in layout.animations if a.target_node == animation.target_node]
+    if len(refs) == len(hits) and len(hits) > 1:
+        refs = sorted(refs, key=lambda a: a.index)
+        ordered_hits = sorted(hits, key=lambda n: n.index)
+        if ordered_hits[refs.index(animation)].index == chosen.index:
+            return chosen, "duplicate_order_pair"
+
+    descendants = [
+        a for a in layout.animation_tree(animation.index)
+        if a.index != animation.index and a.target_node >= 0
+    ]
+    if descendants:
+        unique_child_nodes = []
+        for child in descendants:
+            child_hits = [n for n in layout.nodes if n.node_id == child.target_node]
+            if len(child_hits) == 1:
+                unique_child_nodes.append(child_hits[0])
+
+        def under(node, ancestor):
+            cur = node.parent
+            seen = set()
+            while 0 <= cur < len(layout.nodes) and cur not in seen:
+                if cur == ancestor.index:
+                    return True
+                seen.add(cur)
+                cur = layout.nodes[cur].parent
+            return False
+
+        scores = [
+            (sum(under(child, hit) for child in unique_child_nodes), hit)
+            for hit in hits
+        ]
+        best = max(score for score, _ in scores)
+        winners = [hit for score, hit in scores if score == best and score > 0]
+        if len(winners) == 1 and winners[0].index == chosen.index:
+            return chosen, "duplicate_descendant_scope"
+
+    def prefix_score(a, b):
+        aa = ''.join(ch.lower() for ch in a if ch.isalnum())
+        bb = ''.join(ch.lower() for ch in b if ch.isalnum())
+        score = 0
+        for x, y in zip(aa, bb):
+            if x != y:
+                break
+            score += 1
+        return score
+
+    scored = [(prefix_score(animation.name, hit.name), hit) for hit in hits]
+    best = max(score for score, _ in scored)
+    winners = [hit for score, hit in scored if score == best and score > 0]
+    if len(winners) == 1 and winners[0].index == chosen.index:
+        return chosen, "duplicate_name_affinity"
+
+    return chosen, "duplicate_heuristic_unknown"
+
+
 def node_info(layout, node, atlas_scale=2.0):
     return {
         "index": node.index, "node_id": node.node_id, "name": node.name, "role": node.role,
@@ -576,6 +646,7 @@ def cmd_psl_sweep(args):
     arcs = [root] if root.is_file() else list(root.rglob("*.arc"))
     arc_ok = arc_fail = layout_count = layout_fail = node_count = animation_count = 0
     unresolved_target_count = duplicate_node_id_count = mask_link_count = resolved_mask_count = 0
+    heuristic_target_count = 0
     failures = []
     reference_warnings = []
     for path in arcs:
@@ -611,19 +682,33 @@ def cmd_psl_sweep(args):
                 }
                 duplicate_node_id_count += len(duplicate_ids)
 
-                unresolved_targets = [
-                    {"animation": animation.index, "name": animation.name,
-                     "target_id": animation.target_node}
-                    for animation in layout.animations
-                    if animation.target_node >= 0
-                    and layout.animation_target(animation) is None
-                ]
+                unresolved_targets = []
+                heuristic_targets = []
+                for animation in layout.animations:
+                    if animation.target_node < 0:
+                        continue
+                    target, resolution = _animation_target_resolution(layout, animation)
+                    if target is None:
+                        unresolved_targets.append({
+                            "animation": animation.index, "name": animation.name,
+                            "target_id": animation.target_node,
+                            "resolution": resolution,
+                        })
+                    elif resolution != "unique_id":
+                        heuristic_targets.append({
+                            "animation": animation.index, "name": animation.name,
+                            "target_id": animation.target_node,
+                            "target_index": target.index, "target_name": target.name,
+                            "resolution": resolution,
+                        })
                 unresolved_target_count += len(unresolved_targets)
-                if duplicate_ids or unresolved_targets:
+                heuristic_target_count += len(heuristic_targets)
+                if duplicate_ids or unresolved_targets or heuristic_targets:
                     reference_warnings.append({
                         "arc": str(path), "member": entry.name,
                         "duplicate_node_ids": duplicate_ids,
                         "unresolved_animation_targets": unresolved_targets,
+                        "heuristic_animation_targets": heuristic_targets,
                     })
 
                 if (not layout.complete or len(layout.animations) != layout.aux_count
@@ -647,6 +732,7 @@ def cmd_psl_sweep(args):
         "layout_fail": layout_fail, "nodes": node_count,
         "animations": animation_count,
         "unresolved_animation_targets": unresolved_target_count,
+        "heuristic_animation_targets": heuristic_target_count,
         "duplicate_node_ids": duplicate_node_id_count,
         "mask_links": mask_link_count,
         "resolved_type5_masks": resolved_mask_count,
@@ -682,7 +768,7 @@ def cmd_layout_animations(args):
                        and needle in target.name.casefold())]
     out = []
     for animation in records:
-        target = layout.animation_target(animation)
+        target, target_resolution = _animation_target_resolution(layout, animation)
         target_name = target.name if target is not None else ""
         channels = []
         for channel in animation.channels:
@@ -703,6 +789,7 @@ def cmd_layout_animations(args):
             "target_id": animation.target_node,
             "target_index": target.index if target is not None else None,
             "target_name": target_name,
+            "target_resolution": target_resolution,
             "duration": animation.duration,
             "parent_animation": animation.parent_animation,
             "offset": animation.offset, "size": animation.size,
