@@ -1,8 +1,9 @@
 """Conservative decoder for SB3/Utage PSL v0x21 animation/control tables.
 
-This module is intentionally standalone from Alrummi3/layout.py while concurrent
-work exists in the GPT worktree. It parses the animation table only when all
-declared records land exactly on the node-name table. Otherwise it fails closed.
+This module is retained as a forensic/compatibility decoder only.
+Alrummi3/layout.py is the canonical integrated PSL schema used by the harness.
+Keep this file byte-for-byte schema-compatible with that parser; do not evolve
+an independent channel map here.
 
 Evidence checkpoint: project/utage_harness/PSL_ANIMATION_RESEARCH_2026-09-30.md
 """
@@ -15,8 +16,8 @@ HEADER_SIZE = 16
 NODE_SIZE = 176
 
 # Channels alternate scalar/control and keyed tracks.
-# 19 is provisionally 2 words/key: tested layouts land exactly, but no strong
-# non-zero example has yet isolated this channel's payload width.
+# This mirrors Alrummi3/layout.py. Channel 19 is display/visibility and channel
+# 21 is shake; both are proven 3-word key records.
 TRACK_STRIDE_WORDS = {
     1: 6,   # position
     3: 6,   # rotation
@@ -27,8 +28,8 @@ TRACK_STRIDE_WORDS = {
     13: 3,  # color 1
     15: 3,  # color 2
     17: 3,  # color 3
-    19: 2,  # unknown; width not independently exercised yet
-    21: 3,  # visibility: time/interp + 0/1 value
+    19: 3,  # visibility/display: time/interp + 0/1 value
+    21: 3,  # shake: time/interp + value
 }
 
 CHANNEL_NAMES = {
@@ -51,9 +52,9 @@ CHANNEL_NAMES = {
     16: "control_16",
     17: "color_3",
     18: "control_18",
-    19: "track_19",
+    19: "visibility",
     20: "control_20",
-    21: "visibility",
+    21: "shake",
 }
 
 

@@ -65,8 +65,11 @@ class LayoutNode:
     position: tuple[float, float] = (0.0, 0.0)
     rotation: float = 0.0
     scale: tuple[float, float] = (1.0, 1.0)
+    default_display: bool = True
+    default_shake: bool = False
     size: tuple[int, int] = (0, 0)
     shader_type: int = 0
+    mask_provider: bool = False
     blend_state: int = 0
     geometry: tuple[int, int, int, int] = (0, 0, 0, 0)
     uv: tuple[int, int, int, int] = (0, 0, 0, 0)
@@ -207,27 +210,77 @@ class Layout:
                 n.texture.replace("/", "\\").lower().endswith(tail)]
 
     def node_by_id(self, node_id: int) -> LayoutNode | None:
-        """Resolve the serialized PSL sprite ID, which is not the array index."""
+        """Resolve a serialized PSL sprite ID only when it uniquely identifies one node."""
         hits = [n for n in self.nodes if n.node_id == node_id]
+        return hits[0] if len(hits) == 1 else None
+
+    def animation_target(self, animation: AnimationRecord) -> LayoutNode | None:
+        """Resolve an animation target ID, including the rare duplicate-ID cases."""
+        if animation.target_node < 0:
+            return None
+        hits = [n for n in self.nodes if n.node_id == animation.target_node]
         if len(hits) == 1:
             return hits[0]
         if not hits:
             return None
-        raise ValueError(f"duplicate PSL node id {node_id}: {[n.index for n in hits]}")
 
-    def animation_target(self, animation: AnimationRecord) -> LayoutNode | None:
-        """Resolve an animation record's serialized target ID to its sprite node."""
-        if animation.target_node < 0:
-            return None
-        return self.node_by_id(animation.target_node)
+        # When N sibling records address N repeated IDs, preserve serialized order.
+        refs = [a for a in self.animations if a.target_node == animation.target_node]
+        if len(refs) == len(hits) and len(hits) > 1:
+            refs = sorted(refs, key=lambda a: a.index)
+            hits = sorted(hits, key=lambda n: n.index)
+            return hits[refs.index(animation)]
+
+        # A group animation often targets the parent of all its child-track nodes.
+        descendants = [a for a in self.animation_tree(animation.index)
+                       if a.index != animation.index and a.target_node >= 0]
+        if descendants:
+            unique_child_nodes = []
+            for child in descendants:
+                child_hits = [n for n in self.nodes if n.node_id == child.target_node]
+                if len(child_hits) == 1:
+                    unique_child_nodes.append(child_hits[0])
+
+            def under(node: LayoutNode, ancestor: LayoutNode) -> bool:
+                cur = node.parent
+                seen = set()
+                while 0 <= cur < len(self.nodes) and cur not in seen:
+                    if cur == ancestor.index:
+                        return True
+                    seen.add(cur)
+                    cur = self.nodes[cur].parent
+                return False
+
+            scores = [(sum(under(child, hit) for child in unique_child_nodes), hit)
+                      for hit in hits]
+            best = max(score for score, _ in scores)
+            winners = [hit for score, hit in scores if score == best and score > 0]
+            if len(winners) == 1:
+                return winners[0]
+
+        # Last conservative discriminator: family-name affinity (e.g. Flag0_1 -> Flag0_0).
+        def prefix_score(a: str, b: str) -> int:
+            aa = ''.join(ch.lower() for ch in a if ch.isalnum())
+            bb = ''.join(ch.lower() for ch in b if ch.isalnum())
+            score = 0
+            for x, y in zip(aa, bb):
+                if x != y:
+                    break
+                score += 1
+            return score
+
+        scored = [(prefix_score(animation.name, hit.name), hit) for hit in hits]
+        best = max(score for score, _ in scored)
+        winners = [hit for score, hit in scored if score == best and score > 0]
+        return winners[0] if len(winners) == 1 else None
 
     def mask_for(self, index: int) -> LayoutNode | None:
-        """Resolve link_40 only when it targets a proven type-5 mask node."""
+        """Resolve link_40 to a strongly supported mask-provider sprite."""
         target_id = self.nodes[index].link_40
         if target_id < 0:
             return None
         target = self.node_by_id(target_id)
-        if target is not None and target.node_type == 5:
+        if target is not None and (target.node_type == 5 or target.mask_provider):
             return target
         return None
 
@@ -410,8 +463,11 @@ def parse_layout(raw: bytes, name: str = "") -> Layout:
             position=(_f32(rec, 0x00), _f32(rec, 0x04)),
             rotation=_f32(rec, 0x18),
             scale=(_f32(rec, 0x20), _f32(rec, 0x24)),
+            default_display=bool(_s32(rec, 0x30)),
+            default_shake=bool(_s32(rec, 0x34)),
             size=(_s32(rec, 0x48), _s32(rec, 0x4C)),
             shader_type=_s32(rec, 0x60),
+            mask_provider=bool(_s32(rec, 0x64)),
             blend_state=_s32(rec, 0x68),
             geometry=tuple(_s32(rec, o) for o in (0x74, 0x78, 0x7C, 0x80)),
             uv=tuple(_s32(rec, o) for o in (0x84, 0x88, 0x8C, 0x90)),

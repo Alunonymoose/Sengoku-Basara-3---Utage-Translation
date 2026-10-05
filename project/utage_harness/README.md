@@ -20,8 +20,9 @@ It is a fast pre-runtime gate for the asset classes we repeatedly modify.
   roots at a requested frame.
 - Apply channel-21 visibility and channel-7 animated geometry during reconstruction.
 - Render type-3 textured quads with TL/TR/BL/BR AARRGGBB vertex modulation.
-- Resolve link_40 -> type-5 relationships as masks and rasterize those masks in
-  screen space before compositing the linked sprite.
+- Resolve link_40 sprite-ID relationships to strongly supported mask providers
+  (type-5 or serialized mask-provider flag) and rasterize those masks in screen space
+  before compositing the linked sprite.
 - Compare two ARCs at decompressed-member level.
 - Render explicit multi-layer 2D scenes from ARC members.
 - Render selected PSL sprite nodes directly from an ARC with no hand-entered crop/placement.

@@ -1,0 +1,24 @@
+{
+  "state": "LIVE_INSTALLED_VERIFIED",
+  "date": "2026-10-05",
+  "live_arc": "E:\\Utage Patching New\\PS3_GAME\\USRDIR\\nativePS3\\rom\\eng\\select\\c_versus.arc",
+  "backup_arc": "E:\\BASARA_BACKUPS\\2026-10-05\\layout-polish\\select\\c_versus.arc",
+  "before_arc_sha256": "5d54c630c7671fea3b3cd200ac07cb1a9c597a63cb28972396d8c777c7ef3081",
+  "after_arc_sha256": "3a26cfecf35dec40b01946108fd9cade13382c4dc1a550e0d6fcc921cf7b0bd1",
+  "changed_members": [
+    {
+      "index": 11,
+      "name": "id\\texture\\jpn\\waza2\\waza2_029_ID_HQ",
+      "before_raw": "19c7a082aa4f0abeb9aa1c73ab2346f77762b3afef1d5fa69bdd727245540c2f",
+      "after_raw": "c99ac875ed22a420bc56fe814a9dcc0c67541959a96e5da4f3bfca45c14f93c7"
+    },
+    {
+      "index": 12,
+      "name": "id\\texture\\jpn\\waza2\\waza2_001_ID_HQ",
+      "before_raw": "37d3cd7ec5319bfa07f85456599469384f1f5c0eb9155c4eb6747757e000a258",
+      "after_raw": "ace9b1192966767f8edd660ac468c02118cc353d2dd9b8ceb94a4bd172c33abe"
+    }
+  ],
+  "method": "existing English glyph pixels vertically re-registered into exact 42px LSP row cells; no redraw/no resize",
+  "approval_sheet": "E:\\BASARA_WORK\\jobs\\20261005-az-texture-qa\\versus_waza2_row_fit\\WAZA2_ROW_FIT_APPROVAL.jpg"
+}

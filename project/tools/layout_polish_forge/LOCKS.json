@@ -1,0 +1,26 @@
+{
+  "schema": "UTAGE_LAYOUT_POLISH_LOCKS_V1",
+  "updated": "2026-10-05",
+  "locks": [
+    {
+      "resource": "menu.arc::kessen_008_ID_HQ",
+      "reason": "User explicitly wants Japanese baked into Versus panel art retained",
+      "mode": "DO_NOT_MODIFY"
+    },
+    {
+      "resource": "menu.arc::kessen_009_ID_HQ",
+      "reason": "User explicitly wants Japanese baked into Versus panel art retained",
+      "mode": "DO_NOT_MODIFY"
+    },
+    {
+      "resource": "title.arc::title_012_ID_HQ",
+      "reason": "User accepted current Utage/\u5bb4 branding",
+      "mode": "DO_NOT_MODIFY"
+    },
+    {
+      "resource": "title.arc::title_015_ID_HQ",
+      "reason": "User accepted current Utage/\u5bb4 glow/effect branding",
+      "mode": "DO_NOT_MODIFY"
+    }
+  ]
+}

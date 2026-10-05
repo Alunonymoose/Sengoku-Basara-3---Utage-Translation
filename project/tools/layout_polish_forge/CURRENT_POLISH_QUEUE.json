@@ -1,0 +1,99 @@
+{
+  "schema": "UTAGE_LAYOUT_POLISH_QUEUE_V2",
+  "updated": "2026-10-05",
+  "installed_verified": [
+    {
+      "family": "Versus skill-name row registration",
+      "arc": "select/c_versus.arc",
+      "indices": [
+        11,
+        12
+      ],
+      "before_sha256": "5d54c630c7671fea3b3cd200ac07cb1a9c597a63cb28972396d8c777c7ef3081",
+      "after_sha256": "3a26cfecf35dec40b01946108fd9cade13382c4dc1a550e0d6fcc921cf7b0bd1",
+      "backup": "E:\\BASARA_BACKUPS\\2026-10-05\\layout-polish\\select\\c_versus.arc"
+    }
+  ],
+  "artist_approval_required": [
+    {
+      "resource": "tenka_022_ID_HQ",
+      "cell": [
+        146,
+        452,
+        266,
+        490
+      ],
+      "copy": "LUCK UP",
+      "state": "ARTIST_HANDOFF_READY"
+    },
+    {
+      "resource": "gallery_07_ID_HQ",
+      "cell": [
+        384,
+        336,
+        464,
+        440
+      ],
+      "copy": "ACHIEVED",
+      "state": "ARTIST_HANDOFF_READY"
+    },
+    {
+      "resource": "cp_kessen_002_ID_HQ",
+      "cells": [
+        [
+          144,
+          400,
+          216,
+          440
+        ],
+        [
+          216,
+          400,
+          320,
+          440
+        ]
+      ],
+      "copy": [
+        "NEXT",
+        "IN BATTLE"
+      ],
+      "state": "ARTIST_CANDIDATE_V2_READY"
+    },
+    {
+      "family": "Reward Voucher",
+      "version": "V3",
+      "providers": [
+        "id/cockpit1P.arc:27",
+        "id/cockpit2P.arc:28"
+      ],
+      "state": "APPROVAL_REQUIRED",
+      "note": "Existing word pixels reflowed into two lines inside exact 256x44 live cell."
+    }
+  ],
+  "runtime_confirm_required": [
+    {
+      "family": "tenka_029 Page/ITEM cell grid",
+      "providers": [
+        "result_id.arc:58",
+        "tenka/equip.arc:48",
+        "tenka/smith.arc:51"
+      ],
+      "state": "RUNTIME_CONFIRM_REQUIRED"
+    },
+    "panel_049.arc through panel_054.arc Camp Commander mission panels",
+    "tenka_029 hidden Page state"
+  ],
+  "artist_polish_families_ready": [
+    "artist_handoff_tenka_map_labels",
+    "artist_handoff_emblem_polish",
+    "artist_handoff_reward_voucher",
+    "artist_handoff_luck_up",
+    "artist_handoff_ranking_achieved",
+    "artist_handoff_versus_rank_and_status"
+  ],
+  "locks": [
+    "Do not modify versus/menu.arc or menu.arc kessen_008_ID_HQ / kessen_009_ID_HQ baked Japanese plaques.",
+    "Do not modify title.arc title_012_ID_HQ / title_015_ID_HQ Utage/宴 branding.",
+    "Engineer role: no image generation."
+  ]
+}

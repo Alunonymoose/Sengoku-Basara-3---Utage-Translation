@@ -498,18 +498,91 @@ def cmd_rrc_match_arc(args):
     print(json.dumps({"capture": args.capture, "arc": args.arc,
                       "arc_sha256": arc.data_sha256, "matches": matches}, indent=2))
 
+def _animation_target_resolution(layout, animation):
+    """Return (node, evidence) without hiding duplicate-ID heuristics."""
+    if animation.target_node < 0:
+        return None, "no_target"
+    hits = [n for n in layout.nodes if n.node_id == animation.target_node]
+    if len(hits) == 1:
+        return hits[0], "unique_id"
+    if not hits:
+        return None, "missing_id"
+
+    chosen = layout.animation_target(animation)
+    if chosen is None:
+        return None, "ambiguous_duplicate_id"
+
+    refs = [a for a in layout.animations if a.target_node == animation.target_node]
+    if len(refs) == len(hits) and len(hits) > 1:
+        refs = sorted(refs, key=lambda a: a.index)
+        ordered_hits = sorted(hits, key=lambda n: n.index)
+        if ordered_hits[refs.index(animation)].index == chosen.index:
+            return chosen, "duplicate_order_pair"
+
+    descendants = [
+        a for a in layout.animation_tree(animation.index)
+        if a.index != animation.index and a.target_node >= 0
+    ]
+    if descendants:
+        unique_child_nodes = []
+        for child in descendants:
+            child_hits = [n for n in layout.nodes if n.node_id == child.target_node]
+            if len(child_hits) == 1:
+                unique_child_nodes.append(child_hits[0])
+
+        def under(node, ancestor):
+            cur = node.parent
+            seen = set()
+            while 0 <= cur < len(layout.nodes) and cur not in seen:
+                if cur == ancestor.index:
+                    return True
+                seen.add(cur)
+                cur = layout.nodes[cur].parent
+            return False
+
+        scores = [
+            (sum(under(child, hit) for child in unique_child_nodes), hit)
+            for hit in hits
+        ]
+        best = max(score for score, _ in scores)
+        winners = [hit for score, hit in scores if score == best and score > 0]
+        if len(winners) == 1 and winners[0].index == chosen.index:
+            return chosen, "duplicate_descendant_scope"
+
+    def prefix_score(a, b):
+        aa = ''.join(ch.lower() for ch in a if ch.isalnum())
+        bb = ''.join(ch.lower() for ch in b if ch.isalnum())
+        score = 0
+        for x, y in zip(aa, bb):
+            if x != y:
+                break
+            score += 1
+        return score
+
+    scored = [(prefix_score(animation.name, hit.name), hit) for hit in hits]
+    best = max(score for score, _ in scored)
+    winners = [hit for score, hit in scored if score == best and score > 0]
+    if len(winners) == 1 and winners[0].index == chosen.index:
+        return chosen, "duplicate_name_affinity"
+
+    return chosen, "duplicate_heuristic_unknown"
+
+
 def node_info(layout, node, atlas_scale=2.0):
     return {
         "index": node.index, "node_id": node.node_id, "name": node.name, "role": node.role,
         "type": node.node_type, "parent": node.parent, "texture": node.texture,
         "position": list(node.position), "rotation_deg": node.rotation,
         "scale": list(node.scale),
+        "default_display": node.default_display,
+        "default_shake": node.default_shake,
         "geometry": list(node.geometry), "uv_logical": list(node.uv),
         "source_rect_physical": list(node.source_rect(atlas_scale)),
         "world_transform": list(layout.world_transform(node.index)),
         "dest_bbox_logical": list(layout.logical_bbox(node.index)),
         "colors": [f"0x{c:08x}" for c in node.colors],
-        "shader_type": node.shader_type, "blend_state": node.blend_state,
+        "shader_type": node.shader_type, "mask_provider": node.mask_provider,
+        "blend_state": node.blend_state,
         "links": {"3c": node.link_3c, "40": node.link_40, "44": node.link_44},
         "mask_node": (layout.mask_for(node.index).index if layout.mask_for(node.index) else None),
         "mask_node_id": (layout.mask_for(node.index).node_id if layout.mask_for(node.index) else None),
@@ -576,6 +649,8 @@ def cmd_psl_sweep(args):
     arcs = [root] if root.is_file() else list(root.rglob("*.arc"))
     arc_ok = arc_fail = layout_count = layout_fail = node_count = animation_count = 0
     unresolved_target_count = duplicate_node_id_count = mask_link_count = resolved_mask_count = 0
+    heuristic_target_count = 0
+    default_display_on = default_display_off = default_shake_on = 0
     failures = []
     reference_warnings = []
     for path in arcs:
@@ -601,6 +676,12 @@ def cmd_psl_sweep(args):
                 id_groups = {}
                 for node in layout.nodes:
                     id_groups.setdefault(node.node_id, []).append(node.index)
+                    if node.default_display:
+                        default_display_on += 1
+                    else:
+                        default_display_off += 1
+                    if node.default_shake:
+                        default_shake_on += 1
                     if node.link_40 >= 0:
                         mask_link_count += 1
                         if layout.mask_for(node.index) is not None:
@@ -611,19 +692,33 @@ def cmd_psl_sweep(args):
                 }
                 duplicate_node_id_count += len(duplicate_ids)
 
-                unresolved_targets = [
-                    {"animation": animation.index, "name": animation.name,
-                     "target_id": animation.target_node}
-                    for animation in layout.animations
-                    if animation.target_node >= 0
-                    and layout.animation_target(animation) is None
-                ]
+                unresolved_targets = []
+                heuristic_targets = []
+                for animation in layout.animations:
+                    if animation.target_node < 0:
+                        continue
+                    target, resolution = _animation_target_resolution(layout, animation)
+                    if target is None:
+                        unresolved_targets.append({
+                            "animation": animation.index, "name": animation.name,
+                            "target_id": animation.target_node,
+                            "resolution": resolution,
+                        })
+                    elif resolution != "unique_id":
+                        heuristic_targets.append({
+                            "animation": animation.index, "name": animation.name,
+                            "target_id": animation.target_node,
+                            "target_index": target.index, "target_name": target.name,
+                            "resolution": resolution,
+                        })
                 unresolved_target_count += len(unresolved_targets)
-                if duplicate_ids or unresolved_targets:
+                heuristic_target_count += len(heuristic_targets)
+                if duplicate_ids or unresolved_targets or heuristic_targets:
                     reference_warnings.append({
                         "arc": str(path), "member": entry.name,
                         "duplicate_node_ids": duplicate_ids,
                         "unresolved_animation_targets": unresolved_targets,
+                        "heuristic_animation_targets": heuristic_targets,
                     })
 
                 if (not layout.complete or len(layout.animations) != layout.aux_count
@@ -647,9 +742,14 @@ def cmd_psl_sweep(args):
         "layout_fail": layout_fail, "nodes": node_count,
         "animations": animation_count,
         "unresolved_animation_targets": unresolved_target_count,
+        "heuristic_animation_targets": heuristic_target_count,
         "duplicate_node_ids": duplicate_node_id_count,
+        "default_display_on": default_display_on,
+        "default_display_off": default_display_off,
+        "default_shake_on": default_shake_on,
         "mask_links": mask_link_count,
-        "resolved_type5_masks": resolved_mask_count,
+        "resolved_mask_links": resolved_mask_count,
+        "unresolved_mask_links": mask_link_count - resolved_mask_count,
         "reference_warnings": reference_warnings,
         "failures": failures,
     }
@@ -682,7 +782,7 @@ def cmd_layout_animations(args):
                        and needle in target.name.casefold())]
     out = []
     for animation in records:
-        target = layout.animation_target(animation)
+        target, target_resolution = _animation_target_resolution(layout, animation)
         target_name = target.name if target is not None else ""
         channels = []
         for channel in animation.channels:
@@ -703,6 +803,7 @@ def cmd_layout_animations(args):
             "target_id": animation.target_node,
             "target_index": target.index if target is not None else None,
             "target_name": target_name,
+            "target_resolution": target_resolution,
             "duration": animation.duration,
             "parent_animation": animation.parent_animation,
             "offset": animation.offset, "size": animation.size,
@@ -810,14 +911,31 @@ def _animated_local_states(layout, root, frame):
             "position": list(n.position), "scale": list(n.scale),
             "geometry": list(n.geometry), "uv": list(n.uv), "colors": list(n.colors),
             "rotation": [0.0, 0.0, n.rotation, 0.0],
-            "visible": True, "shake": False,
+            "visible": bool(n.default_display), "shake": bool(n.default_shake),
         }
         for n in layout.nodes
     }
     if root is None:
         return states, []
     warnings = []
-    for animation in layout.animation_tree(root.index):
+    selected_tree = layout.animation_tree(root.index)
+
+    # Clip playback activates its target sprites even when the resource baseline
+    # default display flag is off. A keyed display channel below remains
+    # authoritative at the requested frame.
+    for animation in selected_tree:
+        target = layout.animation_target(animation)
+        if target is not None:
+            states[target.index]["visible"] = True
+    if any(
+        key.interpolation == 5
+        for animation in selected_tree
+        for channel in animation.channels
+        for key in channel.keys
+    ):
+        warnings.append(
+            "interpolation code 5 is approximated as smoothstep; exact MT Framework curve is not yet proven")
+    for animation in selected_tree:
         target = layout.animation_target(animation)
         if target is None:
             if animation.target_node >= 0:
@@ -940,6 +1058,26 @@ def _vertex_modulation(size, colors):
     bottom = Image.composite(Image.new("RGBA", size, br), Image.new("RGBA", size, bl), xmask)
     return Image.composite(bottom, top, ymask)
 
+def _untextured_quad_mode(node):
+    """Return the proven untextured draw model, or None for unsupported node types."""
+    if node.node_type == 1 and not node.texture:
+        return "vertex_rgba"
+    if node.node_type == 0 and not node.texture:
+        # Repeated loading-screen L/C/R triplets prove type 0 is the solid
+        # center colour while type-1 siblings form the gradient wings.
+        return "solid_color0"
+    return None
+
+def _untextured_quad_tile(node, state):
+    mode = _untextured_quad_mode(node)
+    if mode is None:
+        raise ValueError("unproven untextured node material")
+    x0, y0, x1, y1 = state["geometry"]
+    size = (max(1, abs(x1 - x0)), max(1, abs(y1 - y0)))
+    if mode == "vertex_rgba":
+        return _vertex_modulation(size, state["colors"]), mode
+    return Image.new("RGBA", size, _argb_to_rgba(state["colors"][0])), mode
+
 def _warp_tile(tile, geometry, world_matrix, viewport_scale, output_size):
     out_w, out_h = output_size
     sx, sy = viewport_scale
@@ -1047,7 +1185,9 @@ def cmd_render_layout(args):
         if root else None
     )
     for node in layout.nodes:
-        if node.node_type not in (2, 3) or not node.texture:
+        textured_sprite = node.node_type in (2, 3) and bool(node.texture)
+        untextured_quad = _untextured_quad_mode(node) is not None
+        if not textured_sprite and not untextured_quad:
             continue
         if root and not args.include_static and node.index not in animated_targets:
             continue
@@ -1066,25 +1206,37 @@ def cmd_render_layout(args):
                     "index": node.index, "name": node.name,
                     "error": "visibility=0 at selected animation state"})
                 continue
-            alpha = (
-                _node_alpha(state["colors"])
-                if node.node_type == 2 and (root or args.respect_alpha)
-                else 1.0
-            )
+            quad_mode = _untextured_quad_mode(node)
+            if quad_mode == "solid_color0":
+                alpha = ((state["colors"][0] >> 24) & 0xFF) / 255.0
+            elif quad_mode == "vertex_rgba":
+                alpha = _node_alpha(state["colors"])
+            else:
+                alpha = (
+                    _node_alpha(state["colors"])
+                    if node.node_type == 2 and (root or args.respect_alpha)
+                    else 1.0
+                )
             if alpha <= 0.0:
                 skipped.append({
                     "index": node.index, "name": node.name,
                     "error": "alpha=0 at selected animation/static state"})
                 continue
 
-            tex_entry = find_entry(arc, node.texture)
-            image, raw = decode_member(arc, tex_entry)
-            ux0, uy0, ux1, uy1 = state["uv"]
-            x0, y0, x1, y1 = [
-                round(v * args.atlas_scale) for v in (ux0, uy0, ux1, uy1)]
-            if not (0 <= x0 < x1 <= image.width and 0 <= y0 < y1 <= image.height):
-                raise ValueError(f"source rect {(x0, y0, x1, y1)} outside {image.size}")
-            tile = image.crop((x0, y0, x1, y1))
+            tex_entry = None
+            raw = None
+            if quad_mode is not None:
+                tile, quad_mode = _untextured_quad_tile(node, state)
+            else:
+                tex_entry = find_entry(arc, node.texture)
+                image, raw = decode_member(arc, tex_entry)
+                ux0, uy0, ux1, uy1 = state["uv"]
+                x0, y0, x1, y1 = [
+                    round(v * args.atlas_scale) for v in (ux0, uy0, ux1, uy1)]
+                if not (0 <= x0 < x1 <= image.width and 0 <= y0 < y1 <= image.height):
+                    raise ValueError(f"source rect {(x0, y0, x1, y1)} outside {image.size}")
+                tile = image.crop((x0, y0, x1, y1))
+
             dx0, dy0, dx1, dy1 = _animated_bbox(layout, states, node.index)
             px0, py0 = round(dx0 * sx), round(dy0 * sy)
             px1, py1 = round(dx1 * sx), round(dy1 * sy)
@@ -1092,7 +1244,7 @@ def cmd_render_layout(args):
                 raise ValueError(f"invalid destination box {(px0, py0, px1, py1)}")
             if node.node_type == 3:
                 tile = ImageChops.multiply(tile, _vertex_modulation(tile.size, state["colors"]))
-            elif alpha < 0.999:
+            elif quad_mode is None and alpha < 0.999:
                 tile.putalpha(tile.getchannel("A").point(
                     lambda v: max(0, min(255, round(v * alpha)))))
 
@@ -1120,10 +1272,11 @@ def cmd_render_layout(args):
                 "animated_visible": state["visible"],
                 "animated_shake": state["shake"],
                 "alpha": alpha,
-                "vertex_modulation": node.node_type == 3,
+                "vertex_modulation": node.node_type == 3 or quad_mode == "vertex_rgba",
+                "untextured_quad_mode": quad_mode,
                 "mask_applied": mask_applied,
-                "texture_member": tex_entry.name,
-                "texture_sha256": sha256(raw),
+                "texture_member": tex_entry.name if tex_entry is not None else None,
+                "texture_sha256": sha256(raw) if raw is not None else None,
                 "dest_bbox_logical_animated": [dx0, dy0, dx1, dy1],
                 "dest_bbox_output": [px0, py0, px1, py1],
             })
