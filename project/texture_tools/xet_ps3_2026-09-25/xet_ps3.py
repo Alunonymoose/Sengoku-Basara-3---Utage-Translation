@@ -10,7 +10,7 @@ THE CONTRACT (supersedes the 2026-09-23 "PS3 big-endian RGB565 endpoint" rule)
         display:  alpha=G, Y=A, Cb=B-123, Cr=R-123,
                   R=Y+1.402Cr, G=Y-0.344136Cb-0.714136Cr, B=Y+1.772Cb
         write:    Y=.299R+.587G+.114B, Cb=123-.168736R-.331264G+.5B, Cr=123+.5R-.418688G-.081312B
-  * 0x17/0x18 = BC3 plain RGBA; 0x19 = BC1 plain; 0x15 = BC2 (read only); 0x27 = A8R8G8B8 (read only).
+  * 0x17/0x18 = BC3 plain RGBA; 0x13/0x14/0x19 = BC1 plain; 0x15 = BC2 (read only); 0x27 = A8R8G8B8 (read only).
 
 EVIDENCE (see README.md in this folder)
   * versus/menu.arc member 58 (kessen_001_ID_HQ): a BE-path write of stored (123,0,123,0) rendered in
@@ -51,7 +51,7 @@ def info(raw: bytes) -> dict:
 
 def _block_geom(raw):
     i = info(raw); f = i['format']
-    bs = 8 if f == 0x19 else 16
+    bs = 8 if f in (0x13, 0x14, 0x19) else 16
     ep = 0 if bs == 8 else 8
     n = ((i['width'] + 3) // 4) * ((i['height'] + 3) // 4)
     return i, bs, ep, n
@@ -59,7 +59,7 @@ def _block_geom(raw):
 def swap_endpoints(raw: bytes) -> bytes:
     """Byte-swap the two RGB565 endpoint words of every mip-0 block (bridge to the BE-view tools)."""
     i, bs, ep, n = _block_geom(raw)
-    if i['format'] not in (0x2A, 0x17, 0x18, 0x19, 0x15):
+    if i['format'] not in (0x2A, 0x17, 0x18, 0x13, 0x14, 0x19, 0x15):
         raise ValueError('not a BC format: 0x%02X' % i['format'])
     b = bytearray(raw); off = i['mip_offsets'][0]
     for k in range(n):
