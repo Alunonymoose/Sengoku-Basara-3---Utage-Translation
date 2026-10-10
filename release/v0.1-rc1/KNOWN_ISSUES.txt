@@ -1,0 +1,15 @@
+UTAGE ENGLISH v0.1 BETA — KNOWN ISSUES
+Updated: 10 October 2026
+
+THIS IS A REAL BETA, NOT A 100% COMPLETE RELEASE.
+
+1. FMV VIDEO: The large reauthored movies are NOT in this CORE package. Original Japanese PAM movies are copied from the player's own disc. English in-engine text and subtitles remain included.
+2. CHARACTER TITLES: Several trophy/title plates inherited from Samurai Heroes do not correspond correctly to Utage's Japanese title order. Two cells are blank. The ending "Thank you for playing" tile is correctly English.
+3. RESULTS / REWARDS: The current decorative English treasure/reward banner was flagged as not being separated into five independent game-defined strips. A proper silver separate-label candidate exists but is not yet approved for installation.
+4. ROULETTE: Three luck result cards have English words but the visual style/typography needs further polishing.
+5. STORY TITLES AND DUST CLOUD: Some cursive headings do not match the original Japanese brush-metallic style; a Dust Cloud/Open! image may appear cropped.
+6. TROPHIES: The live signed PS3 trophy package is still the original Japanese. An English variant exists only as a separate unverified development candidate and is NOT in this beta.
+7. SAVE IMPORT: Samurai Heroes USA/PAL save import is NOT supported. First/second boot, autosave and story/subtitles were marked PASS on the recent user's live build; clean-install behaviour on every emulator/hardware setup still needs confirmation.
+8. PS3 HARDWARE/2P: Real console, local co-op and every game character/route have not received complete certification.
+
+PLEASE DON'T REPORT THESE AS SURPRISES: They're already on the roadmap. Report a crash, missing dialogue or actual game freeze with the affected character/mode and the previous menu so the next patch can be targeted.

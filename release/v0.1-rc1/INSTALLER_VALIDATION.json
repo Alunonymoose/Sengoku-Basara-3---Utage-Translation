@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "release": "v0.1-beta-core-2026-10-10",
+  "files": 5052,
+  "english_arcs": 4077,
+  "sha256_verified": true,
+  "original_JP_unmodified": true,
+  "compiler_installer_unit_test": "PASS",
+  "wrong_damaged_input_rejected": "PASS",
+  "runtime_boot_hardware_certification": "NOT_PERFORMED",
+  "movies": "Original Japanese movies copied from user-owned original. Separate movie add-on is not included.",
+  "known_issues": "Read KNOWN_ISSUES.txt"
+}
